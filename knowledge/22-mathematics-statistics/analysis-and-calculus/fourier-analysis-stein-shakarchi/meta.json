@@ -1,0 +1,23 @@
+{
+  "slug": "fourier-analysis-stein-shakarchi",
+  "title": "Fourier Analysis: An Introduction",
+  "authors": ["Elias M. Stein", "Rami Shakarchi"],
+  "isbn13": "9780691113845",
+  "publisher": "Princeton University Press",
+  "year": 2003,
+  "pages": 328,
+  "language": "en",
+  "cover": {"url": "https://covers.openlibrary.org/b/isbn/9780691113845-L.jpg", "source": "openlibrary", "olid": "OL26330517M"},
+  "difficulty": "advanced",
+  "readingTimeMinutes": 1200,
+  "listeningTimeMinutes": 800,
+  "category": "22-mathematics-statistics",
+  "subcategory": "analysis-and-calculus",
+  "tags": ["fourier analysis", "harmonic analysis", "fourier series", "fourier transform", "partial differential equations", "dirichlet's theorem", "analysis", "textbook", "stein", "princeton lectures"],
+  "excerpt": "The first volume of the celebrated Princeton Lectures in Analysis, presenting Fourier series, Fourier transforms, and finite Fourier analysis as a unified subject rooted in physical intuition and rigorous analysis.",
+  "whoShouldRead": ["Advanced undergraduates and beginning graduate students in mathematics", "Physics and engineering students wanting rigorous foundations", "Self-studying mathematicians", "Anyone planning to read the full Princeton Lectures in Analysis series"],
+  "whoShouldSkip": ["Students without a solid background in undergraduate real analysis", "Those seeking computational recipes", "Readers expecting Lebesgue integration"],
+  "keyIdeas": ["Arbitrary functions can be represented as infinite sums of trigonometric functions", "Convergence of Fourier series requires careful analysis of kernels and summability methods", "The Fourier transform extends Fourier analysis from periodic to non-periodic functions on R and R^d", "Finite Fourier analysis on abelian groups connects to number theory via Dirichlet's theorem", "The whole of analysis is a unified subject"],
+  "keyTakeaways": ["Fourier analysis emerged from the physical problems of the vibrating string and heat diffusion", "Cesàro and Abel summability provide convergence where pointwise convergence fails", "The Fourier transform is a powerful tool for solving partial differential equations", "Finite Fourier analysis on Z(N) leads to the fast Fourier transform and deep number theory"],
+  "relatedBooks": ["complex-analysis-stein-shakarchi", "real-analysis-stein-shakarchi", "fourier-series-and-boundary-value-problems-churchill-brown", "the-fourier-transform-and-its-applications-ronald-bracewell", "introduction-to-fourier-analysis-on-euclidean-spaces-stein-weiss"]
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "the-education-of-a-value-investor-guy-spier",
+  "title": "The Education of a Value Investor",
+  "subtitle": "The Transforming Investment Journey of Guy Spier",
+  "author": "Guy Spier",
+  "description": "A memoir and philosophical treatise tracing Guy Spier's transformation from an aggressive Wall Street deal-maker into a disciplined value investor inspired by Warren Buffett, exploring how geography, temperament, and intellectual community shape investment outcomes.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781137284363-L.jpg",
+  "isbn10": "1137284364",
+  "isbn13": "9781137284363",
+  "pages": 194,
+  "publishedYear": 2014,
+  "publisher": "Palgrave Macmillan",
+  "openlibrarySlug": "/works/OL17031795W",
+  "tags": [
+    "investing",
+    "value-investing",
+    "biography",
+    "behavioral-finance",
+    "warren-buffett",
+    "portfolio-construction",
+    "mental-models"
+  ],
+  "keyIdeas": [
+    "The Toxic Wall Street Culture Problem",
+    "Geography as Investment Strategy",
+    "Returns Are Driven by Behavior, Not Analysis",
+    "Letter-Writing as a Tool for Discovery",
+    "Price Is the Only Thing That Matters to Returns",
+    "The Inner Circle Philosophy",
+    "Building an Intellectual Peer Group",
+    "Concentration Over Diversification for Small Investors",
+    "The 100-Year Investment Time Horizon",
+    "Network as a Competitive Advantage"
+  ],
+  "keyTakeaways": [
+    "Your physical and intellectual environment determines your investment returns more than your IQ or analytical skill.",
+    "Moving from New York to Zurich allowed Spier to escape the short-termism and ego-driven culture of Wall Street and think independently.",
+    "Most investment underperformance is caused by bad behavior, not bad analysis — emotions, conformism, and process failures.",
+    "Writing letters to companies, like Buffett did, opens channels of communication and surfaces information not available to analysts.",
+    "A wonderful company at a high price is a worse investment than a mediocre company at a low price. Price is the sole determinant of future returns.",
+    "Surround yourself with 'intellectual equals' who challenge your assumptions and elevate your thinking.",
+    "For small investors, concentration is more powerful than diversification — but only when you truly understand each holding.",
+    "Treat investing as a 100-year endeavor. This frame shifts decisions from quarterly to generational.",
+    "Avoiding the career risks and compromises of large institutional money management frees you to pursue contrarian, patient strategies.",
+    "The best investment strategies are boring, patient, and uncomfortable — they require you to be wrong with the crowd for long periods."
+  ],
+  "whoShouldRead": [
+    "Aspiring value investors seeking a narrative roadmap beyond Graham and Dodd",
+    "Wall Street professionals feeling disillusioned by short-termism and toxic culture",
+    "Small investors (under $5M) looking for portfolio construction guidance",
+    "Readers interested in the intersection of psychology, geography, and investing performance",
+    "Fans of Warren Buffett who want a firsthand account of how his lessons transformed a career",
+    "Anyone considering whether to leave a prestigious but unsatisfying job to pursue their own investment philosophy"
+  ],
+  "relatedBooks": [
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "Poor Charlie's Almanack",
+      "slug": "poor-charlies-almanack-charlie-munger"
+    },
+    {
+      "title": "The Most Important Thing",
+      "slug": "the-most-important-thing-howard-marks"
+    },
+    {
+      "title": "The Dhandho Investor",
+      "slug": "the-dhando-investor-mohnish-pabrai"
+    },
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Psychology of Money",
+      "slug": "the-psychology-of-money-morgan-housel"
+    },
+    {
+      "title": "One Up On Wall Street",
+      "slug": "one-up-on-wall-street-peter-lynch"
+    }
+  ]
+}

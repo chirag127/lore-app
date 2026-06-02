@@ -1,0 +1,20 @@
+{
+  "id": "the-arithmetic-of-elliptic-curves-joseph-silverman",
+  "title": "The Arithmetic of Elliptic Curves",
+  "slug": "elliptic-curves-joseph-silverman",
+  "authors": ["Joseph H. Silverman"],
+  "year": 1986,
+  "category": "22-mathematics-statistics",
+  "subcategory": "algebra-and-number-theory",
+  "pages": 400,
+  "isbn": "9780387962030",
+  "publisher": "Springer",
+  "language": "en",
+  "genres": ["Mathematics", "Algebraic Geometry", "Number Theory"],
+  "subjects": ["Elliptic Curves", "Arithmetic Geometry", "Mordell-Weil Theorem", "Algebraic Number Theory"],
+  "themes": ["Elliptic curves over local and global fields", "Diophantine geometry", "Modular forms and elliptic functions"],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 50,
+  "source": "generated",
+  "generatedAt": "2026-06-09"
+}

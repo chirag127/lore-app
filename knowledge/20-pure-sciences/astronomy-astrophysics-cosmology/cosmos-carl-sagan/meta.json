@@ -1,0 +1,17 @@
+{
+  "id": "cosmos-carl-sagan",
+  "title": "Cosmos",
+  "slug": "cosmos-carl-sagan",
+  "authors": ["Carl Sagan"],
+  "year": 1980,
+  "category": "20-pure-sciences",
+  "subcategory": "astronomy-astrophysics-cosmology",
+  "pages": 400,
+  "isbn": "9780345331309",
+  "language": "en",
+  "genres": ["Popular Science", "Astronomy", "Cosmology"],
+  "source": "generated",
+  "generatedAt": "2026-06-12",
+  "publisher": "Ballantine Books",
+  "edition": "2013 Ballantine paperback"
+}

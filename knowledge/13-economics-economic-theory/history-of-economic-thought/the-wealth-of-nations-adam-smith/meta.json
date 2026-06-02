@@ -1,0 +1,69 @@
+{
+  "slug": "the-wealth-of-nations-adam-smith",
+  "title": "The Wealth of Nations",
+  "subtitle": "An Inquiry into the Nature and Causes of the Wealth of Nations",
+  "author": "Adam Smith",
+  "description": "The foundational text of classical economics. Adam Smith's 1776 masterpiece investigates the forces that create national prosperity — the division of labor, the function of markets, the role of self-interest, and the proper scope of government. It introduced the invisible hand, the labor theory of value, and the theory of absolute advantage. No single work has done more to shape modern economic thought.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12606826-L.jpg",
+  "isbn10": "0553585976",
+  "isbn13": "9780553585971",
+  "pages": 1200,
+  "publishedYear": 1776,
+  "publisher": "W. Strahan and T. Cadell",
+  "openlibrarySlug": "wealth_of_nations",
+  "tags": [
+    "economics",
+    "political economy",
+    "classical economics",
+    "free markets",
+    "division of labor",
+    "capitalism",
+    "philosophy",
+    "scottish enlightenment"
+  ],
+  "keyIdeas": [
+    "The division of labor is the primary engine of productivity growth",
+    "Self-interest, not benevolence, drives economic exchange",
+    "The invisible hand coordinates individual pursuits into social benefit",
+    "Labor is the real measure of exchangeable value",
+    "Productive labor creates tangible goods; unproductive labor does not",
+    "Free trade according to absolute advantage benefits all nations",
+    "Land, labor, and capital are the three factors of production",
+    "Government should be limited to defense, justice, and public works",
+    "Markets tend toward equilibrium through price signals",
+    "The natural price is the long-run competitive price covering costs plus normal profit"
+  ],
+  "keyTakeaways": [
+    "The division of labor is limited by the extent of the market — larger markets enable greater specialization",
+    "People act in their own interest, and this self-interest, when channeled through competitive markets, produces socially beneficial outcomes",
+    "The value of a good has two meanings: value in use (utility) and value in exchange (purchasing power)",
+    "Labor is the real price of everything — what a thing costs is the labor required to acquire it",
+    "Money is not wealth; real wealth consists of the goods and services a nation can produce",
+    "Free trade allows each country to specialize in what it produces most efficiently, benefiting all trading partners",
+    "The sovereign has only three duties: defense, justice, and certain public works that are unprofitable for private enterprise",
+    "Monopolies and mercantilist restrictions enrich the few at the expense of the many",
+    "Wages tend to rise in growing economies and stagnate in stationary ones",
+    "The accumulation of capital is the precondition for sustained growth in the division of labor"
+  ],
+  "whoShouldRead": [
+    "Anyone who wants to understand the intellectual foundations of capitalism",
+    "Students of economics, political science, history, and philosophy",
+    "Business leaders and entrepreneurs seeking to understand market dynamics",
+    "Policymakers and public intellectuals debating the role of government in the economy",
+    "Readers of modern economics who want to see where the core ideas originated"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Capitalism and Freedom",
+      "slug": "capitalism-and-freedom-milton-friedman"
+    },
+    {
+      "title": "Basic Economics",
+      "slug": "basic-economics-thomas-sowell"
+    },
+    {
+      "title": "The Road to Serfdom",
+      "slug": null
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "algorithms-to-live-by-brian-christian",
+  "title": "Algorithms to Live By",
+  "subtitle": "The Computer Science of Human Decisions",
+  "author": "Brian Christian, Tom Griffiths",
+  "publicationYear": 2016,
+  "isbn": "9781627790369",
+  "publisher": "Henry Holt and Company",
+  "language": "en",
+  "pageCount": 368,
+  "genres": ["Computer Science", "Psychology", "Decision Science", "Science"],
+  "subjects": ["Algorithms", "Decision Making", "Computer Science", "Cognitive Science"],
+  "themes": [
+    "Computational rationality and bounded rationality",
+    "Optimal stopping and the 37% rule",
+    "The explore/exploit tradeoff across life stages",
+    "Algorithmic thinking as a decision-making framework",
+    "Simple heuristics outperform complex models",
+    "Tradeoffs between time, accuracy, and resources"
+  ],
+  "tags": [
+    "algorithms",
+    "decision-making",
+    "computer-science",
+    "cognitive-science",
+    "optimal-stopping",
+    "explore-exploit",
+    "bayesian-reasoning",
+    "scheduling",
+    "behavioral-economics",
+    "heuristics",
+    "psychology",
+    "productivity",
+    "self-help"
+  ],
+  "difficulty": "easy-medium",
+  "estimatedReadingHours": 9,
+  "estimatedListeningMinutes": 570,
+  "awards": [
+    "MIT Technology Review Best Books of 2016",
+    "Amazon Best Science Books of 2016",
+    "Forbes Must-Read Brain Books of 2016"
+  ],
+  "excerpt": "What should we do, and leave undone, in a day or in a decade? What degree of mess should we embrace? What balance between new experiences and favored ones makes for the most fulfilling life? Computer scientists have been grappling with these same dilemmas — and their solutions offer a surprisingly practical guide to human decisions."
+}

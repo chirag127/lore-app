@@ -1,0 +1,66 @@
+{
+  "slug": "godels-proof-nagel-newman",
+  "title": "Gödel's Proof",
+  "subtitle": "An Accessible Explanation of Kurt Gödel's Incompleteness Theorems",
+  "author": "Ernest Nagel, James R. Newman",
+  "publicationYear": 1958,
+  "isbn": "9780814758373",
+  "publisher": "New York University Press",
+  "language": "en",
+  "pageCount": 125,
+  "genres": [
+    "Mathematics",
+    "Logic",
+    "Philosophy of Mathematics",
+    "Computer Science"
+  ],
+  "subjects": [
+    "Gödel's Theorem",
+    "Incompleteness",
+    "Mathematical Logic",
+    "Meta-mathematics",
+    "Formal Systems",
+    "Proof Theory",
+    "Foundations of Mathematics"
+  ],
+  "themes": [
+    "The problem of consistency in formal axiomatic systems",
+    "Gödel numbering — arithmetizing meta-mathematics",
+    "The distinction between mathematics and meta-mathematics",
+    "The limits of formal proof and decidability",
+    "The relationship between truth and provability"
+  ],
+  "tags": [
+    "godels-proof",
+    "godel",
+    "incompleteness",
+    "ernest-nagel",
+    "james-newman",
+    "mathematical-logic",
+    "meta-mathematics",
+    "formal-systems",
+    "hilberts-program",
+    "principia-mathematica",
+    "consistency",
+    "decidability",
+    "russell-whitehead",
+    "douglas-hofstadter",
+    "foundations-of-mathematics",
+    "proof-theory",
+    "philosophy-of-mathematics",
+    "classic-textbook",
+    "popular-mathematics"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 4,
+  "estimatedListeningMinutes": 240,
+  "firstEditionYear": 1958,
+  "awards": [
+    "One of the most widely-read explanations of Gödel's theorems",
+    "Revised edition with introduction by Douglas R. Hofstadter (2001)",
+    "Translated into numerous languages",
+    "Chosen as a Scientific American recommended book",
+    "Featured in The Guardian: 'They accomplish the wondrous task of clarifying the argumentative outline of Kurt Gödel's celebrated logic bomb.'"
+  ],
+  "excerpt": "The classic layperson's guide to Gödel's incompleteness theorems. Nagel and Newman demystify one of the most celebrated and misunderstood results of 20th-century mathematics — Gödel's proof that any sufficiently powerful formal system is either incomplete or inconsistent — using clear historical exposition and a step-by-step walkthrough of Gödel's breathtaking self-referential construction."
+}

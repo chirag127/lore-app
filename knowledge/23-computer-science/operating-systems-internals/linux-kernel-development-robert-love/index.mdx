@@ -1,0 +1,111 @@
+---
+title: Linux Kernel Development
+subtitle: 3rd Edition — Developer's Library
+author: Robert Love
+published: 2010-07
+publisher: Addison-Wesley Professional
+pages: 448
+isbn: 9780672329463
+---
+
+## Overview
+
+*Linux Kernel Development* (July 2010, 3rd ed.) by Robert Love is the most authoritative and readable guide to Linux kernel internals in print. Written by a kernel contributor with over a decade of hands-on involvement — including the preemptive kernel, process scheduler, and inotify — it bridges the gap between "I read about the kernel once" and "I just submitted a patch to mainline."
+
+The book covers the Linux 2.6.3x kernel series across 16 chapters: process model, CFS scheduling, system calls, kernel data structures (new in 3rd ed.), interrupt handlers and bottom halves (new in 3rd ed.), kernel synchronization, memory management, the VFS, filesystems, procfs, networking, and kernel debugging. Every concept is grounded in real kernel source: Love cites `task_struct`, `sched_entity`, `struct page`, `inode`, `dentry`, `bio`, and `sk_buff` — the hundred-odd structures that make up daily kernel life.
+
+```mermaid
+mindmap
+  root((Linux Kernel Development))
+  Process and Scheduling
+  task_struct
+  CFS Scheduler
+  System Calls
+  Kernel Data Structures
+  list_head, hlist, kfifo, rb_tree
+  Interrupts and Bottom Halves
+  softirqs, tasklets, workqueues
+  Kernel Synchronization
+  spinlocks, mutexes, RCU
+  Memory Management
+  slab, kmalloc, vmalloc, GFP flags
+  Virtual Filesystem
+  superblock, inode, dentry, file
+  Block I/O Layer
+  gendisk, I/O schedulers, bio
+  Disk Filesystems
+  ext2, ext3, ext4
+  proc Filesystem
+  seq_file interface
+  Networking Stack
+  sk_buff, NAPI, netfilter
+  Debugging and Portability
+  printk, kgdb, KASAN, patch submission
+```
+
+| Detail | Value |
+|--------|-------|
+| **Author** | Robert Love |
+| **Published** | 2010-07 (Addison-Wesley Professional) |
+| **Pages** | 448 |
+| **ISBN-10** | 0672329468 |
+| **ISBN-13** | 9780672329463 |
+| **Edition** | 3rd |
+| **Series** | Developer's Library |
+
+---
+
+## Robert Love
+
+**Robert Love** is among the most trusted voices in the Linux community. His kernel contributions span the process scheduler, the preemptive kernel, the kernel events (kevent) layer, inotify, and VM enhancements. At Google, he was a member of the engineering team that built the kernel for the Android mobile platform. Before Google he served as Chief Architect for Linux Desktop at Novell; before that as a kernel engineer at MontaVista Software and Ximian.
+
+He is a contributing editor for *Linux Journal*, a regular conference speaker, and the author of *Linux System Programming* and *Linux in a Nutshell*. Love writes not as an academic describing a system from outside, but as a long-time contributor who knows which structs matter and which API edges are sharp.
+
+---
+
+## Chapter Map
+
+| # | Chapter | Focus |
+|---|---------|-------|
+| 1 | Introduction to the Linux Kernel | What a kernel is, monolithic vs. microkernel, Linux history and versions |
+| 2 | Getting Started with the Kernel | Obtaining source, configuring, compiling, and installing |
+| 3 | Process Management | task_struct, clone(), fork(), kernel threads, zombies, init |
+| 4 | Process Scheduling | CFS, vruntime, red-black trees, nice values, real-time scheduling, CONFIG_PREEMPT |
+| 5 | System Calls | The syscall interface, sys_call_table, ioctl, adding new system calls |
+| 6 | Kernel Data Structures | list_head, hlist, kfifo, rb_tree, IDR, when to use what *(new)* |
+| 7 | Interrupt Handlers and Bottom Halves | Top-half/bottom-half design, request_irq, softirqs, tasklets *(expanded)* |
+| 8 | Time Management | jiffies, HZ, hrtimers, dynamic ticks, delays, gettimeofday |
+| 9 | Kernel Synchronization | atomics, spinlocks, rwlocks, seqlocks, mutexes, completions, RCU |
+| 10 | Memory Management | Address spaces, page frames, slab, kmalloc, vmalloc, GFP flags *(expanded)* |
+| 11 | The Virtual Filesystem | superblock, inode, dentry, file objects, file_operations, sysfs |
+| 12 | The Block I/O Layer | gendisk, block_device_operations, I/O schedulers, bio, buffercache vs direct I/O |
+| 13 | Disk Filesystems | ext2 (indirect blocks), ext3 (journaling modes), ext4 (extent trees, delayed allocation) |
+| 14 | proc Filesystem | /proc/[pid]/, seq_file interface, proc_create, custom entries, sysctl |
+| 15 | Networking in the Kernel | Socket layer, sk_buff, network device drivers, NAPI, netfilter hooks |
+| 16 | Debugging and Portability | printk, oops, kgdb, ftrace, KASAN, submitting patches, kernel community |
+
+---
+
+import Content from './01-content.mdx'
+import Analysis from './02-analysis.mdx'
+import Narration from './03-narration.mdx'
+
+<Content />
+
+---
+
+<hr />
+
+## Why This Book Matters
+
+Before Love, the best Linux kernel book for developers was Bovet & Cesati's *Understanding the Linux Kernel* — readable, but heavily x86-specific and more about reading the kernel than writing for it. *Linux Kernel Development* took a different approach: it teaches the kernel as a set of subsystems a developer might need to extend, optimize, or debug.
+
+That decision — to write for the contributor, not just the student — is what made this book indispensable. Within months of the first edition's release, attendees at Linux conferences were citing Love's explanation of `task_struct` and `clone()` as the clearest available anywhere. The 3rd edition extended that reputation to the VFS, memory, and synchronization chapters.
+
+The book remains the recommended starting point for anyone serious about Linux kernel work, and its chapter on submitting patches is still the clearest practical guide to becoming a recognized mainline contributor.
+
+<Analysis />
+
+---
+
+<Narration />

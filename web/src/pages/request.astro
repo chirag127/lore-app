@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Ornament } from '../components/ui/Primitives.tsx';
+import { BookRequestForm } from '../components/request/BookRequestForm.tsx';
+---
+<BaseLayout title="Request a book" description="Request a new book for the atlas.">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <Ornament client:load>Request</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-3 text-balance">
+      Bring a new book into the atlas
+    </h1>
+    <p class="text-ink-soft text-pretty max-w-2xl text-sm sm:text-base">
+      Fill the form. We'll open a pre-filled GitHub Issue for you to submit.
+      Once it's labeled, our LangGraph pipeline researches, writes, validates,
+      and commits the four knowledge artifacts — typically within a few
+      minutes. No backend, no card.
+    </p>
+    <div class="mt-8 sm:mt-10">
+      <BookRequestForm client:load />
+    </div>
+  </section>
+</BaseLayout>

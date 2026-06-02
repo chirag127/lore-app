@@ -1,0 +1,31 @@
+{
+  "slug": "steal-like-an-artist-austin-kleon",
+  "title": "Steal Like an Artist: 10 Things Nobody Told You About Being Creative",
+  "subtitle": "An Illustrated Guide to Creativity",
+  "authors": [
+    {
+      "name": "Austin Kleon",
+      "knownFor": ["Steal Like an Artist", "Show Your Work", "Keep Going"]
+    }
+  ],
+  "publicationYear": "2012",
+  "isbn": "9780761169253",
+  "publisher": "Workman Publishing",
+  "language": "English",
+  "pageCount": 160,
+  "genres": ["Creativity", "Self-Help", "Art", "Non-Fiction"],
+  "subjects": ["Creativity", "Art", "Inspiration"],
+  "themes": ["Creativity", "Inspiration", "Learning from Others", "Remix Culture", "Originality"],
+  "tags": ["creativity", "art", "inspiration", "stealing", "originality", "austin-kleon", "process"],
+  "difficulty": "beginner",
+  "estimatedReadingHours": 2,
+  "estimatedListeningMinutes": 120,
+  "authorBiography": "Austin Kleon is an artist, writer, and speaker. His work has been translated into over 40 languages and featured by major media outlets.",
+  "authorNationality": "American",
+  "authorBorn": null,
+  "authorKnownFor": ["Steal Like an Artist", "Show Your Work", "Keep Going"],
+  "keyIdeas": ["Steal like an artist", "Start copying", "Fake it till you make it", "Creative work is a mashup", "The world needs your voice"],
+  "keyTakeaways": ["Realize that nothing is original", "Copy others as practice before developing your own voice", "Share what you love to build your audience", "Keep a daily logbook or commonplace book", "Travel and change your environment to spark creativity"],
+  "relatedBooks": ["show-your-work-austin-kleon", "keep-going-austin-kleon", "the-war-of-art-steven-pressfield", "creative-confidence-tom-kelly"],
+  "excerpt": "Nothing is original, so embrace influence, collect ideas, and remix them into your own creative voice."
+}

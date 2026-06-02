@@ -1,0 +1,94 @@
+---
+title: Overview
+---
+
+## Overview
+
+*Build a Large Language Model (From Scratch)* (2024) by Sebastian Raschka
+is a hands-on guide that walks readers through creating a GPT-style large
+language model entirely from first principles. No high-level libraries, no
+black boxes — just Python, PyTorch, and careful explanations of every
+component. The LLM you build runs on any modern laptop and optionally
+leverages GPUs for faster training.
+
+The book follows the Feynman principle: *I don't understand anything I
+can't build.* Each chapter incrementally constructs a working model, from
+text tokenization to multi-head attention, through pretraining and
+fine-tuning into a chatbot that follows instructions.
+
+---
+
+## Executive Summary
+
+Raschka organizes the journey into seven chapters that mirror the real
+pipeline for producing a production-grade LLM:
+
+| Chapter | Focus | What You Build |
+|---------|-------|----------------|
+| 1 | LLM fundamentals | Mental model of the full pipeline |
+| 2 | Text data & tokenization | Byte-pair encoding, input-target pairs |
+| 3 | Attention mechanisms | Self-attention, causal, multi-head |
+| 4 | GPT model architecture | A complete GPT-2-style text generator |
+| 5 | Pretraining | Training loop, loss, weight loading |
+| 6 | Classification fine-tuning | Spam classifier on your LLM |
+| 7 | Instruction fine-tuning | A chatbot that follows instructions |
+
+---
+
+## Key Takeaways
+
+1. **LLMs are next-token predictors.** Everything else — reasoning,
+   translation, summarization — emerges from this simple objective.
+
+2. **Attention is the only communication channel between tokens.**
+   Masked (causal) attention ensures autoregressive generation.
+   Multi-head attention lets the model learn diverse relationships.
+
+3. **Byte-pair encoding bridges words and tokens.** BPE splits text into
+   subword units, balancing vocabulary size against sequence length.
+
+4. **Pretraining is expensive; fine-tuning is cheap.** The book
+   demonstrates both, then shows how loading GPT-2 weights skips
+   months of training.
+
+5. **Fine-tuning comes in two flavors.** Classification fine-tuning
+   replaces the output head. Instruction fine-tuning trains on
+   prompt-response pairs to follow human instructions.
+
+6. **A laptop is enough to understand LLMs.** The toy model (~124M
+   parameters) trains in hours on consumer hardware. You don't need a
+   datacenter to learn how LLMs work.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| ML engineers wanting LLM internals | The most thorough code-first walkthrough |
+| API-power-users seeking depth | Understand what happens after the API call |
+| NLP / deep learning students | Bridges textbook theory with working code |
+| Anyone who feels LLMs are a black box | Builds the box, then opens it |
+
+---
+
+## Who Should Skip
+
+- Readers seeking only high-level overviews — the book is relentlessly
+  code-driven
+- Anyone without intermediate Python skills and basic ML knowledge
+- Practitioners looking for production deployment guidance
+
+---
+
+## Final Verdict
+
+*Build a Large Language Model (From Scratch)* is the definitive hands-on
+guide to understanding LLMs from the inside out. Its uncompromising
+code-first approach demands effort but delivers unmatched depth. The
+trade-off is real: this is not a book for casual readers or AI consumers.
+It is for builders. For those willing to put in the work, the reward is
+a genuine understanding of how generative AI works — not at the API
+level, but at the tensor level.
+
+**Rating: 9.0/10** — The best learn-by-building LLM book available.

@@ -1,0 +1,128 @@
+{
+  "slug": "release-it-michael-nygard",
+  "title": "Release It!",
+  "subtitle": "Design and Deploy Production-Ready Software",
+  "author": "Michael T. Nygard",
+  "description": "A single dramatic software failure can cost millions — but can be avoided with simple changes to design and architecture. This book shows how to create systems that run longer, fail less, and recover better.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781680502398-L.jpg",
+  "isbn10": "1680502395",
+  "isbn13": "9781680502398",
+  "isbnFirstEdition": "9780978739218",
+  "pages": 376,
+  "publishedYear": 2018,
+  "firstPublishedYear": 2007,
+  "publisher": "Pragmatic Bookshelf",
+  "openlibrarySlug": "OL32620800M",
+  "genres": [
+    "Technology",
+    "Software Engineering",
+    "Software Architecture",
+    "DevOps"
+  ],
+  "subjects": [
+    "Production-ready software",
+    "Stability patterns",
+    "Distributed systems",
+    "System design",
+    "Reliability engineering",
+    "Capacity planning",
+    "Operations"
+  ],
+  "themes": [
+    "Software must be designed for the hostile reality of production, not the safety of development",
+    "Stability comes from intentional architectural patterns, not heroic debugging",
+    "Integration points are the #1 source of production failures",
+    "Failures cascade through resource exhaustion — isolate and contain them",
+    "Operations is not an afterthought; it must be architected from day one",
+    "Cynical software expects everything to break and is never surprised"
+  ],
+  "tags": [
+    "stability-patterns",
+    "circuit-breaker",
+    "bulkhead",
+    "timeouts",
+    "production-ready",
+    "software-architecture",
+    "distributed-systems",
+    "resilience",
+    "chaos-engineering",
+    "devops",
+    "capacity-planning",
+    "failover",
+    "cascading-failure",
+    "integration-points",
+    "microservices",
+    "michael-nygard",
+    "pragmatic-programmer",
+    "release-it",
+    "site-reliability",
+    "antipatterns"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "goodreadsRating": 4.3,
+  "awards": [
+    "Dr. Dobb's Jolt Award Finalist",
+    "Pragmatic Programmers Best Seller",
+    "Widely considered the definitive work on production-ready software",
+    "Popularized the Circuit Breaker pattern across the software industry"
+  ],
+  "excerpt": "A single dramatic software failure can cost a company millions of dollars — but can be avoided with simple changes to design and architecture. This new edition of the best-selling industry standard shows you how to create systems that run longer, with fewer failures, and recover better when bad things happen.",
+  "keyIdeas": [
+    "Integration points are the most dangerous part of any system — every call to another system is a potential failure",
+    "Cascading failures propagate through resource exhaustion: blocked threads drain pools, taking down healthy components",
+    "Circuit Breaker prevents wasted work by failing fast when a dependency is unhealthy, then testing recovery",
+    "Bulkheads partition system resources so failure in one compartment cannot sink the whole ship",
+    "Timeouts are the simplest and most effective stability pattern — always set them everywhere",
+    "Handshaking lets backends tell frontends to throttle, preventing overload death spirals",
+    "Fail Fast: reserve resources only after validation, so you don't waste capacity on doomed requests",
+    "Systems must be cynical — expect network failures, slow responses, corrupted data, and malicious traffic"
+  ],
+  "keyTakeaways": [
+    "Use Circuit Breakers around every integration point to prevent cascading failures",
+    "Apply Timeouts to every outbound call — unbounded waits are the leading cause of thread exhaustion",
+    "Partition resources with Bulkheads so a failure in one feature doesn't take down unrelated features",
+    "Implement Load Shedding and Handshaking to handle traffic spikes gracefully",
+    "Design for zero-downtime deployments and continuous delivery from the start",
+    "Monitor at two levels: internal health checks AND external synthetic transactions",
+    "Run chaos experiments (disaster simulations) to find weaknesses before they find you",
+    "Don't chase 100% test coverage — chase production resilience instead"
+  ],
+  "whoShouldRead": [
+    "Software developers who want to stop getting paged at 3 AM",
+    "Architects designing distributed systems that must survive real-world traffic",
+    "DevOps and SRE engineers responsible for production uptime",
+    "Engineering leaders building resilient platforms and services"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Site Reliability Engineering",
+      "slug": "site-reliability-engineering-betsy-beyer"
+    },
+    {
+      "title": "Building Microservices",
+      "slug": "building-microservices-sam-newman"
+    },
+    {
+      "title": "The Art of Scalability",
+      "slug": "the-art-of-scalability-martin-abbott"
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "slug": "designing-data-intensive-applications-martin-kleppmann"
+    },
+    {
+      "title": "The Pragmatic Programmer",
+      "slug": "the-pragmatic-programmer-andrew-hunt"
+    },
+    {
+      "title": "Monolith to Microservices",
+      "slug": "monolith-to-microservices-sam-newman"
+    },
+    {
+      "title": "Fundamentals of Software Architecture",
+      "slug": "fundamentals-of-software-architecture-mark-richards"
+    }
+  ]
+}

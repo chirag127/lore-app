@@ -1,0 +1,88 @@
+{
+  "slug": "i-will-teach-you-to-be-rich-ramit-sethi",
+  "title": "I Will Teach You To Be Rich",
+  "subtitle": "No Guilt. No Excuses. No B.S. Just a 6-Week Program That Works",
+  "author": "Ramit Sethi",
+  "authorFull": "Ramit Singh Sethi",
+  "isbn": "9781523505742",
+  "isbnOriginal": "9780761147480",
+  "publisher": "Workman Publishing Company",
+  "publishedYear": 2019,
+  "publishedYearOriginal": 2009,
+  "pages": 352,
+  "language": "English",
+  "genres": ["Personal Finance", "Self-Help", "Investing"],
+  "difficulty": "Easy",
+  "readingTimeMinutes": 360,
+  "goodreadsRating": 4.2,
+  "goodreadsRatingsCount": 64223,
+  "amazonRating": 4.6,
+  "amazonRatingsCount": 23458,
+  "series": null,
+  "imageUrl": null,
+  "tags": [
+    "personal-finance",
+    "investing",
+    "budgeting",
+    "credit-cards",
+    "automation",
+    "negotiation",
+    "behavioral-psychology",
+    "retirement",
+    "debt-management",
+    "conscious-spending"
+  ],
+  "authors": [
+    {
+      "name": "Ramit Sethi",
+      "birthYear": 1982,
+      "birthDate": "1982-06-30",
+      "nationality": "American",
+      "education": "Stanford University (BA in Science, Technology & Society; MA in Sociology)",
+      "knownFor": [
+        "I Will Teach You To Be Rich (book & blog)",
+        "Netflix series How to Get Rich (2023)",
+        "I Will Teach You To Be Rich podcast",
+        "Founder of GrowthLab and IWT Brands"
+      ],
+      "website": "https://www.iwillteachyoutoberich.com",
+      "spouse": "Cassandra Campa (m. 2018)"
+    }
+  ],
+  "keyConcepts": [
+    "6-Week Program",
+    "Conscious Spending Plan (4 Buckets)",
+    "Financial Automation System",
+    "The 85% Rule",
+    "Negotiation Scripts",
+    "Credit Card Optimization",
+    "Ladder of Personal Finance",
+    "Long-Term Passive Investing (Index/Lifecycle Funds)",
+    "Rich Life Philosophy",
+    "Big Wins Over Latte-Factor Thinking",
+    "Invisible Money Scripts",
+    "Guilt-Free Spending"
+  ],
+  "editions": [
+    {
+      "edition": "First Edition",
+      "isbn": "9780761147480",
+      "publishedYear": 2009,
+      "pages": 272,
+      "format": "Paperback",
+      "label": "Original release"
+    },
+    {
+      "edition": "Second Edition",
+      "isbn": "9781523505742",
+      "publishedYear": 2019,
+      "pages": 352,
+      "format": "Paperback",
+      "label": "10th anniversary, expanded"
+    }
+  ],
+  "affiliateLinks": {
+    "amazon": "https://www.amazon.com/dp/1523505745",
+    "goodreads": "https://www.goodreads.com/book/show/40591670-i-will-teach-you-to-be-rich"
+  }
+}

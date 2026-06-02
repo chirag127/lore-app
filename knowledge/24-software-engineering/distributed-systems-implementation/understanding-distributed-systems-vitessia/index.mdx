@@ -1,0 +1,131 @@
+import { BookHeader } from '@bookatlas/components'
+import { BookTableOfContents } from '@bookatlas/components'
+
+<BookHeader
+title="Understanding Distributed Systems"
+subtitle="What Every Developer Should Know About Distributed Systems"
+authors={['Vitessia']}
+publisher="Self-Published"
+pages={280}
+readingTime="7h 30m"
+coverImage="/books/understanding-distributed-systems-vitessia/cover.webp"
+topics={[
+'Distributed Systems',
+'CAP Theorem',
+'Consensus Protocols',
+'Clocks and Time',
+'Data Consistency',
+'Failure Handling',
+'Sharding and Partitioning',
+'Replication',
+'Microservices',
+'Distributed Transactions',
+'Circuit Breakers',
+'Idempotency',
+'Network Failures'
+]}
+tags={[
+'distributed-systems',
+'cap-theorem',
+'consensus',
+'clocks',
+'consistency',
+'failure-handling',
+'sharding',
+'partitioning',
+'replication',
+'microservices',
+'distributed-transactions',
+'circuit-breaker',
+'idempotency',
+'retries',
+'backoff',
+'bulkheads',
+'two-phase-commit',
+'saga',
+'linearizability',
+'eventual-consistency',
+'vector-clocks',
+'flp-impossibility',
+'causal-consistency',
+'sequential-consistency'
+]}
+/>
+
+## Overview
+
+*Understanding Distributed Systems* is a developer-first guide to the fundamental concepts that underpin every distributed system in production today. Written by Vitessia, a writer and developer focused on making distributed systems accessible, the book answers a single, urgent question: what must every working developer know about distributed systems before they ship code that runs across multiple machines?
+
+The book is structured as a progressive journey — starting from the hard mathematical truths that make distributed systems fundamentally different from single-machine programming (CAP theorem, FLP impossibility), through the subtleties of time and ordering (NTP, logical clocks, vector clocks, hybrid logical clocks, and the family of consistency models), into practical failure-handling patterns (retries with exponential backoff, idempotency, circuit breakers, bulkheads), and on to data management (sharding, partitioning, replication strategies) and coordination (consensus protocols, total order broadcast, quorum consensus). It closes with real-world composition and dataflow concerns: microservices communication, distributed transactions (two-phase commit, three-phase commit, saga), and the art of making practical trade-offs when choosing which system to build.
+
+The writing is intentionally opinionated but grounded. Vitessia does not merely catalogue theory — every concept is motivated by the failure modes that make it necessary and connected to the engineering decisions it informs.
+
+## About the Author
+
+**Vitessia** is a writer and developer focused on distilling the hard-won lessons of distributed systems into practical, developer-friendly guidance. With a background in building production systems at scale, Vitessia writes to bridge the gap between academic theory and the daily reality of engineers who must reason about network partitions, clock skew, partial failures, and consistency trade-offs without a PhD in distributed computing. "What every developer should know about distributed systems" is the organising principle of the work.
+
+## Table of Contents
+
+<BookTableOfContents
+sections={[
+{
+title: 'Introduction',
+items: [
+'Why Distributed Systems Are Different',
+'What This Book Covers',
+'Who Should Read This Book'
+]
+},
+{
+title: 'Part I — The Foundations: Networks, Time, and Ordering',
+items: [
+'Chapter 1: Networks Are Unreliable',
+'Chapter 2: Clocks Are Not Consistent',
+'Chapter 3: Ordering and Coordination'
+]
+},
+{
+title: 'Part II — Handling Failure',
+items: [
+'Chapter 4: Retries and Backoff',
+'Chapter 5: Idempotency',
+'Chapter 6: Circuit Breakers',
+'Chapter 7: Bulkheads'
+]
+},
+{
+title: 'Part III — Data Management',
+items: [
+'Chapter 8: Sharding and Partitioning',
+'Chapter 9: Replication Strategies',
+'Chapter 10: Practical Trade-Offs'
+]
+},
+{
+title: 'Part IV — Communication, Transactions, and Composition',
+items: [
+'Chapter 11: Microservices Communication',
+'Chapter 12: Distributed Transactions — Two-Phase Commit',
+'Chapter 13: Three-Phase Commit and Saga',
+'Chapter 14: Composition and Dataflows'
+]
+}
+]}
+/>
+
+## Key Themes
+
+| Theme | Description |
+|-------|-------------|
+| **Networks Are Unreliable** | Every distributed system must be built on the assumption that networks fail, messages are lost, and latency is unbounded |
+| **CAP Theorem & FLP Impossibility** | Hard mathematical constraints that rule out certain classes of system design — you cannot escape them, only understand and work around them |
+| **Time Is Hard** | Physical clocks drift, NTP can fail, and ordering events across machines requires explicit mechanisms (logical clocks, vector clocks, hybrid logical clocks) |
+| **Consistency Is a Spectrum** | From linearizability through sequential and causal to eventual consistency — each model makes different promises about what a reader sees and when |
+| **Failure Is Normal** | Partial failures, retries, idempotency, circuit breakers, and bulkheads are not edge cases; they are the daily operational environment |
+| **No Universal Best Choice** | Practical trade-offs are the central skill: choosing the right consistency level, the right replication strategy, the right transaction model for your specific workload |
+| **Communication Costs** | Microservices do not eliminate complexity — they transform it. The network is now your bus, and it is unreliable |
+| **Transactions Across Services Are Hard** | Two-phase commit gives atomicity at the cost of availability during partitions; sagas give availability at the cost of immediate consistency |
+
+## Reader Profile
+
+Software developers who build or maintain services that communicate over a network — backend engineers, platform engineers, DevOps practitioners, and senior developers making architectural decisions. The book is deliberately accessible: it requires no prior specialized knowledge of distributed systems theory, but it does expect comfort with programming concepts and basic networking. Ideal for developers who have encountered production failures (data inconsistency, cascading outages, mysterious latency spikes) and want the conceptual framework to understand why they happened and how to prevent them.

@@ -1,0 +1,82 @@
+{
+  "slug": "walden-henry-david-thoreau",
+  "title": "Walden",
+  "subtitle": "Walden; or, Life in the Woods",
+  "author": "Henry David Thoreau",
+  "publicationYear": 1854,
+  "publisher": "Ticknor and Fields",
+  "publisherLocation": "Boston",
+  "originalLanguage": "en",
+  "pageCount": 288,
+  "isbnEditions": [
+    {
+      "publisher": "Penguin Classics",
+      "isbn": "9780140390445",
+      "year": 1986
+    },
+    {
+      "publisher": "Dover Thrift Editions",
+      "isbn": "9780486284958",
+      "year": 1995
+    },
+    {
+      "publisher": "Princeton University Press",
+      "isbn": "9780691168656",
+      "year": 2016
+    }
+  ],
+  "genres": [
+    "Memoir",
+    "Philosophy",
+    "Nature Writing",
+    "Transcendentalism",
+    "American Literature"
+  ],
+  "subjects": [
+    "Simple living",
+    "Self-reliance",
+    "Transcendentalism",
+    "Nature",
+    "Solitude",
+    "Civil disobedience",
+    "Minimalism"
+  ],
+  "themes": [
+    "Simplicity and self-reliance",
+    "Solitude and contemplation",
+    "Nature as spiritual teacher",
+    "Critique of materialism and progress",
+    "Spiritual awakening and deliberate living",
+    "Man as part of nature",
+    "The unjust state and moral integrity"
+  ],
+  "tags": [
+    "henry-david-thoreau",
+    "walden",
+    "transcendentalism",
+    "american-literature",
+    "nature-writing",
+    "simple-living",
+    "self-reliance",
+    "solitude",
+    "philosophy",
+    "classic",
+    "memoir",
+    "concord",
+    "walden-pond",
+    "civil-disobedience",
+    "individualism",
+    "minimalism",
+    "nonconformity",
+    "1854",
+    "19th-century",
+    "essays",
+    "wilderness",
+    "spirituality",
+    "environmentalism"
+  ],
+  "difficulty": "medium",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 480,
+  "excerpt": "I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived."
+}

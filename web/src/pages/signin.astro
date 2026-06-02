@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { AuthMenu } from '../components/auth/AuthMenu.tsx';
+import { Ornament } from '../components/ui/Primitives.tsx';
+---
+<BaseLayout title="Sign in" description="Sign in to KnowledgeAtlas.">
+  <section class="max-w-md mx-auto px-4 sm:px-6 py-24">
+    <Ornament client:load>Sign in</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-8 text-balance">
+      One sign-in, every device
+    </h1>
+    <p class="text-ink-soft text-pretty mb-8">
+      Use GitHub, Google, or a one-tap email link. Your notes, reviews, and
+      collections follow you.
+    </p>
+    <AuthMenu client:load />
+    <p class="text-xs text-ink-mute mt-8">
+      Anonymous browsing is allowed. Sign in is required for notes, reviews,
+      bookmarks, collections, and reading progress.
+    </p>
+  </section>
+</BaseLayout>

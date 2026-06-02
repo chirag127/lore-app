@@ -1,0 +1,18 @@
+{
+  "slug": "problems-from-the-book-andreescu-dospinescu",
+  "title": "Problems from the Book",
+  "subtitle": "Advanced Problem-Solving in Number Theory and Beyond",
+  "author": "Titu Andreescu, Gabriel Dospinescu",
+  "publicationYear": 2008,
+  "isbn": "9780979926907",
+  "publisher": "XYZ Press",
+  "language": "en",
+  "genres": ["Mathematics", "Number Theory", "Problem Book", "Olympiad Training"],
+  "subjects": ["Divisibility", "Primes", "Congruences", "Diophantine Equations", "Inequalities", "Functional Equations", "Polynomials"],
+  "themes": ["Extreme Problem-Solving", "Mathematical Creativity", "Advanced Techniques", "IMO+ Level Rigor"],
+  "tags": ["number theory", "Andreescu", "Dospinescu", "problem solving", "olympiad", "advanced", "competition", "IMO", "inequalities", "functional equations"],
+  "difficulty": "very advanced",
+  "estimatedReadingHours": 50,
+  "estimatedListeningMinutes": 3000,
+  "excerpt": "An extraordinary collection of the most challenging problems in number theory and related fields, designed for elite competitors aiming beyond the IMO level, with detailed solutions that teach advanced mathematical thinking."
+}

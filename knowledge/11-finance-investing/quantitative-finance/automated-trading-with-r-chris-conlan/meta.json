@@ -1,0 +1,42 @@
+{
+  "slug": "automated-trading-with-r-chris-conlan",
+  "title": "Automated Trading with R",
+  "subtitle": "Quantitative Research and Platform Development",
+  "author": "Chris Conlan",
+  "isbn": "9781484221778",
+  "isbn10": "148422177X",
+  "publisher": "Apress",
+  "originalPublicationYear": 2016,
+  "pages": 205,
+  "language": "en",
+  "subjects": [
+    "Automated trading",
+    "R programming",
+    "Quantitative finance",
+    "Trading strategies",
+    "Backtesting",
+    "Data science"
+  ],
+  "amazonRating": 3.5,
+  "goodreadsRating": 3.0,
+  "goodreadsRatingsCount": 7,
+  "difficulty": "Hard",
+  "readingTimeHours": 8,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781484221778-L.jpg",
+  "openLibraryKey": "OL27231194M",
+  "authorBio": "Chris Conlan is an independent data scientist and quantitative researcher specializing in trading algorithms. He attended the University of Virginia and has worked on algorithmic trading systems across multiple asset classes. He is also the author of Algorithmic Trading with Python.",
+  "keyConcepts": [
+    "R for quantitative finance",
+    "Backtesting framework",
+    "Strategy optimization",
+    "Order execution",
+    "Data management",
+    "Performance measurement",
+    "Broker integration"
+  ],
+  "notableQuotes": [
+    "The goal of automated trading is to remove human emotion from the decision-making process.",
+    "A trading strategy is only as good as its backtesting framework.",
+    "The hardest part of automated trading is not the strategy — it's the infrastructure."
+  ]
+}

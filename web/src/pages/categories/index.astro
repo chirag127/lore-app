@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const books = await getCollection('books');
+
+// Build category hierarchy
+interface CatNode {
+  name: string;
+  slug: string;
+  count: number;
+  subcategories: Map<string, { name: string; count: number; slug: string }>;
+}
+
+const cats = new Map<string, CatNode>();
+
+for (const b of books) {
+  const cat = b.data.category ?? 'uncategorized';
+  const sub = b.data.subcategory ?? 'general';
+  
+  if (!cats.has(cat)) {
+    cats.set(cat, { name: cat, slug: cat, count: 0, subcategories: new Map() });
+  }
+  const c = cats.get(cat)!;
+  c.count++;
+  
+  if (!c.subcategories.has(sub)) {
+    c.subcategories.set(sub, { name: sub, count: 0, slug: sub });
+  }
+  c.subcategories.get(sub)!.count++;
+}
+
+const sorted = Array.from(cats.values()).sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<BaseLayout title="Categories — KnowledgeAtlas" description="Browse all 32 knowledge categories and their subcategories.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <p class="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-terracotta-500">
+      The Atlas, organized
+    </p>
+    <h1 class="font-display text-display-lg font-light mt-4 mb-2 text-balance">
+      Categories
+    </h1>
+    <p class="text-ink-soft text-pretty max-w-2xl">
+      The KnowledgeAtlas taxonomy: 32 top-level categories spanning all of human knowledge,
+      organized by the PMEST principle from foundational to applied.
+    </p>
+
+    <div class="mt-12 sm:mt-16 space-y-8 sm:space-y-12">
+      {sorted.map((cat) => (
+        <section class="border-t border-rule pt-6 sm:pt-8">
+          <div class="flex flex-wrap items-baseline gap-3 sm:gap-4 mb-4">
+            <h2 class="font-display text-xl sm:text-2xl font-light">
+              <a href={`/category/${cat.slug}`} class="hover:text-terracotta-500 transition-colors">
+                {cat.name}
+              </a>
+            </h2>
+            <span class="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-ink-mute">
+              {cat.count} {cat.count === 1 ? 'book' : 'books'}
+            </span>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {Array.from(cat.subcategories.values()).sort((a, b) => a.name.localeCompare(b.name)).map((sub) => (
+              <a
+                href={`/category/${cat.slug}/${sub.slug}`}
+                class="group flex items-center justify-between p-3 border border-rule hover:border-terracotta-400 transition-colors"
+              >
+                <span class="text-sm text-ink-soft group-hover:text-ink transition-colors">{sub.name}</span>
+                <span class="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-ink-mute">{sub.count}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

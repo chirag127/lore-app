@@ -1,0 +1,17 @@
+{
+  "slug": "abstract-algebra-dummit-foote",
+  "title": "Abstract Algebra",
+  "author": "David S. Dummit, Richard M. Foote",
+  "isbn13": "9780471433347",
+  "publisher": "John Wiley & Sons",
+  "year": 1991,
+  "pages": 944,
+  "language": "en",
+  "category": "22-mathematics-statistics",
+  "subcategory": "algebra-and-number-theory",
+  "genres": ["mathematics", "abstract-algebra", "graduate-textbook"],
+  "excerpt": "Widely acclaimed as the definitive graduate abstract algebra textbook, covering groups, rings, fields, modules, and Galois theory with exceptional clarity and depth.",
+  "cover": "https://covers.openlibrary.org/b/isbn/9780471433347-L.jpg",
+  "difficulty": "advanced",
+  "tags": ["abstract-algebra", "group-theory", "ring-theory", "galois-theory", "graduate-textbook"]
+}

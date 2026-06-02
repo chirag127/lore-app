@@ -1,0 +1,15 @@
+{
+  "id": "the-art-of-electronics-horowitz-hill",
+  "title": "The Art of Electronics",
+  "slug": "the-art-of-electronics-horowitz-hill",
+  "authors": ["Paul Horowitz", "Winfield Hill"],
+  "year": 2015,
+  "category": "26-technology-engineering",
+  "subcategory": "electrical-and-electronics-engineering",
+  "pages": 1220,
+  "isbn": "9780521809269",
+  "language": "en",
+  "genres": ["electronics", "electrical-engineering", "circuit-design", "reference", "textbook"],
+  "source": "generated",
+  "generatedAt": "2026-06-12"
+}

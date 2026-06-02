@@ -1,0 +1,56 @@
+{
+  "slug": "effective-python-brett-slinkin",
+  "title": "Effective Python",
+  "subtitle": "90 Specific Ways to Write Better Python",
+  "author": "Brett Slatkin",
+  "publicationYear": 2019,
+  "isbn": "9780134853987",
+  "publisher": "Addison-Wesley (Effective Software Development Series)",
+  "language": "en",
+  "pageCount": 480,
+  "genres": [
+    "Programming",
+    "Technology",
+    "Computer Science",
+    "Python"
+  ],
+  "subjects": [
+    "Python Programming",
+    "Software Engineering Best Practices",
+    "Idiomatic Python",
+    "Code Quality",
+    "Software Design"
+  ],
+  "themes": [
+    "Pythonic code is idiomatic Python",
+    "Prefer simple over clever",
+    "Use standard library before rolling your own",
+    "Write code that is readable and maintainable",
+    "Test-driven development and defensive programming"
+  ],
+  "piplinesUsed": "AI",
+  "tags": [
+    "python",
+    "programming",
+    "software-engineering",
+    "best-practices",
+    "idiomatic-python",
+    "code-quality",
+    "testing",
+    "concurrency",
+    "metaclasses",
+    "generators",
+    "decorators",
+    "type-annotations",
+    "productivity"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 14,
+  "estimatedListeningMinutes": 840,
+  "awards": [
+    "One of the highest-rated Python books on Amazon",
+    "Used as reference at Google and other tech companies",
+    "Translated into multiple languages"
+  ],
+  "excerpt": "The goal of this book is to help you become a more effective Python programmer. It covers the 'Pythonic' way to solve problems — the approach that experienced Python programmers use every day."
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "talk-like-ted-carmine-gallo",
+  "title": "Talk Like TED: The 9 Public-Speaking Secrets of the World's Top Minds",
+  "author": "Carmine Gallo",
+  "isbn": "9781250041128",
+  "publisher": "St. Martin's Press",
+  "publishedDate": "2014-03-04",
+  "pageCount": 278,
+  "language": "en",
+  "categories": ["Business Communication", "Public Speaking", "Self-Help", "Presentation Skills"],
+  "tags": [
+    "public-speaking", "ted-talks", "presentation-skills",
+    "storytelling", "communication", "persuasion",
+    "business-communication", "leadership"
+  ],
+  "goodreadsRating": 3.88,
+  "goodreadsRatingsCount": 20601,
+  "goodreadsReviewsCount": 1762,
+  "amazonRating": 4.5,
+  "amazonRatingsCount": 4200,
+  "bestsellerStatus": [
+    "Wall Street Journal Top 10 Bestseller",
+    "New York Times Bestseller"
+  ],
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250041128-L.jpg",
+  "description": "Public speaking coach and bestselling author Carmine Gallo explores what makes a great presentation by examining the widely acclaimed TED Talks, which have redefined the elements of a successful presentation and become the gold standard for public speaking. After analyzing hundreds of TED presentations and interviewing the most popular TED speakers alongside researchers in psychology, communications, and neuroscience, Gallo reveals the nine secrets of all successful TED presentations. The book is organized into three categories—Emotional, Novel, and Memorable—each containing three secrets that anyone can apply to deliver presentations that are engaging, persuasive, and memorable.",
+  "authorBio": "Carmine Gallo (born July 26, 1965) is a three-time Wall Street Journal bestselling author, Harvard instructor in executive education at the Harvard Graduate School of Design, and communication advisor for the world's most admired brands. A former journalist and news anchor with an MS in Broadcast Journalism from Northwestern University's Medill School of Journalism and a BA from UCLA, Gallo is President of Gallo Communications Group. He writes the 'Your Communications Coach' column for Forbes.com and has been featured in The Wall Street Journal, The New York Times, Success Magazine, Bloomberg Businessweek, and on CNBC, CNN, and ABC's 20/20. His clients include CEOs and senior leaders at Amazon Web Services, Apple, Google, Microsoft, Coca-Cola, Intel, and other Fortune 500 companies. He is also the author of The Presentation Secrets of Steve Jobs, The Apple Experience, The Storyteller's Secret, Five Stars, and The Bezos Blueprint.",
+  "authorWebsite": "https://www.carminegallo.com/",
+  "difficulty": "Easy",
+  "readingTimeMinutes": 360,
+  "relatedBooks": [
+    {
+      "title": "Presentation Zen",
+      "author": "Garr Reynolds",
+      "reason": "Visual design and delivery principles for presentations"
+    },
+    {
+      "title": "Resonate",
+      "author": "Nancy Duarte",
+      "reason": "Structuring presentations that move audiences"
+    },
+    {
+      "title": "The Art of Public Speaking",
+      "author": "Dale Carnegie",
+      "reason": "Timeless fundamentals of effective public speaking"
+    },
+    {
+      "title": "Made to Stick",
+      "author": "Chip Heath & Dan Heath",
+      "reason": "Why some ideas survive and others die"
+    },
+    {
+      "title": "TED Talks: The Official TED Guide to Public Speaking",
+      "author": "Chris Anderson",
+      "reason": "The definitive companion volume by TED's curator"
+    }
+  ],
+  "_opencode": {
+    "createdWith": "BookAtlas Pipeline",
+    "model": "deepseek-v4-flash-free",
+    "generatedAt": "2026-06-04T00:00:00.000Z"
+  }
+}

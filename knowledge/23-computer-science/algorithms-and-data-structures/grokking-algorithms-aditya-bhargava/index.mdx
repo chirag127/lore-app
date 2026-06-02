@@ -1,0 +1,109 @@
+## Overview
+
+*You have a sorted list of 240,000 names. How many steps does it take to find "Aditya Bhargava" using simple search? Up to 240,000. Using binary search? 18. That's the power of a good algorithm — and that's the first thing this book teaches you.*
+
+*Grokking Algorithms* is the rare technical book that genuinely delivers on its promise. Aditya Bhargava — a software engineer with a fine arts background — hand-drew every illustration to make algorithms click visually. The result is an algorithms primer that feels less like a textbook and more like a patient tutor drawing on a whiteboard.
+
+The book covers 11 chapters, each built around a single core algorithm or technique. The selection is deliberate: only algorithms the author found useful in his own programming practice. No insertion sort. No red-black trees. Instead: binary search, selection sort, recursion, quicksort, hash tables, breadth-first search, Dijkstra's algorithm, greedy algorithms, dynamic programming, and k-nearest neighbors. Each gets a chapter of clear explanation, hand-drawn diagrams, Python code, and exercises.
+
+The subtitle — "for programmers and other curious people" — is accurate. The book assumes you know basic programming (variables, loops, functions) but nothing about algorithms. It teaches Big O notation by drawing a grid of operations. It teaches recursion by showing a stack of sticky notes. It teaches dynamic programming with a grid you fill in cell by cell. The philosophy is "just-in-time" teaching: you learn only what you need, exactly when you need it.
+
+---
+{}
+---------|-------------------|-------------|
+| 1 | Binary Search, Big O | Search a sorted list of n items in O(log n) steps. Big O describes how fast an algorithm grows, not seconds. |
+| 2 | Selection Sort | Repeatedly find the smallest element and move it. Runs in O(n²). Also covers arrays vs. linked lists. |
+| 3 | Recursion | A function that calls itself. Every recursive function needs a base case (stop) and a recursive case (continue). |
+| 4 | Quicksort (D&C) | Divide and conquer: pick a pivot, partition around it, recursively sort. Average O(n log n). |
+| 5 | Hash Tables | O(1) lookups via a hash function + array. Critical for caching, deduplication, and lookups. |
+| 6 | Breadth-First Search | Find the shortest path in an unweighted graph. O(V+E). Uses a queue (FIFO). |
+| 7 | Dijkstra's Algorithm | Find the shortest path in a weighted graph (no negative edges). Uses a priority queue. |
+| 8 | Greedy Algorithms | At each step, pick the locally optimal choice. Great for approximation on NP-complete problems. |
+| 9 | Dynamic Programming | Break problem into subproblems, solve each once, build up. The knapsack problem in a grid. |
+| 10 | K-Nearest Neighbors | Classification and regression by finding the k closest data points. Feature extraction matters. |
+| 11 | Where to Go Next | 10 more algorithms: trees, inverted indexes, Fourier transform, MapReduce, Bloom filters, SHA, Diffie-Hellman, linear programming, etc. |
+
+---
+
+## 10 Key Takeaways
+
+1. **Binary search turns 4 billion steps into 32**: On a sorted list of 4 billion items, simple search takes up to 4 billion steps. Binary search takes 32. The difference is O(n) vs. O(log n), and it only grows with n.
+
+2. **Big O describes growth rate, not seconds**: An O(n²) algorithm isn't "slower" in any fixed sense — it means when you double the input, the runtime quadruples. This is the language of algorithmic comparison.
+
+3. **Arrays and linked lists have opposite strengths**: Arrays give O(1) random access but O(n) insert/delete. Linked lists give O(1) insert/delete but O(n) random access. Choose based on your access pattern.
+
+4. **Recursion is a function calling itself, and the call stack tracks it**: Every recursive call pushes a frame onto the call stack. Too many frames → stack overflow. Iteration is often more efficient, but recursion can be clearer.
+
+5. **Quicksort is the practical sorting champion**: Average O(n log n), in-place, and fast in practice. The choice of pivot matters — a bad pivot (already sorted array, first-element pivot) degrades to O(n²).
+
+6. **Hash tables are the Swiss Army knife of data structures**: O(1) average for search, insert, delete. Use them for lookups, caching, deduplication, and modeling relationships. But watch the load factor — resize above 0.7.
+
+7. **BFS finds the shortest path in unweighted graphs**: Model the problem as a graph (nodes + edges), use a queue, process nodes by increasing distance from start. Mark visited nodes to avoid infinite loops.
+
+8. **Dijkstra's algorithm handles weighted edges, but not negative weights**: It greedily picks the cheapest unvisited node and updates its neighbors. Bellman-Ford handles negative weights, but Dijkstra is faster when applicable.
+
+9. **Dynamic programming fills a grid**: The knapsack problem teaches the pattern — each cell is the optimal solution for a subproblem (given item sub-set and weight capacity). Recurrence: `cell[i][j] = max(cell[i-1][j], value[i] + cell[i-1][j - weight[i]])`.
+
+10. **NP-complete problems have no fast solution — approximate instead**: If you can't find a polynomial-time algorithm, it might be NP-complete. The traveling salesperson problem, set-covering, and scheduling are classics. Use greedy approximation: the solution is "good enough" and fast.
+
+---
+
+## Who Should Read
+
+| Read this | Skip this |
+|-----------|-----------|
+| Self-taught programmers with no CS background | CS graduates seeking depth (read CLRS instead) |
+| Bootcamp graduates wanting to understand algorithms | Anyone comfortable with Cormen's *Introduction to Algorithms* |
+| Visual learners who struggle with abstract math | Readers who prefer formal proofs and mathematical rigor |
+| Interview candidates looking for an intuitive foundation | Readers already grinding LeetCode at a high level |
+| Teachers who need examples to explain algorithms | Those who want comprehensive data structure coverage (trees, tries, graphs beyond BFS/Dijkstra) |
+
+---
+
+## Core Themes
+
+**Visual Intuition Over Formal Proof**: Bhargava's core belief is that pictures unlock understanding where equations fail. Every algorithm is introduced with a hand-drawn diagram — a stick-figure binary search, a stack of sticky notes for recursion, a grid for dynamic programming. The math is there, but it follows the picture, not the other way around.
+
+**Just-in-Time Teaching**: Most textbooks throw every possible concept at you "just in case." Bhargava does the opposite: he tells you only what you need to solve the problem at hand. Linked lists are taught when you need to understand selection sort's performance. Quicksort serves as the vehicle for divide-and-conquer. This makes the book remarkably readable — there are no "you'll need this later" digressions.
+
+**Practicality Over Completeness**: The book omits insertion sort ("it won't help readers do their jobs any better"), tree data structures, and many graph algorithms. This is a feature, not a bug. Bhargava selected algorithms that he has personally found useful in daily programming. For a first exposure, this focused approach is more valuable than a survey that overwhelms.
+
+**Abstraction Through Concrete Examples**: Big O is taught by counting operations on a grid. Recursion is taught by searching through nested boxes for a key. Hash tables are taught via a grocery price checker. Every abstract concept has a physical-world analogy that makes it tangible.
+
+---
+
+## Why It Matters
+
+Algorithms are traditionally taught through dense mathematics and formal proofs. This works for computer science students but excludes everyone else. *Grokking Algorithms* is the first book to successfully bridge that gap without sacrificing correctness. It doesn't water down the concepts — it translates them into a visual language that works for the human brain.
+
+This matters because algorithms are no longer just for CS majors. Every web developer uses hash tables (objects/maps). Every mobile developer deals with sorting and searching. Every data analyst needs to understand complexity. The audience for algorithmic literacy has expanded far beyond the classroom, and the teaching methods need to expand with it.
+
+The book also matters because it makes algorithms *fun*. The illustrations are genuinely charming. The examples are relatable. The "aha moments" come frequently enough to sustain motivation across 250 pages. For a subject that typically induces anxiety, that's no small feat.
+
+---
+
+## Related Books
+
+| Book | Author | How It Connects |
+|------|--------|-----------------|
+| **Introduction to Algorithms (CLRS)** | Cormen, Leiserson, Rivest, Stein | The canonical textbook. Same algorithms, full mathematical rigor. *Grokking* is the warm-up; CLRS is the workout. |
+| **The Algorithm Design Manual** | Steven Skiena | A practical, war-story-driven approach. More advanced than *Grokking* but shares the "useful algorithms first" philosophy. |
+| **Algorithms to Live By** | Brian Christian, Tom Griffiths | Algorithms as life advice. Complements *Grokking* by showing real-world decision applications. |
+| **Algorithmic Thinking** | Daniel Zingaro | Teaches algorithms through competitive programming problems. Good next step after *Grokking*. |
+| **Cracking the Coding Interview** | Gayle Laakmann McDowell | Technical interview prep. *Grokking* builds the foundation; *Cracking* sharpens it for interviews. |
+| **Head First Design Patterns** | Freeman, Robson, Bates, Sierra | Same pedagogical philosophy (visual, conversational, just-in-time) applied to design patterns. |
+
+---
+
+## Final Verdict
+
+**Rating: 7.5/10**
+
+*Grokking Algorithms* succeeds brilliantly at its stated goal: making algorithms accessible to beginners. The illustrations are effective, the writing is clear, and the pacing is excellent. For the target audience — self-taught programmers, bootcamp graduates, and "curious people" — this may be the best algorithms introduction available.
+
+**What it does best**: transform abstract concepts into visual, intuitive understanding. The dynamic programming chapter (often the hardest in any algorithms course) is genuinely excellent — the grid visualization makes the recurrence relation feel natural. The Big O explanation is the clearest I've seen for beginners. The breadth-first search and Dijkstra chapters use simple social-network and map examples that make graph algorithms concrete.
+
+**Where it falls short**: the book is deliberately limited in scope. Readers who finish it will need to graduate to more comprehensive resources before tackling technical interviews or advanced work. The last chapter ("Where to Go Next") is a whirlwind tour of 10 algorithms in a few pages — too brief to be useful. Some sections (notably linked lists) present concepts clearly but don't provide enough depth for real implementation. And the Python code, while correct, is sometimes more pedagogical than idiomatic.
+
+**Bottom line**: If you're new to algorithms and find traditional textbooks intimidating, start here. You'll build a solid mental framework in ~8 hours. Then graduate to Skiena's *Algorithm Design Manual* or CLRS for depth. *Grokking Algorithms* is not the last algorithms book you'll read — but it should be the first.

@@ -1,0 +1,76 @@
+{
+  "slug": "software-architecture-in-practice-len-bass",
+  "title": "Software Architecture in Practice",
+  "subtitle": "The Definitive Guide to Architecting Modern Software Systems",
+  "description": "The industry-standard text on software architecture, now in its fourth edition. Bass, Clements, and Kazman — all affiliated with the Software Engineering Institute at Carnegie Mellon — systematically explain what software architecture is, why it matters, and how to design, evaluate, document, evolve, and manage it. Covers quality attributes, the Architecture Tradeoff Analysis Method (ATAM), views and viewpoints, architectural patterns and styles, and the Architecture Business Cycle that connects technical decisions to organizational strategy.",
+  "authors": [
+    {
+      "name": "Len Bass",
+      "url": "https://www.sei.cmu.edu/about/people/len-bass.cfm"
+    },
+    {
+      "name": "Paul Clements",
+      "url": "https://www.sei.cmu.edu/about/people/paul-clements.cfm"
+    },
+    {
+      "name": "Rick Kazman",
+      "url": "https://www.ics.hawaii.edu/~kazman/"
+    }
+  ],
+  "coverUrl": "https://covers.openlibrary.org/b/ISBN:9780136886094-L.jpg",
+  "isbn10": "0136886094",
+  "isbn13": "9780136886094",
+  "previousIsbn13": "9780132356130",
+  "pages": 608,
+  "publishedYear": 2022,
+  "edition": "4th",
+  "publisher": "Addison-Wesley Professional",
+  "openlibrarySlug": "OL28855580M",
+  "tags": [
+    "software-architecture",
+    "SEI",
+    "quality-attributes",
+    "ATAM",
+    "architectural-patterns",
+    "evaluation",
+    "documentation",
+    "design",
+    "software-engineering"
+  ],
+  "keyIdeas": [
+    "Software architecture is the set of structures needed to reason about a system — not just the components, but the relationships and the rules governing them",
+    "Quality attributes (performance, security, modifiability, availability, usability) are the true drivers of architecture, not functionality",
+    "Attribute-Driven Design (ADD) is a repeatable method for generating architectures from quality attribute requirements",
+    "Architecture Tradeoff Analysis Method (ATAM) evaluates designs by exposing tradeoffs among competing quality attributes before construction begins",
+    "Architectures are best documented through views — selected representations of the structure from the perspective of a stakeholder concern",
+    "The Architecture Business Cycle explains how business goals, technical environments, and organizational constraints shape architectural decisions",
+    "Architectural patterns (not just styles) provide proven strategies for achieving specific quality attribute requirements",
+    "Architecture and design exist on a continuum; the distinction lies in scope and difficulty of change, not in kind"
+  ],
+  "keyTakeaways": [
+    "Architecture is the carrier of the earliest, hardest-to-change design decisions — getting them wrong is enormously expensive",
+    "Quality attribute scenarios make vague requirements ('the system must be fast') concrete and testable ('the system shall respond to 99% of requests within 200ms under 1000 concurrent users')",
+    "ATAM does not produce a scorecard; it produces a shared understanding of risks and tradeoffs among stakeholders",
+    "A view is a representation of one or more structural aspects of a software architecture — no single view can capture everything",
+    "Modifiability tactics include reduce coupling, increase cohesion, defer binding, and use intermediaries",
+    "Performance tactics include resource demand management, resource management, and architectural principles like concurrency and multiple copies",
+    "Security tactics include resist attacks, detect attacks, react to attacks, and recover from attacks",
+    "Architecture debt accumulates when architectural decisions are made that conflict with future quality attribute needs, just as code debt accumulates through shortcuts",
+    "Reference architectures embody proven solutions in a domain and serve as starting points rather than finished designs",
+    "Microservices, containers, and cloud-native patterns represent the latest evolution of established architectural styles applied to deployable units"
+  ],
+  "whoShouldRead": [
+    "Practicing software architects and senior engineers responsible for system-level design decisions",
+    "Computer science students and graduate students in software engineering programs",
+    "Technical leads who must communicate architectural decisions to diverse stakeholders",
+    "Engineering managers who need to understand why architecture investments matter to business outcomes",
+    "Anyone preparing for a system design interview or technical architecture review"
+  ],
+  "relatedBooks": [
+    "documenting-software-architectures-paul-clements",
+    "design-patterns-gamma-helm-johnson-vlissides",
+    "fundamentals-of-software-architecture-mark-richards-neal-ford",
+    "a-philosophy-of-software-design-john-ousterhout",
+    "building-software-team-gall-riedl"
+  ]
+}

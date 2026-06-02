@@ -1,0 +1,114 @@
+{
+  "slug": "implementing-domain-driven-design-vaughn-vernon",
+  "title": "Implementing Domain-Driven Design",
+  "subtitle": "Pragmatic DDD in Java — bounded contexts, CQRS, event sourcing, and the tactical patterns in production",
+  "authors": [
+    "Vaughn Vernon"
+  ],
+  "author": "Vaughn Vernon",
+  "description": "Vaughn Vernon's landmark 2020 2nd-edition volume is the operative field guide to putting Domain-Driven Design into production. Where Eric Evans' original defined the concepts — ubiquitous language, bounded contexts, aggregates, anti-corruption layers — Vernon supplies the implementation layer: how to build bounded contexts in Java, how to implement aggregates against relational stores, how to apply CQRS and Event Sourcing without breaking the domain model, and how to use Spring and Akka as enablers rather than constraints. It is the book most teams reach for after finishing Evans' blue book.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780133039900-L.jpg",
+  "isbn10": "0133039909",
+  "isbn13": "9780133039900",
+  "pages": 440,
+  "publishedYear": 2020,
+  "publisher": "Addison-Wesley Professional",
+  "series": null,
+  "openlibrarySlug": "works/OL18494636W",
+  "tags": [
+    "domain-driven-design",
+    "ddd",
+    "cqrs",
+    "event-sourcing",
+    "aggregates",
+    "repositories",
+    "anti-corruption-layer",
+    "bounded-contexts",
+    "java",
+    "spring",
+    "akka",
+    "software-architecture",
+    "enterprise-software",
+    "domain-events",
+    "hexagonal-architecture"
+  ],
+  "keyIdeas": [
+    "DDD is a set of practices, not just theory — Vernon bridges Evans' conceptual vocabulary to production Java code with working examples",
+    "Aggregates must be persisted carefully — repositories must load and save full aggregates; partial loading circumvents the consistency boundary and corrupts invariants",
+    "CQRS is a natural extension of DDD — when read-model needs diverge from aggregate write-model rules, separating commands from queries keeps both models clean",
+    "Event Sourcing pairs with DDD because domain events are already first-class in an aggregate's lifecycle — stored events become the state-rebuilding mechanism",
+    "Domain Events are a modeling tool, not just notifications — name them in the past tense (ShipmentDispatched), make them immutable, and use them for reliable bounded-context communication",
+    "The Anti-Corruption Layer must be built with awareness of translation cost — map only what the downstream model actually needs; do not expose every field from the foreign system",
+    "Hexagonal Architecture complements DDD — the domain model sits at the center, adapters on the outside; the ACL is one specific adapter translating between two hexagons",
+    "Modern frameworks can enable DDD rather than fight it — Spring Dependency Injection can isolate the domain layer; Akka actors map naturally to aggregate roots as message-based state machines",
+    "Anemic domain models are the most common failure mode — POJOs with getters and setters and no behavior look like DDD but encode no business logic; behavior belongs on the aggregate root",
+    "Common mistakes that derail DDD projects: over-sized aggregates, shared databases between bounded contexts, generic DAOs masquerading as repositories, and ignoring eventual consistency",
+    "Bounded Contexts map to deployable units — this is the practical insight that connects Evans' strategic design directly to microservices architecture",
+    "Eventual consistency is not failure — it is the correct consistency model for most workflows; domain events make eventual consistency tractable and auditable"
+  ],
+  "keyTakeaways": [
+    "Read Evans first for vocabulary; read Vernon for implementation. This book is not an introduction to DDD concepts — it is the application manual.",
+    "Aggregates define transactional consistency boundaries — everything inside an aggregate must be in a valid state after any operation; external references go to the root only",
+    "Repositories must return full aggregates — partial loading or direct SQL updates of aggregate internals is an anti-pattern that silently breaks invariants",
+    "CQRS is optional but powerful — you do not need it on day one, but when read and write models diverge, a separate query model is cleaner than forcing one model to serve both",
+    "Event Sourcing is not required for DDD but aligns perfectly — domain events as stored events give you an immutable audit log and temporal query capability for free",
+    "Domain Events should be explicit, immutable, and named in the past tense — ShipmentDispatched is an event; DispatchShipment is a command. Keeping them separate prevents confusion.",
+    "The Anti-Corruption Layer is the bridge — it is not a generic integration layer; it is a translation boundary that protects your model's language from foreign concepts",
+    "Framework choice matters less than how you use it — Spring can structure an application around a behavior-rich domain model; Akka actors can embody aggregate roots with message-passing state transitions",
+    "You do not need microservices to practice DDD — bounded contexts can be modules within a monolith, isolated by package namespaces and internal conventions",
+    "Eventual consistency is a first-class concept — most business workflows tolerate it; domain events give you the tooling to reason about it, test it, and explain it to stakeholders"
+  ],
+  "whoShouldRead": [
+    "Software engineers who have read Eric Evans' DDD and are ready to implement the patterns in production Java code",
+    "Tech leads and architects building bounded-context or event-sourced systems who need implementation guidance beyond conceptual vocabulary",
+    "Developers who have built anemic domain models and want to see what a behavior-rich domain model looks like in practice",
+    "Teams evaluating CQRS and Event Sourcing who want to understand their natural relationship to DDD before adopting them",
+    "Spring and Akka developers who want to structure their applications around a genuine domain model rather than framework conventions",
+    "Practitioners working with legacy systems who need to apply the Anti-Corruption Layer to protect new bounded contexts from incompatible old models"
+  ],
+  "whoShouldSkip": [
+    "Teams building simple CRUD applications where domain complexity does not justify DDD overhead — start with a lighter approach",
+    "Developers who have not yet read Eric Evans' original DDD — Vernon assumes familiarity with bounded contexts, aggregates, and the repository pattern",
+    "Readers seeking DDD guidance in languages other than Java — code examples are Java-centric with some Scala/Akka coverage",
+    "Practitioners looking for a step-by-step tutorial or cookbook — the book is dense but requires active adaptation to your own domain",
+    "Teams under severe deadline pressure — DDD practices require collaborative modeling investment that cannot be compressed into a sprint",
+    "Developers who prefer minimal abstraction — repository, factory, and ACL patterns add structure that may feel unnecessary in simpler domains"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Domain-Driven Design",
+      "author": "Eric Evans",
+      "slug": "domain-driven-design-eric-evans"
+    },
+    {
+      "title": "Domain-Driven Design Reference",
+      "author": "Eric Evans",
+      "slug": null
+    },
+    {
+      "title": "Domain-Driven Design Distilled",
+      "author": "Vaughn Vernon",
+      "slug": null
+    },
+    {
+      "title": "Patterns of Enterprise Application Architecture",
+      "author": "Martin Fowler",
+      "slug": "patterns-of-enterprise-application-architecture-martin-fowler"
+    },
+    {
+      "title": "Clean Architecture",
+      "author": "Robert C. Martin",
+      "slug": "clean-architecture-robert-martin"
+    },
+    {
+      "title": "Building Microservices",
+      "author": "Sam Newman",
+      "slug": "building-microservices-sam-newman"
+    },
+    {
+      "title": "Monolith to Microservices",
+      "author": "Sam Newman",
+      "slug": "monolith-to-microservices-sam-newman"
+    }
+  ]
+}

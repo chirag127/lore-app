@@ -1,0 +1,27 @@
+{
+  "slug": "mindset-carol-dweck",
+  "title": "Mindset",
+  "subtitle": "The New Psychology of Success",
+  "author": "Carol S. Dweck",
+  "publicationYear": 2006,
+  "updatedEdition": 2016,
+  "isbn": "9780345472328",
+  "publisher": "Random House",
+  "language": "en",
+  "pages": 320,
+  "genres": ["Psychology", "Education", "Self-Help", "Business"],
+  "subjects": ["Mindset", "Growth Mindset", "Learning", "Success", "Psychology", "Motivation", "Education"],
+  "themes": ["Fixed vs Growth Mindset", "Neuroplasticity", "Praise and Motivation", "Challenge-Seeking", "Effort as Strategy", "Learning Goals", "Resilience"],
+  "tags": ["mindset", "growth mindset", "fixed mindset", "psychology", "success", "education", "parenting", "leadership", "motivation", "praise", "effort", "learning", "stanford"],
+  "difficulty": "easy",
+  "estimatedReadingHours": 7,
+  "estimatedListeningMinutes": 360,
+  "excerpt": "World-renowned Stanford psychologist Carol Dweck reveals how the belief that abilities can be developed — a growth mindset — transforms learning, resilience, and success across education, business, sports, and relationships, while the fixed mindset traps people in a cycle of avoidance and self-limitation.",
+  "authorBackground": "Carol S. Dweck is a professor of psychology at Stanford University and a leading researcher in motivation, personality, and development. She earned her Ph.D. from Yale University in 1972 and has taught at Columbia University, Harvard University, and the University of Illinois. Her work on mindset has been cited tens of thousands of times and is taught in education, business, and psychology programs worldwide. She is a member of the American Academy of Arts and Sciences and the National Academy of Sciences.",
+  "keyStudies": [
+    "Mueller & Dweck (1998) — Praise for intelligence vs praise for effort: five studies showing intelligence praise undermines motivation and performance",
+    "Dweck & Leggett (1988) — A social-cognitive approach to motivation and personality: the foundational theoretical paper on implicit theories of intelligence",
+    "Hong, Chiu, Dweck, Lin & Wan (1999) — Implicit theories, attributions, and coping: a meaning system approach",
+    "Blackwell, Trzesniewski & Dweck (2007) — Implicit theories of intelligence predict achievement across an adolescent transition"
+  ]
+}

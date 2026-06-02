@@ -1,0 +1,45 @@
+{
+  "slug": "the-big-short-michael-lewis",
+  "title": "The Big Short",
+  "subtitle": "Inside the Doomsday Machine",
+  "author": "Michael Lewis",
+  "isbn": "9780393072235",
+  "isbn10": "0393072231",
+  "publisher": "W. W. Norton & Company",
+  "originalPublicationYear": 2010,
+  "pages": 266,
+  "language": "en",
+  "subjects": [
+    "Financial crisis 2008",
+    "Subprime mortgages",
+    "Housing bubble",
+    "Credit default swaps",
+    "Wall Street",
+    "Short selling"
+  ],
+  "amazonRating": 4.6,
+  "goodreadsRating": 4.34,
+  "goodreadsRatingsCount": 565000,
+  "difficulty": "Easy",
+  "readingTimeHours": 7,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780393072235-L.jpg",
+  "openLibraryKey": "OL24080345M",
+  "authorBio": "Michael Lewis (b. 1960) is an American author and financial journalist. His books combine investigative journalism with narrative storytelling, making complex financial subjects accessible to general readers. The Big Short won the Robert F. Kennedy Book Award and was adapted into an Academy Award-winning film.",
+  "keyConcepts": [
+    "Subprime mortgage crisis",
+    "Credit default swaps (CDS)",
+    "Collateralized debt obligations (CDOs)",
+    "Synthetic CDOs",
+    "Moral hazard",
+    "Short selling",
+    "Rating agency failure",
+    "Systemic risk"
+  ],
+  "notableQuotes": [
+    "The really unfortunate thing about the disaster was that it was entirely avoidable.",
+    "Most of the people on Wall Street were living in a fantasy.",
+    "The bond market is a very dangerous place for the people who don't understand it.",
+    "The people in the markets who are correct are often the ones who are the most isolated.",
+    "It's not a crime to predict the future incorrectly. But it is a crime to build a machine that predicts the future incorrectly and then sell it to the public."
+  ]
+}

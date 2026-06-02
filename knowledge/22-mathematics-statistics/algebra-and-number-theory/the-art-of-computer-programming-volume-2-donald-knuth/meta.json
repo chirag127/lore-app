@@ -1,0 +1,32 @@
+{
+  "slug": "the-art-of-computer-programming-volume-2-donald-knuth",
+  "title": "The Art of Computer Programming, Volume 2: Seminumerical Algorithms",
+  "authors": [{"name": "Donald E. Knuth"}],
+  "publicationYear": "1997",
+  "edition": "3rd",
+  "isbn": "9780201896840",
+  "publisher": "Addison-Wesley",
+  "pageCount": 762,
+  "language": "English",
+  "genres": ["Computer Science", "Algorithms", "Mathematics"],
+  "subjects": ["Random Numbers", "Arithmetic", "Number Theory", "Combinatorics"],
+  "themes": ["Seminumerical Algorithms", "Randomness", "Arithmetic", "Number Theory"],
+  "tags": ["algorithms", "random-numbers", "arithmetic", "computer-science", "knuth", "number-theory"],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 100,
+  "estimatedListeningMinutes": 6000,
+  "authorBiography": "Donald E. Knuth is Professor Emeritus at Stanford University and widely considered the father of the analysis of algorithms.",
+  "authorNationality": "American",
+  "authorBorn": "1938-01-10",
+  "authorKnownFor": ["The Art of Computer Programming", "TeX", "Literate Programming"],
+  "keyIdeas": [
+    "Mathematical rigor in algorithm analysis",
+    "Generating random numbers",
+    "Linear congruential sequences",
+    "Multiple precision arithmetic",
+    "Fourier transforms",
+    "Polynomial arithmetic",
+    "GCD and prime number generation"
+  ],
+  "excerpt": "The definitive mathematical treatment of random numbers, arithmetic algorithms, and seminumerical computation."
+}

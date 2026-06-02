@@ -1,0 +1,80 @@
+{
+  "slug": "clean-code-robert-martin",
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "subtitle": "A Handbook of Agile Software Craftsmanship",
+  "description": "The definitive guide to writing readable, maintainable, and professional code. Martin and contributors from Object Mentor present practices — naming conventions, function design, comments, formatting, error handling, unit testing, class structure, system architecture, and concurrency — that transform good programmers into craftsmen who take pride in their work. The book includes detailed case studies where unclean code is systematically refactored.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12613637-L.jpg",
+  "isbn10": "0132350882",
+  "isbn13": "9780132350884",
+  "isbn13Special": "9780132354205",
+  "pages": 464,
+  "publishedYear": 2008,
+  "publisher": "Prentice Hall",
+  "openlibrarySlug": "clean_code",
+  "tags": [
+    "software engineering",
+    "code quality",
+    "refactoring",
+    "agile",
+    "software craftsmanship",
+    "programming",
+    "clean code",
+    "TDD",
+    "naming"
+  ],
+  "keyIdeas": [
+    "Code quality is not optional — messy code costs exponentially more to change than clean code",
+    "Meaningful names communicate intent and eliminate the need for comments",
+    "Functions should be small (ideally under 20 lines) and do one thing only",
+    "Comments are mostly harmful — the code should be self-documenting",
+    "Formatting is communication — vertical and white space reveal conceptual structure",
+    "Error handling must be separated from normal business logic using exceptions",
+    "Unit tests are not optional — they are the prerequisite for safe refactoring",
+    "Classes follow the Single Responsibility Principle — one reason to change",
+    "Systems should separate construction from use via dependency injection",
+    "Concurrency is its own discipline requiring immutability, small locks, and rigorous testing",
+    "The Boy Scout Rule: leave the codebase cleaner than you found it"
+  ],
+  "keyTakeaways": [
+    "Clean code reads like well-written prose — it reveals intent clearly without requiring the reader to guess",
+    "Functions should be small and do exactly one thing; every line should be at the same level of abstraction",
+    "Arguments are a cognitive cost — use zero to two arguments; eliminate flag arguments entirely",
+    "Comments are failures of expression — strive to make code self-documenting; comment only what code cannot carry",
+    "Names are the primary documentation; invest more time in naming than in formatting",
+    "Test code is production code — treat it with the same discipline as the code it verifies",
+    "The FIRST principles (Fast, Independent, Repeatable, Self-validating, Timely) are the standard for unit tests",
+    "A class has one responsibility if it has one reason to change — ARP-style vague names indicate SRP violation",
+    "Concurrency is hard because of non-determinism — isolate threading from business logic and test with thousands of iterations",
+    "Clean code is a direction, not a destination — leave the codebase a little better each time you touch it"
+  ],
+  "whoShouldRead": [
+    "Every working programmer who wants to improve their craft",
+    "Engineering teams adopting or improving code review and quality standards",
+    "Junior developers learning professional software development practices",
+    "Technical leads responsible for codebase maintainability and team mentorship",
+    "Developers who have inherited messy codebases and need a systematic approach to improvement"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Refactoring",
+      "slug": "refactoring-martin-fowler"
+    },
+    {
+      "title": "Clean Architecture",
+      "slug": "clean-architecture-robert-martin"
+    },
+    {
+      "title": "The Clean Coder",
+      "slug": null
+    },
+    {
+      "title": "A Philosophy of Software Design",
+      "slug": "a-philosophy-of-software-design-john-ousterhout"
+    },
+    {
+      "title": "Code Complete",
+      "slug": "code-complete-steve-mcconnell"
+    }
+  ]
+}

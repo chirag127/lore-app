@@ -1,0 +1,65 @@
+## Strengths
+
+- **Fills a genuine gap.** There are surprisingly few books that cover
+  storage engine internals for practitioners. *Database Internals* is
+  the best available.
+- **Excellent treatment of B-Trees and LSM-Trees.** The comparison is
+  nuanced and practical. Petrov explains not just how they work but
+  why you would choose one over the other.
+- **Practical and implementation-focused.** Unlike academic textbooks,
+  this book connects concepts to real databases (RocksDB, LevelDB,
+  WiredTiger, etc.).
+- **Good diagrams and code snippets.** The visual explanations of
+  B-Tree page splits and LSM compaction are clear.
+
+---
+
+## Weaknesses
+
+- **Distributed systems section is less novel.** The distributed
+  chapters cover replication, consensus, and partitioning — topics
+  already well-covered by Kleppmann's *Designing Data-Intensive
+  Applications*.
+- **Lacks hands-on exercises.** There are no implementation projects.
+  To really understand storage engines, you need to build one.
+- **Some topics are too brief.** File formats, caching, and buffer
+  management each deserve more depth.
+- **Occasionally verbose.** Some explanations could be more concise.
+  The book could be 20% shorter.
+
+---
+
+## Criticism
+
+- **Too broad for its length.** Covering both storage engines and
+  distributed systems in 374 pages means neither is as deep as it
+  could be.
+- **Knowledge of C/C++ is assumed.** The book references data
+  structures and memory management concepts that require comfort with
+  systems programming.
+- **Already somewhat dated.** The landscape moves fast — newer
+  databases (FoundationDB, CockroachDB internals) are not covered.
+
+---
+
+## Comparison
+
+| Book | Author | Focus |
+|------|--------|-------|
+| *Database Internals* | Petrov | Storage engines + distributed systems |
+| *Designing Data-Intensive Applications* | Kleppmann | Distributed systems design; lighter on storage |
+| *Readings in Database Systems* | Hellerstein | Academic papers (much harder) |
+| *Transaction Processing* | Gray & Reuter | Transactions only (out of print) |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Niche Coverage | 9/10 | Best available on storage engines |
+| Practical Utility | 8/10 | Directly applicable to database selection and tuning |
+| Depth | 7/10 | Good for understanding; light for implementation |
+| Clarity | 7/10 | Clear but sometimes verbose |
+| Completeness | 7/10 | Broad but not deep enough in some areas |
+| **Overall** | **7.5/10** | Excellent reference; best paired with Kleppmann |

@@ -1,0 +1,168 @@
+---
+title: Overview
+subtitle: The Log as the Backbone of Event-Driven Architecture
+---
+
+## Overview
+
+*Designing Event-Driven Systems: Concepts and Patterns for Streaming
+Services* (O'Reilly, May 2018) by Ben Stopford is the authoritative guide to
+building business-critical systems with Apache Kafka and event streaming.
+Stopford, a principal engineer at Confluent (the company behind Kafka),
+draws on years of production experience to bridge the gap between messaging
+mentality and true event-driven architecture.
+
+The book is organized in five parts spanning 15 chapters: setting the stage
+(Chapters 1–4), designing event-driven systems (Chapters 5–7), rethinking
+architecture at company scale (Chapters 8–10), consistency and evolution
+(Chapters 11–13), and implementing streaming services (Chapters 14–15).
+
+The O'Reilly listing shows 171 pages, approximately 4 hours of reading.
+A print edition with ISBN 9781492038240 was later published by O'Reilly
+in April 2022.
+
+---
+
+## Executive Summary
+
+Stopford's central thesis: **the log (a replayable, append-only event
+stream) should serve as the backbone of your system** — the shared,
+immutable record that connects services, enables recovery, and eliminates
+data duplication across an organization.
+
+| Part | Focus | Key Chapters |
+|------|-------|-------------|
+| I: Setting the Stage | Kafka fundamentals, what it is and isn't | Ch 1–4 |
+| II: Designing Event-Driven Systems | Event patterns, stateful processing, CQRS | Ch 5–7 |
+| III: Company-Scale Architecture | Shared data, inside-out databases, lean data | Ch 8–10 |
+| IV: Consistency & Evolution | Concurrency, transactions, schema evolution | Ch 11–13 |
+| V: Implementing with Kafka | Kafka Streams, KSQL, streaming services | Ch 14–15 |
+
+The book sits between two extremes: **event-driven architecture for small
+teams** (solving the request-response reliability problem) and **company-
+scale architectures** (using event streams as the shared source of truth).
+
+---
+
+## Key Takeaways
+
+1. **Kafka is not a message broker.** It is a distributed, replayable log
+   — more like a database than a traditional queue. The "messages" are
+   events that persist for as long as you need.
+
+2. **Events, commands, and queries are different.** Commands request
+   action; events record what happened. Mixing them leads to brittle
+   systems. Stopford argues for strict separation.
+
+3. **Loose coupling has limits.** Essential data coupling is unavoidable.
+   The pattern you use — notification vs. state transfer vs. event
+   collaboration — determines what data flows between services.
+
+4. **Event Sourcing ≠ Event Streaming.** Event sourcing rebuilds state
+   from an event log. Event streaming moves data between services. They
+   solve different problems; don't use one when you need the other.
+
+5. **The Event Collaboration Pattern** reduces inter-service dependencies
+   by having services react to events rather than calling each other
+   directly. The log is the communication backbone.
+
+6. **Stateful stream processing is a first-class architectural choice.**
+   Kafka Streams tables and state stores let services maintain local
+   state derived from events, recover after failure, and process in
+   time windows.
+
+7. **Schema compatibility is a production concern.** Not just about APIs
+   — your event schemas evolve, and backward/forward compatibility must
+   be enforced at the boundary (Confluent Schema Registry is the
+   canonical solution).
+
+8. **The "competing consumer pattern"** scales event processing
+   horizontally by adding consumers reading from the same log partition —
+   each message processed exactly once across the consumer group.
+
+9. **Eventual consistency is intentional, not a bug.** The book provides
+   practical tools — command topics, the single-writer principle,
+   idempotent consumers — for managing consistency without distributed
+   transactions.
+
+10. **Don't use events when CRUD or a simple API will do.** Streaming
+    adds complexity: schema management, monitoring, consumer group
+    coordination, and operational overhead. Stopford explicitly
+    warns against over-applying the pattern.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Senior backend engineers | Foundational patterns for event-driven design at scale |
+| Platform/data engineers | Kafka internals, schema management, stream processing |
+| Architects | Trade-offs between EDA, SOA, and CRUD-based architectures |
+| Technical leads evaluating Kafka | Honest guide to when Kafka helps and when it doesn't |
+| Anyone preparing for system design interviews | Concise treatment of EDA, log-based recovery, CQRS |
+
+---
+
+## Who Should Skip
+
+- Absolute beginners to distributed systems — start with a Kafka
+  getting-started guide first
+- Readers seeking an academic theory treatment — this is practitioner-
+  focused, not a formal proof-based text
+- Teams with no Kafka or streaming workloads — less directly applicable
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|-------|-------------|
+| The log as architecture | Append-only, replayable streams as a system-wide contract |
+| Separation of concerns: events vs. commands | Naming and structure conventions that prevent coupling |
+| Inside-out databases | Building services that expose their internals as streams |
+| Lean data pipelines | Messages carry deltas, not full state; views are rebuilt |
+| Company-wide data sharing | Event streams as a first-class organizational asset |
+| Resilience through immutability | Never update or delete — append and rebuild |
+
+---
+
+## Why This Book Matters
+
+Stopford wrote the book that Kafka engineers needed but didn't have: a
+bridge between the promise of event-driven architecture and the messy
+reality of making it work across many teams. It is widely considered
+the essential companion to Kafka in Action and the definitive
+practitioner's guide to streaming architecture foreworded by Sam Newman.
+
+Sam Newman's foreword positions the book as the answer to a critical
+gap: microservices give us autonomy, but autonomy without a shared data
+strategy creates islands. Stopford shows how event streams are the
+bridge.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|------|--------|------------|
+| **Building Microservices** | Sam Newman | Foreword author; companion on distributed system design |
+| **Designing Data-Intensive Applications** | Martin Kleppmann | Theoretical foundation; complementary to practice |
+| **Kafka: The Definitive Guide** | Neha Narkhede et al. | Deep Kafka internals; published by Confluent team |
+| **Domain-Driven Design** | Eric Evans | Conceptual foundations for bounded context and service boundaries |
+| **Release It!** | Michael Nygard | Production resilience patterns applicable to EDA |
+
+---
+
+## Final Verdict
+
+*Designing Event-Driven Systems* is the most concentrated, practitioner-
+oriented guide to event streaming architecture available. Stopford's
+clarity on when to use — and when to avoid — event-driven patterns
+alone is worth the price of admission.
+
+The book is best read with Kafka experience, but its conceptual chapters
+(5, 8–10, 12–13) reward any engineer building distributed systems.
+
+**Rating: 8.5/10** — The essential field guide for any engineer
+evaluating or implementing Apache Kafka and event-driven architecture.

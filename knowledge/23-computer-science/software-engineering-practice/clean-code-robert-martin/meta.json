@@ -1,0 +1,17 @@
+{
+  "id": "clean-code-robert-martin",
+  "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+  "slug": "clean-code-robert-martin",
+  "authors": ["Robert C. Martin"],
+  "year": 2008,
+  "category": "23-computer-science",
+  "subcategory": "software-engineering-practice",
+  "pages": 464,
+  "isbn": "9780132350884",
+  "publisher": "Pearson",
+  "language": "en",
+  "genres": ["Software Engineering", "Programming Craft", "Agile", "TDD", "Refactoring"],
+  "rationale": "The foundational text of the software craftsmanship movement. Published in 2008 at the intersection of Agile maturation and TDD adoption in enterprise Java, this book codified the craft practices (naming, function design, error handling, testing discipline) that became mandatory onboarding reading for a generation of developers. Included in the canonical software-engineering-practice subcategory alongside The Pragmatic Programmer and Code Complete as one of the three pillars of professional software development practice. The controversial and polarizing nature of its prescriptions makes it essential reading for any practitioner who wishes to understand both the craft and the debates that surround it.",
+  "source": "generated",
+  "generatedAt": "2026-06-11"
+}

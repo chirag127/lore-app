@@ -1,0 +1,18 @@
+{
+  "slug": "elementary-number-theory-david-burton",
+  "title": "Elementary Number Theory",
+  "subtitle": "A Historical Approach to Classical Number Theory",
+  "author": "David M. Burton",
+  "publicationYear": 1976,
+  "isbn": "9780205048144",
+  "publisher": "Allyn and Bacon",
+  "language": "en",
+  "genres": ["Mathematics", "Number Theory", "Undergraduate Textbook"],
+  "subjects": ["Divisibility", "Primes", "Congruences", "Quadratic Reciprocity", "Diophantine Equations", "Fermat's Theorem", "Number-Theoretic Functions"],
+  "themes": ["Historical Development of Number Theory", "Classical Results and Proofs", "Biographical Context", "Problem-Solving Focus"],
+  "tags": ["number theory", "Burton", "elementary number theory", "history of mathematics", "congruences", "primes", "undergraduate", "textbook"],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 30,
+  "estimatedListeningMinutes": 1800,
+  "excerpt": "A widely adopted undergraduate text that presents classical number theory through a historical lens, weaving biographical sketches and original proofs into a comprehensive introduction."
+}

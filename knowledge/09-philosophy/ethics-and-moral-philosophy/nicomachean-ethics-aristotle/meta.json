@@ -1,0 +1,104 @@
+{
+  "slug": "nicomachean-ethics-aristotle",
+  "title": "Nicomachean Ethics",
+  "subtitle": "Ἠθικὰ Νικομάχεια — An Inquiry into the Good Life",
+  "author": "Aristotle",
+  "authorBorn": -384,
+  "authorDied": -322,
+  "authorNationality": "Greek (Macedonian)",
+  "authorSchool": "Peripatetic",
+  "originalLanguage": "Ancient Greek (Attic)",
+  "writtenPeriod": "c. 340 BC",
+  "isbn": "9780872204641",
+  "publisher": "Hackett Publishing Company (Irwin translation)",
+  "language": "en",
+  "pageCount": 352,
+  "recommendedTranslation": {
+    "translator": "Terence Irwin",
+    "title": "Aristotle: Nicomachean Ethics",
+    "publisher": "Hackett Publishing Company",
+    "year": 1999,
+    "edition": "2nd",
+    "isbn": "9780872204641",
+    "pages": 352,
+    "note": "The standard scholarly translation; precise, philosophically rich, with thorough notes and a glossary."
+  },
+  "alternativeTranslations": [
+    {
+      "translator": "J. A. K. Thomson (revised by Hugh Tredennick)",
+      "publisher": "Penguin Classics",
+      "year": 2004,
+      "isbn": "9780140449495",
+      "pages": 400,
+      "note": "The classic readable Penguin edition; first choice for general readers."
+    },
+    {
+      "translator": "W. D. Ross",
+      "publisher": "Oxford World's Classics",
+      "year": 2009,
+      "isbn": "9780199212710",
+      "pages": 304,
+      "note": "The influential 1925 literal translation that shaped a century of Anglophone philosophy."
+    },
+    {
+      "translator": "Roger Crisp",
+      "publisher": "Cambridge University Press",
+      "year": 2014,
+      "isbn": "9781107612235",
+      "pages": 240,
+      "note": "Concise, accurate, and accessible; ideal for students."
+    },
+    {
+      "translator": "Christopher Rowe",
+      "publisher": "Oxford World's Classics",
+      "year": 2002,
+      "isbn": "9780198752714",
+      "pages": 320,
+      "note": "A recent scholarly translation with a useful introduction and notes."
+    }
+  ],
+  "genres": ["Philosophy", "Ethics", "Classics", "Political Philosophy"],
+  "subjects": [
+    "Virtue Ethics",
+    "Ancient Philosophy",
+    "Moral Philosophy",
+    "Eudaimonia",
+    "Practical Reason",
+    "Friendship",
+    "Political Philosophy",
+    "Classical Greek Thought"
+  ],
+  "themes": [
+    "Eudaimonia (Flourishing) as the Highest Good",
+    "The Function Argument (Ergon)",
+    "Doctrine of the Mean",
+    "Phronesis (Practical Wisdom)",
+    "Four Cardinal Virtues",
+    "Voluntary Action and Moral Responsibility",
+    "Akrasia (Weakness of Will)",
+    "The Three Types of Friendship",
+    "Contemplation as the Highest Activity",
+    "Politics and the Good Life",
+    "Justice as Complete Virtue",
+    "The Role of Habit in Character Formation"
+  ],
+  "tags": [
+    "aristotle", "nicomachean ethics", "ancient philosophy", "ethics", "virtue ethics",
+    "eudaimonia", "golden mean", "doctrine of the mean", "phronesis", "practical wisdom",
+    "arête", "virtue", "courage", "temperance", "justice", "wisdom", "philia",
+    "friendship", "contemplation", "theoria", "ergon", "function argument",
+    "akrasia", "weakness of will", "voluntary action", "moral responsibility",
+    "four cardinal virtues", "plato", "lyceum", "peripatetic", "greek philosophy",
+    "classics", "political philosophy", "alexander the great", "moral psychology"
+  ],
+  "difficulty": "medium-hard",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 480,
+  "awards": [
+    "Foundational text of Western virtue ethics",
+    "One of the most influential books in the history of philosophy",
+    "Translated into every major language",
+    "Has never gone out of print since the first printed edition (1477)"
+  ],
+  "excerpt": "Every art and every inquiry, and similarly every action and pursuit, is thought to aim at some good; and for this reason the good has rightly been declared to be that at which all things aim. But a certain difference is found among ends; some are activities, others are products apart from the activities themselves. Where there are ends apart from the actions, the products are by nature better than the activities. Since there are many actions, arts, and sciences, the ends turn out to be many as well; for health is the end of medicine, a ship of shipbuilding, victory of strategy, and wealth of housecraft. But as many of the arts as belong to one capacity — for example, bridle-making and every other art that makes equipment for horsemanship — fall under horsemanship, and similarly all the arts that make equipment for a given activity fall under the activity they equip. In all these cases, the ends of the master arts are to be preferred to the ends of the subordinate arts, since the latter are pursued for the sake of the former."
+}

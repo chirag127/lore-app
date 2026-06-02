@@ -1,0 +1,71 @@
+{
+  "slug": "practical-statistics-for-data-scientists-peter-bruce",
+  "title": "Practical Statistics for Data Scientists",
+  "subtitle": "50+ Essential Concepts Using R and Python",
+  "author": "Peter Bruce",
+  "publicationYear": 2020,
+  "isbn": "9781492072942",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 368,
+  "genres": [
+    "Statistics",
+    "Data Science",
+    "Machine Learning",
+    "Technology",
+    "Reference"
+  ],
+  "subjects": [
+    "Exploratory Data Analysis",
+    "Sampling Distributions",
+    "Statistical Significance Testing",
+    "Regression",
+    "Classification",
+    "Statistical Machine Learning",
+    "Unsupervised Learning",
+    "A/B Testing",
+    "Bootstrap and Resampling"
+  ],
+  "themes": [
+    "Statistics is a foundational toolkit for data science, not a footnote",
+    "Resampling (bootstrap, permutation) is the modern path to inference",
+    "EDA is the most under-taught and highest-leverage data activity",
+    "Classical hypothesis testing is misused; effect sizes matter more than p-values",
+    "Regression is the gateway to most supervised learning",
+    "Tree-based methods (random forest, boosting) dominate tabular ML",
+    "Cross-language fluency: every concept implemented in both R and Python"
+  ],
+  "tags": [
+    "statistics",
+    "data-science",
+    "exploratory-data-analysis",
+    "regression",
+    "classification",
+    "machine-learning",
+    "ab-testing",
+    "bootstrap",
+    "resampling",
+    "random-forest",
+    "xgboost",
+    "regularization",
+    "clustering",
+    "pca",
+    "r",
+    "python",
+    "peter-bruce",
+    "andrew-bruce",
+    "peter-gedeck",
+    "oreilly",
+    "second-edition"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "awards": [
+    "O'Reilly best-selling statistics title",
+    "Top recommendation on the r/datascience reading lists",
+    "Widely adopted in data science bootcamps and corporate training",
+    "Cited as the practitioner companion to An Introduction to Statistical Learning"
+  ],
+  "excerpt": "Statistical methods are a key part of data science, yet few data scientists have formal statistical training. This book applies statistical concepts to data science from a practical standpoint, helping you avoid the misuse of statistical methods while teaching you the few that actually matter on the job."
+}

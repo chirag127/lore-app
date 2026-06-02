@@ -1,0 +1,192 @@
+{
+  "slug": "brief-history-of-time-stephen-hawking",
+  "title": "A Brief History of Time",
+  "subtitle": "From the Big Bang to Black Holes",
+  "author": "Stephen Hawking",
+  "publisher": "Bantam Books",
+  "year": 1988,
+  "pages": 212,
+  "isbn_10": "0553380168",
+  "isbn_13": "978-0-553-38016-3",
+  "category": "20-pure-sciences",
+  "subcategory": "physics",
+  "tags": [
+    "cosmology",
+    "black holes",
+    "big bang",
+    "quantum gravity",
+    "spacetime",
+    "physics",
+    "stephen-hawking",
+    "general relativity",
+    "quantum mechanics",
+    "universe",
+    "time"
+  ],
+  "language": "English",
+  "genres": [
+    "Popular Science",
+    "Physics",
+    "Cosmology",
+    "Nonfiction"
+  ],
+  "edition": "10th Anniversary Edition (1998)",
+  "original_publication": 1988,
+  "copies_sold": "25+ million",
+  "languages_translated": 60,
+  "bestseller_list_weeks": {
+    "london_sunday_times": 237,
+    "new_york_times": 147
+  },
+  "awards": [
+    "Aventis Prize for Science Books (1988)",
+    "Andrew L. Farkas Award"
+  ],
+  "author_biography": {
+    "full_name": "Stephen William Hawking",
+    "born": "1942-01-08",
+    "died": "2018-03-14",
+    "nationality": "British",
+    "field": "Theoretical Physics, Cosmology",
+    "institution": "University of Cambridge",
+    "title": "Lucasian Professor of Mathematics (1979-2009)",
+    "diagnosis": "Amyotrophic Lateral Sclerosis (ALS) at age 21",
+    "key_contributions": [
+      "Hawking radiation",
+      "Penrose-Hawking singularity theorems",
+      "Black hole information paradox",
+      "Hartle-Hawking no-boundary proposal",
+      "Chronology protection conjecture"
+    ],
+    "major_awards": [
+      "Copley Medal, Royal Society (2006)",
+      "Wolf Prize in Physics (1988)",
+      "Albert Einstein Medal (1979)",
+      "Commander of the Order of the British Empire (CBE, 1982)",
+      "Companion of Honour (1989)",
+      "Presidential Medal of Freedom (2009)",
+      "Fundamental Physics Prize Special Award (2012)",
+      "BBVA Foundation Frontiers of Knowledge Award (2015)",
+      "Royal Society Copley Medal (2006)"
+    ]
+  },
+  "table_of_contents": [
+    "Chapter 1: Our Picture of the Universe",
+    "Chapter 2: Space and Time",
+    "Chapter 3: The Expanding Universe",
+    "Chapter 4: The Uncertainty Principle",
+    "Chapter 5: Elementary Particles and Forces of Nature",
+    "Chapter 6: Black Holes",
+    "Chapter 7: Black Holes Ain't So Black",
+    "Chapter 8: The Origin and Fate of the Universe",
+    "Chapter 9: The Arrow of Time",
+    "Chapter 10: Wormholes and Time Travel",
+    "Chapter 11: The Unification of Physics",
+    "Conclusion"
+  ],
+  "key_concepts": [
+    "Big Bang theory",
+    "Expanding universe",
+    "Special relativity",
+    "General relativity",
+    "Spacetime curvature",
+    "Uncertainty principle",
+    "Wave-particle duality",
+    "Black holes",
+    "Event horizon",
+    "Hawking radiation",
+    "Singularities",
+    "Cosmic Microwave Background",
+    "No-boundary proposal",
+    "Arrow of time",
+    "Wormholes",
+    "Time travel",
+    "Theory of Everything",
+    "String theory",
+    "Anthropic principle"
+  ],
+  "related_books": [
+    {
+      "title": "The Universe in a Nutshell",
+      "author": "Stephen Hawking",
+      "year": 2001
+    },
+    {
+      "title": "A Briefer History of Time",
+      "author": "Stephen Hawking and Leonard Mlodinow",
+      "year": 2005
+    },
+    {
+      "title": "Pale Blue Dot",
+      "author": "Carl Sagan",
+      "year": 1994
+    },
+    {
+      "title": "The Elegant Universe",
+      "author": "Brian Greene",
+      "year": 1999
+    },
+    {
+      "title": "A Short History of Nearly Everything",
+      "author": "Bill Bryson",
+      "year": 2003
+    },
+    {
+      "title": "Cosmos",
+      "author": "Carl Sagan",
+      "year": 1980
+    },
+    {
+      "title": "The First Three Minutes",
+      "author": "Steven Weinberg",
+      "year": 1977
+    },
+    {
+      "title": "Black Holes and Time Warps",
+      "author": "Kip Thorne",
+      "year": 1994
+    }
+  ],
+  "publisher_info": {
+    "name": "Bantam Books",
+    "imprint": "Bantam Dell Publishing Group",
+    "parent_company": "Random House",
+    "country": "United States"
+  },
+  "editions": [
+    {
+      "year": 1988,
+      "publisher": "Bantam Books",
+      "pages": 198,
+      "note": "Original edition"
+    },
+    {
+      "year": 1996,
+      "publisher": "Bantam Books",
+      "pages": 212,
+      "note": "Illustrated edition"
+    },
+    {
+      "year": 1998,
+      "publisher": "Bantam Books",
+      "pages": 212,
+      "isbn_13": "978-0-553-38016-3",
+      "note": "10th Anniversary Edition with new introduction and updated material"
+    },
+    {
+      "year": 2005,
+      "publisher": "Bantam Books",
+      "note": "A Briefer History of Time (simplified follow-up with Leonard Mlodinow)"
+    }
+  ],
+  "famous_statistic": "Of every 100 people who bought the book, only about 3 finished it (Time magazine, 2001)",
+  "cultural_notes": [
+    "Translated into over 60 languages",
+    "237 weeks on London Sunday Times bestseller list",
+    "147 weeks on New York Times bestseller list",
+    "25+ million copies sold worldwide",
+    "Adapted into a 1991 documentary film by Errol Morris",
+    "Inspired an opera by Joby Talbot (2020)",
+    "Made Hawking one of the most recognizable scientists in history"
+  ]
+}

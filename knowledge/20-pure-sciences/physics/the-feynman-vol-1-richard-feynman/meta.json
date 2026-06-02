@@ -1,0 +1,77 @@
+{
+  "slug": "the-feynman-vol-1-richard-feynman",
+  "title": "The Feynman Lectures on Physics, Volume I",
+  "subtitle": "Mainly Mechanics, Radiation, and Heat",
+  "author": "Richard P. Feynman, Robert B. Leighton, Matthew Sands",
+  "publicationYear": 1964,
+  "publisher": "Addison-Wesley",
+  "isbn": "9780465040858",
+  "language": "English",
+  "pageCount": 968,
+  "genres": [
+    "Science",
+    "Physics",
+    "Textbooks",
+    "Classical Mechanics",
+    "Thermodynamics",
+    "Optics"
+  ],
+  "subjects": [
+    "Classical mechanics",
+    "Thermodynamics",
+    "Radiation",
+    "Optics",
+    "Special relativity",
+    "Wave phenomena",
+    "Kinetic theory",
+    "Quantum behavior",
+    "Conservation laws",
+    "Symmetry in physics"
+  ],
+  "themes": [
+    "Atomic theory as the foundation of all physics",
+    "Unity and beauty of physical laws",
+    "Conservation principles as deep constraints",
+    "Understanding before calculation",
+    "The role of symmetry in physical theory"
+  ],
+  "tags": [
+    "feynman",
+    "caltech",
+    "physics",
+    "mechanics",
+    "thermodynamics",
+    "relativity",
+    "quantum",
+    "optics",
+    "education",
+    "classic",
+    "nobel-prize",
+    "science",
+    "lectures",
+    "textbook"
+  ],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 50,
+  "estimatedListeningMinutes": 3100,
+  "awards": [
+    "Based on Nobel Prize-winning work in quantum electrodynamics (1965)",
+    "Caltech's Richard Chace Tolman Professorship",
+    "Oersted Medal for teaching (1972)"
+  ],
+  "authorBiography": "Richard Phillips Feynman (1918–1988) was an American theoretical physicist, widely regarded as one of the greatest physicists of the 20th century. He shared the 1965 Nobel Prize in Physics with Julian Schwinger and Shin'ichirō Tomonaga for fundamental work in quantum electrodynamics. Feynman developed the path integral formulation of quantum mechanics, invented Feynman diagrams (now ubiquitous in particle physics), pioneered quantum computing, and introduced the concept of nanotechnology. He served on the Manhattan Project, the Rogers Commission investigating the Challenger disaster, and was renowned as an extraordinary teacher. His popular books including Surely You're Joking, Mr. Feynman! and The Character of Physical Law made him one of the most recognizable scientists in the world.",
+  "authorNationality": "American",
+  "authorBorn": "1918-05-11",
+  "authorKnownFor": [
+    "Quantum electrodynamics",
+    "Feynman diagrams",
+    "Path integral formulation",
+    "Nanotechnology",
+    "Quantum computing",
+    "The Feynman Lectures on Physics",
+    "Parton model",
+    "Superfluidity of liquid helium",
+    "Challenger disaster investigation",
+    "Science popularization"
+  ]
+}

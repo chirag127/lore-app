@@ -1,0 +1,37 @@
+{
+  "slug": "the-lean-startup-eric-ries",
+  "title": "The Lean Startup",
+  "subtitle": "How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
+  "authors": ["Eric Ries"],
+  "isbn13": "9780307887894",
+  "isbn10": "0307887898",
+  "publisher": "Crown Business",
+  "year": 2011,
+  "pages": 336,
+  "language": "en",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/id/6911571-L.jpg",
+    "source": "openlibrary",
+    "color": "#2C3E50"
+  },
+  "difficulty": "medium",
+  "readingTimeMinutes": 480,
+  "listeningTimeMinutes": 580,
+  "tags": [
+    "entrepreneurship",
+    "startup",
+    "lean-methodology",
+    "innovation",
+    "product-management",
+    "mvp",
+    "build-measure-learn",
+    "validated-learning",
+    "pivot",
+    "business-model",
+    "silicon-valley",
+    "eric-ries",
+    "continuous-innovation",
+    "lean-startup",
+    "customer-development"
+  ]
+}

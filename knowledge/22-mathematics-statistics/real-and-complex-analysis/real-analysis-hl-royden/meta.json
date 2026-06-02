@@ -1,0 +1,24 @@
+{
+  "title": "Real Analysis",
+  "slug": "real-analysis-hl-royden",
+  "author": "H. L. Royden, Patrick M. Fitzpatrick",
+  "isbn": "9780134130767",
+  "issn": null,
+  "publisher": "Prentice Hall / McGraw-Hill",
+  "year": 1988,
+  "pages": 487,
+  "format": "Hardcover",
+  "edition": "3rd (original Royden; Fitzpatrick edited 4th 2010)",
+  "oclc": null,
+  "lccn": null,
+  "language": "en",
+  "category": "22-mathematics-statistics",
+  "subcategory": "real-and-complex-analysis",
+  "genres": ["mathematics", "real-analysis", "measure-theory", "functional-analysis", "textbook", "graduate-level"],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780134130767-L.jpg",
+    "color": "#1a237e"
+  },
+  "description": "The definitive graduate-level textbook on measure theory, integration, and functional analysis. Royden's approach organises real analysis as a single coherent subject: measure in Part I, abstract topological and Banach/Hilbert space theory in Part II, and general measure and integration in Part III. Long the standard first-year graduate analysis text at top U.S. mathematics departments.",
+  "rationale": "Selected as the root book for real-and-complex-analysis because it has served since 1963 as the single canonical graduate analysis text at institutions including Princeton, Stanford, and Rice. Its part-structure makes it uniquely suited as an organising spine for this subcategory; every subsequent analytic text in the subcategory (Folland, Rudin R&CA, Hewitt-Stromberg) either presupposes it or directly competes with it as a foundational reference."
+}

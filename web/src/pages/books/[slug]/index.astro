@@ -1,0 +1,150 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookHeader from '../../../components/book/BookHeader.astro';
+import CoverArt from '../../../components/book/CoverArt.astro';
+import { Ornament } from '../../../components/ui/Primitives.tsx';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((b) => ({ params: { slug: b.data.slug } }));
+}
+
+const { slug } = Astro.params;
+const book = (await getCollection('books')).find((b) => b.data.slug === slug);
+if (!book) return Astro.redirect('/404');
+const overviewDir = book.id.replace(/\/meta$/, '');
+const overviewAll = await getCollection('overview');
+const overview = overviewAll.find((e) => e.id.startsWith(overviewDir));
+const all = await getCollection('books');
+const related = book.data.relatedBooks
+  .map((s) => all.find((b) => b.data.slug === s))
+  .filter(Boolean);
+const { Content } = overview ? await render(overview) : { Content: null };
+
+const catName = book.data.category ? book.data.category.split('-').slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : null;
+const subName = book.data.subcategory ? book.data.subcategory.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : null;
+---
+<BaseLayout
+  title={book.data.title}
+  description={book.data.excerpt}
+  image={book.data.cover?.url}
+  type="book"
+  bookData={{
+    slug: book.data.slug,
+    title: book.data.title,
+    authors: book.data.authors,
+    cover: book.data.cover?.url,
+    year: book.data.year,
+    excerpt: book.data.excerpt,
+  }}
+>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 md:py-16">
+    {(catName || subName) && (
+      <nav class="mb-6 font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute" aria-label="Breadcrumb">
+        <a href="/categories" class="hover:text-terracotta-500 transition-colors">Categories</a>
+        {catName && (
+          <>
+            <span class="mx-2">·</span>
+            <a href={`/category/${book.data.category}`} class="hover:text-terracotta-500 transition-colors">{catName}</a>
+          </>
+        )}
+        {subName && book.data.subcategory && (
+          <>
+            <span class="mx-2">·</span>
+            <a href={`/category/${book.data.category}/${book.data.subcategory}`} class="hover:text-terracotta-500 transition-colors">{subName}</a>
+          </>
+        )}
+      </nav>
+    )}
+
+    <BookHeader book={book} active="overview">
+      <article class="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-10">
+        <div class="min-w-0">
+          <Ornament client:load>Overview</Ornament>
+          <h2 class="font-display text-display-md font-light mt-4 mb-6 text-balance">
+            {book.data.excerpt}
+          </h2>
+          {Content && (
+            <div class="prose-bookatlas">
+              <Content />
+            </div>
+          )}
+        </div>
+        <aside class="space-y-6 sm:space-y-8">
+          <div>
+            <h3 class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mb-3">Key ideas</h3>
+            <ul class="space-y-3">
+              {book.data.keyIdeas.map((idea) => (
+                <li class="flex gap-2 text-sm leading-relaxed">
+                  <span class="text-terracotta-500 mt-1">·</span>
+                  <span>{idea}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {book.data.keyTakeaways.length > 0 && (
+            <div>
+              <h3 class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mb-3">Key takeaways</h3>
+              <ol class="space-y-2 text-sm list-decimal pl-5">
+                {book.data.keyTakeaways.map((t) => <li>{t}</li>)}
+              </ol>
+            </div>
+          )}
+          {book.data.whoShouldRead.length > 0 && (
+            <div>
+              <h3 class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-emerald-600 mb-3">Who should read</h3>
+              <ul class="space-y-1 text-sm text-ink-soft">
+                {book.data.whoShouldRead.map((w) => <li>· {w}</li>)}
+              </ul>
+            </div>
+          )}
+          {book.data.whoShouldSkip.length > 0 && (
+            <div>
+              <h3 class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-terracotta-500 mb-3">Who should skip</h3>
+              <ul class="space-y-1 text-sm text-ink-soft">
+                {book.data.whoShouldSkip.map((w) => <li>· {w}</li>)}
+              </ul>
+            </div>
+          )}
+          {book.data.tags.length > 0 && (
+            <div>
+              <h3 class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mb-3">Tags</h3>
+              <ul class="flex flex-wrap gap-1.5">
+                {book.data.tags.map((t) => (
+                  <li>
+                    <a
+                      href={`/books?tag=${encodeURIComponent(t)}`}
+                      class="inline-flex items-center px-2 h-6 font-mono text-[0.625rem] uppercase tracking-[0.16em] border border-rule hover:border-terracotta-400 hover:text-terracotta-500 transition-colors"
+                    >{t}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </aside>
+      </article>
+
+      {related.length > 0 && (
+        <section class="mt-12 sm:mt-20">
+          <h3 class="font-display text-xl sm:text-2xl font-light mb-6">Related in the atlas</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+            {related.map((r) => r && (
+              <a href={`/books/${r.data.slug}`} class="group block">
+                <CoverArt
+                  title={r.data.title}
+                  author={r.data.authors[0]}
+                  cover={r.data.cover}
+                  accent={r.data.cover?.color}
+                  class="group-hover:shadow-[var(--shadow-lift)] transition-shadow duration-500"
+                />
+                <p class="mt-2 text-sm group-hover:text-terracotta-500 transition-colors">{r.data.title}</p>
+                <p class="text-xs text-ink-soft">{r.data.authors[0]}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </BookHeader>
+  </section>
+</BaseLayout>

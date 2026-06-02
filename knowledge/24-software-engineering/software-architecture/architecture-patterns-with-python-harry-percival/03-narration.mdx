@@ -1,0 +1,307 @@
+---
+title: Narration
+subtitle: A Conversational Walk Through Architecture Patterns with Python
+---
+
+## Introduction
+
+Welcome to BookAtlas. Today: *Architecture Patterns with Python:
+Enabling Test-Driven Development, Domain-Driven Design, and
+Event-Driven Microservices* by Harry Percival and Bob Gregory.
+Published March 2020, O'Reilly Media. 301 pages. Free companion code
+on cosmicpython.com. This is the book that showed the Python world
+that DDD and hexagonal architecture are not "Java things."
+
+Tonight we have two perspectives. On one side, a backend architect
+who has used these patterns in production for years. On the other, a
+Django developer who has built monoliths and wonders if all this
+abstraction is worth the ceremony. Let's get into it.
+
+---
+
+## The Setup: Why This Book Exists
+
+**Architect:** Harry Percival wrote the O'Reilly classic
+*Test-Driven Development with Python* (the "Testing Goat" book).
+After that book came out, readers kept asking him: okay, I can test
+my Django views — but how do I structure my application so that the
+core logic is testable *without* a Django test client? How do I
+write unit tests for business rules without spinning up a database?
+This book is the answer.
+
+**Django Dev:** But Django already has a perfectly good ORM. Why
+add a repository layer on top of it? Why abstract the unit of work
+when Django's transaction management works fine?
+
+**Architect:** Because those abstractions let you test your core
+logic without Django at all. The book's whole premise is that your
+business logic should be testable in pure Python — no ORM, no
+framework, no database. The day you want to migrate from Django to
+FastAPI, you change the adapter, not the domain. That's the payoff.
+
+---
+
+## The Domain Model: Heart of the System
+
+The book opens with a plain Python class. No inheritance from
+`models.Model`. No SQLAlchemy `declarative_base()`. Just a `Batch`
+entity and an `OrderLine` value object with pure business methods:
+
+```python
+class Batch:
+    def __init__(self, ref: str, sku: str, qty: int, eta: date):
+        self.ref = ref
+        self.sku = sku
+        self.eta = eta
+        self._purchased_quantity = qty
+        self._allocations: set[OrderLine] = set()
+
+    def allocate(self, line: OrderLine):
+        if self.can_allocate(line):
+            self._allocations.add(line)
+
+    def can_allocate(self, line: OrderLine) -> bool:
+        return (
+            self.sku == line.sku
+            and self.available_quantity >= line.qty
+        )
+```
+
+**Architect:** This is the right place to start. No framework
+decisions yet. Just business language. "Can this batch allocate this
+order line?" — that's the ubiquitous language Evans talks about in
+the DDD blue book. The authors defer infrastructure decisions until
+the domain is solid.
+
+**Django Dev:** But in Django, `Batch` would be a model, and those
+methods would be model methods. What's the advantage of keeping it
+pure?
+
+**Architect:** Two things. First, test speed: you test
+`can_allocate()` in microseconds, no database. Second, separation:
+when your allocation logic gets complex (and it will — there are
+always business rules like "allocate from batches closest to their
+ETA first"), you want that complexity in one place, not scattered
+across your ORM callbacks and view functions.
+
+---
+
+## Repository: The First Pattern
+
+A repository mediates between the domain and data mapping layers.
+It acts like an in-memory collection:
+
+```python
+class AbstractRepository(ABC):
+    @abstractmethod
+    def add(self, product):
+        ...
+
+    @abstractmethod
+    def get(self, sku) -> Product:
+        ...
+```
+
+**Django Dev:** So instead of `Product.objects.get(sku=...)`, I call
+`repo.get(sku)` — what did I gain?
+
+**Architect:** You gained the ability to test without a database.
+Look:
+
+```python
+class FakeRepository(AbstractRepository):
+    def __init__(self, products: dict):
+        self._products = products
+
+    def add(self, product):
+        self._products[product.sku] = product
+
+    def get(self, sku):
+        return self._products.get(sku)
+```
+
+That's your test repository. No database setup, no fixtures, no
+transactions. And when you wire it into the service layer, the
+service layer itself becomes testable:
+
+```python
+def test_allocate_returns_batch_ref():
+    repo = FakeRepository({...})
+    result = allocate(line, repo)
+    assert result == "batch-ref-001"
+```
+
+**Django Dev:** Okay, that's genuinely useful. But it's also a lot
+of ceremony. How many of these abstractions does a real app need?
+
+**Architect:** That's the thing — the book introduces them
+*gradually*. You don't implement all six patterns on day one. You
+start with just the repository. If your app stays simple, you stop
+there. The Unit of Work comes only when you need atomic multi-repo
+operations. The message bus comes only when side effects start
+tangling your service layer.
+
+---
+
+## Unit of Work: Coordinating Transactions
+
+The UoW pattern bundles multiple repository operations into a single
+transaction:
+
+```python
+with uow:
+    product = uow.products.get(sku)
+    product.allocate(line)
+    uow.commit()
+```
+
+**Django Dev:** This looks like a context manager wrapping a
+database transaction. Django's `transaction.atomic()` does this
+already.
+
+**Architect:** Yes, but the UoW is an *abstraction* over
+transactions. The test version:
+
+```python
+class FakeUnitOfWork:
+    def __init__(self):
+        self.products = FakeRepository()
+        self.committed = False
+
+    def commit(self):
+        self.committed = True
+
+    def rollback(self):
+        pass
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        pass
+```
+
+Now your test can assert that `commit()` was called. You verify
+transactional behavior without a real database. Django's
+`transaction.atomic()` commits when the block exits — you cannot
+easily assert that it committed in a unit test.
+
+---
+
+## The Message Bus: Events as First-Class Citizens
+
+Part II introduces the message bus — the most impactful pattern in
+the book, in my opinion. Here is the flow:
+
+1. A command arrives (e.g., `Allocate(order_id, sku, qty)`)
+2. The bus finds the handler (`allocate_handler`)
+3. The handler calls domain logic, which emits events
+   (`Allocated`, `OutOfStock`)
+4. The bus collects those events and routes them to event handlers
+   (e.g., `send_email_on_allocated`)
+5. Those handlers may emit new events, and the loop continues
+
+**Django Dev:** So my allocation function doesn't send emails
+directly?
+
+**Architect:** Correct. The allocation function just allocates. If
+sending an email fails, the allocation succeeded — the email is a
+side effect. The domain stays pure. You can test the email handler
+separately. You can add or remove handlers without touching the
+domain model.
+
+**Django Dev:** But the bus is in-process. What if an event handler
+crashes?
+
+**Architect:** That's the book's biggest limitation. In production,
+you would persist events to a database (outbox pattern) and use a
+message broker (Redis, RabbitMQ, Kafka) to guarantee delivery. The
+book keeps it in-process for simplicity. It flags this as a known
+limitation. Part II is titled "Event-Driven Architecture" but it is
+really "event-driven within a single process." Distributed event
+driven is a different book.
+
+---
+
+## CQRS: Separating Reads from Writes
+
+The CQRS chapter is short but important. The key insight: your
+domain model is optimized for enforcing business invariants during
+writes. It is often terrible for reads. The read side should be
+simple:
+
+```python
+def allocations_view(database, sku):
+    return database.execute(
+        "SELECT batch_ref, sku, qty "
+        "FROM allocations_view "
+        "WHERE sku = :sku",
+        dict(sku=sku),
+    )
+```
+
+**Architect:** A direct SQL query. No aggregates, no events, no
+UoW. Just data. The read model is updated by an event handler that
+runs *after* the write model commits.
+
+**Django Dev:** This sounds like eventual consistency. The user
+writes something and the read side might not see it immediately.
+
+**Architect:** Exactly. And that is the trade-off. CQRS buys you
+performance and simplicity on the read side but costs you
+immediate consistency. You apply it only when the read side truly
+benefits. The book recommends you *start* without CQRS and refactor
+to it when the pain of mixing reads and writes exceeds the pain of
+eventual consistency.
+
+---
+
+## The Verdict
+
+**Django Dev:** I came in skeptical. A lot of this feels like
+unnecessary abstraction if you are happy with Django's ORM. But I
+can see the value for complex domains. The repository pattern alone
+is worth the price if you care about fast unit tests.
+
+**Architect:** I've been using these patterns in production — at
+companies much smaller than MADE.com — and they pay for themselves
+the first time you need to change the database or add a new
+integration. The book is not for simple CRUD apps. But if your
+domain has real business rules, the small upfront cost of these
+abstractions is repaid many times over.
+
+The book's greatest achievement is proving that Python can do DDD
+without Java-level ceremony. Protocols, context managers, and
+simple dicts as handler registries — this is Pythonic architecture,
+not translated architecture.
+
+**Django Dev:** One concern: the book teaches you how to build the
+architecture, but it doesn't teach you *when* to stop adding
+patterns. Every Python developer who reads this will want to add a
+message bus to their To-Do app.
+
+**Architect:** That's fair. The authors address this in chapter 11:
+"don't do DDD if you don't need it." The patterns exist to solve
+specific problems — slow tests, tangled side effects, implicit
+transactions. If you don't have those problems, don't apply the
+pattern. Architecture is debt, even good architecture. Incur it
+only when the return is clear.
+
+---
+
+## Final Thoughts
+
+*Architecture Patterns with Python* is the best book I have read on
+applying DDD and hexagonal architecture to Python. It is not a
+comprehensive guide to distributed systems, event sourcing, or
+CQRS at scale. But it is the book every intermediate Python
+developer should read before building their second nontrivial
+application.
+
+The patterns survive framework changes. The test-first approach
+builds genuine confidence. And the code on cosmicpython.com will
+still be relevant long after the next Django or FastAPI version
+arrives.
+
+This has been a BookAtlas narration of Architecture Patterns with
+Python by Harry Percival and Bob Gregory. Thanks for listening.

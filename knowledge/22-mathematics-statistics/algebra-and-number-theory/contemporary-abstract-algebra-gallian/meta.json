@@ -1,0 +1,17 @@
+{
+  "slug": "contemporary-abstract-algebra-gallian",
+  "title": "Contemporary Abstract Algebra",
+  "author": "Joseph A. Gallian",
+  "isbn13": "9780547165097",
+  "publisher": "Cengage Learning",
+  "year": 1986,
+  "pages": 656,
+  "language": "en",
+  "category": "22-mathematics-statistics",
+  "subcategory": "algebra-and-number-theory",
+  "genres": ["mathematics", "abstract-algebra", "undergraduate-textbook"],
+  "excerpt": "A highly accessible undergraduate abstract algebra text known for its engaging writing style, extensive applications, and historical context.",
+  "cover": "https://covers.openlibrary.org/b/isbn/9780547165097-L.jpg",
+  "difficulty": "intermediate",
+  "tags": ["abstract-algebra", "undergraduate-mathematics", "group-theory", "cryptography", "applications"]
+}

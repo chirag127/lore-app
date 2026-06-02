@@ -1,0 +1,72 @@
+## Key Problem
+
+The central problem _The Art of Readable Code_ addresses is the **unsustainable cognitive cost of unreadable code**. When code is hard to understand, every subsequent operation — review, debugging, modification, testing — becomes slower and more error-prone. Teams waste hours deciphering code that could have been written clearly in the first place, and codebases degrade over time as cumulative readability debt makes each change riskier than the last.
+
+A secondary problem is the **lack of a shared vocabulary for readability**. Developers often cannot articulate why one piece of code is better than another, leading to subjective code review comments ("this feels messy") instead of objective diagnoses ("this function mixes two levels of abstraction"). Without a common language for discussing readability, teams cannot establish consistent standards.
+
+## Proposed Solution
+
+The solution is a **catalogue of concrete, language-agnostic techniques** organized by their distance from the code surface, each demonstrated with before-and-after examples. The core principles are:
+
+1. **Packing information into names.** Every identifier is a communication channel. Use specific, concrete, descriptive names that encode intent, type, scope, and units.
+
+2. **Commenting the why, not the what.** Comments should explain what the code cannot say: why an approach was chosen, what flaws are known, and how the code fits into the larger system.
+
+3. **Reducing cognitive load in control flow.** Write conditionals, loops, and branches so they read naturally the first time — minimize nesting, return early, break down giant expressions.
+
+4. **Extracting unrelated subproblems.** Identify code that solves a different problem than the surrounding function and extract it into a separate, reusable function.
+
+5. **Writing less code.** Before adding code, question whether the feature is necessary, whether an existing library handles it, and whether the requirement can be simplified.
+
+## Evidence & Argumentation
+
+The book's evidence consists entirely of **demonstration through example**. Each technique is shown with a "before" snippet that is objectively harder to understand and an "after" snippet that is easier. The argument is: "Compare these two versions. The second is clearly more readable. Therefore, apply this technique."
+
+This approach is persuasive but has limitations:
+- Examples are constructed to maximize the technique's apparent benefit
+- No empirical data supports the claimed improvement in time-till-understanding
+- Short examples (5-20 lines) may not reflect how techniques work in large codebases
+- The book does not address cases where techniques conflict or where readability and other concerns (performance, memory, API surface) must be balanced
+
+Unlike _Code Complete_, which situates its advice within decades of software engineering research, or _The Pragmatic Programmer_, which draws on consulting experience across many organizations, this book's evidence is **self-contained and closed** — the examples prove themselves, but only within their own terms.
+
+## Unresolved Questions
+
+1. **How do readability techniques compose?** The book treats each technique independently. In practice, a function might benefit from renaming, extracting subproblems, simplifying control flow, and adding comments simultaneously. Whether these interventions interact positively or create confusion is not addressed.
+
+2. **What is the cost of readability?** Extracting functions adds indirection. Renaming requires updating references. Comments must be maintained. The book acknowledges these costs implicitly but provides no framework for weighing them against the readability benefit.
+
+3. **How does readability scale?** The techniques work well for functions of 5-50 lines. How do they apply to large modules, cross-cutting concerns, or systems with hundreds of files? The book's focus on micro-level readability leaves macro-level readability unexplored.
+
+4. **Whose readability?** A name that is clear to a domain expert may be obscure to a generalist. A test that reads well for the author may confuse new team members. The book assumes a generic "reader" without addressing how reader background and context affect what is readable.
+
+5. **How does culture affect naming advice?** The book's naming advice assumes native English proficiency. As reviewer Alix Fachin noted, "I am not a native English speaker, neither are my co-workers, so this ends up being a point of discussion pretty often."
+
+## Criticisms
+
+**Nicholas C. Zakas** (ESLint creator) noted that he "found myself disagreeing with some of the approaches in the book" — particularly around naming conventions and comment style — while still acknowledging the value of having a consistent approach regardless of personal preference.
+
+**Alix Fachin** observed that "some advice is pretty generic, and ends up being more subjective than anything else," particularly around naming variables and functions, which "still end up containing a hefty dose of subjectivity."
+
+Several Goodreads reviewers note the book overlaps significantly with _Clean Code_, covering similar ground with less depth and authority. One 3-star review called it "Clean Code Lite" — useful as a primer but insufficient for experienced developers.
+
+Critics from the academic software engineering community point out the absence of references to the extensive literature on program comprehension, cognitive load, and developer behavior that would have grounded the book's recommendations in empirical evidence.
+
+## Alternative Solutions
+
+**Static analysis tools** (linters, formatters) provide automated enforcement of many naming, formatting, and complexity rules that this book advocates manually. Tools like ESLint, Pylint, and clang-tidy can detect unused variables, overly complex expressions, and naming convention violations without requiring developers to learn each rule individually.
+
+**Code review checklists** offer a team-level approach to readability that complements individual skills. By codifying readability expectations (names should reveal intent, functions should have single responsibility, comments should explain why not what) into a shared checklist, teams distribute the responsibility for maintaining standards.
+
+**Style guides** (Google Style Guide, Airbnb JavaScript Style Guide) provide organization-wide conventions that reduce the cognitive overhead of formatting decisions. The book's advice on aesthetics and naming presaged the widespread adoption of automated formatters like Prettier and Black, which eliminate entire categories of readability debate.
+
+**Pair programming** catches readability issues in real time, as the second pair of eyes provides immediate feedback on clarity. This is more expensive than the individual techniques the book recommends but may be more effective for building shared standards.
+
+## Practical Applications
+
+The book's techniques are directly applicable in:
+- **Code reviews**: Use the vocabulary of time-till-understanding to frame feedback. Instead of "rename this variable," say "this variable takes 5 seconds to understand because... try X instead."
+- **Onboarding**: The book serves as a shared baseline for team readability standards. Have new hires read it before their first pull request.
+- **Refactoring sprints**: Apply the full technique catalogue to legacy code, measuring improvement in review time or defect rate.
+- **Test writing**: Use the test readability techniques (descriptive names, minimal inputs, hand-crafted error messages) to make test failures immediately informative.
+- **Pull request templates**: Include readability checklist items derived from the book's techniques (names reveal intent? one task per function? unrelated subproblems extracted?).

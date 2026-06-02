@@ -1,0 +1,15 @@
+{
+  "id": "dune-frank-herbert",
+  "title": "Dune",
+  "slug": "dune-frank-herbert",
+  "authors": ["Frank Herbert"],
+  "year": 1965,
+  "category": "28-fiction",
+  "subcategory": "science-fiction",
+  "pages": 704,
+  "isbn": "9780441013593",
+  "language": "en",
+  "genres": ["Science Fiction", "Political Fiction", "Ecological Fiction", "Adventure"],
+  "source": "generated",
+  "generatedAt": "2026-06-12"
+}

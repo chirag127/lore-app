@@ -1,0 +1,58 @@
+{
+  "slug": "a-philosophy-of-software-design-john-ousterhout",
+  "title": "A Philosophy of Software Design",
+  "author": "John K. Ousterhout",
+  "subtitle": "Managing Complexity in Software Systems",
+  "description": "A concise guide to software design focused on the\nfundamental problem of managing complexity. Ousterhout argues that the\nmost important skill for a software engineer is the ability to decompose\nsystems into deep modules — modules with simple interfaces and rich\nimplementations — that hide complexity from the rest of the system. The\nbook challenges conventional wisdom on class size, comments, and\ntest-driven development, offering a coherent philosophy grounded in\ndecades of experience building large-scale systems.",
+  "coverUrl": "https://covers.openlibrary.org/b/OL/OL39808159M-M.jpg",
+  "isbn10": "173210221X",
+  "isbn13": "978-1732102217",
+  "pages": 196,
+  "publishedYear": 2021,
+  "publisher": "Yaknyam Press",
+  "openlibrarySlug": "OL39808159M",
+  "tags": [
+    "software-design",
+    "programming",
+    "engineering",
+    "architecture",
+    "complexity"
+  ],
+  "keyIdeas": [
+    "Complexity is the fundamental problem in software",
+    "Deep modules: simple interfaces with rich implementations",
+    "Information hiding as the primary design technique",
+    "Strategic vs. tactical programming",
+    "Working code is not enough",
+    "Different layers, different abstractions",
+    "Define errors out of existence",
+    "General-purpose modules are deeper",
+    "Pull complexity downward",
+    "Design it twice"
+  ],
+  "keyTakeaways": [
+    "Software complexity is anything that makes the system hard to\nunderstand or modify",
+    "Deep modules maximize the amount of complexity hidden behind a\nsimple interface — this is the single most important design principle",
+    "Information hiding (Parnas, 1972) is the primary tool for creating\ndeep modules; information leakage is its opposite and a design red flag",
+    "Shallow modules (complex interface, little functionality) create\n'classitis' and increase overall system complexity",
+    "Tactical programming — rushing to get features working — is the\nbiggest source of long-term complexity",
+    "Each abstraction layer should provide a different service;\npass-through methods and pass-through variables indicate broken\nlayering",
+    "The best way to handle exceptions is to design them out of\nexistence, not add more exception handlers",
+    "Comments are not optional — they document the abstraction that\nthe code alone cannot express",
+    "Good names create an image in the reader's mind; vague names are a\nred flag for unclear design",
+    "Always design a module at least two ways before committing to one"
+  ],
+  "whoShouldRead": [
+    "Working software engineers at any experience level",
+    "CS students who have completed introductory programming courses",
+    "Tech leads and architects making structural design decisions",
+    "Engineers frustrated by growing complexity in their codebases",
+    "Developers who want a coherent philosophy, not just a checklist of\npatterns"
+  ],
+  "relatedBooks": [
+    "clean-code-robert-martin",
+    "clean-architecture-robert-martin",
+    "the-pragmatic-programmer-andrew-hunt",
+    "refactoring-martin-fowler"
+  ]
+}

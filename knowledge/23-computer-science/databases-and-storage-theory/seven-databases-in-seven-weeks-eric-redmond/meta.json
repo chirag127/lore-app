@@ -1,0 +1,37 @@
+{
+  "slug": "seven-databases-in-seven-weeks-eric-redmond",
+  "title": "Seven Databases in Seven Weeks",
+  "subtitle": "A Guide to Modern Databases and the NoSQL Movement",
+  "authors": ["Luc Perkins", "Eric Redmond", "Jim Wilson"],
+  "isbn": "9781680502543",
+  "isbn10": "1680502542",
+  "edition": "2nd",
+  "published": "2022-08-16",
+  "publisher": "Pragmatic Bookshelf",
+  "pages": 350,
+  "genres": ["Technology", "Databases", "Computer Science", "NoSQL"],
+  "tags": [
+    "postgresql", "mongodb", "neo4j", "redis", "cassandra",
+    "hbase", "dynamodb", "nosql", "cap-theorem", "polyglot-persistence",
+    "database-comparison", "data-modeling", "distributed-systems"
+  ],
+  "coverUrl": "https://pragprog.com/titles/edbn2/seven-databases-in-seven-weeks-second-edition/cover_large.jpg",
+  "description": "A hands-on, week-by-week comparative tour of seven modern database systems. Each week introduces a new database, teaching readers how to model, query, and reason about data in PostgreSQL, HBase, MongoDB, Neo4j, Cassandra, DynamoDB, and Redis. The book emphasizes polyglot persistence—choosing the right tool per problem—through practical exercises, real-world trade-offs, and deep coverage of consistency models.",
+  "difficulty": "intermediate",
+  "readingTime": "16 hours",
+  "structure": {
+    "part1": { "label": "Relational", "chapters": [1, 2] },
+    "part2": { "label": "Distributed Columnar", "chapters": [3, 4] },
+    "part3": { "label": "Document", "chapters": [5, 6] },
+    "part4": { "label": "Graph", "chapters": [7, 8] },
+    "part5": { "label": "Wide-Column", "chapters": [9, 10] },
+    "part6": { "label": "Cloud-Managed", "chapters": [11, 12] },
+    "part7": { "label": "Key-Value", "chapters": [13, 14] }
+  },
+  "files": [
+    "index.mdx",
+    "01-content.mdx",
+    "02-analysis.mdx",
+    "03-narration.mdx"
+  ]
+}

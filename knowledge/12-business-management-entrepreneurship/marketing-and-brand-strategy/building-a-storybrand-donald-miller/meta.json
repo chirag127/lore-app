@@ -1,0 +1,66 @@
+{
+  "title": "Building a StoryBrand: Clarify Your Message So Customers Will Listen",
+  "subtitle": "A 7-Part Story Framework for Marketing that Connects",
+  "author": "Donald Miller",
+  "slug": "building-a-storybrand-donald-miller",
+  "isbn": "9780310252125",
+  "language": "en",
+  "publisher": "HarperCollins Leadership",
+  "publicationYear": 2017,
+  "edition": "1st",
+  "pages": 256,
+  "categories": ["Marketing", "Business", "Branding", "Communication"],
+  "tags": ["storybrand", "SB7", "messaging", "hero-journey", "brand-voice"],
+  "difficulty": "beginner",
+  "readingTimeMinutes": 6,
+  "coverImage": "/images/building-a-storybrand.jpg",
+  "heroImage": "/images/building-a-storybrand-hero.jpg",
+  "description": "Donald Miller explains why customers don't buy products — they buy better versions of themselves — and introduces the SB7 framework: a seven-part story structure any brand can use to clarify their message, position the customer as the hero, and drive measurable engagement.",
+  "longDescription": "Most companies fail to connect with customers because their marketing puts the brand at the center instead of the customer. Donald Miller, CEO of StoryBrand and New York Times bestselling author, shows how to fix this by applying the timeless rules of story to modern marketing. Using the SB7 framework, Miller gives businesses a repeatable process for crafting messages that customers instantly understand and act on.",
+  "authorBio": "Donald Miller is the CEO of StoryBrand, a marketing company that helps small businesses clarify their messaging. He is the author of multiple New York Times bestsellers, including Building a StoryBrand and Marketing Made Simple. Miller hosts the Building a StoryBrand Podcast and regularly speaks at conferences.",
+  "amazonUrl": "https://www.amazon.com/Building-StoryBrand-Clarify-Message-Customers/dp/0310252124",
+  "goodreadsUrl": "https://www.goodreads.com/book/show/31818670-building-a-storybrand",
+  "storybrandOfficial": "https://storybrand.com/",
+  "rewards": [],
+  "relatedBooks": [
+    {
+      "title": "Made to Stick",
+      "author": "Chip Heath & Dan Heath",
+      "reason": "Both books focus on why some ideas survive and others die — Made to Stick from a cognitive-science angle, StoryBrand from a story-structure angle."
+    },
+    {
+      "title": "The Hero with a Thousand Faces",
+      "author": "Joseph Campbell",
+      "reason": "The mythological monomyth underpins the SB7 hero-centric framing; Campbell's work is the intellectual ancestor of Miller's framework."
+    },
+    {
+      "title": "Positioning: The Battle for Your Mind",
+      "author": "Al Ries & Jack Trout",
+      "reason": "Classic marketing text on mental real estate — StoryBrand operationalizes similar territory through narrative rather than claim warfare."
+    }
+  ],
+  "chapters": [
+    { "number": 1,  "title": "The Great Story",           "slug": "01-great-story" },
+    { "number": 2,  "title": "The Hero",                   "slug": "02-the-hero" },
+    { "number": 3,  "title": "A Character Who Has a Problem", "slug": "03-character-problem" },
+    { "number": 4,  "title": "The Guide",                  "slug": "04-the-guide" },
+    { "number": 5,  "title": "The Plan",                   "slug": "05-the-plan" },
+    { "number": 6,  "title": "Call to Action",             "slug": "06-call-to-action" },
+    { "number": 7,  "title": "Help Them Avoid Failure",    "slug": "07-avoid-failure" },
+    { "number": 8,  "title": "Help Them Win",              "slug": "08-help-them-win" },
+    { "number": 9,  "title": "Positioning",                "slug": "09-positioning" },
+    { "number": 10, "title": "The Message Not Taken",      "slug": "10-message-not-taken" },
+    { "number": 11, "title": "Marketing Automation",       "slug": "11-marketing-automation" },
+    { "number": 12, "title": "Implementing the Framework", "slug": "12-implementing" }
+  ],
+  "schemas": {
+    "overview": {
+      "file": "index.mdx",
+      "label": "Overview",
+      "description": "Book entry hub listing all sections"
+    },
+    "content":    { "file": "01-content.mdx",  "label": "Core Content", "description": "Structured chapter-by-chapter summary" },
+    "analysis":   { "file": "02-analysis.mdx", "label": "Analysis",      "description": "Critical commentary on the framework and its limits" },
+    "narration":  { "file": "03-narration.mdx", "label": "Narration",    "description": "Narrative book review and audiobook-style walkthrough" }
+  }
+}

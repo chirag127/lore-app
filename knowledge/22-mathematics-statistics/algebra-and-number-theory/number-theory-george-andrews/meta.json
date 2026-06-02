@@ -1,0 +1,18 @@
+{
+  "slug": "number-theory-george-andrews",
+  "title": "Number Theory",
+  "subtitle": "A Classic Undergraduate Introduction",
+  "author": "George E. Andrews",
+  "publicationYear": 1971,
+  "isbn": "9780486682525",
+  "publisher": "Dover Publications (reprint)",
+  "language": "en",
+  "genres": ["Mathematics", "Number Theory", "Undergraduate Textbook"],
+  "subjects": ["Divisibility", "Congruences", "Quadratic Reciprocity", "Arithmetic Functions", "Diophantine Equations", "Partitions"],
+  "themes": ["Elementary Methods", "Combinatorial Number Theory", "Historical Development", "Algorithmic Approaches"],
+  "tags": ["number theory", "Andrews", "elementary number theory", "partitions", "quadratic reciprocity", "congruences", "Diophantine equations", "Dover"],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 25,
+  "estimatedListeningMinutes": 1500,
+  "excerpt": "A distinctive undergraduate number theory text by a renowned combinatorialist, covering classical topics from divisibility through partitions with a clear, problem-driven approach."
+}

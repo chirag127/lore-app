@@ -1,0 +1,133 @@
+---
+import '../styles/global.css';
+import { ClientBootstrap } from '../components/Boot';
+import { Toaster } from '../components/ui/Toast';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Marquee from '../components/layout/Marquee.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'book';
+  bookData?: {
+    slug: string;
+    title: string;
+    authors: string[];
+    cover?: string;
+    year?: number;
+    excerpt: string;
+  };
+  noChrome?: boolean;
+}
+
+const {
+  title,
+  description = 'KnowledgeAtlas — the free platform for understanding knowledge.',
+  image,
+  type = 'website',
+  bookData,
+  noChrome = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = image ?? new URL('/og-default.png', Astro.site).toString();
+const fullTitle = title === 'KnowledgeAtlas' ? title : `${title} · KnowledgeAtlas`;
+
+const ld =
+  bookData
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: bookData.title,
+        author: bookData.authors.map((a) => ({ '@type': 'Person', name: a })),
+        datePublished: bookData.year ? `${bookData.year}` : undefined,
+        image: bookData.cover,
+        description: bookData.excerpt,
+        url: canonical,
+      }
+    : null;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1420" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="KnowledgeAtlas" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {ld && (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(ld)} />
+    )}
+    <script is:inline>
+      // Apply theme before paint to avoid flash
+      try {
+        const t = localStorage.getItem('knowledgeatlas:theme') || 'system';
+        const d = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', d);
+        document.documentElement.style.colorScheme = d ? 'dark' : 'light';
+      } catch (_) { /* noop */ }
+    </script>
+    <script>
+      import mermaid from 'mermaid';
+      const renderMermaid = async () => {
+        const nodes = document.querySelectorAll<HTMLElement>('pre[data-language="mermaid"], pre.mermaid, pre code.language-mermaid');
+        if (nodes.length === 0) return;
+        const dark = document.documentElement.classList.contains('dark');
+        mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'neutral', securityLevel: 'strict', fontFamily: 'inherit' });
+        const items = Array.from(nodes).map((node, i) => {
+          const src = node.textContent ?? '';
+          const pre = node.closest('pre') ?? node;
+          return { id: `mermaid-${i}`, src, pre };
+        });
+        for (const { id, src, pre } of items) {
+          try {
+            const { svg } = await mermaid.render(id, src);
+            const wrapper = document.createElement('figure');
+            wrapper.className = 'mermaid-figure my-8 overflow-x-auto';
+            wrapper.innerHTML = svg;
+            pre.replaceWith(wrapper);
+          } catch (err) {
+            const fallback = document.createElement('pre');
+            fallback.className = 'mermaid-failed text-sm text-terracotta-700';
+            fallback.textContent = 'Mermaid error: ' + (err as Error).message;
+            pre.replaceWith(fallback);
+          }
+        }
+      };
+      const run = () => { renderMermaid().catch((e) => console.error('mermaid', e)); };
+      if (document.readyState === 'complete') run();
+      else window.addEventListener('load', run, { once: true });
+      const mo = new MutationObserver(() => { if (document.querySelector('pre[data-language="mermaid"], pre.mermaid, pre code.language-mermaid')) run(); });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+    </script>
+  </head>
+  <body class="antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-terracotta-400 focus:text-parchment-50 focus:px-3 focus:py-2 focus:rounded-sm">Skip to content</a>
+    {!noChrome && <Marquee />}
+    {!noChrome && <Header />}
+    <main id="main" class="relative z-10">
+      <slot />
+    </main>
+    {!noChrome && <Footer />}
+    <ClientBootstrap client:load />
+    <Toaster client:load />
+    <slot name="portal" />
+  </body>
+</html>

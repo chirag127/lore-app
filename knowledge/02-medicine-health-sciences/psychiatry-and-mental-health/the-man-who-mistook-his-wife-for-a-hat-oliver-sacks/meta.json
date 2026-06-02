@@ -1,0 +1,44 @@
+{
+  "slug": "the-man-who-mistook-his-wife-for-a-hat-oliver-sacks",
+  "title": "The Man Who Mistook His Wife for a Hat and Other Clinical Tales",
+  "isbn13": "9780684853949",
+  "isbn10": "0684853949",
+  "pages": 256,
+  "year": 1985,
+  "publisher": "Summit Books",
+  "genres": ["neurology", "psychology", "case-study", "medicine", "science-writing"],
+  "authors": ["Oliver Sacks"],
+  "language": "en",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780684853949-L.jpg",
+  "deweyDecimal": "616.8",
+  "lcClassification": "RC351 .S195 1985",
+  "keyIdeas": [
+    "Neurological disorders reveal the brain's extraordinary plasticity and the human capacity for adaptation",
+    "The paradigm of 'deficit' in neurology is too narrow — many conditions reveal unexpected abilities and compensations",
+    "The right hemisphere's role in self-awareness and perception is often overlooked in clinical neurology",
+    "Patients with neurological conditions are not cases but persons with unique inner worlds and experiences",
+    "Even profound neurological losses can coexist with remarkable creative and spiritual gifts"
+  ],
+  "keyTakeaways": [
+    "The brain is not a static organ — it constantly reorganizes itself in response to injury and experience",
+    "A patient's subjective experience is as important to diagnosis and treatment as objective test results",
+    "Neurological 'deficits' often coexist with unexpected 'excesses' that can be harnessed for adaptation",
+    "The stories of patients deserve the same narrative attention as the physiology of their conditions",
+    "Medical science must balance rigorous analysis with empathy and respect for the person behind the diagnosis"
+  ],
+  "whoShouldRead": [
+    "Medical students and healthcare professionals",
+    "Anyone interested in the mysteries of the human brain",
+    "Writers and readers of narrative nonfiction",
+    "Patients and families affected by neurological conditions",
+    "Psychologists, psychiatrists, and cognitive scientists"
+  ],
+  "whoShouldSkip": [
+    "Those seeking a clinical textbook or treatment manual",
+    "Readers uncomfortable with detailed medical descriptions of unusual conditions",
+    "People who prefer a strict scientific approach over narrative storytelling"
+  ],
+  "tags": ["neurology", "oliver-sacks", "case-studies", "brain", "psychology", "clinical-tales", "neuroscience", "medical-writing", "cognitive-science"],
+  "addedAt": 1781234400,
+  "excerpt": "A landmark collection of twenty-four clinical tales exploring the strangest and most illuminating cases from a neurologist's practice — patients who lose their memories, cannot recognize faces, see music, or possess extraordinary mathematical talents despite profound intellectual disabilities."
+}

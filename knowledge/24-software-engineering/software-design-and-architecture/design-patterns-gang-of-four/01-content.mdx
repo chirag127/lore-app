@@ -1,0 +1,395 @@
+## Introduction: The Architecture of Patterns
+
+The book opens with a two-chapter introduction that is arguably as influential as the patterns themselves. Chapter 1 explains what design patterns are, why they matter, and how they relate to software design. The authors define a pattern as "a description of communicating objects and classes that are customized to solve a general design problem in a particular context." They trace the concept to Christopher Alexander's work on building architecture — specifically *A Pattern Language* (1977) and *The Timeless Way of Building* (1979) — and adapt his format to software.
+
+Chapter 2 presents a case study of a WYSIWYG document editor to demonstrate how multiple patterns compose into a real system. The editor uses Composite to represent document structure, Strategy for line-breaking algorithms, Decorator for user-interface embellishments, Abstract Factory for look-and-feel independence, Command for undoable operations, and Observer for view-update synchronization. This chapter is critical because it shows patterns interacting — a lesson many readers miss when they treat patterns as isolated recipes.
+
+The introduction also lays out the book's core design principles:
+
+1. **Program to an interface, not an implementation.** Client code should depend on abstract types, not concrete classes, so that implementations can vary without affecting clients.
+2. **Favor object composition over class inheritance.** Inheritance breaks encapsulation by exposing subclass to superclass internals; composition keeps objects decoupled and interchangeable at runtime.
+3. **Encapsulate the concept that varies.** Identify what varies in a design and isolate it behind a stable interface — the rest of the system can then ignore the variation.
+
+## Part I: Creational Patterns (5 patterns)
+
+Creational patterns abstract the instantiation process, making a system independent of how its objects are created, composed, and represented. They encapsulate knowledge about which concrete classes the system uses and hide how instances are created and put together.
+
+### Abstract Factory
+
+**Intent:** Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+**Motivation:** A UI toolkit must support multiple look-and-feel standards (Motif, Windows, Mac). Creating widgets directly would hard-code the look-and-feel throughout the codebase. Abstract Factory lets a client create a complete family of widgets (buttons, scrollbars, menus) without knowing which concrete family it is using.
+
+**Participants:** AbstractFactory (WidgetFactory) declares creation interface; ConcreteFactory (MotifWidgetFactory, WindowsWidgetFactory) implements creation for a specific family; AbstractProduct (Window, ScrollBar) declares type interface; ConcreteProduct (MotifWindow) implements; Client uses only AbstractFactory and AbstractProduct interfaces.
+
+**Consequences:** Isolates concrete classes; makes exchanging product families easy; promotes consistency among products; but adding new products requires extending the factory interface.
+
+**Sample Code:** A WidgetFactory with `CreateWindow()` and `CreateScrollBar()` methods, subclassed by MotifWidgetFactory and WindowsWidgetFactory. Client code receives a WidgetFactory reference and calls `CreateWindow()` without knowing whether it gets a MotifWindow or WindowsWindow.
+
+**Known Uses:** ET++ (Smalltalk), Interviews (C++ toolkit), KT (widget toolkit). Modern: javax.swing.plaf in Swing, Spring's BeanFactory.
+
+### Builder
+
+**Intent:** Separate the construction of a complex object from its representation so the same construction process can create different representations.
+
+**Motivation:** A text converter reads a document in RTF format and must produce output in multiple formats — plain text, HTML, XML, troff. The parsing algorithm is the same; what varies is how each token is converted. Builder separates the parsing (Director) from the conversion (Builder).
+
+**Participants:** Builder (TextConverter) declares interface for building parts; ConcreteBuilder (TeXConverter, HTMLConverter) implements by constructing and assembling; Director (RTFReader) constructs using Builder interface; Product (TeXDocument, HTMLDocument) is the result.
+
+**Consequences:** Lets you vary a product's internal representation; isolates construction and representation; gives finer control over construction process.
+
+**Sample Code:** RTFReader reads tokens; for each CHAR token it calls `builder->ConvertCharacter(ch)`, for each PARAGRAPH token it calls `builder->ConvertParagraph()`. Different builders produce different representations.
+
+**Known Uses:** Smalltalk-80's Parser subsystem, RTF converters, StringBuilder in Java/.NET.
+
+### Factory Method
+
+**Intent:** Define an interface for creating an object, but let subclasses decide which class to instantiate.
+
+**Motivation:** A framework for document applications (Application + Document) cannot know which concrete Document subclass the user will create. Factory Method lets the Application subclass decide: `Application::CreateDocument()` returns `new MyDocument()` where the method is overridden.
+
+**Participants:** Creator (Application) declares factory method; ConcreteCreator (MyApplication) overrides factory method; Product (Document) declares interface; ConcreteProduct (MyDocument) implements.
+
+**Consequences:** Eliminates need to bind application-specific classes into code; provides hooks for subclasses; connects parallel class hierarchies.
+
+**Sample Code:** `class Application { virtual Document* CreateDocument() = 0; void NewDocument() { Document* d = CreateDocument(); d->Open(); } }; class MyApplication : public Application { Document* CreateDocument() override { return new MyDocument(); } };`
+
+**Known Uses:** ET++ (Document/Application), Java Collections framework (`iterator()` method), .NET `Activator.CreateInstance`.
+
+### Prototype
+
+**Intent:** Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+
+**Motivation:** A music editor needs to create copies of various musical notation objects (notes, rests, clefs) without knowing their concrete types. Each object serves as its own prototype — the editor clones the prototype to create new instances.
+
+**Participants:** Prototype declares Clone interface; ConcretePrototype implements Clone by copying itself; Client creates by calling `prototype->Clone()`.
+
+**Consequences:** Hides concrete product classes; reduces subclassing; adds flexibility for dynamic configuration; but each subclass must implement Clone (which can be nontrivial if deep copying is required).
+
+**Sample Code:** `class Graphic { virtual Graphic* Clone() = 0; }; class Staff : public Graphic { Graphic* Clone() override { return new Staff(*this); } };`
+
+**Known Uses:** ET++, Web browser document management, JavaScript's prototypal inheritance model.
+
+### Singleton
+
+**Intent:** Ensure a class has only one instance and provide a global point of access to it.
+
+**Motivation:** A system needs exactly one instance of a class — a print spooler, a file system, a window manager — and that instance must be globally accessible. The Singleton pattern ensures that clients cannot create additional instances through normal construction.
+
+**Participants:** Singleton defines a static `Instance()` method that returns the unique instance, and makes the constructor protected or private to prevent external instantiation.
+
+**Consequences:** Controlled access to sole instance; reduced namespace pollution (vs. global variables); permits refinement of operations and representation; but violates the Single Responsibility Principle by combining instance control with business logic.
+
+**Sample Code:** `class Singleton { private: static Singleton* _instance; Singleton() {} public: static Singleton* Instance() { if (_instance == nullptr) { _instance = new Singleton(); } return _instance; } };`
+
+**Known Uses:** Etc++ (Smalltalk), Java Runtime, logging frameworks, thread pools.
+
+Note: The GoF present Singleton neutrally. Its subsequent notoriety as an anti-pattern (due to hidden dependencies and testability problems) reflects over-application rather than a flaw in the pattern itself.
+
+## Part II: Structural Patterns (7 patterns)
+
+Structural patterns concern class and object composition. They use inheritance to compose interfaces and define ways to compose objects to obtain new functionality.
+
+### Adapter
+
+**Intent:** Convert the interface of a class into another interface clients expect, letting classes work together that could not otherwise because of incompatible interfaces.
+
+**Motivation:** A drawing editor uses a Shape interface with a `BoundingBox()` method. A third-party TextView class has a `GetExtent()` method but not `BoundingBox()`. An adapter wraps TextView to provide the Shape interface.
+
+**Participants:** Target (Shape) defines domain-specific interface; Client (DrawingEditor) collaborates with Target; Adaptee (TextView) has existing interface; Adapter (TextShape) adapts Adaptee to Target.
+
+**Consequences:** Single Adapter class works with all subclasses of Adaptee; but can only adapt one class at a time (class adapter uses multiple inheritance; object adapter uses composition).
+
+**Sample Code (Object Adapter):** `class TextShape : public Shape { private: TextView* _textView; public: void BoundingBox(Point& bottomLeft, Point& topRight) override { Coord bottom, left, width, height; _textView->GetOrigin(bottom, left); _textView->GetExtent(width, height); // adapt to BoundingBox format } };`
+
+**Known Uses:** ET++ is "overflowing with Adapters", Interviews, Java Collections `Arrays.asList()`, .NET `System.Drawing.Graphics` adapter layer.
+
+### Bridge
+
+**Intent:** Decouple an abstraction from its implementation so the two can vary independently.
+
+**Motivation:** A Window abstraction should support both XWindow and PMWindow (Presentation Manager) implementations. Without Bridge, every Window subclass (IconWindow, TransientWindow) would need concrete subclasses for each platform — creating a combinatorial explosion. Bridge separates the Window hierarchy from the WindowImp hierarchy.
+
+**Participants:** Abstraction (Window) defines abstraction interface; RefinedAbstraction (IconWindow) extends; Implementor (WindowImp) defines implementation interface; ConcreteImplementor (XWindowImp, PMWindowImp) implements.
+
+**Consequences:** Decouples interface and implementation; improves extensibility (abstraction and implementation can be extended independently); hides implementation details from clients.
+
+**Sample Code:** `class Window { protected: WindowImp* _imp; public: virtual void DrawRect() { _imp->DeviceRect(); } }; class XWindowImp : public WindowImp { void DeviceRect() override { // X11-specific drawing } };`
+
+**Known Uses:** ET++ Window system, Java AWT (Peer Architecture), .NET Windows Forms.
+
+### Composite
+
+**Intent:** Compose objects into tree structures to represent part-whole hierarchies, letting clients treat individual objects and compositions uniformly.
+
+**Motivation:** A graphics application should be able to draw both simple primitives (Lines, Circles) and compound objects (Groups containing other Graphics). Both kinds should respond to the same drawing operations so clients don't need to distinguish them.
+
+**Participants:** Component (Graphic) declares interface for all objects; Leaf (Line, Circle) implements primitive objects; Composite (Picture) stores child Components and implements child-related operations; Client manipulates through Component interface.
+
+**Consequences:** Defines part-whole hierarchies; makes clients simple (they treat all objects uniformly); but makes the design overly general (restricting certain children is hard).
+
+**Sample Code:** `class Graphic { virtual void Draw() = 0; virtual void Add(Graphic*) {} // default empty }; class Picture : public Graphic { private: List<Graphic*> _children; public: void Draw() override { for (auto& c : _children) c->Draw(); } void Add(Graphic* g) override { _children.push_back(g); } };`
+
+**Known Uses:** ET++ (VObjects), Smalltalk-80 MVC, Java AWT/Swing Container, React component trees, DOM, filesystems.
+
+### Decorator
+
+**Intent:** Attach additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality.
+
+**Motivation:** A TextView widget needs optional features — border, scrollbar, shading. Subclassing every combination (BorderedScrollableShadedTextView) is impractical. Decorator wraps the original TextView and adds behavior before/after delegating to the wrapped object.
+
+**Participants:** Component (VisualComponent) defines interface; ConcreteComponent (TextView) defines base object; Decorator maintains reference to Component and conforms to interface; ConcreteDecorator (BorderDecorator, ScrollDecorator) adds responsibilities.
+
+**Consequences:** More flexible than static inheritance (mix and match at runtime); avoids feature-laden classes high in the hierarchy; but results in many small objects and can confuse developers unfamiliar with the wrapping chain.
+
+**Sample Code:** `class BorderDecorator : public Decorator { public: void Draw() override { Decorator::Draw(); DrawBorder(); } private: void DrawBorder() { /* ... */ } }; // Usage: VisualComponent* myText = new BorderDecorator(new ScrollDecorator(new TextView()));`
+
+**Known Uses:** ET++, Interviews, Java I/O streams (`BufferedInputStream(new FileInputStream(...))`), .NET Streams, Python decorators.
+
+### Facade
+
+**Intent:** Provide a unified interface to a set of interfaces in a subsystem, making the subsystem easier to use.
+
+**Motivation:** A compiler system has dozens of classes — Scanner, Parser, ProgramNode, CodeGenerator, SymbolTable — all interacting in complex ways. A Compiler facade provides a single `Compile(Stream&, BytecodeStream&)` method that clients call, hiding the subsystem's internal complexity.
+
+**Participants:** Facade (Compiler) delegates to subsystem classes; Subsystem classes (Scanner, Parser, etc.) implement functionality but know nothing about the Facade.
+
+**Consequences:** Shields clients from subsystem complexity; promotes weak coupling (client depends only on Facade); does not prevent advanced clients from using subsystem classes directly.
+
+**Sample Code:** `class Compiler { public: void Compile(Stream& input, BytecodeStream& output) { Scanner scanner(input); Parser parser(scanner); ProgramNodeBuilder builder; parser.Parse(builder); RISCCodeGenerator generator(output); ProgramNode* parseTree = builder.GetRootNode(); parseTree->Traverse(generator); } };`
+
+**Known Uses:** ET++ Application framework, compiler subsystems, `java.net.URL`, `requests` library in Python.
+
+### Flyweight
+
+**Intent:** Use sharing to support large numbers of fine-grained objects efficiently.
+
+**Motivation:** A document editor creates a character object for every character in the document. A 500-page book might have 500,000+ character objects — too many to create individually. Flyweight shares character objects, separating intrinsic state (the glyph) from extrinsic state (position, font).
+
+**Participants:** Flyweight declares interface; ConcreteFlyweight (Character) implements shared state; UnsharedConcreteFlyweight (Row, Column) holds non-shared data; FlyweightFactory creates and manages flyweights; Client maintains extrinsic state.
+
+**Consequences:** Dramatically reduces object count; centralizes state management; but trades memory for computation time (extrinsic state must be computed or stored externally).
+
+**Sample Code:** `class Character : public Glyph { private: char _charCode; // intrinsic public: void Draw(Window*, GlyphContext&) override; }; class GlyphFactory { private: static const int NCHARCODES = 128; Character* _character[NCHARCODES]; public: Character* GetCharacter(char c) { if (!_character[c]) _character[c] = new Character(c); return _character[c]; } };`
+
+**Known Uses:** Document editors, ET++, Java String interning, text rendering engines.
+
+### Proxy
+
+**Intent:** Provide a surrogate or placeholder for another object to control access to it.
+
+**Motivation:** A document editor embeds large images that are expensive to load. Rather than loading all images at document-open time, an ImageProxy stands in for the real Image, loading it only when the image is actually displayed.
+
+**Participants:** Subject (Graphic) defines common interface; RealSubject (Image) implements real functionality; Proxy (ImageProxy) maintains reference to RealSubject, implementing the Subject interface and controlling access.
+
+**Consequences:** Lazy-loading improves startup time; remote proxy can hide network latency; protection proxy controls access rights; but adds a layer of indirection.
+
+**Sample Code:** `class ImageProxy : public Graphic { private: Image* _image; const char* _fileName; public: ImageProxy(const char* fileName) : _image(nullptr), _fileName(fileName) {} void Draw() override { GetImage()->Draw(); } Image* GetImage() { if (_image == nullptr) _image = new Image(_fileName); return _image; } };`
+
+**Known Uses:** ET++, ORBs for distributed objects, Java dynamic proxies, C++ `std::shared_ptr`, ORM lazy loading (Hibernate proxies).
+
+## Part III: Behavioral Patterns (11 patterns)
+
+Behavioral patterns are concerned with algorithms and the assignment of responsibilities between objects. They describe not just patterns of objects or classes but also the patterns of communication between them.
+
+### Chain of Responsibility
+
+**Intent:** Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along until an object handles it.
+
+**Motivation:** A context-sensitive help system in a GUI. Each widget can have help text; if it doesn't, it forwards the help request to its container (which might forward to the application). This creates a chain of handlers without the sender knowing which widget handles the request.
+
+**Participants:** Handler (HelpHandler) defines interface and successor link; ConcreteHandler (Button, Dialog, Application) handles requests it is responsible for; Client initiates the request.
+
+**Consequences:** Reduces coupling (sender knows only the first handler); adds flexibility in assigning responsibilities; but receipt is not guaranteed (request may fall off the end of the chain).
+
+**Sample Code:** `class HelpHandler { private: HelpHandler* _successor; public: virtual void HandleHelp() { if (_successor) _successor->HandleHelp(); } }; class Button : public HelpHandler { void HandleHelp() override { if (HasHelp()) { /* show help */ } else { HelpHandler::HandleHelp(); } } };`
+
+**Known Uses:** ET++ (HelpHandler), Java Servlet Filters, ASP.NET Core middleware pipeline, Express.js middleware.
+
+### Command
+
+**Intent:** Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+
+**Motivation:** A GUI application has MenuItems and Buttons that perform actions. Rather than hard-coding the action into each widget, each widget holds a Command object. The command object can be stored for undo, logged for audit, or queued for later execution.
+
+**Participants:** Command declares Execute interface; ConcreteCommand (PasteCommand, OpenCommand) binds Receiver action to Execute; Client (Application) creates commands; Invoker (MenuItem) calls Execute; Receiver (Document) knows how to perform the operation.
+
+**Consequences:** Decouples invoker from receiver; commands as first-class objects (storable, queuable, loggable); supports Undo via Unexecute; composition of commands via MacroCommand.
+
+**Sample Code:** `class Command { public: virtual ~Command() {} virtual void Execute() = 0; }; class PasteCommand : public Command { private: Document* _document; public: void Execute() override { _document->Paste(); } }; // used as: MenuItem* pasteItem = new MenuItem(new PasteCommand(doc));`
+
+**Known Uses:** ET++, InterViews, Java Swing Actions, .NET Commands, Qt `QUndoCommand`, Redux actions.
+
+### Interpreter
+
+**Intent:** Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
+
+**Motivation:** The book's example is regular expressions — a small language for string matching. Each regex construct (literal, alternation, repetition) corresponds to a class. An interpreter evaluates these classes against input strings.
+
+**Participants:** AbstractExpression declares Interpret operation; TerminalExpression (LiteralExpression) implements for terminal symbols; NonterminalExpression (AlternationExpression, RepetitionExpression) implements for grammar rules; Context contains input; Client builds abstract syntax tree.
+
+**Consequences:** Easy to change and extend grammar; implementing grammar is straightforward; but complex grammars lead to class explosion; interpretation is slow.
+
+**Sample Code:** `class BooleanExp { public: virtual bool Evaluate(Context&) = 0; }; class AndExp : public BooleanExp { private: BooleanExp* _operand1; BooleanExp* _operand2; public: bool Evaluate(Context& ctx) override { return _operand1->Evaluate(ctx) && _operand2->Evaluate(ctx); } };`
+
+**Known Uses:** Smalltalk regular expressions, most programming language compilers (first pass), simple DSLs.
+
+### Iterator
+
+**Intent:** Provide a way to sequentially access the elements of an aggregate object without exposing its underlying representation.
+
+**Motivation:** A List and a SkipList (ordered list) both need to allow traversal. Without Iterator, each aggregate must expose its internal structure. Iterator provides a standard traversal interface independent of the aggregate's implementation.
+
+**Participants:** Iterator defines traversal interface (First, Next, IsDone, CurrentItem); ConcreteIterator (ListIterator) implements; Aggregate defines CreateIterator; ConcreteAggregate (List) returns ConcreteIterator.
+
+**Consequences:** Simplifies aggregate interface; supports multiple traversals simultaneously; supports variations in traversal; but adds overhead for simple collections.
+
+**Sample Code:** `template<class Item> class ListIterator : public Iterator<Item> { private: const List<Item>* _list; long _current; public: void First() override { _current = 0; } void Next() override { _current++; } bool IsDone() override { return _current >= _list->Count(); } Item CurrentItem() override { return _list->Get(_current); } };`
+
+**Known Uses:** ET++ (Collection hierarchy), C++ STL iterators, Java Iterator/Iterable, Python `__iter__`/`__next__`, C# `foreach`/IEnumerable.
+
+### Mediator
+
+**Intent:** Define an object that encapsulates how a set of objects interact, promoting loose coupling by keeping objects from referring to each other explicitly.
+
+**Motivation:** A dialog box in a GUI has multiple widgets (listbox, entry field, button). When the user selects an item in the listbox, the entry field should update and the button should enable. Without Mediator, every widget knows about every other widget. The Mediator encapsulates these interactions.
+
+**Participants:** Mediator (DialogDirector) declares communication interface; ConcreteMediator (FontDialogDirector) implements coordinator; Colleague (ListBox, EntryField, Button) communicate via Mediator.
+
+**Consequences:** Limits subclassing (mediator centralizes behavior); decouples colleagues; simplifies object protocols; but centralizes control (mediator can become a god object).
+
+**Sample Code:** `class FontDialogDirector : public DialogDirector { private: ListBox* _listBox; EntryField* _entryField; public: void WidgetChanged(Widget*) override { _listBox->GetSelection(selection); _entryField->SetText(selection); } };`
+
+**Known Uses:** ET++ (Dialog, Window system), MVC (Controller is the mediator), GUI toolkits, chat servers.
+
+### Memento
+
+**Intent:** Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+
+**Motivation:** A ConstraintSolver in a graphical editor maintains connections between graphical objects. When the user moves a shape, the solver must update connections. If the move is undone, the solver must restore its previous state. Memento lets the solver save and restore its state without exposing its internal data structures.
+
+**Participants:** Memento stores internal state (opaque to other objects); Originator (ConstraintSolver) creates and restores Mementos; Caretaker (move command) requests Memento from Originator and returns it for undo.
+
+**Consequences:** Preserves encapsulation boundaries; simplifies Originator; but using Mementos can be expensive (large objects, frequent serialization).
+
+**Sample Code:** `class Memento { private: friend class ConstraintSolver; // only Originator can access internals SolverState _state; }; class ConstraintSolver { public: Memento* CreateMemento() { return new Memento(state); } void SetMemento(Memento* m) { state = m->_state; } };`
+
+**Known Uses:** ET++ (Undo support), Java Serialization, JavaScript Redux state snapshots, git.
+
+### Observer
+
+**Intent:** Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+**Motivation:** In a spreadsheet, a chart must update when the underlying data changes. Multiple views on the same data model must stay synchronized. Observer separates the data (Subject) from the views (Observers), letting any number of views observe a single subject.
+
+**Participants:** Subject (Observable) attaches/detaches observers and notifies them; Observer declares Update interface; ConcreteSubject (SpreadsheetData) stores state of interest; ConcreteObserver (BarChart, PieChart) implements Update.
+
+**Consequences:** Abstract coupling between Subject and Observer; supports broadcast communication; but unexpected updates can be costly and observers may not know about changes in dependent observers (update cascading).
+
+**Sample Code:** `class Subject { private: List<Observer*> _observers; public: virtual void Attach(Observer* o) { _observers.push_back(o); } virtual void Notify() { for (auto& o : _observers) o->Update(this); } }; class Spreadsheet : public Subject { private: int _value; public: void SetValue(int v) { _value = v; Notify(); } };`
+
+**Known Uses:** ET++, Smalltalk MVC (changed/update protocol), Java Observable/Observer (deprecated), .NET events/delegates, RxJS, React state, signal/slot in Qt.
+
+### State
+
+**Intent:** Allow an object to alter its behavior when its internal state changes, appearing to change its class.
+
+**Motivation:** A TCPConnection object behaves differently in states Established, Listening, and Closed. Using conditionals (`switch (state)`) throughout every method creates a maintenance problem. State turns each state into an object, delegating behavior to the current state object.
+
+**Participants:** Context (TCPConnection) defines interface of interest; State (TCPState) declares interface common to all states; ConcreteState (TCPEstablished, TCPListen, TCPClosed) implements state-specific behavior.
+
+**Consequences:** Localizes state-specific behavior; makes state transitions explicit; state objects can be shared; but adds more classes to the system.
+
+**Sample Code:** `class TCPConnection { private: TCPState* _state; public: void Open() { _state->Open(this); } void ChangeState(TCPState* s) { _state = s; } }; class TCPEstablished : public TCPState { public: void Close(TCPConnection* c) override { // perform close; c->ChangeState(TCPClosed::Instance()); } };`
+
+**Known Uses:** ET++, vending machines, workflow engines, React useReducer, state machines.
+
+### Strategy
+
+**Intent:** Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from the clients that use it.
+
+**Motivation:** A line-breaking algorithm can use different strategies — simple left-to-right, full justification, or hyphenation-based. Rather than hard-coding the algorithm into the Compositor class, each algorithm becomes a Strategy object passed to the Compositor.
+
+**Participants:** Strategy (Compositor) declares algorithm interface; ConcreteStrategy (SimpleCompositor, TeXCompositor, ArrayCompositor) implements; Context (Composition) maintains reference to current Strategy.
+
+**Consequences:** Defines families of related algorithms; eliminates conditional statements; provides choice of implementations; but clients must understand strategy differences; and communication overhead between strategy and context.
+
+**Sample Code:** `class Composition { private: Compositor* _compositor; public: void Repair() { Coord* breaks = _compositor->Compose(_natural, _stretch, _shrink, _componentCount, _lineWidths, _lineCount); // arrange components based on breaks } }; class SimpleCompositor : public Compositor { Coord* Compose(...) override { // simple left-to-right } };`
+
+**Known Uses:** ET++, InterViews, Java Collections sorting (Comparator), .NET LINQ, React rendering strategies.
+
+### Template Method
+
+**Intent:** Define the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps without changing the algorithm's structure.
+
+**Motivation:** An application framework defines the overall structure of a document-creation process (file open, read, parse, display, edit). While the skeleton is the same for all document types, the parsing and display steps vary. Template Method defines the skeleton; subclasses override the varying steps.
+
+**Participants:** AbstractClass (Application) defines template method and primitive operations; ConcreteClass (MyApplication) implements primitive operations.
+
+**Consequences:** Code reuse (common parts written once); inverted control structure (the Hollywood Principle — "don't call us, we'll call you"); but results in more classes.
+
+**Sample Code:** `class View { public: void Display() { SetFocus(); DoDisplay(); ResetFocus(); } protected: virtual void DoDisplay() = 0; }; class MyView : public View { protected: void DoDisplay() override { // render specific to MyView } };`
+
+**Known Uses:** ET++ (Application framework), Java `AbstractList`, C++ STL algorithms with function objects, Spring JdbcTemplate.
+
+### Visitor
+
+**Intent:** Represent an operation to be performed on elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
+
+**Motivation:** A compiler's abstract syntax tree has nodes for VariableRefNode, AssignmentNode, etc. You need to perform type checking, code generation, optimization, and pretty printing on these nodes. Adding each operation to every node class would require modifying many classes. Visitor centralizes each operation in a single class.
+
+**Participants:** Visitor (NodeVisitor) declares a Visit operation for each ConcreteElement; ConcreteVisitor (TypeCheckingVisitor, CodeGeneratingVisitor) implements each operation; Element (Node) accepts a Visitor; ObjectStructure (Program) provides element enumeration.
+
+**Consequences:** Adding new operations is easy (add new Visitor); adding new element types is harder (must add Accept to all Visitors); accumulates state across visits (useful for analysis); breaks encapsulation (Visitor may need access to element internals).
+
+**Sample Code:** `class Node { public: virtual void Accept(NodeVisitor* v) = 0; }; class VariableRefNode : public Node { public: void Accept(NodeVisitor* v) override { v->VisitVariableRef(this); } }; class TypeCheckingVisitor : public NodeVisitor { public: void VisitVariableRef(VariableRefNode*) override { /* type check */ } };`
+
+**Known Uses:** ET++, compiler AST processing, XML/JSON serializers, `instanceof` pattern alternatives.
+
+## Part IV: The Case Studies
+
+The book concludes with two case studies demonstrating patterns in larger contexts. The first revisits the WYSIWYG document editor, showing how all 23 patterns could theoretically find application in a sufficiently complex system. The second study examines a small compiler architecture, tracing how patterns like Interpreter, Visitor, and Factory Method naturally emerge in language-processing systems.
+
+An appendix provides a description of the Smalltalk and C++ sample code conventions used throughout the book, and a glossary of OOP terminology for readers without a strong background in the paradigm.
+
+## Reading Guide
+
+### Sufficiency Assessment
+
+This summary covers every pattern in the GoF catalog with intent, motivation, participants, consequences, sample code, and known uses, plus the book's introductory case study and design principles. It spans the full range — from Abstract Factory through Visitor.
+
+What this summary omits (intentionally):
+- The full collaborative discussions about each pattern's trade-offs (the book devotes 2-3 pages per pattern to consequences alone)
+- The Smalltalk and C++ sample code verbatim (we provide representative pseudocode)
+- The complete "Known Uses" bibliographic references for each pattern
+- The depth of the introductory chapters on pattern classification and description format
+
+### Recommended Reading Path
+
+| Reader Type | Time | What to Read |
+|---|---|---|
+| Casual | ~30 min | This summary + Part II of index.mdx |
+| Practitioner | ~4-6 hr | Read 3-5 patterns relevant to current work + Introduction chapters |
+| Architect | ~15-20 hr | Full book, cover to cover, with code |
+| Academic | ~20-30 hr | Full book + referenced papers (Norvig 1995, Ampatzoglou et al. 2015) |
+
+### Chapters to Read in Full (if not reading the whole book)
+
+- **Introduction (Chapters 1-2)** — The design principles and the document editor case study; essential context for understanding *why* patterns exist
+- **Strategy** — Most universally applicable pattern; every nontrivial system needs this
+- **Observer** — Foundation of event-driven and reactive architectures
+- **Composite** — Essential for understanding tree-structured data (DOM, component trees, file systems)
+- **Decorator** — Key to understanding wrapper and middleware patterns
+
+### Chapters to Skim or Skip
+
+- **Interpreter** — Rarely needed; relevant only if you're building DSLs or parsers
+- **Flyweight** — Valuable conceptually but the specific implementation is less relevant in languages with garbage collection and string interning
+- **Singleton** — Read to understand the debate, but don't implement it without careful consideration
+
+### What You'll Miss by Not Reading the Full Book
+
+- The careful trade-off discussion in each pattern's "Consequences" section
+- The complete C++ and Smalltalk code, which reveals how patterns interact with language-specific features (templates, multiple inheritance, garbage collection)
+- The bibliographic depth of "Known Uses" — an annotated history of where each pattern appeared in production systems
+- Christopher Alexander's architectural influence on the concept of patterns

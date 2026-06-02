@@ -1,0 +1,109 @@
+{
+  "slug": "fundamentals-of-software-architecture-mark-richards",
+  "title": "Fundamentals of Software Architecture",
+  "subtitle": "An Engineering Approach",
+  "authors": [
+    "Mark Richards",
+    "Neal Ford"
+  ],
+  "author": "Mark Richards",
+  "coAuthor": {
+    "name": "Neal Ford",
+    "url": "https://nealford.com"
+  },
+  "description": "A practical, vendor-neutral guide to software architecture as a set of trade-offs across structural patterns, runtime characteristics, four views of a system (4+1 model), eight core architecture characteristics, and nine fundamental architecture patterns (layered, microkernel, microservices, event-driven, space-based, pipeline, client-server, service-based, service-oriented), all grounded in the definition that architecture is the set of decisions hard to change. Includes a serious treatment of soft skills for architects, ADRs as documentation, and the sociotechnical reality of architecture.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781492083454-L.jpg",
+  "isbn13": "9781492083454",
+  "isbn10": "1492083458",
+  "pages": 432,
+  "publishedYear": 2020,
+  "publisher": "O'Reilly Media",
+  "edition": "1st",
+  "openlibrarySlug": "/works/OL20928605W",
+  "tags": [
+    "software-architecture",
+    "engineering",
+    "design",
+    "patterns",
+    "microservices",
+    "event-driven",
+    "layered",
+    "ADR",
+    "architect-skills",
+    "technical-leadership",
+    "trade-offs",
+    "4+1-view-model",
+    "component-design"
+  ],
+  "keyIdeas": [
+    "Software architecture is the set of decisions that are expensive to reverse — and the trade-offs behind them",
+    "Kruchten's 4+1 architectural view model (logical, process, physical, development + scenarios) as the best tool for describing systems",
+    "Eight core architecture characteristics grouped into operational, structural, and cross-cutting",
+    "Nine fundamental architecture patterns with uniform treatment: layered, microkernel, microservices, event-driven, space-based, pipeline, client-server, service-based, service-oriented",
+    "Component-based thinking precedes technology choice; logical components must be identified before physical patterns are assigned",
+    "Architecture Decision Records (ADRs) as lightweight, durable documentation of architectural decisions",
+    "Conway's law: architecture mirrors the organization's communication structure",
+    "The 'it depends' answer is correct only when followed by an explicit, context-specific reason"
+  ],
+  "keyTakeaways": [
+    "Software architecture is fundamentally about trade-offs — there are no 'best' answers, only better or worse fits for a given context.",
+    "The 4+1 view model (Kruchten) gives a vocabulary for describing any system from four complementary angles plus the use cases that tie them together.",
+    "Architecture characteristics are non-functional requirements: availability, performance, scalability, reliability, recoverability, security, maintainability, and testability are the eight most commonly considered.",
+    "Trade-off thinking matters more than pattern matching: every pattern has strengths, weaknesses, and applicability conditions that must be weighed against the system's required characteristics.",
+    "Components are the unit of software composition. Identifying the right component boundaries is the single most important architectural activity; component identification precedes technology choice.",
+    "Architecture is a team sport. Conway's law means the architecture will mirror the organization's communication structure; architects must work with that reality, not against it.",
+    "ADRs (Architecture Decision Records) are the lightest-weight tool for capturing the why behind a decision. They survive staff turnover and prevent repeated re-litigation.",
+    "Modern architects must be polyglots: code-fluent, communication-fluent, and politically fluent. The days of the 'ivory tower' architect are over."
+  ],
+  "whoShouldRead": [
+    "Senior engineers transitioning from implementation to architecture roles",
+    "Developers who want to understand the 'why' behind the systems they work on",
+    "Tech leads and staff/principal engineers responsible for system design",
+    "Engineering managers who need a shared vocabulary with their architects",
+    "Anyone preparing for architecture interviews at large technology companies",
+    "Practitioners looking for a vendor-neutral, pattern-rich modern reference"
+  ],
+  "whoShouldSkip": [
+    "Veteran architects who already have a settled taxonomy and pattern vocabulary",
+    "Programmers looking for hands-on coding guidance (this is about thinking, not typing)",
+    "Readers seeking a single 'right' answer — the book insists there isn't one",
+    "Pure managers with no technical background (the technical chapters assume fluency)"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Clean Architecture",
+      "author": "Robert C. Martin",
+      "slug": "clean-architecture-robert-martin"
+    },
+    {
+      "title": "Patterns of Enterprise Application Architecture",
+      "author": "Martin Fowler",
+      "slug": "patterns-of-enterprise-application-architecture-martin-fowler"
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "slug": "designing-data-intensive-applications-martin-kleppmann"
+    },
+    {
+      "title": "Building Microservices",
+      "author": "Sam Newman",
+      "slug": "building-microservices-sam-newman"
+    },
+    {
+      "title": "Software Architecture: The Hard Parts",
+      "author": "Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani",
+      "slug": "software-architecture-the-hard-parts-neal-ford"
+    },
+    {
+      "title": "A Philosophy of Software Design",
+      "author": "John K. Ousterhout",
+      "slug": "a-philosophy-of-software-design-john-ousterhout"
+    },
+    {
+      "title": "Documenting Software Architectures",
+      "author": "Paul Clements et al.",
+      "slug": "documenting-software-architectures-paul-clements"
+    }
+  ]
+}

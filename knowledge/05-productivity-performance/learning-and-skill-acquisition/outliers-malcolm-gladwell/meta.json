@@ -1,0 +1,23 @@
+{
+  "slug": "outliers-malcolm-gladwell",
+  "title": "Outliers: The Story of Success",
+  "isbn": "9780316040341",
+  "isbn10": "0316040347",
+  "pages": 309,
+  "year": 2008,
+  "publisher": "Little, Brown and Company",
+  "language": "en",
+  "format": "Hardcover",
+  "genres": ["Psychology", "Sociology", "Business", "Self-Help", "Social Science"],
+  "subjects": ["Success", "Expertise", "Cultural Legacy", "Opportunity", "Achievement"],
+  "authors": [
+    {
+      "name": "Malcolm Gladwell",
+      "role": "Author"
+    }
+  ],
+  "openlibrary": "OL16790237W",
+  "goodreads": 3228917,
+  "rating": 4.1,
+  "ratingsCount": 1200000
+}

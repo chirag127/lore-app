@@ -1,0 +1,97 @@
+{
+  "slug": "understanding-distributed-systems-vitillo",
+  "title": "Understanding Distributed Systems",
+  "subtitle": "What every developer should know about large distributed applications",
+  "author": "Roberto Vitillo",
+  "description": "An approachable, well-illustrated guide to the concepts every\nsoftware engineer needs to work with large distributed applications.\nRoberto Vitillo, a principal engineer at Microsoft, distills decades of\npractitioner experience into five clear pillars — communication,\ncoordination, scalability, resiliency, and observability — using the\nsame plain prose and hand-drawn diagrams that made his long-running\nblog series, \"What every developer should know...\", a touchstone for\nengineers entering the field.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781838430207-L.jpg",
+  "isbn13": "9781838430207",
+  "pages": 290,
+  "publishedYear": 2022,
+  "publisher": "Packt Publishing",
+  "language": "en",
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 9,
+  "estimatedListeningMinutes": 95,
+  "tags": [
+    "distributed-systems",
+    "software-engineering",
+    "system-design",
+    "scalability",
+    "reliability",
+    "microservices",
+    "cloud-native",
+    "observability"
+  ],
+  "keyIdeas": [
+    "Communication — request/reply (HTTP, gRPC) and message-passing (queues, pub/sub)",
+    "Discovery, leader election, and consensus are coordination primitives",
+    "Distributed locks require fencing tokens, not just mutual exclusion",
+    "Sharding and replication trade consistency, availability, and partition tolerance",
+    "Load balancers and CDNs move work closer to users and smooth traffic",
+    "Caching is the most leveraged scalability tool — and the most dangerous",
+    "Retries without jitter cause thundering herds; idempotency makes them safe",
+    "Circuit breakers, bulkheads, and rate limiters contain failure blast radius",
+    "Deadlines and timeouts must be propagated, not invented at each hop",
+    "Metrics, logs, and traces answer different questions about the same system",
+    "Process supervision, back-pressure, and graceful degradation beat heroic oncall",
+    "Distributed systems are a problem of language, vocabulary, and shared mental models"
+  ],
+  "keyTakeaways": [
+    "Treat every remote call as a failure waiting to happen: timeouts, retries, and idempotency are the baseline, not an optimization.",
+    "Choose between consistency, availability, and partition tolerance consciously — and tell your team which one you chose.",
+    "Push idempotency into the receiving system. Caller-side retry without server-side idempotency guarantees duplicate work and corrupt state.",
+    "Always use jittered exponential backoff for retries. Synchronized retries across N clients turn a blip into an outage.",
+    "A cache is not a database. It is a database that lies to you sometimes. Decide in advance what your system does on cache miss, stale read, and eviction.",
+    "Sharding keys are forever. A bad shard key causes hot spots that no amount of hardware fixes without a painful re-shard.",
+    "Leader election is for coordination, not for performance. A leader is a single point of failure until it steps down cleanly.",
+    "Distributed locks without fencing tokens are unsafe — the holder may be paused, network-partitioned, or replaced.",
+    "Observability is a product feature. Logs, metrics, and traces must be designed in from day one, not bolted on when production breaks.",
+    "Resiliency is the discipline of choosing which requests to refuse when the system is under stress. The default must be fail-safe, not fail-open."
+  ],
+  "whoShouldRead": [
+    "Backend and platform engineers designing or operating distributed services",
+    "Senior software engineers preparing for system-design interviews",
+    "Tech leads and architects making build-vs-buy and consistency trade-offs",
+    "Cloud and SRE practitioners who need a shared vocabulary for failure modes",
+    "Senior CS students transitioning from single-process coursework to production systems",
+    "Engineering managers who want a current, opinionated map of the distributed-systems landscape"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "slug": "designing-data-intensive-applications-martin-kleppmann"
+    },
+    {
+      "title": "System Design Interview",
+      "author": "Alex Xu",
+      "slug": "system-design-interview-alex-xu"
+    },
+    {
+      "title": "Software Engineering at Google",
+      "author": "Titus Winters et al.",
+      "slug": "software-engineering-at-google-titus-winters"
+    },
+    {
+      "title": "Site Reliability Engineering",
+      "author": "Beyer et al.",
+      "slug": "site-reliability-engineering-beyer"
+    },
+    {
+      "title": "Building Microservices",
+      "author": "Sam Newman",
+      "slug": "building-microservices-sam-newman"
+    },
+    {
+      "title": "The Phoenix Project",
+      "author": "Gene Kim et al.",
+      "slug": "the-phoenix-project-gene-kim"
+    },
+    {
+      "title": "Clean Architecture",
+      "author": "Robert C. Martin",
+      "slug": "clean-architecture-robert-martin"
+    }
+  ]
+}

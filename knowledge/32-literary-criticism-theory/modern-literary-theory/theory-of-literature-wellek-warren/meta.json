@@ -1,0 +1,15 @@
+{
+  "id": "theory-of-literature",
+  "title": "Theory of Literature",
+  "slug": "theory-of-literature",
+  "authors": ["René Wellek", "Austin Warren"],
+  "year": 1949,
+  "category": "32-literary-criticism-theory",
+  "subcategory": "modern-literary-theory",
+  "pages": 403,
+  "isbn": "9780156890847",
+  "language": "en",
+  "genres": ["Literary Theory", "Literary Criticism", "Formalism", "Aesthetics"],
+  "source": "generated",
+  "generatedAt": "2026-06-09"
+}

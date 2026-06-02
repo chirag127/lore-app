@@ -1,0 +1,648 @@
+---
+title: Core Concepts
+subtitle: Blocks, object model, modules, metaprogramming, and concurrency
+---
+
+## Part 1: Ruby Foundations — Objects, Methods, and Local Variables
+
+### The Object in Motion
+
+Ruby's first principle: everything is an object. An integer `5` is an
+instance of `Integer`. A class `String` is an instance of `Class`. The
+message-passing model means you send messages to objects with `.`:
+`"hello".upcase` sends `upcase` to the string object `"hello"`.
+
+```mermaid
+classDiagram
+  class Object {
+    +object_id
+    +class()
+    +send(symbol, args)
+    +respond_to?(sym)
+    +method_missing(sym, args)
+  }
+  class Integer
+  class String
+  class Symbol
+
+  Integer --|> Object
+  String  --|> Object
+  Symbol  --|> Object
+
+  note for Object "Root of Ruby hierarchy.\nEvery object inherits from Object."
+```
+
+Local variables are markers in a scope table. Method parameters are
+initialized local variables. Instance variables (`@x`) look up the
+ancestor chain. Class variables (`@@x`) are shared up the inheritance
+tree — use cautiously.
+
+---
+
+### Method-Call Mechanics
+
+Ruby resolves a method call in this order:
+`singleton_class → eigenclass → class → included_modules → superclass`
+
+```mermaid
+flowchart TD
+  MC["Method Call: obj.meth()"]
+  S["1. Singleton class of obj"]
+  C["2. obj's class"]
+  IM["3. Modules prepended on class"]
+  SC["4. Superclass"]
+  SIM["5. Modules prepended on each superclass"]
+  M["6. method_missing on original class"]
+  FAIL["NoMethodError"]
+
+  MC --> S
+  S -->|not found| C
+  C -->|not found| IM
+  IM -->|not found| SC
+  SC -->|not found| SIM
+  SIM -->|not found| M
+  M -->|not found| FAIL
+```
+
+---
+
+## Part 1: Classes, Modules, and the Object-Lookup Path
+
+### Class Definitions Are Open
+
+In Ruby, a class definition is executable code. You can reopen a class
+anywhere and add methods. This is used by Rails monkey-patching core
+classes, but should be used carefully.
+
+```mermaid
+flowchart LR
+  A["class String\n  def shout\n    upcase + '!!!'\n  end\nend"]
+  B["'hello'.shout\n=> 'HELLO!!!'"
+  A -->|opens class| B
+```
+
+---
+
+### Creating a Class and Adding Methods
+
+`attr_reader`, `attr_writer`, and `attr_accessor` are shorthand for
+defining getter/setter methods. They are method calls at the class level
+that define instance methods dynamically.
+
+```mermaid
+classDiagram
+  class Person {
+    -@name
+    -@age
+    +name
+    +name=
+    +age
+    +age=
+    +greet()
+  }
+  note for Person "attr_reader :name, :age\nattr_writer :name\nattr_accessor :age"
+```
+
+---
+
+### Modules: Namespaces and Mixins
+
+Modules serve two distinct roles:
+1. **Namespace**: group related constants (`Math::PI`, `JSON::Parser`)
+2. **Mixin**: share behavior across unrelated classes via `include` or
+   `extend`
+
+```mermaid
+classDiagram
+  class Comparable
+  class String
+  class Array
+
+  <<module>> Comparable
+  String ..> Comparable : include
+  Array  ..> Comparable : include
+
+  Comparable : +<()
+  Comparable : <=>
+  Comparable : >()
+
+  note for Comparable "include → instance methods become\navailable on instances of class"
+```
+
+`extend` adds module methods to the object itself (singleton methods),
+making them available only on that object, not its class instances.
+
+---
+
+### The Method-Lookup Path in Practice
+
+When Ruby resolves `obj.foo`, it traverses:
+
+```
+singleton class
+obj's class
+modules prepended by prepend
+superclass chain
+modules prepended at each level
+method_missing
+```
+
+```mermaid
+flowchart TD
+  subgraph Lookup["Method Lookup Order"]
+    S1["Singleton class\n(self.method foo)"]
+    C1["Object's own class"]
+    P1["prepend-ed modules"]
+    SC1["Superclass"]
+    PS1["Superclass prepend-ed modules"]
+    SC2["Further superclasses"]
+    M1["method_missing"]
+  end
+  Lookup
+```
+
+---
+
+### Introduction to Mixins
+
+Mixins let unrelated classes share behavior:
+
+```ruby
+module Walkable
+  def walk
+    "#{name} is walking"
+  end
+end
+
+class Person
+  include Walkable  # instance method
+  def name; "Alice"; end
+end
+
+class Robot
+  extend Walkable   # singleton method on the class itself
+end
+```
+
+```mermaid
+classDiagram
+  class Person {
+    +walk()
+    +name()
+  }
+  class Robot
+
+  <<module>> Walkable
+  Walkable : +walk()
+
+  Person ..> Walkable : include
+  Robot  ..> Walkable : extend
+```
+
+`include` → instance methods. `extend` → class/eigenclass methods.
+`prepend` (Ruby 2.0+) → methods inserted *before* class methods in the
+lookup chain, allowing wrapper-style overriding.
+
+---
+
+## Part 2: Blocks, Procs, and Lambdas
+
+### Blocks: The Heart of Ruby Iteration
+
+Blocks are anonymous function literals attached to method calls, using
+`do...end` or `{...}` syntax. They are the primary iteration mechanism:
+
+```ruby
+[1, 2, 3].each { |n| puts n * 2 }
+# or
+File.open("data.txt") do |f|
+  f.each_line { |line| puts line }
+end
+```
+
+The block talks to the method via `yield`:
+
+```mermaid
+flowchart LR
+  EACH["each(&block)"]
+  YIELD["yield element"]
+  BLOCK["|n| puts n * 2"]
+  RESULT["4\n6\n8"]
+
+  EACH --> YIELD
+  YIELD --> BLOCK
+  BLOCK --> RESULT
+```
+
+---
+
+### Converting Blocks to Procs and Lambdas
+
+Calling `method(&block)` converts a `Proc` to a block. Calling `Proc.new`
+inside a method captures the current block. Explicit block-to-proc: `->`
+or `lambda` syntax.
+
+```mermaid
+classDiagram
+  class Proc {
+    +call(*args)
+    +arity
+    +source_location
+  }
+  class Lambda {
+    +call(*args)
+    +arity: strict
+    +return: returns from lambda only
+  }
+
+  Lambda --|> Proc
+
+  note for Lambda "Created with ->(x) { x * 2 }\nor lambda { |x| x * 2 }\nStrict arity, return exits lambda"
+  note for Proc "Created with Proc.new { |x| x * 2 }\nor Proc.new { || ... }\nLenient arity, return exits enclosing method"
+```
+
+| | `Proc.new` | `lambda` (`->`) |
+|---|---|---|
+| Arity enforcement | Lenient (extra args dropped) | Strict (raises ArgumentError) |
+| `return` behavior | Returns from enclosing method | Returns from lambda itself |
+| Creation | `Proc.new { }`, `proc { }` | `->(x) { }`, `lambda { }` |
+
+---
+
+### Closures: Capturing the Surrounding Environment
+
+Every block, proc, and lambda carries its **binding** — the local variable
+bindings from when it was created:
+
+```ruby
+def counter
+  n = 0
+  -> { n += 1 }
+end
+
+c1 = counter  # captures n = 0
+c2 = counter  # captures ANOTHER n = 0
+
+c1.call # => 1
+c1.call # => 2
+c1.call # => 3
+c2.call # => 1  (independent binding!)
+```
+
+```mermaid
+flowchart TD
+  C["counter()"]
+  N1["n = 0\n(closure 1)"]
+  N2["n = 0\n(closure 2)"]
+  C1["c1 → { n += 1 }"]
+  C2["c2 → { n += 1 }"]
+
+  C --> N1
+  C --> N2
+  N1 --> C1
+  N2 --> C2
+  C1 -->|call| R1["1\n2\n3\n..."]
+  C2 -->|call| R2["1\n2\n3\n..."]
+```
+
+---
+
+## Part 3: Metaprogramming and Reflection
+
+### Reflection: Examining Objects at Runtime
+
+Ruby gives you full access to its object model at runtime:
+
+```ruby
+Person.ancestors     # => [Person, Walkable, Object, Kernel, BasicObject]
+Person.instance_methods(false)  # => [:greet, :name=, ...]
+Person.new.respond_to?(:walk)  # => true
+"hello".methods.grep(/case/)   # => [:upcase, :downcase, :swapcase, ...]
+```
+
+```mermaid
+classDiagram
+  class BasicObject
+  class Object
+  class Kernel
+  class Person
+
+  BasicObject <|-- Object
+  Object <|-- Person
+  Kernel <|.. Person : extended by
+
+  note for Person "ancestors:\n[Person, Walkable, Object, Kernel, BasicObject]"
+```
+
+---
+
+### Dynamic Method Definition
+
+`define_method` defines a method by name at class-definition time or runtime:
+
+```ruby
+class Person
+  [:name, :age, :email].each do |attr|
+    define_method(attr) do
+      instance_variable_get("@#{attr}")
+    end
+
+    define_method("#{attr}=") do |val|
+      instance_variable_set("@#{attr}", val)
+    end
+  end
+end
+```
+
+```mermaid
+flowchart LR
+  ATTRS["[:name, :age, :email]"]
+  LOOP[".each do |attr|"]
+  DEFINE["define_method(attr)\n{ ivar_get }"]
+  DEFINESET["define_method('#{attr}=')\n{ ivar_set }"]
+  METHODS[".name, .age, .email\n.name=, .age=, .email="]
+
+  ATTRS --> LOOP
+  LOOP --> DEFINE
+  LOOP --> DEFINESET
+  DEFINE --> METHODS
+  DEFINESET --> METHODS
+```
+
+---
+
+### `method_missing`: The Safety Net and DSL Builder
+
+`method_missing` is called when Ruby cannot find a method in the lookup
+chain. Used carefully, it is powerful. Used carelessly, it hides bugs:
+
+```ruby
+class DynamicGreeter
+  def method_missing(name, *args)
+    if name.to_s.start_with?("greet_")
+      "Hello from #{name.to_s.sub('greet_', '')}!"
+    else
+      super
+    end
+  end
+
+  def respond_to_missing?(name, include_private = false)
+    name.to_s.start_with?("greet_") || super
+  end
+end
+
+DynamicGreeter.new.greet_alice  # => "Hello from alice!"
+```
+
+```mermaid
+sequenceDiagram
+  participant Caller as Caller
+  participant Ruby as Ruby Lookup
+  participant MM as method_missing
+  participant Super as super
+
+  Caller->>Ruby: obj.nonexistent_method
+  Ruby->>Ruby: Search ancestor chain
+  Ruby->>Ruby: No method found
+  Ruby->>MM: method_missing(:nonexistent_method)
+  MM->>MM: Check if DSL method (starts with greet_)
+  alt DSL match
+    MM-->>Caller: Return "Hello from ..."
+  else No match
+    MM->>Super: super
+    Super-->>Caller: NoMethodError
+  end
+```
+
+---
+
+### `class_eval` and `instance_eval`
+
+`class_eval` (or `module_eval`) evaluates code in the context of a class,
+giving access to instance methods and class methods. `instance_eval` evaluates
+in the context of a specific object, giving access to instance variables:
+
+```ruby
+Person.class_eval do
+  def greet
+    "Hi, I'm #{@name}"
+  end
+end
+
+Person.new.instance_eval do
+  @greeting = "hello"
+end
+```
+
+```mermaid
+flowchart TD
+  CE["Person.class_eval do ... end"]
+  IE["obj.instance_eval do ... end"]
+  RESULT_C["New instance method on Person"]
+  RESULT_I["Direct access to obj's instance variables"]
+
+  CE --> RESULT_C
+  IE --> RESULT_I
+```
+
+---
+
+## Part 4: Concurrency and Fibers
+
+### Threads vs Fibers
+
+Ruby provides two concurrency primitives: **Threads** (preemptively
+scheduled by the interpreter) and **Fibers** (cooperatively scheduled by
+you). Under MRI, a native thread holds the GIL, so CPU-bound threads do
+not run in parallel. I/O-bound threads yield the GIL.
+
+```mermaid
+flowchart TD
+  subgraph Thread["Threads (Preemptive)"]
+    T1["Thread.new { work }"]
+    T2["Thread.new { work }"]
+    TL["GIL: one at a time"]
+  end
+
+  subgraph Fiber["Fibers (Cooperative)"]
+    F1["Fiber.new { yield/resume }"]
+    F2["Developer controls scheduling"]
+  end
+
+  T1 --> TL
+  T2 --> TL
+  TL -->|I/O yields| T1
+```
+
+---
+
+### Synchronization Primitives
+
+Shared mutable state requires synchronization:
+
+```mermaid
+classDiagram
+  class Mutex {
+    +lock()
+    +unlock()
+    +synchronize { block }
+  }
+  class Queue {
+    +push(obj)
+    +pop(n = nil)
+    +empty?
+    +size
+  }
+  class ConditionVariable {
+    +wait(mutex)
+    +signal
+    +broadcast
+  }
+
+  Mutex --> ConditionVariable : pairs with
+  note for Mutex "Only one thread inside\nsynchronize block at a time"
+  note for Queue "Thread-safe producer/consumer\npreferred over shared state"
+```
+
+```ruby
+mutex = Mutex.new
+count = 0
+
+10.times.map do
+  Thread.new do
+    mutex.synchronize { count += 1 }
+  end
+end.each(&:join)
+```
+
+---
+
+## Part 4: Standard Library Essentials
+
+### File I/O and Iterators
+
+Ruby's standard library handles I/O with consistent, elegant interfaces:
+
+```mermaid
+flowchart LR
+  FS["File.open('data.txt')"]
+  EL["file.each_line"]
+  MAP[".map { |line| line.chomp }"]
+  WRITE["File.write('out.txt', result.join)"]
+
+  FS --> EL --> MAP --> WRITE
+```
+
+File operations support blocks that auto-close the file:
+
+```ruby
+File.open("data.txt", "r") do |f|
+  lines = f.each_line.map(&:chomp)
+end
+# file auto-closed here
+```
+
+---
+
+### Enumerators: Lazy and Infinite Sequences
+
+Lazy enumerators allow working with infinite or very large sequences
+without loading all data into memory:
+
+```ruby
+infinite_primes = (1..Float::INFINITY).lazy.select do |n|
+  (2..Math.sqrt(n)).all? { |d| n % d != 0 }
+end
+
+infinite_primes.first(5)  # => [2, 3, 5, 7, 11]
+```
+
+```mermaid
+flowchart TD
+  RANGE["(1..Float::INFINITY)"]
+  LAZY[".lazy"]
+  FILTER[".select { is_prime? }"]
+  MAP2[".map { ... }"]
+  FIRST[".first(5)"]
+  DONE["[2, 3, 5, 7, 11]"]
+
+  RANGE --> LAZY --> FILTER --> MAP2 --> FIRST --> DONE
+  note for FIRST "Stops after 5 items\ncomplete sequence never built"
+```
+
+---
+
+## Part 4: RSpec and Testing
+
+### BDD with RSpec
+
+RSpec provides executable, readable specifications that double as
+documentation:
+
+```ruby
+RSpec.describe Person do
+  let(:person) { Person.new("Alice") }
+
+  it "has a greet method" do
+    expect(person.greet).to include("Alice")
+  end
+
+  it "raises when name is missing" do
+    expect { person.validate! }
+      .to raise_error(ArgumentError)
+  end
+end
+```
+
+```mermaid
+flowchart LR
+  DESC["RSpec.describe Person"]
+  LET["let(:person) { Person.new }"]
+  IT["it 'has a greet method'"]
+  EXPECT["expect(p.greet).to include('Alice')"]
+  RESULT["PASS / FAIL"]
+
+  DESC --> LET --> IT --> EXPECT --> RESULT
+```
+
+RSpec matchers read as English: `eq`, `include`, `raise_error`,
+`match_array`, `satisfy`, `be_empty`. They form a natural specification
+language.
+
+---
+
+## Part 4: Rails Integration Context
+
+### Rails as a Ruby Object System
+
+Rails (ActiveRecord) is built on the same Ruby object model covered in
+the book. Understanding Ruby's object model makes Rails conventions clear:
+
+```mermaid
+classDiagram
+  class ActiveRecordBase {
+    +find(id)
+    +where(conditions)
+    +create(attrs)
+    +valid?
+    +save
+  }
+  class Book {
+    +has_many :chapters
+    +belongs_to :author
+    +title
+    +author_name
+  }
+
+  ActiveRecordBase <|-- Book
+  Book : +title
+  Book : +author_name
+  Book : +chapters
+
+  note for Book "ActiveRecord uses method_missing\nto route attribute access\nto database columns"
+```
+
+Rails leans heavily on modules (`ActiveModel`, `ActiveSupport`) and
+method_missing (`dynamic attribute access`). Understanding those Ruby
+idioms from *The Well-Grounded Rubyist* makes Rails transparent rather
+than mysterious.

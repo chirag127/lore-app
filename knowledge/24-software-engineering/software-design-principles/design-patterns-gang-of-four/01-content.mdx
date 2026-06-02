@@ -1,0 +1,164 @@
+export const patterns = [
+  {
+    category: 'Creational',
+    emoji: '🏗️',
+    description:
+      'Patterns that abstract object creation, letting a system remain independent of how its objects are constructed, composed, and represented.',
+    patterns: [
+      {
+        name: 'Abstract Factory',
+        intent: 'Provide an interface for creating families of related or dependent objects without specifying their concrete classes.',
+        example: 'A UI toolkit that creates buttons and menus for Windows, Mac, and Linux from a single factory interface.',
+        whenToUse: 'When a system must be independent of how its products are created, composed, and represented.',
+      },
+      {
+        name: 'Builder',
+        intent: 'Separate the construction of a complex object from its representation, allowing the same construction process to create different representations.',
+        example: 'Constructing a complex HTML page or SQL query step by step with a fluent interface.',
+        whenToUse: 'When the algorithm for creating a complex object should be independent of the parts that make up the object.',
+      },
+      {
+        name: 'Factory Method',
+        intent: 'Define an interface for creating an object, but let subclasses decide which class to instantiate.',
+        example: 'A document editor that creates ReadOnlyDocument or EditDocument based on the file-permission state.',
+        whenToUse: 'When a class cannot anticipate the class of objects it must create.',
+      },
+      {
+        name: 'Prototype',
+        intent: 'Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.',
+        example: 'Cloning a pre-configured document template rather than reinitialising every field.',
+        whenToUse: 'When classes to instantiate are specified at runtime, or to avoid building class hierarchies.',
+      },
+      {
+        name: 'Singleton',
+        intent: 'Ensure a class has only one instance and provide a global point of access to it.',
+        example: 'A logging service, thread pool, or configuration manager shared across the whole application.',
+        whenToUse: 'Use cautiously — typically for exactly-one semantics such as a database connection or event bus. Avoid using it as a global variable substitute.',
+      },
+    ],
+  },
+  {
+    category: 'Structural',
+    emoji: '🔩',
+    description:
+      'Patterns that compose classes or objects to form larger structures, focusing on how classes and objects are combined to form flexible, efficient structures.',
+    patterns: [
+      {
+        name: 'Adapter',
+        intent: 'Convert the interface of a class into another interface clients expect, letting classes work together that could not otherwise because of incompatible interfaces.',
+        example: 'Adapting a legacy `LegacyPrinter` interface to the new `ModernPrinter` expected by the rest of the codebase.',
+        whenToUse: 'When you want to use an existing class but its interface does not match what you need.',
+      },
+      {
+        name: 'Bridge',
+        intent: 'Decouple an abstraction from its implementation so that the two can vary independently.',
+        example: 'Separating a `Shape` abstraction from `DrawingAPI` implementations for raster and vector rendering.',
+        whenToUse: 'When both the abstraction and its implementation should be extensible via subclassing.',
+      },
+      {
+        name: 'Composite',
+        intent: 'Compose objects into tree structures to represent part-whole hierarchies, letting clients treat individual objects and compositions uniformly.',
+        example: 'A file system where both files and directories implement the same `FileSystemNode` interface.',
+        whenToUse: 'When you want to represent part-whole hierarchies of objects and want clients to ignore the difference between compositions and individual objects.',
+      },
+      {
+        name: 'Decorator',
+        intent: 'Attach additional responsibilities to an object dynamically without affecting other objects of the same class.',
+        example: 'Wrapping a `Coffee` object with `MilkDecorator`, `SugarDecorator`, and `WhipDecorator` at runtime.',
+        whenToUse: 'When subclassing would produce an explosion of classes for every possible combination of features.',
+      },
+      {
+        name: 'Facade',
+        intent: 'Provide a unified interface to a set of interfaces in a subsystem, making the subsystem easier to use.',
+        example: 'A `HomeTheaterFacade` that simplifies controlling the projector, amplifier, screen, and lights with a single `watchMovie()` call.',
+        whenToUse: 'When you need to simplify a complex subsystem or decouple clients from subsystem components.',
+      },
+      {
+        name: 'Flyweight',
+        intent: 'Use sharing to support large numbers of fine-grained objects efficiently.',
+        example: 'A text editor sharing character glyph objects instead of creating a new object for every character in a document.',
+        whenToUse: 'When an application uses a large number of objects and storage costs are high, and most object state can be made extrinsic.',
+      },
+      {
+        name: 'Proxy',
+        intent: 'Provide a surrogate or placeholder for another object to control access to it.',
+        example: 'A `RemoteImageProxy` that loads the heavy `RemoteImage` only when actually displayed.',
+        whenToUse: 'For lazy loading, access control, or when you need a place holder for a remote or expensive-to-create object.',
+      },
+    ],
+  },
+  {
+    category: 'Behavioral',
+    emoji: '🔄',
+    description:
+      'Patterns that focus on communication between objects, how objects interact and fulfil responsibilities, capturing patterns of control flow.',
+    patterns: [
+      {
+        name: 'Chain of Responsibility',
+        intent: 'Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request.',
+        example: 'HTTP middleware in Express.js or ASP.NET Core, where each middleware can handle or pass along the request.',
+        whenToUse: 'When more than one object may handle a request and the handler is not known a priori.',
+      },
+      {
+        name: 'Command',
+        intent: 'Encapsulate a request as an object, thereby letting you parametrize clients with different requests, queue or log requests, and support undoable operations.',
+        example: 'A GUI toolbar where each button holds a `Command` object that invokes editor actions.',
+        whenToUse: 'When you need to parametrize objects by actions, queue operations, or support undo/redo.',
+      },
+      {
+        name: 'Interpreter',
+        intent: 'Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.',
+        example: 'Parsing a simple arithmetic expression or regex with a custom grammar and evaluator.',
+        whenToUse: 'When the grammar is simple and efficiency is not a critical concern.',
+      },
+      {
+        name: 'Iterator',
+        intent: 'Provide a way to sequentially access the elements of an aggregate object without exposing its underlying representation.',
+        example: 'The `Iterator` interface in Java Collections or Python\'s `for x in iterable` protocol.',
+        whenToUse: 'When you need to access elements of a collection without exposing its internal structure.',
+      },
+      {
+        name: 'Mediator',
+        intent: 'Define an object that encapsulates how a set of objects interact, promoting loose coupling by keeping objects from referring to each other explicitly.',
+        example: 'A chat room mediator where users send messages to the mediator rather than to each other directly.',
+        whenToUse: 'When a set of objects communicate in complex, well-defined ways that would otherwise result in tangled references.',
+      },
+      {
+        name: 'Memento',
+        intent: 'Without violating encapsulation, capture and externalise an object\'s internal state so that the object can be restored to this state later.',
+        example: 'A text editor\'s undo stack, storing `Memento` snapshots of document state after each edit.',
+        whenToUse: 'When you need to implement undo/redo, rollback semantics, or snapshot-and-restore.',
+      },
+      {
+        name: 'Observer',
+        intent: 'Define a one-to-many dependency between objects so that when one object changes state, all dependents are notified and updated automatically.',
+        example: 'Event emitters and listeners — Node.js `EventEmitter`, Vue reactivity, RxJS Observables.',
+        whenToUse: 'When a change to one object requires changing others and you do not know how many objects need to change.',
+      },
+      {
+        name: 'State',
+        intent: 'Allow an object to alter its behaviour when its internal state changes, appearing to change its class.',
+        example: 'A vending machine that behaves differently in states `NoCoin`, `HasCoin`, `Sold`, and `SoldOut` without massive `if/else` blocks.',
+        whenToUse: 'When an object\'s behaviour depends on its state and must change at runtime.',
+      },
+      {
+        name: 'Strategy',
+        intent: 'Define a family of algorithms, encapsulate each one, and make them interchangeable.',
+        example: 'A `SortStrategy` that can swap between quicksort, mergesort, and bubble sort at runtime.',
+        whenToUse: 'When you need multiple variants of an algorithm and want to avoid conditional logic selecting among them.',
+      },
+      {
+        name: 'Template Method',
+        intent: 'Define the skeleton of an algorithm in a method, deferring some steps to subclasses, letting subclasses redefine certain steps without changing the algorithm\'s structure.',
+        example: 'A `DataImporter` base class with `import()` calling `readFile()`, `parse()`, and `save()` — subclasses override `parse()`.',
+        whenToUse: 'When you want to let clients extend only particular steps of an algorithm but not its structure.',
+      },
+      {
+        name: 'Visitor',
+        intent: 'Represent an operation to be performed on elements of an object structure, letting you define a new operation without changing the classes of the elements on which it operates.',
+        example: 'A compiler\'s AST visitor that implements `typeCheck()`, `optimize()`, and `generateCode()` without modifying node classes.',
+        whenToUse: 'When you need to perform many distinct, unrelated operations on objects in a structure and want to avoid polluting their classes.',
+      },
+    ],
+  },
+]

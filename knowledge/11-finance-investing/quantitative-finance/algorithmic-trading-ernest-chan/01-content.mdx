@@ -1,0 +1,67 @@
+---
+title: Algorithmic Trading — Deep Understanding
+author: Ernest P. Chan
+slug: algorithmic-trading-ernest-chan-content
+---
+
+## Chapter-by-Chapter Summary
+
+**Chapter 1: Introduction.** Chan sets the stage for algorithmic
+trading, explaining why systematic approaches outperform human
+discretion. He covers the basic infrastructure: data sources,
+broker APIs, and the technology stack needed for automated trading.
+
+**Chapter 2: Mean Reversion Strategies.** The core of a mean
+reversion strategy: assets that have moved away from their historical
+average will tend to return to it. Chan covers Bollinger Bands,
+Bollinger Bandit, and pairs trading. He provides MATLAB code for
+each strategy, including entry and exit rules.
+
+**Chapter 3: Momentum Strategies.** The opposite of mean reversion:
+trends tend to persist. Chan covers time-series momentum (buying
+recent winners) and cross-sectional momentum (buying assets that
+outperformed peers). He addresses the key challenge — when trends
+reverse — and provides stop-loss rules.
+
+**Chapter 4: High-Frequency Strategies.** A brief overview of
+strategies that operate at sub-second time scales. Chan notes that
+HFT requires infrastructure most retail traders cannot access. He
+focuses on lower-frequency strategies that retail traders can
+implement.
+
+**Chapter 5: Strategy Testing.** The critical chapter on backtesting.
+Chan covers look-ahead bias, survivorship bias, and data snooping.
+He emphasizes that backtesting must account for transaction costs
+and market impact. The chapter includes a checklist for evaluating
+backtest results.
+
+**Chapter 6: Risk Management.** Chan argues that risk management
+is more important than strategy selection. He covers position sizing
+(Kelly criterion, fixed fractional), stop-loss placement, and
+strategy correlation. The chapter includes a portfolio construction
+framework for combining multiple strategies.
+
+**Chapter 7: Execution.** Chan covers the mechanics of order
+execution: limit orders vs market orders, VWAP, TWAP, and liquidity
+detection algorithms. He explains how execution quality affects
+strategy profitability.
+
+**Chapter 8: Strategy Portfolio.** The final chapter synthesizes
+everything into a practical framework. Chan shows how to combine
+uncorrelated strategies, allocate capital dynamically, and monitor
+performance. He provides a complete MATLAB framework for managing
+a portfolio of strategies.
+
+## Reading Guide
+
+This is a technical book that assumes familiarity with MATLAB,
+statistics, and basic finance. Readers should work through the code
+examples rather than reading passively. Chan provides downloadable
+code on his website. The mean reversion and momentum chapters are
+the most immediately practical. The execution chapter (Chapter 7)
+is underappreciated — it contains insights that can make or break
+a strategy's profitability.
+
+For a gentler introduction, read Chan's earlier book *Quantitative
+Trading* first. For a more technical treatment of market
+microstructure, read Larry Harris's *Trading and Exchanges*.

@@ -1,0 +1,85 @@
+{
+  "slug": "system-design-interview-volume-2-alex-xu",
+  "title": "System Design Interview — An Insider’s Guide",
+  "subtitle": "Volume 2",
+  "author": "Alex Xu, Sahn Lam",
+  "description": "A sequel covering 13 advanced system design interview questions with a 4-step framework, 300+ diagrams, and deep dives into real-world distributed systems — from proximity services and payment engines to stock exchanges and S3-like object storage.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12802675-L.jpg",
+  "isbn10": "1736049119",
+  "isbn13": "9781736049112",
+  "pages": 436,
+  "publishedYear": 2022,
+  "publisher": "Byte Code LLC",
+  "openlibrarySlug": "/works/OL46396030W",
+  "tags": [
+    "system-design",
+    "interviews",
+    "distributed-systems",
+    "software-engineering",
+    "architecture",
+    "scalability",
+    "backend"
+  ],
+  "keyIdeas": [
+    "4-Step Framework for System Design",
+    "Back-of-the-Envelope Calculations",
+    "Geohashing for Proximity and Mapping",
+    "Distributed Message Queues",
+    "Metrics Monitoring and Alerting",
+    "Ad Click Event Aggregation",
+    "CQRS and Event Sourcing in Payments",
+    "Idempotency and Exactly-Once Semantics",
+    "S3-like Object Storage Architecture",
+    "Real-time Leaderboards with Redis",
+    "Payment System Design and Digital Wallets",
+    "Stock Exchange Order Books",
+    "Hotel Reservation Concurrency",
+    "Distributed Email Infrastructure",
+    "Trade-off Analysis and Bottleneck Identification"
+  ],
+  "keyTakeaways": [
+    "Start every design with a 4-step framework: requirements, estimation, high-level design, deep dive.",
+    "Use back-of-the-envelope calculations (QPS, storage, bandwidth) to scope the system before architecture.",
+    "Geohashing is the foundation for proximity services, nearby friends, and mapping systems.",
+    "Distributed message queues require a balance of ordering guarantees, partitioning, and exactly-once delivery.",
+    "Metrics monitoring pipelines use time-series databases with downsampling and alerting rules.",
+    "Ad click aggregation demands real-time streaming with windowed counts and rollup strategies.",
+    "Hotel reservation systems must handle race conditions with pessimistic locking or optimistic concurrency.",
+    "Payment systems need idempotency keys, two-phase commits, and compensation transactions (Saga pattern).",
+    "Digital wallets require append-only ledgers with event sourcing for auditability.",
+    "Stock exchange design centers on an in-memory order book with price-time priority and risk controls.",
+    "Identify bottlenecks first, then optimize — do not prematurely optimize the happy path."
+  ],
+  "whoShouldRead": [
+    "Software engineers preparing for senior/staff-level system design interviews at FAANG and equivalent",
+    "Backend developers who want a structured vocabulary for discussing distributed system trade-offs",
+    "Engineers looking to transition from feature development to architecture roles",
+    "Readers of Volume 1 who want more advanced case studies on payments, real-time systems, and storage"
+  ],
+  "relatedBooks": [
+    {
+      "title": "System Design Interview — An Insider’s Guide, Volume 1",
+      "slug": "system-design-interview-volume-1-alex-xu"
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "slug": "designing-data-intensive-applications-martin-kleppmann"
+    },
+    {
+      "title": "Designing Distributed Systems",
+      "slug": "designing-distributed-systems-brendan-burns"
+    },
+    {
+      "title": "Fundamentals of Software Architecture",
+      "slug": "fundamentals-of-software-architecture-mark-richards"
+    },
+    {
+      "title": "Database Internals",
+      "slug": "database-internals-alex-petrov"
+    },
+    {
+      "title": "Software Architecture: The Hard Parts",
+      "slug": "software-architecture-the-hard-parts-neal-ford"
+    }
+  ]
+}

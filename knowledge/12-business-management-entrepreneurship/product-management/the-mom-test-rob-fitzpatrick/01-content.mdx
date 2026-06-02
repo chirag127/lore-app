@@ -1,0 +1,386 @@
+---
+title: Core Concepts
+subtitle: The Mom Test, Bad Data Taxonomy, Hierarchy of Evidence, Questioning Techniques
+---
+
+## The Mom Test
+
+The foundational insight of the book. Named after the observation that even
+your own mother will lie to you about your business idea — because she loves
+you and doesn't want to hurt your feelings. The problem is not specific to
+mothers; it applies to everyone you talk to:
+
+| Person | Reason They Lie |
+|--------|-----------------|
+| Your mom | She loves you and believes in you |
+| Your friend | They want to be supportive |
+| A mentor | They want to encourage you |
+| A potential customer | They want to be polite, end the conversation, or seem helpful |
+| An investor | They want to stay on good terms (or they genuinely don't know) |
+| You (to yourself) | Confirmation bias: you hear what you want to hear |
+
+The Mom Test is not a question you ask — it is a filter you apply to every
+customer conversation:
+
+> **The Mom Test:** If you ask a question that a biased person could answer
+> positively while still being technically truthful, you have failed the Mom
+> Test — because they will.
+
+```mermaid
+flowchart TD
+    subgraph Fail["FAILS the Mom Test<br/>(can be lied about)"]
+        F1["'Do you think this is a good idea?'"]
+        F2["'Would you use this product?'"]
+        F3["'Do you have this problem?'"]
+        F4["'That's cool, right?'"]
+    end
+
+    subgraph Pass["PASSES the Mom Test<br/>(cannot be lied about)"]
+        P1["'Tell me about the last time you had this problem.'"]
+        P2["'How are you solving it today?'"]
+        P3["'How much do you currently spend on X?'"]
+        P4["'Will you give me access to your data for 30 minutes?'"]
+    end
+
+    F1 -->|"Polite answer<br/>(useless)"| Waste["Bad Data"]
+    F2 -->|"Polite answer<br/>(useless)"| Waste
+    P1 -->|"Specific past event<br/>(truthful)"| Signal["Real Signal"]
+    P4 -->|"Commitment<br/>(truthful)"| Signal
+```
+
+The test forces you to design questions about the customer's actual behavior
+rather than their opinion of your idea. If they cannot lie while answering
+honestly, you are having a good conversation.
+
+---
+
+## Three Types of Bad Data
+
+Most of what you hear in customer conversations is noise. Fitzpatrick
+categorizes bad data into three types:
+
+```mermaid
+flowchart LR
+    subgraph Bad_Data["Three Types of Bad Data"]
+        Compliments["Compliments<br/>'That's awesome!'"]
+        Fluff["Fluff<br/>'I'd totally use that'"]
+        Ideas["Ideas<br/>'You should also add X'"]
+    end
+
+    subgraph Why_They_Say_It["Why They Say It"]
+        C_Why["Politeness /<br/>Social lubrication"]
+        F_Why["Want to be helpful<br/>without committing"]
+        I_Why["Thinking out loud;<br/>they're not the designer"]
+    end
+
+    subgraph Why_It_Matters["Why It's Dangerous"]
+        C_Matters["Feels like validation.<br/>You leave happy.<br/>Nobody learned anything."]
+        F_Matters["Feels like intent.<br/>But intent ≠ behavior.<br/>No commitment given."]
+        I_Matters["Feels like insight.<br/>But feature requests hide<br/>the real problem."]
+    end
+
+    Compliments --> C_Why --> C_Matters
+    Fluff --> F_Why --> F_Matters
+    Ideas --> I_Why --> I_Matters
+```
+
+### Compliments
+
+"When I told people about my idea, everyone said it was great!"
+
+Compliments cost the other person nothing. They are social lubrication, not
+market validation. The only appropriate response to a compliment is to
+immediately pivot to a Mom Test question:
+
+> **Them:** "That's a really cool idea!"
+>
+> **You (correct):** "Thanks. Out of curiosity, are you dealing with this
+> problem today? What do you do about it?"
+
+> **You (wrong):** "Great, so we're validated!" (You are not.)
+
+### Fluff
+
+"I'd definitely use that" / "That sounds really useful" / "I think there's a
+market for this."
+
+Fluff sounds more substantive than a compliment but is equally worthless.
+The customer genuinely believes they would use it. They are not lying
+intentionally. But hypothetical future behavior is not a reliable predictor
+of actual behavior. The only meaningful response is to test for commitment.
+
+### Ideas
+
+"You should add X feature" / "Have you thought about doing Y instead?"
+
+When a customer starts designing your product, it feels like deep engagement.
+It is not. They are describing their current workflow in the form of a
+feature request. Your job is to dig into *why* they want that feature:
+
+> **Them:** "You should add a way to export to CSV."
+>
+> **You:** "Interesting. What does your current export workflow look like?
+> What's frustrating about it?"
+
+This uncovers the problem behind the feature request — which is actual signal.
+
+---
+
+## Defend Compliments
+
+A practice, not a concept. Before every customer conversation, consciously
+prepare to defend against the emotional lift that compliments give you.
+
+```mermaid
+flowchart TD
+    subgraph Before_Conversation["Before the Conversation"]
+        Prep1["Write down specific questions<br/>(past behavior, not opinions)"]
+        Prep2["Set alarm: any compliment =<br/>immediately pivot to Mom Test"]
+        Prep3["Plan your tough follow-up questions"]
+    end
+
+    subgraph During_Conversation["During the Conversation"]
+        C["Customer says something positive"] --> Reaction{"Your reaction?"}
+        Reaction -->|"Enjoy the compliment"| Danger["DANGER<br/>You stop digging.<br/>You miss the truth."]
+        Reaction -->|"Pivot to specifics"| Safe["SAFE<br/>'What do you do today?'<br/>'How often does that happen?'"]
+    end
+
+    subgraph After_Conversation["After the Conversation"]
+        Audit["Audit your notes:<br/>Did we get real data<br/>or just politeness?"]
+        Strip["Strip out compliments,<br/>fluff, and ideas.<br/>What remains is signal."]
+    end
+
+    Prep1 --> Prep2 --> Prep3
+    C --> Reaction
+    Safe --> Audit --> Strip
+    Danger --> Strip
+```
+
+The most dangerous moment is after a conversation that felt "great." If you
+leave a customer meeting feeling good, you probably learned very little. If
+you leave it feeling confused or sobered, you probably learned something real.
+
+---
+
+## The Hierarchy of Customer Evidence
+
+Not all data from customer conversations is equally valuable. Fitzpatrick
+ranks signals by how much commitment they required:
+
+```mermaid
+flowchart TD
+    subgraph Hierarchy["Hierarchy of Customer Evidence"]
+        direction TB
+        Weakest["WEAKEST<br/>(Says something nice)"]
+        C1["Compliment<br/>'That's cool'"]
+        C2["Fluff / Hypothetical Interest<br/>'I'd buy that'"]
+        C3["Problem Description<br/>'Yes, I have this problem<br/>and here's how it hurts me'"]
+        C4["Time Commitment<br/>'I'll do a 30-min call<br/>to discuss this'"]
+        C5["Data/Network Commitment<br/>'Here's my data' or<br/>'Let me introduce you to...'"]
+        C6["Financial Commitment<br/>'Here's my credit card'"]
+        Strongest["STRONGEST<br/>(Gives something real)"]
+    end
+
+    Weakest --> C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> Strongest
+
+    subgraph Rules["Rules of Thumb"]
+        R1["Compliments & fluff: ignore completely"]
+        R2["Problem descriptions: useful but cheap"]
+        R3["Time commitments: meaningful signal"]
+        R4["Money / introductions / data: the only<br/>signals worth building strategy on"]
+    end
+
+    Rules -.-> Hierarchy
+```
+
+### What Each Level Actually Means
+
+| Evidence Level | Example | What It Tells You |
+|---------------|---------|-------------------|
+| Compliment | "That's a great idea" | Nothing. Discard. |
+| Fluff | "I would use this" | Nothing. Discard. |
+| Problem description | "I spend 5 hours/week on this and it drives me crazy" | Real problem exists. Worth exploring. |
+| Time commitment | "Sure, let's grab coffee next week" | They care enough to spend an hour. |
+| Data / Network | "Here are my spreadsheets" / "Talk to my VP" | They are invested. Keep going. |
+| Financial | "How do I pay?" / "Can I buy now?" | Strongest possible signal. Ship it. |
+
+---
+
+## Question Types: Good vs Bad
+
+Fitzpatrick provides a clear taxonomy of questions:
+
+```mermaid
+flowchart LR
+    subgraph Bad_Questions["Bad Questions (Opinion / Hypothetical)"]
+        B1["'Would you use X?'"]
+        B2["'Do you like this idea?'"]
+        B3["'Would you pay for this?'"]
+        B4["'How much would you pay?'"]
+        B5["'Do you have this problem?'"]
+    end
+
+    subgraph Good_Questions["Good Questions (Specific / Past)"]
+        G1["'Tell me about the last time this happened.'"]
+        G2["'What do you do about this today?'"]
+        G3["'Walk me through your workflow.'"]
+        G4["'What tools do you use for this?'"]
+        G5["'How much does it cost you now?'"]
+        G6["'Who else is dealing with this?'"]
+    end
+
+    Bad_Questions --> Output1["Hypothetical answers<br/>(lies / politeness)"]
+    Good_Questions --> Output2["Specific past events<br/>(truthful data)"]
+
+    Output1 -->|"Skip these entirely"| Avoid["AVOID"]
+    Output2 -->|"Build your conversation around these"| Use["USE"]
+```
+
+### The "Bad Question" Surgery
+
+If you catch yourself about to ask a bad question, Fitzpatrick provides a
+simple fix:
+
+| Bad Question | Why It's Bad | How to Fix It |
+|--------------|-------------|---------------|
+| "Would you use this?" | Hypothetical; they'll say yes to be nice | "How do you handle X today?" |
+| "Do you like the idea?" | Opinion; you're asking for a compliment | "What frustrates you about the current way?" |
+| "Would you pay for this?" | Hypothetical price anchoring | "What do you currently spend on X?" |
+| "Is this a big problem?" | They'll agree to be helpful | "How often does X come up? What happens when it does?" |
+| "What features would you want?" | They'll design your product | "Walk me through your process when X occurs." |
+
+---
+
+## The Customer Conversation Flow
+
+Fitzpatrick describes a well-structured customer conversation in phases:
+
+```mermaid
+flowchart TD
+    Phase1["1. Set Context<br/>'I'm learning about how people handle X.<br/>I'm not selling anything.'"] 
+    Phase2["2. Talk About Their Life<br/>Ask about recent specific events.<br/>Dig into frustrations and workarounds."]
+    Phase3["3. Look for Commitment Signals<br/>Will they give time, data, introductions,<br/>or money? If not, it's a dead end."]
+    Phase4["4. Optional: Share Your Vision (Briefly)<br/>Only after you've exhausted their story.<br/>Watch their reaction — do they engage?"]
+    Phase5["5. Ask for a Commitment<br/>'Can I follow up next week?'<br/>'Would you introduce me to...?'"]
+
+    Phase1 --> Phase2
+    Phase2 --> Phase3
+    Phase3 --> Phase4
+    Phase4 --> Phase5
+
+    subgraph Pitfalls["Common Pitfalls to Avoid"]
+        P1["Pitching instead of listening"]
+        P2["Asking for opinions instead of facts"]
+        P3["Leading the witness ('Don't you agree?')"]
+        P4["Recording without permission (ethical fail)"]
+        P5["Taking notes on compliments, ignoring specifics"]
+    end
+
+    Pitfalls -.->|"Watch for these"| Phase2
+```
+
+### The Golden Rule of Customer Conversations
+
+> **Do not talk about your idea. Talk about their life.**
+
+If you find yourself pitching, stop. You are not learning. The moment you
+start selling, the conversation shifts from discovery to defense, and all
+future data is contaminated.
+
+---
+
+## Running the Process
+
+Customer discovery is a habit, not a milestone:
+
+```mermaid
+flowchart LR
+    subgraph Weekly_Cycle["Weekly Customer Discovery Cycle"]
+        Plan["Plan:<br/>Who to talk to?<br/>What to learn?"]
+        Talk["Talk:<br/>10-30 conversations<br/>per learning cycle"]
+        Analyze["Analyze:<br/>Strip bad data.<br/>Find patterns.<br/>Update beliefs."]
+        Decide["Decide:<br/>Pivot, persevere,<br/>or go deeper?"]
+    end
+
+    Plan --> Talk --> Analyze --> Decide --> Plan
+
+    subgraph Over_Time["What Changes Over Time"]
+        T1["Early: Broad problem exploration<br/>(Who has this problem? How bad is it?)"]
+        T2["Middle: Solution validation<br/>(Does our solution solve it?<br/>Will they commit?)"]
+        T3["Late: Transaction readiness<br/>(Will they buy? For what price?)"]
+    end
+
+    Decide --> Over_Time
+```
+
+Fitzpatrick recommends planning customer conversations in batches rather than
+one-offs. A single good conversation is an anecdote; ten good conversations
+are a pattern. Between batches, formally analyze what you learned and update
+your business hypotheses.
+
+### The Note-Taking Protocol
+
+1. Write down direct quotes — not your interpretation of what they meant
+2. Note the commitment signal level (if any)
+3. Flag compliments and fluff — then ignore them
+4. After each conversation, answer: "What did I learn that I didn't know
+   before?"
+
+---
+
+## Key Lessons
+
+- **If you leave a conversation feeling good, you probably learned nothing.**
+  Good conversations feel uncomfortable because they reveal problems with
+  your assumptions.
+- **Pitching is the enemy of learning.** Every minute you spend selling is a
+  minute you are not discovering.
+- **"I would use that" means nothing.** Ask for the credit card or the
+  calendar invite.
+- **Feature requests are hidden problem descriptions.** Never take them at
+  face value; always dig for the underlying need.
+- **Customer discovery is not a one-time validation milestone.** It is a
+  continuous habit that runs throughout the life of the company.
+- **Data from the top of the hierarchy is dangerous.** Build your strategy on
+  commitments (time, money, access), not compliments.
+- **You will be wrong. That is the point.** If you already knew everything,
+  you wouldn't need these conversations. The faster you surface your wrong
+  assumptions, the faster you find the right ones.
+
+---
+
+## Practical Applications
+
+### For a First-Time Founder
+- Set a goal: 10 customer conversations per week
+- Before each conversation, write down 5 specific past-behavior questions
+- Never pitch — if they ask "what are you building?" answer briefly and pivot
+  back to their life
+- After each conversation, audit your notes: strip compliments and fluff
+- Track commitments: did anyone give you time, data, money, or introductions?
+- When you get a compliment, immediately ask: "are you dealing with this
+  problem today?"
+
+### For a Product Manager
+- Use the Mom Test framework for all user research interviews
+- Flag feature requests and dig for the problem beneath them
+- Build a weekly habit of 2-3 customer calls
+- Train your team to recognize and discard bad data
+- Create a shared "evidence board" tracking commitment signals, not
+  compliments
+
+### For a Salesperson (Early-Stage Sales)
+- The commitment hierarchy maps directly to sales qualification: a prospect
+  who won't give you time won't give you money
+- Stop asking "would you buy this?" — ask about their budget, procurement
+  process, and current vendor
+- A prospect who is truly interested will self-identify by taking an action
+- "That's cool" from a prospect is the same as from your mom — it means
+  nothing
+
+### For Breaking Bad Founder Habits
+- Stop counting compliments as validation
+- Stop asking hypothetical questions
+- Stop designing products based on customer feature requests
+- Stop having one-off conversations and calling it "customer development"
+- Stop pitching in discovery conversations

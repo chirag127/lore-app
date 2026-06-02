@@ -1,0 +1,81 @@
+﻿---
+title: "Statistics and Data Analysis"
+description: "The science of learning from data: from classical inference and experimental design to modern Bayesian methods, causal inference, and machine learning."
+---
+
+# Statistics and Data Analysis
+
+## Why This Subcategory Exists
+
+Statistics is the science of collecting, analyzing, interpreting, and presenting data. It provides the mathematical framework for drawing reliable conclusions from noisy, incomplete observations — a task that arises in every scientific discipline, every business decision, and every public policy debate. Where probability theory studies randomness in the abstract, statistics confronts the messiness of real data.
+
+The foundations of statistics were laid in the late 19th and early 20th centuries by Francis Galton (regression toward the mean), Karl Pearson (correlation coefficient, chi-squared test), William Gosset ("Student's t-distribution," working at Guinness Brewery), and Ronald Fisher (maximum likelihood estimation, analysis of variance, experimental design, randomization). Fisher's *Statistical Methods for Research Workers* (1925) and *The Design of Experiments* (1935) transformed statistics from a collection of ad hoc techniques into a coherent mathematical discipline.
+
+The 20th century saw a great intellectual battle between frequentist and Bayesian approaches to statistics. Frequentists (Fisher, Neyman, Pearson) define probability as long-run frequency and base inference on the sampling distribution of test statistics. Bayesians (Jeffreys, de Finetti, Savage) define probability as degree of belief and update prior beliefs using Bayes' theorem. For decades, the debate was fierce and often personal. Today, both approaches are widely used: frequentist methods for their objectivity and ease of use, Bayesian methods for their flexibility and natural handling of uncertainty.
+
+Modern statistics has been transformed by computing. The bootstrap (Efron, 1979) uses computational resampling to estimate sampling distributions without parametric assumptions. Markov chain Monte Carlo (MCMC) methods make Bayesian inference computationally feasible for complex models. Regularization methods (ridge regression, LASSO) connect statistics to optimization and machine learning. Causal inference (Rubin, Pearl, Hernán) provides frameworks for drawing causal conclusions from observational data — a problem that classical statistics explicitly avoided.
+
+The 21st century has brought the "data revolution": massive datasets, high-dimensional problems (where the number of variables exceeds the number of observations), and the rise of machine learning. Classical statistical methods, designed for small datasets with few variables, often fail in this new regime. Modern statistical learning theory (Vapnik, Hastie, Tibshirani, Friedman) provides the theoretical foundation for understanding when and why machine learning methods work.
+
+This subcategory holds books on the full spectrum: introductory statistics for beginners, mathematical statistics (the theory), applied statistics (regression, ANOVA, experimental design), Bayesian statistics, causal inference, statistical learning theory, and the philosophy of statistical inference.
+
+## Why This Is NOT Merged Into Other Subcategories
+
+**Distinct from Probability Theory:** Probability theory provides the mathematical framework (random variables, distributions, limit theorems). Statistics uses that framework to draw conclusions from data. A book on the central limit theorem belongs in Probability; a book on hypothesis testing belongs here.
+
+**Distinct from Applied & Computational Mathematics:** While computational statistics uses numerical methods, the core statistical questions (what can we learn from data? how confident should we be?) are distinct from numerical analysis or optimization. A book on the EM algorithm from a statistical perspective belongs here; a book on numerical optimization belongs in Applied Mathematics.
+
+**Distinct from AI/ML (Category 04):** While there is deep overlap, statistics focuses on inference (what can we learn from data, and how certain are we?) while machine learning focuses on prediction (what will happen next?). A book on the bias-variance tradeoff from a statistical perspective belongs here; a book on training deep neural networks belongs in AI/ML.
+
+## What Belongs Here
+
+Books about descriptive statistics, probability distributions, statistical inference (estimation, hypothesis testing), regression analysis, experimental design, Bayesian statistics, causal inference, nonparametric statistics, time series analysis, survival analysis, multivariate analysis, statistical learning theory, and the philosophy and history of statistics.
+
+## Does NOT Belong Here
+
+- Probability theory (random variables, limit theorems) → Probability Theory
+- Machine learning algorithms (neural networks, SVMs) → AI/ML (Category 04)
+- Numerical methods for solving equations → Applied & Computational Mathematics
+- Data engineering and databases → Computer Science (Category 02)
+
+## Essential Reading: The Most Important Books
+
+1. *Statistical Methods for Research Workers* — Ronald Fisher (1925) — The book that created modern statistics; ANOVA, maximum likelihood, experimental design
+2. *The Design of Experiments* — Ronald Fisher (1935) — Randomization, blocking, factorial designs; the foundation of all experimental science
+3. *An Introduction to Statistical Learning* — James, Witten, Hastie & Tibshirani (2013) — The most accessible introduction to modern statistical learning; regression, classification, resampling, regularization (freely available)
+4. *The Elements of Statistical Learning* — Hastie, Tibshirani & Friedman (2001) — The comprehensive reference for statistical learning theory; boosting, SVMs, random forests, unsupervised learning (freely available)
+5. *All of Statistics* — Larry Wasserman (2004) — A concise tour of modern statistics from a mathematical perspective
+6. *Statistical Inference* — George Casella & Roger Berger (1989) — The standard graduate text for mathematical statistics; rigorous and comprehensive
+7. *Bayesian Data Analysis* — Andrew Gelman et al. (1995, 3rd ed. 2013) — The definitive Bayesian statistics text; hierarchical models, MCMC, model checking
+8. *Doing Bayesian Data Analysis* — John Kruschke (2011) — An accessible introduction to Bayesian methods with R code
+9. *Causal Inference: The Mixtape* — Scott Cunningham (2021) — The most accessible introduction to modern causal inference; RDD, IV, DID, matching (freely available)
+10. *Causality* — Judea Pearl (2009) — The mathematical theory of causal inference; do-calculus, structural causal models
+11. *Observation and Experiment* — Paul Rosenbaum (2017) — The best introduction to observational studies and how to draw causal conclusions without experiments
+12. *Regression and Other Stories* — Gelman, Hill & Vehtari (2020) — Applied regression analysis done right; Bayesian and frequentist perspectives
+13. *Applied Linear Statistical Models* — Kutner et al. (2004) — The comprehensive reference for regression and ANOVA
+14. *Time Series Analysis* — James Hamilton (1994) — The definitive graduate text for time series; ARIMA, VAR, state-space models, cointegration
+15. *Econometric Analysis* — William Greene (1997) — The standard econometrics text; connects statistics to economic modeling
+16. *Mostly Harmless Econometrics* — Angrist & Pischke (2009) — The econometrician's bible for causal inference; IV, RDD, panel data
+17. *The Book of Why* — Judea Pearl & Dana Mackenzie (2018) — The layperson's introduction to causal inference and why it matters
+18. *How to Lie with Statistics* — Darrell Huff (1954) — The classic popular introduction to statistical misuse; still relevant
+19. *Naked Statistics* — Charles Wheelan (2012) — An entertaining introduction to statistical thinking
+20. *The Signal and the Noise* — Nate Silver (2012) — Prediction, probability, and why most predictions fail
+21. *Computer Age Statistical Inference* — Bradley Efron & Trevor Hastie (2016) — How computing transformed statistics; bootstrap, MCMC, empirical Bayes
+22. *Testing Statistical Hypotheses* — Lehmann & Romano (2005) — The rigorous mathematical theory of hypothesis testing
+23. *Theory of Point Estimation* — Lehmann & Casella (1998) — The mathematical theory of estimation; sufficiency, completeness, minimaxity
+24. *The Lady Tasting Tea* — David Salsburg (2001) — The history of statistics through the stories of the people who created it
+25. *Statistics Done Wrong* — Alex Reinhart (2015) — The most common statistical errors and how to avoid them (freely available)
+
+## How to Approach This Subcategory
+
+1. **Start with applied statistics.** James et al.'s *An Introduction to Statistical Learning* is the best first book. It covers regression, classification, resampling, and regularization with real data examples in R.
+
+2. **Learn mathematical statistics.** Casella & Berger for the rigorous theory: maximum likelihood, sufficiency, hypothesis testing, confidence intervals.
+
+3. **Study Bayesian methods.** Kruschke for intuition, then Gelman et al. for depth. Learn MCMC sampling (Stan, PyMC).
+
+4. **Learn causal inference.** Pearl's *The Book of Why* for motivation, then Pearl's *Causality* for the theory, then Rosenbaum or Angrist & Pischke for applications.
+
+5. **Specialize.** Time series (Hamilton), survival analysis, nonparametric methods, or high-dimensional statistics depending on your needs.
+
+**Connections:** Statistics is essential for Category 04 (AI/ML — the theoretical foundation of machine learning), Category 05 (Pure Sciences — experimental design and data analysis), Category 09 (Economics — econometrics), Category 08 (Finance — risk modeling, time series), Category 07 (Medicine — clinical trials, epidemiology), and Category 17 (Social Sciences — survey methodology, causal inference from observational data).

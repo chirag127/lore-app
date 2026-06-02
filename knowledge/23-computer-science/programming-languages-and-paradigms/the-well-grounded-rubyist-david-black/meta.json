@@ -1,0 +1,72 @@
+{
+  "slug": "the-well-grounded-rubyist-david-black",
+  "title": "The Well-Grounded Rubyist",
+  "subtitle": "Ruby Programming from the Ground Up",
+  "author": "David A. Black, Joseph Leo III",
+  "publicationYear": 2014,
+  "firstEditionYear": 2009,
+  "isbn10": "1933988659",
+  "isbn13": "9781617293656",
+  "isbn13Second": "9781617291692",
+  "pages": 536,
+  "publisher": "Manning Publications",
+  "language": "en",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12613637-L.jpg",
+  "rubyVersionCovered": "2.1",
+  "genres": [
+    "Computer Science",
+    "Programming Languages",
+    "Ruby",
+    "Software Engineering",
+    "Object-Oriented Design"
+  ],
+  "subjects": [
+    "Ruby programming language",
+    "Object model and reflection",
+    "Modules and mixins",
+    "Blocks, procs, and lambdas",
+    "Metaprogramming",
+    "Duck typing",
+    "Ruby standard library",
+    "Concurrency and threading",
+    "RSpec testing",
+    "RubyGems and third-party libraries",
+    "Rails integration",
+    "irb and interactive Ruby",
+    "Domain-specific languages"
+  ],
+  "themes": [
+    "Ruby's object model: everything is an object, the method-lookup path, singleton classes",
+    "Blocks, procs, and lambdas: closures, binding, and functional techniques in Ruby",
+    "Modules and mixins: namespace organization, multiple inheritance alternative",
+    "Metaprogramming and reflection: define_method, send, method_missing",
+    "Duck typing over class hierarchy: programming to behavior, not type",
+    "Standard library as a first-class resource: file I/O, regex, enumerators",
+    "Threading and concurrency: fibers, Mutex, race conditions",
+    "Testing with RSpec: BDD workflow and expressive specifications"
+  ],
+  "tags": [
+    "ruby",
+    "programming-languages",
+    "object-oriented-programming",
+    "metaprogramming",
+    "blocks",
+    "modules",
+    "mixins",
+    "duck-typing",
+    "rspec",
+    "rails",
+    "manning",
+    "david-black",
+    "joseph-leo"
+  ],
+  "difficulty": "beginner-intermediate",
+  "estimatedReadingHours": 25,
+  "estimatedListeningMinutes": 1500,
+  "awards": [
+    "Best-selling Ruby tutorial with over 4 editions",
+    "The definitive intermediate-to-advanced Ruby book from Manning",
+    "Praise cited by hundreds of Ruby developers as the book that made them understand Ruby deeply"
+  ],
+  "excerpt": "The Well-Grounded Rubyist is a beautifully written tutorial that begins with your first Ruby program and takes you all the way to sophisticated topics like reflection, threading, and recursion. It is not a dry syntax reference — it teaches the principles that make Ruby unique: everything is an object, blocks are first-class citizens, and the object model is accessible enough to use and manipulate at runtime."
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "free-to-choose-milton-friedman",
+  "title": "Free to Choose: A Personal Statement",
+  "author": "Milton Friedman and Rose D. Friedman",
+  "subtitle": "The Case for Free Markets, Limited Government, and Individual Liberty",
+  "description": "A personal statement by Nobel laureate Milton Friedman and his wife Rose Friedman, making the case for free markets, limited government, and individual liberty. Originally published as the companion to a 10-part PBS television series, the book explains how voluntary exchange and market competition create prosperity, while government intervention — however well-intentioned — produces unintended harm. Across 10 chapters it tackles inflation, education, consumer protection, occupational licensing, the welfare state, and international trade, offering a coherent free-market alternative to the postwar consensus.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14662714-L.jpg",
+  "isbn10": "0156334607",
+  "isbn13": "9780156334600",
+  "pages": 368,
+  "publishedYear": 1980,
+  "publisher": "Harcourt Brace Jovanovich",
+  "openlibrarySlug": "free_to_choose",
+  "tags": [
+    "economics",
+    "free markets",
+    "libertarianism",
+    "monetarism",
+    "public policy",
+    "government regulation",
+    "school choice",
+    "inflation",
+    "welfare reform",
+    "political economy"
+  ],
+  "keyIdeas": [
+    "Voluntary exchange in free markets is the engine of prosperity and the foundation of political freedom",
+    "Prices serve three functions: transmitting information, providing incentives, and distributing income",
+    "The Great Depression was caused by Fed mismanagement of the money supply, not by capitalism",
+    "Government inflation is caused by expanding the money supply faster than output",
+    "School vouchers would introduce competition and improve education for all",
+    "The welfare state should be replaced with a negative income tax",
+    "Occupational licensing should be dramatically reduced",
+    "Consumer protection is best ensured by market competition, not regulation",
+    "Free trade benefits all parties; tariffs protect special interests at public expense",
+    "Equality of opportunity matters; equality of outcome requires coercion",
+    "An Economic Bill of Rights would constitutionally limit government spending, taxation, and money creation",
+    "There is no such thing as a free lunch — every government program has hidden costs"
+  ],
+  "keyTakeaways": [
+    "Free markets coordinate the activities of millions of people without central direction through the price system",
+    "Government intervention in the economy almost always produces unintended consequences worse than the original problem",
+    "Inflation is always and everywhere a monetary phenomenon caused by government printing too much money",
+    "School vouchers would empower parents, introduce competition, and improve educational outcomes",
+    "A negative income tax would replace the welfare bureaucracy with a simpler, more humane cash transfer system",
+    "Occupational licensing restricts opportunity and raises costs for consumers without improving quality",
+    "Consumer protection through market competition is more effective than government regulation",
+    "International free trade benefits all parties regardless of wage differences",
+    "Economic freedom is a necessary condition for political freedom",
+    "Constitutional limits on government spending and taxation are needed to preserve liberty"
+  ],
+  "whoShouldRead": [
+    "Anyone interested in the philosophical and practical case for free markets and limited government",
+    "Students of economics seeking a clear, accessible introduction to market-liberal thought",
+    "Policymakers and politicians from across the ideological spectrum",
+    "Viewers of the original PBS series who want the full argument in book form",
+    "Critics of free-market economics who want to understand the strongest version of the opposing case"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Capitalism and Freedom",
+      "slug": "capitalism-and-freedom-milton-friedman"
+    },
+    {
+      "title": "The Road to Serfdom",
+      "slug": "the-road-to-serfdom-friedrich-hayek"
+    },
+    {
+      "title": "The Wealth of Nations",
+      "slug": null
+    },
+    {
+      "title": "Basic Economics",
+      "slug": "basic-economics-thomas-sowell"
+    }
+  ]
+}

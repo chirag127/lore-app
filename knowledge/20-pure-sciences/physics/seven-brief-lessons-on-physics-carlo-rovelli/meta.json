@@ -1,0 +1,137 @@
+{
+  "id": "seven-brief-lessons-on-physics-carlo-rovelli",
+  "title": "Seven Brief Lessons on Physics",
+  "slug": "seven-brief-lessons-on-physics-carlo-rovelli",
+  "authors": ["Carlo Rovelli"],
+  "year": 2014,
+  "category": "20-pure-sciences",
+  "subcategory": "physics",
+  "pages": 96,
+  "isbn": "9780241235966",
+  "isbn_10": "0241235961",
+  "isbn_13": "9780241235966",
+  "language": "en",
+  "publisher": "Penguin Books",
+  "original_title": "Sette brevi lezioni di fisica",
+  "original_language": "it",
+  "translators": ["Simon Carnell", "Erica Segre"],
+  "genres": ["Popular Science", "Physics", "Nonfiction"],
+  "source": "generated",
+  "generatedAt": "2026-06-09",
+  "table_of_contents": [
+    "First Lesson: The Most Beautiful of Theories",
+    "Second Lesson: The Quanta",
+    "Third Lesson: The Architecture of the Cosmos",
+    "Fourth Lesson: Particles",
+    "Fifth Lesson: Grains of Space",
+    "Sixth Lesson: Probability, Time, and the Heat of Black Holes",
+    "Seventh Lesson: Ourselves"
+  ],
+  "key_concepts": [
+    "General relativity",
+    "Curved spacetime",
+    "Quantum mechanics",
+    "Wave-particle duality",
+    "Uncertainty principle",
+    "Entanglement",
+    "Standard Model",
+    "Elementary particles",
+    "Quarks and leptons",
+    "Four fundamental forces",
+    "Loop quantum gravity",
+    "Granular space",
+    "Planck length",
+    "Big Bang",
+    "Expanding universe",
+    "Dark matter",
+    "Dark energy",
+    "Black holes",
+    "Hawking radiation",
+    "Thermodynamics",
+    "Arrow of time",
+    "Thermal time",
+    "Consciousness"
+  ],
+  "related_books": [
+    {
+      "title": "Reality Is Not What It Seems",
+      "author": "Carlo Rovelli",
+      "year": 2014
+    },
+    {
+      "title": "The Order of Time",
+      "author": "Carlo Rovelli",
+      "year": 2017
+    },
+    {
+      "title": "Helgoland",
+      "author": "Carlo Rovelli",
+      "year": 2020
+    },
+    {
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "year": 1988
+    },
+    {
+      "title": "The Character of Physical Law",
+      "author": "Richard Feynman",
+      "year": 1965
+    }
+  ],
+  "editions": [
+    {
+      "year": 2014,
+      "publisher": "Rizzoli",
+      "language": "Italian",
+      "title": "Sette brevi lezioni di fisica"
+    },
+    {
+      "year": 2015,
+      "publisher": "Allen Lane / Penguin Books",
+      "language": "English (UK)",
+      "pages": 96,
+      "isbn": "9780241235966"
+    },
+    {
+      "year": 2016,
+      "publisher": "Riverhead Books",
+      "language": "English (US)",
+      "pages": 96,
+      "isbn": "9780399184413"
+    },
+    {
+      "year": 2024,
+      "publisher": "Penguin Books",
+      "language": "English",
+      "note": "10th Anniversary Edition",
+      "isbn": "9780241737675"
+    }
+  ],
+  "author_biography": {
+    "full_name": "Carlo Rovelli",
+    "born": "1956-05-03",
+    "birthplace": "Verona, Italy",
+    "nationality": "Italian",
+    "field": "Theoretical Physics",
+    "institution": "Centre de Physique Théorique, Marseille",
+    "key_contributions": [
+      "Loop quantum gravity (co-founder)",
+      "Relational quantum mechanics",
+      "Thermal time hypothesis",
+      "Physics of time"
+    ],
+    "major_awards": [
+      "Foreign Policy Top 100 Global Thinkers",
+      "Prospect Top 50 World Thinkers",
+      "Merck Prize"
+    ]
+  },
+  "copies_sold": "1+ million",
+  "languages_translated": 52,
+  "bestseller_info": [
+    "Oversold Fifty Shades of Grey in Italy",
+    "New York Times bestseller",
+    "Sunday Times bestseller"
+  ]
+}

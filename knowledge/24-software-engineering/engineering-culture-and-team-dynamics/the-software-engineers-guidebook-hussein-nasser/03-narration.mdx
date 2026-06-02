@@ -1,0 +1,124 @@
+## Narration Script — The Software Engineer's Guidebook
+*Hussein Nasser · Target runtime: ~18 minutes for full entry deep-dive · Concise companion mode*
+
+---
+
+### [0:00 — 0:45] Opening Hook
+
+Most programming books begin the same way. Here is a language. Here is a framework. Here is how to write code that compiles.
+
+Hussein Nasser's *The Software Engineer's Guidebook* begins differently.
+
+It begins by asking what you are supposed to do once the code actually compiles. Once it ships. Once users are depending on it. Once you have to wake up at 2 AM because something you wrote is now on fire.
+
+Nasser is not trying to teach you Python. He built *asyncpg* — the async PostgreSQL library that ships in Python's standard library — while working at Google. He knows how to write code. This book is about everything else.
+
+---
+
+### [0:45 — 2:30] The Central Distinction: Coder vs. Engineer
+
+The most important idea in the entire book is a distinction Nasser makes between two modes of working.
+
+**The coder** receives requirements. They write code that meets those requirements. They ship it. Then they move on.
+
+**The engineer** starts with a goal. They define the bounded problem. They model the system. They design a solution. And critically — they stay. They operate what they built.
+
+The shift from coder to engineer is not a title change. It is a change in what you optimise for. And for most engineers reading this, the shift is where they are currently stuck.
+
+Nasser calls this "the third stage" — and he says most people never get there.
+
+---
+
+### [2:30 — 5:00] What a Senior Engineer Actually Is
+
+Here is the definition nobody hands you at your promotion meeting.
+
+A senior engineer is not someone who writes faster. A senior engineer is not someone who knows more APIs.
+
+A senior engineer is someone an organisation has decided to trust with ambiguity. That is the entire job in those seven words.
+
+Nasser gives us the Senior Engineer Venn Diagram as a mental model. Three circles: Technical Craft, System Thinking, Communication and Influence. Your growth is measured by the overlap area you can genuinely operate in.
+
+If you are strong technically but cannot explain your design choices to product or leadership, you are not a senior engineer. You are a specialist IC who happens to be at a senior pay grade.
+
+---
+
+### [5:00 — 7:30] Ownership: The Book's Original Frame
+
+"Take ownership" is language you have heard in a performance review. It almost never comes with a definition.
+
+Nasser's model is four levels deep.
+
+**Level One: Feature Ownership.** You ship a bounded initiative. You can say "I built this." This is where most engineers stop — and where most engineers stall.
+
+**Level Two: System Ownership.** You know how a system behaves at 2 AM. You wrote the runbook before the incident, not after. You can hand it off and know it will survive. This is senior engineering.
+
+**Level Three: Area Ownership.** You set direction across multiple systems. People come to you with problems before they are problems.
+
+**Level Four: Org Ownership.** You are shaping company-level decisions. Your judgement affects outcomes you will never directly see.
+
+The jump from Level One to Level Two is the hardest. And it requires *letting go of direct control* — the instinct to keep writing the code. System ownership means the system works without you in the loop.
+
+---
+
+### [7:30 — 10:30] The Design Document as Leadership Artefact
+
+Nasser will spend a chapter defending design documents against engineers who call them "bureaucracy." He calls them: your primary leadership artifact.
+
+The argument is simple. A design document is not a report to management. It is a depository of decision-making context. The version you write today is the document you will read in twelve months when someone asks "why did we do it this way?" and you genuinely do not remember.
+
+His recommended structure is worth internalising. Problem statement. Constraints ranked by hardness. The existing approach. The proposed approach with diagram. Trade-offs listed explicitly — not buried. A rollout plan that includes canary, kill switch, and rollback. And observability: what happens if it goes wrong. Not if. When.
+
+This structure takes thirty minutes to write. It saves weeks of confusion.
+
+---
+
+### [10:30 — 13:00] The Pragmatic Chapter: Meetings, Postmortems, Politics
+
+This is the section most engineers skip and the one that pays the highest career dividend.
+
+Nasser's rules for meetings are almost deliberately offensive: if you can resolve it asynchronously, don't schedule one. If there is no agenda, you don't need to be there. The goal of the meeting is to make a decision, not to share information. And eight engineers in a one-hour meeting costs roughly one engineer-week. That is a real number.
+
+On postmortems: Nasser distinguishes between the proximate trigger — the deploy that broke it — and the root cause — the review process that let the bug through and the monitoring that took four hours to detect. Both must be fixed. Most postmortems stop at the trigger. That is why the same class of failure happens again.
+
+---
+
+### [13:00 — 15:00] Competence at Every Level
+
+Nasser provides a table mapping what an engineer at each level should be able to do without supervision.
+
+The trap worth naming explicitly: the Staff Engineer trap. Engineers promoted from senior to staff often try to keep doing senior work at scale. That is how they burn out. Staff work is not "more senior work." It is different work: resolving ambiguity *across teams*, not within your own.
+
+The progression is: Senior resolves assigned projects. Staff drives projects where the goal itself is unclear. Principal sets the agenda in spaces where teams disagree on what the goal even is.
+
+---
+
+### [15:00 — 16:30] Key Quotes Worth Carrying
+
+Three quotes that stayed with readers.
+
+First: *"The best engineers I have worked with share one trait: they are willing to be wrong in public."*
+
+Second: *"Production is the only test suite that matters."*
+
+And third — the one that opens the book: *"A senior engineer is not someone who writes more code. It is someone who makes everyone around them write better code."*
+
+That last one is not sentiment. It is a job description.
+
+---
+
+### [16:30 — 18:00] Who Should Read This and How
+
+If you are an early-career engineer: start with the first two chapters. You need to understand what the job actually is before you spend years optimising for the wrong thing.
+
+If you are a mid-level IC feeling the senior ceiling: the ownership pyramid and the senior engineer Venn Diagram will give you language for what you have been feeling. Read chapters three through five.
+
+If you are already senior and aiming for staff: the design document chapter and the competence table are your roadmap. Do not skip the pragmatic section — those are the skills that determine whether your promotion conversation goes well.
+
+And if you are a manager or engineering lead: read the senior engineer profile and the chapter on meetings. You need to understand the IC track you are not on in order to support the people who are on it.
+
+*The Software Engineer's Guidebook* is not a textbook. It is a mirror. Read it and see if the engineer you have been optimising to become is actually the one worth becoming.
+
+---
+
+*End of companion script · Based on the 2023 revised edition, volumes II & III · Hussein Meersman Press*

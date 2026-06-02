@@ -1,0 +1,82 @@
+{
+  "slug": "100-baggers-christopher-mayer",
+  "title": "100 Baggers",
+  "subtitle": "Stocks That Return 100-to-1 and How to Find Them",
+  "author": "Christopher W. Mayer",
+  "description": "An empirical study of stocks that multiplied 100x between 1962 and 2014, revealing the common traits — small size, high returns on capital, owner-operators, and extreme patience — that separate life-changing investments from the rest.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/11847887-L.jpg",
+  "isbn10": "1621291650",
+  "isbn13": "9781621291657",
+  "pages": 210,
+  "publishedYear": 2015,
+  "publisher": "Laissez Faire Books",
+  "openlibrarySlug": "/works/OL24934188W",
+  "tags": [
+    "investing",
+    "value-investing",
+    "compounding",
+    "long-term",
+    "stock-market",
+    "multi-baggers"
+  ],
+  "keyIdeas": [
+    "The Coffee Can Portfolio",
+    "SQGLP Framework",
+    "Owner-Operator Advantage",
+    "Returns on Reinvested Capital",
+    "The Kelly Criterion in Investing",
+    "Small-Cap Origins of 100-Baggers",
+    "Multiple Expansion",
+    "Industry Is Not Destiny",
+    "Outsider CEOs",
+    "Death by Dividend"
+  ],
+  "keyTakeaways": [
+    "Look for small companies (under $300M market cap) with a long runway for growth.",
+    "Prioritize owner-operators — management with 10%+ insider ownership.",
+    "Hold for decades, not quarters. Most 100-baggers took 20+ years.",
+    "Focus on high returns on capital AND the ability to reinvest at those rates.",
+    "Ignore macro noise and short-term volatility. Use the coffee can approach.",
+    "Avoid companies that pay out earnings as dividends if they can reinvest profitably.",
+    "Bet big when odds are in your favor — the Kelly criterion argues for concentration.",
+    "Seek companies with wide moats that can fight mean reversion.",
+    "Simple, understandable businesses often produce the best long-term results.",
+    "Do not confuse a great company with a great stock — price matters."
+  ],
+  "whoShouldRead": [
+    "Long-term value investors looking to compound wealth over decades",
+    "Anyone tired of short-term trading and seeking a patient, evidence-based approach",
+    "Investors building concentrated portfolios who want a framework for selection",
+    "Fans of Thomas Phelps, Peter Lynch, and Philip Fisher who want updated research"
+  ],
+  "relatedBooks": [
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "One Up On Wall Street",
+      "slug": "one-up-on-wall-street-peter-lynch"
+    },
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Dhandho Investor",
+      "slug": "the-dhando-investor-mohnish-pabrai"
+    },
+    {
+      "title": "Poor Charlie's Almanack",
+      "slug": "poor-charlies-almanack-charlie-munger"
+    },
+    {
+      "title": "The Most Important Thing",
+      "slug": "the-most-important-thing-howard-marks"
+    },
+    {
+      "title": "Coffee Can Investing",
+      "slug": "coffee-can-investing-saurabh-mukherjea"
+    }
+  ]
+}

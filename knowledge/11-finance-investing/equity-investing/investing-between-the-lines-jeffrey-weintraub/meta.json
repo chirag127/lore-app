@@ -1,0 +1,70 @@
+{
+  "slug": "investing-between-the-lines-jeffrey-weintraub",
+  "title": "Investing Between the Lines",
+  "author": "J. Jeffrey Weintraub",
+  "subtitle": "How to Make Smarter Decisions by Decoding CEO Communications",
+  "description": "Communications consultant J. Jeffrey Weintraub draws on decades of coaching CEOs and analyzing corporate communications to show investors how to extract actionable intelligence from what leaders say — and what they avoid saying. The book demonstrates that language is a leading indicator of corporate health: how CEOs write annual letters, answer questions on earnings calls, and frame news releases reveals more about future performance than most traditional financial metrics. Weintraub provides a systematic framework for detecting deception (passive voice, vague qualifiers, hedging), identifying competence gaps, and using qualitative signals to improve investment outcomes.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780071808163-L.jpg",
+  "isbn10": "0071808162",
+  "isbn13": "9780071808163",
+  "pages": 288,
+  "publishedYear": 2012,
+  "publisher": "McGraw-Hill",
+  "openlibrarySlug": "investing-between-the-lines",
+  "tags": [
+    "investing",
+    "CEO communications",
+    "qualitative analysis",
+    "earnings calls",
+    "language analysis",
+    "financial statements",
+    "behavioral finance",
+    "corporate governance"
+  ],
+  "keyIdeas": [
+    "CEO language is a leading indicator of management quality and future corporate performance",
+    "Passive voice, vague qualifiers, and excessive hedging signal deception or avoidance",
+    "Financial statements contain a narrative layer — what management chooses to emphasize matters as much as the numbers",
+    "Culture predicts long-term performance; CEO communications reveal culture",
+    "Earnings call transcripts contain asymmetric information for investors who read between the lines",
+    "Distinguishing incompetence from deception requires understanding what management actually knows",
+    "The relationship between language clarity and long-term stock returns is empirically measurable",
+    "Annual letters are diagnostic tools when read with consistent analytical frameworks"
+  ],
+  "keyTakeaways": [
+    "Count the passive voice: sentences that avoid naming the actor ('mistakes were made') signal avoidance behavior",
+    "Watch for hedging density: 'may,' 'could,' 'believes,' 'anticipates' increase in frequency when performance is deteriorating",
+    "Compare CEO language to CFO language — mismatches reveal internal disagreements or lack of coordination",
+    "CEO annual letters over 5-10 years reveal trajectory: clarity improves with competence, while obfuscation compounds over time",
+    "Earnings call tone shifts predict EPS surprises — analysts who track language beat those who do not",
+    "Reading financial statements is not enough: the footnotes and management discussion reveal what the headline numbers conceal",
+    "Culture is visible in what leaders do not say, in the patterns they repeat, and in how they respond to failure",
+    "Language-based signals have predictive power independent of traditional fundamental analysis"
+  ],
+  "whoShouldRead": [
+    "Active stock investors who want to improve their qualitative research process",
+    "Financial analysts who rely on earnings calls and investor presentations",
+    "Communications professionals interested in the intersection of language and markets",
+    "Anyone who reads annual letters and wants to decode them systematically",
+    "Students of behavioral finance interested in non-quantitative decision-making signals",
+    "Portfolio managers looking to augment fundamental analysis with linguistic signals"
+  ],
+  "relatedBooks": [
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Sign of the Four",
+      "slug": "the-sign-of-the-four-arthur-conan-doyle"
+    },
+    {
+      "title": "Thinking, Fast and Slow",
+      "slug": "thinking-fast-and-slow-daniel-kahneman"
+    }
+  ]
+}

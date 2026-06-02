@@ -1,0 +1,205 @@
+---
+title: Guided Narration
+subtitle: A walk-through of clean code principles with the book as your guide
+---
+
+## Narration Script
+
+This narration walks through the mindset, vocabulary, and daily practice of writing clean code as defined by Robert C. Martin. It is designed for listening alongside reading *Clean Code* or as a standalone orientation to professional software craft.
+
+---
+
+### 1. The Problem: Why This Book Exists
+
+Software craftsmanship is a term that is often used loosely. Martin defines it operationally: it is the commitment to writing code that you can be proud of. Code that a stranger can read. Code that does not lie.
+
+Every programmer has touched a file and thought: *"I could fix this, but I do not want to touch it."* That feeling is the canary in the coalmine of code quality. When the code is no longer inviting, when it becomes easier to live with the mess than to fix it, you have a problem. A codebase that is hard to modify is a strategic liability.
+
+Clean Code was written to provide the answer to a specific question: *what should I do when I see messy code?* Martin's answer: refactor it, one small step at a time. The book provides the heuristics for knowing what to fix and the discipline for fixing it safely.
+
+---
+
+### 2. The Craft Mindset
+
+Before you apply any rule from the book, adopt the underlying mindset:
+
+1. **Code communicates.** Every function, every name, every line you write is a message to the next person who reads it — and that person might be you in six months.
+
+2. **Quality is personal.** The team may set standards, but the code is written one line at a time by one person. Professionalism means taking personal responsibility for every line.
+
+3. **Mess is normal.** No codebase starts clean. Every feature, every deadline, every quick fix degrades the structure slightly. Clean code is maintained, not designed.
+
+4. **Small steps compound.** You do not need permission to leave the code better than you found it. The Boy Scout Rule: leave it a little cleaner. If everyone does this, the system improves continuously.
+
+---
+
+### 3. Naming: First Principles
+
+Names are the cheapest and most powerful form of code improvement. A good name eliminates a comment. A bad name creates confusion that no amount of documentation can fully resolve.
+
+The most important test for a name: **can a reader who does not know the context guess what this variable/function/class does?** If not, the name is wrong.
+
+Martin gives a specific process for naming:
+- Choose names that reveal intent
+- Reveal why a variable exists and what it does
+- Avoid misleading names — do not call a variable `accountList` if it is not a List
+- Be consistent with language conventions
+- Make names searchable — names that are too short (`a`, `x`) or too long (`theActualUserAccountClassInstance`) defeat the purpose
+
+Practical exercise: take a function you wrote this week. Without looking at the implementation, ask: if you gave only the names to a colleague, would they understand what the function does? If not, your names need work.
+
+---
+
+### 4. Functions: The Discipline of Small
+
+The function chapter is where the book's center of gravity lies. Martin argues with passion: functions must be small.
+
+What does "small" mean? Under 20 lines is a practical guideline. Under 10 is ideal. A function that fits on a single screen can be read and understood at one glance.
+
+**Do one thing.** The most important and hardest function rule. A function does one thing when it fills a single conceptual role. Martin's test: can you extract another function from it with a name that does not meaningfully change the description of what the first function does? If yes, the first function is doing too much.
+
+**One level of abstraction.** Within a function, every statement should be at the same level of abstraction. The function should not mix "if the user is active" (high level) with "load user from database" (mid level) with "open a file handle" (low level). Group statements by abstraction level.
+
+**Few arguments.** Zero arguments is ideal. One argument represents a clear unit of behavior. Two arguments can make sense. Three arguments signposts a problem. Flag arguments — a boolean that changes the function's behavior — should never be used; split into two functions instead.
+
+The **argument object** transformation: when you find yourself passing three or more arguments that belong together, wrap them in an object. This reduces parameter count and communicates the relationship between the arguments.
+
+---
+
+### 5. Comments: The Honest Approach
+
+Martin's comment chapter is the most controversial in the book. His position: **comments are failures of expression.** The code itself should be so clear that comments are rarely needed.
+
+The honest reader will find points of nuance here. Martin is not completely rigid: he acknowledges that legal comments (copyright, licensing) are required, and that some comments explaining *why* a non-obvious approach was chosen are valuable.
+
+The strongest case for reducing comments: **comments decay.** Code is version-controlled. Comments are not integrated into the code change mechanism. Every time you change code, scan nearby comments. If they are out of sync, delete them or update them. Outdated comments are worse than no comments.
+
+Martin's practical rules:
+- **If you feel a comment is necessary, ask whether you can fix the code instead** — rename, extract, refactor
+- **TODO comments** are acceptable with name, date, and a well-scoped ticket reference; they should be resolved, not abandoned
+- **Explain intent** — reason why the code exists, not what the code does
+- **Do not comment out code** — version control handles history; delete dead code
+
+---
+
+### 6. Formatting: The Importance of Structure
+
+Formatting is not a minor concern. It is the communication layer of code. When you push code with inconsistent formatting, you are telling the team that the code is not worth caring about.
+
+**Vertical formatting communicates structure:**
+- Variables should be declared as close to their first use as possible
+- Private instance variables belong at the top of the class
+- Functions that call each other should be near each other
+- The caller above, the callee below — or the callee immediately below the caller
+
+This follows the **newspaper metaphor**: read from top to bottom, high-level concepts first, then details, then implementation. A reader skimming the top of a file should understand what the module does without reading every line.
+
+**Horizontal formatting communicates scope:**
+- Use white space to associate related ideas and separate unrelated ones
+- Indentation is mandatory and must be consistent across the codebase
+- Keep lines under 120 characters to avoid horizontal scrolling
+
+---
+
+### 7. Error Handling as a Discipline
+
+Error handling should not obscure the main logic. The two concerns — what the function does normally, and what happens when things go wrong — must be kept separate.
+
+Martin's rules:
+- **Use exceptions, not return codes.** Exceptions separate the happy path from error handling, allowing the normal logic to read top-to-bottom.
+- **Separate try/catch from normal logic.** Write a function whose only job is error handling. Wrap the try block around the function call. The try block itself contains one clear statement.
+- **Do not return null.** Null references are the source of the majority of bugs in many codebases. Use Optional types, sentinel values, or exceptions to handle absence cleanly.
+- **Do not pass null to a function.** Each null argument forces every recipient to perform defensive null checks, creating defensive spaghetti throughout the codebase.
+
+The practical consequence: if your codebase's main logic is buried under null checks and error-return branches, you are not writing clean code. Extract error handling into separate functions and wrap them in try blocks.
+
+---
+
+### 8. The Discipline of Unit Tests
+
+Unit tests are not optional. Martin is direct on this point: code without tests is dirty code. The tests are your guarantee that the code does what you think it does, and that refactoring does not break it.
+
+**The three laws of TDD:**
+1. Do not write production code until you have a failing unit test
+2. Write only enough test to fail — no more
+3. Write only enough production code to pass the failing test — no more
+
+These sound rigid. In practice they force a rhythm that produces better design: the test drives the interface design before the implementation is locked.
+
+**FIRST principles:**
+- **Fast:** under ten seconds for the full suite. If it takes minutes, you will not run it after every change.
+- **Independent:** tests do not depend on each other. Each test stands alone.
+- **Repeatable:** tests run the same way in any environment.
+- **Self-validating:** the test output is a boolean — pass or fail — not a report to interpret.
+- **Timely:** tests are written at the same time as or immediately before the code they test.
+
+**Test code quality:** treat test code with the same care as production code. Same naming standards, same formatting, same refactoring discipline. Messy tests are a liability. Nobody trusts them, and untrusted tests offer no safety net.
+
+---
+
+### 9. Classes and the Single Responsibility Principle
+
+Classes organize behavior. Martin's rule: each class should have one responsibility, expressed as one reason to change.
+
+How to diagnose a class that violates SRP: look at the class name. If it requires "And" or "With" — `UserManagerAndEmailNotifier` — it is doing two things. Split it. Each part should have one authoritative reason to change.
+
+Martin's class layout standard:
+- **Top:** public constants and public static variables
+- **Upper middle:** public methods, in descending order of abstraction — the high-level use cases first, details below
+- **Bottom:** private instance variables, private utility functions
+
+The reader should be able to understand what the class does by reading the public section. The private section reveals how. Never reverse this order.
+
+---
+
+### 10. Systems: Separation of Concerns at Scale
+
+At the system level, clean code requires separating **construction** from **use**.
+
+The system assembles objects — it resolves dependencies, injects implementations, configures defaults. This is the **main function's** job. Once constructed, objects never know where their dependencies came from.
+
+Benefits of separation:
+- **Testability:** swap real dependencies for test doubles without changing business logic
+- **Flexibility:** swap database implementations, API clients, or frameworks without touching business logic
+- **Maintainability:** the business logic is not tangled with object instantiation
+
+Martin extends this: the same principle (SRP) applies at every scale — function, class, component, system. The mechanism changes; the principle does not.
+
+---
+
+### 11. Emergence and Simple Design
+
+Martin draws from Kent Beck's four rules of simple design:
+
+1. **Runs all the tests.** All tests pass. Without passing tests, nothing else matters.
+2. **Reveals intent.** Names, structure, and organization all communicate purpose.
+3. **No duplication.** Every concept has a single authoritative representation in the codebase — not copy-paste duplication, but meaningful overlap.
+4. **Uses the fewest elements.** If an element (class, function, variable) is not doing enough to justify its existence, remove it. Simplicity is a virtue.
+
+These rules are in priority order. Never sacrifice rule one (tests pass) for rule four (minimality). A working system with some unnecessary elements is better than a broken minimalist design.
+
+---
+
+### 12. Concurrency: The Greased Path
+
+Concurrency is the case where clean code rules do not fully apply. Threads introduce non-determinism that vanishes in sequential code.
+
+The primary rule Martin emphasizes: **concurrency concerns must be separated from business logic.** Apply SRP to the thread domain. Keep business logic in pure, testable functions. Wrap the threading concern in a thin layer.
+
+Practical rules:
+- **Minimize shared mutable data.** The less data you share between threads, the fewer race conditions. Favor immutability.
+- **Keep synchronized blocks small and brief.** Lock granularity is critical. A locked region that spans dozens of lines creates contention and deadlock risk.
+- **Use proven concurrency libraries rather than rolling your own.** Java's `java.util.concurrent` or language-level concurrency primitives are tested; custom thread pools are not.
+- **Test concurrency explicitly.** Race conditions are non-deterministic — they may not appear during normal development. Write tests that run thousands of iterations under varied thread scheduling to expose instability.
+
+The simplest correct concurrent programs are those that avoid shared mutable state entirely. When you cannot avoid it, isolate the shared data and protect it with minimal, well-tested synchronization.
+
+---
+
+### 13. The Long Arc: Craft Over Rules
+
+The book's legacy is that it created a professional identity for software developers alongside the existing engineering and scientific identities. Engineers optimize. Scientists discover. Craftsmen *care* — about their tools, their materials, their output.
+
+The rules in this book — under twenty lines, name clearly, test everything — are learnable. The deeper craft — knowing when to break a rule, when a function needs to be 30 lines, when a comment is necessary — is acquired through reading immense amounts of code, applying the rules, failing, adjusting, and practicing.
+
+Read the book. Practice it for a year. Then revisit. The re-read will reveal how much your judgment has improved, and which rules you have now outgrown. That is the craft.

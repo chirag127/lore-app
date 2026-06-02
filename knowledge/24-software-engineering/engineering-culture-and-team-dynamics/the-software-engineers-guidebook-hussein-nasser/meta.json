@@ -1,0 +1,33 @@
+{
+  "title": "The Software Engineer's Guidebook",
+  "subtitle": "The Complete Senior-to-Staff Engineer's Playbook at Tech Companies",
+  "slug": "the-software-engineers-guidebook-hussein-nasser",
+  "author": "Hussein Nasser",
+  "isbns": ["979-8800606320", "979-8350922185"],
+  "edition": "1st (2021) / 2nd Revised (2023)",
+  "publisher": "Hussein Meersman Press",
+  "year": 2021,
+  "yearRevised": 2023,
+  "pages": 472,
+  "language": "en",
+  "topics": [
+    "software engineering",
+    "system design",
+    "senior engineering",
+    "ownership",
+    "production code",
+    "technical leadership",
+    "incident response"
+  ],
+  "tags": ["engineering-practices", "career-growth", "system-design"],
+  "status": "complete",
+  "difficulty": "intermediate",
+  "readTime": "18 hours",
+  "figureOfNote": "The Ownership Pyramid",
+  "quoteOfNote": "A senior engineer is not someone who writes more code — it is someone who makes everyone around them write better code.",
+  "chapters": [
+    { "file": "01-content.mdx", "label": "Deep-Content Analysis" },
+    { "file": "02-analysis.mdx", "label": "Big Ideas & Systems" },
+    { "file": "03-narration.mdx", "label": "Audio Narration Script" }
+  ]
+}

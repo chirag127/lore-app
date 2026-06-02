@@ -1,0 +1,72 @@
+# Problems and Solutions
+
+## Key Problem
+
+The central problem The Art of Electronics addresses is the gap between theoretical circuit analysis and practical circuit design. Traditional engineering education teaches Ohm's law, Kirchhoff's laws, and sophisticated mathematical analysis of idealized circuits, but leaves graduates unprepared for the messy reality of real components with tolerances, parasitics, temperature drift, noise, and manufacturing variation. The problem is compounded by the accelerating pace of technology: practicing engineers must design with hundreds of component types, evolving interface standards, and increasingly complex mixed-signal systems.
+
+## Proposed Solution
+
+Horowitz and Hill's solution is an intuition-first, empirically grounded approach to circuit design. They propose that engineers need:
+
+1. A core set of mental models (the Ebers-Moll transistor model, the ideal op-amp approximation, feedback theory) that capture the dominant behavior of circuits
+2. Extensive component knowledge — not just datasheet specs but measured, comparative data across part types and manufacturers
+3. A repertoire of proven circuit patterns (current sources, differential pairs, followers, mirrors, etc.) that can be combined and adapted
+4. The ability to estimate circuit behavior with back-of-the-envelope calculations before reaching for a simulator
+5. Awareness of common failure modes and design pitfalls
+
+This approach is embodied in the book's 80 component selection tables, 1470 figures, detailed "Designs by the Masters" case studies, and the emphasis on rules of thumb throughout.
+
+## Evidence and Argumentation
+
+The book makes its case through cumulative example. Rather than arguing abstractly for the value of practical knowledge, it demonstrates it on nearly every page. A typical spread shows a circuit schematic with real component values, a table comparing similar parts from different manufacturers, and an oscilloscope screenshot showing the circuit's actual behavior. The implicit argument is: "This is how real circuits behave — here is the data to prove it — and here is how to design ones that work."
+
+The evidence base is extraordinary for a textbook. The authors measured — or obtained from trusted sources — the data in the 80 component tables themselves. The distortion curves for 55 op-amps on a single graph could only come from someone with access to hundreds of thousands of dollars of test equipment and decades of measurement experience.
+
+## Unresolved Questions
+
+The book does not resolve the tension between its intuition-first approach and the formal analytical rigor needed for certain domains. RF design, for instance, demands mathematical tools (Smith charts, S-parameters, transmission-line theory) that receive minimal treatment. The authors' choice to drop high-frequency techniques from the third edition implicitly concedes that no single book can cover everything, but leaves advanced practitioners without guidance.
+
+Another unresolved question is how to integrate simulation into the design workflow. The SPICE appendix is thorough as an introduction, but experienced designers know that simulation can mislead as easily as it can inform. The book provides heuristics but not a systematic methodology for simulation-verification.
+
+## Criticisms
+
+**Attila Kinali** (volt-nuts mailing list, 2015) compared AoE unfavorably to Tietze & Schenk, finding it "contained hardly any information" and was "rather like a listing of various circuits with little explanation how to arrive on these circuits." This reflects a genuine cultural divide: the German systematic-theory tradition versus the Anglo-American empirical-craft tradition.
+
+**Chuck Harris** (volt-nuts mailing list, 2015) criticized the book as a "circuits compendium" that "mostly just shows circuits" without adequate design methodology. He noted that when it does cover theory, "it reads like a regurgitation of Millman."
+
+**James Lewis** (Bald Engineer, 2014) identified the lack of exercise solutions as a significant weakness for self-learners. "There are no answers to those exercises in the book. So you are left unsure if you got the exercise right."
+
+**Julian Higginson** (Means of Invention, 2017) pointed out the absence of RF electronics and the shallow treatment of high-speed digital design. "The book is missing pretty much anything to do with circuits where the dimensions of the circuit are in the order of magnitude of the wavelengths of signal components."
+
+**Hacker News commenters** (2023) criticized the book's position in the learning hierarchy: "At the level you can understand it, you don't need it. At the level you can't, it's incomprehensible." Another noted it "was designed for physicists" — a specific audience with an unusual background that does not generalize.
+
+**Manju Babu** (GS WOW, 2025) identified in a peer-reviewed assessment several limitations: "Density of information may additionally task novices. Restrained formal derivation in comparison to mathematically rigorous texts. Physical prototyping emphasis might not fully align with simulation-based curricula."
+
+## Alternative Solutions
+
+Other textbooks take fundamentally different approaches to the same problem of teaching circuit design:
+
+- **Sedra & Smith, Microelectronic Circuits:** A top-down, mathematically rigorous development that builds from semiconductor physics through discrete circuits to integrated-circuit design. Superior for understanding why circuits work at the deepest analytical level; weaker for quick practical reference. Sedra/Smith is used in most university microelectronics courses worldwide and provides the theoretical foundation that AoE assumes. The two books complement each other well: theory from Sedra/Smith, practice from Horowitz/Hill.
+
+- **Razavi, Fundamentals of Microelectronics:** Designed specifically for the IC designer. More depth on CMOS analog design (differential pairs, current mirrors, bandgap references, frequency compensation), less breadth on system-level and discrete-component topics. More modern in its treatment of deep-submicron effects and technology scaling. The preferred text for students entering IC design.
+
+- **Tietze & Schenk, Electronic Circuits (in German, also available in English translation):** The European gold standard. More systematic, theory-heavy, and comprehensive than AoE. Covers many of the same circuits but with deeper analytical treatment, more emphasis on formal design procedures, and less emphasis on practical component selection data. Attila Kinali's comparison (volt-nuts, 2015) captures the cultural difference precisely.
+
+- **Paul Scherz, Practical Electronics for Inventors:** The closest book in spirit to AoE, but aimed at a lower technical level. Covers many of the same practical topics with less depth and less component data. Suitable for hobbyists and makers who find AoE too dense.
+
+- **Hayes & Horowitz, Learning the Art of Electronics:** The companion lab manual that directly addresses AoE's pedagogical gap. Structured as a complete course with 26 chapters, laboratory exercises, exercises with solutions, and explanatory text supplements that bridge the explanations in the main volume. Designed for classroom use and self-study. The second edition (2025) substantially expands the coverage of modern topics.
+
+- **Forrest Mims, Getting Started in Electronics:** The entry-level alternative. Cartoon-style explanations, minimal math, projects-based learning. Perfect for absolute beginners; no substitute for AoE once the basics are mastered.
+
+## Practical Applications
+
+AoE's teachings apply directly to nearly every domain of electronic design:
+- **Instrumentation:** Precision amplifiers, low-noise sensor interfaces, data acquisition systems, lock-in amplifiers, impedance measurements
+- **Audio electronics:** Preamplifiers, phono equalizers, active crossovers, graphic equalizers, power amplifiers (class A, AB, D)
+- **Power-supply design:** Linear regulators (including LDOs), switching converters (buck, boost, flyback, forward), battery charging and management, inverters
+- **Embedded system interfacing:** Sensor conditioning (thermocouples, strain gauges, photodiodes, accelerometers), actuator drivers (motors, solenoids, valves), communication link design (RS-485, CAN, USB)
+- **Test and measurement:** Oscilloscope front-end design, function generators, arbitrary waveform generators, precision voltage and current sources, lock-in amplifiers
+- **Medical electronics:** Biopotential amplifiers (ECG, EEG, EMG), pulse oximetry front ends, defibrillator protection circuits, implantable device interfaces
+- **Automotive and industrial:** High-side and low-side drivers, H-bridge motor controllers, solenoid drivers, sensor interfaces for temperature, pressure, and position
+
+The "Designs by the Masters" case studies — analyzing actual commercial products from Agilent (multislope ADC), Analog Devices, Linear Technology, and others — provide the highest form of practical application: understanding how professional design teams solved real engineering challenges at the intersection of theory, economics, and manufacturability.

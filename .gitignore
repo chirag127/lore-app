@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+web/dist/
+web/.astro/
+pipeline/dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+**/serviceAccountKey.json
+**/firebase-adminsdk*.json
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.turbo/
+.eslintcache
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+*-debug.log
+
+# Test/coverage
+coverage/
+.nyc_output/
+
+# OS
+.DS_Store
+desktop.ini
+
+.secrets/
+
+p.md

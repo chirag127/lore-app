@@ -1,0 +1,70 @@
+{
+  "slug": "coffee-can-investing-saurabh-mukherjea",
+  "title": "Coffee Can Investing",
+  "author": "Saurabh Mukherjea",
+  "subtitle": "The Low-Risk Route to Super-High Returns",
+  "description": "A practical guide to building long-term wealth through high-quality Indian stocks, co-authored by Saurabh Mukherjea, Rakshit Ranjan, and Pranab Uniyal. The book adapts the classic 'Coffee Can' portfolio concept — buying quality stocks and holding them for decades — to the Indian market. It introduces the 'Coffee Can' screen: seven simple filters that identify companies with sustainable competitive advantages, strong governance, and consistent performance.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/9021359-L.jpg",
+  "isbn10": "0670089835",
+  "isbn13": "9780670089837",
+  "pages": 352,
+  "publishedYear": 2018,
+  "publisher": "Penguin Random House India",
+  "openlibrarySlug": "coffee_can_investing",
+  "tags": [
+    "investing",
+    "stock market",
+    "Indian stock market",
+    "value investing",
+    "long-term investing",
+    "personal finance"
+  ],
+  "keyIdeas": [
+    "Buy high-quality companies and hold them for decades — the coffee can approach",
+    "Seven-filter screen identifies companies with sustainable competitive advantage",
+    "Return on Capital Employed (ROCE) is the single most important quality metric",
+    "Cash flow from operations must consistently support reported earnings",
+    "Promoter holding and governance are critical filters for Indian stocks",
+    "Compounding works best when you let winners run for 10-20 years",
+    "Ignore macroeconomic noise — focus on company quality",
+    "Small STIRs (Stop-losses) can kill a coffee can portfolio",
+    "A portfolio of 15-20 high-quality stocks provides sufficient diversification",
+    "India's economic growth makes it a fertile market for coffee can investing"
+  ],
+  "keyTakeaways": [
+    "A Coffee Can portfolio — buy quality stocks and hold for decades — is the simplest path to wealth",
+    "ROCE (Return on Capital Employed) above 15% for 10+ years is the strongest quality signal",
+    "Promoter (founder/family) holding above 50-60% indicates alignment with minority shareholders",
+    "Seven filters eliminate 99% of listed Indian stocks — leaving only the best",
+    "Ignore interest rates, GDP growth, elections, and other macro noise",
+    "Let winners compound — selling early is the biggest mistake",
+    "Dividends from quality companies provide income without selling shares",
+    "A coffee can portfolio can generate 15-18% CAGR over long periods",
+    "Reinvesting dividends supercharges compounding",
+    "India's demographic dividend supports long-term equity returns"
+  ],
+  "whoShouldRead": [
+    "Indian retail investors looking for a systematic, low-risk investing approach",
+    "Long-term investors tired of active trading and looking for a buy-and-hold strategy",
+    "Anyone who wants a simple, evidence-based stock selection framework",
+    "Global investors interested in the Indian equity market"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "A Random Walk Down Wall Street",
+      "slug": "a-random-walk-down-wall-street-burton-malkiel"
+    },
+    {
+      "title": "Rich Dad Poor Dad",
+      "slug": "rich-dad-poor-dad-robert-kiyosaki"
+    }
+  ]
+}

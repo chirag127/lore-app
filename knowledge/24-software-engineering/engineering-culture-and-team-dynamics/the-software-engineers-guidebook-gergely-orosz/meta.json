@@ -1,0 +1,83 @@
+{
+  "slug": "the-software-engineers-guidebook-gergely-orosz",
+  "title": "The Software Engineer's Guidebook",
+  "author": "Gergely Orosz",
+  "subtitle": "Navigating Senior, Tech Lead, and Staff Engineer Roles at Tech Companies and Startups",
+  "description": "A practical, opinionated guide to the engineering career ladder at modern tech companies and well-funded startups. Drawing on interviews with hundreds of senior engineers, tech leads, staff engineers, and engineering managers at companies like Google, Meta, Stripe, Shopify, and high-growth startups, Gergely Orosz maps the expectations, scope of impact, and unwritten rules of each step from senior engineer through tech lead to staff engineer and beyond. The book covers performance reviews, promotions, scope expansion, technical leadership, the IC-versus-manager fork, salary negotiation, and how to operate in both big-tech and startup environments.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781736044126-L.jpg",
+  "isbn13": "978-1736044126",
+  "isbn10": "1736044121",
+  "pages": 500,
+  "publishedYear": 2024,
+  "publisher": "Bitfield Insights",
+  "openlibrarySlug": "OL28207244W",
+  "tags": [
+    "career",
+    "software-engineering",
+    "leadership",
+    "tech-lead",
+    "staff-engineer",
+    "engineering-management",
+    "promotions",
+    "performance-reviews",
+    "salary-negotiation"
+  ],
+  "keyIdeas": [
+    "The Engineering Career Ladder Is a Series of Scope Expansions",
+    "Senior Engineer: Ownership of Projects and Project-Level Scope",
+    "Tech Lead: Combining Hands-On Coding With Team-Level Scope",
+    "Staff Engineer: Cross-Team Scope Without Formal Authority",
+    "The Manager Versus IC Fork Is Real and Often Permanent",
+    "Big Tech and Startups Reward Different Behaviors",
+    "Scope of Impact Beats Raw Output at Senior Levels",
+    "Performance Reviews Are an Exercise in Self-Marketing",
+    "Promotions Require Evidence, Not Just Effort",
+    "Technical Leadership Is Influencing Without Authority",
+    "Writing and Articulating Are the Staff-Plus Multiplier",
+    "Salary Bands and Levers Differ Between Big Tech and Startups"
+  ],
+  "keyTakeaways": [
+    "Every level up the engineering ladder expands scope: from\nindividual code, to project, to team, to cross-team, to organization",
+    "A senior engineer owns projects end to end — they define what\nsuccess looks like and drive it without being asked",
+    "A tech lead is a working lead: they still write substantial code\nwhile orchestrating a team's technical direction",
+    "A staff engineer operates at team-of-teams scope, setting\ntechnical direction across multiple teams without people-management\nauthority",
+    "Influence without authority is the central skill of staff-plus\nengineers; it is built through clarity, relationships, and shipped work",
+    "The fork from individual contributor to engineering manager is\nreal and rarely reversible — choose deliberately, not by drift",
+    "Big tech rewards specialization, process, and visible cross-team\nimpact; startups reward generalism, speed, and shipped product",
+    "Scope of impact matters more than line count or commit count once\nyou are past the senior level",
+    "Calibration and self-promotion are not optional — they are how\nthe organization sees your work",
+    "Promotions require a portfolio of artifacts: design docs,\nincidents handled, mentorship, and the narrative that ties them\ntogether",
+    "Writing — design docs, RFCs, postmortems, vision memos — is the\nsingle highest-leverage skill for staff-and-beyond engineers",
+    "Compensation is mostly market-driven; total rewards (equity,\nbonus, leveling) is the lever to understand before negotiating"
+  ],
+  "whoShouldRead": [
+    "Mid-level engineers approaching their first senior promotion",
+    "Senior engineers deciding between the tech lead, staff, and\nmanager paths",
+    "Tech leads trying to understand the staff engineer role before\nstepping up",
+    "Staff engineers who want a structured view of their scope and\nexpectations",
+    "Engineering managers who want to understand the IC track they\nchose not to take",
+    "Engineers moving between big tech and startups and wondering why\nthe rules feel different"
+  ],
+  "relatedBooks": [
+    {
+      "title": "The Pragmatic Programmer",
+      "slug": "the-pragmatic-programmer-andrew-hunt"
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "slug": "designing-data-intensive-applications-martin-kleppmann"
+    },
+    {
+      "title": "A Philosophy of Software Design",
+      "slug": "a-philosophy-of-software-design-john-ousterhout"
+    },
+    {
+      "title": "Staff Engineer",
+      "slug": "staff-engineer-tanya-sinha"
+    },
+    {
+      "title": "The Manager's Path",
+      "slug": "the-managers-path-camille-fournier"
+    }
+  ]
+}

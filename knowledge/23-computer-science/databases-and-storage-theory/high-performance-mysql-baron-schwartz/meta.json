@@ -1,0 +1,90 @@
+{
+  "slug": "high-performance-mysql-baron-schwartz",
+  "title": "High Performance MySQL",
+  "subtitle": "Proven Strategies for Operating at Scale",
+  "authors": [
+    "Baron Schwartz",
+    "Peter Zaitsev",
+    "Vadim Tkachenko",
+    "Jeremy Zawodny",
+    "Arjen Lentz",
+    "Derek J. Balling"
+  ],
+  "isbn13": "9781492080510",
+  "publisher": "O'Reilly Media",
+  "year": 2022,
+  "pages": 950,
+  "language": "en",
+  "edition": "4th",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492080510-L.jpg",
+    "source": "openlibrary"
+  },
+  "difficulty": "hard",
+  "estimatedReadingHours": 32,
+  "estimatedListeningMinutes": 1920,
+  "genres": [
+    "Computer Science",
+    "Database",
+    "MySQL",
+    "Performance Engineering",
+    "Software Engineering"
+  ],
+  "subjects": [
+    "MySQL architecture",
+    "InnoDB internals",
+    "Query optimization",
+    "Indexing strategies",
+    "Replication and high availability",
+    "Backup and recovery",
+    "Schema design",
+    "Benchmarking and profiling",
+    "Database scaling and sharding",
+    "MySQL Cluster and Galera"
+  ],
+  "themes": [
+    "Understanding MySQL's architecture and InnoDB internals to reason about performance",
+    "Benchmarking, profiling, and measurement as prerequisites for any optimization",
+    "Schema design and indexing strategies that match real query patterns",
+    "Reading EXPLAIN output and understanding the query optimizer",
+    "Replication topologies for high availability and read scaling",
+    "Backup, recovery, and disaster planning for production MySQL",
+    "Scaling beyond a single server: sharding, MySQL Cluster, Galera, Vitess",
+    "Locking, transactions, and MVCC in a high-concurrency world"
+  ],
+  "tags": [
+    "mysql",
+    "high-performance-mysql",
+    "innodb",
+    "database",
+    "query-optimization",
+    "indexing",
+    "replication",
+    "sharding",
+    "galera",
+    "mysql-cluster",
+    "vitess",
+    "baron-schwartz",
+    "peter-zaitsev",
+    "vadim-tkachenko",
+    "jeremy-zawodny",
+    "arjen-lentz",
+    "derek-balling",
+    "percona",
+    "oreilly",
+    "backup-recovery",
+    "benchmarking",
+    "schema-design",
+    "explain",
+    "transactions",
+    "mvcc",
+    "sql",
+    "oltp"
+  ],
+  "awards": [
+    "Considered the definitive MySQL performance reference since the first edition (2004)",
+    "O'Reilly best-selling database title for nearly two decades",
+    "Standard reference recommended by Percona, Oracle, and the wider MySQL community"
+  ],
+  "excerpt": "High Performance MySQL is the definitive guide to squeezing every drop of performance, reliability, and scalability out of MySQL. Written by the founders and engineers of Percona and other MySQL luminaries, the fourth edition covers InnoDB internals, indexing, query optimization, replication, backup and recovery, and scaling strategies for operating MySQL at production scale."
+}

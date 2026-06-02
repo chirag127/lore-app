@@ -1,0 +1,76 @@
+{
+  "slug": "security-analysis-benjamin-graham",
+  "title": "Security Analysis",
+  "author": "Benjamin Graham & David L. Dodd",
+  "subtitle": "Principles and Technique of Security Valuation",
+  "description": "The foundational text of value investing, first published in 1934 and revised across six editions through 2008. Graham and Dodd established the methodology for evaluating securities through fundamental analysis — bond and preferred stock evaluation, common stock intrinsic value estimation, and the discipline of buying at a substantial margin below intrinsic value. Warren Buffett called it 'a roadmap for investing that I have now been following for 47 years.'",
+  "coverUrl": "https://covers.openlibrary.org/b/id/2640986-L.jpg",
+  "isbn10": "0071448209",
+  "isbn13": "9780071448208",
+  "pages": 700,
+  "publishedYear": 1934,
+  "originalYear": 1934,
+  "edition": "6th",
+  "publisher": "McGraw-Hill",
+  "openlibrarySlug": "security_analysis",
+  "tags": [
+    "investing",
+    "value investing",
+    "financial analysis",
+    "fiscal policy",
+    "security valuation",
+    "bonds",
+    "equity analysis",
+    "Mr. Market",
+    "Benjamin Graham"
+  ],
+  "keyIdeas": [
+    "Intrinsic value is the single most important concept in security analysis",
+    "Margin of safety: buy substantially below intrinsic value to account for error",
+    "Mr. Market: view market fluctuations as a manic-depressive partner, not a guide",
+    "Bond analysis: focus on earning power, not just asset coverage",
+    "Preferred stock is a bond with equity characteristics — analyze it as such",
+    "Common stock valuation: asset value, earning power, and dividend power tests",
+    "Graham-Dodd defensive investor criteria: diversification, quality, and price",
+    "The enterprising investor pursues higher returns through greater effort",
+    "Railroads, utilities, and industrials have distinct valuation methods",
+    "Defensive vs. enterprising: investors must choose their approach"
+  ],
+  "keyTakeaways": [
+    "Intrinsic value is the present value of all future income — not a single metric",
+    "Always buy with a margin of safety — at least one-third below intrinsic value",
+    "Treat the market as a manic-depressive partner: profit from its irrationality",
+    "Bond quality depends on earnings coverage, not just asset collateral",
+    "Callable bonds are worth less than non-callable equivalents — deduct the call option",
+    "Preferred stocks deserve bond-level scrutiny because they have bond-like obligations",
+    "Common stocks should be evaluated based on earning power, not just liquidating value",
+    "The defensive investor needs a simple, quantitative, rules-based approach",
+    "The enterprising investor must be willing to do the work that securities analysis requires",
+    "Financial statements are the primary tool — know how to read and interpret them"
+  ],
+  "whoShouldRead": [
+    "Value investors who want to understand the intellectual foundation of the approach",
+    "Finance students who need the original source rather than derivative summaries",
+    "CFA candidates studying equity and fixed income valuation",
+    "Professional analysts who want to revisit first principles",
+    "Anyone who believes the market can be beaten through discipline and analysis"
+  ],
+  "relatedBooks": [
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Little Book That Beats the Market",
+      "slug": "the-little-book-that-beats-the-market-joel-greenblatt"
+    },
+    {
+      "title": "Margin of Safety",
+      "slug": "margin-of-safety-seth-klarman"
+    }
+  ]
+}

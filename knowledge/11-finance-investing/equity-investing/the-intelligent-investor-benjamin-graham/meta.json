@@ -1,0 +1,54 @@
+{
+  "slug": "the-intelligent-investor-benjamin-graham",
+  "title": "The Intelligent Investor",
+  "subtitle": "The Definitive Book on Value Investing",
+  "author": "Benjamin Graham",
+  "contributors": {
+    "commentary": "Jason Zweig",
+    "foreword": "Warren E. Buffett"
+  },
+  "isbn": "9780060555665",
+  "isbn10": "0060555661",
+  "publisher": "HarperBusiness",
+  "publisherImprint": "HarperBusiness Essentials",
+  "originalPublicationYear": 1949,
+  "revisedEditionYear": 1973,
+  "edition": "Revised Edition",
+  "editionYear": 2003,
+  "pages": 640,
+  "language": "en",
+  "subjects": [
+    "Value investing",
+    "Securities",
+    "Investment analysis",
+    "Portfolio management",
+    "Finance",
+    "Personal finance"
+  ],
+  "amazonRating": 4.5,
+  "goodreadsRating": 4.2,
+  "goodreadsRatingsCount": 245000,
+  "difficulty": "Medium-Hard",
+  "readingTimeHours": 10,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
+  "openLibraryKey": "OL6153412M",
+  "authorBio": "Benjamin Graham (1894–1976) was a British-American financial analyst, investor, and professor. Widely known as the father of value investing, he taught at Columbia Business School and co-authored Security Analysis with David Dodd. His most famous student was Warren Buffett. Graham founded the Graham-Newman partnership and pioneered the discipline of security analysis based on fundamental metrics, intrinsic value, and the margin of safety.",
+  "keyConcepts": [
+    "Mr. Market allegory",
+    "Margin of safety",
+    "Defensive vs enterprising investor",
+    "Intrinsic value",
+    "Value investing principles",
+    "Net-net stocks",
+    "Security analysis"
+  ],
+  "notableQuotes": [
+    "The intelligent investor is a realist who sells to optimists and buys from pessimists.",
+    "You are neither right nor wrong because the crowd disagrees with you. You are right because your data and your reasoning are right.",
+    "The individual investor should act consistently as an investor and not as a speculator.",
+    "The intelligent investor should recognize that market fluctuations are his friend, not his enemy.",
+    "The margin of safety is always dependent on the price paid.",
+    "The stock market is a voting machine in the short term and a weighing machine in the long term."
+  ],
+  "warrenBuffettQuote": "By far the best book about investing ever written."
+}

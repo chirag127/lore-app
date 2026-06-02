@@ -1,0 +1,19 @@
+{
+  "slug": "introduction-to-theory-of-numbers-hardy-wright",
+  "title": "An Introduction to the Theory of Numbers",
+  "subtitle": "",
+  "author": ["G. H. Hardy", "E. M. Wright"],
+  "publicationYear": 1938,
+  "isbn": "9780199219865",
+  "pages": 621,
+  "publisher": "Oxford University Press",
+  "language": "en",
+  "genres": ["Mathematics", "Number Theory", "Classic Textbook"],
+  "subjects": ["Prime Numbers", "Congruences", "Diophantine Equations", "Irrational Numbers", "Continued Fractions", "Quadratic Fields", "Arithmetical Functions", "Partitions", "Geometry of Numbers", "Elliptic Curves"],
+  "themes": ["Analytic Number Theory", "Elementary Number Theory", "Diophantine Approximation", "Algebraic Number Theory"],
+  "tags": ["number theory", "Hardy", "Wright", "primes", "analytic number theory", "zeta function", "Diophantine equations", "continued fractions", "classic textbook", "elliptic curves"],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 60,
+  "estimatedListeningMinutes": 3600,
+  "excerpt": "The classic introduction to number theory that has trained generations of mathematicians since 1938. Covers primes, congruences, Diophantine equations, continued fractions, partitions, and the geometry of numbers with Hardy's distinctive clarity and wit."
+}

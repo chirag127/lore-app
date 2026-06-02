@@ -1,0 +1,192 @@
+## Introduction
+
+Welcome to BookAtlas. Today: *Hands-On Machine Learning with
+Scikit-Learn, Keras, and TensorFlow* by Aurélien Géron. Published
+2019 by O'Reilly Media, third edition 2022. 848 pages in the second
+edition, 864 in the third. Amazon rating 4.6 out of 5 with over
+100,000 ratings — the best-selling machine learning book of all time.
+
+This is the book that taught a generation of software engineers how
+to build things that learn. Let us find out why.
+
+---
+
+## The Author
+
+Aurélien Géron is not an academic. He is an engineer who led
+YouTube's video classification team at Google from 2013 to 2016.
+Before Google, he founded Wifirst, a leading wireless ISP in France,
+and Polyconseil, a telecom consulting firm. He also worked in
+finance at JP Morgan and Société Générale, in defense at Canada's
+Department of National Defense, and in healthcare.
+
+This background matters because the book reflects its author's
+engineering mindset. Every chapter is designed to produce working
+code, not mathematical elegance.
+
+Fun fact: Géron taught his three children to count in binary on
+their fingers — up to 1023. His parachute failed to open on his
+second skydive. He studied microbiology and evolutionary genetics
+before switching to software engineering.
+
+---
+
+## What the Book Does Well
+
+The book is organized like a bootcamp. Part I — about 300 pages —
+covers classical ML with Scikit-Learn. You start by running a
+complete ML project in Chapter 2: framing the problem, exploring
+data, cleaning it, selecting features, training models, tuning
+hyperparameters, and evaluating results.
+
+This single chapter is worth the price of the book. It shows you
+the entire pipeline before you understand any of the pieces. Then
+each subsequent chapter fills in the details: regression in Chapter
+4, classification in Chapter 3, SVMs in Chapter 5, decision trees
+in Chapter 6, ensembles in Chapter 7, dimensionality reduction in
+Chapter 8, and unsupervised learning in Chapter 9.
+
+Part II — about 500 pages — is a deep learning curriculum using
+Keras and TensorFlow. Chapter 10 introduces neural networks with
+Keras's three APIs: Sequential, Functional, and Subclassing.
+Chapter 11 is the hardest chapter in the book — it covers everything
+that can go wrong when training deep networks: vanishing gradients,
+exploding gradients, overfitting, and the tools to fix them.
+
+Then the fun begins. Computer vision with CNNs in Chapter 14.
+Sequence processing with RNNs and 1D CNNs in Chapter 15. Natural
+language processing with attention and transformers in Chapter 16.
+Generative models — autoencoders, GANs, and diffusion models — in
+Chapter 17. Reinforcement learning in Chapter 18. And deployment in
+Chapter 19.
+
+---
+
+## Chapter 2: The End-to-End Project
+
+Let me linger on Chapter 2 because it is the heart of what makes
+this book special. Géron does not start with theory. He starts with
+a dataset — California housing prices — and works through the
+entire ML pipeline.
+
+First: frame the problem. Is it supervised or unsupervised?
+Regression or classification? What does success look like? Géron
+shows you to ask these questions before touching data.
+
+Second: get the data. He shows how to download, inspect, and split
+it — always creating a test set upfront to avoid data leakage.
+
+Third: explore and visualize. Histograms, scatter plots, correlation
+matrices. He finds that median income and housing location are the
+strongest predictors.
+
+Fourth: prepare the data. Clean missing values, handle categorical
+features with one-hot encoding, create custom transformers for
+derived features like rooms per household, and scale everything.
+
+Fifth: select and train a model. He tries Linear Regression, then
+Decision Tree, then Random Forest. Each iteration reveals something:
+Linear Regression underfits, Decision Tree overfits, Random Forest
+works best.
+
+Sixth: fine-tune. Grid search, randomized search, ensemble
+combinations. He finds the best hyperparameters and evaluates on
+the held-out test set.
+
+Seventh: present and deploy. Launch, monitor, maintain.
+
+This structure — try, evaluate, improve — is the closest thing to
+actual ML practice that any book delivers.
+
+---
+
+## The Gradient Descent Family
+
+Chapter 4 is the most mathematical, but even here Géron keeps it
+grounded. He explains three gradient descent variants:
+
+Batch GD computes the gradient over the entire training set. It is
+stable but slow — unusable for large datasets.
+
+Stochastic GD computes the gradient over one random instance. It is
+fast but noisy — it oscillates around the minimum.
+
+Mini-batch GD splits the difference: compute gradients over random
+subsets of the data. It is the practical choice.
+
+Then he adds the refinements: learning rate schedules, momentum,
+Nesterov acceleration, AdaGrad, RMSProp, and finally Adam — which
+combines momentum and adaptive learning rates and is the default
+optimizer for most deep learning.
+
+---
+
+## The Keras Revolution
+
+Chapter 10 was transformative when the second edition came out.
+Keras had just become TensorFlow's official high-level API, and
+Géron showed how to build neural networks in a few lines of code:
+
+Sequential API for simple layer stacks. Functional API for complex
+topologies — multi-input, multi-output, shared layers. Subclassing
+API for full flexibility.
+
+The book shows how to add callbacks: ModelCheckpoint to save the
+best model, EarlyStopping to stop when validation performance
+plateaus, TensorBoard to visualize training. These are not
+conveniences — they are essential production tools.
+
+---
+
+## The Missing Pieces
+
+No book is perfect. Here is what this one does not cover.
+
+First, MLOps. There is nothing on experiment tracking, data
+versioning, feature stores, CI/CD for ML, or model monitoring in
+production. The deployment chapter covers TF Serving and Vertex AI
+but not the operational reality of keeping a model running.
+
+Second, PyTorch. The book is Scikit-Learn, Keras, and TensorFlow
+exclusively. PyTorch has since become the dominant framework in
+research and increasingly in production. Géron is working on a
+PyTorch edition, but it is not here yet.
+
+Third, deep theory. If you want to understand the VC dimension,
+the bias-variance decomposition in full, or the mathematical
+derivation of backpropagation, this is not the book. It tells you
+what you need to build things, not what you need to derive things.
+
+Fourth, LLMs. The third edition was published in October 2022.
+ChatGPT launched one month later. The book covers transformers and
+pretrained language models but has nothing on prompt engineering,
+RLHF, chain-of-thought prompting, retrieval-augmented generation,
+or fine-tuning LLMs with LoRA.
+
+---
+
+## The Verdict
+
+Hands-On Machine Learning is not the deepest book on ML. It is not
+the most rigorous. But it is the most practical.
+
+For a software engineer who knows Python and wants to build ML
+systems, this is the single best place to start. It gives you the
+confidence to try things, the tools to debug them when they fail,
+and the framework to know what to learn next.
+
+After this book, you will know your way around Scikit-Learn and
+Keras. You will have built classifiers, regressors, and neural
+networks. You will have deployed a model. You will be ready for
+the deeper books: Goodfellow's Deep Learning for the math, Chip
+Huyen's Designing Machine Learning Systems for the production
+engineering, and the Hugging Face course for modern NLP.
+
+But you have to start somewhere. Start here.
+
+**Rating: 8.5/10** — The best practical introduction to machine
+learning. Not the final word, but the right first word.
+
+This has been a BookAtlas narration of Hands-On Machine Learning
+with Scikit-Learn, Keras, and TensorFlow by Aurélien Géron.
+Thanks for listening.

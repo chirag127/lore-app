@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { CollectionManager } from '../components/collections/CollectionManager.tsx';
+import { PublicCollections } from '../components/collections/PublicCollections.tsx';
+import { Ornament } from '../components/ui/Primitives.tsx';
+
+const books = await getCollection('books');
+const allBooks = books.map((b) => ({ slug: b.data.slug, title: b.data.title }));
+---
+<BaseLayout title="Collections" description="Curate your own reading lists.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <Ornament client:load>Collections</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-8 sm:mb-12 text-balance">
+      Curated by humans, indexed for everyone
+    </h1>
+    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12">
+      <section>
+        <h2 class="font-display text-xl sm:text-2xl font-light mb-5 sm:mb-6">Your collections</h2>
+        <CollectionManager client:load allBooks={allBooks} />
+      </section>
+      <PublicCollections />
+    </div>
+  </section>
+</BaseLayout>

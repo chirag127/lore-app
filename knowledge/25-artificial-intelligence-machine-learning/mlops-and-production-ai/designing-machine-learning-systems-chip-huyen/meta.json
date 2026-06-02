@@ -1,0 +1,58 @@
+{
+  "slug": "designing-machine-learning-systems-chip-huyen",
+  "title": "Designing Machine Learning Systems",
+  "subtitle": "An Iterative Process for Production-Ready Applications",
+  "author": "Chip Huyen",
+  "publicationYear": 2022,
+  "isbn": "9781098107963",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 390,
+  "genres": [
+    "Technology",
+    "Machine Learning",
+    "Software Engineering",
+    "Data Science"
+  ],
+  "subjects": [
+    "ML Systems Design",
+    "MLOps",
+    "Production ML",
+    "Data Engineering",
+    "Model Deployment",
+    "ML Infrastructure"
+  ],
+  "themes": [
+    "ML systems are complex sociotechnical systems",
+    "Data is the most important component of ML",
+    "Iterative development beats big-bang releases",
+    "Monitoring and maintenance are production essentials",
+    "Serving infrastructure determines ML success",
+    "Responsible AI is a systems concern"
+  ],
+  "tags": [
+    "machine-learning",
+    "mlops",
+    "ml-systems",
+    "production-ml",
+    "data-engineering",
+    "model-deployment",
+    "feature-stores",
+    "chip-huyen",
+    "oreilly",
+    "data-science",
+    "deep-learning",
+    "ml-infrastructure",
+    "responsible-ai"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "awards": [
+    "O'Reilly Best Seller",
+    "Stanford CS 329S course textbook",
+    "Translated into 10+ languages",
+    "Used by ML teams at top tech companies"
+  ],
+  "excerpt": "Machine learning systems are both complex and unique. Complex because they consist of many components and involve many stakeholders. Unique because they are data-dependent, with data varying wildly from one use case to the next."
+}

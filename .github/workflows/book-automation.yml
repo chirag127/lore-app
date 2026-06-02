@@ -1,0 +1,120 @@
+name: Book Automation
+
+on:
+  issues:
+    types: [labeled, opened, edited]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: 'Issue number to process'
+        required: true
+        type: string
+
+concurrency:
+  group: book-${{ github.event.issue.number || github.event.inputs.issue }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: read
+
+jobs:
+  pipeline:
+    if: |
+      (github.event_name == 'issues' &&
+        (contains(github.event.issue.labels.*.name, 'book-request') ||
+         github.event.action == 'opened')) ||
+      (github.event_name == 'issue_comment' &&
+        contains(github.event.comment.body, '/process') &&
+        contains(github.event.issue.labels.*.name, 'book-request')) ||
+      github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure git
+        run: |
+          git config user.name 'BookAtlas Bot'
+          git config user.email 'bot@knowledgeatlas.app'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+
+      - name: Determine issue number
+        id: issue
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "number=${{ github.event.inputs.issue }}" >> $GITHUB_OUTPUT
+          else
+            echo "number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Add in-progress label
+        if: github.event_name != 'workflow_dispatch'
+        run: |
+          gh issue edit ${{ steps.issue.outputs.number }} --add-label "in-progress" || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run pipeline
+        id: run
+        run: |
+          pnpm --filter pipeline start -- \
+            --issue ${{ steps.issue.outputs.number }} \
+            --publish true 2>&1 | tee pipeline.log
+
+      - name: Find created PR
+        id: pr
+        if: always()
+        run: |
+          URL=$(grep -oE 'https://github.com/[^ ]+/pull/[0-9]+' pipeline.log | head -1 || true)
+          if [ -n "$URL" ]; then
+            echo "url=$URL" >> $GITHUB_OUTPUT
+          else
+            echo "url=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on issue
+        if: always() && steps.pr.outputs.url != ''
+        run: |
+          gh issue comment ${{ steps.issue.outputs.number }} --body "🚀 Pipeline finished. A pull request is ready for review: ${{ steps.pr.outputs.url }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove in-progress label on success
+        if: success() && github.event_name != 'workflow_dispatch'
+        run: |
+          gh issue edit ${{ steps.issue.outputs.number }} --remove-label "in-progress" || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload pipeline log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-log
+          path: pipeline.log
+          retention-days: 7

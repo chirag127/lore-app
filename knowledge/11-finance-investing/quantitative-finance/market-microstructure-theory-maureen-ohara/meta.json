@@ -1,0 +1,42 @@
+{
+  "slug": "market-microstructure-theory-maureen-ohara",
+  "title": "Market Microstructure Theory",
+  "author": "Maureen O'Hara",
+  "isbn": "9781557864437",
+  "isbn10": "1557864438",
+  "publisher": "Blackwell Publishers",
+  "originalPublicationYear": 1995,
+  "pages": 304,
+  "language": "en",
+  "subjects": [
+    "Market microstructure",
+    "Financial economics",
+    "Price formation",
+    "Inventory models",
+    "Information models",
+    "Trading rules"
+  ],
+  "amazonRating": 4.4,
+  "goodreadsRating": 3.99,
+  "goodreadsRatingsCount": 184,
+  "difficulty": "Very Hard",
+  "readingTimeHours": 20,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781557864437-L.jpg",
+  "openLibraryKey": "OL7609669M",
+  "authorBio": "Maureen O'Hara is the Robert W. Purcell Professor of Finance at Cornell University's Johnson Graduate School of Management. A leading authority on market microstructure, she has published extensively on market design, regulation, and the role of information in financial markets. She served as President of the American Finance Association and as a director of several corporations and exchanges.",
+  "keyConcepts": [
+    "Inventory-based models",
+    "Information-based models (Glosten-Milgrom)",
+    "Strategic trader models (Kyle)",
+    "Price discovery",
+    "Bid-ask spread determinants",
+    "Market maker behavior",
+    "Adverse selection"
+  ],
+  "notableQuotes": [
+    "The bid-ask spread is the most important price in market microstructure.",
+    "Markets are not the simple frictionless structures of classical finance.",
+    "Understanding how information becomes incorporated into prices is the central question of market microstructure.",
+    "The design of trading rules affects the efficiency and fairness of markets."
+  ]
+}

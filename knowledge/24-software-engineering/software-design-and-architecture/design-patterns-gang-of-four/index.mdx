@@ -1,0 +1,77 @@
+---
+title: "Design Patterns: Elements of Reusable Object-Oriented Software"
+slug: "design-patterns-gang-of-four"
+author: ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"]
+year: 1994
+category: "24-software-engineering"
+subcategory: "software-design-and-architecture"
+excerpt: "The definitive catalog of 23 object-oriented design patterns that created a shared vocabulary for software architecture, enabling developers to communicate complex design concepts with precision."
+cover:
+  url: "https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg"
+  color: "#37474f"
+keyIdeas:
+  - "A pattern catalog with 23 named solutions to recurring OOP design problems provides a shared engineering vocabulary"
+  - "Favor object composition over class inheritance to achieve runtime flexibility and reduce coupling"
+  - "Program to an interface, not an implementation, so clients remain decoupled from concrete types"
+  - "Encapsulate the concept that varies to isolate change behind stable abstractions"
+  - "Creational patterns abstract object creation to make systems independent of how objects are constructed"
+  - "Structural patterns compose classes and objects into larger, flexible structures"
+  - "Behavioral patterns distribute responsibility and communication among objects to manage complex control flow"
+  - "The pattern format established a rigorous documentation standard for design knowledge"
+keyTakeaways:
+  - "The 23 GoF patterns form a shared vocabulary that compresses months of design experience into single words"
+  - "Composition over inheritance is the most frequently recurring principle across all three pattern categories"
+  - "Each pattern solves a specific problem — applying a pattern without the problem is cargo cult engineering"
+  - "Patterns compensate for missing language features; as languages evolve, some become invisible"
+  - "The book's greatest contribution is the systematic format for documenting design knowledge"
+  - "Singleton is the most over-applied pattern and often degenerates into an implicit global variable"
+  - "Modern frameworks embed GoF patterns at their core — Spring, React, .NET"
+  - "The best designers know when to skip a pattern"
+whoShouldRead:
+  - "Intermediate to advanced OOP developers ready to think in terms of object relationships"
+  - "Software architects designing frameworks, libraries, or large systems"
+  - "Engineering teams wanting a shared vocabulary for architecture discussions"
+  - "Developers moving from writing code that works to writing code that is designed"
+whoShouldSkip:
+  - "Complete beginners to OOP — start with Head First Design Patterns"
+  - "Developers primarily working in functional programming languages"
+  - "Teams building small CRUD apps where pattern complexity is unnecessary"
+relatedBooks:
+  - "head-first-design-patterns-eric-freeman"
+  - "refactoring-martin-fowler"
+  - "clean-architecture-robert-martin"
+tags:
+  - "software-engineering"
+  - "design-patterns"
+  - "object-oriented-design"
+  - "gang-of-four"
+  - "software-architecture"
+addedAt: 1779217600
+---
+
+Design Patterns: Elements of Reusable Object-Oriented Software (1994) is the most influential software engineering book of the modern era. Written by four authors who became collectively known as the **Gang of Four (GoF)**, it catalogued 23 recurring solutions to common object-oriented design problems, distilled from real-world C++ and Smalltalk codebases. The book introduced a shared vocabulary that compressed years of design experience into single terms — *Strategy*, *Observer*, *Factory* — enabling developers to reason about architecture at a higher level of abstraction.
+
+<BookHeader />
+
+## The Problem the Book Solved
+
+Before 1994, expert software designers carried their knowledge implicitly. A senior engineer knew that certain structures worked well for certain problems, but there was no systematic way to document or transfer that knowledge. Each generation of developers independently rediscovered the same solutions — often with subtle flaws — because there was no shared catalogue. The GoF book changed this by extracting, naming, and documenting these recurring solutions in a rigorous, consistent format.
+
+## The Pattern Format
+
+Each of the 23 patterns follows a uniform template with 11 sections: Pattern Name and Classification, Intent, Also Known As, Motivation, Applicability, Structure, Participants, Collaborations, Consequences, Implementation, Sample Code, Known Uses, and Related Patterns. This consistency was itself an innovation — it made patterns comparable and learnable by rote, and it established the standard for all subsequent pattern literature.
+
+## Why It Endures
+
+Decades after publication, the GoF patterns remain embedded in every major framework. Spring's dependency injection container is built on Abstract Factory and Singleton. React's component lifecycle uses Observer. Java's I/O streams are a living example of Decorator. The book's principles — program to an interface, favor composition over inheritance, encapsulate variation — are now taught as foundational OOP wisdom, their GoF origin often forgotten because they have become universal.
+
+## The Debate
+
+The book has also attracted substantial criticism. Peter Norvig (1995) demonstrated that 16 of the 23 patterns are invisible or simpler in dynamic/functional languages. The Singleton pattern has been widely condemned as an anti-pattern by engineers like Miško Hevery (Google). Critics argue that the book's C++ bias led to overly complex solutions for problems that modern languages solve natively. Yet the catalog's value as a shared vocabulary has never been seriously challenged — even the critics use the terms the book introduced.
+
+## Authors
+
+- **Erich Gamma** — Swiss software engineer who later led Eclipse JDT and co-created JUnit
+- **Richard Helm** — Australian researcher at IBM T.J. Watson, contributed Smalltalk framework expertise
+- **Ralph Johnson** — American professor at UIUC, Smalltalk pioneer, coined the term "frameworks"
+- **John Vlissides** — American IBM researcher (1961–2005), known for software visualization and pattern writing

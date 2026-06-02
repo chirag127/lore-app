@@ -1,0 +1,36 @@
+{
+  "id": "the-lexus-and-olive-tree-thomas-friedman",
+  "title": "The Lexus and the Olive Tree: Understanding Globalization",
+  "slug": "the-lexus-and-olive-tree-thomas-friedman",
+  "authors": ["Thomas L. Friedman"],
+  "year": 1999,
+  "category": "19-political-science-geopolitics",
+  "subcategory": "geopolitics-and-great-power-competition",
+  "pages": 394,
+  "isbn": "9780374191771",
+  "publisher": "Farrar, Straus and Giroux",
+  "genres": ["Globalization", "International Political Economy", "Journalism"],
+  "description": "Explores the tension between economic globalization (the Lexus) and cultural identity (the Olive Tree), arguing that globalization is the dominant international system of the post-Cold War era.",
+  "cover_url": "https://covers.openlibrary.org/b/isbn/9780374191771-L.jpg",
+  "cover_color": "#1a1a2e",
+  "key_concepts": [
+    "The Lexus and the Olive Tree",
+    "Golden Straitjacket",
+    "Electronic Herd",
+    "Democratization of technology/finance/information",
+    "Prevention of conflict versus prevention of crisis"
+  ],
+  "critics": [
+    "Naomi Klein",
+    "Joseph Stiglitz",
+    "John Gray",
+    "Walden Bello",
+    "Robert Kuttner"
+  ],
+  "related_books": [
+    "the-world-is-flat-thomas-friedman",
+    "jihad-vs-mcworld-benjamin-barber",
+    "the-end-of-history-francis-fukuyama"
+  ],
+  "added_at": "2026-06-09"
+}

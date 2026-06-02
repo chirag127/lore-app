@@ -1,0 +1,61 @@
+## Strengths
+
+- **Integrated approach.** CS:APP connects architecture, OS, and
+  compilers in a way that dedicated textbooks cannot. The linking
+  chapter explains why compiler errors reference symbols; the memory
+  hierarchy explains why certain C idioms are fast.
+- **Exceptional labs.** The companion labs (Bomb Lab, Buffer Lab,
+  Malloc Lab, Shell Lab) are legendary at CMU. They are challenging,
+  engaging, and directly tied to the material.
+- **Incredibly well-written.** The explanations are patient and
+  complete without being condescending. The authors anticipate where
+  students get confused and address it directly.
+- **Practical assembly coverage.** Rather than teaching assembly as a
+  theoretical language, CS:APP teaches it as a tool for understanding
+  what the compiler produces.
+- **The linking chapter is unique.** No other textbook covers static
+  and dynamic linking at this level of detail. It is one of the
+  highest-value chapters.
+
+---
+
+## Weaknesses
+
+- **Extreme density.** At 1,100+ pages, this is an intimidating book.
+  Many topics are covered in depth that exceeds what most practitioners
+  need.
+- **C focus limits audience.** The examples and labs are exclusively in
+  C. Rust and Go programmers will benefit less from the memory and
+  concurrency chapters.
+- **Some chapters feel rushed.** Chapter 12 (Concurrency) covers
+  threads, mutexes, semaphores, and condition variables in ~100 pages.
+  A dedicated concurrency book provides much more depth.
+- **Processor architecture chapter (Ch. 4) is optional but exists.**
+  The Y86-64 processor design is interesting but many students skip it.
+  It adds significant page count to an already long book.
+
+---
+
+## Criticism
+
+- **Overwhelming for self-study.** The book was designed for CMU's
+  lecture + recitation + lab structure. Solo readers often get stuck.
+- **x86-64 focus is dated.** While still dominant, ARM is gaining in
+  servers (AWS Graviton, Apple Silicon). A future edition needs ARM
+  coverage.
+- **Little coverage of modern security issues.** Stack buffer overflows
+  are covered (the famous Bomb Lab), but ROP, ASLR bypasses, and side
+  channels (Spectre/Meltdown) are not in scope.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Conceptual Depth | 9/10 | Best bridge between code and machine |
+| Practical Utility | 9/10 | Labs and examples are immediately applicable |
+| Accessibility | 6/10 | Dense and challenging; requires commitment |
+| Completeness | 8/10 | Broad coverage but some topics are thin |
+| Lasting Impact | 10/10 | Changes how you think about code permanently |
+| **Overall** | **8.5/10** | Essential for systems programmers; overkill for app devs |

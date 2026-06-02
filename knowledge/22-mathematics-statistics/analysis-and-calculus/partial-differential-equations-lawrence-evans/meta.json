@@ -1,0 +1,60 @@
+{
+  "slug": "partial-differential-equations-lawrence-evans",
+  "title": "Partial Differential Equations",
+  "authors": ["Lawrence C. Evans"],
+  "isbn13": "9780821807729",
+  "isbn10": "0821807722",
+  "publisher": "American Mathematical Society",
+  "year": 1998,
+  "pages": 662,
+  "language": "en",
+  "olid": "OL693766M",
+  "difficulty": "dense",
+  "category": "22-mathematics-statistics",
+  "subcategory": "analysis-and-calculus",
+  "subtopic": "differential-equations-and-dynamical-systems",
+  "tags": [
+    "partial differential equations",
+    "PDE",
+    "sobolev spaces",
+    "elliptic equations",
+    "parabolic equations",
+    "hyperbolic equations",
+    "calculus of variations",
+    "hamilton-jacobi",
+    "conservation laws",
+    "nonlinear analysis"
+  ],
+  "excerpt": "The definitive graduate-level textbook on the modern theory of partial differential equations, blending functional-analytic insight with sharp calculus estimates across linear and nonlinear PDE.",
+  "whoShouldRead": [
+    "Graduate students in mathematics specializing in analysis or PDE",
+    "Researchers in applied mathematics needing rigorous PDE foundations",
+    "Physicists and engineers with strong analysis backgrounds",
+    "Anyone preparing for research in nonlinear PDE theory"
+  ],
+  "whoShouldSkip": [
+    "Undergraduates without real analysis and measure theory",
+    "Readers seeking computational or numerical methods",
+    "Practitioners wanting ready-to-use formulas without theory"
+  ],
+  "keyIdeas": [
+    "Three-part organization: representation formulas → linear theory → nonlinear theory",
+    "Sobolev spaces as the natural functional setting for weak solutions",
+    "Energy methods and regularity theory for second-order elliptic equations",
+    "Semigroup theory for linear evolution equations",
+    "Calculus of variations as a route to nonlinear elliptic PDE",
+    "Viscosity solutions for Hamilton-Jacobi equations",
+    "Entropy conditions and shock waves for conservation laws",
+    "The method of characteristics for first-order PDE"
+  ],
+  "keyTakeaways": [
+    "Master the modern functional-analytic approach to PDE via Sobolev spaces",
+    "Understand the classification and treatment of elliptic, parabolic, and hyperbolic equations",
+    "Gain fluency in nonlinear techniques: variational methods, fixed-point arguments, viscosity solutions",
+    "Recognize the unity behind disparate PDE through energy estimates and compactness"
+  ],
+  "relatedBooks": [
+    "partial-differential-equations-jurgen-jost",
+    "linear-and-nonlinear-waves-gb-whitham"
+  ]
+}

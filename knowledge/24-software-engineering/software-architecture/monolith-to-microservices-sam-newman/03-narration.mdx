@@ -1,0 +1,163 @@
+# 🎙️ Monolith to Microservices — The Podcast Episode
+
+**Host**: Today we are talking about a book that will probably convince you not to do the project you are about to undertake. It is called *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* by Sam Newman. Newman is one of the most respected voices in the software architecture world. He is a consultant at ThoughtWorks, a former government technical lead, and the author of *Building Microservices* — the book that, more than any other, defined what microservices actually meant in practice.
+
+This book is the sequel. And it is not the sequel most people expected. Most readers picked it up looking for a playbook — a list of patterns to apply, a sequence of steps to follow. They got something different. They got a long, careful argument that they should probably not be doing this at all.
+
+And that is what makes the book worth reading.
+
+---
+
+## 🎙️ The Contrarian Opening
+
+Let me set the scene. Imagine you are a senior engineer at a mid-sized company. You have a monolith — maybe ten years old, maybe written in Java or .NET or Ruby. It works. It serves your customers. It has accumulated a decade of business logic, every bug fix, every edge case, every regulatory wrinkle. The team knows it. The customers trust it.
+
+And someone — maybe the CTO, maybe a board member, maybe a developer who read about Netflix — has decided that you should migrate to microservices.
+
+Newman's first chapter is a long, polite, evidence-based argument that you should not.
+
+His bar for migration is high. He does not consider fashion a sufficient reason. He does not consider "our monolith is ugly" a sufficient reason. He does not consider "we want to use Kubernetes" a sufficient reason. The reasons that *are* sufficient are specific and measurable.
+
+Your deploy frequency has collapsed because every change requires a regression test of the entire system. Your team cannot scale a single function without scaling the whole application. A bug in one feature takes down another. New technology choices — machine learning inference, real-time analytics — are blocked by the architecture. Multiple teams cannot ship in parallel because every change is a coordination exercise.
+
+These are the triggers. And notice what is missing: there is no mention of "modernization" or "best practices" or "industry trends." The triggers are all about the monolith actively blocking measurable business outcomes.
+
+If those outcomes are not being blocked, Newman says, do not migrate. Refactor the monolith in place. Make it a modular monolith — a single deployable unit with clear internal boundaries, ready for future extraction if and when extraction becomes necessary.
+
+This is the part of the book that most executives and engineering directors find disorienting. They picked up a book about how to migrate. They got a book about how to decide whether to migrate. And Newman's answer, more often than not, is "do not."
+
+---
+
+## 🎙️ The Strangler Fig
+
+Let us assume, for the rest of this episode, that the decision has been made. The monolith is genuinely blocking the business, the prerequisites are in place, and the team has committed to a multi-year migration. What then?
+
+The dominant pattern is the Strangler Fig, named by Martin Fowler after the tropical fig that grows around another tree, slowly replacing it until the original is gone.
+
+The pattern in practice. You place a routing layer — an API gateway, a reverse proxy, a DNS redirect — in front of your monolith. All traffic still goes to the monolith. The router is invisible.
+
+Then you pick a single capability to extract. Newman is explicit: pick the easiest one. The cleanest bounded context, the most stable model, the lowest risk. You are trying to prove the pattern works, not to deliver maximum value on the first extraction.
+
+You build a new service that handles that capability. The new service has its own database, its own deployment pipeline, its own team. You keep the old code in the monolith. Both implementations are reachable.
+
+You run both in parallel. Every request to the new capability goes to both. The responses are compared. This is the parallel-run pattern, and it catches semantic differences that unit tests miss. A null that the new service returns differently. A date format that drifts. A rounding error that compounds.
+
+You switch traffic gradually. Canary first — one percent of requests, then five, then twenty-five, then fifty, then a hundred. The old implementation stays in the codebase, ready to take over if the new one fails. This is the rollback insurance that big-bang rewrites can never offer.
+
+And then — and this is the step that is almost always skipped — you delete the old code. The Strangler Fig only works if the old system is actually strangled. If you keep the old code "just in case," the monolith never shrinks. The team is maintaining two systems forever. Migration becomes permanent.
+
+Newman is clear that the Strangler Fig is not free. You run two systems in parallel. You maintain routing logic. You tolerate temporary code duplication. The cost is worth paying for the safety. The alternative — big-bang rewrites — has a near-zero success rate in the literature. The Strangler Fig is the only safe pattern.
+
+---
+
+## 🎙️ Finding the Seams
+
+The first big question is: what is the first capability you extract?
+
+Newman's answer is to use Domain-Driven Design. The bounded context — a region of the business where a term has a single, consistent meaning — is the natural unit of decomposition. In the billing context, "customer" means one thing. In the marketing context, "customer" means another. These are different bounded contexts. They should be different services.
+
+The techniques for finding the bounded contexts are practical. Event storming — a workshop where domain experts and engineers map the business events onto a wall. Order placed, payment received, item shipped, refund issued. The events cluster naturally into bounded contexts. The hidden dependencies surface. The contested concepts — the words that mean different things to different teams — jump out.
+
+The codebase is also informative. Modules that change together are usually in the same bounded context. Modules that are deployed together are usually in the same bounded context. The interfaces between modules are usually the natural seams.
+
+The team boundaries matter too. If the billing team and the marketing team are already separate, the bounded contexts are already there. The service boundaries are waiting to be drawn along the lines that the team structure has already drawn.
+
+The wrong way to find seams is by technical layer. A service layer, a repository layer, a database layer — all of these cut horizontally through the business. They produce distributed monoliths: services that cannot be deployed independently, because they all need to change together. Newman calls this the worst of both worlds.
+
+The right way: by capability. A `Customer` service. A `Recommendation` service. A `Checkout` service. Each owns its own data, its own deployment, its own team. Each is autonomously deployable. Each survives organizational change.
+
+---
+
+## 🎙️ The Data Layer — Where Migrations Die
+
+Now we get to the deepest part of the book, and the part where Newman is most clearly ahead of his time. The data layer is where microservice migrations fail.
+
+Service boundaries are negotiable. You can change them. You can rename services, split them, merge them, refactor them. The data ownership is not negotiable. Two services writing to the same table are coupled at the database level, in a way that does not appear in any API documentation, in a way that does not show up in service-level tests. It shows up only at migration time, when a schema change in one service requires coordinated changes in three others.
+
+Newman is explicit: shared databases are the single most common cause of failed microservice migrations. The fix is to give each service its own data store. But "give each service its own database" is easy to say and hard to do.
+
+The first pattern is **change data capture**, or CDC. You treat the monolith's database as the source of truth. You read its transaction log — the binary record of every change — and publish those changes as events. A new service subscribes to the events and maintains its own read model.
+
+The beauty of CDC is that the monolith is unaware. You do not need to change the monolith's code. You do not need its team's cooperation. You just attach a CDC process — a tool like Debezium — to the database, and the events flow.
+
+The second pattern is **event collaboration**. Instead of a service calling another service over HTTP, it publishes an event. Other services that care about the event subscribe and react. The interaction is asynchronous. The coupling is loose. The failure modes are different.
+
+The trade-off is that you give up strong consistency. The order is placed, but the payment may take seconds to process. The notification may arrive before or after the payment. This is eventual consistency, and the business has to be designed for it. Newman's argument is that this is the default for inter-service communication in a microservice system, and the business that cannot tolerate it is the business that should not be doing microservices in the first place.
+
+The third pattern is **event sourcing**. Instead of storing the current state, store the sequence of events that led to it. State is derived. The audit trail is free. Time travel is free. The trade-off is that querying is harder — you need materialized views to answer simple questions — and schema evolution on the event log is delicate. Newman recommends event sourcing only when the use case explicitly benefits. Financial systems. Audit-heavy domains. Systems where the events themselves are the product.
+
+The fourth pattern is **branch by abstraction**. A technique for changing behaviour behind a stable interface. You create a wrapper around the table access. You implement the new behaviour inside the wrapper. You switch implementations atomically. You delete the old code. This is the technique for extracting one table at a time from a shared database, and it is the most operational of the patterns in the book.
+
+---
+
+## 🎙️ UI Composition — The Forgotten Layer
+
+One chapter I want to highlight, because it is often skipped, is on UI composition.
+
+The back end is rarely the only monolith. The front end usually is one too. If you decompose the back end into thirty services and leave the front end as a single page that calls all of them, you have not solved the problem. You have moved it.
+
+Every deploy of any service now requires a front-end deploy. Every front-end deploy requires regression tests of all thirty services. The communication bottleneck has moved up a layer. The shared failure modes have moved up a layer. The architecture is no better than it was.
+
+UI composition is the fix. The front end is decomposed into components, each owned by a different team, each deployable independently. A page might assemble itself from multiple UI fragments, each fetched from its own service.
+
+The techniques vary. Micro-frontends, where each team owns a self-contained bundle of UI. Server-side composition, where the page is assembled by an aggregator before it reaches the browser. Edge-side includes, where fragments are cached and stitched at the CDN.
+
+Newman is pragmatic about which technique to use. The right answer depends on the team structure, the deployment cadence, and the user experience requirements. The wrong answer — the one he sees most often — is to ignore the front end entirely and treat it as someone else's problem.
+
+---
+
+## 🎙️ Conway's Law and the People
+
+The final movement of the book is on people, and it is where Newman makes his most underappreciated contribution.
+
+Conway's Law, from 1968: organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations. Translation: if your team structure is monolithic, your architecture will be monolithic, no matter how many services you extract.
+
+Newman's corollary is the Reverse Conway Maneuver. If you want a microservice architecture, restructure the teams first. Long-lived teams, each owning a bounded context. Code, data, and on-call rotation all move to the new team. The architecture will follow.
+
+The implication is that migration and reorganization must proceed together. You cannot sequence them. You cannot migrate the architecture first and reorganize the teams later, because the monolithic teams will not be able to operate the microservice architecture. You cannot reorganize the teams first and migrate later, because the monolithic architecture will not be able to host the new team structure.
+
+The two must evolve in lockstep. Newman argues that this is the single most underappreciated constraint in the microservice literature, and he is right.
+
+The other constraint is prerequisites. CI/CD. Centralized logging. Distributed tracing. Feature flags. Containerization. A deployment culture — teams that are comfortable shipping, monitoring, and rolling back their own services.
+
+Newman is explicit: without these, microservice migration is doomed. The patterns assume a mature platform. The alternatives — manual deploys, shared log files, on-call chaos — make the patterns impossible to execute safely.
+
+He recommends treating the prerequisites as the first wave of the migration. If you do not have CI/CD, building it is the first extraction. If you do not have observability, building it is the first extraction. The architectural work cannot start until the platform work is done.
+
+---
+
+## 🎙️ The Anti-Patterns
+
+Let me close with the anti-patterns, because Newman names them, and knowing the names is half the battle.
+
+**The distributed monolith.** Services that cannot be deployed independently. A schema change in one requires coordinated changes in all. The worst of both worlds: distributed complexity with monolithic coupling. This is the most common failure mode Newman has seen.
+
+**Microservice envy.** Decomposing too small, too early. A "service" with one function and one endpoint. Operational overhead exceeds the benefit. Newman's advice: extract later than you think, not earlier.
+
+**The shared-database trap.** Two services writing to the same table. The single most common cause of failure. If you see this, revert.
+
+**Chatty services.** Services that call each other in tight loops, with no batching, no caching, no aggregation. Network latency dominates. The architecture is correct; the implementation is hostile.
+
+**The front-end bottleneck.** A monolithic front end calling microservices. The problem has been moved, not solved. Add UI composition to the migration plan.
+
+**Premature decomposition.** Extracting services before the bounded context is stable. The seam moves; the service has to be rewritten. This is the failure mode that the "start with the easy extraction" advice is designed to prevent.
+
+Newman has watched each of these patterns destroy real projects. He names them because naming them is the first step toward seeing them in design review and addressing them before they become outages.
+
+---
+
+## 🎙️ Final Thoughts
+
+So where does that leave us? *Monolith to Microservices* is the most useful book on the subject. Not because it is the deepest — Chris Richardson's *Microservices Patterns* is deeper on the code. Not because it is the most theoretical — Martin Kleppmann's *Designing Data-Intensive Applications* is more rigorous on the data.
+
+It is the most useful because it is the most honest. Newman tells you when not to migrate. He names the failure modes. He gives you a pattern catalog that has been tested in real organizations. He makes the prerequisites non-negotiable.
+
+If you are about to undertake a migration, this is the book that will save you from the most common mistakes. The first chapter alone is worth the price of admission, because it will probably convince you not to migrate — and that is the most valuable advice the book offers.
+
+If you are advising someone who is migrating, it is the book you should hand them. The patterns are the playbook. The anti-patterns are the warnings. The prerequisites are the checklist.
+
+And if you are an executive sponsor who has just read about Netflix and is wondering why your monolith cannot be like theirs — read this book. It will temper your expectations. It will reset your timeline. It will, if you let it, save you from the distributed monolith that is waiting at the end of the road.
+
+This has been a BookAtlas narration of *Monolith to Microservices* by Sam Newman. Thanks for listening.
+
+**Outro**: If this episode helped you think differently about a migration you are planning, share it with someone who needs to hear it — especially someone who has just told you "we should rewrite this in microservices." They might be wrong. We will be back next week with another book you need to know about.

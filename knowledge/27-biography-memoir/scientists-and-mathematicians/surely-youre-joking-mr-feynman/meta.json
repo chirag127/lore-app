@@ -1,0 +1,36 @@
+{
+  "slug": "surely-youre-joking-mr-feynman",
+  "id": "surely-youre-joking-mr-feynman-richard-feynman",
+  "title": "Surely You're Joking, Mr. Feynman!",
+  "subtitle": "Adventures of a Curious Character",
+  "authors": ["Richard P. Feynman"],
+  "year": 1985,
+  "category": "27-biography-memoir",
+  "subcategory": "scientists-and-mathematicians",
+  "pages": 352,
+  "isbn": "9780393019216",
+  "publisher": "W. W. Norton & Company",
+  "language": "en",
+  "genres": ["Biography", "Memoir", "Science", "Physics", "Popular Science"],
+  "subjects": ["Richard Feynman", "Physics", "Nobel Prize", "Science Biography", "Autobiography"],
+  "themes": [
+    "Curiosity-driven learning and the joy of discovery",
+    "Rebellion against intellectual authority and convention",
+    "Scientific integrity and the dangers of self-deception",
+    "Playfulness as a gateway to creative problem-solving",
+    "The value of first-principles thinking across domains"
+  ],
+  "tags": ["feynman", "physics", "nobel-prize", "biography", "memoir", "autobiography", "manhattan-project", "quantum-electrodynamics", "popular-science", "challenger"],
+  "difficulty": "easy",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 540,
+  "excerpt": "A riotous collection of anecdotes from Nobel-winning physicist Richard Feynman's life — safecracking at Los Alamos, learning to paint, picking up women in bars, and dismantling authority with gleeful irreverence — that reveals the playful, insatiably curious mind behind the Feynman diagrams.",
+  "rationale": "Book #2 for scientists-and-mathematicians. Paired with Longitude (Dava Sobel) as a contrasting model of scientific biography: Sobel's is tightly focused on one problem across centuries; Feynman's is a sprawling, first-person picaresque that shatters the stereotype of the stuffy scientist. Chosen for its cultural staying power, its demystification of genius as relentless curiosity, and its value as a primary source in a subcategory dominated by third-person biographies.",
+  "verifiedSources": [
+    "Wikipedia: Surely You're Joking, Mr. Feynman! — ISBN 9780393019216, 352pp, Norton 1985",
+    "W. W. Norton catalog page — hardcover ISBN 978-0-393-01921-6, 352pp, published Dec 1984",
+    "Book Passage listing — 352 pages, hardcover, ISBN 0393019217",
+    "NYT Book Review (K. C. Cole, Jan 27, 1985): 'Many science buffs are going to be unnerved by this book'",
+    "Grokipedia — comprehensive publication history and edition details verified"
+  ]
+}

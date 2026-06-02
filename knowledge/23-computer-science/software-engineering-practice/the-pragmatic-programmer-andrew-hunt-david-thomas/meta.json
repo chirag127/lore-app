@@ -1,0 +1,15 @@
+{
+  "id": "the-pragmatic-programmer-andrew-hunt-david-thomas",
+  "title": "The Pragmatic Programmer: From Journeyman to Master",
+  "slug": "the-pragmatic-programmer-andrew-hunt-david-thomas",
+  "authors": ["Andrew Hunt", "David Thomas"],
+  "year": 1999,
+  "category": "23-computer-science",
+  "subcategory": "software-engineering-practice",
+  "pages": 320,
+  "isbn": "9780135957059",
+  "language": "en",
+  "genres": ["Software Engineering", "Programming Craft"],
+  "source": "generated",
+  "generatedAt": "2026-06-11"
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "the-little-book-of-talent-daniel-coyle",
+  "title": "The Little Book of Talent: 52 Tips for Improving Your Skills",
+  "isbn": "9780345530257",
+  "isbn10": "034553025X",
+  "pages": 160,
+  "year": 2012,
+  "publisher": "Bantam",
+  "language": "en",
+  "format": "Paperback",
+  "genres": ["Self-Help", "Psychology", "Education", "Personal Development"],
+  "subjects": ["Talent", "Skill Acquisition", "Practice", "Learning", "Expertise"],
+  "authors": [
+    {
+      "name": "Daniel Coyle",
+      "role": "Author"
+    }
+  ],
+  "openlibrary": "OL16697680W",
+  "goodreads": 13587138,
+  "rating": 4.0,
+  "ratingsCount": 40000
+}

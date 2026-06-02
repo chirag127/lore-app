@@ -1,0 +1,81 @@
+{
+  "slug": "something-deeply-hidden-sean-carroll",
+  "title": "Something Deeply Hidden",
+  "subtitle": "Quantum Worlds and the Emergence of Spacetime",
+  "author": "Sean M. Carroll",
+  "publicationYear": 2019,
+  "editions": [
+    {
+      "year": 2019,
+      "label": "US Hardcover",
+      "pages": 368,
+      "isbn": "978-1-5247-4301-7"
+    },
+    {
+      "year": 2019,
+      "label": "UK Hardcover (Oneworld)",
+      "pages": 355,
+      "isbn": "978-1-78607-633-5"
+    },
+    {
+      "year": 2020,
+      "label": "US Paperback",
+      "pages": 368,
+      "isbn": "978-1-5247-4303-1"
+    }
+  ],
+  "isbn": "9781524743017",
+  "publisher": "Dutton (Penguin Random House)",
+  "language": "en",
+  "pageCount": 368,
+  "genres": [
+    "Popular Science",
+    "Quantum Physics",
+    "Cosmology"
+  ],
+  "subjects": [
+    "Quantum mechanics",
+    "Many-worlds interpretation",
+    "Quantum foundations",
+    "Decoherence",
+    "Quantum gravity",
+    "Emergent spacetime",
+    "Hugh Everett",
+    "Philosophy of physics"
+  ],
+  "themes": [
+    "The Many-Worlds Interpretation as the most straightforward reading of quantum mechanics",
+    "Decoherence explains why we perceive a classical world from quantum superpositions",
+    "The wave function is physically real and the universe is described by a single wave function",
+    "Spacetime and gravity emerge from quantum entanglement in Hilbert space",
+    "Quantum mechanics is not mysterious — it is the clearest picture of reality we have",
+    "The Copenhagen interpretation and wave-function collapse are unnecessary additions",
+    "Alternatives to Many-Worlds (Bohm, collapse models, QBism) have serious problems"
+  ],
+  "tags": [
+    "quantum-mechanics",
+    "many-worlds",
+    "everett",
+    "decoherence",
+    "quantum-foundations",
+    "quantum-gravity",
+    "spacetime",
+    "sean-carroll",
+    "popular-science",
+    "physics",
+    "hilbert-space",
+    "schrodinger-equation",
+    "wave-function",
+    "entanglement",
+    "cosmology",
+    "quantum-physics"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 610,
+  "awards": [
+    "Instant New York Times Bestseller",
+    "Listed among Best Science Books of 2019 by Forbes, Science News, and others"
+  ],
+  "excerpt": "INSTANT NEW YORK TIMES BESTSELLER. As you read these words, copies of you are being created. Sean Carroll, theoretical physicist and one of this world's most celebrated writers on science, rewrites the history of twentieth-century physics. Already hailed as a masterpiece, Something Deeply Hidden shows for the first time that facing up to the essential puzzle of quantum mechanics utterly transforms how we think about space and time."
+}

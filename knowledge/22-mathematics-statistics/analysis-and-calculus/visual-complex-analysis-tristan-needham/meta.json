@@ -1,0 +1,20 @@
+{
+  "slug": "visual-complex-analysis-tristan-needham",
+  "title": "Visual Complex Analysis",
+  "subtitle": "",
+  "author": "Tristan Needham",
+  "isbn13": "9780198534464",
+  "isbn10": "0198534469",
+  "publisher": "Clarendon Press / Oxford University Press",
+  "year": 1997,
+  "firstEdition": 1997,
+  "pages": 592,
+  "language": "en",
+  "category": "22-mathematics-statistics",
+  "subcategory": "analysis-and-calculus",
+  "genres": ["mathematics", "complex-analysis", "geometric-function-theory", "undergraduate-textbook"],
+  "excerpt": "A radically visual, geometrically-driven introduction to complex analysis that replaces calculation with pictures, featuring over 500 diagrams and a foreword by Roger Penrose.",
+  "cover": "https://covers.openlibrary.org/b/isbn/9780198534464-L.jpg",
+  "difficulty": "intermediate",
+  "tags": ["complex-analysis", "geometric-function-theory", "conformal-mapping", "mobius-transformations", "visual-mathematics", "undergraduate-textbook", "vector-fields", "harmonic-functions"]
+}

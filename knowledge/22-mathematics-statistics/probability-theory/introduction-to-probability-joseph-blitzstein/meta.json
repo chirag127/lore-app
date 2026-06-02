@@ -1,0 +1,66 @@
+{
+  "slug": "introduction-to-probability-joseph-blitzstein",
+  "title": "Introduction to Probability",
+  "subtitle": "A Modern Introduction Built on Harvard's Celebrated Stat 110 Course",
+  "author": "Joseph K. Blitzstein and Jessica Hwang",
+  "publicationYear": 2014,
+  "publicationYearSecondEdition": 2019,
+  "isbn": "9781886529236",
+  "isbnSecondEdition": "9781138369917",
+  "publisher": "Chapman and Hall / CRC Press (Taylor & Francis)",
+  "language": "en",
+  "pageCount": 610,
+  "pageCountSecondEdition": 638,
+  "genres": [
+    "Mathematics",
+    "Probability",
+    "Statistics",
+    "Textbook"
+  ],
+  "subjects": [
+    "Sample spaces and counting",
+    "Conditional probability and Bayes' theorem",
+    "Discrete and continuous random variables",
+    "Expectation, variance, and moments",
+    "Joint, marginal, and conditional distributions",
+    "Binomial, Poisson, Normal, Exponential, Gamma, Beta",
+    "Markov chains and stationary distributions",
+    "Markov chain Monte Carlo (Metropolis-Hastings)",
+    "Poisson processes",
+    "Law of large numbers and central limit theorem"
+  ],
+  "themes": [
+    "Probability as a language for reasoning under uncertainty",
+    "Story-based intuition for distributions and conditioning",
+    "Connecting discrete and continuous probability through the Uniform",
+    "Simulation and computation in R as a tool for building intuition",
+    "Modern applications: PageRank, MCMC, genetics, information theory"
+  ],
+  "tags": [
+    "probability",
+    "statistics",
+    "joseph-blitzstein",
+    "jessica-hwang",
+    "stat-110",
+    "harvard",
+    "bayes-theorem",
+    "markov-chains",
+    "mcmc",
+    "poisson-processes",
+    "binomial",
+    "normal-distribution",
+    "random-variables",
+    "crc-press",
+    "textbook"
+  ],
+  "difficulty": "medium",
+  "estimatedReadingHours": 40,
+  "estimatedListeningMinutes": 1500,
+  "awards": [
+    "Developed from Harvard's Stat 110, one of the most popular undergraduate courses at the university",
+    "Standard reference for probability courses at Harvard, Stanford, MIT, and hundreds of other institutions",
+    "Stat 110 YouTube lectures have accumulated millions of views",
+    "Widely adopted as the textbook for the edX 'Introduction to Probability' online course"
+  ],
+  "excerpt": "Introduction to Probability by Joseph K. Blitzstein and Jessica Hwang is the modern, story-driven introduction to probability built from Harvard's celebrated Stat 110 lectures. With lucid prose, deep conceptual intuition, and an unmatched collection of 'story proofs,' it has become the most widely used probability textbook of its generation — equally valuable as a first course for undergraduates and as a reference for data scientists, statisticians, and machine-learning practitioners."
+}

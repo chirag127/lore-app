@@ -1,0 +1,212 @@
+## Strengths
+
+- **The right scope for a 310-page book.** Where Chip Huyen's
+  *Designing Machine Learning Systems* runs 390 pages on roughly the
+  same territory, Burkov covers the full lifecycle in a third less
+  space, without losing the lifecycle view. The discipline of
+  concision is itself a teaching tool.
+
+- **Unmatched ordering.** The single most important contribution
+  of the book is the structure itself: a project that follows the
+  seven phases in order will not waste the most common failure
+  modes. Cassie Kozyrkov's foreword treats the table of contents
+  as the lesson.
+
+- **Strong on the parts most ML books skip.** The problem-framing
+  chapters, the statistics chapter, and the reliability chapters
+  are unusually good. Few competing books treat "should we use ML
+  at all?" with the seriousness it deserves.
+
+- **Engineering pragmatism.** Burkov repeatedly argues for the
+  simpler, more debuggable, more retirable option. The book's
+  anti-fashion stance — "logistic regression first, deep learning
+  only when justified" — is a corrective to the field's
+  benchmarks-above-all culture.
+
+- **Read-first-pay-later distribution.** Burkov publishes through
+  Leanpub and lets readers download the book for free and pay
+  later if they find it valuable. This is a meaningful contribution
+  to ML education access.
+
+- **Endorsements from the right people.** Cassie Kozyrkov (Google's
+  Chief Decision Scientist) and Karolis Urbonas (Head of ML at
+  Amazon) blurbed the book, signaling that the engineering bar is
+  taken seriously at the highest levels of the industry.
+
+- **Composable with the author's other book.** Read alongside *The
+  Hundred-Page Machine Learning Book*, the two together form a
+  curriculum that covers both modeling and engineering in fewer
+  than 500 pages — small enough to actually finish.
+
+- **Decision-intelligence framing.** Kozyrkov's foreword plants a
+  flag: ML is a tool for making better decisions, and the
+  engineering work exists to serve the decision, not the other way
+  around. This is a more honest framing than the prevailing
+  "build the best model" mentality.
+
+---
+
+## Weaknesses
+
+- **Light on concrete code.** A recurring criticism in reviews:
+  the book is heavy on patterns, light on code. There is no
+  companion GitHub repository, no Jupyter notebooks, no end-to-end
+  example project. Readers who learn by running code will need to
+  pair this book with Géron or Huyen.
+
+- **Brevity sacrifices depth.** Each phase gets a chapter or two,
+  not a part. A reader who needs deep treatment of feature stores,
+  canary deployments, or drift detection will find this book a
+  starting point rather than a reference.
+
+- **Light on cloud and tooling specifics.** The book is
+  tool-agnostic by design, but readers building on AWS, GCP, or
+  Azure will not find a roadmap to the managed services that
+  implement many of these patterns. *Building Machine Learning
+  Pipelines* (Hapke & Nelson) covers the TFX and Kubeflow side;
+  *Machine Learning Engineering in Action* (Wilson) covers more
+  code.
+
+- **Uneven balance between modeling and MLOps.** A Polish
+  reviewer on Goodreads put it bluntly: the book is "more for
+  the person doing modeling, neglecting MLOps engineer topics."
+  Burkov is more confident in the modeling-adjacent chapters
+  (problem framing, statistics) than in the pure-infrastructure
+  chapters (CI/CD for ML, infrastructure-as-code for pipelines).
+
+- **Writing style is functional, not literary.** Several reviewers
+  report that the prose can feel like a checklist in places.
+  This is a feature for some readers and a weakness for others.
+
+- **No diagrams of real architectures.** A few well-drawn
+  reference architectures (e.g. "an online recommender system
+  with a feature store, model registry, and monitoring pipeline")
+  would have made the production chapters more concrete. The
+  Mermaid diagrams in this BookAtlas entry fill some of that gap.
+
+- **Examples skew toward tabular business data.** Readers building
+  computer vision or NLP systems will find the data-engineering
+  and labeling chapters less directly applicable than readers
+  working on classical ML problems.
+
+- **No exercises or worked examples.** The book is a reading
+  experience, not a course. There is no problem set, no
+  end-of-chapter projects, no way to test understanding without
+  applying it at work.
+
+---
+
+## Criticism
+
+### The "Surface Area" Critique
+
+The most common negative review: the book is a survey, not a
+textbook. A reader expecting deep treatment of feature stores,
+drift detection, or model serving will find each topic covered
+in 10–20 pages. The book is honest about this — it is a *map*,
+not a *territory*. Readers who need depth should plan a follow-up
+reading list per chapter.
+
+### The "Modeling Bias" Critique
+
+A nontrivial subset of Goodreads reviewers note that the book
+leans toward the perspective of a data scientist transitioning to
+engineering, not an engineer transitioning to ML. The MLOps
+chapters (CI/CD, IaC, container orchestration) are thinner than
+the modeling-adjacent chapters (problem framing, statistics,
+evaluation). This is partly a function of Burkov's own background
+(PhD in AI, team lead at Gartner) and partly a function of the
+field's center of gravity in 2020.
+
+### The "Where Is the Code?" Critique
+
+Reviews that dock the book a star or two consistently mention
+the absence of runnable code. *Hands-On Machine Learning*
+succeeds partly because readers can clone a repository and run
+every example. Burkov's book does not offer this, by design —
+but the design choice is a weakness for some readers.
+
+### The "Already Known" Critique
+
+A few reviewers who have shipped production ML systems report
+that the book contains little they did not already know. The
+book is more useful as a *consolidation* of best practices than
+as a source of novel techniques. For this audience, Chip
+Huyen's book has more to offer.
+
+---
+
+## Comparison to Similar Books
+
+| Book | Key Difference |
+|---|---|
+| **The Hundred-Page Machine Learning Book** (Burkov) | The modeling companion. Same author, same style, half the length. Read both. |
+| **Designing Machine Learning Systems** (Huyen) | Deeper on data engineering, deployment, and MLOps; longer; more diagrams. The natural follow-up read. |
+| **Hands-On Machine Learning** (Géron) | Code-first, framework-specific (Scikit-Learn, Keras, TF). The natural *prerequisite* read. |
+| **Building Machine Learning Pipelines** (Hapke & Nelson) | Hands-on TFX and Kubeflow. Covers the *implementation* of the production phase this book describes. |
+| **Machine Learning Engineering in Action** (Wilson) | A code-heavy alternative, with a longer treatment of the production phase. |
+| **Reliable Machine Learning** (Underwood) | Goes much deeper on the reliability and monitoring chapters. |
+| **Making Friends with Machine Learning** (Kozyrkov) | Google's internal applied ML course. The structural inspiration for this book, free online. |
+
+---
+
+## Historical Context
+
+The book appeared at an inflection point. By September 2020, the
+industry had deployed thousands of models and was waking up to
+the operational reality: most models degraded within months, most
+data pipelines broke more often than the models themselves, and
+most teams had no formal process for any of it. The "MLOps"
+category was just being named (the first MLOps conferences and
+tooling startups were 2019–2020).
+
+Burkov's contribution was to consolidate what working ML
+engineers already knew into a single ordered, accessible volume
+and to publish it under a model (read-first-pay-later) that
+ensured it would reach the practitioners who needed it most. The
+book's structure is widely echoed in subsequent training
+programs, course curricula, and team rituals.
+
+Five years later, the book's prescriptions are still
+uncontroversial: framing before modeling, baselines before
+models, statistics before claims, production before celebration,
+reliability before scaling. Few books from 2020 in any technical
+field have aged this well.
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | Application |
+|---|---|---|
+| Decision intelligence | Cassie Kozyrkov (Google) | Framing ML as decision support, not autonomous prediction |
+| Data-centric AI | Andrew Ng (Stanford, 2021) | Investing in data quality over model complexity |
+| CRISP-DM | Shearer (2000) | The Cross-Industry Standard Process for Data Mining — earlier lifecycle model that influences the book |
+| TDSP (Team Data Science Process) | Microsoft (2017) | Another lifecycle model with overlapping phases |
+| Statistical significance testing | Fisher, Neyman-Pearson (20th c.) | Deciding whether an observed improvement is real |
+| Site Reliability Engineering | Google SRE book (Beveridge, Beyer, Jones, Petoff, Murphy, 2016) | The reliability philosophy applied to ML systems |
+| A/B testing | Kohavi, Crook, Longbotham (2009) | Online controlled experiments at scale |
+| Active learning | Settles (2010) | Reducing labeling cost by intelligent sample selection |
+| Data drift / concept drift | Widmer, Kubat (1996); Tsymbal (2004) | Formalizing the failure modes the reliability chapter addresses |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|---|---|---|
+| Practical Utility | 8/10 | Directly applicable; would be 9 with more code |
+| Breadth | 9/10 | The only single-book treatment of the full ML lifecycle |
+| Depth | 6/10 | Intentionally shallow per phase; pair with Huyen |
+| Clarity of structure | 10/10 | The lifecycle ordering is the book |
+| Timeliness (2020 → 2026) | 8/10 | The prescriptions have aged remarkably well; only the tooling examples feel dated |
+| Code density | 3/10 | A few pseudocode snippets; no runnable examples |
+| Readability | 8/10 | Functional prose; some reviewers find it dry |
+| **Overall** | **8/10** | The best concise end-to-end guide to ML engineering, and the natural complement to the author's *Hundred-Page* book |
+
+*Machine Learning Engineering* fills a niche that no other single
+book fills: a concise, ordered, engineering-first map of the ML
+project lifecycle. It is not the deepest book in any single phase,
+but it is the only one you can hand to a new ML engineer and have
+them understand the full shape of the work in a week. Read it for
+the map; read Huyen, Géron, and the SRE book for the territory.

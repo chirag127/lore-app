@@ -1,0 +1,436 @@
+---
+title: Core Concepts
+subtitle: From End-to-End Projects to Deep Neural Networks
+---
+
+## Part I: The Fundamentals of Machine Learning
+
+### Chapter 1 — The Machine Learning Landscape
+
+Géron defines ML as the science (and art) of programming computers
+to learn from data. The chapter establishes the taxonomy every
+practitioner needs:
+
+```mermaid
+graph TD
+    subgraph ML_Types["Types of Machine Learning"]
+        SUP["Supervised<br/>Labeled data"]
+        UN["Unsupervised<br/>Unlabeled data"]
+        SEMI["Semisupervised<br/>Mix of both"]
+        RL["Reinforcement<br/>Reward signals"]
+    end
+
+    subgraph Supervision_Examples["Supervised Examples"]
+        REG["Regression<br/>Predict a number"]
+        CLS["Classification<br/>Predict a class"]
+    end
+
+    subgraph Unsupervised_Examples["Unsupervised Examples"]
+        CLU["Clustering<br/>Group similar items"]
+        VIS["Visualization<br/>t-SNE, PCA"]
+        ASN["Anomaly Detection<br/>Find outliers"]
+    end
+
+    SUP --> REG
+    SUP --> CLS
+    UN --> CLU
+    UN --> VIS
+    UN --> ASN
+```
+
+Key challenges: insufficient data, nonrepresentative data, poor
+quality, irrelevant features, overfitting, underfitting.
+
+---
+
+### Chapter 2 — End-to-End Machine Learning Project
+
+The book's signature chapter. Géron works through the California
+housing dataset from start to finish:
+
+```mermaid
+flowchart LR
+    A["Frame the<br/>Problem"] --> B["Get the<br/>Data"]
+    B --> C["Explore &<br/>Visualize"]
+    C --> D["Prepare the<br/>Data"]
+    D --> E["Select &<br/>Train Model"]
+    E --> F["Fine-Tune<br/>Model"]
+    F --> G["Present<br/>Solution"]
+    G --> H["Launch &<br/>Monitor"]
+```
+
+The pipeline includes: `ColumnTransformer` for mixed numeric/
+categorical features, `Pipeline` for composable transforms,
+`GridSearchCV` and `RandomizedSearchCV` for hyperparameter tuning,
+and cross-validation for honest evaluation.
+
+---
+
+### Chapter 3 — Classification
+
+MNIST digit classification as the "hello world" of ML. Covers:
+
+- **Binary classifiers** (SGDClassifier, confusion matrix,
+  precision/recall trade-off, ROC curve)
+- **Multiclass strategies** (OvR, OvO)
+- **Error analysis** via confusion matrix visualization
+- **Multilabel and multioutput classification**
+
+```mermaid
+graph LR
+    subgraph Binary_Eval["Binary Classification Metrics"]
+        CM["Confusion Matrix<br/>TN  FP<br/>FN  TP"]
+        PR["Precision = TP/(TP+FP)<br/>Recall = TP/(TP+FN)"]
+        F1["F1 Score<br/>Harmonic mean of P & R"]
+        ROC["ROC Curve<br/>TPR vs FPR"]
+    end
+    CM --> PR --> F1
+    CM --> ROC
+```
+
+---
+
+### Chapter 4 — Training Models
+
+The most mathematical chapter. Derives linear regression via the
+Normal Equation, then gradient descent:
+
+```mermaid
+graph TD
+    subgraph GD_Family["Gradient Descent Variants"]
+        BGD["Batch GD<br/>Full dataset per step<br/>Stable but slow"]
+        MGD["Mini-Batch GD<br/>Random subset per step<br/>Balanced"]
+        SGD["Stochastic GD<br/>One instance per step<br/>Fast but noisy"]
+    end
+
+    subgraph Learning_Curves["Key Concepts"]
+        LR["Learning Rate<br/>Too high: diverge<br/>Too low: slow"]
+        POLY["Polynomial Regression<br/>Degree controls complexity"]
+        REG["Regularization<br/>Ridge, Lasso, ElasticNet"]
+    end
+
+    BGD --> REG
+    MGD --> REG
+    SGD --> REG
+    LR --> BGD
+```
+
+Also covers Logistic Regression for classification, the bias-variance
+trade-off, and learning curves as diagnostic tools.
+
+---
+
+### Chapters 5–7 — SVM, Decision Trees, Ensemble Methods
+
+```mermaid
+graph TD
+    subgraph SVM["Support Vector Machines"]
+        LIN["Linear SVM<br/>Max margin"]
+        POLY["Polynomial Kernel<br/>Degree d"]
+        RBF["RBF Kernel<br/>Gamma parameter"]
+    end
+
+    subgraph Trees["Decision Trees"]
+        CART["CART Algorithm<br/>Gini / Entropy split"]
+        PRUNE["Pruning<br/>Prevent overfitting"]
+    end
+
+    subgraph Ensemble["Ensemble Methods"]
+        RF["Random Forest<br/>Bagging + random features"]
+        GB["Gradient Boosting<br/>Sequential correction"]
+        STACK["Stacking<br/>Meta-learner"]
+    end
+
+    Trees --> Ensemble
+```
+
+SVM chapter explains the kernel trick clearly: mapping inputs to a
+high-dimensional feature space without computing the coordinates.
+Decision Trees introduce impurity measures (Gini, entropy). Ensemble
+chapter is the highlight — Random Forests bag hundreds of trees,
+Gradient Boosting builds additive trees, and XGBoost is introduced
+as a production-grade implementation.
+
+---
+
+### Chapter 8 — Dimensionality Reduction
+
+The curse of dimensionality: as dimensions increase, data becomes
+sparse, and distance metrics lose meaning. PCA is the workhorse:
+
+- Finds the axis of maximum variance
+- Projects data onto top-k principal components
+- Explained variance ratio tells you how much information is kept
+
+Also covers t-SNE (visualization), LLE (local linear embedding), and
+incremental PCA for large datasets.
+
+---
+
+### Chapter 9 — Unsupervised Learning Techniques
+
+Adds clustering (K-Means, DBSCAN), Gaussian Mixture Models, and
+anomaly detection. K-Means is demonstrated for image segmentation
+and semi-supervised learning.
+
+---
+
+## Part II: Neural Networks and Deep Learning
+
+### Chapter 10 — ANN with Keras
+
+```mermaid
+graph TD
+    subgraph Keras_APIs["Keras APIs"]
+        SEQ["Sequential API<br/>Simple layer stacks"]
+        FUNC["Functional API<br/>Multi-input, multi-output"]
+        SUB["Subclassing API<br/>Full flexibility"]
+    end
+
+    subgraph Building_Blocks["Building Blocks"]
+        DEN["Dense Layer"]
+        ACT["Activation: ReLU, sigmoid, softmax"]
+        OPT["Optimizer: SGD, Adam, RMSprop"]
+        LOSS["Loss: MSE, CCE, binary crossentropy"]
+    end
+
+    SEQ --> DEN
+    FUNC --> DEN
+    SUB --> DEN
+    DEN --> ACT
+    ACT --> OPT
+    OPT --> LOSS
+```
+
+Géron introduces the three Keras APIs and shows how to build,
+compile, fit, evaluate, and predict. Callbacks (ModelCheckpoint,
+EarlyStopping, TensorBoard) are introduced early.
+
+---
+
+### Chapter 11 — Training Deep Neural Networks
+
+The hardest practical chapter. Vanishing/exploding gradients are
+tackled with:
+
+- **Weight initialization:** He (ReLU) vs. Glorot (tanh)
+- **Batch Normalization:** Normalize activations, enable higher
+  learning rates
+- **Gradient Clipping:** Cap gradient values
+- **Dropout:** Randomly drop neurons during training
+- **Optimizers:** Momentum, Nesterov, AdaGrad, RMSProp, Adam, Nadam
+
+Also covers learning rate scheduling, self-normalizing nets (SELU),
+and Monte-Carlo Dropout for uncertainty estimation.
+
+---
+
+### Chapters 12–13 — Custom TensorFlow and Data Pipelines
+
+Chapter 12 descends into TF's lower-level API: writing custom loss
+functions, metrics, layers, and training loops. TF Functions and
+AutoGraph convert Python into optimized graph operations.
+
+Chapter 13 covers the `tf.data` API for efficient input pipelines:
+`Dataset.from_tensor_slices`, `map`, `batch`, `prefetch`,
+`cache`. Also introduces TFRecords for serialization and Keras
+preprocessing layers.
+
+---
+
+### Chapter 14 — Convolutional Neural Networks
+
+```mermaid
+graph LR
+    subgraph CNN_Arch["CNN Architecture"]
+        I["Input Image"] --> C1["Conv Layer<br/>Filters: 32, 3x3"]
+        C1 --> P1["Pooling<br/>Max, 2x2"]
+        P1 --> C2["Conv Layer<br/>Filters: 64, 3x3"]
+        C2 --> P2["Pooling<br/>Max, 2x2"]
+        P2 --> F["Flatten"]
+        F --> D1["Dense 128"]
+        D1 --> OUT["Output"]
+    end
+```
+
+Covers convolutional and pooling layers, common architectures
+(LeNet-5, AlexNet, VGG-16, GoogLeNet, ResNet, Xception, SENet),
+transfer learning with pretrained Keras models, object detection
+(YOLO), and semantic segmentation.
+
+---
+
+### Chapter 15 — Processing Sequences (RNNs and CNNs)
+
+Time series and sequential data. The chapter covers:
+
+- **Simple RNNs** — suffer from vanishing gradients
+- **LSTM and GRU** — gating mechanisms solve long-range dependencies
+- **1D CNNs** — faster alternative for sequences
+- **WaveNet** — dilated causal convolutions
+- **ARMA models** for time series forecasting
+
+The example uses Chicago transit ridership data.
+
+---
+
+### Chapter 16 — NLP with RNNs and Attention
+
+The most forward-looking chapter in the 3rd edition:
+
+```mermaid
+graph TD
+    subgraph Seq2Seq["Encoder-Decoder Architecture"]
+        ENC["Encoder RNN<br/>Reads source sentence"]
+        DEC["Decoder RNN<br/>Generates target sentence"]
+        ATT["Attention Mechanism<br/>Focuses on relevant parts"]
+    end
+
+    subgraph Transformers["Transformer Architecture"]
+        SA["Self-Attention<br/>Multi-head attention"]
+        PE["Positional Encoding<br/>Sequence order"]
+        FF["Feed-Forward<br/>Per-position MLP"]
+    end
+
+    subgraph PLMs["Pretrained Language Models"]
+        BERT["BERT<br/>Bidirectional encoder"]
+        GPT["GPT<br/>Autoregressive decoder"]
+        T5["T5<br/>Encoder-decoder"]
+    end
+
+    Seq2Seq --> Transformers
+    Transformers --> PLMs
+```
+
+Builds an English-to-Spanish translation model, first with RNN +
+attention, then with a Transformer. Also introduces: Switch
+Transformers, DistilBERT, T5, PaLM with chain-of-thought, vision
+transformers (ViT, DeiT), and large multimodal models (CLIP, DALL·E,
+Flamingo, GATO).
+
+---
+
+### Chapter 17 — Autoencoders, GANs, and Diffusion Models
+
+Three generative paradigms:
+
+- **Autoencoders:** compress then reconstruct; used for anomaly
+  detection and denoising
+- **GANs:** generator vs. discriminator adversarial training;
+  DCGANs, ProGANs, StyleGANs
+- **Diffusion Models** (new in 3rd ed): gradually add noise then
+  learn to reverse the process. Includes a DDPM implementation from
+  scratch.
+
+---
+
+### Chapter 18 — Reinforcement Learning
+
+```mermaid
+graph LR
+    A["Agent"] -->|"Action"| E["Environment"]
+    E -->|"State + Reward"| A
+    A --> P["Policy<br/>π(s) → a"]
+    A --> V["Value Function<br/>V(s): expected return"]
+    A --> Q["Q-Value<br/>Q(s,a): state-action value"]
+```
+
+Covers policy gradients, Deep Q-Networks (DQN), Double DQN, Dueling
+DQN, Prioritized Experience Replay, and TF-Agents for scalable RL.
+
+---
+
+### Chapter 19 — Training and Deploying at Scale
+
+Production ML: TF Serving for model serving, TFLite for mobile/edge,
+GPU acceleration with CUDA, distributed training with Distribution
+Strategies (mirrored, multi-worker, parameter server), and
+Vertex AI for cloud deployment.
+
+---
+
+## Key Lessons
+
+- **Start simple, then iterate.** Always establish a baseline before
+  reaching for complex models.
+- **Cross-validation is your friend.** Never trust a single train/test
+  split.
+- **Scale your features.** Tree-based models are invariant to scale;
+  most others are not.
+- **Prefer Adam as the default optimizer.** It combines momentum and
+  adaptive learning rates. Switch to SGD with momentum for
+  generalization.
+- **Batch Normalization accelerates training.** Use it by default
+  in deep networks.
+- **Transfer learning beats training from scratch.** Always check if
+  a pretrained model exists for your task.
+- **Deployment is the hard part.** The model is a small fraction of a
+  production ML system.
+
+---
+
+## Practical Applications
+
+### For Regression
+
+- Linear Regression for simple baselines
+- Ridge/Lasso for regularization
+- Random Forest for non-linear relationships
+
+### For Classification
+
+- Logistic Regression for probabilistic baselines
+- SVM with RBF kernel for medium datasets
+- Random Forest / XGBoost for tabular data
+- Fine-tuned neural net for images or text
+
+### For Computer Vision
+
+- Pretrained ResNet or EfficientNet as feature extractor
+- YOLO for real-time object detection
+- Data augmentation with Keras layers
+
+### For NLP
+
+- Pretrained transformers (BERT, T5) via Hugging Face
+- Embeddings + bidirectional LSTM for smaller datasets
+- Beam search for sequence generation
+
+### For Time Series
+
+- ARMA for simple forecasting
+- LSTM/GRU for complex temporal patterns
+- 1D CNN + RNN hybrid architectures
+
+---
+
+## Action Plan
+
+1. **Read chapters 1–4** to understand ML fundamentals. Run every
+   code cell.
+
+2. **Complete the Chapter 2 project** end-to-end with your own
+   dataset. This is the single most valuable exercise in the book.
+
+3. **Build classifiers (Ch 3)** and diagnose errors with confusion
+   matrices and ROC curves.
+
+4. **Study the ensemble chapter (Ch 7)** — Random Forests and Gradient
+   Boosting win most tabular-data competitions.
+
+5. **Switch to Part II** and build a neural net with Keras (Ch 10).
+   Modify architecture, add layers, observe the effect.
+
+6. **Apply transfer learning (Ch 14)** to a custom image dataset.
+   Fine-tune a pretrained model.
+
+7. **Build a translation or text generation model (Ch 16)** using
+   Hugging Face transformers.
+
+8. **Deploy a model (Ch 19)** with TF Serving or a REST API.
+
+9. **Write your own custom training loop (Ch 12)** to understand
+   what Keras does under the hood.
+
+10. **Revisit Chapter 11** whenever you encounter training stability
+    issues. The techniques there solve 90% of deep learning problems.

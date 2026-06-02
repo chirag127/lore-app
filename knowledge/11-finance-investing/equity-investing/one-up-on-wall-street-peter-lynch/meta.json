@@ -1,0 +1,72 @@
+{
+  "slug": "one-up-on-wall-street-peter-lynch",
+  "title": "One Up On Wall Street",
+  "author": "Peter Lynch with John Rothchild",
+  "subtitle": "How to Use What You Already Know to Make Money in the Market",
+  "description": "Legendary Fidelity Magellan Fund manager Peter Lynch explains how individual investors can outperform Wall Street professionals by investing in companies they already understand. The book introduces Lynch's six-category stock classification system, the PEG ratio, the 'tenbagger' concept, the two-minute drill, and why amateur investors have structural advantages over institutional money managers. Lynch argues that everyday observations — products you use, stores you shop at, industries you work in — are the best sources of investment ideas.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780743200400-L.jpg",
+  "isbn10": "0743200403",
+  "isbn13": "9780743200400",
+  "pages": 304,
+  "publishedYear": 1989,
+  "publisher": "Simon & Schuster",
+  "openlibrarySlug": "one-up-on-wall-street",
+  "tags": [
+    "investing",
+    "stock market",
+    "growth investing",
+    "value investing",
+    "personal finance",
+    "financial analysis",
+    "mutual funds"
+  ],
+  "keyIdeas": [
+    "Individual investors have structural advantages over Wall Street professionals",
+    "Six stock categories: Slow Growers, Stalwarts, Fast Growers, Cyclicals, Turnarounds, Asset Plays",
+    "The PEG ratio: P/E divided by earnings growth rate — fair value is PEG of 1.0",
+    "Tenbagger concept: stocks that return 10x your investment",
+    "The two-minute drill: explain your investment thesis in two minutes",
+    "Invest in what you know — everyday observations are the best source of stock ideas",
+    "Different stock categories have different buy, hold, and sell rules",
+    "Ignore macroeconomics and market predictions — focus on individual companies",
+    "The perfect stock: boring name, boring business, no analyst coverage, recurring revenue",
+    "Avoid hot stocks in hot industries, 'the next something,' and whisper stocks"
+  ],
+  "keyTakeaways": [
+    "You can beat Wall Street by investing in companies you already understand from daily life",
+    "Classify every stock into one of six categories — each has different risk, reward, and sell rules",
+    "The PEG ratio (P/E ÷ growth rate) tells you if a stock is fairly valued — aim for PEG under 1.0",
+    "A tenbagger (10x return) can transform your portfolio — look for small, profitable, underfollowed companies",
+    "You should be able to explain your investment thesis in two minutes — if you can't, you don't understand it",
+    "Ignore interest rates, GDP, and market forecasts — nobody can predict them",
+    "Sell when the story changes, not when the price moves",
+    "Great companies in boring industries outperform hot companies in exciting industries",
+    "Buy companies that buy back shares and have insiders buying",
+    "A portfolio of 5-10 well-researched stocks is better than 50 mediocre ones"
+  ],
+  "whoShouldRead": [
+    "Individual investors who want to pick their own stocks",
+    "Beginners looking for an accessible, practical introduction to stock investing",
+    "Experienced investors who want to systematize their stock research process",
+    "Anyone who thinks investing requires a Wall Street pedigree or finance degree",
+    "MBA students who want to understand how great fund managers actually think"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Beating the Street",
+      "slug": "beating-the-street-peter-lynch"
+    },
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "A Random Walk Down Wall Street",
+      "slug": "a-random-walk-down-wall-street-burton-malkiel"
+    }
+  ]
+}

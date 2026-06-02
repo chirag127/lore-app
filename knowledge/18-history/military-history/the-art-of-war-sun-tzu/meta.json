@@ -1,0 +1,79 @@
+{
+  "title": "The Art of War",
+  "author": "Sun Tzu (traditional attribution; likely compiled by multiple authors over generations)",
+  "authorBorn": "c. 544 BCE (traditional)",
+  "authorDied": "c. 496 BCE (traditional)",
+  "originalLanguage": "Classical Chinese",
+  "originalTitle": "孫子兵法 (Sūnzǐ bīngfǎ)",
+  "originalTitleEnglish": "Master Sun's Military Methods",
+  "category": "18-history",
+  "subcategory": "military-history",
+  "slug": "the-art-of-war-sun-tzu",
+  "publisher": "multiple (public domain; many editions exist)",
+  "pages": 80,
+  "publicationDate": "c. 5th century BCE",
+  "earliestManuscript": "c. 2nd century BCE (Yinqueshan Han tomb manuscripts, 1972)",
+  "firstFrenchTranslation": 1772,
+  "firstEnglishTranslation": 1905,
+  "definitiveEnglishTranslation": "1910 (Lionel Giles)",
+  "genres": [
+    "Military strategy",
+    "Philosophy",
+    "Classical Chinese literature"
+  ],
+  "themes": [
+    "Strategy and tactics",
+    "Deception and psychology",
+    "Leadership and command",
+    "Intelligence and espionage",
+    "Economics of conflict",
+    "Adaptability and flexibility",
+    "Winning without fighting"
+  ],
+  "chapterCount": 13,
+  "chapterTitles": [
+    "Laying Plans",
+    "Waging War",
+    "Attack by Stratagem",
+    "Tactical Dispositions",
+    "Energy",
+    "Weak Points and Strong",
+    "Maneuvering",
+    "Variation in Tactics",
+    "The Army on the March",
+    "Terrain",
+    "The Nine Situations",
+    "Attack by Fire",
+    "The Use of Spies"
+  ],
+  "notableTranslators": [
+    "Lionel Giles",
+    "Thomas Cleary",
+    "Samuel B. Griffith",
+    "John Minford",
+    "Roger T. Ames"
+  ],
+  "relatedWorks": [
+    "Sun Bin's Art of War",
+    "The Book of Five Rings (Miyamoto Musashi)",
+    "On War (Carl von Clausewitz)",
+    "The 33 Strategies of War (Robert Greene)",
+    "The Prince (Niccolò Machiavelli)"
+  ],
+  "majorConcepts": [
+    "Five Constants (Moral Law, Heaven, Earth, Command, Method)",
+    "Seven Considerations",
+    "All warfare is based on deception",
+    "Know yourself and know your enemy",
+    "Supreme excellence is winning without fighting",
+    "Water-like flexibility and formlessness",
+    "Five types of spies",
+    "Direct and indirect forces"
+  ],
+  "historicalInfluence": [
+    "One of the Seven Military Classics of ancient China",
+    "Studied by samurai, Mao Zedong, Vo Nguyen Giap",
+    "Influenced modern Western military thought (West Point, US Naval War College)",
+    "Applied in business, law, sports, and popular culture"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "label": "book-request",
+  "name": "Book request",
+  "description": "User-submitted book request. Triggers the KnowledgeAtlas pipeline.",
+  "color": "C44536"
+}

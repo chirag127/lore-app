@@ -1,0 +1,115 @@
+## Strengths
+
+- **Ruthless curation.** The book's biggest virtue is the
+  decisions it makes about what to leave out. A traditional
+  statistics text gives equal billing to topics a working data
+  scientist will never use; the Bruces refuse. The result is a
+  small, dense, defensible canon.
+- **Dual-language code.** The 2nd edition's most consequential
+  change: every R example is matched by a Python equivalent
+  using NumPy, pandas, scikit-learn, and statsmodels. This makes
+  the book genuinely usable in both ecosystems and ends the
+  R-only friction of the 1st edition.
+- **Glossary-first structure.** Every section opens with key
+  terms defined precisely. The book functions as a reference
+  long after the first read — flip open to "stratified sampling"
+  or "leverage" and the answer is two paragraphs away.
+- **Resampling as the spine.** The bootstrap and permutation
+  tests are presented not as exotic alternatives but as the
+  default. This frees the reader from memorizing distributional
+  formulas they will never apply.
+- **Practitioner-honest warnings.** Each concept is followed by
+  the specific misuses working data scientists commit:
+  p-hacking, peeking at A/B tests, ignoring multicollinearity,
+  applying K-means without scaling. These are the failures the
+  authors have actually seen.
+- **Excellent regression and tree chapters.** Chapters 4 and 6
+  are the strongest in the book — clear, deep enough to be
+  useful, shallow enough to be readable in an afternoon.
+- **Compact length.** At ~360 pages it can plausibly be read
+  cover to cover, unlike Hastie–Tibshirani–Friedman's 750-page
+  *Elements of Statistical Learning*.
+- **Strong companion fit.** Slotted neatly between
+  *Naked Statistics* (lay introduction) and *An Introduction to
+  Statistical Learning* (theory companion), it occupies the
+  practitioner sweet spot.
+
+---
+
+## Weaknesses
+
+- **Thin on theory.** Readers who want to understand *why* the
+  bootstrap works, or the derivation of the OLS estimator, will
+  need a second book. The Bruces explicitly trade depth for
+  applicability — a trade not every reader will accept.
+- **Light on time series and causal inference.** These are
+  covered briefly or skipped entirely. A working data scientist
+  in marketing analytics or economics will need *Forecasting:
+  Principles and Practice* or *Causal Inference: The Mixtape*
+  alongside.
+- **Survival analysis and missing-data methods are touched
+  lightly.** Anyone working in healthcare, churn modeling, or
+  any setting with censored outcomes will need supplementary
+  reading.
+- **No deep learning.** This is by design — the book is about
+  statistics for tabular data — but readers expecting modern
+  neural-network coverage will be surprised.
+- **Bayesian methods are largely absent.** Frequentist throughout.
+  *Statistical Rethinking* is the natural complement.
+- **Code is illustrative, not production-grade.** Examples are
+  pedagogical snippets; readers building real pipelines will
+  need more on testing, packaging, and reproducibility.
+- **Glossary-style writing can read as terse.** The compactness
+  that makes the book a good reference can also make first
+  reading feel encyclopedic rather than narrative.
+
+---
+
+## Notable Failure Modes the Book Helps Prevent
+
+| Mistake | Where the Book Addresses It |
+|---|---|
+| Comparing means with the t-test when distributions are skewed | Ch. 3: permutation alternative |
+| Stopping an A/B test early because it "looks significant" | Ch. 3: power, sample-size pre-registration |
+| Reporting a p-value of 0.04 as a "win" without effect size | Ch. 3: effect size + CI together |
+| Using accuracy on an imbalanced classification problem | Ch. 5: precision/recall, AUC, lift |
+| Skipping feature standardization before KNN, K-means, or PCA | Ch. 5–7: scaling as prerequisite |
+| Treating a high R² as proof a model will generalize | Ch. 4: train/test, cross-validation |
+| Choosing deep learning for a 50,000-row tabular problem | Ch. 6: XGBoost as the right default |
+
+---
+
+## Comparative Position
+
+| Book | Target Reader | Mathematical Depth | Code |
+|---|---|---|---|
+| *Naked Statistics* | Curious lay reader | Minimal | None |
+| **Practical Statistics for Data Scientists** | **Working data scientist** | **Moderate** | **R + Python** |
+| *An Introduction to Statistical Learning* | Advanced undergraduate / practitioner | Moderate-high | R (Python edition exists) |
+| *The Elements of Statistical Learning* | Graduate student / researcher | High | Minimal |
+| *Statistical Rethinking* | Bayesian curious practitioner | Moderate | R (Stan) |
+
+The Bruces' book is the only one in this list explicitly written
+as a working reference for the moment when a data scientist
+needs to look something up, do it correctly, and ship — without
+re-reading half a textbook.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|---|---|---|
+| Practical Utility | 9.5/10 | Directly applicable to daily data work |
+| Breadth | 8/10 | The intended seven chapters; deliberately skips many topics |
+| Depth | 7/10 | Sufficient for application; insufficient for derivation |
+| Code Quality | 9/10 | Cross-language, current, readable |
+| Readability | 8/10 | Compact and dense; reads better as reference than narrative |
+| Timeliness | 9/10 | 2nd edition (2020) covers XGBoost, modern scikit-learn |
+| **Overall** | **8.8/10** | The default working-statistician reference for data scientists |
+
+The book earns its place on the short shelf of statistics titles
+a working data scientist should own. It will not turn the reader
+into a statistician, but it will close the gap between "I can
+fit a model" and "I can defend my conclusions" — which is the
+gap most data science careers actually live in.

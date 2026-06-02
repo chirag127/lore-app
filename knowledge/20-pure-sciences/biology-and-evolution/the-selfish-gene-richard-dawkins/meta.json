@@ -1,0 +1,94 @@
+{
+  "slug": "the-selfish-gene-richard-dawkins",
+  "title": "The Selfish Gene",
+  "subtitle": "The Gene's-Eye View of Evolution and the Birth of Memetics",
+  "author": "Richard Dawkins",
+  "publicationYear": 1976,
+  "editions": [
+    {
+      "year": 1976,
+      "label": "1st edition",
+      "pages": 224,
+      "isbn": "978-0-19-857519-1"
+    },
+    {
+      "year": 1989,
+      "label": "2nd edition",
+      "pages": 352,
+      "isbn": "978-0-19-286092-7"
+    },
+    {
+      "year": 2006,
+      "label": "30th Anniversary Edition",
+      "pages": 360,
+      "isbn": "978-0-19-929115-1"
+    },
+    {
+      "year": 2016,
+      "label": "40th Anniversary Edition",
+      "pages": 464,
+      "isbn": "978-0-19-878860-7"
+    }
+  ],
+  "isbn": "9780198788607",
+  "publisher": "Oxford University Press",
+  "language": "en",
+  "pageCount": 464,
+  "genres": [
+    "Popular Science",
+    "Evolutionary Biology",
+    "Science Writing"
+  ],
+  "subjects": [
+    "Evolutionary biology",
+    "Natural selection",
+    "Sociobiology",
+    "Genetics",
+    "Gene-centered evolution",
+    "Kin selection",
+    "Altruism",
+    "Memetics"
+  ],
+  "themes": [
+    "Gene-centered view of evolution — genes are the primary unit of selection",
+    "Altruism explained through kin selection and inclusive fitness",
+    "The selfish gene as a metaphor, not a claim about conscious motives",
+    "Evolutionarily Stable Strategy (ESS) as a framework for behavioral evolution",
+    "Memes as cultural replicators — units of imitation and cultural evolution",
+    "The extended phenotype — genes exert influence beyond the individual body",
+    "Cooperation emerging from competition at the gene level"
+  ],
+  "tags": [
+    "evolution",
+    "natural-selection",
+    "genetics",
+    "selfish-gene",
+    "altruism",
+    "kin-selection",
+    "memes",
+    "sociobiology",
+    "darwinism",
+    "game-theory",
+    "ess",
+    "extended-phenotype",
+    "richard-dawkins",
+    "popular-science",
+    "evolutionary-biology",
+    "tit-for-tat",
+    "cooperation",
+    "classic"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "awards": [
+    "Royal Society of Literature Award (1987)",
+    "Michael Faraday Award of the Royal Society (1990)",
+    "Nakayama Prize for Human Science (1994)",
+    "International Cosmos Prize (1997)",
+    "Nierenberg Prize for Science in the Public Interest (2009)",
+    "Listed in The Guardian's 100 Greatest Nonfiction Books",
+    "Included in Nature's 'Books that changed science'"
+  ],
+  "excerpt": "We are survival machines — robot vehicles blindly programmed to preserve the selfish molecules known as genes. The metaphor of the selfish gene challenges us to see evolution from the perspective of DNA: immortal replicators that use bodies as temporary vehicles in their relentless drive toward posterity."
+}

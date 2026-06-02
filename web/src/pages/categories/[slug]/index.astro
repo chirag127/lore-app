@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cats = new Set<string>();
+  const books = await getCollection('books');
+  for (const b of books) {
+    if (b.data.category) cats.add(b.data.category);
+  }
+  return Array.from(cats).map(cat => ({ params: { slug: cat } }));
+}
+
+const { slug } = Astro.params;
+const books = await getCollection('books');
+const catBooks = books.filter(b => b.data.category === slug);
+
+// Get category overview
+const overviewAll = await getCollection('overview');
+const overviewEntry = overviewAll.find(e => e.id.startsWith(slug.replace('/', '\\')));
+let Content = null;
+if (overviewEntry) {
+  const rendered = await render(overviewEntry);
+  Content = rendered.Content;
+}
+
+// Build subcategory map
+interface SubInfo { name: string; count: string; slug: string; books: CollectionEntry<'books'>[] }
+const subMap = new Map<string, SubInfo>();
+for (const b of catBooks) {
+  const sub = b.data.subcategory ?? 'general';
+  if (!subMap.has(sub)) {
+    subMap.set(sub, { name: sub, count: '0', slug: sub, books: [] });
+  }
+  subMap.get(sub)!.books.push(b);
+}
+for (const [, v] of subMap) {
+  v.count = v.books.length.toString();
+}
+const subs = Array.from(subMap.values()).sort((a, b) => b.books.length - a.books.length);
+const catName = slug.split('-').slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+---
+
+<BaseLayout title={`${catName} — KnowledgeAtlas`} description={`Browse ${catBooks.length} books in ${catName}.`}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <p class="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-terracotta-500">
+      Category
+    </p>
+    <h1 class="font-display text-display-lg font-light mt-4 mb-2 text-balance">
+      {catName}
+    </h1>
+    <p class="text-ink-soft text-pretty max-w-2xl">
+      {catBooks.length} {catBooks.length === 1 ? 'book' : 'books'} across {subs.length} subcategories.
+    </p>
+
+    {Content && (
+      <div class="prose-bookatlas mt-8 p-5 sm:p-6 border border-rule grain-card grain-overlay">
+        <Content />
+      </div>
+    )}
+
+    <div class="mt-12 space-y-10">
+      {subs.map((sub) => (
+        <section class="border-t border-rule pt-6">
+          <div class="flex flex-wrap items-baseline gap-3 mb-4">
+            <h2 class="font-display text-xl font-light">{sub.name}</h2>
+            <span class="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-ink-mute">
+              {sub.count} {sub.books.length === 1 ? 'book' : 'books'}
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-3 sm:gap-x-4 gap-y-6">
+            {sub.books.sort((a, b) => (a.data.addedAt ?? 0) > (b.data.addedAt ?? 0) ? -1 : 1).map((b) => (
+              <a href={`/books/${b.data.slug}`} class="group block">
+                {b.data.cover?.url ? (
+                  <img src={b.data.cover.url} alt={b.data.title} class="w-full aspect-[2/3] object-cover shadow-sm group-hover:shadow-md transition-shadow" loading="lazy" />
+                ) : (
+                  <div class="w-full aspect-[2/3] bg-parchment-100 border border-rule flex items-center justify-center p-3">
+                    <span class="font-display text-sm text-center text-ink-soft leading-tight">{b.data.title}</span>
+                  </div>
+                )}
+                <h3 class="mt-2 font-display text-sm font-light leading-tight text-pretty group-hover:text-terracotta-500 transition-colors">
+                  {b.data.title}
+                </h3>
+                <p class="text-xs text-ink-soft truncate">{b.data.authors.join(', ')}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,132 @@
+{
+  "slug": "the-prince-niccolo-machiavelli",
+  "title": "The Prince",
+  "author": "Niccolò Machiavelli",
+  "date": 1532,
+  "category": "13-political-science",
+  "subcategory": "political-theory",
+  "tags": [
+    "political-theory",
+    "power",
+    "leadership",
+    "italian-politics",
+    "renaissance",
+    "realism"
+  ],
+  "isbn": "978-0-14-044928-7",
+  "publisher": "Penguin Classics",
+  "year": 1532,
+  "pages": 128,
+  "original_title": "Il Principe",
+  "latin_title": "De Principatibus",
+  "original_language": "Italian",
+  "written": 1513,
+  "published_posthumously": true,
+  "author_birth": "1469-05-03",
+  "author_death": "1527-06-21",
+  "author_nationality": "Italian",
+  "author_city": "Florence",
+  "genre": [
+    "political philosophy",
+    "political treatise",
+    "non-fiction"
+  ],
+  "period": "Renaissance",
+  "themes": [
+    "political realism",
+    "virtue and fortune",
+    "power and leadership",
+    "military strategy",
+    "human nature",
+    "appearance vs. reality",
+    "the ends justify the means",
+    "republican ideals"
+  ],
+  "key_figures": [
+    "Cesare Borgia",
+    "Lorenzo de' Medici",
+    "Pope Alexander VI",
+    "Hannibal",
+    "Scipio Africanus"
+  ],
+  "chapters": 26,
+  "structure": {
+    "sections": [
+      {
+        "name": "Types of Principalities",
+        "chapters": "1-9"
+      },
+      {
+        "name": "Military Affairs",
+        "chapters": "10-14"
+      },
+      {
+        "name": "The Prince's Character",
+        "chapters": "15-23"
+      },
+      {
+        "name": "Italy and the Future",
+        "chapters": "24-26"
+      }
+    ]
+  },
+  "influences": [
+    "Roman Republic",
+    "Livy",
+    "Cesare Borgia",
+    "Florentine Republic",
+    "Renaissance Italy"
+  ],
+  "influenced": [
+    "Thomas Hobbes - Leviathan",
+    "Jean-Jacques Rousseau",
+    "Modern political science",
+    "International relations realism",
+    "Corporate leadership theory"
+  ],
+  "related_books": [
+    {
+      "title": "Discourses on Livy",
+      "author": "Niccolò Machiavelli",
+      "year": 1531
+    },
+    {
+      "title": "Leviathan",
+      "author": "Thomas Hobbes",
+      "year": 1651
+    },
+    {
+      "title": "The Republic",
+      "author": "Plato",
+      "year": -380
+    },
+    {
+      "title": "On War",
+      "author": "Carl von Clausewitz",
+      "year": 1832
+    },
+    {
+      "title": "The Art of War",
+      "author": "Niccolò Machiavelli",
+      "year": 1521
+    }
+  ],
+  "historical_context": {
+    "period": "Italian Renaissance",
+    "location": "Florence, Italy",
+    "political_situation": "Fragmented Italian city-states, Medici return to power, foreign invasions",
+    "author_circumstances": "Exiled from public life after Medici restoration in 1512, wrote The Prince in hopes of regaining political relevance"
+  },
+  "scholarly_debate": {
+    "machiavellianism": "The popular reading of Machiavelli as amoral cynic is contested by scholars who emphasize his republican works",
+    "republican_machiavelli": "Discourses on Livy reveals a committed republican, creating a puzzle about reconciling the two Machiavellis",
+    "purpose": "Debate continues over whether The Prince is sincere advice, satire, or a response to emergency conditions"
+  },
+  "files": [
+    "index.mdx",
+    "01-content.mdx",
+    "02-analysis.mdx",
+    "03-narration.mdx",
+    "meta.json"
+  ]
+}

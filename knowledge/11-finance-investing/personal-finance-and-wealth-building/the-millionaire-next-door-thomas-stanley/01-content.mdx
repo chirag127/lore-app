@@ -1,0 +1,220 @@
+---
+title: Deep Content — The Millionaire Next Door
+chapter: 1
+---
+
+## The Wealth Equation
+
+Stanley and Danko's central diagnostic tool is the Expected Net Worth formula.
+It provides a benchmark based on age and income:
+
+```mermaid
+flowchart TD
+  A["Your Age (years)"] --> C["×"]
+  B["Annual Pre‑tax Income ($)"] --> C
+  C --> D["= Product"]
+  D --> E["÷ 10"]
+  E --> F["Expected Net Worth"]
+  G["Actual Net Worth"] --> H{"Compare"}
+  F --> H
+  H -->|"≥ 2× Expected"| I["🏆 PAW — Prodigious Accumulator"]
+  H -->|"≈ Expected"| J["AAW — Average Accumulator"]
+  H -->|"≤ 0.5× Expected"| K["⚠️ UAW — Under Accumulator"]
+```
+
+**Example:** A 45-year-old earning $120,000/year
+should have an expected net worth of (45 × 120,000) ÷ 10 = **$540,000**.
+If their actual net worth is $1.08M or more, they are a PAW.
+If it is $270k or less, they are a UAW.
+
+> **Important caveat:** The formula overstates expected net worth for people
+> under 50 (who have had fewer earning years). The authors recommend deducting
+> years spent in advanced education, military service, or disability from age
+> when calculating.
+
+---
+
+## The Wealth Equation (Full Form)
+
+```mermaid
+flowchart LR
+  A["Income (earned)"] --> C["+"]
+  B["Inheritance / Gifts"] --> C
+  C --> D["Total Inflow"]
+  D --> E["−"]
+  F["Consumption"] --> E
+  E --> G["= Net Worth"]
+  G --> H{"Invested?"}
+  H -->|Yes| I["Assets Appreciate"]
+  I --> J["Compounds Over Time"]
+  J --> K["💰 Financial Independence"]
+  H -->|No| L["Stagnant or Declining Net Worth"]
+```
+
+Wealth is not what you earn. It is what you keep after spending. The book
+drives home that high-income professionals (doctors, lawyers) often have lower
+net worth than blue-collar business owners because their consumption rises with
+income.
+
+---
+
+## The 7 Traits of Millionaires
+
+```mermaid
+mindmap
+  root(("7 Traits of<br/>Millionaires"))
+    (1. Live Below Your Means)
+      Frugal spending
+      Avoid luxury goods
+      Buy used cars, modest homes
+    (2. Efficient Allocation)
+      8.4 h/month on financial planning
+      Budgeting & tax strategy
+      Invest 20% of income
+    (3. Independence > Status)
+      Freedom over flash
+      Ignore "keeping up with Joneses"
+      Drive same car for 10+ years
+    (4. No EOC from Parents)
+      Self-made, not subsidized
+      80% are first‑generation wealthy
+    (5. Self‑Sufficient Children)
+      Kids pay own way
+      No lifestyle subsidies
+    (6. Target Market Opportunities)
+      Find underserved niches
+      Provide services the wealthy need
+    (7. Right Occupation)
+      Disproportionately self‑employed
+      Own "unsexy" businesses
+      Welding, paving, accounting
+```
+
+### Trait 1: Live Below Your Means
+
+This is the foundation. Stanley's millionaires are not misers — they are
+deliberate. They spend on things they value (quality education, good financial
+advice) and cut ruthlessly on status signals.
+
+| Expense Category | Typical Millionaire | Average American |
+|-----------------|--------------------|-----------------|
+| Suit | ~$399 | ~$600+ |
+| Shoes | ~$140 | ~$100+ (but more frequent) |
+| Car (lifetime max) | ~$29,190 | ~$48,000+ |
+| Car as % of Net Worth | < 1% | ~30% |
+| Home value as % of NW | < 20% | Often > 50% |
+
+### Trait 2: Efficient Allocation of Time & Money
+
+PAWs spend an average of **8.4 hours per month** on financial planning —
+budgeting, investment research, tax strategy. UAWs spend roughly half that.
+The correlation between planning time and net worth is significant: PAWs have
+6–10× the wealth of UAWs.
+
+### Trait 3: Financial Independence Over Social Status
+
+> "We wear nice watches. They just aren't Rolexes."
+
+The book's millionaires consistently rank financial independence as their top
+priority — above prestige, above luxury, above the admiration of neighbors.
+
+### Trait 4: No Economic Outpatient Care
+
+Economic Outpatient Care (EOC) refers to ongoing financial gifts from parents
+to adult children. The data shows this backfires:
+
+- Adult children who receive EOC have **57% of the net worth** of those who
+  don't, despite having **98% of the income**
+- 46% of affluent parents give at least $15,000/year in EOC
+- Regular EOC is absorbed into the recipient's perceived income, funding a
+  lifestyle they cannot independently maintain
+
+### Trait 5: Self-Sufficient Adult Children
+
+Children of PAWs often report they **never knew** their parents were wealthy
+while growing up. Children of UAWs try to emulate their parents'
+high-consumption lifestyle.
+
+### Trait 6: Targeting Market Opportunities
+
+The wealthy look for underserved niches. The authors found millionaires in
+unexpected industries — welding contracting, pest control, auctioneering —
+where competition for clients is less intense and margins are stable.
+
+### Trait 7: Choosing the Right Occupation
+
+Self-employed individuals represent ~20% of the US workforce but ~66% of
+millionaires. Business ownership provides tax advantages, equity appreciation,
+and income control that salaried jobs rarely match.
+
+---
+
+## Spending vs. Wealth Accumulation Matrix
+
+```mermaid
+quadrantChart
+  title Spending vs. Wealth Accumulation
+  x-axis "Low Spending" --> "High Spending"
+  y-axis "Low Wealth" --> "High Wealth"
+  quadrant-1 "PAW: Ideal (High Wealth, Low Spending)"
+  quadrant-2 "High Earner / High Spender (High Wealth, High Spending)"
+  quadrant-3 "UAW: Struggling (Low Wealth, High Spending)"
+  quadrant-4 "Frugal Beginner (Low Wealth, Low Spending)"
+  "Business Owner (est. 1985)": [0.2, 0.85]
+  "Engineer (frugal)": [0.25, 0.7]
+  "Doctor (high earner)": [0.75, 0.6]
+  "Lawyer (status‑conscious)": [0.85, 0.35]
+  "Marketing Executive": [0.8, 0.25]
+  "Recent Grad (frugal)": [0.25, 0.15]
+  "Artist": [0.4, 0.1]
+  "Welding Contractor": [0.15, 0.9]
+```
+
+The sweet spot is the top-left quadrant: **high wealth, low spending**. This is
+where PAWs live. The most dangerous zone is the bottom-right: high spending
+with low wealth — the classic UAW profile, regardless of income level.
+
+---
+
+## The Millionaire Profile (Statistical Snapshot)
+
+Based on Stanley's surveys of millionaires (net worth $1M–$10M):
+
+| Characteristic | Finding |
+|---------------|---------|
+| First-generation wealthy | ~80% |
+| Self-employed | ~66% |
+| Own their home | ~97% |
+| Own stocks | ~95% |
+| Annual realized income as % of wealth | ~8.2% |
+| Annual income tax as % of wealth | ~2% |
+| Debt as % of net worth | < 5% |
+| Home value as % of net worth | < 20% |
+| Never spent >$400 on a suit | >50% |
+| Drive American-made cars | Majority (1996 data) |
+| Have a written financial plan | Majority |
+
+---
+
+## "Big Hat, No Cattle"
+
+The book's defining metaphor comes from Texas ranching culture. A cowboy wearing
+an enormous hat but owning no cattle is all show, no substance. Applied to
+wealth: people who drive luxury cars, live in mansions, and wear designer labels
+are often the least wealthy. They are financing appearances with debt.
+
+> "Many people who live in expensive homes and drive luxury cars do not actually
+> have much wealth. Many people who have a great deal of wealth do not even live
+> in upscale neighborhoods."
+
+---
+
+## The Cost of Looking Rich
+
+The book calculates the real cost of status spending. Every dollar spent on
+conspicuous consumption is a dollar that cannot compound. At an 8% average
+annual return, a $50,000 luxury car costs over $500,000 in forgored wealth
+over 30 years. A $1,000 watch costs over $10,000.
+
+The message is not to never spend — it is to spend deliberately on things
+that matter, and cut waste on things that only serve to impress others.

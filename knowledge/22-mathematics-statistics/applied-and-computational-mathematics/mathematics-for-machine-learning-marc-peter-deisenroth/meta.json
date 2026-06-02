@@ -1,0 +1,137 @@
+{
+  "slug": "mathematics-for-machine-learning-marc-peter-deisenroth",
+  "title": "Mathematics for Machine Learning",
+  "subtitle": "A Comprehensive Guide to the Mathematical Foundations of ML",
+  "authors": [
+    "Marc Peter Deisenroth",
+    "A. Aldo Faisal",
+    "Cheng Soon Ong"
+  ],
+  "isbn13": "9781108453989",
+  "isbn13Hardcover": "9781108526938",
+  "publisher": "Cambridge University Press",
+  "year": 2023,
+  "edition": 2,
+  "pages": 392,
+  "language": "en",
+  "olid": "OL28141419W",
+  "difficulty": "hard",
+  "readingTimeMinutes": 840,
+  "listeningTimeMinutes": 1020,
+  "freePdf": "https://mml-book.github.io/",
+  "tags": [
+    "mathematics",
+    "machine-learning",
+    "linear-algebra",
+    "analytic-geometry",
+    "matrix-decompositions",
+    "vector-calculus",
+    "probability",
+    "statistics",
+    "optimization",
+    "gradient-descent",
+    "bayesian-inference",
+    "eigen-decomposition",
+    "singular-value-decomposition",
+    "textbook",
+    "marc-peter-deisenroth",
+    "aldo-faisal",
+    "cheng-soon-ong",
+    "cambridge-university-press",
+    "ucl"
+  ],
+  "keyIdeas": [
+    "Linear algebra is the language of data: vectors encode examples, matrices encode transformations, and tensor operations underlie every neural network forward pass",
+    "Analytic geometry reveals the geometry of high-dimensional spaces — inner products, norms, orthogonal projections, and rotations — that make geometric intuition precise",
+    "Matrix decompositions (eigendecomposition, SVD, Cholesky) expose latent structure in data and power algorithms from PCA to recommender systems",
+    "Vector calculus provides the gradient, Jacobian, and Hessian — the tools that make differentiable programming possible and backpropagation derivable",
+    "Probability quantifies uncertainty: random variables, Bayes' rule, and estimators (MLE, MAP) form the foundation of statistical learning",
+    "Continuous optimization turns learning into a numerical problem: gradient descent, stochastic methods, and constrained optimization are the engines of model fitting",
+    "Mathematical maturity is a prerequisite for genuine ML understanding — libraries hide the math but not the assumptions, the failure modes, or the limits"
+  ],
+  "keyTakeaways": [
+    "Vectors, matrices, and tensor operations are not abstractions — they are the literal data structures flowing through every model",
+    "Eigendecomposition characterizes linear maps; SVD generalizes to non-square matrices and is the workhorse of dimensionality reduction",
+    "The gradient of a scalar loss points in the direction of steepest ascent; gradient descent follows the negative gradient to find minima",
+    "Jacobians generalize gradients to vector-valued functions and are the building block of the chain rule (backpropagation)",
+    "Maximum likelihood estimation finds parameters that maximize the probability of observed data; MAP adds a prior to regularize",
+    "Convex problems have a unique global minimum that gradient methods can find efficiently; non-convex problems (deep learning) require care",
+    "Constrained optimization via Lagrange multipliers extends calculus to problems with equality and inequality constraints",
+    "The book deliberately avoids ML applications until the final worked-examples chapter — the math must stand on its own"
+  ],
+  "whoShouldRead": [
+    "Undergraduate and graduate students in machine learning, data science, or applied mathematics needing a unified math foundation",
+    "ML practitioners who learned frameworks by imitation and want to understand the derivations behind gradient descent, PCA, and backpropagation",
+    "Self-taught engineers whose math has gaps in linear algebra, vector calculus, or probability and want a single rigorous reference",
+    "Researchers transitioning into ML from physics, engineering, or statistics who need the conventions of the ML community explained",
+    "Educators designing an ML math curriculum and looking for a textbook that builds from first principles"
+  ],
+  "whoShouldSkip": [
+    "Readers seeking hands-on ML code — this is a math textbook; the single worked-examples chapter is the only ML application",
+    "Practitioners needing production deep learning guidance — the book predates transformers and contains no coverage of modern architectures",
+    "Anyone looking for a quick, non-technical overview — every page requires working through derivations",
+    "Readers whose goal is to pass a coding interview — this book builds deep understanding, not short-term recall tricks",
+    "Statisticians who already master probability and linear algebra at a graduate level will find the coverage survey-level"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+      "reason": "The canonical deep learning textbook; assumes the linear algebra, probability, and calculus foundations that this book builds from scratch"
+    },
+    {
+      "title": "Pattern Recognition and Machine Learning",
+      "author": "Christopher Bishop",
+      "reason": "A more comprehensive ML text with the same mathematical seriousness; the natural next step after mastering this book's foundations"
+    },
+    {
+      "title": "Introduction to Linear Algebra",
+      "author": "Gilbert Strang",
+      "reason": "The classic linear algebra text; deeper on the geometry and intuition that this book condenses into a few chapters"
+    },
+    {
+      "title": "Convex Optimization",
+      "author": "Stephen Boyd & Lieven Vandenberghe",
+      "reason": "The standard reference for the optimization chapter; covers convex analysis in far greater depth with engineering applications"
+    },
+    {
+      "title": "Probabilistic Machine Learning",
+      "author": "Kevin P. Murphy",
+      "reason": "An ML textbook that treats probability as the unifying framework; deepens this book's probability chapter with Bayesian modeling"
+    },
+    {
+      "title": "The Matrix Calculus You Need For Deep Learning",
+      "author": "Terence Parr & Jeremy Howard",
+      "reason": "A short, focused companion that derives the gradient rules used in backpropagation; useful supplement to the vector calculus chapter"
+    },
+    {
+      "title": "Information Theory, Inference, and Learning Algorithms",
+      "author": "David MacKay",
+      "reason": "A free, idiosyncratic masterpiece that connects probability, information theory, and learning — the philosophical complement to this book's formalism"
+    }
+  ],
+  "editions": [
+    {
+      "edition": 1,
+      "year": 2020,
+      "isbn13": "9781108453989",
+      "pages": 417,
+      "notes": "First edition, published 2020. Free PDF draft available at mml-book.github.io."
+    },
+    {
+      "edition": 2,
+      "year": 2023,
+      "isbn13": "9781108453989",
+      "isbn13Hardcover": "9781108526938",
+      "pages": 392,
+      "notes": "Second edition, published December 2023. Refined based on classroom use at UCL, ETH, and partner institutions."
+    }
+  ],
+  "awards": [
+    "Cambridge University Press, 2023 (2nd edition)",
+    "Free PDF openly available at mml-book.github.io",
+    "Adopted at UCL Centre for AI, ETH Zürich, TU Munich, and dozens of graduate ML programs worldwide",
+    "Average rating 4.5+ on Amazon and Goodreads (hundreds of reviews)"
+  ],
+  "excerpt": "We wrote this book because the mathematical foundations of machine learning are increasingly important to practitioners, yet they are often taught in disconnected fragments across courses on linear algebra, calculus, probability, and optimization. This book unifies the four pillars into a single coherent narrative: the math you need to read, understand, and contribute to modern machine learning research — without drowning in excessive formalism."
+}

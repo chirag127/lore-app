@@ -1,0 +1,48 @@
+## Key Problem
+
+The core problem Craig addresses is **how to make a general-purpose mechanical manipulator move precisely and reliably under computer control**. This decomposes into a chain of subproblems: how to describe the robot's geometry mathematically (kinematic modeling), how to compute what joint angles produce a desired hand pose (inverse kinematics), how to relate joint motions to hand motions (velocity kinematics), how to compute the forces required to produce desired accelerations (dynamics), how to generate smooth motion commands (trajectory planning), how to design feedback controllers that track these commands despite model uncertainty and disturbances (linear and nonlinear control), and how to handle physical contact with the environment (force control). The deeper problem is that all of these subproblems are coupled: the controller that works at low speeds fails at high speeds because dynamic coupling becomes dominant, and the kinematic model that works in free space breaks down when the robot contacts a rigid surface.
+
+## Proposed Solution
+
+Craig's solution is the systematic application of rigid-body mechanics and control theory to each subproblem, unified by the framework of homogeneous transformations and the Jacobian. For kinematics, the DH convention provides a universal language for modeling any serial manipulator. For dynamics, the recursive Newton-Euler algorithm provides an efficient O(n) computation suitable for real-time control. For control, feedback linearization (computed-torque control) cancels the nonlinear dynamics, reducing the problem to linear servo control. For force control, the hybrid position/force framework partitions task space into position-controlled and force-controlled subspaces using a selection matrix. The overarching approach is **model-based control**: build as accurate a model of the robot as possible, then use that model in the controller. This contrasts with model-free approaches (PID without dynamics compensation, or neural network-based control) that treat the robot as a black box.
+
+## Evidence & Argumentation
+
+The evidence for Craig's approach is primarily mathematical derivation supported by computational verification. The argument proceeds by showing that:
+- The DH convention produces correct forward kinematic solutions for any serial manipulator (verified by examples through the PUMA 560)
+- Closed-form inverse kinematic solutions exist for manipulators with intersecting wrist axes (Pieper's criterion)
+- The Newton-Euler algorithm yields torque predictions that agree with the Lagrangian formulation (cross-verification of two approaches)
+- Computed-torque control results in exponentially stable error dynamics if the model is exact
+- Experimental results from the hybrid force control literature (Raibert & Craig, 1981) demonstrate the effectiveness of the force control framework
+
+The book does not cite comprehensive experimental validation — there are no plots of actual robot tracking errors or comparisons of different controllers on real hardware. The evidence is theoretical, not empirical. The implicit assumption is that if the mathematics is correct and the algorithms implementable, the approach will work in practice — an assumption that holds for well-characterized industrial robots but breaks down with significant model uncertainty.
+
+## Unresolved Questions
+
+The book leaves several practical challenges open. **Model uncertainty** is acknowledged but not fully addressed: how to handle parameter variation (warm robots have different friction than cold ones, payload changes affect dynamics). **Joint flexibility**, especially from harmonic drives, is mentioned but the control implications (fourth-order dynamics with lightly damped resonances) are not developed. **Actuator saturation** — the fact that motors have torque and velocity limits — is discussed only briefly. **Sensor noise** in force control and its effect on stability is mentioned but not analyzed. **High-speed collision detection** and safe interaction with humans (now critical for collaborative robots) are not addressed. The relationship between force control and impedance control is presented but the practical tuning of impedance parameters for unknown environments is left as an exercise for the engineer.
+
+## Criticisms
+
+**Kevin Lynch (Carnegie Mellon University)**, co-author of *Modern Robotics* (2017), argues in the preface that Craig's exclusive focus on industrial manipulators "does not serve students entering a field where mobile robots, humanoids, and multi-robot systems dominate." He criticizes the DH parameter approach as "unnecessarily complex for modern applications" and advocates the product-of-exponentials (PoE) formula based on screw theory as a simpler and more general alternative.
+
+**Reddit r/robotics community (2023)** consistently reports two problems: the 4th edition contains numerous typographical errors in equations, and the book's exclusive MATLAB orientation (with no Python or ROS support) makes it feel outdated to students who learn using modern robotics software stacks. A highly upvoted comment states "the theory is gold, but the examples need a total rewrite for ROS 2 and Python."
+
+**Peter Corke (Queensland University of Technology)**, author of *Robotics, Vision and Control* (2017), notes in his preface that while Craig's book is "an excellent reference for manipulator kinematics and dynamics," it neglects the sensor processing, vision, and mobile robotics aspects that constitute the majority of modern robotics research. Corke's own book explicitly positions itself as covering what Craig omits.
+
+**Amazon reviewer Dr. M. Khan (3-star review, 2018)** notes that the 4th edition "adds little to the 3rd edition" — despite a 10-year gap between editions, the updates are minimal: some color images, a few more MATLAB exercises, and a short mention of ROS. The core content remains largely unchanged from the 1986 original.
+
+**Inderscience Research (book review, 2009)** praised the book's kinematics and dynamics coverage but noted that "the control chapters are too brief for the material to be applied without supplementary texts." The review specifically identified the nonlinear control chapter as needing more worked examples and simulation case studies.
+
+## Alternative Solutions
+
+**Screw-theory-based kinematics (Modern Robotics, Lynch & Park, 2017).** The PoE formula replaces DH parameters by representing the robot as a product of exponentials of twists. Advantages: no link frames need to be assigned (fewer opportunities for error), naturally handles both serial and parallel robots, and extends to mobile manipulation. Disadvantage: requires learning screw theory, which has a steeper initial conceptual curve.
+
+**Operational space control (Khatib, 1987).** Instead of controlling joint space and transforming to task space, Khatib formulates the dynamics directly in task (operational) space. This approach handles both motion and force control in a unified framework and is widely used in humanoid robotics. Craig mentions it only in passing.
+
+**Passivity-based control.** Rather than canceling the nonlinear dynamics (as in computed-torque control), passivity-based approaches shape the system's energy to achieve stability without requiring exact model cancellation. These methods are more robust to model uncertainty and are now preferred in many applications. Craig does not cover them.
+
+**Reinforcement learning for robot control.** Modern approaches learn controllers from data, avoiding the need for accurate dynamic models. While these methods have significant limitations (sample efficiency, safety guarantees), they complement Craig's model-based approach. The field has advanced considerably since the 4th edition.
+
+## Practical Applications
+
+The book's methods apply directly to **industrial manufacturing** (welding, painting, assembly, material handling) where the robots are well-characterized serial-link manipulators operating in structured environments. The PUMA 560 was actually used at General Motors for transmission assembly — Craig's chapters on hybrid force control derive from the exact techniques developed for these applications. The computed-torque method is implemented in most industrial robot controllers for high-speed pick-and-place operations. The trajectory planning methods generate the smooth motions seen in automotive painting and welding. The force control methods are used in deburring, polishing, and precision assembly. **Key takeaway for practitioners**: the kinematics and dynamics methods from Chapters 3-6 are directly implementable. The control methods from Chapters 9-10 should be treated as starting points — real implementation requires adding anti-windup for integrators, command filtering, and gain scheduling. The force control methods in Chapter 11 are the most demanding: they require accurate force sensing, stiff enough structural design, and careful tuning of gains to avoid instability at contact.

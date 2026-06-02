@@ -1,0 +1,124 @@
+## Overview
+
+*Operating Systems: Three Easy Pieces* (OSTEP, 2018) by Remzi H. Arpaci-Dusseau
+and Andrea C. Arpaci-Dusseau is the most celebrated OS textbook of the past
+decade. Built around the metaphor of "three easy pieces" — virtualization,
+concurrency, and persistence — it replaces dry formalism with conversational
+clarity, real C code snippets, and a steady cadence of "Crux" questions that
+drive the narrative forward.
+
+The book is freely available at [ostep.org](https://ostep.org) and has been
+adopted at hundreds of universities worldwide.
+
+---
+{}
+-------|------|----------|---------------|
+| **Virtualization** | CPU | 4–12 | How does the OS give each process its own CPU? |
+| **Virtualization** | Memory | 13–26 | How does the OS give each process its own memory? |
+| **Concurrency** | Threads | 26–34 | How do multiple threads cooperate safely? |
+| **Persistence** | Storage | 35–52 | How does the OS save data reliably across crashes? |
+
+---
+
+## Key Takeaways
+
+1. **The OS is a resource manager that virtualizes hardware.** Each process
+   believes it has its own CPU and its own memory. The OS creates this
+   illusion through mechanisms (hardware support) and policies (scheduling
+   algorithms).
+
+2. **Limited Direct Execution (LDE)** is the fundamental strategy: let the
+   program run directly on the CPU for efficiency, but use timer interrupts
+   and trap handlers to maintain OS control.
+
+3. **Scheduling is a study in trade-offs.** FIFO penalizes short jobs; SJF
+   penalizes interactive jobs; Round Robin penalizes turnaround time. The
+   Multi-Level Feedback Queue (MLFQ) tries to get the best of all worlds by
+   learning from behavior.
+
+4. **Paging with TLBs is the standard for memory virtualization.** Pages
+   eliminate external fragmentation and enable demand paging. TLBs make
+   paging fast by caching address translations in hardware.
+
+5. **Concurrency is hard because of shared state.** Race conditions occur
+   when two threads access shared data without synchronization. Locks,
+   semaphores, and condition variables provide structured ways to coordinate.
+
+6. **Persistence means surviving crashes.** File systems write data to
+   disk; journaling (write-ahead logging) ensures that a crash during a
+   write leaves the file system in a consistent state.
+
+7. **SSDs are revolutionary but tricky.** No seek penalty, but erase-before-
+   write, limited write endurance, and garbage collection require OS-level
+   adaptation.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| CS undergraduates | The clearest OS textbook — replaces dinosaurs like Silberschatz |
+| Self-taught programmers | Fills a critical gap in understanding how processes, threads, and file systems work |
+| Systems engineers | Deepens practical knowledge of memory, concurrency, and storage |
+| Interview preppers | Covers scheduling, paging, and concurrency — all common system design topics |
+
+---
+
+## Who Should Skip
+
+- Practicing OS kernel developers (too introductory)
+- Anyone who dislikes C code examples (the book uses C extensively)
+- Students who need a math-heavy treatment (this is conceptual, not formal)
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|---|---|
+| Virtualization | Creating illusory resources from physical ones |
+| Concurrency | Coordinating simultaneous access to shared state |
+| Persistence | Making data survive power loss |
+| Mechanism vs. Policy | Separating how from which for modularity |
+| Layering | Building complex systems from clean abstractions |
+
+---
+
+## Why This Book Matters
+
+OSTEP single-handedly modernized OS education. Before it, the standard
+textbooks were dense, formal, and impenetrable. OSTEP proved that OS
+concepts could be taught with clarity, humor, and actual code. It made
+operating systems accessible to a generation of programmers who would
+otherwise have treated the OS as a black box.
+
+Its "three pieces" framing is not just a gimmick — it genuinely helps
+students organize the sprawling landscape of OS concepts into a coherent
+mental model.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Modern Operating Systems** | A. Tanenbaum | The classic comprehensive reference (more breadth, less depth) |
+| **Computer Systems: A Programmer's Perspective** | Bryant & O'Hallaron | Covers the hardware-software interface that OSTEP builds on |
+| **Linux Kernel Development** | R. Love | Practical guide to the Linux kernel (follow-up after OSTEP) |
+
+---
+
+## Final Verdict
+
+OSTEP is the gold standard for learning operating systems in the 21st
+century. It is readable without sacrificing rigor, practical without
+becoming a Linux tutorial, and comprehensive without being overwhelming.
+The freely-available online version removes cost as a barrier.
+
+The only weakness: the book's socratic style sometimes buries key
+equations in prose (the scheduling math can be hard to extract). And the
+self-published print quality is noticeably lower than a commercial press.
+
+**Rating: 9.5/10** — The best OS textbook for self-study and the definitive
+undergraduate introduction.

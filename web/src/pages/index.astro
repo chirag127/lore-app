@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CoverArt from '../components/book/CoverArt.astro';
+import { getCollection } from 'astro:content';
+import { Ornament } from '../components/ui/Primitives.tsx';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => (b.data.addedAt ?? 0) - (a.data.addedAt ?? 0),
+);
+const recent = books.slice(0, 6);
+const totalBooks = books.length;
+const totalIdeas = books.reduce((s, b) => s + b.data.keyIdeas.length, 0);
+const allTags = Array.from(new Set(books.flatMap((b) => b.data.tags))).slice(0, 12);
+---
+<BaseLayout
+  title="KnowledgeAtlas"
+  description="The free platform for understanding knowledge. Read, listen, take notes, build collections — all without a credit card."
+>
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 md:pt-32 pb-16 sm:pb-24 stagger">
+      <p class="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-terracotta-500">
+        A free atlas of books, understood
+      </p>
+      <h1 class="font-display text-display-xl font-light mt-4 text-balance">
+        The internet stores books.<br />
+        <em class="font-variation-wonk text-terracotta-500">KnowledgeAtlas stores understanding.</em>
+      </h1>
+      <p class="mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-ink-soft text-pretty leading-relaxed">
+        A modern, free platform for structured summaries, frameworks,
+        critical analysis, narration, notes, reviews, and reading
+        progress — generated automatically and stored as reusable
+        knowledge, never metadata.
+      </p>
+      <div class="mt-8 sm:mt-10 flex flex-wrap items-center gap-3">
+        <a
+          href="/books"
+          class="inline-flex items-center gap-2 h-12 px-6 bg-terracotta-400 text-parchment-50 hover:bg-terracotta-500 rounded-sm font-medium text-sm tracking-tight"
+        >
+          Open the atlas
+          <span aria-hidden>→</span>
+        </a>
+        <a
+          href="/request"
+          class="inline-flex items-center gap-2 h-12 px-6 border border-rule-strong hover:border-terracotta-400 rounded-sm font-medium text-sm tracking-tight"
+        >
+          Request a book
+        </a>
+      </div>
+      <dl class="mt-12 sm:mt-16 grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl">
+        <div>
+          <dt class="font-mono text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute">Books</dt>
+          <dd class="font-display text-2xl sm:text-4xl md:text-5xl font-light tracking-tight mt-1">{totalBooks.toLocaleString()}</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute">Key ideas</dt>
+          <dd class="font-display text-2xl sm:text-4xl md:text-5xl font-light tracking-tight mt-1">{totalIdeas.toLocaleString()}</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute">Price</dt>
+          <dd class="font-display text-2xl sm:text-4xl md:text-5xl font-light tracking-tight mt-1">$0</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+    <Ornament client:load>Recent additions</Ornament>
+    <h2 class="font-display text-display-lg font-light mt-6 mb-8 sm:mb-12 text-balance">
+      The freshest pages in the atlas
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-3 sm:gap-x-4 gap-y-8 sm:gap-y-10">
+      {recent.map((b) => (
+        <a href={`/books/${b.data.slug}`} class="group block">
+          <div class="relative group-hover:-translate-y-0.5 transition-all duration-500">
+            <CoverArt
+              title={b.data.title}
+              author={b.data.authors[0]}
+              cover={b.data.cover}
+              accent={b.data.cover?.color}
+              class="group-hover:shadow-[var(--shadow-lift)] transition-shadow duration-500"
+            />
+            <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-ink-900/85 to-transparent text-parchment-50 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-[3]">
+              <p class="font-mono text-[0.625rem] uppercase tracking-[0.2em] opacity-80">{b.data.authors[0]}</p>
+              <p class="text-xs mt-0.5 line-clamp-3">{b.data.excerpt}</p>
+            </div>
+          </div>
+          <h3 class="mt-3 font-display text-base font-light leading-tight text-pretty group-hover:text-terracotta-500 transition-colors">
+            {b.data.title}
+          </h3>
+          <p class="text-xs text-ink-soft">{b.data.authors[0]}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {allTags.length > 0 && (
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+      <Ornament client:load>Wander by theme</Ornament>
+      <h2 class="font-display text-display-lg font-light mt-6 mb-8 sm:mb-10 text-balance">
+        A library, like a field guide
+      </h2>
+      <ul class="flex flex-wrap gap-2">
+        {allTags.map((t) => (
+          <li>
+            <a
+              href={`/books?tag=${encodeURIComponent(t)}`}
+              class="inline-flex items-center px-3 h-8 font-mono text-[0.6875rem] uppercase tracking-[0.18em] border border-rule hover:border-terracotta-400 hover:text-terracotta-500 transition-colors"
+            >{t}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <div class="grain-card grain-overlay p-5 sm:p-6">
+        <Ornament client:load>Understand</Ornament>
+        <h3 class="mt-5 sm:mt-6 font-display text-xl sm:text-2xl font-light">Structured knowledge</h3>
+        <p class="mt-2 sm:mt-3 text-sm sm:text-base text-ink-soft">
+          Every book becomes four artifacts: overview, content, analysis,
+          narration. Generated. Validated. Published.
+        </p>
+      </div>
+      <div class="grain-card grain-overlay p-5 sm:p-6">
+        <Ornament client:load>Listen</Ornament>
+        <h3 class="mt-5 sm:mt-6 font-display text-xl sm:text-2xl font-light">Free narration</h3>
+        <p class="mt-2 sm:mt-3 text-sm sm:text-base text-ink-soft">
+          Your device reads to you. No MP3s, no storage, no fees.
+          Walking, commuting, anywhere.
+        </p>
+      </div>
+      <div class="grain-card grain-overlay p-5 sm:p-6 sm:col-span-2 md:col-span-1">
+        <Ornament client:load>Make it yours</Ornament>
+        <h3 class="mt-5 sm:mt-6 font-display text-xl sm:text-2xl font-light">Personal library</h3>
+        <p class="mt-2 sm:mt-3 text-sm sm:text-base text-ink-soft">
+          Notes, reviews, bookmarks, collections, reading progress —
+          synced across devices, owned by you.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

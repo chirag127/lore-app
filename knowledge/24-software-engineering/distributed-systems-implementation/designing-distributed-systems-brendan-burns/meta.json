@@ -1,0 +1,46 @@
+{
+  "title": "Designing Distributed Systems: Patterns and Paradigms for Scalable, Reliable Services",
+  "slug": "designing-distributed-systems-brendan-burns",
+  "authors": [
+    "Brendan Burns",
+    "Dave Ratner",
+    "Kelsey Hightower"
+  ],
+  "isbn": "9781492033532",
+  "publisher": "O'Reilly Media",
+  "pubDate": "2018-03-01",
+  "pages": 168,
+  "level": "Intermediate to Advanced",
+  "duration": "4h 8m",
+  "language": "en",
+  "topics": [
+    "Distributed Systems",
+    "Software Architecture",
+    "Kubernetes",
+    "Cloud-Native",
+    "Microservices",
+    "Design Patterns",
+    "Scalability",
+    "Reliability"
+  ],
+  "tags": [
+    "distributed-systems",
+    "kubernetes",
+    "microservices",
+    "design-patterns",
+    "sidecar",
+    "sharding",
+    "scatter-gather",
+    "event-driven",
+    "faas",
+    "work-queues",
+    "cloud-native"
+  ],
+  "coverImage": "/books/designing-distributed-systems-brendan-burns/cover.webp",
+  "files": [
+    "index.mdx",
+    "01-content.mdx",
+    "02-analysis.mdx",
+    "03-narration.mdx"
+  ]
+}

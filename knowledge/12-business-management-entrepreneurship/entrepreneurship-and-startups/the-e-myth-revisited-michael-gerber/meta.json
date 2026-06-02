@@ -1,0 +1,73 @@
+{
+  "slug": "the-e-myth-revisited-michael-gerber",
+  "title": "The E-Myth Revisited",
+  "subtitle": "Why Most Small Businesses Don't Work and What to Do About It",
+  "authors": ["Michael E. Gerber"],
+  "isbn13": "9780887307287",
+  "isbn10": "0887307280",
+  "publisher": "HarperBusiness",
+  "year": 1995,
+  "pages": 288,
+  "language": "en",
+  "difficulty": "easy",
+  "estimatedReadingHours": 6,
+  "estimatedListeningMinutes": 330,
+  "genres": ["Business", "Entrepreneurship"],
+  "subjects": [
+    "Small Business",
+    "Entrepreneurship",
+    "Business Management",
+    "Systems Thinking",
+    "Franchising",
+    "Business Strategy",
+    "Leadership"
+  ],
+  "themes": [
+    "The entrepreneurial myth — technical skill is not business acumen",
+    "Working ON the business, not IN it",
+    "Systems-dependent vs people-dependent businesses",
+    "The three personalities inside every owner",
+    "Business as a replicable franchise prototype",
+    "Structure and process as paths to freedom"
+  ],
+  "tags": [
+    "e-myth", "michael-gerber", "entrepreneurship", "small-business",
+    "systems", "franchise", "business-management", "startup",
+    "technician-manager-entrepreneur", "business-development",
+    "turnkey", "scaling", "business-systems"
+  ],
+  "excerpt": "Most small businesses fail not because the owner lacks technical skill, but because they suffer from the Entrepreneurial Myth — the fatal assumption that if you understand the technical work of a business, you understand a business that does that technical work. Gerber's solution: stop working IN your business and start working ON it. Build systems so clear and replicable that your business could be franchised 5,000 times, even if you never sell a single franchise.",
+  "whoShouldRead": [
+    "Technicians — bakers, coders, mechanics, consultants — thinking of starting their own business",
+    "Small business owners who feel like they are the business (it stops when they stop)",
+    "Entrepreneurs struggling to scale beyond a one-person operation",
+    "Anyone who confuses being good at a craft with being good at running a business"
+  ],
+  "whoShouldSkip": [
+    "Experienced franchise operators already running multi-unit businesses",
+    "Readers looking for specific marketing tactics or financial how-to",
+    "Those who prefer dense data over extended analogy and storytelling"
+  ],
+  "keyIdeas": [
+    "The E-Myth — most businesses are started by technicians having an entrepreneurial seizure, not by true entrepreneurs",
+    "Three personalities — every owner has an Entrepreneur (vision), Manager (order), and Technician (doing); letting the Technician dominate is fatal",
+    "Business life cycle — Infancy (owner = business), Adolescence (hiring help, growing pains), Maturity (systems run the business)",
+    "Franchise Prototype — build your business as if it will be replicated 5,000 times; the real product is the business itself",
+    "Working ON vs IN — the owner's job is to design the system, not be the system",
+    "Business Development Process — a continuous cycle of Innovation, Quantification, and Orchestration",
+    "Seven-step Business Development Program — Primary Aim, Strategic Objective, Organizational Strategy, Management Strategy, People Strategy, Marketing Strategy, Systems Strategy",
+    "Position contracts — define every role by results, not by person; separate the person from the position",
+    "Systems hierarchy — Hard (physical/technical), Soft (hiring/training/culture), Information (metrics/feedback)",
+    "The franchise mindset — systems-dependent, not people-dependent; ordinary people can produce extraordinary results with the right system"
+  ],
+  "relatedBooks": [
+    "Company of One by Paul Jarvis",
+    "The Lean Startup by Eric Ries",
+    "Built to Last by Jim Collins",
+    "The 4-Hour Workweek by Tim Ferriss",
+    "The Goal by Eliyahu Goldratt",
+    "The Great CEO Within by Matt Mochary",
+    "Traction by Gino Wickman",
+    "Scaling Up by Verne Harnish"
+  ]
+}

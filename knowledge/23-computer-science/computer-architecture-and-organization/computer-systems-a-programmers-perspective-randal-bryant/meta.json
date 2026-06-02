@@ -1,0 +1,60 @@
+{
+  "slug": "computer-systems-a-programmers-perspective-randal-bryant",
+  "title": "Computer Systems: A Programmer's Perspective",
+  "subtitle": "CS:APP",
+  "author": "Randal E. Bryant",
+  "publicationYear": 2003,
+  "isbn": "9780134092669",
+  "publisher": "Pearson",
+  "language": "en",
+  "pageCount": 1120,
+  "genres": [
+    "Computer Science",
+    "Textbook",
+    "Systems Programming"
+  ],
+  "subjects": [
+    "Computer Architecture",
+    "Operating Systems",
+    "Memory Hierarchy",
+    "Linking",
+    "Process Control",
+    "Virtual Memory",
+    "Concurrency",
+    "Network Programming"
+  ],
+  "themes": [
+    "Understanding the hardware-software interface",
+    "Writing efficient and correct C programs through system knowledge",
+    "The memory hierarchy and its impact on performance",
+    "Process management and virtual memory abstraction",
+    "Dynamic memory allocation and garbage collection",
+    "Concurrent programming with threads and synchronization"
+  ],
+  "tags": [
+    "computer-systems",
+    "c-programming",
+    "computer-architecture",
+    "operating-systems",
+    "memory-hierarchy",
+    "virtual-memory",
+    "concurrency",
+    "linking",
+    "csapp",
+    "bryant",
+    "ohallaron",
+    "systems-programming",
+    "performance-optimization",
+    "cmu"
+  ],
+  "difficulty": "hard",
+  "estimatedReadingHours": 40,
+  "estimatedListeningMinutes": 2400,
+  "awards": [
+    "Used as the primary text for CMU's legendary 15-213 course",
+    "Widely adopted at top CS programs worldwide",
+    "ACM SIGCSE Best Paper Award for associated lab design",
+    "Standard reference for systems interview preparation"
+  ],
+  "excerpt": "This book is about the computer system from the perspective of a programmer — the interface between software and hardware. Understanding how a computer actually executes code is essential for writing efficient, correct, and secure programs."
+}

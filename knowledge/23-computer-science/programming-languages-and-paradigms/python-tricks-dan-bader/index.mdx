@@ -1,0 +1,187 @@
+## Overview
+
+*Python Tricks: A Buffet of Awesome Python Features* (1st ed., 2017) by
+Dan Bader is a curated, essay-format guide to the intermediate Python
+idioms most working developers never get around to learning. Dan Bader is
+a Python trainer, speaker, educator, and podcaster — best known for his
+deep-dive tutorials on realpython.com and for hosting the *Talk Python To
+Me* podcast. He self-published *Python Tricks* as a practical companion
+to the book-length Python references already on the shelf, and at roughly
+296 pages it hits a rare sweet spot: short enough to read in a week,
+deep enough to change how you write Python every day.
+
+The book's name says it all. A "buffet" — pick what you need, in any
+order. The tricks are five to ten pages each, self-contained, focused on
+one pattern or one pitfall. The sequencing is intentional for progression
+(the book opens with fundamentals and closes with packaging and CLI
+tools), but each trick stands on its own. You can read it cover to
+cover, or open it to the trick you need right now.
+
+---
+{}
+---
+
+## Key Takeaways
+
+1. **`for`-`else` and `while`-`else` are not a mistake.** The `else`
+block on a loop runs *only if the loop completed normally* — not via
+`break`. This is the canonical "search and report if not found" pattern.
+
+2. **Truthiness is a first-class feature.** `[]`, `{}`, `""`, `0`,
+`None`, and `False` are all falsy. Embracing this — rather than
+defensively checking for `None` or `""` — is the gateway to Pythonic
+code.
+
+3. **Chained comparisons map to math.** `a < b < c` is not two
+comparisons; it is evaluated as `a < b and b < c` and `b` is only
+evaluated once. This enables elegant bounds checks without duplication.
+
+4. **`*args` / `**kwargs` are for forwarding, not for receiving.** If
+you find yourself writing `def fn(*args, **kwargs):` without forwarding
+them to another call, you are probably hiding a design problem.
+
+5. **Generators are lazy iterators.** A function with `yield` returns a
+generator object. It produces values on demand, never holds the full
+sequence in memory, and is the foundation of `for`-loops, `itertools`,
+and `asyncio`.
+
+6. **`@contextlib.contextmanager` replaces `__enter__`/`__exit__` for
+most cases.** A single generator with a `yield` becomes a full context
+manager. The book's timer example is worth copying into every project.
+
+7. **Decorators are HOFs with a `@` shortcut.** A decorator takes a
+function and returns a function. Use `@functools.wraps` on the inner
+wrapper to preserve `__name__`, `__doc__`, and `__module__`. Parameterized
+decorators require three levels of nesting.
+
+8. **`@dataclass` eliminates boilerplate.** The `@dataclass` decorator
+generates `__init__`, `__repr__`, `__eq__`, and `__hash__` from class
+field annotations. Use `field(default_factory=list)` for mutable defaults
+and `frozen=True` for immutability.
+
+9. **f-strings are the right default.** `f'{name} is {age} years old'`
+is faster than `%` formatting and `str.format()`, and supports arbitrary
+expressions. The only case against them is when the format string comes
+from user input (injection risk).
+
+10. **The walrus operator (`:=`) reduces duplication.** Assign inside
+expressions: `while (line := f.readline()):`, `if (n := len(items)) > 0:`.
+PEP 572's grammar constraint: the assignment expression *must* be
+parenthesized.
+
+11. **Structural pattern matching (`match`/`case`) is more than
+`switch`.** `case {"status": 200, "body": data}:` unpacks a dict.
+`case ["first", *rest]:` destructures a list. `case Point(x, y):`
+matches by type and binds attributes. Guard clauses (`if ...`) add
+conditions.
+
+12. **Type hints are optional but contagious.** `from typing import
+List, Optional, Protocol`. A function annotated with `List[int]` is
+clearer, IDE-friendly, and checkable by `mypy`. In Python 3.10+ use
+`list[int]` and `int | None`.
+
+13. **Pick the right CLI library.** `argparse` is in the stdlib but
+verbose. `Click` (decorator-based) and `Typer` (type-hint-driven, auto
+`--help`) are the modern defaults. Typer requires almost no code.
+
+14. **`pyproject.toml` is the modern packaging standard.** `flit` for
+single-module packages, `poetry` for projects with complex dependencies.
+Publishing to PyPI is `flit publish` or `poetry publish` — two commands.
+
+15. **Python has three concurrency tools for three different problems.**
+`threading` for I/O-bound blocking code; `multiprocessing` for CPU-bound
+work that needs to escape the GIL; `asyncio` for thousands of concurrent
+I/O operations with a single thread. Measure before optimizing.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Intermediate Python developers | Fill the gap between "I can write Python" and "I know the idioms" |
+| Developers switching from Java / C# / JS | The Pythonic patterns that differ from mainstream OOP, in one place |
+| Self-taught developers who have built things | The structured walkthrough of context managers, decorators, generators, and the data model that most tutorials skip |
+| Backend and data engineers | Write cleaner ETL pipelines, automation scripts, and API glue code |
+| Python learners post-beginner tutorial | The bridge from "I know the syntax" to "I can write professional Python" |
+
+---
+
+## Who Should Skip
+
+| Skip if | Reason |
+|---|---|
+| You are new to Python | This book assumes syntax fluency and does not explain what `def` does |
+| You are a senior Pythonista already fluent in idioms | The tricks will feel familiar; read Ramalho's *Fluent Python* for depth |
+| You want a comprehensive reference | This is an essay collection, not a systematic tour of every language feature |
+| You live in the data stack | NumPy, pandas, and Jupyter are out of scope; this book covers general Python |
+| You want deep coverage of metaclasses, C extensions, or the full `typing` module | Those are beyond this book's scope |
+
+---
+
+## Why This Book Matters
+
+Most intermediate-level Python books try to teach the entire language.
+That is an expensive proposition: comprehensive books are 700–1000
+pages, dense, and organized as textbooks. They are useful, but they
+take months to work through — and most developers already know 60% of
+the material by the time they pick them up.
+
+*Python Tricks* takes the opposite approach. It identifies the 15–20
+idioms that distinguish a competent Python developer from a fluent one,
+writes a focused essay on each, and arranges them so that each builds
+on the last. You can read the whole book in a long weekend. The
+patterns stick because they are small, concrete, and repeated across
+the examples.
+
+The book also fills a real gap in the Python bookshelf. There are
+beginner tutorials (many, and many are excellent). There are deep
+dives — *Fluent Python*, *Python Cookbook* — that are definitive but
+demanding. There is almost nothing that speaks directly to the
+developer who says, "I know Python, I write Python every day, but I
+suspect I am missing something." *Python Tricks* is that book. It is
+the one most working developers wish they had read two years earlier.
+
+The author's background as a trainer and podcaster is visible. The
+explanations are patient, example-driven, and opinionated without
+being preachy. Badger does not tell you how you *must* write Python;
+he shows you how *experienced* Python developers write it, and why the
+difference matters.
+
+The 1st edition predates `match`/`case`, `dataclasses`, and the
+walrus operator, but the 2nd edition (self-published, expanded) brought
+the collection up to date. The conceptual content — how generators
+work, why context managers matter, what `__iter__` and `__next__` are
+for — has not changed. The surface syntax has.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Fluent Python** | Luciano Ramalho | The deep dive. Read *Fluent Python* for the *why* behind every pattern in this book; read this book for the *how*. |
+| **Effective Python** | Brett Slatkin | 90 short items, similar shape. Less narrative, more direct. Useful as a desk complement. |
+| **Python Cookbook** | Beazley & Jones | Problem-solution reference for the standard library. Read after this book. |
+| **Architecture Patterns with Python** | Percival & Gregory | Builds on the idioms here (dataclasses, context managers, decorators) for DDD and event-driven systems. |
+| **Clean Code** | Robert C. Martin | Language-agnostic principles; this book shows how those principles look specifically in Python. |
+
+---
+
+## Final Verdict
+
+*Python Tricks* is the most efficient investment an intermediate Python
+developer can make in their own education. The short essay format,
+curated scope, and worked examples make it readable in a weekend and
+applicable in the next code review. The patterns it teaches —
+context managers, decorators, generators, `for`-`else`, chained
+comparisons, f-strings, type hints, `dataclass`, `match`/`case`, the
+walrus operator — are the vocabulary of fluent Python. Add them to
+your active toolkit and every other Python book on your shelf will
+make more sense.
+
+**Rating: 8/10** — The best single book for the developer who knows
+Python syntax but has not yet internalized the idioms. Not a reference,
+not a tutorial, but the bridge between the two. Essential for the
+self-taught developer upgrading from "I can write Python" to "I write
+*Pythonic* Python."

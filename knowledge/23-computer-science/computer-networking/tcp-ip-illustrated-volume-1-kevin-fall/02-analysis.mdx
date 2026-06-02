@@ -1,0 +1,164 @@
+## Strengths
+
+- **Unmatched depth on TCP.** Eight chapters on TCP — state machine,
+  timers, flow control, congestion control, the BSD socket lifecycle,
+  and traces of every important scenario. No other book comes close.
+- **Real packet traces as the teaching device.** Every concept is
+  anchored to actual `tcpdump` output. The reader sees what the
+  protocol looks like on the wire, not what the spec thinks it
+  should look like.
+- **RFC-anchored.** Stevens cites the standards by number (RFC 791,
+  793, 826, 1700, 2460, 2581) and treats them as the ground truth.
+  This teaches the reader to read RFCs, which is the foundational
+  skill of network engineering.
+- **Bottom-up rigor.** The layering is never violated. The reader
+  builds a mental model from the link layer up, so when an
+  application misbehaves the cause is traceable through the stack.
+- **BSD sockets as the consistent API.** Every transport and
+  application chapter is anchored in C against the sockets API. This
+  gives the book a unifying spine that pure-spec texts lack.
+- **Pragmatic IPv6 treatment.** The 2nd edition weaves IPv6 through
+  the entire book rather than appending it. By the end, the reader
+  is comfortable reading dual-stack traces.
+- **A book that doubles as a reference.** The figures (state
+  diagrams, header layouts, sequence charts) are designed to be
+  thumbed. Twenty years after first reading, engineers still keep
+  it on the shelf.
+- **Timeless core material.** TCP did not fundamentally change
+  between 1994 and 2011. The TCP chapters are as accurate today as
+  they were when written.
+- **Fall's stewardship of the 2nd edition.** The updates on
+  modern link layers, IPv6, IGMPv3, SNMPv3, and security are
+  careful and additive — the book's soul is preserved.
+
+---
+
+## Weaknesses
+
+- **Long.** At over 1,000 pages, this is a serious commitment. The
+  reader who wants a one-weekend read should look elsewhere.
+- **Heavy on C.** Modern engineers work in Python, Go, Rust, or
+  Node. The C code is correct and idiomatic for 1994, but it is
+  dense for readers who have never managed a `sockaddr_in` by hand.
+- **Sockets are Unix-specific in framing.** The book treats the
+  BSD socket API as universal, which it nearly is, but the Windows
+  Winsock differences are mentioned only in passing.
+- **Wireless and cellular coverage is light.** 802.11 gets a
+  chapter; LTE, 5G, and modern mobile networking are not covered.
+  This is a consequence of the 2nd edition's 2011 vintage.
+- **Security is treated in a single final chapter.** As with
+  Kurose & Ross, the protocols were not designed for security and
+  the book reflects that. IPsec, TLS, and DNSSEC are introduced
+  but not explored with the same depth as TCP.
+- **No HTTP/2, HTTP/3, or QUIC.** These postdate the book. For
+  modern web protocols, the reader must look elsewhere.
+- **Some chapter ordering is idiosyncratic.** TFTP (Ch 15) and
+  BOOTP/DHCP (Ch 16) sit between TCP and DNS, which can feel
+  arbitrary. The dependency graph is loose.
+- **Figures are functional, not beautiful.** The line-art diagrams
+  are clear and precise but visually austere by modern standards.
+- **Math is minimal.** The book does not derive the
+  bandwidth-delay product or model the AIMD sawtooth in closed
+  form. For a more analytical treatment, see Bertsekas & Gallager.
+
+---
+
+## Criticism
+
+- **The book is sometimes treated as scripture when it should be
+  treated as a starting point.** Stevens describes one
+  implementation view of the protocols — usually the BSD
+  implementation. Real-world stacks (Linux, Windows, BSD, Cisco
+  IOS) have diverged. Readers should pair the book with the
+  vendor documentation and the relevant RFCs.
+- **The congestion-control chapter stops short of modern research.**
+  BBR, CUBIC, DCTCP, and the data-center variants are not covered.
+  These dominate modern high-bandwidth and low-latency deployments.
+- **"Illustrated" is taken too literally by some readers.** The
+  pictures are diagrams, not photographs. The traces are text, not
+  GUI captures. Readers expecting a modern visual treatment may
+  be disappointed.
+- **The exercises are limited.** The book is not a textbook with
+  problem sets; it is a reference. For pedagogy, pair it with a
+  course.
+- **Modern readers may find the printing dense.** Two-column
+  layouts and small monospace fonts for traces are a deliberate
+  choice but require concentration.
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | Stevens' Treatment |
+|---------|--------|--------------------|
+| TCP state machine | RFC 793 (1981) | Full state diagram with all transitions |
+| Slow start, congestion avoidance | Jacobson 1988 | Documented with the original algorithms |
+| Fast retransmit / recovery | RFC 2581 (1999), RFC 2001 | Indexed in the 2nd edition |
+| Path MTU Discovery | RFC 1191 (1990) | Discussed under IP fragmentation |
+| ICMP | RFC 792 (1981), RFC 4443 (ICMPv6) | Type/code tables, trace examples |
+| DNS | RFC 1034/1035 (1987), RFC 3596 (AAAA, 2003) | Wire-level message walk |
+| DHCP | RFC 2131/2132 (1997) | DORA exchange diagrammed |
+| IPsec | RFC 4301–4303 (2005) | Final chapter survey |
+| Congestion Control (modern) | RFC 5681 (2009) | Cited for the AIMD canonical algorithm |
+| IPv6 | RFC 8200 (2017) | Updated in the 2nd edition |
+
+The book is unusually faithful to its primary literature. The
+reader who finishes it is well-positioned to read RFCs directly.
+
+---
+
+## Historical Context
+
+Stevens wrote the first edition in 1993–1994, when the Internet was
+transitioning from a research network to a commercial one. The Web
+did not yet exist (Netscape Navigator shipped in 1994, the same
+year). HTTP, DNS, and TCP were mature, but their dominance over
+DECnet, IPX, SNA, and AppleTalk was not yet settled. The book's
+focus on TCP/IP was a vote of confidence in the protocol suite
+that history has vindicated.
+
+Stevens died on September 1, 1999, at the age of 48, leaving behind
+the most respected body of Unix and TCP/IP writing of his generation.
+The USENIX Association posthumously awarded him the Lifetime
+Achievement Award (STUG, "Software Tools User Group") in 2000.
+
+Kevin R. Fall, then at Intel Research Berkeley, took on the
+unenviable task of producing the 2nd edition. The challenge was
+not to update so much as to *not break* what made the original
+great. The 2011 second edition succeeds: IPv6, IGMPv3, the modern
+link layer, security hooks, and a substantial reorganization are
+added without sacrificing the trace-driven clarity of the original.
+
+A planned Volume 4 on TCP for "real-time and other applications" is
+not yet published; the field has moved on to QUIC, BBR, and
+programmable data planes, but Volume 1 remains the foundation.
+
+---
+
+## Comparison
+
+| Book | Author | Key Difference |
+|------|--------|----------------|
+| *Computer Networking: A Top-Down Approach* | Kurose & Ross | Top-down survey; pedagogical; less depth on TCP |
+| *Computer Networks* | Tanenbaum | Bottom-up and broader; less trace-based |
+| *UNIX Network Programming, Vol 1* | Stevens | Sockets API; companion to Vol 1 of this set |
+| *Internetworking with TCP/IP* | Comer | Academic rigor; more specification-oriented |
+| *Effective TCP/IP Programming* | Snader | Forty-four practical tips; complements Stevens |
+| *TCP/IP Guide* | Kozierok | A comprehensive single-volume reference with more breadth but less depth |
+| *Beej's Guide to Network Programming* | Halloran | A free, friendly socket-programming intro; lighter than Stevens |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Depth on TCP | 10/10 | Unmatched; the gold standard |
+| Depth on IP / ICMP / ARP | 9/10 | Thorough and trace-anchored |
+| Depth on Applications | 8/10 | Solid for the era; lacks modern HTTP/2/3 |
+| Clarity of Writing | 9/10 | Stevens writes with engineerly precision |
+| Practical Utility | 9/10 | The traces teach what configs and APIs alone cannot |
+| Currency (as of 2011) | 8/10 | Excellent for TCP/IP; misses HTTP/2, QUIC, BBR |
+| Currency (as of 2026) | 7/10 | The TCP/IP core is unchanged; modern variants require supplements |
+| Accessibility | 6/10 | Heavy; assumes C literacy and a tolerance for density |
+| **Overall** | **9.5/10** | The definitive TCP/IP reference; the gold standard of networking texts |

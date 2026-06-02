@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  author?: string;
+  cover?: { url: string; color?: string } | null;
+  accent?: string;
+  class?: string;
+  rounded?: boolean;
+}
+
+const { title, author, cover, accent, class: extra = '', rounded = false } = Astro.props;
+const tone = cover?.color ?? accent ?? '#c44536';
+const initials = title
+  .split(/\s+/)
+  .map((w) => w[0])
+  .filter((c) => c && /[A-Za-z0-9]/.test(c))
+  .slice(0, 3)
+  .join('')
+  .toUpperCase();
+const styleAttr = `background: linear-gradient(135deg, ${tone} 0%, color-mix(in srgb, ${tone} 60%, #1a1814 40%) 100%);`;
+const radiusClass = rounded ? 'rounded-md' : '';
+---
+<div
+  class={`relative aspect-[2/3] overflow-hidden border border-rule shadow-[var(--shadow-soft)] bg-paper-deep ${radiusClass} ${extra}`}
+>
+  {cover?.url && (
+    <img
+      src={cover.url}
+      alt={`${title} cover`}
+      class="absolute inset-0 w-full h-full object-cover z-[1]"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+  )}
+  <div
+    class="absolute inset-0 flex flex-col items-center justify-center text-center px-3 py-4 z-0"
+    style={styleAttr}
+  >
+    {initials && (
+      <span
+        class="font-display font-light text-parchment-50/95 leading-none"
+        style="font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: 0.08em; text-shadow: 0 1px 0 rgba(0,0,0,0.15);"
+      >{initials}</span>
+    )}
+    <span
+      class="mt-3 font-mono uppercase tracking-[0.2em] text-parchment-50/80"
+      style="font-size: 0.55rem;"
+    >{title.length > 40 ? title.slice(0, 38) + '…' : title}</span>
+    {author && (
+      <span
+        class="mt-1 font-mono uppercase tracking-[0.16em] text-parchment-50/60"
+        style="font-size: 0.5rem;"
+      >{author}</span>
+    )}
+  </div>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-[3px] z-[2]"
+    style={`background: linear-gradient(to right, transparent, ${tone}, transparent)`}
+  />
+</div>

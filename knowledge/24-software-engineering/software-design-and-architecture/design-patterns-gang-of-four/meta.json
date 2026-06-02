@@ -1,0 +1,75 @@
+{
+  "slug": "design-patterns-gang-of-four",
+  "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+  "authors": ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
+  "subtitle": "Elements of Reusable Object-Oriented Software",
+  "description": "The seminal catalog of 23 object-oriented design patterns that gave software engineers a shared vocabulary for architecture. Written by the 'Gang of Four', this book transformed how developers think about reusable solutions to recurring design problems and remains the foundational reference for pattern-based design.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg",
+  "isbn": "9780201633610",
+  "isbn13": "978-0-201-63361-0",
+  "pages": 416,
+  "year": 1994,
+  "publisher": "Addison-Wesley",
+  "genres": ["software-engineering", "programming", "design-patterns", "computer-science"],
+  "category": "24-software-engineering",
+  "subcategory": "software-design-and-architecture",
+  "excerpt": "The definitive catalog of 23 object-oriented design patterns that created a shared vocabulary for software architecture, enabling developers to communicate complex design concepts with precision.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg",
+    "color": "#37474f"
+  },
+  "language": "en",
+  "difficulty": "advanced",
+  "tags": [
+    "software-engineering",
+    "design-patterns",
+    "object-oriented-design",
+    "creational-patterns",
+    "structural-patterns",
+    "behavioral-patterns",
+    "gang-of-four",
+    "software-architecture",
+    "uml",
+    "reusability"
+  ],
+  "keyIdeas": [
+    "A pattern catalog with 23 named solutions to recurring OOP design problems provides a shared engineering vocabulary",
+    "Favor object composition over class inheritance to achieve runtime flexibility and reduce coupling",
+    "Program to an interface, not an implementation, so clients remain decoupled from concrete types",
+    "Encapsulate the concept that varies to isolate change behind stable abstractions",
+    "Creational patterns abstract object creation to make systems independent of how objects are constructed",
+    "Structural patterns compose classes and objects into larger, flexible structures",
+    "Behavioral patterns distribute responsibility and communication among objects to manage complex control flow",
+    "The pattern format — intent, motivation, applicability, structure, participants, collaborations, consequences, implementation, sample code, known uses, related patterns — established a rigorous documentation standard",
+    "Design patterns are reusable blueprints, not rigid prescriptions — context determines whether a pattern applies"
+  ],
+  "keyTakeaways": [
+    "The 23 GoF patterns form a shared vocabulary that compresses months of design experience into single words like 'Strategy' or 'Observer'",
+    "Composition over inheritance is the most frequently recurring principle across all three pattern categories",
+    "Each pattern solves a specific, recurring design problem — applying a pattern without the problem is cargo cult engineering",
+    "Patterns compensate for missing language features; as languages evolve, some patterns become invisible (e.g., Iterator is now a language primitive in most languages)",
+    "The book's greatest contribution is not the patterns themselves but the systematic format for documenting design knowledge",
+    "Singleton is the most over-applied pattern and often degenerates into an implicit global variable",
+    "Modern frameworks embed GoF patterns at their core — Spring (Factory, Proxy, Template Method), React (Observer, Strategy), .NET (Decorator, Adapter)",
+    "Patterns should be learned as a toolkit, not a rulebook — the best designers know when to skip a pattern"
+  ],
+  "whoShouldRead": [
+    "Intermediate to advanced OOP developers ready to think in terms of object relationships rather than class mechanics",
+    "Software architects designing frameworks, libraries, or large systems where extensibility matters",
+    "Engineering teams wanting a shared vocabulary for architecture discussions and code review",
+    "Developers moving from writing code that works to writing code that is designed"
+  ],
+  "whoShouldSkip": [
+    "Complete beginners to OOP — start with Head First Design Patterns for a gentler introduction",
+    "Developers working primarily in functional programming languages where most patterns collapse to higher-order functions",
+    "Teams building small CRUD apps where the complexity these patterns solve has not yet emerged"
+  ],
+  "relatedBooks": [
+    "head-first-design-patterns-eric-freeman",
+    "refactoring-martin-fowler",
+    "patterns-of-enterprise-application-architecture-martin-fowler",
+    "a-philosophy-of-software-design-john-ousterhout",
+    "clean-architecture-robert-martin"
+  ],
+  "addedAt": 1779217600
+}

@@ -1,0 +1,56 @@
+---
+title: Automated Trading with R — Deep Understanding
+author: Chris Conlan
+slug: automated-trading-with-r-chris-conlan-content
+---
+
+## Chapter-by-Chapter Summary
+
+**Chapter 1: Introduction to Automated Trading.** Conlan defines
+automated trading and explains why systematic approaches outperform
+discretionary methods. He covers the R ecosystem relevant to trading:
+quantmod, TTR, xts, and data.table.
+
+**Chapter 2: Data Management.** Acquiring, cleaning, and storing
+financial data. Conlan covers Yahoo Finance, Quandl, and FRED data
+sources. He emphasizes the importance of data quality — survivorship
+bias, delisted securities, and corporate actions.
+
+**Chapter 3: Strategy Development.** Conlan presents several
+standards strategy frameworks: moving average crossovers, RSI-based
+strategies, and volatility breakout systems. Each strategy is
+implemented in R with complete code.
+
+**Chapter 4: Backtesting Framework.** The core chapter. Conlan
+builds a backtesting framework in R that handles portfolio
+accounting, transaction costs, and slippage. He demonstrates how
+to test strategies across multiple securities and time periods.
+
+**Chapter 5: Strategy Optimization.** Parameter optimization and
+the risk of overfitting. Conlan introduces walk-forward analysis as
+a way to validate strategy robustness. He provides R code for
+automated optimization and validation.
+
+**Chapter 6: Order Execution.** Connecting to broker APIs from R.
+Conlan covers Interactive Brokers (IBrokers), OANDA, and other API
+platforms. He shows how to send orders, manage positions, and handle
+margin requirements.
+
+**Chapter 7: Performance Measurement.** Conlan covers the metrics
+that matter: Sharpe ratio, maximum drawdown, Calmar ratio, and
+profit factor. He emphasizes that out-of-sample performance matters
+more than in-sample returns.
+
+**Chapter 8: Production Systems.** Running automated trading
+systems in production. Conlan covers scheduling, error handling,
+logging, and monitoring. He provides a complete framework for a
+24/7 trading operation using R.
+
+## Reading Guide
+
+This is a hands-on technical book. Read with your computer open and
+RStudio running. The code examples in Chapter 4 (Backtesting) and
+Chapter 5 (Optimization) are the most valuable. The Interactive
+Brokers API chapter (Chapter 6) is essential for readers who want
+to go live. Skip the Yahoo Finance data sections — Yahoo's finance
+API has changed since publication.

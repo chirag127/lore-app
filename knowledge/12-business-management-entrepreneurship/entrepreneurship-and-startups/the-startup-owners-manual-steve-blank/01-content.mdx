@@ -1,0 +1,358 @@
+---
+title: Core Concepts
+subtitle: Customer Development Model, Business Model Canvas, Pivot Mechanics, and the Four Steps
+---
+
+## The Central Insight: Search vs. Execute
+
+The book's foundational premise: a startup is not a small version of a big
+company. A startup is a **temporary organization in search of a repeatable and
+scalable business model**. Large companies *execute* known models. Startups
+*search* for unknown ones. The traditional New Product Introduction model
+assumes execution from day one — which is why 90% of startups fail.
+
+```mermaid
+flowchart TB
+    subgraph Traditional["Traditional NPI Model<br/>(Designed for execution)"]
+        T1["Concept &amp; Business Plan<br/>Written in isolation"]
+        T2["Product Development<br/>Months/years of building"]
+        T3["Alpha / Beta Test<br/>Limited customer input"]
+        T4["Launch<br/>Here's hoping"]
+        T1 --> T2 --> T3 --> T4
+    end
+
+    subgraph CustomerDev["Customer Development Model<br/>(Designed for search)"]
+        C1["Hypotheses<br/>State all assumptions on a canvas"]
+        C2["Customer Discovery<br/>Test problem + solution with customers"]
+        C3["Customer Validation<br/>Test if customers will actually pay"]
+        C4["Customer Creation<br/>Build demand (execute)"]
+        C5["Company Building<br/>Scale the org (execute)"]
+        C1 --> C2 --> C3 --> C4 --> C5
+    end
+
+    subgraph Feedback["Iterative Feedback Loops"]
+        F1["Pivot — change hypotheses<br/>based on what you learned"]
+        F2["Proceed — move to next step<br/>if hypotheses are validated"]
+    end
+
+    C2 -.->|"Fail/pivot"| F1
+    C3 -.->|"Fail/pivot"| F1
+    F1 -.->|"Revise and retest"| C1
+    C2 -.->|"Pass"| F2
+    C3 -.->|"Pass"| F2
+
+    style Traditional fill:#6e1a1a,color:#fff
+    style CustomerDev fill:#1a6e1a,color:#fff
+    style Feedback fill:#555,color:#fff
+```
+
+---
+
+## The Customer Development Manifesto
+
+The book distills its philosophy into 14 principles — the Customer Development
+Manifesto. These rules guide every decision a startup founder makes.
+
+| # | Rule | What It Means |
+|---|------|---------------|
+| 1 | There Are No Facts Inside Your Building | Customer input is the only valid data. Founder opinions are hypotheses, not facts. |
+| 2 | Pair Customer Development with Agile Development | Customer feedback shapes the product iteratively. Build in short cycles, test with real users. |
+| 3 | Failure Is an Integral Part of the Search | The goal is learning, not executing a plan. "Failure" that teaches you something is progress. |
+| 4 | Iterate and Pivot Continuously | Every customer interaction should inform a decision: continue, change course, or kill the idea. |
+| 5 | No Business Plan Survives First Contact with Customers | Your plan is a set of guesses. Customers will prove most of them wrong. Adapt. |
+| 6 | Design Experiments to Test Hypotheses | Treat each assumption as a falsifiable hypothesis. Run cheap experiments to validate or invalidate. |
+| 7 | The Business Model Canvas Replaces the Business Plan | A business plan is a static document. A canvas is a living map of your assumptions — update it weekly. |
+| 8 | Startup Metrics Are Different | Vanity metrics (total users, hits) are for the press. Actionable metrics (conversion, retention, referral) drive decisions. |
+| 9 | Fast Iteration, Customer Feedback, and Getting It Right | Speed of learning beats speed of building. Build -> measure -> learn. |
+| 10 | The Only Valid Market Is One Where Earlyvangelists Exist | If no one is desperate for your solution, you haven't found a real problem. |
+| 11 | Sell to Earlyvangelists, Not the Mass Market | Early adopters are patient, forgiving, and give feedback. The mass market demands polish. |
+| 12 | Pivots Are Strategic Shifts, Not Give-Ups | Changing customer segment, problem, solution, or channel is not failure — it's wisdom. |
+| 13 | Customer Validation Proves You Have a Repeatable Sales Model | One sale is a data point. Ten sales to the same customer type is a pattern. |
+| 14 | Premature Scaling Kills Startups | Don't hire salespeople, build a marketing team, or rent office space until you have validated the model. |
+
+---
+
+## The Four Steps of Customer Development
+
+### Step 1: Customer Discovery — "Do People Care?"
+
+Customer Discovery tests whether you have identified a real problem that
+people want solved. It has four phases:
+
+```mermaid
+flowchart LR
+    subgraph Phase1["Phase 1: State Hypotheses"]
+        P1a["Business Model Canvas"]
+        P1b["8-10 key hypotheses"]
+        P1c["Value proposition"]
+        P1d["Customer segments"]
+    end
+
+    subgraph Phase2["Phase 2: Test the Problem"]
+        P2a["Get out of the building"]
+        P2b["Customer interviews"]
+        P2c["Does the problem exist?"]
+        P2d["Do they care enough to act?"]
+    end
+
+    subgraph Phase3["Phase 3: Test the Solution"]
+        P3a["Build a low-fidelity MVP"]
+        P3b["Show to earlyvangelists"]
+        P3c["Does the solution work?"]
+        P3d["Will they use/pay for it?"]
+    end
+
+    subgraph Phase4["Phase 4: Pivot or Proceed"]
+        P4a["Review all evidence"]
+        P4b["Did you validate the model?"]
+        P4c["Pivot: change canvas"]
+        P4d["Proceed: move to Validation"]
+    end
+
+    Phase1 --> Phase2 --> Phase3 --> Phase4
+```
+
+**Key output**: A validated problem-solution fit. You know who has the
+problem, they know they have it, and your proposed solution resonates.
+
+---
+
+### Step 2: Customer Validation — "Will They Pay?"
+
+Customer Validation tests whether you can build a repeatable, scalable sales
+process. This is the most difficult step — and the one most startups skip.
+
+```mermaid
+flowchart TB
+    subgraph V1["Phase 1: Get Ready to Sell"]
+        V1a["Set up a sales channel"]
+        V1b["Create sales collateral"]
+        V1c["Define the sales process"]
+        V1d["Identify target earlyvangelists"]
+    end
+
+    subgraph V2["Phase 2: Get Out and Sell"]
+        V2a["Founders do ALL sales"]
+        V2b["No professional salespeople yet"]
+        V2c["Make real sales — not LOIs"]
+        V2d["Track: who buys, who doesn't, why"]
+    end
+
+    subgraph V3["Phase 3: Position &amp; Refine"]
+        V3a["Develop product positioning"]
+        V3b["Define market type"]
+        V3c["Refine value proposition"]
+        V3d["Test messaging with customers"]
+    end
+
+    subgraph V4["Phase 4: Pivot or Proceed"]
+        V4a["Do you have repeatable sales?"]
+        V4b["Do unit economics work?"]
+        V4c["Pivot: change model and re-test"]
+        V4d["Proceed: move to Customer Creation"]
+    end
+
+    V1 --> V2 --> V3 --> V4
+
+    V2 -.->|"No one buys"| V4
+    V4 -.->|"Pivot"| V1
+```
+
+**Key output**: Validated product-market fit with a repeatable sales model.
+You know who buys, why they buy, and how to reach them.
+
+---
+
+### Step 3: Customer Creation — "Build Demand"
+
+Once validation is complete, Customer Creation is about generating end-user
+demand and scaling the customer base. This is an **execution** phase — the
+search is over; now you scale what works.
+
+| Activity | Physical Channel | Web/Mobile Channel |
+|----------|-----------------|-------------------|
+| Demand generation | PR, trade shows, channel partnerships | SEO, SEM, content marketing, social |
+| Marketing spend | Modest — test before scaling | Modest — test CAC before scaling |
+| Sales team | First sales hires, territory planning | Not needed — self-serve funnel |
+| Key metric | Sales cycle length, conversion rate | CAC, LTV, activation rate |
+
+---
+
+### Step 4: Company Building — "Transition to a Company"
+
+The final step transitions the startup from a search-oriented organization to
+a structured company designed for execution.
+
+```mermaid
+flowchart TD
+    subgraph Before["Before: Startup Mode"]
+        B1["Generalist founders do everything"]
+        B2["No formal departments"]
+        B3["Processes emerge organically"]
+        B4["Culture: speed, experimentation"]
+    end
+
+    subgraph After["After: Company Mode"]
+        A1["Hire VPs of Sales, Marketing, Engineering"]
+        A2["Formal departments with budgets"]
+        A3["Systems for customer support, finance, HR"]
+        A4["Culture: execution, efficiency, scale"]
+    end
+
+    Before -->|"Transition triggered by<br/>validated business model"| After
+```
+
+**Key output**: A scalable company with professional management, defined
+processes, and a culture that balances execution with continued innovation.
+
+---
+
+## The Business Model Canvas
+
+The book adopts Alexander Osterwalder's Business Model Canvas as the
+organizing framework for startup hypotheses. Every assumption your startup
+makes fits into one of nine boxes.
+
+```mermaid
+flowchart TB
+    subgraph BMC["The Business Model Canvas"]
+        direction TB
+        subgraph Top[" "]
+            VP["Value Proposition<br/>What are you building?<br/>What problem does it solve?"]
+        end
+
+        subgraph Middle[" "]
+            left["Customer Segments<br/>Who are the customers?"]
+            right["Channels<br/>How do you reach them?"]
+        end
+
+        subgraph Bottom[" "]
+            B1["Customer Relationships<br/>Get → Keep → Grow"]
+            B2["Revenue Streams<br/>Pricing model?"]
+            B3["Key Resources<br/>What do you need?"]
+            B4["Key Activities<br/>What do you do daily?"]
+            B5["Key Partners<br/>Who do you need?"]
+            B6["Cost Structure<br/>What does it cost?"]
+        end
+    end
+
+    left --- VP --- right
+    VP --- B1 & B2 & B3 & B4 & B5 & B6
+
+    style VP fill:#1a6e1a,color:#fff
+    style left fill:#1a5e8a,color:#fff
+    style right fill:#1a5e8a,color:#fff
+```
+
+Each of the nine boxes represents a hypothesis that must be tested with
+customers. The canvas is updated continuously as you learn — it is a living
+document, not a static plan.
+
+---
+
+## The Nine Deadly Sins
+
+Blank and Dorf identify nine mistakes that doom startups:
+
+| # | Sin | Why It Kills |
+|---|-----|-------------|
+| 1 | Assuming you know what customers want | You don't. Get out of the building. |
+| 2 | The "I know what features to build" fallacy | Features are guesses. Test them with an MVP. |
+| 3 | Focus on a fixed launch date | Launching on time with the wrong product is worse than late with the right one. |
+| 4 | Emphasizing execution over learning | Execution of a bad plan is a fast path to failure. |
+| 5 | Writing a rigid business plan | Plans are obsolete the day they hit a customer. |
+| 6 | Hiring "right" people for the wrong stage | Sales VPs before validation = burned cash. |
+| 7 | Sticking to initial marketing/sales strategy | The first strategy is almost always wrong. |
+| 8 | Assuming success and scaling prematurely | The #1 killer of funded startups. |
+| 9 | Operating in crisis mode | Firefighting instead of learning = death spiral. |
+
+---
+
+## The Pivot: Strategic Course Correction
+
+A pivot is a structured change in one or more components of the business model
+based on validated learning. It is not failure — it is course correction.
+
+```mermaid
+flowchart TD
+    subgraph PivotTypes["Types of Pivot (from the book)"]
+        P1["Customer Segment Pivot<br/>Same product, different customer"]
+        P2["Customer Need Pivot<br/>Same customer, different problem"]
+        P3["Platform Pivot<br/>App → platform or vice versa"]
+        P4["Channel Pivot<br/>Direct → partner or vice versa"]
+        P5["Technology Pivot<br/>Same solution, different tech"]
+        P6["Business Model Pivot<br/>Free → paid or subscription → transaction"]
+        P7["Value Capture Pivot<br/>Different pricing or revenue model"]
+        P8["Engine of Growth Pivot<br/>Sticky → viral → paid"]
+    end
+
+    subgraph Decision["Pivot Decision Process"]
+        D1["Hypothesis test failed"]
+        D2["Analyze customer data"]
+        D3["Which assumption was wrong?"]
+        D4["Form new hypothesis"]
+        D5["Test again"]
+    end
+
+    D1 --> D2 --> D3 --> D4 --> D5
+    PivotTypes -->|"Change the assumption"| D3
+```
+
+---
+
+## Earlyvangelists
+
+The book's term for the ideal first customer: an **earlyvangelist** is someone
+who:
+
+1. **Has the problem** — they experience it daily
+2. **Knows they have it** — they can articulate it without being prompted
+3. **Is actively seeking a solution** — they have tried workarounds
+4. **Can articulate the value proposition** — they understand what your
+   solution does for them
+5. **Has a budget or authority to buy** — they can pay or approve payment
+
+If you cannot find earlyvangelists for your idea, you do not yet have a viable
+business model. The book is blunt: no earlyvangelists = no market.
+
+---
+
+## The "Get, Keep, Grow" Framework
+
+A lifecycle framework for thinking about customers across every stage:
+
+| Stage | Physical Channel | Web/Mobile Channel |
+|-------|-----------------|-------------------|
+| **Get** | Create awareness → generate interest → drive consideration → close purchase | Acquire traffic → activate users on first visit |
+| **Keep** | Customer support, loyalty programs, account management | Email campaigns, push notifications, onboarding sequences, support |
+| **Grow** | Upsells, cross-sells, referrals, renewals | Referral programs, network effects, upgrades, expanding usage |
+
+---
+
+## Key Lessons
+
+- **A startup is a search, not an execution.** Until you have validated a
+  repeatable business model, every dollar spent on scaling is a dollar wasted.
+- **There are no facts inside the building.** The only valid data comes from
+  talking to real customers who have the problem and are actively seeking a
+  solution.
+- **Customer Discovery and Validation are the "search" phase.** You are not
+  allowed to scale until you have proven product-market fit and a repeatable
+  sales process.
+- **Customer Creation and Company Building are the "execute" phase.** Once
+  validated, shift from learning to scaling — but not before.
+- **The Business Model Canvas is your living document.** Update it every week
+  as you learn. If it is static, you are not learning.
+- **Pivoting is not failure.** Refusing to pivot when the data says change is
+  failure. Pivots are evidence of learning.
+- **Premature scaling is the #1 killer.** The book's most urgent warning: do
+  not hire salespeople, rent office space, or run ads until you have validated
+  that customers will pay.
+- **Earlyvangelists are your only early customers.** If no one is desperate
+  for your solution, you are solving the wrong problem.
+- **Founders must do customer discovery personally.** Staff, consultants, and
+  agencies cannot replace the founder's passion and ability to pivot on the
+  fly.
+- **Metrics must be actionable, accessible, and auditable.** Vanity metrics
+  (total registrations, page views) are useless. Cohort retention, conversion
+  rates, and referral rates tell you what to do next.

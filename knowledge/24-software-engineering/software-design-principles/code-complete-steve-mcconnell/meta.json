@@ -1,0 +1,71 @@
+{
+  "slug": "code-complete-steve-mcconnell",
+  "title": "Code Complete",
+  "author": "Steve McConnell",
+  "subtitle": "A Practical Handbook of Software Construction",
+  "description": "The most comprehensive guide to software construction ever written. Based on hundreds of research studies rather than personal opinion, McConnell covers everything from design and coding techniques to debugging, testing, and refactoring. The second edition was updated for modern languages (C++, Java, C#, Visual Basic) and includes extensive treatment of design practices, construction, and quality assurance.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12613765-L.jpg",
+  "isbn10": "0735619670",
+  "isbn13": "9780735619678",
+  "pages": 960,
+  "publishedYear": 2004,
+  "publisher": "Microsoft Press",
+  "openlibrarySlug": "code_complete_2",
+  "tags": [
+    "software engineering",
+    "programming",
+    "software construction",
+    "code quality",
+    "software design",
+    "debugging",
+    "testing"
+  ],
+  "keyIdeas": [
+    "Software construction is the central activity of software development, not 'just coding'",
+    "Defect detection is most cost-effective when done as early as possible",
+    "Design is a heuristic process, not a deterministic one",
+    "The cost of fixing defects increases exponentially over time",
+    "Good coding practices are supported by empirical research, not just opinion",
+    "Pseudocode-first programming reduces design time and defects",
+    "Code should be written to be read by humans first, computers second",
+    "High-quality code is cheaper to produce than low-quality code in the long run",
+    "Precise up-front design reduces overall project cost",
+    "Pair programming, inspections, and testing each catch different types of defects"
+  ],
+  "keyTakeaways": [
+    "The cost of fixing a defect rises exponentially over time — invest in early defect detection",
+    "Software construction is the dominant cost in development — it deserves serious study",
+    "Design is a series of heuristic decisions, not a deterministic process",
+    "Use pseudocode to design complex routines before writing actual code",
+    "Good variable naming, formatting, and commenting are not cosmetic — they affect defect rates",
+    "High-quality code is cheaper to produce than low-quality code",
+    "Code reviews and inspections catch 60% of defects — more than testing alone",
+    "Cohesion and coupling are the two most important design concepts",
+    "Defensive programming — assertions, error handling, exceptions — prevents defects",
+    "The biggest improvements come from focusing on construction, not heroics"
+  ],
+  "whoShouldRead": [
+    "Professional software developers at any experience level",
+    "Software engineering managers who want research-backed practices",
+    "Junior-to-mid-level developers building a foundation of effective practices",
+    "Technical leads establishing coding standards and team practices"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Clean Code",
+      "slug": "clean-code-robert-martin"
+    },
+    {
+      "title": "The Pragmatic Programmer",
+      "slug": "the-pragmatic-programmer-andrew-hunt"
+    },
+    {
+      "title": "Rapid Development",
+      "slug": null
+    },
+    {
+      "title": "Software Estimation",
+      "slug": null
+    }
+  ]
+}

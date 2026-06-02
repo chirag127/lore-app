@@ -1,0 +1,76 @@
+{
+  "slug": "the-art-of-scalability-martin-abbott",
+  "title": "The Art of Scalability",
+  "subtitle": "Scalable Web Architecture, Processes, and Organizations for the Modern Enterprise",
+  "author": "Martin L. Abbott and Michael T. Fisher",
+  "publicationYear": 2015,
+  "isbn13": "9780134032802",
+  "isbn10": "0134032807",
+  "olid": "OL25930811M",
+  "publisher": "Addison-Wesley",
+  "language": "en",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780134032802-L.jpg",
+    "source": "openlibrary"
+  },
+  "difficulty": "medium",
+  "estimatedReadingHours": 28,
+  "estimatedListeningMinutes": 1440,
+  "tags": [
+    "scalability",
+    "distributed-systems",
+    "architecture",
+    "microservices",
+    "devops",
+    "organizational-design",
+    "conways-law",
+    "reliability",
+    "sre",
+    "engineering-management"
+  ],
+  "excerpt": "A practical, experience-driven framework for building systems, processes, and organizations that scale. Abbott and Fisher distill two decades of lessons from eBay, PayPal, and other hyperscale web properties into the AKF Scale Cube, twelve principles of scalability, and a catalog of more than twenty antipatterns to avoid.",
+  "keyIdeas": [
+    "The AKF Scale Cube — three orthogonal axes (X: cloning, Y: functional decomposition, Z: data partitioning) describe every viable approach to scaling",
+    "Twelve principles of scalability: design to scale out, design using commodity, design for failure, design to be monitored, design to be flexible, and seven more",
+    "Twenty-plus antipatterns that bring systems down at scale — from single points of failure and tight coupling to shared resources and synchronous calls",
+    "Conway's Law is unavoidable: the architecture of a system mirrors the communication structure of the organization that builds it",
+    "The Reverse Conway Maneuver — intentionally reshape the team structure first, then let the architecture follow",
+    "Three Rs of data: Ridge (relational, normalized, transactional), Rough (NoSQL key-value), Resources (binary blobs) — pick the right tool for the workload",
+    "Microservices as the natural endpoint of Y-axis scaling; service ownership and decentralized data",
+    "Vendor and platform lock-in are trade-offs: lock-in is acceptable when the cost of switching exceeds the cost of staying"
+  ],
+  "keyTakeaways": [
+    "X-axis scaling is the cheapest and most common — clone the whole thing behind a load balancer — but it does not solve data or function-level bottlenecks",
+    "Y-axis scaling means splitting the application by service or function; it enables independent deploys, independent scaling, and Conway-aligned team boundaries",
+    "Z-axis scaling partitions data by customer, geography, or shard key; it is mandatory once a single database cannot serve the write load",
+    "Every system should be designed to survive the failure of any one component — design for failure is non-negotiable at scale",
+    "Single points of failure are everywhere until you draw the dependency map; assume every node, every switch, every rack, every data center can vanish",
+    "Coupling is the silent killer: shared databases, shared clocks, and synchronous remote calls propagate failures across the system",
+    "Capacity is not free and not infinite: every choice of hardware, vendor, and process trades money for time and flexibility",
+    "Monitor everything that matters, alert on symptoms (not causes), and design the system to be observable from the start",
+    "Conway's Law can be turned to your advantage — restructure teams around desired service boundaries and the architecture will follow",
+    "Antipatterns are easier to spot than principles to apply: keep a list of them, and review your architecture against it at every significant milestone"
+  ],
+  "whoShouldRead": [
+    "Senior engineers and tech leads who own the architecture of a growing web platform",
+    "Engineering managers and directors trying to align team structure with system structure",
+    "Principal and distinguished engineers preparing for or starting hyperscale work",
+    "SREs and platform engineers who need a vocabulary for talking about scaling trade-offs",
+    "Architects designing greenfield systems that need to survive rapid growth in users, data, and traffic"
+  ],
+  "whoShouldSkip": [
+    "Absolute beginners — you need at least a few years of production engineering experience to absorb the case studies",
+    "Specialists looking for a single-technology deep dive (Kafka, Cassandra, etc.) — this book is technology-agnostic by design",
+    "Readers who want a research-paper treatment of distributed systems — this is practitioner-to-practitioner, not academic",
+    "Anyone allergic to business-process discussion — roughly a third of the book is people, process, and organization"
+  ],
+  "relatedBooks": [
+    "designing-data-intensive-applications-martin-kleppmann",
+    "building-evolvable-systems-george-ferguson",
+    "the-pragmatic-programmer-andrew-hunt",
+    "accelerate-nicole-forsgren",
+    "site-reliability-engineering-google",
+    "the-mythical-man-month-frederick-brooks",
+    "clean-architecture-robert-martin"
+  ]
+}

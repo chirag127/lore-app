@@ -1,0 +1,45 @@
+{
+  "description": "KnowledgeAtlas LLM waterfall. Each entry is tried in order; the first to respond successfully wins. Free-tier friendly: include any OpenAI-compatible endpoint (OpenAI, Groq, OpenRouter, Together, Anyscale, Mistral, local Ollama, etc.). 'apiKeyEnv' is the NAME of the env var holding the key, never the key itself.",
+  "models": [
+    {
+      "id": "groq-llama-3.3-70b",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "apiKeyEnv": "GROQ_API_KEY",
+      "model": "llama-3.3-70b-versatile",
+      "maxTokens": 6000,
+      "temperature": 0.5,
+      "timeoutMs": 60000
+    },
+    {
+      "id": "openai-gpt-4o-mini",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "model": "gpt-4o-mini",
+      "maxTokens": 6000,
+      "temperature": 0.5,
+      "timeoutMs": 60000
+    },
+    {
+      "id": "openrouter-auto",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "model": "anthropic/claude-3.5-sonnet",
+      "maxTokens": 6000,
+      "temperature": 0.5,
+      "timeoutMs": 90000,
+      "headers": {
+        "HTTP-Referer": "https://knowledgeatlas.app",
+        "X-Title": "KnowledgeAtlas"
+      }
+    },
+    {
+      "id": "google-gemini",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "apiKeyEnv": "GEMINI_API_KEY",
+      "model": "gemini-1.5-flash",
+      "maxTokens": 6000,
+      "temperature": 0.5,
+      "timeoutMs": 60000
+    }
+  ]
+}

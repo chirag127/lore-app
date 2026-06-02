@@ -1,0 +1,138 @@
+## Strengths
+
+- **A genuine thesis.** Unlike most software books, which catalog
+  patterns or principles without a unifying thread, PSD has a single,
+  coherent argument: complexity is the enemy; deep modules are the
+  answer. Every chapter supports this thesis. This gives the book
+  unusual intellectual weight for its length.
+
+- **Challenges sacred cows.** Ousterhout explicitly disagrees with
+  Clean Code on method length, with TDD on design process, and with
+  certain SOLID interpretations on class size. Whether you agree or
+  not, the debate is valuable. The industry needs more arguments, not
+  more consensus.
+
+- **Deep modules is a genuinely useful lens.** The distinction between
+  interface and implementation is not new, but the depth metric
+  (interface simplicity vs. functionality) gives engineers a concrete
+  way to evaluate designs. "Is this module deep or shallow?" is a
+  better question than "Is this class too big?"
+
+- **Practical red flags.** Pass-through methods, pass-through
+  variables, information leakage, temporal decomposition — these aren't
+  abstract principles. They are diagnosable smells. A junior engineer
+  can learn to spot them.
+
+- **Remarkably concise.** 196 pages. No filler. Every chapter serves
+  the thesis. The book respects the reader's time and can be re-read
+  in an afternoon.
+
+- **Comments chapter is excellent.** The argument that comments
+  document abstractions (not code) and should describe things not
+  obvious from the code is one of the best treatments of the topic
+  anywhere.
+
+---
+
+## Weaknesses
+
+- **Anecdotal evidence.** Ousterhout supports most claims with
+  personal experience, not data. The Unix I/O example is compelling
+  but appears in nearly every chapter. The book would benefit from a
+  wider range of case studies — including failures of the deep-module
+  approach.
+
+- **Overgeneralizes from systems software.** Ousterhout's background
+  is operating systems, file systems, and distributed systems. His
+  advice applies naturally there. It maps less cleanly to application
+  software, domain-driven design, or business logic where "shallow"
+  modules may correspond to domain concepts.
+
+- **The informal interface is underspecified.** Ousterhout defines the
+  interface as "everything a developer needs to know to use the
+  module" — including behavior, side effects, and constraints. But he
+  provides no formal way to describe or verify it. Critics (notably
+  James Koppel) argue this makes the deep-module concept unfalsifiable:
+  whether an interface is "simple" is entirely subjective.
+
+- **Contradictions on generality.** Chapter 6 argues for general-
+  purpose interfaces. Chapter 9 says to separate general-purpose and
+  special-purpose code. The advice is compatible but the book never
+  fully resolves the tension between making a module general (deeper)
+  and keeping it focused (shallower). This ambiguity is a real
+  practical challenge.
+
+---
+
+## Controversy: Ousterhout vs. The Industry
+
+### Method Size
+
+The most publicized conflict. Clean Code (Martin) recommends methods
+of 4-6 lines. Ousterhout calls this "classitis at the method level."
+His counterargument: depth matters more than length. A 50-line method
+with a clear abstraction is better than 10 five-line methods that
+collectively require understanding all 10 interfaces.
+
+The debate reveals a genuine tension. Tiny methods can improve
+readability by naming sub-steps. But they also fragment the reader's
+attention. Ousterhout's position is a useful corrective against
+mechanical line-count rules, but his own examples (the shallow
+`addNullValueForAttribute`) are straw-men. The real question is not
+"should methods be 5 or 50 lines?" but "does extracting this method
+reveal an abstraction or just add indirection?" Ousterhout does not
+give clear guidance for that judgment.
+
+### Test-Driven Development
+
+Ousterhout is skeptical of TDD. His argument: TDD focuses on features
+(what the code should do), not design (what the module should be). It
+encourages tactical programming. He prefers designing the full
+abstraction first, then writing white-box tests.
+
+This position underestimates TDD's value as a design feedback
+mechanism. Many practitioners find that writing the test first forces
+them to design a testable interface — which is, in Ousterhout's terms,
+a simple interface. The disagreement may be smaller than it appears:
+both sides want simple interfaces and testable code. They differ on
+the order of operations.
+
+### Comments Over Self-Documenting Code
+
+Ousterhout argues forcefully that "good code is self-documenting" is
+a myth. Comments are essential because they document the abstraction —
+the invisible design decisions, the constraints, the rationale — that
+code cannot express.
+
+This is his most defensible position. Code can describe *what*
+happens; it struggles with *why*. Ousterhout's advice to write
+interface comments first (before implementing) is genuinely
+underused in practice.
+
+---
+
+## Comparison to Similar Books
+
+| Book | Difference |
+|---|---|
+| *Clean Code* (Martin) | Focuses on code-level hygiene (naming, formatting, method size). PSD focuses on module-level structure. They disagree on method length and comments but are compatible at the architectural level. |
+| *The Pragmatic Programmer* (Hunt & Thomas) | Broader coverage — tools, career, process. Less theoretically coherent. PSD is narrower but deeper. |
+| *Design Patterns* (Gamma et al.) | A catalog of solutions to recurring problems. PSD is a framework for deciding when and how to use those solutions. |
+| *Software Architecture: The Hard Parts* (Ford et al.) | Trade-off analysis for architecture decisions. PSD provides the foundational philosophy that makes trade-off analysis meaningful. |
+| *Code Complete* (McConnell) | Encyclopedic reference. PSD is a focused argument. Different purposes, compatible content. |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|---|---|---|
+| Originality | 7/10 | Deep modules are a novel framing; core ideas (information hiding) are from Parnas |
+| Practical Utility | 8/10 | Red flags are actionable; principles are memorable |
+| Readability | 9/10 | Exceptionally concise and well-structured |
+| Evidence | 5/10 | Heavily anecdotal; few data points or formal studies |
+| Controversy Value | 10/10 | Provokes useful disagreement about received wisdom |
+| **Overall** | **8/10** | A genuine contribution to software design literature |
+
+*The best short book on software design, even — maybe especially —
+when you disagree with it.*

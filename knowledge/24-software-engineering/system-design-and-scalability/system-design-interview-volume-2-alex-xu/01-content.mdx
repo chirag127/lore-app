@@ -1,0 +1,312 @@
+---
+title: Core Concepts
+description: The frameworks, patterns, and case studies in System Design Interview Volume 2
+date: 2022-03-11
+---
+
+# Core Concepts
+
+## The 4-Step Framework
+
+Every chapter applies the same structured approach, reflecting real
+interview expectations.
+
+### Step 1 \u2014 Understand and Scope
+
+Before drawing a single box, clarify:
+- What are the core features? (functional requirements)
+- What non-functional properties matter? (availability, latency,
+  durability, consistency)
+- What is explicitly out of scope?
+
+Good candidates spend 5\u201310 minutes here before proposing anything.
+
+### Step 2 \u2014 Back-of-the-Envelope Estimation
+
+Size the system with rough numbers:
+- Daily active users, peak QPS, average payload size
+- Total storage (hot + cold), network bandwidth
+- Cache hit ratios, number of reads vs. writes
+
+This step prevents over-engineering and reveals the real bottlenecks
+before architecture begins.
+
+### Step 3 \u2014 High-Level Design
+
+Draw the block diagram: clients, CDN, load balancers, API gateway,
+application services, data stores, caches, queues. Label protocols
+(REST, WebSocket, gRPC) and data flow direction.
+
+### Step 4 \u2014 Deep Dive
+
+Zoom into the bottlenecks the estimation step exposed:
+- Database hotspots? Introduce sharding, caching, or read replicas.
+- Write contention? Use a message queue or partition the write path.
+- High latency? Add CDN, edge compute, or rebalance data placement.
+
+---
+
+## Geohashing and Spatial Indexing
+
+Chapters 1\u20133 all depend on geohashing \u2014 encoding lat/lng into
+a string where longer prefixes mean finer granularity.
+
+```mermaid
+flowchart LR
+    LAT["Latitude / Longitude<br/>(37.7749, -122.4194)"]
+    ENCODE["Geohash Encoding<br/>Base-32, interleaved bits"]
+    HASH["Geohash: 9q8yy9mf"]
+    PREFIX["Prefix '9q8' = 3 char<br/>= ~150km x 150km"]
+    GRID["Grid Cells<br/>Hierarchical, overlapping"]
+    QUERY["Spatial Query<br/>Find all POIs in cell + neighbors"]
+
+    LAT --> ENCODE
+    ENCODE --> HASH
+    HASH --> PREFIX
+    PREFIX --> GRID
+    GRID --> QUERY
+```
+
+Key insight: proximity services precompute business IDs per geohash
+cell. A user query locates the user\u2019s current cell, fetches IDs
+from that cell and its eight neighbors, then computes exact distances.
+This trades storage for query speed.
+
+---
+
+## Distributed Message Queues
+
+Chapter 4 builds a partitioned, replicated queue similar to Kafka:
+
+```mermaid
+flowchart TB
+    subgraph Producers
+        P1["Producer 1"]
+        P2["Producer 2"]
+    end
+
+    subgraph Brokers["Message Broker Cluster"]
+        B1["Broker 1<br/>Partition A Leader"]
+        B2["Broker 2<br/>Partition A Follower<br/>Partition B Leader"]
+        B3["Broker 3<br/>Partition B Follower"]
+    end
+
+    subgraph Consumers
+        C1["Consumer Group 1"]
+        C2["Consumer Group 2"]
+    end
+
+    P1 --> B1
+    P2 --> B2
+    B1 -.->|Replication| B2
+    B2 -.->|Replication| B3
+    B1 --> C1
+    B2 --> C1
+    B2 --> C2
+
+    subgraph Key["Design Decisions"]
+        PAR["Partitioning: hash key or range"]
+        ORDER["Ordering: within-partition only"]
+        DELIVERY["Delivery: at-least-once vs exactly-once"]
+        REBALANCE["Consumer rebalancing strategies"]
+    end
+```
+
+The design decisions contrast pull-based (Kafka/Kinesis) and push-based
+(RabbitMQ) architectures. Volume 2 argues pull-based wins for
+high-throughput because consumers control their read rate.
+
+---
+
+## Payment System \u2014 Idempotency and Sagas
+
+Chapter 11 covers the hardest part of real-world payment design:
+
+```mermaid
+flowchart TB
+    subgraph Client
+        USER["Client"]
+        IDEM["Idempotency Key<br/>(UUID, retry-safe)"]
+    end
+
+    subgraph PaymentService["Payment Service"]
+        VALIDATE["Validate & Dedupe"]
+        PSP["Payment Service Provider<br/>(Stripe, Adyen)"]
+        LEDGER["Ledger Update"]
+    end
+
+    subgraph Orchestrator["Saga Orchestrator"]
+        ST1["Reserve funds"]
+        ST2["Process payment"]
+        ST3["Update balances"]
+        COMP["Compensation:<br/>reverse entire txn"]
+    end
+
+    USER -->|POST /charge<br/>idempotency-key: xyz| VALIDATE
+    VALIDATE --> PSP
+    PSP --> LEDGER
+    LEDGER --> ST1
+    ST1 --> ST2
+    ST2 --> ST3
+    ST3 -->|Success| USER
+    ST3 -.->|Fail| COMP
+    COMP -.->|Rollback| ST2
+```
+
+The chapter introduces the **orchestrated Saga pattern**: a coordinator
+issues sequential commands and fires compensating actions on failure.
+Two-phase commit (2PC) is presented as an alternative, then rejected for
+most payment systems because it blocks participants during the
+prepare phase.
+
+---
+
+## S3-like Object Storage
+
+Chapter 9 designs a blob store with the following architecture:
+
+| Concern | Solution |
+|---------|----------|
+| Data partitioning | Hash of object key -> partition (bucket \u00d7 prefix) |
+| Durability | 3-way replication or erasure coding (12+4 Reed-Solomon) |
+| Consistency | Read-after-write for new objects; eventual for overwrites |
+| Metadata | Separate SQL/NoSQL store for object catalog |
+| Multi-part upload | Break large files into 5\u2013100 MB chunks |
+| Lifecycle | Hot tier \u2192 warm tier \u2192 cold/archive |
+
+The book compares erasure coding (space-efficient, write-heavy) with
+full replication (simple, read-optimized), noting that systems like S3
+use erasure coding for the durability tier and replication for the
+hot tier.
+
+---
+
+## Real-time Gaming Leaderboard
+
+Chapter 10 uses Redis sorted sets (ZADD/ZRANK/ZREVRANGE) for
+sub-millisecond leaderboard lookups:
+
+```mermaid
+flowchart LR
+    subgraph GameClients
+        G1["Player 1\nScore: 1500"]
+        G2["Player 2\nScore: 2300"]
+        G3["Player 3\nScore: 980"]
+    end
+
+    subgraph RedisCluster["Redis Cluster"]
+        S1["Shard 1\nSorted Set A"]
+        S2["Shard 2\nSorted Set B"]
+        S3["Shard 3\nSorted Set C"]
+    end
+
+    subgraph LeaderboardService["Leaderboard Service"]
+        AGG["Scatter-Gather\nMerge across shards"]
+        CACHE["Top-K Cache\n(10 sec TTL)"]
+    end
+
+    subgraph API
+        TOP["GET /leaderboard/top/100"]
+        RANK["GET /leaderboard/rank/{player_id}"]
+    end
+
+    G1 --> S1
+    G2 --> S2
+    G3 --> S3
+    S1 --> AGG
+    S2 --> AGG
+    S3 --> AGG
+    AGG --> CACHE
+    CACHE --> TOP
+    CACHE --> RANK
+```
+
+More partitions distribute write load but complicate the scatter-gather
+merge step. The book recommends 16\u201364 partitions and a cached
+top-K to absorb read spikes.
+
+---
+
+## Consistent Hashing Ring
+
+While Volume 1 introduced consistent hashing, Volume 2 provides an
+enhanced treatment with virtual nodes to handle uneven load:
+
+```mermaid
+flowchart TB
+    subgraph Ring["Consistent Hash Ring"]
+        direction LR
+        N1["Node 1"]
+        N2["Node 2"]
+        N3["Node 3"]
+        N4["Node 4"]
+        V1["Virtual Node A1"]
+        V2["Virtual Node A2"]
+        V3["Virtual Node B1"]
+    end
+
+    K1["Key: user_1001\nHash=H1"] -.-> N1
+    K2["Key: user_1002\nHash=H2"] -.-> N3
+    K3["Key: user_1003\nHash=H3"] -.-> V2
+
+    subgraph Benefits["Benefits"]
+        MIN["Minimal reshuffling on node add/remove"]
+        BAL["Virtual nodes balance load"]
+        HOT["Hot-spot migration without rehashing all keys"]
+    end
+```
+
+---
+
+## Hotel Reservation Concurrency
+
+Chapter 7 tackles race conditions in room booking:
+
+| Strategy | Mechanism | Throughput | Drawback |
+|----------|-----------|------------|----------|
+| Pessimistic lock | SELECT ... FOR UPDATE | Low | Blocking, deadlock risk |
+| Optimistic lock | Version column + CAS | Medium | Retries on conflict |
+| Inventory buffer | Pre-allocate room pool per service | High | Wasted capacity |
+| Queue-based booking | Single worker per hotel | High | Added latency |
+
+The book recommends a hybrid: optimistic locking for most bookings, with
+a gated inventory pool for popular dates to reduce conflict rate.
+
+---
+
+## Stock Exchange Order Book
+
+Chapter 13 models an in-memory order book using price-time priority:
+
+```mermaid
+flowchart TB
+    subgraph Exchange["Stock Exchange"]
+        GATE["Order Gateway<br/>Validate, rate-limit"]
+        ORD["Order Manager<br/>Risk checks, margin verify"]
+        MATCH["Matching Engine<br/>Price-time priority"]
+    end
+
+    subgraph OrderBook["Order Book"]
+        BIDS["Bid Side<br/>Buy orders, sorted price-desc"]
+        ASKS["Ask Side<br/>Sell orders, sorted price-asc"]
+    end
+
+    subgraph Output
+        TRADE["Trade Confirmation"]
+        UPDATE["Market Data Feed"]
+    end
+
+    CLIENT["Client"] --> GATE
+    GATE --> ORD
+    ORD --> MATCH
+    MATCH --> BIDS
+    MATCH --> ASKS
+    BIDS <-->|Match| ASKS
+    MATCH --> TRADE
+    MATCH --> UPDATE
+    UPDATE --> CLIENT
+```
+
+The matching engine uses a linked hash map for constant-time peek/pop
+at the best bid/ask. The system requires strict ordering of incoming
+orders and a dropped-order detection mechanism.

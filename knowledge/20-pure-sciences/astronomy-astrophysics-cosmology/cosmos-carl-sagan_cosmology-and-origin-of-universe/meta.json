@@ -1,0 +1,19 @@
+{
+  "slug": "cosmos-carl-sagan",
+  "title": "Cosmos",
+  "subtitle": "",
+  "author": "Carl Sagan",
+  "publicationYear": 1980,
+  "isbn": "9780394502946",
+  "publisher": "Random House",
+  "pages": 365,
+  "language": "en",
+  "genres": ["Popular Science", "Cosmology", "Astronomy", "Science Communication"],
+  "subjects": ["Cosmology", "Astronomy", "Evolution", "Space Exploration", "Science History"],
+  "themes": ["Cosmic Perspective", "Scientific Method", "Extraterrestrial Life", "Nuclear Disarmament", "Humanity's Future"],
+  "tags": ["cosmology", "Carl Sagan", "popular science", "astronomy", "evolution", "space exploration", "science communication", "Hugo Award", "classic"],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "excerpt": "A landmark journey through space and time that weaves together astronomy, biology, history, and philosophy to reveal humanity's place in the vast cosmic ocean."
+}

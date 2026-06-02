@@ -1,0 +1,110 @@
+{
+  "slug": "domain-driven-design-eric-evans",
+  "title": "Domain-Driven Design",
+  "subtitle": "Tackling Complexity in the Heart of Software",
+  "authors": [
+    "Eric Evans"
+  ],
+  "author": "Eric Evans",
+  "description": "The foundational text that coined the term 'domain-driven design.' Evans argues that for complex software domains, the domain model — not the framework, not the database schema, not the UI — must be the heart of the design. Through a blend of strategic and tactical patterns, he shows how persistent, creative collaboration between developers and domain experts produces software models that encode genuine business insight. Unusually for a technical book, it is as much about language and communication as it is about code.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780321125217-L.jpg",
+  "isbn10": "0321125215",
+  "isbn13": "9780321125217",
+  "pages": 560,
+  "publishedYear": 2003,
+  "publisher": "Addison-Wesley Professional",
+  "series": null,
+  "openlibrarySlug": "works/OL28958W",
+  "tags": [
+    "domain-driven-design",
+    "software-architecture",
+    "object-oriented-design",
+    "ubiquitous-language",
+    "bounded-contexts",
+    "aggregates",
+    "enterprise-software",
+    "model-driven-design",
+    "strategic-design",
+    "tactical-design"
+  ],
+  "keyIdeas": [
+    "The domain model must be the heart of the software design — not the database, not the framework",
+    "Ubiquitous Language: a shared, rigorously used language that connects developers and domain experts and appears in code, documents, and conversation",
+    "Bounded Contexts: every model has a boundary; within it, the model is consistent; between contexts, translation is required",
+    "Strategic design vs. tactical design: large systems need both — large-scale mapping and fine-grained model elements",
+    "Entities, Value Objects, Aggregates: the three core tactical building blocks, each serving a distinct conceptual role",
+    "Repositories and Factories: the two standard mechanisms for accessing and creating domain objects without exposing persistence details",
+    "Anti-Corruption Layer: a protective isolation boundary that prevents an external model from contaminating your own",
+    "Context Maps: explicit diagrams and agreements that show how bounded contexts relate to each other (Partnership, Shared Kernel, Customer/Supplier, Conformist, Anticorruption Layer, Open-host Service, Published Language, Separate Ways)",
+    "The domain expert is not a passive source of requirements — they are a co-creator of the model",
+    "CRUD-only architectures fail for complex domains because they encode no behavior, no invariants, and no language",
+    "Refactoring toward deeper understanding: the model is a living hypothesis that improves through iteration, not a specification delivered at the project start",
+    "Model-Health Loop: continuous cycle of collaborative learning, model refinement, implementation, and feedback"
+  ],
+  "keyTakeaways": [
+    "For complex domains, the hardest part of software is deciding what to build — not how to build it. Focus on the domain.",
+    "Ubiquitous Language forces you to name things consistently across every artifact. If the developers and domain experts use different words, the model will never be clean.",
+    "A Bounded Context is the boundary within which a single model applies. No model is universal. Trying to build one guarantees confusion.",
+    "Entities are defined by identity, not attributes. Value Objects are defined by attributes and are immutable. Knowing which is which is a first-class modeling skill.",
+    "Aggregates define a consistency boundary — everything inside must be consistent; everything outside references only the aggregate root.",
+    "Repositories abstract persistence; Factories abstract construction. Neither belongs in the domain model, but both make the model workable.",
+    "The Anti-Corruption Layer is how you integrate with a legacy or third-party system whose model is fundamentally incompatible with yours.",
+    "Strategic design patterns are for large organizations. Tactical patterns are for individual bounded contexts. Most teams focus only on tactical patterns and miss the larger problem.",
+    "Domain experts are creative participants in modeling. The best models emerge from pairing a developer with a domain expert who is willing to challenge assumptions.",
+    "CRUD architecture maps database tables to code objects. It works for simple data management but encodes nothing of the business logic or language.",
+    "The model is a hypothesis. The implementation tests it. Refactoring the model — not just the code — is the path to deeper understanding.",
+    "DDD is not overkill for small teams on simple domains. It is overkill *only if applied dogmatically to every project*. Use judgment."
+  ],
+  "whoShouldRead": [
+    "Senior and staff engineers working on complex business domains — insurance, logistics, finance, healthcare",
+    "Software architects and tech leads responsible for multi-team or multi-service systems",
+    "Developers who have felt the pain of a CRUD architecture that cannot express real business rules",
+    "Engineering managers who want their teams to speak a common language with their business counterparts",
+    "Anyone working with (or designing) event-driven, microservice, or bounded-context architectures",
+    "Practitioners who have heard of DDD but worry it is too abstract or too heavyweight for their project"
+  ],
+  "whoShouldSkip": [
+    "Teams building simple CRUD apps or infrastructure tooling where the domain has no real complexity",
+    "Junior developers without exposure to an OO or functional language and without a sense of what a real domain model feels like",
+    "Readers looking for a prescriptive framework or step-by-step implementation guide — this book teaches principles, not recipes",
+    "People who prefer short, actionable books (the original runs 560 pages and rewards slow, patient reading)",
+    "Developers who have no access to, or interest in, collaborating with actual domain experts"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Implementing Domain-Driven Design",
+      "author": "Vaughn Vernon",
+      "slug": "implementing-domain-driven-design-vaughn-vernon"
+    },
+    {
+      "title": "Domain-Driven Design Distilled",
+      "author": "Vaughn Vernon",
+      "slug": null
+    },
+    {
+      "title": "Building Microservices",
+      "author": "Sam Newman",
+      "slug": "building-microservices-sam-newman"
+    },
+    {
+      "title": "Patterns of Enterprise Application Architecture",
+      "author": "Martin Fowler",
+      "slug": "patterns-of-enterprise-application-architecture-martin-fowler"
+    },
+    {
+      "title": "Refactoring",
+      "author": "Martin Fowler",
+      "slug": "refactoring-martin-fowler"
+    },
+    {
+      "title": "Clean Architecture",
+      "author": "Robert C. Martin",
+      "slug": "clean-architecture-robert-martin"
+    },
+    {
+      "title": "Working Effectively with Legacy Code",
+      "author": "Michael Feathers",
+      "slug": "working-effectively-with-legacy-code-michael-feathers"
+    }
+  ]
+}

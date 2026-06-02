@@ -1,0 +1,124 @@
+## Strengths
+
+- **Extraordinary readability.** OSTEP is the rare textbook that you can
+  read in bed. The prose is conversational, often funny ("the crux of the
+  problem"), and never dry. This is a genuine achievement in technical
+  writing.
+- **Real code examples.** Every mechanism is demonstrated with actual C
+  code, not pseudocode. Students can compile, run, and experiment.
+- **The "Crux" device.** Each chapter centers on a specific "crux" question
+  (e.g., "How can we virtualize the CPU without losing control?"). This
+  narrative drive keeps the reader engaged.
+- **Separation of mechanism and policy.** The book consistently separates
+  "what the hardware does" from "what the OS decides." This makes the
+  design space much easier to understand.
+- **Homework simulations.** Each chapter has simulation problems using
+  Python scripts. Students can vary parameters and see scheduling/paging
+  behavior visually.
+- **Free.** The PDF is freely available. Cost is not a barrier.
+- **SSD coverage.** Chapter 44 on flash-based SSDs is superb — rare for an
+  OS textbook, and increasingly essential.
+
+---
+
+## Weaknesses
+
+- **Light on distributed systems.** Nothing on HDFS, GFS, or distributed
+  consensus. The book stops at a single machine.
+- **C-only examples.** If you don't know C (increasingly common among new
+  programmers), the code sections are rough.
+- **Scheduling math can be buried.** The formulas for turnaround time,
+  response time, etc. are embedded in prose. Hard to skim.
+- **Self-published print quality.** The paperback has thin pages, small
+  font, and occasional formatting issues. The content is 10/10; the
+  physical book is 6/10.
+- **Light on security.** No coverage of Spectre/Meltdown, side channels,
+  or OS-level security mechanisms.
+- **No formal proofs.** The book is conceptual, not mathematical. If you
+  want formal verification or queuing theory, look elsewhere.
+
+---
+
+## Criticism
+
+### Too Informal?
+
+Some academics find the conversational tone off-putting. They argue that
+a textbook should be formal, precise, and reference-worthy — qualities
+that are harder to maintain with a chatty style. OSTEP is not a reference
+book; it is a pedagogical book. It teaches. If you need to look up a
+specific Linux syscall, you reach for the man pages, not OSTEP. For
+teaching, the style is the book's greatest strength.
+
+### Not Comprehensive Enough?
+
+OSTEP intentionally covers "three easy pieces" rather than being an
+encyclopedic reference. It omits or skims networking, security, real-time
+OSes, virtualization hypervisors, and containers. The authors are explicit
+about this scope choice — and the narrower focus is why the book is so
+effective.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|---|---|
+| "Too informal for a textbook" | The tone is a feature, not a bug — it makes OS concepts accessible |
+| "Not comprehensive enough" | The book teaches fundamentals, not trivia. Add breadth with Tanenbaum |
+| "C code is exclusionary" | OS concepts are inherently implemented in C — some prerequisites are fair |
+| "Self-published quality is poor" | The free PDF solves this. The printed book is a secondary option |
+| "Not authoritative as a reference" | It was never meant to be. Use it to learn, then use man pages to recall |
+
+---
+
+## Scientific Grounding
+
+| Concept | Source |
+|---|---|
+| Limited Direct Execution | Traditional OS design (Multics, Unix) |
+| MLFQ scheduling | Corbato et al., 1962 (CTSS) |
+| Paging | Atlas computer, Manchester, 1959 |
+| TLBs | Many academic architectures |
+| Semaphores | Dijkstra, 1965 |
+| Condition variables | Hoare, 1974 |
+| FFS cylinder groups | McKusick et al., 1984 |
+| Journaling (LFS) | Rosenblum & Ousterhout, 1992 |
+
+---
+
+## Historical Context
+
+Published in 2015 (first edition) and 2018 (current), OSTEP arrived when
+OS education was dominated by three textbooks: Silberschatz (dense),
+Tanenbaum (comprehensive but dry), and Stallings (formal). None of them
+were written for the 2010s programming student.
+
+The free online model was also ahead of its time — OSTEP proved that
+quality technical education could be free and still command widespread
+adoption. It paved the way for other free textbooks in systems education.
+
+---
+
+## Comparison to Similar Books
+
+| Book | Author | Key Difference |
+|---|---|---|
+| **OSTEP** | Arpaci-Dusseau | Conversational, short, focused on three pieces |
+| **Modern Operating Systems** | Tanenbaum | Encyclopedic, covers networking & security, more formal |
+| **Operating System Concepts** | Silberschatz | The classic "dinosaur book," comprehensive but dense |
+| **Computer Systems: A Programmer's Perspective** | Bryant & O'Hallaron | Covers the hardware-software stack (not just OS) |
+| **xv6 book** | MIT | Walks through a complete teaching Unix. Great partner to OSTEP |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|---|---|---|
+| Originality | 9/10 | "Three pieces" framing and Crux-driven pedagogy are novel |
+| Clarity | 10/10 | The clearest OS textbook by a wide margin |
+| Practical Utility | 9/10 | C code + homework simulators make concepts concrete |
+| Completeness | 7/10 | Excellent within scope; single-machine only |
+| Lasting Impact | 10/10 | Changed how OS education is done |
+| **Overall** | **9.5/10** | The definitive undergraduate OS textbook of the 2010s–2020s |

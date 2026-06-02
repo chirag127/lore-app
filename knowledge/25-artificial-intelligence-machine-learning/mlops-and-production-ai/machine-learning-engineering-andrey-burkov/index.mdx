@@ -1,0 +1,214 @@
+## Overview
+
+*Machine Learning Engineering* (2020) by Andriy Burkov is the practical
+counterpart to his earlier *The Hundred-Page Machine Learning Book*.
+Where the earlier book teaches the science of ML — algorithms, math,
+and methods — this one teaches the engineering: the lifecycle a
+project must follow to deliver a model that survives contact with
+production.
+
+Published on September 5, 2020 by True Positive Inc. (Burkov's own
+publishing imprint, distributed through Leanpub under a
+read-first-pay-later model), the book runs 310 pages and carries
+endorsements from Cassie Kozyrkov (Chief Decision Scientist at
+Google) and Karolis Urbonas (Head of Machine Learning at Amazon).
+On Goodreads it holds a 4.32/5 average across 135 ratings.
+
+The book is organized not by algorithm but by project phase — a
+deliberate choice Burkov makes in the opening pages and which Cassie
+Kozyrkov flags in her foreword as the most important thing readers
+should learn from the table of contents alone.
+
+---
+{}
+-------|-------------------|
+| Decision-making & product management | Should we use ML at all? What does success look like? |
+| Domain expertise & business acumen | What does the customer actually need? |
+| Data engineering & analysis | How do we get clean, labeled, well-understood data? |
+| Prototype phase ML engineering | How do we find a candidate model quickly? |
+| Statistics | Is the result real, or did we get lucky? |
+| Production phase ML engineering | How do we serve it at scale, online or batch? |
+| Reliability engineering | How do we detect failure, recover, and prevent adversaries? |
+
+The book is a thin volume with a wide scope. It is intentionally
+light on code, light on math, and heavy on patterns, checklists, and
+decision frameworks — closer to a senior engineer's field guide
+than a textbook.
+
+---
+
+## Key Takeaways
+
+1. **ML engineering is not ML research.** A research mindset optimizes
+   for accuracy on a frozen dataset. An engineering mindset optimizes
+   for business value, reliability, and cost over the lifetime of the
+   system. The book opens by hammering this distinction.
+
+2. **Problem framing comes first — and most projects fail here.** The
+   first chapters guide the reader through deciding whether ML is the
+   right tool at all, defining success in business terms, and
+   establishing baselines that a heuristic or a simple model might
+   already beat.
+
+3. **Data is the long pole.** Most project time goes to data
+   engineering and analysis, not modeling. Burkov devotes substantial
+   space to data quality, labeling strategies, missing values, and
+   the difference between what your data says and what your users do.
+
+4. **The right model is rarely the newest model.** The prototype
+   phase emphasizes trying simple baselines (logistic regression,
+   decision trees) before reaching for deep learning. Many production
+   models are deliberately simple because they are easy to debug,
+   cheap to serve, and good enough.
+
+5. **Statistics is the bridge between prototype and production.** A
+   model that beats a baseline on a test set is not yet a model that
+   will beat the baseline in production. Significance testing,
+   confidence intervals, and effect size are not academic exercises —
+   they are the only honest way to decide whether a new model is
+   actually better.
+
+6. **Production is a separate discipline.** Online serving (REST
+   APIs, streaming, edge) and batch serving (scheduled jobs) have
+   different latency, throughput, and cost profiles. Burkov walks
+   through the patterns: shadow deployments, canary rollouts,
+   A/B testing, and how to make a model rollbackable.
+
+7. **Reliability is the most important production concern.** Models
+   degrade silently. The book is unusually strong on monitoring for
+   data drift, concept drift, and adversarial inputs; on fallback
+   strategies when the model is wrong; and on graceful degradation
+   when the system is unavailable. The closing chapters treat ML
+   systems with the same care that Site Reliability Engineering
+   applies to any other production service.
+
+8. **Mistakes are inevitable. Hope is not a strategy.** A recurring
+   theme, quoted from a foreword contributor: assume the model will
+   fail, the pipeline will break, the input distribution will shift,
+   and an adversary will try to exploit it. The engineering work is
+   about detection, recovery, and limiting blast radius — not
+   preventing failure entirely.
+
+9. **Domain expertise cannot be automated away.** Every model sits
+   inside a domain with its own constraints, jargon, and edge cases.
+   The book repeatedly emphasizes that the ML engineer's job is to
+   translate domain knowledge into features, labels, and success
+   criteria — work that cannot be delegated to a model.
+
+10. **Read it alongside *The Hundred-Page Machine Learning Book*.**
+    The two books are deliberately non-overlapping: one teaches the
+    *what* of ML, this one teaches the *how* of shipping it. Most
+    reviewers recommend them as a pair.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| ML engineers shipping models to production | The only concise book covering the full ML lifecycle end to end |
+| Data scientists transitioning from notebooks to systems | Bridges the gap between research-style modeling and engineering-style operations |
+| Software engineers adding ML to a product | Teaches the failure modes, monitoring, and reliability concerns unique to ML systems |
+| Technical product managers leading ML projects | The framing and decision chapters are arguably the most valuable in the book |
+| MLOps and platform engineers | A pattern catalog for the production and reliability chapters |
+| Senior engineers preparing for ML interviews at large companies | Captures the "ML system design" interview canon in a single volume |
+
+---
+
+## Who Should Skip
+
+- Beginners learning ML for the first time — start with Burkov's
+  own *Hundred-Page Machine Learning Book* or Géron's *Hands-On
+  Machine Learning* for the modeling foundations
+- Readers looking for hands-on coding tutorials — the book is
+  deliberately code-light; pair it with *Hands-On Machine Learning*
+  or *Designing Machine Learning Systems* for executable examples
+- Practitioners needing deep dives on a single phase (e.g. only
+  feature engineering, or only deployment) — Chip Huyen's
+  *Designing Machine Learning Systems* goes deeper on data and
+  deployment at the cost of breadth
+- Researchers focused on model architecture or novel algorithms —
+  this is engineering, not research
+- Anyone wanting a vendor- or cloud-specific playbook — the book
+  is tool-agnostic by design
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|---|---|
+| Order of operations matters | A successful ML project must be executed in a specific sequence; doing steps out of order causes silent waste or catastrophic failure |
+| Engineering over algorithms | The hard problems are not in the model; they are in the data, the pipeline, the deployment, and the operations |
+| Data-centric thinking | Invest in data quality, labeling, and validation before reaching for a more complex model |
+| Decision intelligence | ML is a tool for making better decisions; it must be framed by the decision it serves, not the other way around |
+| Reliability by design | Models fail silently, inputs drift, adversaries exist; design for detection, recovery, and graceful degradation |
+| Domain first, model second | Domain expertise shapes features, labels, success criteria, and edge cases; without it, even a strong model ships the wrong product |
+| Pragmatism over novelty | The right model is the one that is good enough, debuggable, cheap to serve, and easy to retire — not the one with the best benchmark score |
+
+---
+
+## Why This Book Matters
+
+When *Machine Learning Engineering* was published in September 2020,
+the ML industry was just beginning to grapple with the operational
+consequences of having put thousands of models into production. The
+"MLOps" category was being named. Most engineering teams were
+learning — painfully — that a model that worked in a notebook
+behaved differently in production, and that nobody owned what
+happened after launch.
+
+Burkov's contribution is to lay out the entire lifecycle in the
+order it must actually be executed, with decision frameworks for
+each phase. The book's influence shows up in:
+
+- The widely-cited Cassie Kozyrkov foreword, which frames ML
+  engineering as "decision intelligence"
+- The adoption of its lifecycle structure by academic courses and
+  industry training programs
+- Its pairing with *The Hundred-Page Machine Learning Book* as the
+  default two-book curriculum for ML practitioners
+- The "read-first-pay-later" Leanpub model, which Burkov pioneered
+  and which lowered the barrier to professional ML education
+
+The book does not try to compete with Chip Huyen's *Designing
+Machine Learning Systems* (deeper on data and deployment) or with
+Géron's *Hands-On Machine Learning* (deeper on modeling with code).
+Its niche is breadth, brevity, and order: a single 310-page volume
+that walks a project from "should we use ML?" to "what do we do
+when the model breaks at 3 a.m.?"
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **The Hundred-Page Machine Learning Book** | Andriy Burkov | The modeling companion — the *what* of ML, condensed |
+| **Designing Machine Learning Systems** | Chip Huyen | Deeper treatment of data engineering, deployment, and MLOps |
+| **Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow** | Aurélien Géron | The code-first ML tutorial that complements this engineering overview |
+| **Reliable Machine Learning** | Todd Underwood | Goes deeper on the reliability and monitoring chapters |
+| **Building Machine Learning Pipelines** | Hapke & Nelson | Hands-on TFX and Kubeflow for the production phase |
+| **Machine Learning Engineering in Action** | Ben Wilson | A longer, code-heavy alternative for the production-phase chapters |
+
+---
+
+## Final Verdict
+
+*Machine Learning Engineering* is the book you hand to a strong
+ML practitioner who is about to ship their first model to
+production — or to a senior engineer who needs to understand why
+ML systems behave differently from any other software system. It
+will not teach you to code a neural network. It will teach you
+whether you should, what to do before you do, and what to do when
+it breaks.
+
+The book's greatest strength is its ordering. The greatest
+weakness, by design, is its breadth — a reviewer wanting deep
+treatment of feature stores, canary deployments, or drift
+detection will need a supplementary text. Read it for the map;
+read Huyen for the territory.
+
+**Rating: 8/10** — The best concise end-to-end guide to ML
+engineering, and the natural second book after Burkov's own
+*Hundred-Page Machine Learning Book*.

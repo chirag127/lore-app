@@ -1,0 +1,71 @@
+{
+  "slug": "clean-architecture-robert-martin",
+  "title": "Clean Architecture",
+  "author": "Robert C. Martin",
+  "subtitle": "A Craftsman's Guide to Software Structure and Design",
+  "description": "A comprehensive guide to software architecture that distills decades of experience into principles for building maintainable, testable, and flexible systems. Martin presents the rules of good architecture as universal, independent of technology choices — whether you are building a monolith, microservices, or serverless. The book introduces the SOLID principles, component design principles, and the infamous 'Clean Architecture' pattern that combines hexagonal architecture, DCI, and BCE.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/9201491-L.jpg",
+  "isbn10": "0134494164",
+  "isbn13": "9780134494166",
+  "pages": 432,
+  "publishedYear": 2017,
+  "publisher": "Prentice Hall",
+  "openlibrarySlug": "clean_architecture",
+  "tags": [
+    "software architecture",
+    "software design",
+    "SOLID principles",
+    "clean code",
+    "software engineering",
+    "design patterns",
+    "architecture"
+  ],
+  "keyIdeas": [
+    "Architecture should be independent of frameworks, databases, and UI",
+    "The Dependency Rule: source code dependencies must point inward, toward abstractions",
+    "Use cases are the central organizing principle of architecture",
+    "Boundaries separate core business logic from external concerns",
+    "SOLID principles are the foundation of clean architecture",
+    "Screaming architecture: the structure should announce what the system does",
+    "Components should be independently deployable and testable",
+    "Decoupling at the architectural level enables late decisions",
+    "Frameworks are tools, not the structure of your application",
+    "A good architecture maximizes the number of decisions not made"
+  ],
+  "keyTakeaways": [
+    "Architecture is about intent, not frameworks — the structure should reveal what the system does",
+    "The Dependency Rule is the central law: source code dependencies must point only inward toward abstractions",
+    "Use cases should be the center of your architecture, not the database or the web framework",
+    "Decouple at architectural boundaries — use interfaces to create plugin architectures",
+    "Frameworks are tools to be used, not structures to be conformed to",
+    "Good architecture leaves options open — it defers decisions about databases, web servers, and frameworks",
+    "SOLID principles apply at the class level; component principles scale the same thinking",
+    "Testing should not require a database, web server, or any infrastructure",
+    "Architecture is about cost — good architecture minimizes the lifetime cost of a system",
+    "Every architectural boundary should support the option to split into microservices later"
+  ],
+  "whoShouldRead": [
+    "Software architects and senior engineers designing complex systems",
+    "Developers who want to understand the 'why' behind design patterns and principles",
+    "Technical leaders responsible for system longevity and maintainability",
+    "Any programmer who has ever been paralyzed by framework coupling"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Clean Code",
+      "slug": "clean-code-robert-martin"
+    },
+    {
+      "title": "The Clean Coder",
+      "slug": null
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "slug": "designing-data-intensive-applications-martin-kleppmann"
+    },
+    {
+      "title": "Building Microservices",
+      "slug": "building-microservices-sam-newman"
+    }
+  ]
+}

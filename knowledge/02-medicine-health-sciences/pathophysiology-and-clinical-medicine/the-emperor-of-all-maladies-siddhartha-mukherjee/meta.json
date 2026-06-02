@@ -1,0 +1,83 @@
+{
+  "slug": "the-emperor-of-all-maladies-siddhartha-mukherjee",
+  "title": "The Emperor of All Maladies: A Biography of Cancer",
+  "originalTitle": "The Emperor of All Maladies: A Biography of Cancer",
+  "author": "Siddhartha Mukherjee",
+  "isbn": "978-1439170915",
+  "isbn10": "143917091X",
+  "publisher": {
+    "us": "Scribner",
+    "uk": "Fourth Estate",
+    "india": "HarperCollins India"
+  },
+  "publicationDate": "2010-11-16",
+  "pages": 592,
+  "language": "English",
+  "genre": [
+    "Nonfiction",
+    "Medical History",
+    "History of Science",
+    "Oncology",
+    "Biography"
+  ],
+  "wordCount": 150000,
+  "readingTimeMinutes": 960,
+  "difficulty": "Medium",
+  "series": null,
+  "subjects": [
+    "Cancer medicine",
+    "Oncology history",
+    "Surgical oncology",
+    "Chemotherapy",
+    "Radiation therapy",
+    "Molecular oncology",
+    "Targeted therapy",
+    "Genetics and cancer",
+    "BCR-ABL and CML",
+    "Imatinib (Gleevec)",
+    "Cancer prevention",
+    "Cancer survivorship",
+    "Nobel Prize discoveries in cancer",
+    "National Cancer Act",
+    "Pulitzer Prize winner"
+  ],
+  "keyConcepts": [
+    "Cancer treated as an evolving biography rather than a static disease",
+    "Surgery, radiation, and chemotherapy as distinct therapeutic epochs",
+    "The physical and psychological limits of surgery on cancer",
+    "Radiation as both cure and carcinogen",
+    "Chemotherapy discovered serendipitously from chemical warfare agents",
+    "The War on Cancer (Nixon, 1971) as bureaucratic and institutional transformation",
+    "Genetics and the molecular revolution in oncology",
+    "Tumour heterogeneity and clonal evolution",
+    "The six hallmarks of cancer",
+    "Targeted therapy and the molecular-profit model (Gleevec as archetype)",
+    "The role of tumour suppressor genes, especially p53",
+    "Immunotherapy as the third revolution in cancer therapy",
+    "Cancer survivorship and prevention as unfinished chapters",
+    "The physician's emotional experience of treating cancer",
+    "The future of cancer: liquid biopsies, personalised medicine, immunotherapy"
+  ],
+  "awards": [
+    "Pulitzer Prize for General Nonfiction (2011)",
+    "Wellcome Trust Book Prize Shortlist (2011)",
+    "PEN/E. O. Wilson Literary Science Writing Award (2011)",
+    "Whiting Creative Nonfiction Grant"
+  ],
+  "copiesSold": 1500000,
+  "languagesTranslated": 40,
+  "isbnVariants": [
+    "978-1439170915 (US Scribner hardcover)",
+    "978-1439180914 (US Scribner paperback)",
+    "978-0007455075 (UK Fourth Estate hardcover)",
+    "978-0007455082 (UK Fourth Estate paperback)"
+  ],
+  "pulitzerPrize": "2011 Pulitzer Prize for General Nonfiction",
+  "documentaryAdaptation": {
+    "title": "Cancer: The Emperor of All Maladies",
+    "director": "Barak Goodman",
+    "producedBy": "Ken Burns",
+    "network": "PBS",
+    "year": 2015
+  }
+}

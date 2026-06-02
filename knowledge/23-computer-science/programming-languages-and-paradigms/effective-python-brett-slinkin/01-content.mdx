@@ -1,0 +1,136 @@
+---
+title: Core Concepts
+subtitle: Pythonic Idioms, Concurrency Models, and Expert Patterns
+---
+
+## The Pythonic Mindset
+
+Slatkin's overarching theme: write code that reads naturally in
+Python, not code translated from another language.
+
+```mermaid
+graph LR
+    subgraph Pythonic["Pythonic Code"]
+        C1["Use list comprehensions, not map/filter"]
+        C2["Raise exceptions, not error codes"]
+        C3["Use context managers for resources"]
+        C4["EAFP: Easier to Ask Forgiveness than Permission"]
+    end
+
+    subgraph Unpythonic["Unpythonic Code"]
+        B1["Heavy use of recursion"]
+        B2["Manual iteration with indices"]
+        B3["Long methods without decomposition"]
+        B4["Overuse of class hierarchies"]
+    end
+
+    C1 --> R["Readable, maintainable, idiomatic"]
+    C2 --> R
+    C3 --> R
+    C4 --> R
+```
+
+---
+
+## Functions and Comprehensions
+
+Some of the most impactful patterns from the book:
+
+| Item | Pattern | Why It Matters |
+|------|---------|----------------|
+| Item 9 | Use `for` loops over `range(len(...))` | Cleaner, less error-prone |
+| Item 10 | Prefer `enumerate` over `range` | Access index and value |
+| Item 11 | Use `zip` for parallel iteration | Built-in, handles uneven lengths |
+| Item 14 | Sort by complex criteria with `key` | Flexible, readable sorting |
+| Item 16 | Prefer `get` and `setdefault` for dicts | Avoid key errors |
+| Item 27 | Use `@classmethod` for alternative constructors | Clean factory pattern |
+
+---
+
+## Generators and Iterators
+
+```mermaid
+flowchart LR
+    subgraph Memory["Memory Efficiency Spectrum"]
+        L["List: loads all into memory"]
+        GEN["Generator: yields one at a time"]
+        ITR["Iterator: abstract iteration"]
+    end
+
+    subgraph Patterns["Generator Patterns"]
+        Y["yield items one by one"]
+        SEN["send() for two-way communication"]
+        THR["throw() for exception handling"]
+        CHAIN["Chain generators for pipeline"]
+    end
+
+    L -->|"Memory-heavy"| GEN
+    GEN -->|"Memory-light"| ITR
+    Y --> CHAIN
+    SEN --> CHAIN
+    THR --> CHAIN
+```
+
+**Key insight:** Use generators whenever you process large data.
+They transform O(n) memory usage into O(1).
+
+---
+
+## Concurrency
+
+| Model | Best For | GIL Impact | Example Use Case |
+|-------|----------|------------|------------------|
+| Threading | I/O-bound tasks | GIL limits CPU work | Web scraping, file I/O |
+| asyncio | I/O-bound, high concurrency | Not affected | Web servers, APIs |
+| multiprocessing | CPU-bound tasks | Separate processes | Data processing, ML |
+| concurrent.futures | Simple parallelism | Depends on executor | Map-reduce patterns |
+
+Slatkin's guidance: default to asyncio for I/O, multiprocessing for
+CPU, and threads only for wrapping existing blocking libraries.
+
+---
+
+## Metaclasses and Decorators
+
+Advanced patterns for when you need them:
+
+| Pattern | Use Case | Example |
+|---------|----------|---------|
+| `@property` | Controlled attribute access | Validation on set |
+| `__getattr__` | Dynamic attribute lookup | Proxy objects |
+| Metaclasses | Class creation customization | ORMs, validators |
+| Descriptors | Reusable attribute behavior | Type-checked fields |
+
+**Warning:** Slatkin recommends metaclasses only when simpler
+patterns (decorators, descriptors, `__init_subclass__`) do not
+suffice.
+
+---
+
+## Key Lessons
+
+- **Write code for readers, not computers.** Python's clarity
+  advantage is lost when you write clever one-liners.
+- **Use the standard library.** Before writing a utility, check
+  `itertools`, `collections`, `functools`, and `contextlib`.
+- **Prefer generators over lists.** They compose well, use less
+  memory, and handle infinite sequences.
+- **Type annotations are not optional.** They catch bugs and
+  document intent. Use `mypy` or `pyright`.
+- **Test behavior, not implementation.** Use `unittest.mock`
+  sparingly. Test through public APIs.
+
+---
+
+## Action Plan
+
+1. **Read the book front to back once** to build awareness of what
+   Python can do.
+2. **Keep it as a reference.** When you face a specific problem,
+   look up the relevant item.
+3. **Adopt two items per week.** Introduce patterns gradually into
+   your codebase.
+4. **Set up type checking.** Add `mypy --strict` to your CI
+   pipeline.
+5. **Review code with the items.** Use the 90 items as a code
+   review checklist.

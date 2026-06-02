@@ -1,0 +1,38 @@
+{
+  "slug": "just-kids-patti-smith",
+  "id": "just-kids-patti-smith",
+  "title": "Just Kids",
+  "subtitle": "",
+  "authors": ["Patti Smith"],
+  "year": 2010,
+  "category": "27-biography-memoir",
+  "subcategory": "artists-writers-and-musicians",
+  "pages": 278,
+  "isbn": "9780066211312",
+  "publisher": "Ecco",
+  "language": "en",
+  "genres": ["Memoir", "Biography", "Art", "Music", "LGBTQ"],
+  "subjects": ["Patti Smith", "Robert Mapplethorpe", "New York City", "Artists", "Photography", "Punk Rock", "Chelsea Hotel"],
+  "themes": [
+    "Artistic vocation and the price of creative devotion",
+    "The bond between soulmates across romantic and platonic love",
+    "Innocence and experience in bohemian New York",
+    "Loss, elegy, and the obligation to bear witness",
+    "The transformation of poverty into creative crucible"
+  ],
+  "tags": ["patti-smith", "robert-mapplethorpe", "memoir", "punk", "chelsea-hotel", "new-york", "1970s", "aids", "photography", "national-book-award"],
+  "difficulty": "easy",
+  "estimatedReadingHours": 6,
+  "estimatedListeningMinutes": 390,
+  "excerpt": "Patti Smith's National Book Award-winning memoir of her relationship with photographer Robert Mapplethorpe traces their journey from a chance meeting in 1967 Brooklyn through the hungry years at the Chelsea Hotel to their separate ascents as artists — a tender elegy for a lost New York, a lost generation, and a love that transformed into enduring friendship.",
+  "rationale": "Book #1 for artists-writers-and-musicians. Root book for an empty subcategory. Just Kids won the National Book Award, the NBCC finalist, and is the definitive artist-memoir of its generation. Chosen to anchor the leaf with a work that embodies the creative partnership between two artists across different mediums — photography and music-poetry — setting the template for subsequent books in this subcategory.",
+  "verifiedSources": [
+    "Wikipedia: Just Kids — ISBN 9780066211312, 278pp, Ecco 2010, National Book Award 2010",
+    "Library of Congress catalog record — 9780066211312, xii+278p, Ecco 2010",
+    "Bookshop.org listing — 304 pages, $27 hardcover, Jan 19 2010",
+    "NYT Book Review (Tom Carson, Jan 31 2010) — 'spellbinding, diverting portrait'",
+    "NPR review (Michael Schaub, Jan 25 2010) — 'remarkable, evocative'",
+    "Amazon.ca listing — 304 pages, ISBN-10 006621131X",
+    "Open Library MARC record — OCLC 496864395"
+  ]
+}

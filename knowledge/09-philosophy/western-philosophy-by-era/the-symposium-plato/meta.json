@@ -1,0 +1,96 @@
+{
+  "slug": "the-symposium-plato",
+  "title": "The Symposium",
+  "subtitle": "Συμπόσιον (Symposion) — On Love, Desire, and the Ascent to the Beautiful",
+  "author": "Plato",
+  "authorBorn": -428,
+  "authorDied": -348,
+  "originalLanguage": "Attic Greek",
+  "writtenPeriod": "c. 370 BC",
+  "dramaticDate": "416 BC",
+  "isbn": "9780140449273",
+  "recommendedTranslation": {
+    "translator": "Christopher Gill",
+    "title": "The Symposium",
+    "publisher": "Penguin Classics",
+    "year": 2003,
+    "isbn": "9780140449273",
+    "pages": 144,
+    "note": "Lively modern translation with an excellent introduction, detailed notes, and a select bibliography. The most accessible current Penguin edition for first-time readers."
+  },
+  "alternativeTranslations": [
+    {
+      "translator": "Alexander Nehamas and Paul Woodruff",
+      "publisher": "Hackett Publishing",
+      "year": 1989,
+      "isbn": "9780872200760",
+      "pages": 96,
+      "note": "A crisp, idiomatic translation widely used in undergraduate philosophy courses. Includes an interpretive essay and a glossary of key terms."
+    },
+    {
+      "translator": "Robin Waterfield",
+      "publisher": "Oxford World's Classics",
+      "year": 1994,
+      "isbn": "9780192834270",
+      "pages": 160,
+      "note": "Oxford edition with a substantial introduction situating the dialogue in its historical and philosophical context. Strong scholarly apparatus."
+    },
+    {
+      "translator": "Seth Benardete",
+      "publisher": "University of Chicago Press",
+      "year": 1986,
+      "isbn": "9780226042756",
+      "pages": 200,
+      "note": "Unusual, literal translation that preserves Plato's Greek word order and syntax. Includes Benardete's interpretive essay. Favored by Straussians and close readers."
+    },
+    {
+      "translator": "W. R. M. Lamb",
+      "publisher": "Loeb Classical Library / Harvard University Press",
+      "year": 1925,
+      "isbn": "9780674991699",
+      "pages": 544,
+      "note": "Standard bilingual edition (Greek/English). Includes the complete Symposium with facing-page translation. The definitive scholarly reference text."
+    }
+  ],
+  "genres": ["Philosophy", "Classics", "Literature", "Ethics"],
+  "subjects": [
+    "Ancient Philosophy",
+    "Greek Philosophy",
+    "Love",
+    "Eros",
+    "Beauty",
+    "Theory of Forms",
+    "Pederasty",
+    "Athenian Society",
+    "Dramatic Dialogue"
+  ],
+  "themes": [
+    "Ladder of Love (Scala Amoris)",
+    "Diotima of Mantinea and the Priestess Tradition",
+    "The Form of Beauty",
+    "Aristophanes' Myth of the Androgyne",
+    "Socratic Erotics and the Desire for Wisdom",
+    "Alcibiades and the Problem of Embodied Love",
+    "Phaedrus on Love and Heroic Sacrifice",
+    "Pausanias on Heavenly vs. Common Love",
+    "Eryximachus on Cosmic Love",
+    "Agathon's Rhetorical Praise of Eros",
+    "The Relationship Between Love and Immortality",
+    "Comedy and Tragedy in Philosophical Discourse"
+  ],
+  "tags": [
+    "plato", "socrates", "ancient philosophy", "greek philosophy", "classics",
+    "love", "eros", "beauty", "desire", "symposium", "banquet", "athens",
+    "diotima", "alcibiades", "aristophanes", "agathon", "phaedrus", "pausanias",
+    "eryximachus", "ladder of love", "platonic love", "platonic forms",
+    "form of beauty", "theory of forms", "socrates", "socratic method",
+    "pederasty", "greek homosexuality", "immortality", "virtue",
+    "philosophy of love", "ethics", "metaphysics", "epistemology",
+    "socratic dialogue", "drama", "comedy", "tragedy",
+    "plotinus", "ficino", "renaissance", "neoplatonism"
+  ],
+  "difficulty": "medium",
+  "estimatedReadingHours": 3,
+  "estimatedListeningMinutes": 180,
+  "excerpt": "Plato's Symposium is the foundational text of Western philosophical reflection on love. Set at a drinking party in Athens in 416 BC, the dialogue presents seven encomia to the god Eros delivered by some of the most remarkable figures of the age: the orator Phaedrus, the legal expert Pausanias, the physician Eryximachus, the comic playwright Aristophanes, the tragic poet Agathon, the philosopher Socrates, and finally the drunken general Alcibiades. Through the voice of the wise woman Diotima of Mantinea, Socrates articulates the 'Ladder of Love' — an ascent from desire for a single beautiful body to contemplation of the Form of Beauty itself. The Symposium is simultaneously a literary masterpiece, a profound ethical inquiry, and the dialogue in which Plato first unequivocally introduces the Theory of Forms. Its influence radiates through Plotinus, Augustine, Ficino, the Renaissance love treatise tradition, and every subsequent thinker who has tried to understand what it means to love."
+}

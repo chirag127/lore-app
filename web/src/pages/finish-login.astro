@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinishLogin from '../components/auth/FinishLogin.tsx';
+---
+<BaseLayout title="Finishing sign in" description="Completing your sign-in." noChrome={true}>
+  <section class="min-h-[60vh] flex items-center justify-center px-6">
+    <FinishLogin client:load />
+  </section>
+</BaseLayout>

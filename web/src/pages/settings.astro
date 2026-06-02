@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Ornament } from '../components/ui/Primitives.tsx';
+import { SettingsPanel } from '../components/settings/SettingsPanel.tsx';
+---
+<BaseLayout title="Settings" description="Manage your KnowledgeAtlas preferences.">
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <Ornament client:load>Settings</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-8 sm:mb-10 text-balance">
+      Tweak the experience
+    </h1>
+    <SettingsPanel client:load />
+  </section>
+</BaseLayout>

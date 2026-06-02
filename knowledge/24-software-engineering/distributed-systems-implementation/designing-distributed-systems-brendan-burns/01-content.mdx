@@ -1,0 +1,129 @@
+# 01 — Content Summary
+
+*Designing Distributed Systems* (March 2018, 168 pages) is a pattern-first guide to building reliable distributed services. Burns structures the book in three progressive parts — Single-Node Patterns, Serving Patterns, and Batch Computational Patterns — using Kubernetes as the deployment substrate throughout.
+
+---
+
+## Part I: Single-Node Patterns
+
+Single-node patterns wrap a primary application container with co-located helper containers on the same host, using Kubernetes' pod abstraction.
+
+### The Sidecar Pattern (Chapter 2)
+
+A sidecar is an auxiliary container deployed in the same pod as the primary application, extending or augmenting its behavior without modifying its code. The canonical example adds HTTPS termination to a legacy HTTP service by placing nginx alongside it.
+
+Key ideas:
+
+- **Dynamic configuration** — sidecars can watch a shared volume or ConfigMap and update the primary application's configuration at runtime without restarting it.
+- **Modular containers** — each container does one thing well, enabling independent upgrades, scaling, and replacement.
+- **API discipline** — sidecars should expose well-defined interfaces (Unix sockets, localhost HTTP ports) so the primary container can treat them as libraries, not remote network services.
+- **Parameterization** — containers should accept configuration via environment variables and command-line arguments so the same image serves many deployments.
+
+Burns also demonstrates building a minimal platform-as-a-service using sidecars: each "application" is simply a pod with a standardized set of sidecar containers for logging, monitoring, and service discovery.
+
+### Ambassadors (Chapter 3)
+
+An ambassador container proxies or brokers network access for the primary container, intercepting outbound calls to apply a cross-cutting concern transparently.
+
+- **Sharding ambassador** — placed in front of a backend service, it routes requests to the appropriate shard based on a key (e.g., Redis cluster sharding with consistent hashing).
+- **Service brokering ambassador** — abstracts the actual network endpoint so the application can use a stable localhost address while the ambassador resolves the real service location from a registry.
+- **Experimentation / request splitting ambassador** — routes a percentage of traffic to an experimental variant and the remainder to the stable version (e.g., 10% experiment roll-out).
+
+### Adapters (Chapter 4)
+
+An adapter container transforms the primary application's output into a format consumable by external tooling. Three practical applications:
+
+- **Monitoring** — a Prometheus adapter scrapes application metrics and presents them in the Prometheus exposition format, even if the application natively uses a different schema.
+- **Logging** — a Fluentd adapter normalizes heterogeneous log formats into a unified structured schema before forwarding to a central logging pipeline.
+- **Health monitoring** — a health-check adapter supplements basic liveness/readiness probes with richer health signals that the application itself does not expose (e.g., disk remaining, downstream dependency health).
+
+---
+
+## Part II: Serving Patterns
+
+Serving patterns address multi-node, horizontally scalable request-serving architectures. These are the patterns most relevant to platforms, APIs, and user-facing services.
+
+### Replicated Load-Balanced Services (Chapter 5)
+
+The simplest scalable pattern: multiple identical replicas behind a load balancer that distributes requests round-robin or via least-connections.
+
+- **Stateless services** are trivial to replicate — any replica can serve any request.
+- **Readiness probes** prevent the load balancer from routing to replicas that are still initializing.
+- **Session-tracked services** use sticky sessions tied to a cookie, routing a user consistently to the same replica. This limits horizontal scale-out and introduces failure-domain complexity.
+- **Caching layers** deployed as a separate replicated tier reduce load on the origin database. Different eviction policies (LRU, TTL, write-through) carry different consistency trade-offs.
+- **Rate limiting and DoS defense** at the edge (nginx, Envoy) protect backend capacity.
+- **SSL termination** at the edge offloads encryption from application containers.
+
+### Sharded Services (Chapter 6)
+
+Sharding partitions a dataset or request stream across multiple independent instances based on a key, enabling horizontal scale beyond what a single instance can handle.
+
+- **Why shard?** When a cache or database exceeds the memory or throughput of one machine, replicas alone won't help — each replica holds a full copy. Sharding distributes the data.
+- **Consistent hashing** minimizes data movement when the number of shards changes, making shards elastically scalable.
+- **Replicated, sharded caches** — each shard is itself replicated for availability; the ambassador or proxy routes to the correct shard-replica pair.
+- **Hot sharding systems** allow live resharding with minimal downtime by migrating keys between shards.
+
+### Scatter/Gather (Chapter 7)
+
+Scatter/gather is used when a single request logically fan-out to multiple independent data sources and requires a merged result.
+
+- **Root distribution** — a root node fans out requests to all leaf nodes, merges their individual responses, and returns a unified result. Used for document search across sharded indices.
+- **Leaf sharding** — the root node also partitions the request space, sending each leaf a different slice of the keyspace; the root then merges partial results. More efficient than root distribution for large result sets.
+- **Choosing the right number of leaves** — too few leaves underutilizes parallelism; too many leaves saturates network overhead and the merge coordinator.
+
+### Functions and Event-Driven Processing (Chapter 8)
+
+Serverless / function-as-a-service (FaaS) patterns decompose services into discrete functions triggered by events, eliminating the need to manage long-lived servers.
+
+- **When FaaS makes sense** — sporadic, bursty workloads where per-invocation pricing beats always-on capacity for cost, but sustained high-throughput workloads can actually become more expensive.
+- **Decorator pattern** — a function that wraps the primary handler to apply cross-cutting logic (authentication, request validation, defaulting) before and after invocation.
+- **Hands-on examples** — implement two-factor authentication as a decorator; implement a new-user signup event pipeline.
+- **Event-based pipelines** — chain functions via message queues (Pub/Sub, Kafka) so each stage in a workflow is independently scalable and replaceable.
+
+### Ownership Election (Chapter 9)
+
+Leader election ensures exactly one replica acts as coordinator for a shared resource at any time, preventing split-brain scenarios.
+
+- **Do you need it?** — often a distributed lock (e.g., etcd, Consul) is simpler than full leader election. Burns argues for minimizing coordination: is there a way to avoid the singleton bottleneck entirely?
+- **Implementation with etcd** — uses atomic compare-and-swap (CAS) operations to acquire a lock. Leases ensure locks expire if the holder crashes.
+- **Handling concurrent data manipulation** — once elected, the leader must read-modify-write shared state atomically, typically using etcd transactions.
+
+---
+
+## Part III: Batch Computational Patterns
+
+Batch patterns handle large-scale, non-real-time data processing where throughput and fault-tolerance matter more than latency.
+
+### Work Queue Systems (Chapter 10)
+
+A work queue decouples task submission from task execution. A "source container" produces tasks onto a durable queue; multiple "worker containers" consume and process them.
+
+- **Dynamic scaling** — workers can be added or removed based on queue depth, making the system elastic to workload.
+- **Multi-worker pattern** — multiple workers compete for tasks, providing natural load balancing and fault tolerance (if one worker crashes, others pick up its tasks).
+- **Hands-on example** — a video thumbnail generation pipeline: source container uploads video metadata to a queue; workers pull jobs and generate thumbnails.
+
+### Event-Driven Batch Processing (Chapter 11)
+
+Five canonical event-processing topologies applied to batch data pipelines:
+
+| Pattern | Role |
+|---|---|
+| **Copier** | Duplicates a stream to multiple downstream consumers |
+| **Filter** | Passes through only events matching a predicate |
+| **Splitter** | Routes each event to the correct destination stream by type |
+| **Sharder** | Partitions events by key into multiple streams |
+| **Merger** | Joins multiple streams into one ordered stream |
+
+Hands-on: deploying Kafka and building a new-user sign-up pipeline that chains copier → filter → sharder.
+
+### Coordinated Batch Processing (Chapter 12)
+
+For operations that require synchronization across many parallel workers:
+
+- **Join (barrier synchronization)** — all workers must complete before the next stage begins. Used to assemble a final result from parallel computation fragments.
+- **Reduce** — workers compute partial aggregates; a final reduction step combines them into a single value (sum, count, histogram).
+- **Hands-on examples** — an image tagging pipeline using join synchronization; count, sum, and histogram reduction patterns.
+
+### Conclusion (Chapter 13)
+
+Burns closes by arguing that containers and orchestration platforms have made these patterns practical at scale for the first time. The community's next challenge is standardizing the patterns themselves, not just the tools, so that future systems architecture can build on a shared foundation.

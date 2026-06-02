@@ -1,0 +1,44 @@
+{
+  "slug": "liars-poker-michael-lewis",
+  "title": "Liar's Poker",
+  "subtitle": "Rising Through the Wreckage on Wall Street",
+  "author": "Michael Lewis",
+  "isbn": "9780393027501",
+  "isbn10": "0393027503",
+  "publisher": "W. W. Norton & Company",
+  "originalPublicationYear": 1989,
+  "pages": 249,
+  "language": "en",
+  "subjects": [
+    "Wall Street",
+    "Salomon Brothers",
+    "Bond market",
+    "Investment banking",
+    "Finance history",
+    "Memoir"
+  ],
+  "amazonRating": 4.3,
+  "goodreadsRating": 4.15,
+  "goodreadsRatingsCount": 102000,
+  "difficulty": "Easy",
+  "readingTimeHours": 6,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780393027501-L.jpg",
+  "openLibraryKey": "OL7944812W",
+  "authorBio": "Michael Lewis (b. 1960) is an American author and financial journalist. A Princeton and LSE graduate, he worked at Salomon Brothers in the 1980s before becoming a full-time writer. His books have sold millions of copies worldwide and include The Big Short, Moneyball, Flash Boys, and The Blind Side. Several have been adapted into Oscar-winning films.",
+  "keyConcepts": [
+    "Liar's Poker game",
+    "Salomon Brothers culture",
+    "Mortgage-backed securities",
+    "Junk bonds",
+    "Arbitrage",
+    "Wall Street excess",
+    "1980s finance culture"
+  ],
+  "notableQuotes": [
+    "The people who could get you a loan were not the people you wanted to borrow from.",
+    "Wall Street was not a place where you could park a moral sensibility.",
+    "The things you are taught are the things that will soon be obsolete.",
+    "There is only one sin on Wall Street: losing money.",
+    "Liar's Poker was a microcosm of the bond market itself."
+  ]
+}

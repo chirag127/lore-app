@@ -1,0 +1,104 @@
+{
+  "slug": "essays-of-warren-buffett-lawrence-cunningham",
+  "title": "The Essays of Warren Buffett",
+  "subtitle": "Lessons for Corporate America",
+  "author": "Warren E. Buffett",
+  "editor": {
+    "name": "Lawrence A. Cunningham",
+    "role": "Professor of Law, Benjamin N. Cardozo School of Law",
+    "born": 1962,
+    "nationality": "American"
+  },
+  "originalPublicationYear": 1998,
+  "editionReferenced": "1st Carrum Asset Management edition (paperback, 1998); 2nd paperback edition, 2001",
+  "language": "en",
+  "isbn": "9781576600760",
+  "isbn_10": "1576600763",
+  "publisher": "Carrum Asset Management",
+  "pageCount": 350,
+  "difficulty": "intermediate",
+  "readingTimeMinutes": 420,
+  "heroImage": "images/hero.jpg",
+  "status": "published",
+  "themes": [
+    "managers are stewards of shareholder capital, not agents of their own enrichment",
+    "full and fair disclosure is the foundation of trustworthy corporate governance",
+    "price and value diverge frequently: the intelligent investor exploits the gap",
+    "owner-founder mentality outperforms the hired-manager model",
+    "accounting is a tool for communication, not obfuscation",
+    "executive compensation should reward returns to owners, not earnings from retained capital",
+    "markets are manic-depressive auction mechanisms, not efficient calculators",
+    "long-term compounding of owner earnings beats short-term earnings activity",
+    "trust and integrity are durable competitive advantages that cannot be faked",
+    "Berkshire's shareholder letters are a model of plain-spoken, high-quality corporate communication"
+  ],
+  "tags": [
+    "warren-buffett",
+    "berkshire-hathaway",
+    "lawrence-cunningham",
+    "corporate-governance",
+    "value-investing",
+    "valuation",
+    "accounting",
+    "mergers-and-acquisitions",
+    "executive-compensation",
+    "owner-earnings",
+    "shareholder-letters",
+    "investment-philosophy",
+    "cardozo-law-review",
+    "communication",
+    "trust",
+    "integrity",
+    "market-psychology",
+    "financial-analysis"
+  ],
+  "description": "Lawrence A. Cunningham curates, annotates, and organises selections from four decades of Warren Buffett's Berkshire Hathaway shareholder letters into seven thematic sections covering corporate governance, finance, common stock valuation, M&A, and accounting policy. The edition referenced is the original 1998 Carrum Asset Management publication (ISBN 9781576600760, ~350pp); a second Carrum edition followed in 2001. Cunningham's role is editorial and curatorial, not authorial: the value lies in the thematic grouping, editorial annotations, and introduction that transform a chronological archive into a systematic textbook of investment and governance philosophy. Widely cited in both law school curricula and investment education programs.",
+  "toc": [
+    "Introduction (Lawrence A. Cunningham)",
+    "Prologue: Owner-Related Business Principles",
+    "I. Corporate Governance",
+    "II. Finance and Investing",
+    "III. Alternatives to Common Stock",
+    "IV. Common Stock",
+    "V. Mergers and Acquisitions",
+    "VI. Valuation and Accounting",
+    "VII. Accounting Policy and Tax Matters",
+    "Epilogue"
+  ],
+  "keyConcepts": [
+    "corporate-governance-as-stewardship",
+    "full-and-fair-disclosure",
+    "price-versus-value",
+    "owner-founder-mentality",
+    "accounting-as-communication",
+    "executive-compensation-alignment",
+    "market-psychology",
+    "owner-earnings",
+    "economic-moat",
+    "long-term-compounding",
+    "shareholder-letter-quality",
+    "trust-and-integrity"
+  ],
+  "relatedEntries": [
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham",
+      "relationship": "Foundational text that shaped Buffett's investment framework"
+    },
+    {
+      "title": "Berkshire Hathaway Letters to Shareholders",
+      "slug": "berkshire-hathaway-shareholder-letters-warren-buffett",
+      "relationship": "The primary source material — chronological letters compiled by Max Olsen"
+    },
+    {
+      "title": "The Warren Buffett Way",
+      "slug": "the-warren-buffett-way-robert-hagstrom",
+      "relationship": "Systematic analysis of Buffett's investment methodology"
+    },
+    {
+      "title": "Common Sense on Mutual Funds",
+      "slug": "common-sense-on-mutual-funds-john-bogle",
+      "relationship": "Parallel argument about cost discipline and long-term ownership"
+    }
+  ]
+}

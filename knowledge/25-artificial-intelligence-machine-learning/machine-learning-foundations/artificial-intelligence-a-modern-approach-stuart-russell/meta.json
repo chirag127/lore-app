@@ -1,0 +1,107 @@
+{
+  "slug": "artificial-intelligence-a-modern-approach-stuart-russell",
+  "title": "Artificial Intelligence: A Modern Approach",
+  "subtitle": "The Definitive Textbook on the Theory and Practice of AI",
+  "author": "Stuart Russell & Peter Norvig",
+  "description": "The most widely used AI textbook worldwide, Artificial Intelligence: A Modern Approach (AIMA) covers the full breadth and depth of the field — from search algorithms and logic to machine learning, deep learning, robotics, and natural language processing. The 4th edition (2020) brings readers up to date with modern probabilistic programming, multi-agent systems, and ethical AI considerations.",
+  "coverUrl": "https://upload.wikimedia.org/wikipedia/en/e/e5/Artificial_Intelligence-_A_Modern_Approach.jpg",
+  "isbn10": "0134610997",
+  "isbn13": "9780134610993",
+  "pages": 1136,
+  "publishedYear": 2020,
+  "publisher": "Prentice Hall (Pearson)",
+  "openlibrarySlug": "OL2896994W",
+  "tags": [
+    "artificial-intelligence",
+    "machine-learning",
+    "deep-learning",
+    "robotics",
+    "natural-language-processing",
+    "computer-vision",
+    "search-algorithms",
+    "knowledge-representation",
+    "probabilistic-reasoning",
+    "reinforcement-learning",
+    "multi-agent-systems",
+    "neural-networks",
+    "computer-science",
+    "textbook",
+    "stuart-russell",
+    "peter-norvig",
+    "aima",
+    "academic"
+  ],
+  "keyIdeas": [
+    "Intelligent agents perceive their environment and act rationally to achieve goals",
+    "Problem-solving as search through state spaces (uninformed, informed, adversarial)",
+    "Knowledge representation using first-order logic and ontologies",
+    "Probabilistic reasoning handles uncertainty where logic falls short",
+    "Machine learning — from decision trees and SVMs to deep neural networks",
+    "Reinforcement learning enables agents to learn from reward signals without supervision",
+    "Natural language processing bridges human language and machine understanding",
+    "Computer vision extracts meaning from visual data using convolutional networks",
+    "Robotics integrates perception, planning, and control in physical systems",
+    "AI ethics is not optional — safety, fairness, and transparency are engineering requirements"
+  ],
+  "keyTakeaways": [
+    "AI is the study of rational agents — systems that do the right thing given what they know",
+    "Search algorithms are the foundation of planning and problem-solving in AI",
+    "Logical inference enables machines to derive new knowledge from existing facts",
+    "Probabilistic models handle real-world uncertainty better than deterministic rules",
+    "Deep learning has transformed perception: vision, speech, and language understanding",
+    "Reinforcement learning achieves superhuman performance in games and control tasks",
+    "Multi-agent AI models strategic interactions using game theory",
+    "Natural language processing has reached human parity in many benchmarks",
+    "Robotics fuses AI with mechanical systems to interact with the physical world",
+    "Building beneficial AI requires integrating ethics throughout the design process"
+  ],
+  "whoShouldRead": [
+    "Undergraduate and graduate students in computer science and AI",
+    "Software engineers transitioning into machine learning and AI roles",
+    "Researchers in adjacent fields (cognitive science, linguistics, neuroscience)",
+    "Technical executives and product managers building AI-powered products",
+    "Anyone seeking a rigorous, comprehensive foundation in artificial intelligence"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Superintelligence: Paths, Dangers, Strategies",
+      "author": "Nick Bostrom",
+      "reason": "Explores the existential implications of advanced AI, extending AIMA's final chapters on AI safety and ethics"
+    },
+    {
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+      "reason": "The definitive deep learning text that deepens AIMA's neural network coverage with mathematical rigor"
+    },
+    {
+      "title": "Reinforcement Learning: An Introduction",
+      "author": "Richard Sutton & Andrew Barto",
+      "reason": "The canonical RL textbook; AIMA's RL chapter is a condensed survey of this foundational work"
+    },
+    {
+      "title": "The Master Algorithm",
+      "author": "Pedro Domingos",
+      "reason": "A more accessible, big-picture view of machine learning paradigms for readers who want breadth without textbook depth"
+    },
+    {
+      "title": "Life 3.0: Being Human in the Age of AI",
+      "author": "Max Tegmark",
+      "reason": "Popular-level discussion of AI's societal impact, complementing AIMA's technical coverage with futures thinking"
+    },
+    {
+      "title": "Speech and Language Processing",
+      "author": "Daniel Jurafsky & James Martin",
+      "reason": "The standard NLP reference; AIMA's NLP chapters are a distillation of material covered in depth here"
+    },
+    {
+      "title": "Computer Vision: Algorithms and Applications",
+      "author": "Richard Szeliski",
+      "reason": "Comprehensive vision text that expands on AIMA's computer vision coverage for practitioners"
+    },
+    {
+      "title": "Gödel, Escher, Bach: An Eternal Golden Braid",
+      "author": "Douglas Hofstadter",
+      "reason": "Philosophical exploration of intelligence, consciousness, and self-reference that inspired many AI researchers"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+## Overview
+
+*Designing Machine Learning Systems* (2022) by Chip Huyen is the
+definitive guide to bringing ML models from research to production.
+It takes a holistic, systems-level approach: ML systems involve data
+pipelines, feature engineering, model selection, deployment
+infrastructure, monitoring, and human stakeholders — all of which
+must work together.
+
+The book is structured around the ML project lifecycle: project setup,
+data pipeline, modeling, deployment, monitoring, and iteration.
+
+---
+{}
+-------|-------------|---------------|
+| Goal | Best accuracy | Business value |
+| Data | Static benchmark | Dynamic, messy |
+| Focus | Model architecture | End-to-end system |
+| Failure | Low accuracy | Silent degradation |
+| Iteration | Weeks per experiment | Minutes to detect drift |
+
+---
+
+## Key Takeaways
+
+1. **Data is the most important component.** Better data beats better
+   models. Invest in data quality, labeling, and validation before
+   model architecture.
+
+2. **Feature engineering is the highest-leverage ML work.** Features
+   encode domain knowledge. A feature store ensures consistency
+   between training and serving.
+
+3. **Model deployment is a systems problem.** Online serving requires
+   low latency and high throughput. Batch serving is simpler but less
+   responsive.
+
+4. **Monitoring is mandatory.** Data drift, concept drift, and
+   prediction drift are inevitable. Automated monitoring with
+   alerting is a production requirement.
+
+5. **Iterate in small loops.** ML development is not waterfall. Deploy
+   minimum-viable models early, measure, and improve.
+
+6. **Reproducibility requires discipline.** Version data, code,
+   hyperparameters, and environment. Use experiment tracking.
+
+7. **Fairness and ethics are system properties.** They cannot be
+   retrofitted. Consider them from project setup.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| ML engineers building production systems | The only book covering the full ML system lifecycle |
+| Data scientists transitioning to production | Bridges the gap between research and engineering |
+| Software engineers adding ML to products | Understands the unique constraints of ML systems |
+| Technical leaders managing ML teams | Framework for team structure and workflows |
+| MLOps and platform engineers | Reference for infrastructure decisions |
+
+---
+
+## Who Should Skip
+
+- Beginners learning ML for the first time — learn modeling basics
+  first
+- Researchers focused only on model architecture — this is about
+  systems, not algorithms
+- Anyone seeking a cloud-specific tutorial — covers principles, not
+  products
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|---|---|
+| The data-centric paradigm | Data quality matters more than model architecture |
+| ML as iterative engineering | Small, rapid iterations replace big-bang releases |
+| Production is different | Latency, reliability, and cost constraints change everything |
+| Monitoring is non-negotiable | Models degrade silently; detection must be automated |
+| Responsible AI is systemic | Fairness and ethics must be designed in, not bolted on |
+
+---
+
+## Why This Book Matters
+
+The ML industry has shifted from "build the best model" to "deploy the
+best system." This book captures that shift. It is the first
+comprehensive treatment of ML systems that treats the whole lifecycle
+as the unit of design, not just the model.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Machine Learning Engineering** | Andrey Burkov | Practical deployment patterns |
+| **Building Machine Learning Pipelines** | Hapke & Nelson | Hands-on TFX and Kubeflow |
+| **The Hundred-Page Machine Learning Book** | Andriy Burkov | ML fundamentals condensed |
+| **Feature Engineering for ML** | Zheng & Casari | Deep dive on features |
+| **Responsible Machine Learning** | Patrick Hall | Fairness and interpretability |
+
+---
+
+## Final Verdict
+
+**Rating: 9.0/10** — The best book on ML systems design. Practical,
+comprehensive, and perfectly timed for the shift toward production ML.

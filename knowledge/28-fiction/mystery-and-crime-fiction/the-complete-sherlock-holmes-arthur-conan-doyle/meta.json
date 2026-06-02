@@ -1,0 +1,29 @@
+{
+  "slug": "the-complete-sherlock-holmes-arthur-conan-doyle",
+  "title": "The Complete Sherlock Holmes",
+  "author": "Sir Arthur Conan Doyle",
+  "isbn": "978-0385006895",
+  "pages": 1122,
+  "year": 1887,
+  "originalLanguage": "English",
+  "genres": ["Detective Fiction", "Crime Fiction", "Mystery", "Short Stories", "Classic Literature"],
+  "collections": [
+    "A Study in Scarlet (1887)",
+    "The Sign of Four (1890)",
+    "The Adventures of Sherlock Holmes (1892)",
+    "The Memoirs of Sherlock Holmes (1894)",
+    "The Hound of the Baskervilles (1902)",
+    "The Return of Sherlock Holmes (1905)",
+    "The Valley of Fear (1915)",
+    "His Last Bow (1917)",
+    "The Case-Book of Sherlock Holmes (1927)"
+  ],
+  "totalStories": 60,
+  "novels": 4,
+  "shortStories": 56,
+  "publisher": "Doubleday (Memorial Edition)",
+  "setting": "Victorian and Edwardian London",
+  "protagonist": "Sherlock Holmes",
+  "narrator": "Dr. John H. Watson",
+  "rationale": "The Complete Sherlock Holmes is the foundational text of modern crime fiction, establishing virtually every convention of the detective genre: the brilliant consulting detective, the loyal sidekick-narrator, forensic deduction, the locked-room puzzle, the arch-villain, and the serialized story format. No single work is more essential to understanding the mystery and crime fiction category."
+}

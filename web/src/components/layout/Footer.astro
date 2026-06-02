@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="relative z-10 mt-20 sm:mt-32 border-t border-rule bg-paper-deep/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+    <div class="sm:col-span-2 md:col-span-2">
+      <p class="font-display text-2xl font-light tracking-tight mb-3">KnowledgeAtlas</p>
+      <p class="text-ink-soft text-sm max-w-sm">
+        The free platform for understanding knowledge. Knowledge, not metadata.
+      </p>
+      <p class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mt-6">
+        © {year} · MIT
+      </p>
+    </div>
+    <div>
+      <p class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mb-3">
+        Explore
+      </p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/books" class="hover:text-terracotta-500">Atlas</a></li>
+        <li><a href="/collections" class="hover:text-terracotta-500">Collections</a></li>
+        <li><a href="/search" class="hover:text-terracotta-500">Search</a></li>
+        <li><a href="/rss.xml" class="hover:text-terracotta-500">RSS</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mb-3">
+        Contribute
+      </p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/request" class="hover:text-terracotta-500">Request a book</a></li>
+        <li>
+          <a
+            href="https://github.com/chirag127/KnowledgeAtlas"
+            target="_blank"
+            rel="noopener"
+            class="hover:text-terracotta-500"
+          >GitHub ↗</a>
+        </li>
+        <li><a href="/dashboard" class="hover:text-terracotta-500">Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center px-4 py-6 font-mono text-[0.625rem] uppercase tracking-[0.22em] text-ink-mute">
+    No credit card. No vendor lock. No audio MP3s.
+  </div>
+</footer>

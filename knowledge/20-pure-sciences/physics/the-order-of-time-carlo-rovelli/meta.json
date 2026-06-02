@@ -1,0 +1,50 @@
+{
+  "slug": "the-order-of-time-carlo-rovelli",
+  "title": "The Order of Time",
+  "author": "Carlo Rovelli",
+  "isbn": "9780241292525",
+  "isbnAlternate": "9780735216105",
+  "year": 2017,
+  "publicationYear": 2018,
+  "pages": 224,
+  "publisher": "Penguin Books (UK) / Riverhead Books (US)",
+  "language": "en",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780241292525-L.jpg",
+    "source": "openlibrary",
+    "color": "#002147"
+  },
+  "category": "20-pure-sciences",
+  "subcategory": "physics",
+  "subtopic": "relativity-special-and-general",
+  "difficulty": "medium",
+  "genres": ["physics", "philosophy of science", "popular science", "cosmology"],
+  "subjects": ["time", "relativity", "quantum gravity", "thermodynamics", "entropy", "loop quantum gravity"],
+  "excerpt": "Why do we remember the past and not the future? In lyrical, accessible prose, Carlo Rovelli dismantles our everyday notion of time, showing that at the fundamental level time does not exist — it is an emergent phenomenon arising from entropy, our coarse-grained perspective on the world, and the peculiar way heat interacts with matter.",
+  "whoShouldRead": ["Physics enthusiasts curious about the nature of time", "Readers of popular science who enjoyed Seven Brief Lessons on Physics", "Philosophers interested in the physics of temporal experience"],
+  "whoShouldSkip": ["Readers seeking mathematical derivations or equations", "Those who prefer strictly empirical, experimentally confirmed science over theoretical speculation"],
+  "keyIdeas": [
+    "Time is not universal — every object has its own proper time depending on velocity and gravitational field",
+    "The arrow of time emerges solely from the second law of thermodynamics and entropy increase",
+    "There is no universal present — simultaneity is relative",
+    "At the Planck scale, time is granular, not continuous",
+    "The world is made of events, not things — reality is a network of processes",
+    "Time is an emergent phenomenon arising from our coarse-grained perspective on the universe",
+    "Memory and the flow of time are linked through entropy"
+  ],
+  "keyTakeaways": [
+    "Our everyday experience of time as a single, universal, flowing present is an illusion",
+    "The only fundamental law distinguishing past from future is thermodynamics",
+    "Time disappears from the fundamental equations of quantum gravity",
+    "The flow of time depends on the imprecision with which we observe the world",
+    "Time is real but not fundamental — it emerges from a more basic, timeless reality"
+  ],
+  "relatedBooks": [
+    "From Eternity to Here — Sean Carroll",
+    "Time Reborn — Lee Smolin",
+    "The End of Time — Julian Barbour",
+    "Reality Is Not What It Seems — Carlo Rovelli",
+    "Your Brain Is a Time Machine — Dean Buonomano"
+  ],
+  "tags": ["time", "relativity", "quantum gravity", "thermodynamics", "entropy", "loop quantum gravity", "physics", "philosophy"]
+}

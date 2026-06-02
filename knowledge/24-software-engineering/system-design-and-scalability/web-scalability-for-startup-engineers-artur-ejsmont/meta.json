@@ -1,0 +1,70 @@
+{
+  "slug": "web-scalability-for-startup-engineers-artur-ejsmont",
+  "title": "Web Scalability for Startup Engineers",
+  "subtitle": "Tips & Techniques for Scaling Your Web Application",
+  "author": "Artur Ejsmont",
+  "description": "A pragmatic handbook for engineers building web systems\nthat must grow from a few hundred users to many millions without\nrewriting from scratch. Ejsmont distills a decade of scaling experience\nat Yahoo!, Amazon, and elsewhere into a single coherent playbook:\nstart with a sensible, layered architecture; keep every service\nstateless; cache aggressively at every layer; push work off the\nrequest path with asynchronous queues; design data partitioning\nbefore you need it; measure everything. The book is unusually\nrespectful of startup constraints — small teams, tight budgets,\nincomplete information — and refuses to prescribe enterprise patterns\nfor problems startups do not yet have.",
+  "coverUrl": "https://covers.openlibrary.org/b/olid/OL27193746M-M.jpg",
+  "isbn10": "0071843655",
+  "isbn13": "9780071843655",
+  "pages": 432,
+  "publishedYear": 2015,
+  "publisher": "McGraw-Hill Education",
+  "openlibrarySlug": "OL27193746M",
+  "difficulty": "medium",
+  "tags": [
+    "scalability",
+    "web-architecture",
+    "startups",
+    "caching",
+    "distributed-systems",
+    "performance",
+    "asynchronous-processing",
+    "horizontal-scaling",
+    "system-design",
+    "infrastructure",
+    "observability",
+    "backend",
+    "microservices",
+    "databases",
+    "message-queues"
+  ],
+  "keyIdeas": [
+    "Scalability is the ability to absorb increased load without\nproportional cost or rewrite",
+    "Horizontal scaling beats vertical scaling at any meaningful size",
+    "Statelessness is the single most important property of a scalable\nservice",
+    "Cache at every layer: browser, CDN, reverse proxy, app, object\ncache, database",
+    "Asynchronous processing removes work from the critical request path",
+    "Front-end, web services, and data layers should be scaled\nindependently",
+    "Data partitioning (sharding) must be designed before it becomes\nurgent",
+    "Eventual consistency is acceptable for far more use cases than\nengineers assume",
+    "Idempotency is a precondition for safe retries and queue-based\nprocessing",
+    "Lean startup scalability: build for the next 10x, not the next\n1000x"
+  ],
+  "keyTakeaways": [
+    "Scalability, performance, and availability are related but distinct\nproperties — optimize for the one that actually limits you",
+    "A simple three-layer architecture (front-end, services, data)\nhandles 95% of startup workloads when each layer is stateless and\ncacheable",
+    "Stateless services let you add and remove nodes without coordination;\nany session, cache, or counter held in a single process is a future\noutage",
+    "Cache hits at outer layers (browser, CDN) are orders of magnitude\ncheaper than cache hits at inner layers (database) — push caching\noutward",
+    "Functional partitioning (separating services by feature) buys time;\ndata partitioning (sharding by key) buys scale",
+    "Asynchronous processing is the simplest way to convert a slow\nsynchronous request into a fast one — move work to a queue and a\nworker pool",
+    "Message queues require idempotent consumers, dead-letter handling,\nand monitoring; treat them as infrastructure, not glue code",
+    "Premature microservices are more dangerous than a well-factored\nmonolith — split a service only when its scaling profile diverges",
+    "Capacity planning starts with an RPS budget per endpoint and a\nlatency budget per request — without numbers you cannot make trade-offs",
+    "Observability (metrics, logs, tracing) is not optional; you cannot\nscale what you cannot measure"
+  ],
+  "whoShouldRead": [
+    "Backend and full-stack engineers at early-stage startups who expect\nrapid growth",
+    "Tech leads making architecture decisions with limited time and budget",
+    "Junior to mid-level engineers who want a single coherent mental\nmodel of web scaling",
+    "Engineering managers who need to evaluate scaling proposals from\ntheir teams",
+    "Self-taught developers moving from solo projects to production\nsystems"
+  ],
+  "relatedBooks": [
+    "designing-data-intensive-applications-martin-kleppmann",
+    "release-it-michael-nygard",
+    "the-art-of-scalability-martin-abbott",
+    "building-microservices-sam-newman",
+    "site-reliability-engineering-google"
+  ]
+}

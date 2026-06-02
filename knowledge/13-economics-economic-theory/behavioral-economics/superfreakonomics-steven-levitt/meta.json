@@ -1,0 +1,16 @@
+{
+  "slug": "superfreakonomics-steven-levitt",
+  "title": "SuperFreakonomics: Global Cooling, Patriotic Prostitutes, and Why Suicide Bombers Should Buy Life Insurance",
+  "authors": [{"name": "Steven D. Levitt"}, {"name": "Stephen J. Dubner"}],
+  "publicationYear": "2009",
+  "isbn": "9780061219503",
+  "publisher": "HarperCollins",
+  "pageCount": 300,
+  "difficulty": "beginner",
+  "estimatedReadingHours": 6,
+  "estimatedListeningMinutes": 360,
+  "tags": ["economics", "freakonomics", "behavioral-economics", "data", "pop-science", "incentives"],
+  "themes": ["Incentives", "Economics", "Behavioral Science", "Data-Driven Thinking", "Counterintuitive Analysis"],
+  "keyIdeas": ["Incentives drive behavior", "The conventional wisdom is often wrong", "Data reveals hidden causes", "Morality and legality are not the same thing"],
+  "excerpt": "An entertaining, data-driven look at why we behave the way we do, from terrorism to healthcare to global climate."
+}

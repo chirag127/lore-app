@@ -1,0 +1,58 @@
+{
+  "slug": "database-internals-alex-petrov",
+  "title": "Database Internals",
+  "subtitle": "A Deep Dive into How Distributed Data Systems Work",
+  "author": "Alex Petrov",
+  "publicationYear": 2019,
+  "isbn": "9781492040347",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 374,
+  "genres": [
+    "Computer Science",
+    "Database",
+    "Distributed Systems",
+    "Software Engineering"
+  ],
+  "subjects": [
+    "Database Storage Engines",
+    "Distributed Systems",
+    "B-Trees",
+    "LSM Trees",
+    "Transaction Processing",
+    "Replication",
+    "Consensus Algorithms"
+  ],
+  "themes": [
+    "Storage engine architecture and data organization on disk",
+    "B-Tree and LSM-Tree internals and trade-offs",
+    "Transaction processing and concurrency control",
+    "Distributed database consistency models",
+    "Replication strategies and consensus protocols",
+    "Failure handling and fault tolerance in distributed databases"
+  ],
+  "tags": [
+    "database-internals",
+    "alex-petrov",
+    "storage-engines",
+    "b-trees",
+    "lsm-trees",
+    "distributed-systems",
+    "transaction-processing",
+    "concurrency-control",
+    "replication",
+    "consensus",
+    "paxos",
+    "raft",
+    "databases"
+  ],
+  "difficulty": "hard",
+  "estimatedReadingHours": 15,
+  "estimatedListeningMinutes": 900,
+  "awards": [
+    "Highly rated reference for database engineers",
+    "Selected as O'Reilly essential reading for distributed systems",
+    "Recommended by CMU database group reading list"
+  ],
+  "excerpt": "Database Internals takes you under the hood of modern databases and storage engines, revealing how they organize data on disk, handle concurrent access, and coordinate across machines. Essential reading for engineers who want to understand how databases really work."
+}

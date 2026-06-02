@@ -1,0 +1,27 @@
+{
+  "slug": "peak-anders-ericsson",
+  "title": "Peak: Secrets from the New Science of Expertise",
+  "isbn": "9780544456238",
+  "isbn10": "0544456238",
+  "pages": 307,
+  "year": 2016,
+  "publisher": "Houghton Mifflin Harcourt",
+  "language": "en",
+  "format": "Hardcover",
+  "genres": ["Psychology", "Self-Help", "Education", "Science", "Business"],
+  "subjects": ["Expertise", "Deliberate Practice", "Skill Acquisition", "Performance Psychology", "Learning"],
+  "authors": [
+    {
+      "name": "Anders Ericsson",
+      "role": "Author"
+    },
+    {
+      "name": "Robert Pool",
+      "role": "Author"
+    }
+  ],
+  "openlibrary": "OL26419433M",
+  "goodreads": 26312997,
+  "rating": 4.2,
+  "ratingsCount": 14115
+}

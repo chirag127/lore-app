@@ -1,0 +1,246 @@
+## Part I: Surface-Level Improvements
+
+The book opens by establishing its core philosophy before diving into the most immediately actionable techniques.
+
+### Chapter 1: Code Should Be Easy to Understand
+
+Boswell and Foucher begin with a deceptively simple claim: **code is better when it is easy to understand**. They reject the notion that cleverness or conciseness are virtues in themselves, introducing the book's central metric: _time-till-understanding_ — how long it takes a typical reader to fully comprehend a piece of code.
+
+The authors critique the common instinct to measure code quality by line count. Shorter code is not necessarily more readable. They present an example where a one-liner using nested ternary operators is technically compact but takes far longer to parse than a longer if/else equivalent. The key insight: **readability is a function of the reader's cognitive load, not the screen real estate**.
+
+They address the concern that readability optimizations might conflict with performance or other goals, arguing that in the vast majority of cases, readability and good design converge. Only in hot code paths where performance is proven to matter should readability be sacrificed — and even then, with comments explaining the tradeoff.
+
+The chapter ends with the book's fundamental theorem: **"Code should be written to minimize the time it would take for someone else to understand it"** — even if that someone else is you, six months from now.
+
+### Chapter 2: Packing Information into Names
+
+This chapter treats variable, function, and class names as **information-dense containers** and teaches readers how to pack more meaning into them.
+
+**Choose specific words.** Instead of `get`, use `fetch`, `download`, or `find` depending on what actually happens. Instead of `size`, use `height`, `numNodes`, or `memoryBytes` depending on context. The authors provide a table of "colorful" alternatives: instead of `send`, prefer `deliver`, `dispatch`, `announce`, or `route`.
+
+**Avoid generic names like `tmp` and `retval`.** These names carry no information. Unless the variable's sole purpose is temporary storage in a 3-line scope, give it a real name. `tmp` is acceptable only in a tight swap or sort context where the variable has no semantic identity beyond its transience.
+
+**Prefer concrete names over abstract.** `DISALLOW_EVIL_CONSTRUCTORS` is more informative than `DISALLOW_COPY_AND_ASSIGN` — it tells you _why_ the macro exists, not just what it does. `--run_locally` is better than `--local` because it describes the action.
+
+**Attach extra information.** Append units to variable names: `delay_ms`, `size_px`, `angle_degrees`. Encode important attributes: `plaintext_password` (vs hashed), `url_unescaped`, `html_utf8`.
+
+**Name length rules.** Longer names are justified for larger scopes. A variable used across 100 lines needs a more descriptive name than one used in 5 lines. Acronyms and abbreviations are acceptable only when they are more widely understood than the full form (e.g., `eval` for evaluation, `str` for string). Drop unneeded words: `convertToString` tells you nothing that `toString` doesn't.
+
+**Use formatting to convey meaning.** `kMaxOpenFiles` (constants), `MAX_OPEN_FILES` (macros), `maxOpenFiles` (variables). These conventions allow readers to infer type and scope from the name alone.
+
+### Chapter 3: Names That Can't Be Misconstrued
+
+The authors tackle the subtle problem of names that are technically correct but lead to misinterpretation.
+
+**`filter()` is ambiguous.** Does it mean "select items matching the filter" or "remove items matching the filter"? Better names: `select()` for inclusion, `exclude()` for removal.
+
+**`clip(text, length)`** — does length refer to the number of characters or bytes? Does it clip from the start or end? A more precise name: `truncate(text, maxChars)`.
+
+**Use `min` and `max` for inclusive limits.** A function `FindInRange(min, max)` immediately communicates inclusive boundaries. Use `first` and `last` for inclusive ranges. Use `begin` and `end` for inclusive/exclusive ranges (matching C++ and Python conventions).
+
+**Naming booleans.** A boolean variable should read as a yes/no proposition. Avoid `readPassword` (is this a verb or a boolean?). Prefer `needPassword`, `userIsAuthenticated`, `isLoggedIn`. Add prefixes like `is`, `has`, `can`, `should` to make booleans self-documenting.
+
+**Match user expectations.** A function named `getMean()` should be fast — a getter that returns a precomputed value. If it computes on every call, name it `computeMean()` instead. The authors use the C++ `list::size()` example: in C++98, it was O(n) for `std::list`, which violated the implicit contract that `size()` is constant-time.
+
+The chapter closes with a worked example of evaluating multiple name candidates for a single variable, showing how the best name emerges from iterating through alternatives.
+
+### Chapter 4: Aesthetics
+
+Code formatting is not just cosmetics — it directly affects time-till-understanding. This chapter presents five principles:
+
+**Rearrange line breaks to be consistent and compact.** Code that follows a predictable visual rhythm is easier to scan. The authors show examples where parameter lists and initializers are formatted for quick pattern matching.
+
+**Use methods to clean up irregularity.** When a series of similar statements has slight variations that break alignment, extract the pattern into a method. The method call will be uniform; the variations live inside the method body.
+
+**Use column alignment when helpful.** Aligning variable declarations, assignments, or array literals makes related values comparable at a glance. The authors caution against over-alignment — align only when there is meaningful parallel structure.
+
+**Pick a meaningful order, and use it consistently.** Sort CSS properties, function declarations, or import statements by a consistent rule (alphabetical, priority, or dependency order). Readers learn the pattern and can find things without thinking.
+
+**Organize declarations into blocks and break code into paragraphs.** Just as prose uses paragraph breaks to signal topic shifts, code should use blank lines to separate logical sections. Group related declarations together rather than scattering them.
+
+The chapter ends with a pragmatic note on style: personal preference matters less than consistency. If the team has a style guide, follow it. If it doesn't, adopt one that matches the language community standards.
+
+### Chapter 5: Knowing What to Comment
+
+The authors challenge both the "comments are always good" and "code should be self-documenting" extremes with a nuanced position: **comment the why, not the what**, and only when the code alone cannot convey the full picture.
+
+**What NOT to comment:** Comments that merely restate the code — `// increment i by 1` followed by `i++` — waste the reader's time. Comments that explain bad names are worse: fix the name instead.
+
+**What TO comment:** "Director commentary" that explains _why_ a particular approach was chosen over alternatives. Comments on the flaws in your code (marked with TODO, FIXME, HACK, XXX). Constants that need explanation for their specific value. Comments that anticipate questions a reader might ask: "This looks like a memory leak, but the QML engine takes ownership."
+
+**Big-picture comments** describe how classes interact, how data flows through the system, and where the entry points are. These are especially valuable for new team members onboarding into a codebase.
+
+The chapter introduces a practical test: if you, as the writer, can imagine a reader asking "why?" at a certain line, that line probably needs a comment.
+
+### Chapter 6: Making Comments Precise and Compact
+
+Given that every comment is a line the reader must process, the authors teach techniques for making comments **information-dense and unambiguous**.
+
+**Avoid ambiguous pronouns.** "Insert the data into the cache, then clear it" — does "it" refer to the data or the cache?
+
+**Polish sloppy sentences** into precise descriptions. Instead of "If this doesn't work, try restoring the default config," write "Reset to default configuration if the network interface fails to initialize."
+
+**Describe function behavior precisely** with input/output examples that illustrate corner cases. A comment `// File.remove(filename); returns true if removed, false otherwise` is less useful than `// Returns true if the file existed and was removed; returns false if the file did not exist.`
+
+**State the intent of your code**, not just the mechanics. `// Sort by price, from lowest to highest, using insertion sort for small arrays` explains both the observable behavior and the implementation choice.
+
+**Use "named function parameter" comments** in languages without named arguments: `Connect(/* timeout_ms= */ 10, /* use_encryption= */ false)`.
+
+**Use information-dense words** like "canonicalize", "heuristic", "naive" — single words that carry paragraphs of context for readers familiar with the terminology.
+
+## Part II: Simplifying Loops and Logic
+
+### Chapter 7: Making Control Flow Easy to Read
+
+This chapter addresses the readability of conditionals, loops, and branching statements. The key idea: **write control flow that feels natural on first reading, without requiring the reader to stop and mentally trace execution**.
+
+**Order of arguments in conditionals.** Put the variable (the changing value) on the left and the constant on the right: `if (length >= 10)` reads more naturally than `if (10 <= length)`. This also avoids the "Yoda conditionals" made popular by C/C++ where `if (10 == length)` prevented accidental assignment.
+
+**Order of if/else blocks.** Three rules of thumb: prefer positive cases over negative ones (`if (isLoggedIn)` over `if (!isLoggedIn)`); handle simpler or shorter cases first to get them out of the way; handle the more interesting or conspicuous case first.
+
+**Ternary operators.** Use only for very simple cases. Never nest ternaries. The goal is not to minimize lines but to minimize understanding time.
+
+**Avoid do/while loops.** The condition appears at the bottom, so the reader must scan to the end of the loop to understand when it terminates. All other control flow puts the condition above the code it guards.
+
+**Return early.** The "one return per function" rule produces deeply nested, hard-to-read code. Early returns reduce nesting and make the mainline logic clear. The authors are blunt: "This is nonsense" as a policy.
+
+**Minimize nesting.** Nesting accumulates when each branch checks a precondition before proceeding. Remove it by returning early, using continue in loops, and extracting nested blocks into separate functions.
+
+The chapter includes a worked example showing how a deeply nested function with 8 levels of indentation becomes a flat, linear sequence of guard clauses followed by the main logic.
+
+### Chapter 8: Breaking Down Giant Expressions
+
+One-line expressions that pack too much logic are a major readability drain. This chapter presents techniques for taming them.
+
+**Explaining variables.** Extract a subexpression into a named variable. Instead of `if (line.split(':')[0].strip().lower() == "root")`, write:
+```
+username = line.split(':')[0].strip().lower()
+if username == "root":
+```
+
+**Summary variables.** Replace a complex condition with a boolean variable that captures its meaning: `userOwnsDocument = (document.artist._id == auth_user._id)`.
+
+**Use De Morgan's Laws.** `if (!(a && !b))` becomes `if (!a || b)` — simpler boolean logic that maps more directly to what the programmer intended.
+
+**Be careful with short-circuit logic.** `if (a || b && c)` can be confusing. Use parentheses to make precedence explicit, or extract conditions into booleans.
+
+The chapter's highlight example wrestles with a function that determines whether a tennis player has won a set. The initial implementation is a nest of conditional expressions. By stepping back and rethinking the problem geometrically (visualizing the state space as a grid of scores), the authors find a simpler, more elegant solution entirely. This demonstrates that **sometimes the best way to simplify an expression is to find a different algorithm**.
+
+### Chapter 9: Variables and Readability
+
+Variables affect readability in three ways: how many there are, how long they live, and how often they change. The authors advise:
+
+**Eliminate useless temporary variables.** If a variable is assigned once and used once to pass a value to a function, inline the expression instead.
+
+**Eliminate intermediate results.** If you compute `a`, then `b` from `a`, then `c` from `b`, and only `c` is ultimately used, see if you can compute `c` directly.
+
+**Eliminate control flow variables.** Variables like `done = false` that exist only to control a loop can usually be replaced with `break` or `continue`.
+
+**Shrink scope.** The fewer lines a variable is visible on, the less mental state the reader must track. Move variable definitions closer to their first use. Create smaller scopes (blocks or brace-enclosed sections). Avoid global variables — the authors particularly caution against JavaScript's implicit global scope.
+
+**Prefer write-once variables.** Variables that change value force the reader to track their evolution over time. A `const` or `final` variable can only mean one thing throughout its lifetime, simplifying reasoning. The pattern of assigning a variable in an if/else then using it afterward is better expressed as a ternary initialization.
+
+## Part III: Reorganizing Your Code
+
+### Chapter 10: Extracting Unrelated Subproblems
+
+This is arguably the book's most impactful chapter. The technique: **identify code within a function that is solving an unrelated subproblem, extract it into a separate named function, and call it from the original context**.
+
+The practical procedure:
+1. Look at a function and ask "What is the high-level goal of this code?"
+2. For each line, ask: "Is it working directly to that goal, or is it solving an unrelated subproblem?"
+3. If enough lines are solving an unrelated subproblem, extract that code into its own function.
+
+**Example: `findClosestLocation()`** iterates through a list of locations and finds the closest to a given point. The function is 15 lines, but 8 of those lines compute the spherical distance between two coordinates — an unrelated subproblem. Extracting `sphericalDistance()` reduces the original function to a clean 7-line loop and makes the distance function reusable.
+
+**Pure utility code** — functions like `sphericalDistance()` — should go into a library for cross-project reuse. The authors urge readers to build their own `utils` libraries. "If you find yourself thinking, 'I wish our library had an XYZ() function,' go ahead and write it!"
+
+The benefits are substantial: extracted code is decoupled from the rest of the project, easier to develop, easier to test, and easier to understand. Each function operates at a single level of abstraction, making the overall system more navigable.
+
+The chapter also covers **simplifying existing interfaces** (wrapping a complex third-party API with a cleaner facade) and warns against taking the technique too far (extracting single lines of code for no benefit).
+
+### Chapter 11: One Task at a Time
+
+Many functions try to do too much at once. This chapter teaches readers to identify when a function is performing multiple tasks and how to decompose it.
+
+**Tasks can be small.** A "task" might be something as simple as "enumerate a hash's values and build a list of their property X" or "process each node in a tree." The test: can you describe the function's behavior in a single coherent sentence? If it requires "and" or "then," it needs splitting.
+
+**Worked example: extracting values from an object.** A function that initializes a user profile object might: (1) validate user data, (2) compute derived fields, (3) format display names, (4) persist to the database. Each of these is a separate task.
+
+**A larger example: blog post rendering.** The authors show a function that renders blog post HTML. It does: (1) article body rendering, (2) sidebar widget rendering, (3) metadata injection, (4) ad insertion. Each is extracted into its own function, collapsing from 50 lines to 5.
+
+**Further improvements** continue to decompose until each function has a single clear responsibility. The final version is more modular, testable, and readable than the original.
+
+### Chapter 12: Turning Thoughts into Code
+
+This chapter addresses the gap between what you want the program to do and what the code says. The technique: **describe the program's logic in plain English first, then write code that follows that description**.
+
+**Describing logic clearly.** If you can't describe what a function should do in simple English, you don't understand it well enough to code it. The English description becomes a natural-language pseudocode that maps directly to the code structure.
+
+**Knowing your libraries helps.** The authors show how familiarity with libraries like Python's `collections`, `itertools`, or JavaScript's array methods transforms complex manual logic into clean one-liners. The more functions you know are available, the smaller the gap between thought and code.
+
+**Applying the method to larger problems.** For a complicated data-processing problem, the authors write an English description of the solution at a high level: "For each user, compute their total score across all quizzes, then rank them from highest to lowest, then select the top 10% for the next round." Each sentence becomes approximately one function call.
+
+**Applying the method recursively.** When a subproblem is complex enough, describe it in English and code it the same way. This ensures all code operates at a consistent abstraction level.
+
+### Chapter 13: Writing Less Code
+
+The chapter's opening line — **"The most readable code is no code at all"** — captures its essence. This is not about laziness but about discipline: the best code is the code you don't write.
+
+**Don't bother implementing that feature.** Programmers systematically overestimate how many features are essential and underestimate the cost of implementing and maintaining each one. Question every requirement. Often, the simplest version solves 90% of the need.
+
+**Example: a store locator.** The initial specification called for an interactive map with geolocation, custom markers, and directions. After questioning, the authors realized a simple sorted list with zip code proximity satisfied the actual user need at 1/10th the implementation cost.
+
+**Example: adding a cache.** Before implementing a cache from scratch, consider whether existing solutions (memcached, Redis, built-in HTTP caching) solve the problem. Often the best cache is the one already available.
+
+**Keep your codebase small.** Delete commented-out code, unused functions, dead features. Every line of code is a liability — it must be read, understood, tested, and maintained.
+
+**Be familiar with libraries.** The authors show Python examples where standard library modules (`collections.Counter`, `itertools.groupby`) replace 20+ lines of custom logic. "Why reimplement something that already exists?"
+
+**Example: using Unix tools.** Instead of writing a script to process log files, use `grep`, `sort`, `uniq -c`, and `awk` in a pipeline. The Unix philosophy of small, composable tools is itself an application of "write less code."
+
+## Part IV: Selected Topics
+
+### Chapter 14: Testing and Readability
+
+Tests are code too, and readable tests are crucial for maintainable software. The authors present techniques that complement the xUnit style popularized by Kent Beck.
+
+**Make tests easy to read and maintain.** A test that takes 30 seconds to understand is a test that discourages developers from fixing it when the behavior changes, leading to test rot.
+
+**What makes a bad test.** The authors show an example with anonymous magic values scattered across setup, action, and assertion: `assertEquals(4, add(2, 3))` — what is 2, 3, and 4? If the reader must cross-reference to understand inputs and expected outputs, the test fails.
+
+**Creating minimal test statements.** Each test should tell a clear story: arrange inputs, perform action, verify expected output. Use descriptive variable names: `assertEquals(expectedSum, actualSum)`.
+
+**Custom minilanguages for tests.** For frequently tested domains, define helper functions that read like domain-specific languages. `assertThrows(IllegalArgumentException, () => account.withdraw(-50))` is more readable than a raw try/catch block in every test.
+
+**Error messages that help.** `assertEquals()` default messages are generic. Hand-crafted messages with actual and expected values speed debugging: `assertEquals("Wrong score for level 3", 100, game.getScore(3))`.
+
+**Choosing good test inputs.** Use simple, easily distinguishable values. Prefer `"alice"`, `"bob"`, `"charlie"` over `"user1"`, `"user2"`. Use obvious data: if testing an age validation, use `-1`, `17`, `18`, `120`, `121` — values that directly test the boundary conditions.
+
+**Naming test functions.** Test names should be descriptive sentences. `testScoreIsNegativeForLevelBelowZero` is better than `testLevel1` because the test function name functions as a comment.
+
+**Test-friendly development.** Write testable code from the start: inject dependencies, avoid global state, separate I/O from logic. Code designed for testing is typically more modular, which also improves readability.
+
+### Chapter 15: Designing and Implementing a "Minute/Hour Counter"
+
+This capstone chapter applies all the techniques from the book to a real-world problem: building a counter that tracks events per minute and per hour, with sliding windows.
+
+**The problem.** Design a class that records event counts and can report how many events occurred in the last minute and the last hour. The naive solution stores every event with a timestamp and filters on query.
+
+**Attempt 1: A naive solution.** Store all events in a list. On query, iterate and count those within the time window. Simple but slow: memory grows unboundedly with event rate, and query time scales linearly with stored events.
+
+**Making it readable.** Before addressing performance, the authors apply readability techniques: rename ambiguous variables, add clarifying comments, extract helper methods. The naive version is made clear even as they acknowledge its flaws.
+
+**Attempt 2: Conveyor belt design.** Instead of storing individual events, maintain two counters (minute and hour) that shift data between "buckets" of one-second granularity using a conveyor belt pattern. This keeps memory constant and queries O(1).
+
+**Attempt 3: A time-bucketed design.** Further optimize by using coarser buckets for the hourly counter (1-minute buckets) versus the minute counter (1-second buckets). This balances precision against memory.
+
+The final implementation (`TrailingBucketCounter` backed by `ConveyorQueue`) is both **readable and efficient** — demonstrating that readability and performance are not in conflict when the design is clean.
+
+## Reading Guide
+
+**Recommended path.** This book is designed for cover-to-cover reading in about 6-8 hours, but it also works as a reference. For new programmers, read chapters 1-9 sequentially — they build from surface-level improvements to logic simplification. Experienced developers can skip directly to chapters 10-14, which contain the book's most distinctive contributions.
+
+**Sufficiency.** This book is sufficient as a practical introduction to code readability, but it deliberately avoids deeper topics like architecture, design patterns, and system design. It pairs well with _Clean Code_ (design principles), _Code Complete_ (comprehensive construction techniques), and _The Pragmatic Programmer_ (professional habits).
+
+**Chapters to prioritize.** Chapter 10 (Extracting Unrelated Subproblems) is the most valuable technique for immediate quality improvement. Chapter 13 (Writing Less Code) challenges assumptions about what features are actually needed. Chapter 14 (Testing and Readability) is essential reading for any team practicing code reviews.

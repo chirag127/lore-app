@@ -1,0 +1,21 @@
+---
+const phrases = [
+  'Books, understood.',
+  'A library that thinks.',
+  'A field guide to the world\u2019s ideas.',
+  'Not metadata. Understanding.',
+  'Read. Listen. Remember.',
+  'Free forever. No card.',
+  'Built for learning, not selling.',
+];
+---
+<div class="border-b border-rule bg-paper-soft/60 overflow-hidden">
+  <div class="marquee py-2">
+    {[...phrases, ...phrases].map((p) => (
+      <span class="font-display italic text-ink-mute text-xs sm:text-sm px-6 sm:px-8 whitespace-nowrap font-variation-wonk">
+        <span class="ornament-mark inline-block align-middle mr-3" />
+        {p}
+      </span>
+    ))}
+  </div>
+</div>

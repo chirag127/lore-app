@@ -1,0 +1,105 @@
+{
+  "slug": "long-walk-to-freedom-nelson-mandela",
+  "title": "Long Walk to Freedom",
+  "author": "Nelson Mandela",
+  "date": 1994,
+  "category": "27-biography-memoir",
+  "subcategory": "social-activists-and-reformers",
+  "tags": [
+    "autobiography",
+    "south-africa",
+    "apartheid",
+    "civil-rights",
+    "political-memoir",
+    "freedom-struggle",
+    "nobel-peace-prize",
+    "african-national-congress",
+    "anti-apartheid",
+    "robben-island"
+  ],
+  "isbn": "978-0-316-54585-3",
+  "publisher": "Little, Brown and Company",
+  "year": 1994,
+  "pages": 630,
+  "original_title": "Long Walk to Freedom: The Autobiography of Nelson Mandela",
+  "original_language": "English",
+  "author_birth": "1918-07-18",
+  "author_death": "2013-12-05",
+  "author_nationality": "South African",
+  "author_birthplace": "Mvezo, Cape Province, Union of South Africa",
+  "genre": [
+    "autobiography",
+    "political memoir",
+    "non-fiction"
+  ],
+  "period": "20th century",
+  "themes": [
+    "freedom and liberation",
+    "racial justice and equality",
+    "resilience and perseverance",
+    "reconciliation and forgiveness",
+    "leadership and sacrifice",
+    "non-violence vs armed struggle",
+    "identity and nation-building"
+  ],
+  "key_figures": [
+    "Nelson Mandela",
+    "Winnie Madikizela-Mandela",
+    "Oliver Tambo",
+    "Walter Sisulu",
+    "F. W. de Klerk",
+    "Albert Luthuli",
+    "Joe Slovo",
+    "Bram Fischer",
+    "Mangosuthu Buthelezi",
+    "Robert Sobukwe"
+  ],
+  "parts": 11,
+  "structure": {
+    "sections": [
+      { "name": "A Country Childhood", "parts": "Part 1" },
+      { "name": "Johannesburg", "parts": "Part 2" },
+      { "name": "Birth of a Freedom Fighter", "parts": "Part 3" },
+      { "name": "The Struggle Is My Life", "parts": "Part 4" },
+      { "name": "Treason", "parts": "Part 5" },
+      { "name": "The Black Pimpernel", "parts": "Part 6" },
+      { "name": "Rivonia", "parts": "Part 7" },
+      { "name": "Robben Island: The Dark Years", "parts": "Part 8" },
+      { "name": "Robben Island: Beginning to Hope", "parts": "Part 9" },
+      { "name": "Talking With the Enemy", "parts": "Part 10" },
+      { "name": "Freedom", "parts": "Part 11" }
+    ]
+  },
+  "influences": [
+    "African National Congress",
+    "Mahatma Gandhi",
+    "Xhosa tradition and Thembu royalty",
+    "South African Communist Party",
+    "Pan-Africanism"
+  ],
+  "influenced": [
+    "Global anti-apartheid movement",
+    "Post-colonial African leadership",
+    "Truth and Reconciliation Commission model",
+    "Civil rights movements worldwide",
+    "International human rights discourse"
+  ],
+  "related_books": [
+    { "title": "Dare Not Linger: The Presidential Years", "author": "Nelson Mandela and Mandla Langa", "year": 2017 },
+    { "title": "Mandela: The Authorised Biography", "author": "Anthony Sampson", "year": 1999 },
+    { "title": "Conversations With Myself", "author": "Nelson Mandela", "year": 2010 },
+    { "title": "The Prison Letters of Nelson Mandela", "author": "Nelson Mandela", "year": 2018 },
+    { "title": "No Easy Walk to Freedom", "author": "Nelson Mandela", "year": 1965 }
+  ],
+  "awards": [
+    "Alan Paton Award (1995)"
+  ],
+  "files": [
+    "index.mdx",
+    "01-content.mdx",
+    "02-analysis.mdx",
+    "03-narration.mdx",
+    "04-problems.mdx",
+    "meta.json"
+  ]
+}

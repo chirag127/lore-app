@@ -1,0 +1,238 @@
+---
+title: Narration
+description: A conversational walkthrough of Introduction to Algorithms — as if teaching it to a friend
+---
+
+# Narration
+
+## The Big Idea
+
+Let me tell you about the most intimidating book on my shelf. It is
+thirteen hundred pages long. It weighs as much as a laptop. The first
+real chapter is about the asymptotic behavior of mathematical functions.
+And it is the single most important computer science book ever written.
+
+*Introduction to Algorithms*, known as CLRS after its four MIT
+professor authors, is the textbook that taught algorithms to the world.
+Every CS graduate in the past thirty years has owned a copy. Most of
+them have not read it cover to cover — and that is fine. But the parts
+they read changed how they think about code.
+
+The central idea is simple: not all programs are equal. Two programs
+that solve the same problem can differ in speed by a factor of a
+million — and the difference is not about programming language or
+hardware. It is about algorithm choice.
+
+CLRS gives you the vocabulary to talk about that difference and the
+tools to do something about it.
+
+---
+
+## Why Big-O Matters
+
+I know. Chapter 3 is where most people give up. There is a wall of
+notation: O(n), Omega(n), Theta(n), o(n), omega(n). It looks like math
+class in the worst way.
+
+But here is the thing: Big-O notation is not the obstacle. It is the
+shortcut.
+
+Without Big-O, you would describe algorithm performance like this: "It
+takes about 2.3 milliseconds for 1000 elements, 9.1 milliseconds for
+2000 elements, and 36.7 milliseconds for 4000 elements." With Big-O,
+you can say: "It is O(n^2)." And anyone who knows the notation
+immediately understands: double the input, quadruple the time. The
+numbers do not matter as much as the *shape* of the growth curve.
+
+That is all Big-O is: the shape of growth. O(n) means linear. O(n^2)
+means quadratic. O(log n) means logarithmic — the algorithm barely
+slows down as input grows. O(2^n) means exponential — it works for n=10
+but not for n=100.
+
+CLRS gives you the notation first because the notation is the language
+of everything that follows. Every algorithm in the book gets analyzed
+in these terms. If you learn nothing else from the book — learn to read
+Big-O.
+
+---
+
+## Sorting: The Gateway Drug
+
+Why does CLRS start with sorting? Because sorting is the perfect
+problem: everyone understands it, it has multiple solutions with
+dramatically different tradeoffs, and it rewards the right analysis.
+
+Insertion sort is the naive approach: take each element and insert it
+into the sorted portion. O(n^2) worst-case. It is what you write when
+you do not think about it. Most programmers write insertion sort by
+accident, calling it "just sorting."
+
+Then CLRS introduces merge sort: divide the array in half, sort each
+half recursively, merge the two sorted halves. O(n log n). For n = 1
+million, that is the difference between 1 trillion operations (insertion
+sort) and 20 million operations (merge sort). Factor of 50,000.
+
+> Merge sort is the first algorithm in CLRS that rewards you for
+> thinking before coding.
+
+And then there is quicksort. Fastest in practice. O(n log n) on average.
+O(n^2) worst-case (rare with random pivots). The algorithm that made
+sorting "solved" — until someone invented Timsort (hybrid of merge and
+insertion sort, used in Python and Java) decades later.
+
+The sorting chapters teach you something deeper than sorting: they teach
+you that the same problem can have many correct solutions, and the right
+one depends on what you care about (worst-case guarantees? average
+speed? in-place? stable?).
+
+---
+
+## Data Structures: Organizing the Mess
+
+Chapters 10 through 14 are the practical heart of the book for most
+developers.
+
+Hash tables are magic — O(1) average lookups. But only if your hash
+function is good and your load factor is low. CLRS teaches you *why*
+hash tables work, not just that they work. Universal hashing guarantees
+good performance against any input. It is the difference between a
+dictionary that works and a dictionary that falls apart under attack.
+
+Binary search trees are intuitive: smaller on the left, larger on the
+right. But without balancing, they degenerate into linked lists.
+Red-black trees fix this by painting nodes red and black and enforcing
+a few simple rules. The result: O(log n) guaranteed. Every balanced
+tree (AVL, B-tree, treap) is a variation on the same theme — add a
+constraint that prevents degeneration.
+
+B-trees are the last data structure chapter, and they are the sleeper
+hit. B-trees are binary search trees but with hundreds of keys per
+node — designed to match disk block sizes. They are why databases
+work. The insight: when reading from disk costs 1000x more than a CPU
+instruction, you want to read as much as possible per disk access. A
+binary search tree reads one key at a time. A B-tree reads a whole disk
+block at once. CLRS shows you the math that makes B-trees optimal for
+external storage.
+
+---
+
+## Dynamic Programming: Recursion on Steroids
+
+Dynamic programming is the hardest topic in the book, and also the most
+valuable. It is the one skill that reliably separates intermediate
+programmers from advanced ones.
+
+The idea is simple: solve a problem by solving overlapping subproblems
+and storing the answers. The execution is subtle — you need to identify
+optimal substructure, define the recurrence, and choose between memoized
+(top-down) or tabulated (bottom-up) implementation.
+
+CLRS gives you the five canonical examples:
+
+1. **Rod cutting** — the simplest DP. Given a rod of length n and a
+   price table, cut it to maximize revenue.
+2. **Matrix-chain multiplication** — parenthesize the product to
+   minimize scalar multiplications. Classic O(n^3) DP.
+3. **Longest common subsequence** — compare two strings and find the
+   longest sequence of characters that appears in order in both. O(mn).
+4. **Optimal BST** — given key frequencies, build the BST with minimum
+   search cost. O(n^3), but O(n^2) with Knuth optimization.
+5. **Bitmask DP** (new in 4th edition) — DP over subsets for problems
+   like the traveling salesman problem. O(n^2 2^n).
+
+The pattern is always the same: define the subproblem, write the
+recurrence, compute bottom-up, reconstruct the solution. If you
+understand the five examples, you can apply DP to almost any problem
+with optimal substructure.
+
+---
+
+## Graph Algorithms: Where the Book Shines
+
+The graph chapters (18–25) are the best part of CLRS. Graphs are
+everywhere: social networks, maps, the web, compiler dependencies,
+circuit design, network routing.
+
+Breadth-first search (BFS) finds shortest paths in unweighted graphs.
+Depth-first search (DFS) classifies edges and detects cycles. Together
+they solve reachability, connectivity, topological sorting, and
+strongly connected components. These are the building blocks.
+
+Then come the heavy hitters:
+
+- **Dijkstra's algorithm** — shortest paths in weighted graphs with
+  non-negative edges. O(E log V) with a binary heap. The beating heart
+  of Google Maps.
+- **Bellman-Ford** — handles negative edges and detects negative cycles.
+  Slower (O(VE)) but more general.
+- **Floyd-Warshall** — all-pairs shortest paths. Three nested loops.
+  Twenty lines of code. O(V^3). A masterpiece of simplicity.
+- **Kruskal and Prim** — two ways to build a minimum spanning tree.
+  Kruskal sorts edges and uses union-find. Prim grows a tree using a
+  priority queue. Same result, different tradeoffs.
+
+The beauty of CLRS's presentation: each algorithm is given as a
+self-contained unit with the proof, the analysis, and the pseudocode
+all in one place. You can open the book to Dijkstra and have everything
+you need to implement it.
+
+---
+
+## NP-Completeness: The End of the Road
+
+Chapter 31 is the reality check. Some problems appear to have no
+efficient solution. P vs. NP is the most important open problem in
+computer science. NP-complete problems are the hard ones — if you can
+solve any of them efficiently, you can solve all of them.
+
+CLRS gives you the toolkit for proving a problem is NP-complete:
+reduction. Show that your problem is at least as hard as a known
+NP-complete problem. The chapter walks through reductions from SAT to
+3-CNF-SAT to CLIQUE to VERTEX-COVER to HAM-CYCLE to TSP to SUBSET-SUM.
+
+The practical lesson: if your problem is NP-complete, stop looking for
+an exact polynomial-time solution. Use approximation, heuristics, or
+parameterized algorithms. Chapter 32 shows you how to get provably good
+approximations — within 2x of optimal for vertex cover, within log n
+for set cover.
+
+---
+
+## What the Book Does Not Teach You
+
+CLRS teaches you to think about algorithms. It does not teach you to
+implement them.
+
+The pseudocode is clear, but you will struggle to translate it to
+working code the first time. Edge cases, memory management, integer
+overflow, recursion depth — CLRS abstracts all of that away. You need
+a second book, or a platform like LeetCode, to bridge the gap.
+
+It also does not teach you modern topics: streaming algorithms,
+Bloom filters, Locality-Sensitive Hashing, graph neural networks,
+quantum algorithms. The book is a classical algorithms text, and it is
+proudly classical.
+
+---
+
+## The Bottom Line
+
+Here is my advice on how to read CLRS:
+
+1. **Do not read it cover to cover.** Pick the chapters you need.
+   Sorting, graphs, and DP are the highest-value topics.
+2. **Do not skip Chapter 3.** Big-O notation is the language of the
+   entire book. Spend the time to understand it before moving on.
+3. **Sketch the algorithms by hand.** Trace through an example on
+   paper. It will stick better than reading the pseudocode.
+4. **Do at least some exercises.** The starred ones are optional. But
+   the section exercises are the only way to know if you actually
+   understood.
+5. **Implement. Do not just read.** Translate the pseudocode to your
+   language of choice. Run it on test cases. Break it. Fix it. That is
+   where the learning happens.
+
+CLRS is not the easiest algorithms book. It is not the shortest. It is
+not the most practical. But it is the most complete, the most rigorous,
+and the most respected. If you put in the work, it will change how you
+think about code — for the rest of your career.

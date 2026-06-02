@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schemas/book-meta.json",
+  "slug": "zero-to-one-peter-thiel",
+  "title": "Zero to One: Notes on Startups, or How to Build the Future",
+  "authors": [
+    {
+      "name": "Peter Thiel",
+      "role": "Author"
+    },
+    {
+      "name": "Blake Masters",
+      "role": "Co-author"
+    }
+  ],
+  "isbn": "9780804139298",
+  "isbn10": "0804139296",
+  "publisher": "Crown Business",
+  "publishedDate": "2014-09-16",
+  "pages": 224,
+  "language": "en",
+  "genres": [
+    "Entrepreneurship",
+    "Business",
+    "Technology",
+    "Venture Capital",
+    "Innovation"
+  ],
+  "coverUrl": "./cover.jpg",
+  "description": "A contrarian guide to startup success that argues monopolies — not competition — drive innovation, and that true progress means creating something new rather than copying what already works.",
+  "keyConcepts": [
+    "Vertical vs horizontal progress",
+    "Creative monopoly",
+    "Competition is for losers",
+    "Last mover advantage",
+    "Power law of venture capital",
+    "Secrets and contrarian truths",
+    "Definite optimism",
+    "Four characteristics of monopoly",
+    "Seven questions every business must answer"
+  ],
+  "notableQuotes": [
+    "What important truth do very few people agree with you on?",
+    "Competition is for losers.",
+    "All happy companies are different: each one earns a monopoly by solving a unique problem. All failed companies are the same: they failed to escape competition.",
+    "We were promised flying cars, and we got 140 characters.",
+    "The most contrarian thing of all is not to oppose the crowd but to think for yourself.",
+    "Brilliant thinking is rare, but courage is in even shorter supply than genius."
+  ],
+  "readingTimeMinutes": 280,
+  "difficulty": "intermediate",
+  "amazonUrl": "https://www.amazon.com/dp/0804139296",
+  "goodreadsUrl": "https://www.goodreads.com/book/show/18050143-zero-to-one"
+}

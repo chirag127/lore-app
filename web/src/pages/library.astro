@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { CollectionManager } from '../components/collections/CollectionManager.tsx';
+import { Ornament } from '../components/ui/Primitives.tsx';
+
+const books = await getCollection('books');
+const allBooks = books.map((b) => ({ slug: b.data.slug, title: b.data.title }));
+---
+<BaseLayout title="Library" description="Your bookmarks, reading status, and personal collections.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <Ornament client:load>Library</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-8 sm:mb-12 text-balance">
+      Your shelves, your rules
+    </h1>
+    <CollectionManager client:load allBooks={allBooks} />
+  </section>
+</BaseLayout>

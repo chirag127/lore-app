@@ -1,0 +1,126 @@
+---
+title: Architecture Patterns with Python
+subtitle: Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices
+---
+
+## Overview
+
+*Architecture Patterns with Python* (2020) by Harry Percival and Bob
+Gregory is a hands-on guide to applying proven software architecture
+patterns — long staples of Java and C# ecosystems — to modern Python
+applications. Both authors were engineers at MADE.com, and the book
+grew out of questions Percival fielded after his earlier book on
+TDD with Django: how do you structure an application so that your
+core business logic is covered by unit tests and you minimize the
+number of integration tests needed?
+
+The answer is a layered architecture built around Domain-Driven
+Design, Ports and Adapters (Hexagonal Architecture), and
+event-driven patterns — all demonstrated through a single example
+application (an e-commerce allocation system) built step by step.
+
+The book's core philosophy: your application's business logic should
+be testable without databases, web servers, or external APIs. Every
+architectural decision flows from that principle.
+
+---
+
+## The Architecture Stack at a Glance
+
+| Layer | Responsibility | Pattern |
+|-------|----------------|---------|
+| Domain Model | Business rules, entities, value objects | DDD Aggregates |
+| Service Layer | Orchestration, use cases | Unit of Work |
+| Repository | Data access abstraction | Repository Pattern |
+| Message Bus | Command/event dispatch | Event Bus |
+| Adapters | Web, DB, external I/O | Ports and Adapters |
+
+---
+
+## Structure
+
+The book is organized in two parts:
+
+**Part I — Building an Architecture to Support Domain Modeling**
+covers the foundational patterns: Repository, Unit of Work,
+Aggregates, and the Service Layer. Each chapter alternates between
+writing a failing test and implementing the pattern to make it pass.
+
+**Part II — Event-Driven Architecture** introduces domain events,
+the Message Bus, CQRS, and dependency injection. Patterns from Part
+I are retrofitted as the application grows to handle more complex
+workflows like email notifications and external API calls.
+
+---
+
+## Key Themes
+
+| Theme | Description |
+|-------|-------------|
+| Testability as a Design Force | TDD is not just a testing practice — it shapes the architecture. Patterns emerge from the need to make core logic unit-testable. |
+| Dependency Inversion | Rely on abstractions (protocols / ABCs), not concrete implementations. The domain model knows nothing about Django, Flask, or SQLAlchemy. |
+| Domain-Driven Design | Ubiquitous language, bounded contexts, aggregates, and domain events — adapted for Python without Java's ceremony. |
+| Event-Driven Composition | Side effects (emails, logs, API calls) become event handlers, not inline code. The message bus orchestrates them. |
+| Incremental Architecture | Start simple (single Flask app + SQLAlchemy). Introduce patterns as complexity demands. No big upfront design. |
+
+---
+
+## Why This Book Matters
+
+Before this book, Python developers had few resources bridging the
+gap between "tutorial-level Flask/Django apps" and the architectural
+literature from the Java world (Evans' DDD, Martin's Clean
+Architecture, Vernon's Implementing DDD). Most Python shops either
+reinvented these patterns poorly or dismissed them as "too Java."
+
+Percival and Gregory changed that by showing that DDD and hexagonal
+architecture are not language-specific — they are programmer
+constructs that work beautifully in Python when adapted idiomatically.
+The book is also notable for its strict TDD approach: every
+architectural decision is validated by a test written first.
+
+The companion website (cosmicpython.com) hosts the complete code,
+exercises, and errata, making this one of the most practical
+architecture books for the Python community.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Python developers building apps that outgrow a single module | The patterns scale with complexity. Start with Repository; add the bus later. |
+| Developers transitioning from Django/Flask to microservices | Part II directly addresses event-driven decomposition. |
+| TDD practitioners seeking architectural guidance | Each pattern emerges from the need to write cleaner tests. |
+| Architects evaluating Python for enterprise | Shows Python can handle DDD and hexagonal patterns without sacrificing expressiveness. |
+
+---
+
+## Related Books
+
+| Book | Connection |
+|------|------------|
+| **Clean Architecture** (Martin) | The theoretical foundation for Ports and Adapters. APWP implements what Clean Architecture preaches, in Python. |
+| **Designing Data-Intensive Applications** (Kleppmann) | Deeper treatment of event-driven systems, stream processing, and CQRS at scale. |
+| **Building Microservices** (Newman) | APWP's event-driven patterns are a stepping stone to the microservice decomposition Newman describes. |
+| **The Pragmatic Programmer** (Hunt) | Shares the same practical, tool-agnostic philosophy — invest in patterns that pay for themselves. |
+| **Design Patterns** (GoF) | APWP updates classic GoF patterns (e.g., Command, Observer) for the Python and DDD context. |
+
+---
+
+## Final Verdict
+
+*Architecture Patterns with Python* is the best practical
+introduction to DDD and hexagonal architecture for Python
+developers. Its strength is concreteness: every pattern is
+accompanied by working code, tests, and a clear explanation of the
+problem it solves.
+
+The book's limitations are its scope — it covers one medium-sized
+example, and the treatment of CQRS and event sourcing is
+introductory. Readers needing production-scale guidance will need to
+supplement with Kleppmann or Vernon.
+
+**Rating: 8.5/10** — Indispensable for the intermediate Python
+developer; less novel for architects already familiar with the
+patterns from other languages.

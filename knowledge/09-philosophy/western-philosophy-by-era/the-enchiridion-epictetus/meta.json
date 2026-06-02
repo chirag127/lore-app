@@ -1,0 +1,81 @@
+{
+  "slug": "the-enchiridion-epictetus",
+  "title": "The Enchiridion (Handbook)",
+  "subtitle": "Ἐγχειρίδιον Ἐπικτήτου — Manual of Stoic Ethics",
+  "author": "Epictetus (recorded by Arrian)",
+  "authorBorn": 50,
+  "authorDied": 135,
+  "originalLanguage": "Koine Greek",
+  "writtenPeriod": "c. 125 CE",
+  "isbn": "9780486433592",
+  "recommendedTranslation": {
+    "translator": "George Long",
+    "title": "Enchiridion",
+    "publisher": "Dover Publications (Dover Thrift Editions)",
+    "year": 2004,
+    "isbn": "9780486433592",
+    "pages": 64,
+    "note": "Most affordable standalone edition of the Enchiridion itself, with Long's clear Victorian-era translation."
+  },
+  "alternativeTranslations": [
+    {
+      "translator": "Nicholas P. White",
+      "title": "The Handbook (The Encheiridion)",
+      "publisher": "Hackett Publishing",
+      "year": 1983,
+      "isbn": "9780915145690",
+      "pages": 35,
+      "note": "Concise, accurate modern translation widely used in university courses."
+    },
+    {
+      "translator": "Robin Hard",
+      "title": "Discourses, Fragments, Handbook",
+      "publisher": "Oxford University Press (Oxford World's Classics)",
+      "year": 2014,
+      "isbn": "9780199595181",
+      "pages": 400,
+      "note": "Complete modern translation with the Discourses and fragments, scholarly introduction by Christopher Gill."
+    },
+    {
+      "translator": "Robert Dobbin",
+      "title": "Discourses and Selected Writings",
+      "publisher": "Penguin Classics",
+      "year": 2008,
+      "isbn": "9780140449464",
+      "pages": 304,
+      "note": "Lively modern translation with helpful introduction and notes."
+    },
+    {
+      "translator": "Elizabeth Carter",
+      "title": "All the Works of Epictetus",
+      "publisher": "1758 (public domain)",
+      "year": 1758,
+      "note": "Historic eighteenth-century translation that popularized Epictetus in English."
+    }
+  ],
+  "genres": ["Philosophy", "Classics", "Ethics", "Self-Help"],
+  "subjects": ["Stoicism", "Ancient Philosophy", "Ethics", "Practical Wisdom", "Resilience", "Self-Discipline"],
+  "themes": [
+    "Dichotomy of Control",
+    "Prohairesis (Moral Choice)",
+    "Impressions and Assent",
+    "Appropriate Actions (Kathēkonta)",
+    "Role Ethics",
+    "Living According to Nature",
+    "The Inner Citadel",
+    "Freedom Through Self-Mastery",
+    "Indifferents",
+    "Death and Tranquillity"
+  ],
+  "tags": [
+    "epictetus", "stoicism", "stoic", "ancient philosophy", "enchiridion",
+    "handbook", "ethics", "practical philosophy", "virtue", "wisdom",
+    "self-discipline", "resilience", "inner peace", "dichotomy of control",
+    "prohairesis", "arrian", "greek philosophy", "classics", "self-improvement",
+    "musonius rufus"
+  ],
+  "difficulty": "easy",
+  "estimatedReadingHours": 1,
+  "estimatedListeningMinutes": 45,
+  "excerpt": "A compact manual of Stoic ethical advice compiled by Arrian from the lectures of Epictetus, a former slave turned philosopher. In 53 short chapters, the Enchiridion distills Stoicism to its practical essence: focus only on what is within your control, accept what is not, and align your will with nature. The most accessible entry point into ancient Stoic philosophy — a field manual for mental freedom that has shaped thinkers from Marcus Aurelius to modern cognitive therapists."
+}

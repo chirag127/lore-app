@@ -1,0 +1,157 @@
+## Overview
+
+*Mathematics for Machine Learning* (2020) by Marc Peter Deisenroth, A. Aldo
+Faisal, and Cheng Soon Ong is the most respected one-volume mathematical
+foundation for modern machine learning. Published by Cambridge University
+Press, ~417 pages, and freely available as a PDF, the book distills the
+four mathematical pillars of ML — linear algebra, analytic geometry, matrix
+decompositions, vector calculus, probability, and continuous optimization —
+into a coherent narrative designed for readers who want to understand ML
+from first principles.
+
+The authors are all researchers at University College London (UCL), and
+the book grew out of a graduate course they taught there. Their goal is
+narrow but ambitious: give a mathematically literate reader the tools
+needed to read and write modern ML papers, without the disconnected
+fragmentation of a typical undergraduate curriculum.
+
+---
+
+## The Four Pillars
+
+The book is organized around the two parts of the published edition. The
+freely available PDF on `mml-book.github.io` is an expanded draft with
+additional worked examples and a chapter on linear regression that the
+CUP edition omits for length.
+
+| Part | Chapter | Topic | Why It Matters |
+|------|---------|-------|----------------|
+| I | 2 | Linear Algebra | Vectors, matrices, systems of equations, the language of data |
+| I | 3 | Analytic Geometry | Norms, inner products, orthogonal projections, geometric intuition |
+| I | 4 | Matrix Decompositions | Eigen, SVD, Cholesky — the structure-revealing operations |
+| II | 5 | Vector Calculus | Gradients, Jacobians, Hessians, the chain rule for backpropagation |
+| II | 6 | Probability & Statistics | Random variables, Bayes' rule, MLE, MAP, expectation |
+| II | 7 | Continuous Optimization | Gradient descent, Newton's method, constrained problems |
+
+---
+
+## Why This Book Exists
+
+Before this book, learning the math for ML meant stitching together
+Strang for linear algebra, a probability textbook, a calculus reference,
+and a separate optimization text — none of them written for ML
+practitioners. The notation, the worked examples, and the motivating
+problems all came from other fields.
+
+Deisenroth, Faisal, and Ong unified these four subjects around a single
+question: *what mathematics do you need to understand why a neural
+network trains, why PCA works, why Bayesian methods regularize, and why
+gradient descent converges?* The answer is a tight ~400-page book that
+covers the essential toolkit without padding or rabbit holes.
+
+A defining feature: the book is application-free until the very end. No
+neural networks. No classifiers. No datasets. Just the math. This is a
+deliberate pedagogical choice — the authors believe the math must stand
+on its own, and only then can it be applied to ML problems with
+understanding rather than pattern-matching.
+
+---
+
+## Key Takeaways
+
+1. **Vectors and matrices are not abstractions.** They are the literal
+   data structures flowing through every model. Understanding how a
+   matrix multiplies a vector is understanding how a linear layer
+   transforms features.
+
+2. **Eigendecomposition and SVD reveal structure.** Eigenvectors are the
+   directions in which a linear transformation acts by pure scaling; SVD
+   generalizes this to non-square matrices and powers dimensionality
+   reduction, recommender systems, and low-rank approximation.
+
+3. **The gradient is the engine of learning.** The gradient of a loss
+   function points in the direction of steepest ascent; subtracting it
+   is the simplest learning rule. The Jacobian generalizes the gradient
+   to vector-valued functions and is the workhorse of backpropagation.
+
+4. **Probability handles uncertainty.** Real-world data is noisy, models
+   are approximate, and predictions are uncertain. Random variables,
+   Bayes' rule, and likelihood-based estimation are the framework for
+   reasoning about what we don't know.
+
+5. **Optimization is where learning happens.** Training a model means
+   finding parameters that minimize a loss. Gradient descent, stochastic
+   variants, Newton's method, and constrained optimization are the tools
+   that make this tractable.
+
+6. **Convex problems are easy; non-convex ones are interesting.** Linear
+   regression is convex and has a closed-form solution. Deep learning is
+   non-convex and requires sophisticated optimization. The book explains
+   both regimes and the theory that distinguishes them.
+
+7. **The math is interconnected.** Linear regression is simultaneously
+   a linear algebra problem (solving Ax = b), a calculus problem
+   (minimizing ||Ax - b||²), a probability problem (maximum likelihood
+   under Gaussian noise), and an optimization problem (gradient descent
+   on a convex loss). The book deliberately shows these connections.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| ML grad students | The book most advisors recommend as a first-year reference |
+| Self-taught ML engineers | Fills the math gaps that library tutorials leave behind |
+| Researchers entering ML from physics, engineering, statistics | Provides the conventions and notation of the ML community |
+| Data scientists needing rigor | Builds the foundation for understanding papers, not just APIs |
+| Educators | The book is structured as a one-semester course with exercises |
+
+---
+
+## Who Should Skip
+
+- Anyone looking for hands-on ML tutorials — the book has exactly one
+  application chapter (worked examples in the free PDF)
+- Practitioners seeking production deep learning recipes — the book
+  predates the transformer era and contains no architecture coverage
+- Readers uncomfortable with mathematical notation and derivations — the
+  book is dense, formal, and requires paper-and-pen work
+- Statisticians who already have graduate-level probability and linear
+  algebra will find much of the content survey-level
+- Anyone needing a quick read — this is a textbook, not a popular
+  exposition
+
+---
+
+## Final Verdict
+
+*Mathematics for Machine Learning* is the best single-volume mathematical
+foundation for modern ML. It is not a deep learning book, not a coding
+book, and not a research survey. It is the book you read *before* those
+books — or alongside them — to make the derivations, the proofs, and the
+algorithmic choices intelligible rather than mysterious.
+
+The book's greatest strength is its restraint. It covers exactly the
+math you need for ML, in the notation ML uses, with the motivating
+examples ML produces. It doesn't try to be a complete linear algebra
+text, a complete probability text, or a complete optimization text. It
+is a curated bridge between undergraduate mathematics and graduate ML
+research.
+
+**Rating: 9.0/10** — The standard mathematical foundation for ML.
+Essential for serious practitioners and graduate students.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|------|--------|------------|
+| **Deep Learning** | Goodfellow, Bengio, Courville | The canonical deep learning text; assumes the math this book provides |
+| **Pattern Recognition and Machine Learning** | Christopher Bishop | The natural next step; comprehensive ML with mathematical depth |
+| **Introduction to Linear Algebra** | Gilbert Strang | Deeper geometric treatment of the linear algebra chapters |
+| **Convex Optimization** | Boyd & Vandenberghe | Expands the optimization chapter into a full engineering reference |
+| **Probabilistic Machine Learning** | Kevin P. Murphy | Probability-centered ML; deepens this book's probability chapter |
+| **Information Theory, Inference, and Learning Algorithms** | David MacKay | A free, philosophically rich complement with Bayesian depth |
+| **The Matrix Calculus You Need For Deep Learning** | Terence Parr | A short focused supplement on the gradient rules used in backpropagation |

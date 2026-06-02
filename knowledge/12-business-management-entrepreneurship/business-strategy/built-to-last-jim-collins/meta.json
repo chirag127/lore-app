@@ -1,0 +1,76 @@
+{
+  "slug": "built-to-last-jim-collins",
+  "title": "Built to Last",
+  "subtitle": "Successful Habits of Visionary Companies",
+  "author": "Jim Collins",
+  "description": "A landmark six-year Stanford research project revealing the timeless principles that distinguish visionary companies from their competitors, from clock-building to BHAGs to cult-like cultures.",
+  "coverUrl": "https://covers.openlibrary.org/b/olid/OL24290127M-L.jpg",
+  "isbn10": "0060516402",
+  "isbn13": "9780060516406",
+  "pages": 368,
+  "publishedYear": 1994,
+  "publisher": "HarperBusiness",
+  "openlibrarySlug": "OL24290127M",
+  "tags": [
+    "business",
+    "management",
+    "leadership",
+    "strategy",
+    "corporate-culture",
+    "visionary-companies",
+    "jim-collins",
+    "organizational-behavior",
+    "bhag",
+    "enduring-greatness"
+  ],
+  "keyIdeas": [
+    "Clock building over time telling: build an institution that can thrive without you",
+    "Preserve the core ideology while stimulating progress",
+    "Big Hairy Audacious Goals (BHAGs) as catalysts for progress",
+    "Cult-like cultures create alignment around core values",
+    "Try a lot of stuff and keep what works (evolutionary progress)",
+    "Home-grown management promotes continuity of core ideology",
+    "Good enough never is: continuous improvement as a way of life",
+    "The genius of the AND: embrace paradoxical dualities"
+  ],
+  "keyTakeaways": [
+    "Visionary companies focus on building an institution, not on a single product or leader",
+    "Core ideology (core values + purpose) is immutable; everything else can change",
+    "BHAGs should be clear, compelling, and require extraordinary effort to achieve",
+    "Cult-like cultures ensure consistent behavior aligned with core values",
+    "Evolutionary progress through experimentation beats strategic planning alone",
+    "Promoting from within preserves cultural continuity and leadership depth",
+    "Continuous improvement (kaizen) is embedded in visionary companies' DNA",
+    "The 'Tyranny of the OR' is replaced by the 'Genius of the AND'",
+    "Visionary companies are more profitable than the stock market by 15x since 1926",
+    "Visionary companies were not founded by charismatic visionary leaders"
+  ],
+  "whoShouldRead": [
+    "CEOs and senior executives building long-term organizations",
+    "Entrepreneurs wanting to create enduring rather than flashy companies",
+    "Business students studying organizational behavior and strategy",
+    "Leaders navigating culture and values in growing organizations"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Good to Great",
+      "slug": "good-to-great-jim-collins"
+    },
+    {
+      "title": "Great by Choice",
+      "slug": "great-by-choice-jim-collins"
+    },
+    {
+      "title": "How the Mighty Fall",
+      "slug": "how-the-mighty-fall-jim-collins"
+    },
+    {
+      "title": "The Effective Executive",
+      "slug": "the-effective-executive-peter-drucker"
+    },
+    {
+      "title": "Measure What Matters",
+      "slug": "measure-what-matters-john-dozz"
+    }
+  ]
+}

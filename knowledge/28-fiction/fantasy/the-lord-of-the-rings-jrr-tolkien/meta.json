@@ -1,0 +1,15 @@
+{
+  "id": "the-lord-of-the-rings-jrr-tolkien",
+  "title": "The Lord of the Rings",
+  "slug": "the-lord-of-the-rings-jrr-tolkien",
+  "authors": ["J.R.R. Tolkien"],
+  "year": 1954,
+  "category": "28-fiction",
+  "subcategory": "fantasy",
+  "pages": 1178,
+  "isbn": "9780544003415",
+  "language": "en",
+  "genres": ["fantasy", "epic", "adventure", "mythology"],
+  "source": "generated",
+  "generatedAt": "2026-06-12"
+}

@@ -1,0 +1,140 @@
+## Strengths
+
+- **Balanced perspective.** Newman presents drawbacks alongside
+  benefits honestly — the book makes a strong case for microservices
+  while also warning against them when inappropriate. This credibility
+  is rare in technical architecture books.
+- **Practical throughout.** Every chapter includes concrete advice,
+  configuration snippets, and real-world examples from ThoughtWorks
+  projects. Abstract architectural principles are always grounded.
+- **Organizational insight.** Part III (People) is the most distinctive
+  section. Few technical architecture books address team topology,
+  Conway's Law, and organizational change with this depth.
+- **Holistic scope.** Covers the entire lifecycle — decomposition,
+  integration, data, deployment, testing, monitoring, security — in one
+  coherent volume.
+- **Clear prose.** Newman writes accessibly, avoiding unnecessary
+  jargon. Complex distributed systems concepts are explained clearly.
+- **Second edition improvements.** Significantly expanded coverage of
+  Kubernetes, serverless, event-driven architectures, and security
+  compared to the 2015 first edition.
+
+---
+
+## Weaknesses
+
+- **Too long.** At 612 pages, the book covers many topics superficially
+  that have their own dedicated books (Kubernetes, CI/CD, monitoring).
+  A tighter edit would improve signal-to-noise ratio.
+- **Rapid aging in operations chapters.** The deployment, monitoring,
+  and CI/CD sections reference specific tools and versions that already
+  feel dated (the Kubernetes ecosystem evolves quickly). These chapters
+  will need another update within a few years.
+- **Limited distributed systems theory.** Newman explains what to do
+  but not deeply why. The CAP theorem, consensus algorithms (Raft,
+  Paxos), and formal consistency models receive minimal treatment.
+- **Light on security.** Security gets a single chapter. In practice,
+  securing microservices (mTLS, JWT validation, API gateway policies,
+  secret management) is a major undertaking.
+- **Opinionated without always acknowledging alternatives.** Newman
+  strongly prefers REST, Kubernetes, and certain patterns. Other valid
+  approaches (GraphQL, service meshes, Dapr) receive less attention.
+
+---
+
+## Criticism
+
+### The Distributed Monolith Problem
+
+The book warns against distributed monoliths (services deployed
+separately but tightly coupled), but the guidance is easier to state
+than to follow. Many teams read this book and still end up with a
+distributed monolith because:
+- Service boundaries are genuinely hard to get right
+- Organizational pressures push teams toward coupling
+- The book's decomposition heuristics are useful but underdetermined
+
+### Industry Backlash
+
+By 2022-2023, a significant industry backlash against microservices
+emerged, with Amazon Prime Video and other high-profile teams publicly
+retreating from microservice architectures. Critics argue that the
+book understates the operational complexity. Newman's response (in the
+second edition) of "start monolithic, then split" is his hedge, but
+many readers skip this advice.
+
+### Theory Deficit
+
+Software engineering faculty often note that the book lacks formal
+foundations. A student who reads this book without Kleppmann's will
+understand patterns but not principles — they can build a microservice
+system but cannot reason rigorously about its behavior under partition.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|-----------|----------|
+| "It's too long" | The length reflects the breadth of the topic. Skippable sections are clearly marked. |
+| "Ops chapters age fast" | The principles (CI/CD, observability pillars, deployment strategies) age well even if tool references do not. |
+| "Not enough theory" | The book is explicitly a practical guide, not a theory text. Complement with Kleppmann for theory. |
+| "Encourages premature microservices" | The second edition strongly emphasizes starting monolithic. The criticism applies more to the first edition. |
+| "Security is thin" | Security is a separate specialty; a single chapter is appropriate for an overview. |
+| "Microservices are overhyped" | Newman acknowledges this directly. The book is a field guide for those who have already decided to explore the pattern. |
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | How the Book Uses It |
+|---------|--------|----------------------|
+| Conway's Law | Melvin Conway (1968) | Central organizing principle for aligning teams with architecture |
+| Bounded Context | Eric Evans, Domain-Driven Design (2003) | Primary heuristic for service decomposition |
+| CAP Theorem | Eric Brewer (2000) | Referenced, but not deeply explored |
+| Sagas | Hector Garcia-Molina (1987) | Foundation for distributed transaction management |
+| Strangler Fig Pattern | Martin Fowler (2004) | Migration strategy from monolith to microservices |
+
+---
+
+## Historical Context
+
+The first edition (2015) captured a pivotal moment. Netflix, Amazon,
+and Spotify had publicly described their microservice architectures,
+and the industry was eager to follow. Newman provided the first
+comprehensive how-to guide at exactly the right time.
+
+Between editions (2015-2021), the ecosystem matured enormously:
+Kubernetes won the container orchestration war, serverless emerged as a
+viable deployment model, and service meshes (Istio, Linkerd) changed
+how services communicate. The second edition reflects this maturation.
+
+By 2026, microservices are no longer controversial — they are a standard
+tool in the architect's toolbox, used where appropriate and avoided
+where not. This normalization is partly due to this book's sober,
+balanced treatment.
+
+---
+
+## Comparison to Similar Books
+
+| Book | Author | Key Difference |
+|------|--------|----------------|
+| *Building Microservices* | Sam Newman | The comprehensive field guide. Covers everything. |
+| *Designing Data-Intensive Applications* | Martin Kleppmann | Deep theory (consistency, replication, partitioning). No deployment or organizational guidance. |
+| *Monolith to Microservices* | Sam Newman | Focused solely on the migration journey. Shorter, more targeted. |
+| *Fundamentals of Software Architecture* | Mark Richards & Neal Ford | Broader architecture scope with a shorter microservices section. |
+| *Microservices Patterns* | Chris Richardson | Pattern catalog approach; more code-heavy, less organizational depth. |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Practical Utility | 9/10 | The most hands-on, comprehensive microservices guide available |
+| Originality | 7/10 | Synthesizes existing patterns; organizational insight is original |
+| Readability | 8/10 | Clear, well-structured, accessible prose |
+| Depth | 7/10 | Broad rather than deep; theory readers need a companion volume |
+| Lasting Impact | 8/10 | Shaped how an entire generation of architects approaches distributed systems |
+| **Overall** | **8/10** | Essential for practitioners, but must be complemented with theory |

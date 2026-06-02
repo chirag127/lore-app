@@ -1,0 +1,32 @@
+{
+  "name": "knowledgeatlas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KnowledgeAtlas — the free platform for understanding knowledge.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "workspaces": [
+    "web",
+    "pipeline"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "preview": "pnpm --filter web preview",
+    "pipeline": "pnpm --filter pipeline start",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "emulators": "firebase emulators:start --only auth,firestore,hosting"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.6.0",
+    "playwright": "^1.60.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.2.0"
+  }
+}

@@ -1,0 +1,143 @@
+## Strengths
+
+- **Uncompromising code-first approach.** Every concept is implemented in
+  Python and PyTorch, not just described. This is the book's defining
+  feature and its greatest strength — you cannot finish it without deeply
+  understanding how LLMs work.
+- **Exceptional pedagogy.** Raschka builds complexity incrementally. Simple
+  self-attention comes before multi-head attention. A tiny model on a short
+  story comes before loading GPT-2 weights. Each chapter ends with
+  exercises that test genuine understanding.
+- **Beautiful diagrams.** The book contains a high density of well-designed
+  diagrams (~34% of content) that illustrate tensor shapes, attention
+  patterns, and data flow. These visualizations are often where the hard
+  concepts click.
+- **Accompanying resources.** 96k+ star GitHub repo, free 48-part YouTube
+  series, a free 170-page "Test Yourself" exercise book, appendices on
+  LoRA and training tricks — the supporting material rivals the book
+  itself in value.
+- **Laptop-friendly.** The toy model trains on any modern laptop in hours.
+  No cloud credits, no GPU cluster required. This dramatically lowers the
+  barrier to entry.
+- **Covers the full pipeline.** Most transformer tutorials stop at the
+  architecture. This book takes you through pretraining, classification
+  fine-tuning, and instruction fine-tuning to a working chatbot.
+
+---
+
+## Weaknesses
+
+- **Light on theory.** Readers wanting deep mathematical intuition for
+  why attention works, why transformers generalize, or the statistical
+  mechanics of scaling laws will be disappointed. The book prioritizes
+  code over math.
+- **GPT-2 focus can feel dated.** While GPT-2 is a wise pedagogical
+  choice, readers may wonder how the concepts map to Llama 3, Mistral,
+  or GPT-4. The architecture comparison appendix helps but is brief.
+- **No coverage of post-training RLHF/DPO.** The book covers supervised
+  fine-tuning (SFT) but not reinforcement learning from human feedback
+  (RLHF) or direct preference optimization (DPO), which are now standard
+  in production LLMs.
+- **Small-scale pretraining is purely educational.** The toy model trained
+  on a short story is useful for learning but has no practical application.
+  The book acknowledges this, but some readers may find the pretraining
+  chapter unsatisfying compared to loading pretrained weights.
+- **Occasionally too terse.** Some concepts — like the GELU activation,
+  layer normalization placement, or the details of BPE merge rules — pass
+  by quickly. Readers may need to supplement with other sources.
+
+---
+
+## Criticism
+
+### The "Practical Over Theoretical" Critique
+
+The book's deliberate choice to minimize mathematics has drawn criticism
+from readers who want deeper understanding:
+
+- **Attention is glossed.** The code implements it, but why does softmax
+  attention work? What are the inductive biases? Why scaled dot-product
+  instead of additive? The book doesn't explore these questions deeply.
+- **No coverage of positional encoding alternatives.** GPT-2 uses learned
+  absolute positions. The book briefly mentions RoPE (Rotary Position
+  Embedding) used by Llama and modern models but doesn't implement it.
+- **Loss landscape and optimization are black-boxed.** AdamW is imported
+  from PyTorch. The book doesn't discuss learning rate schedules, warmup
+  strategies, or gradient accumulation — critical for real training.
+
+### The "Is This Really From Scratch?" Critique
+
+Some argue the title is misleading: the book relies heavily on PyTorch
+autograd, nn.Module, DataLoader, and AdamW. A purist's "from scratch"
+would implement backpropagation and optimization by hand. However, this
+is a weak criticism — the level of abstraction is appropriate. You build
+the *model architecture* from scratch, not the autograd engine.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|-----------|----------|
+| "Not enough math" | The book's stated goal is code-driven understanding. Mathematical depth is available in cited references. |
+| "GPT-2 is outdated" | GPT-2 is the most documented, reproducible baseline. Understanding GPT-2 transfers directly to any decoder-only model. |
+| "No RLHF/DPO" | The field moves faster than print. Raschka has published follow-up articles on preference tuning. The book covers the essential foundation. |
+| "Relies on PyTorch internals" | Every practical ML book uses a framework. The *architecture* is from scratch; the *training infrastructure* is standard. |
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | How the Book Uses It |
+|---------|--------|----------------------|
+| Transformer Architecture | Vaswani et al. (2017) | Adapts encoder-decoder to decoder-only; implements scaled dot-product, multi-head attention |
+| GPT-2 | Radford et al. (2019) | Primary reference model — matches GPT-2's architecture and weight dimensions |
+| Byte-Pair Encoding | Sennrich et al. (2016) | Implements BPE tokenizer for subword tokenization |
+| AdamW Optimizer | Loshchikov & Hutter (2019) | Standard LLM optimizer; used throughout pretraining and fine-tuning |
+| GELU Activation | Hendrycks & Gimpel (2016) | Smooth ReLU alternative used in all GPT-style models |
+| Layer Normalization | Ba et al. (2016) | Pre-norm variant (layernorm before sub-layers) as used in modern GPT |
+
+---
+
+## Historical Context
+
+The book arrived in September 2024, a watershed year for open-weight LLMs
+(Llama 3, Mistral, Gemma). The AI industry was bifurcating into two camps:
+those who treat LLMs as opaque APIs managed by big tech, and those who
+build and fine-tune open models. Raschka's book serves the second camp,
+providing the foundational knowledge needed to participate in open model
+development.
+
+It follows the tradition of "from scratch" books in computer science —
+like "Build an Interpreter" or "Write a Ray Tracer" — that argue genuine
+understanding requires building the artifact, not just consuming it.
+
+---
+
+## Comparison to Similar Resources
+
+| Resource | Author | Key Difference |
+|----------|--------|----------------|
+| **Neural Networks: Zero to Hero** | Andrej Karpathy | Free YouTube series. Covers similar material with more mathematical intuition. Less structured; no written exercises. |
+| **Natural Language Processing with Transformers** | Tunstall et al. | HuggingFace-centric. Faster path to production but higher-level abstractions hide internals. |
+| **The Annotated Transformer** | Harvard NLP | Free online tutorial. More mathematical, less complete (covers original Transformer only, not GPT). |
+| **Understanding Deep Learning** | Simon J.D. Prince | Comprehensive textbook with full mathematical treatment of transformers. No code walkthrough. |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Practical Utility | 9.5/10 | Builds a working LLM; the code alone is invaluable |
+| Originality | 7/10 | Novel pedagogical approach; concepts are well-known |
+| Readability | 8/10 | Clear prose, excellent diagrams, but demands focused reading |
+| Rigor | 7/10 | Code is rigorous; theoretical treatment is light |
+| Lasting Impact | 9/10 | 96k GitHub stars; defining resource in its niche |
+
+*Build a Large Language Model (From Scratch)* is not the most
+theoretical book on LLMs, nor the most comprehensive, nor the most
+up-to-date. But it is the most *effective* for its stated goal: helping
+a motivated engineer understand LLMs by building one. That pragmatic
+excellence makes it essential reading for anyone who wants to move
+beyond API calls into genuine understanding.

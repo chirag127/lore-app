@@ -1,0 +1,110 @@
+---
+title: Analysis and Critique
+description: An evaluation of System Design Interview Volume 2 \u2014 strengths, weaknesses, and comparisons
+date: 2022-03-11
+---
+
+# Analysis
+
+## Strengths
+
+- **Structured interview methodology.** The 4-step framework gives
+  candidates a repeatable scaffold. Interviewers recognize and reward
+  this structure.
+- **Superior diagrams.** The 300+ diagrams are the book\u2019s biggest
+  asset \u2014 each one tells a complete story without requiring
+  cross-referencing. The final mind map per chapter is a quick-revision
+  tool.
+- **Real-world diversity.** Covering social, infrastructure,
+  financial, and real-time domains exposes engineers to problems they
+  might not encounter in their day job.
+- **Depth on financial systems.** Chapters 11\u201313 (Payment, Wallet,
+  Stock Exchange) are rare in interview-prep books and give candidates a
+  vocabulary for domains that typically require specialized knowledge.
+- **BOTE calculations grounded in reality.** Storage and throughput
+  numbers in each chapter come from real systems, not hypotheticals.
+- **Self-contained chapters.** Each chapter references Volume 1 lightly
+  but does not depend on it. A motivated reader can jump to any topic.
+
+---
+
+## Weaknesses
+
+- **Some solutions are oversimplified.** The event sourcing
+  implementation for digital wallets glosses over practical concerns
+  like snapshot management, projection rebuilding, and schema evolution
+  for the event log.
+- **Repetitive patterns.** After reading 3\u20134 chapters, the
+  structure becomes predictable. Some diagrams rehash similar
+  topologies.
+- **Depth trails off in later chapters.** The Stock Exchange chapter
+  (13) introduces the order book but hand-waves critical details like
+  partial fills, iceberg orders, and market-data fan-out.
+- **Print quality.** Photos are grayscale in the paperback, making some
+  diagrams hard to read. The Kindle version uses color.
+- **Not for beginners.** Assumes familiarity with load balancers,
+  caching, databases, and messaging. Readers without this foundation
+  will struggle.
+- **Thin on distributed consensus.** Paxos and Raft are mentioned but
+  not explained. A candidate who brings up leader election would need
+  to learn it elsewhere.
+- **Price-to-page ratio.** At $40 for 436 pages (paperback), it is
+  pricier per page than comparable technical books, especially given
+  the grayscale printing.
+
+---
+
+## Comparison to Similar Books
+
+| Book | Author | Key Difference |
+|------|--------|----------------|
+| *System Design Interview, Vol. 1* | Alex Xu | Beginner-friendly. 16 fundamentals-focused problems. Vol. 2 is more advanced and more domain-diverse. |
+| *Designing Data-Intensive Applications* | Martin Kleppmann | Encyclopedic, academic, explanation-first. Not interview-focused. Excellent companion for the theory behind Vol. 2\u2019s recommendations. |
+| *Designing Distributed Systems* | Brendan Burns | Kubernetes-centric. Patterns (sidecar, ambassador, adapter) rather than interview walkthroughs. |
+| *Grokking the System Design Interview* | DesignGurus.io | Online course format. More interactive but less depth per problem. Vol. 2 goes deeper on specific systems. |
+| *System Design: An Insider\u2019s Guide* | Alex Xu | Volume 1 covered the basics. Vol. 2 adds advanced topics. |
+
+---
+
+## Practical Applicability
+
+- **For interview prep:** High. The 4-step framework is directly
+  transferable to the whiteboard. Practicing these 13 problems gives a
+  broad enough surface area for most FAANG interviews.
+- **For working engineers:** Medium. The book builds vocabulary and
+  pattern recognition for system design discussions, but the depth is
+  insufficient for implementing any system described.
+- **For architects:** Low-to-medium. The trade-off discussions are
+  valuable, but a seasoned architect will find the solutions familiar
+  and the omissions (e.g., no deep treatment of consistency models)
+  noticeable.
+
+---
+
+## Omissions
+
+- **Kubernetes and container orchestration.** No chapter on designing a
+  container platform or job scheduler.
+- **Streaming platforms.** Kafka is mentioned in the message queue
+  chapter, but Flink, Spark Streaming, and real-time processing
+  frameworks are not explored.
+- **Graph databases and A* search.** The nearby-friends solution uses
+  geohashing but does not discuss graph-based recommendations or social
+  graph traversal.
+- **Multi-region and disaster recovery.** While global deployment is
+  touched in several chapters, there is no dedicated treatment of
+  active-active vs. active-passive multi-region architectures.
+- **Observability.** Metrics monitoring is covered, but distributed
+  tracing (Jaeger/Zipkin) and logging pipelines are not.
+
+---
+
+## Verdict
+
+Volume 2 is a worthy sequel that succeeds where Volume 1 was sometimes
+shallow. The financial systems chapters alone justify the purchase for
+many engineers. It will not replace Kleppmann for theoretical depth or
+Grokking for interactive practice, but as a structured set of advanced
+case studies written in the language of FAANG interviews, it has no
+direct competitor. Recommended for anyone preparing for senior-level
+system design interviews who already understands the basics.

@@ -1,0 +1,23 @@
+{
+  "slug": "calculus-michael-spivak",
+  "title": "Calculus",
+  "authors": ["Michael Spivak"],
+  "isbn13": "9780914098911",
+  "publisher": "Publish or Perish, Inc.",
+  "year": 2008,
+  "pages": 680,
+  "language": "en",
+  "cover": {"url": "https://covers.openlibrary.org/b/isbn/9780914098911-L.jpg", "source": "openlibrary", "olid": "OL26330517M"},
+  "difficulty": "advanced",
+  "readingTimeMinutes": 1800,
+  "listeningTimeMinutes": 1200,
+  "category": "22-mathematics-statistics",
+  "subcategory": "analysis-and-calculus",
+  "tags": ["calculus", "real analysis", "rigorous mathematics", "single-variable", "textbook", "proof-based", "undergraduate", "classic", "epsilon-delta", "dedekind-cuts", "honors-calculus"],
+  "excerpt": "The gold standard for a rigorous first course in calculus: proves everything, demands everything, and rewards everything. Not a computation book — a thinking book.",
+  "whoShouldRead": ["Mathematics majors seeking rigorous understanding", "Future mathematicians", "Anyone who wants to truly understand calculus, not just compute", "Readers who enjoy elegant proofs and challenging problems"],
+  "whoShouldSkip": ["Students needing quick computational practice", "Those preparing for AP/exam calculus", "Readers uncomfortable with proofs"],
+  "keyIdeas": ["Rigorous construction of real numbers via Dedekind cuts", "epsilon-delta definition of limits proved from first principles", "The Fundamental Theorem of Calculus proved rigorously", "Uniform continuity and its consequences", "Riemann integration theory", "Sequences and series with full convergence theory", "The topology of the real line"],
+  "keyTakeaways": ["Calculus is not about formulas — it's about proving why they work", "The real numbers have a precise logical structure", "Every theorem in calculus has hypotheses that matter", "Mathematical rigor is not pedantry — it's clarity"],
+  "relatedBooks": ["principles-of-mathematical-analysis-walter-rudin", "a-course-of-pure-mathematics-g-h-hardy", "introduction-to-calculus-and-analysis-richard-courant", "calculus-on-manifolds-michael-spivak", "understanding-analysis-stephen-abbott"]
+}

@@ -1,0 +1,331 @@
+---
+title: Core Content
+description: A comprehensive breakdown of the contents of Introduction to Algorithms (CLRS, 4th ed.)
+---
+
+# Core Content
+
+## Part I: Foundations (Chapters 1–5)
+
+### Chapter 1: The Role of Algorithms in Computing
+
+Algorithms are not just programs — they are methods. CLRS defines an
+algorithm as a finite sequence of well-defined steps that transforms
+input to output. The chapter frames algorithms as a technology: better
+algorithms improve performance more than faster hardware.
+
+### Chapter 2: Getting Started
+
+Insertion sort is the first algorithm — simple, O(n^2), but illustrative.
+The chapter introduces loop invariants as a proof technique (the
+inductive invariant that holds before and after each loop iteration).
+Then merge sort introduces divide-and-conquer and recursion tree
+analysis. The chapter closes with a formal derivation of the O(n log n)
+worst-case bound for merge sort.
+
+```
+INSERTION-SORT(A)
+for j = 2 to A.length
+    key = A[j]
+    i = j - 1
+    while i > 0 and A[i] > key
+        A[i+1] = A[i]
+        i = i - 1
+    A[i+1] = key
+```
+
+### Chapter 3: Growth of Functions
+
+The notational backbone of the book. CLRS defines five asymptotic
+notations:
+
+| Notation | Bound | Informal Meaning |
+|----------|-------|------------------|
+| O(g(n)) | Upper | f grows no faster than g |
+| Omega(g(n)) | Lower | f grows at least as fast as g |
+| Theta(g(n)) | Tight | f grows exactly like g |
+| o(g(n)) | Non-tight upper | f grows slower than g |
+| omega(g(n)) | Non-tight lower | f grows faster than g |
+
+Standard properties: transitivity, reflexivity, symmetry for Theta.
+Common functions ranked: n! >> 2^n >> n^3 >> n^2 >> n log n >> n >>
+log n >> 1.
+
+### Chapter 4: Divide-and-Conquer
+
+The recurrence T(n) = a T(n/b) + f(n) is solved via the master theorem.
+
+> **Master Theorem:** If T(n) = a T(n/b) + f(n) where a >= 1, b > 1:
+> 1. If f(n) = O(n^(log_b a - epsilon)), then T(n) = Theta(n^(log_b a))
+> 2. If f(n) = Theta(n^(log_b a)), then T(n) = Theta(n^(log_b a) log n)
+> 3. If f(n) = Omega(n^(log_b a + epsilon)) and a f(n/b) <= c f(n),
+>    then T(n) = Theta(f(n))
+
+Applications: maximum subarray (Kadane-like divide-and-conquer variant,
+O(n log n)), Strassen's matrix multiplication (O(n^2.81)), the
+substitution method, and recursion-tree analysis.
+
+### Chapter 5: Probabilistic Analysis and Randomized Algorithms
+
+The hiring problem introduces probabilistic expected-case analysis.
+Randomized quicksort (choosing the pivot uniformly at random) is
+previewed. Indicator random variables are introduced as the main
+analytical tool.
+
+---
+
+## Part II: Sorting and Order Statistics (Chapters 6–9)
+
+### Chapter 6: Heapsort
+
+A binary heap is a nearly complete binary tree satisfying the max-heap
+property: `A[parent(i)] >= A[i]`. Operations: BUILD-MAX-HEAP (O(n)),
+HEAPIFY (O(log n)), HEAP-EXTRACT-MAX (O(log n)). Heapsort is in-place,
+O(n log n) worst-case, but not stable. Priority queues are implemented
+with heaps.
+
+### Chapter 7: Quicksort
+
+The most-studied sorting algorithm. Expected O(n log n), worst-case
+O(n^2). With random pivot selection, the expected running time is O(n
+log n) for any input. The partition subroutine runs in O(n) and is the
+key to the algorithm.
+
+```
+RANDOMIZED-PARTITION(A, p, r)
+i = RANDOM(p, r)
+swap A[r] with A[i]
+return PARTITION(A, p, r)
+```
+
+Hoare's original two-pointer partition and tail-recursive optimizations
+are covered.
+
+### Chapter 8: Sorting in Linear Time
+
+Comparison sorting has a lower bound of Omega(n log n) — proven via
+the decision-tree model. Non-comparison sorts break this barrier:
+
+- Counting sort (O(n + k), stable, integer keys)
+- Radix sort (O(d(n + k)), digit-by-digit)
+- Bucket sort (O(n) expected, uniform-distribution inputs)
+
+### Chapter 9: Medians and Order Statistics
+
+The SELECT algorithm (also called "median of medians") finds the ith
+order statistic in O(n) worst-case time. Groups of 5, recursive median
+finding, and partition combine to achieve linear-time selection.
+
+---
+
+## Part III: Data Structures (Chapters 10–14)
+
+### Chapter 10: Elementary Data Structures
+
+Stacks, queues, linked lists, and rooted trees — the basic building
+blocks, implemented using arrays and pointers. The sentinel technique
+(using a dummy node) simplifies boundary conditions in doubly linked
+lists.
+
+### Chapter 11: Hash Tables
+
+Hash tables offer O(1) average-case search, insert, delete. CLRS covers:
+
+- Direct-address tables
+- Chaining with linked lists
+- Open addressing (linear probing, quadratic probing, double hashing)
+- Universal hashing: H = {h_ab(k) = ((ak + b) mod p) mod m}
+- Perfect hashing for static sets
+
+The load factor alpha = n/m governs performance. Successful search in
+chaining: 1 + alpha/2.
+
+### Chapter 12: Binary Search Trees
+
+BST properties: left subtree keys < root key < right subtree keys.
+Operations: search, minimum, maximum, predecessor, successor, insert,
+delete — all O(h) where h is tree height (O(n) worst-case without
+balancing).
+
+Tree walk (inorder) produces sorted output in Theta(n).
+
+### Chapter 13: Red-Black Trees
+
+A self-balancing BST with five properties ensuring longest path <= 2x
+shortest path:
+1. Every node is red or black
+2. Root is black
+3. Leaves (NIL) are black
+4. Red nodes have black children
+5. All paths from a node to its leaves have same number of black nodes
+
+Height guarantee: h <= 2 log_2(n+1). Insertion and deletion are O(log
+n) with rotation-based rebalancing (left-rotate, right-rotate).
+
+### Chapter 14: Augmenting Data Structures
+
+Extending red-black trees to support order-statistic trees (OS-RANK,
+OS-SELECT in O(log n)) and interval trees (INTERVAL-SEARCH in O(log n)).
+The design principle: choose an augmentation, maintain it at low cost,
+and exploit it for new operations.
+
+---
+
+## Part IV: Advanced Design and Analysis (Chapters 15–17)
+
+### Chapter 15: Dynamic Programming
+
+DP = optimal substructure + overlapping subproblems. CLRS presents the
+canonical examples:
+
+| Problem | Dimensions | Complexity | Key Insight |
+|---------|-----------|------------|-------------|
+| Rod cutting | n | O(n^2) | Revenue array R[n] |
+| Matrix-chain multiplication | n | O(n^3) | Parenthesization order |
+| Longest common subsequence | m x n | O(mn) | Table of lengths |
+| Optimal BST | n | O(n^3) | Root-cost table |
+| Bitmask DP (4th ed.) | n x 2^n | O(n^2 2^n) | Subset-based state |
+
+The 4th edition adds a section on DP over subsets (bitmask DP) and the
+nonlinear knapsack problem.
+
+### Chapter 16: Greedy Algorithms
+
+Greedy choice property + optimal substructure = a greedy algorithm yields
+optimal solution. Canonical problems:
+
+- Activity selection (earliest-finish-time first)
+- Huffman coding (merge lowest-frequency pair)
+- Fractional knapsack (value/weight ratio)
+- Task-scheduling with deadlines
+
+Matroids provide the general theory: if a problem can be framed as
+finding a maximum-weight independent set in a matroid, the greedy
+algorithm is optimal.
+
+### Chapter 17: Amortized Analysis
+
+Three methods for analyzing sequences of operations:
+
+1. **Aggregate analysis** — bound total cost, divide by n
+2. **Accounting method** — overcharge cheap ops, credit pays for
+   expensive ops
+3. **Potential method** — potential function Phi maps state to "energy"
+
+Applications: dynamic table doubling (O(1) amortized insert), binary
+counter (O(1) amortized increment), and binomial heaps.
+
+---
+
+## Part V: Graph Algorithms (Chapters 18–26)
+
+### Chapter 18: BFS and DFS
+
+| Algorithm | Queue/Stack | Reachability | Shortest Paths | Edge Classification |
+|-----------|------------|--------------|----------------|---------------------|
+| BFS | Queue | Level by level | Unweighted s-t | Tree, cross |
+| DFS | Stack (implicit recursion) | Deep first | Back edges for cycles | Tree, back, forward, cross |
+
+Applications: topological sort (DFS finishing times), strongly connected
+components (Kosaraju's algorithm).
+
+### Chapter 19: Minimum Spanning Trees
+
+- **Kruskal's algorithm:** sort edges by weight, add if no cycle
+  (union-find, O(E log V))
+- **Prim's algorithm:** grow tree from root, extract-min with priority
+  queue (O(E log V) with binary heap, O(E + V log V) with Fibonacci heap)
+
+### Chapters 20–21: Shortest Paths
+
+| Algorithm | Constraint | Complexity | Negative Edges |
+|-----------|-----------|------------|----------------|
+| Bellman-Ford | General | O(VE) | Yes (detects negative cycles) |
+| DAG shortest | DAG | O(V + E) | Yes |
+| Dijkstra | Non-negative weights | O(E log V) | No |
+| Floyd-Warshall | All-pairs | O(V^3) | Yes (detects negative cycles) |
+| Johnson | All-pairs, sparse | O(VE log V) | Yes |
+
+### Chapter 22: Maximum Flow
+
+Flow networks, residual networks, augmenting paths. Ford-Fulkerson
+method: while there exists an augmenting path, push flow. Edmonds-Karp
+uses BFS to find the shortest augmenting path, guaranteeing O(VE^2).
+
+The max-flow min-cut theorem is the central result: the value of max
+flow equals the capacity of the minimum cut.
+
+### Chapters 23–24: Matching
+
+The 4th edition expands coverage of bipartite matching and flow-based
+matching algorithms. The Hungarian algorithm for assignment problems is
+covered.
+
+### Chapter 25: Multithreaded Algorithms (4th ed.)
+
+Parallel algorithms for the multicore era. Cilk-style fork-join
+parallelism: `parallel for`, `spawn`, `sync`. Span = longest dependency
+path. Parallel slackness requires enough threads to saturate processors.
+
+### Chapter 26: Matrix Operations (abridged in 4th ed.)
+
+The 4th edition simplifies the matrix coverage from the 3rd edition,
+removing the formal inversion treatment while keeping Strassen's
+multiplication and LUP decomposition.
+
+---
+
+## Part VI: Advanced Topics (Chapters 27–35)
+
+### Chapter 27: Online Algorithms (NEW in 4th ed.)
+
+Algorithms that process input incrementally without knowing future
+requests. Ski rental problem, the paging problem (LRU, FIFO), and the
+competitive ratio framework. Online bipartite matching with the
+ranking algorithm.
+
+### Chapter 28–29: Number-Theoretic and String Algorithms
+
+- Euclid's algorithm (gcd), modular arithmetic, RSA
+- String matching: naive (O(nm)), Rabin-Karp (rolling hash), KMP (prefix
+  function, O(n+m))
+
+### Chapter 30: Computational Geometry
+
+Convex hull (Graham scan, Jarvis march), line-segment intersection, and
+closest pair of points (O(n log n)).
+
+### Chapter 31: NP-Completeness
+
+The definitive treatment. A problem is NP-complete if:
+
+1. It is in NP (certificate verifiable in polynomial time)
+2. Every problem in NP reduces to it in polynomial time
+
+Cook-Levin theorem: SAT is NP-complete. Reductions from SAT to
+3-CNF-SAT to CLIQUE to VERTEX-COVER to HAM-CYCLE to TSP to
+SUBSET-SUM. The standard 21 NP-complete problems are cataloged.
+
+### Chapter 32: Approximation Algorithms
+
+For NP-hard optimization problems, polynomial-time algorithms with
+provable approximation ratios:
+
+| Problem | Ratio | Algorithm |
+|---------|-------|-----------|
+| Vertex cover | 2 | Maximal matching |
+| TSP (triangle inequality) | 2 | MST doubling |
+| Set cover | ln n | Greedy |
+| MAX-3-CNF | 8/7 | Random assignment + derandomization |
+
+### Chapters 33–34: PTAS and Matroid Theory
+
+Polynomial-time approximation schemes (PTAS) for problems like subset
+sum and bin packing. The matroid foundation for greedy algorithms is
+formalized.
+
+### Chapter 35: Fibonacci Heaps and van Emde Boas Trees (3rd ed., simplified in 4th)
+
+Fibonacci heaps support O(1) amortized insert and decrease-key, used to
+speed up Dijkstra and Prim. van Emde Boas trees support O(log log M)
+operations on integer keys in range {0..M-1}.

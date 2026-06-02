@@ -1,0 +1,23 @@
+{
+  "slug": "mastery-robert-greene",
+  "title": "Mastery",
+  "isbn": "9780670024964",
+  "isbn10": "0670024961",
+  "pages": 352,
+  "year": 2012,
+  "publisher": "Viking",
+  "language": "en",
+  "format": "Hardcover",
+  "genres": ["Self-Help", "Psychology", "Philosophy", "Biography", "Personal Development"],
+  "subjects": ["Mastery", "Apprenticeship", "Skill Acquisition", "Genius", "Creativity", "Expertise"],
+  "authors": [
+    {
+      "name": "Robert Greene",
+      "role": "Author"
+    }
+  ],
+  "openlibrary": "OL16531251W",
+  "goodreads": 13589147,
+  "rating": 3.8,
+  "ratingsCount": 100000
+}

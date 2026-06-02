@@ -1,0 +1,110 @@
+---
+title: Understanding the Linux Kernel
+subtitle: 3rd Edition
+author: Daniel P. Bovet and Marco Cesati
+published: 2005-11
+publisher: O'Reilly Media
+pages: 823
+isbn: 9780596005651
+---
+
+## Overview
+
+*Understanding the Linux Kernel* (November 2005, 3rd ed.) by Daniel P. Bovet and Marco Cesati is the definitive guided tour of the Linux 2.6 kernel at the x86 hardware level. At 823 pages it is also the most thorough treatment of Linux kernel internals in print. Where Robert Love's *Linux Kernel Development* teaches subsystems as interfaces a developer extends, Bovet and Cesati open every layer down to the CPU: segment descriptors, page-table entries, interrupt gates, and the exact mechanics of each syscall on 32-bit x86.
+
+```mermaid
+mindmap
+  root((Understanding the Linux Kernel))
+  Kernel and Memory Layout
+  x86 protection rings, GDT, IDT
+  Process Model
+  task_struct, mm_struct, VMA, threads
+  Process Scheduling
+  CFS, scheduling classes, nice values
+  System Calls
+  int 0x80, syscall instruction, sys_call_table
+  Kernel Synchronization
+  atomic ops, spinlocks, mutexes, RCU, seqlocks
+  Interrupt Handling
+  top half, bottom half, tasklets, softirqs, work queues
+  Timers and Timekeeping
+  jiffies, HZ, gettimeofday, POSIX clocks
+  Signals
+  generation, delivery, real-time signals
+  Memory Management
+  buddy system, slab, kmalloc, vmalloc, GFP flags
+  Virtual Filesystem
+  superblock, inode, dentry, file objects
+  I/O and Block Layer
+  bio, request queues, I/O schedulers
+  Disk Filesystems
+  ext2 indirect blocks, ext3 journaling
+  Networking
+  sk_buff, protocol handlers, device drivers
+```
+
+| Detail | Value |
+|--------|-------|
+| **Authors** | Daniel P. Bovet & Marco Cesati |
+| **Published** | 2005-11 (O'Reilly Media) |
+| **Pages** | 823 |
+| **ISBN-10** | 0596005652 |
+| **ISBN-13** | 9780596005651 |
+| **Edition** | 3rd |
+| **Kernel Covered** | Linux 2.6.x |
+| **Architecture Focus** | 32-bit x86 (with IA-64 notes) |
+
+---
+
+## Daniel P. Bovet and Marco Cesati
+
+**Daniel P. Bovet** received his PhD in computer science from the University of Rome "La Sapienza" in 1981 and is now an associate professor there. His research and teaching center on operating systems, real-time systems, and parallel computing. He has contributed to Linux kernel documentation and taught kernel internals for over two decades.
+
+**Marco Cesati** received his PhD in computer science from the University of Rome in 1997. He is currently a volume editor of the Linux kernel documentation and has collaborated extensively with Bovet on kernel teaching materials. Their work together combines deep academic knowledge with extensive hands-on analysis of the kernel source.
+
+---
+
+## Chapter Map
+
+| # | Chapter | Focus |
+|---|---------|-------|
+| 1 | Introduction | Hardware platform, x86 registers, protected mode, paging basics |
+| 2 | Memory Addressing | Segmentation, paging, page-table walk, TLB handling on x86 |
+| 3 | Processes | task_struct, PID allocation, process vs thread, zombie states |
+| 4 | Scheduling | CFS, scheduling classes, nice values, real-time scheduling policies |
+| 5 | Memory Management | Address spaces, mm_struct, VMA lists, brk, mmap, clone() VM sharing |
+| 6 | System Calls | int 0x80 vs syscall, save/restore, errno, sys_call_table entries |
+| 7 | Signals | Delivery, blocking (sigprocmask), handlers, real-time signals |
+| 8 | The Virtual Filesystem | VFS objects: superblock, inode, dentry, file; mount/umount path |
+| 9 | I/O Models | Synchronous vs async, blocking vs non-blocking, poll/select, aio |
+| 10 | Block Device Drivers | gendisk, request queue, block_device_operations, bio chains |
+| 11 | Scheduling I/O Requests | I/O schedulers: Linus Elevator, Deadline, Anticipatory, CFQ, NOOP |
+| 12 | The Page Cache | Buffercache, pageframe reclaim, swap, readahead |
+| 13 | Ext2 and Ext3 | ext2 indirect blocks; ext3 journal superblock, modes, recovery |
+| 14 | Process Communication | Pipes, FIFOs, System V IPC (msg, sem, shm), POSIX message queues |
+| 15 | Network Subsystem | Socket layer, sk_buff life cycle, protocol handlers, net_device |
+| 16 | Modules | Module init/exit, licensing, exported symbols, /proc/modules |
+
+---
+
+import Content from './01-content.mdx'
+import Analysis from './02-analysis.mdx'
+import Narration from './03-narration.mdx'
+
+<Content />
+
+---
+
+<hr />
+
+## Why This Book Matters
+
+Before Bovet & Cesati, most books about the Linux kernel wrote as if hardware did not exist — they described data structures and algorithms in the abstract and trusted the reader to know how the MMU made them work. *Understanding the Linux Kernel* refused that shortcut. It begins at the CPU: segment registers, the GDT and IDT, page-table entries, the TSS, and the exact sequence of opcodes a process executes when it calls `read()`. From there it builds upward through the scheduler, the VM, the VFS, the block layer, and the network stack so that every layer makes sense in terms of the one below it.
+
+That commitment to hardware-grounded explanation is why this book became the definitive reference for engineers working on Linux on real hardware — not in a simulator, not through an API, but at the metal. The 3rd edition's 823 pages cover Linux 2.6 in a level of depth and x86 specificity no other text has matched. It remains essential reading for anyone who needs to understand why the kernel behaves the way it does, and not just what it does.
+
+<Analysis />
+
+---
+
+<Narration />

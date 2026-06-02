@@ -1,0 +1,103 @@
+# Pattern Recognition and Machine Learning
+
+**Christopher M. Bishop · Springer, 2007 · ISBN 9780387310732 · 738 pp.**
+
+---
+{}
+---
+
+## Chapter Map
+
+```mermaid
+flowchart TD
+    C1["Ch 1: Introduction"] --> C2
+    C2["Ch 2: Probability Distributions"] --> C3
+    C3["Ch 3: Linear Models for Regression"] --> C4
+    C4["Ch 4: Linear Models for Classification"] --> C5
+    C5["Ch 5: Neural Networks"] --> C6
+    C6["Ch 6: Kernel Methods"] --> C7
+    C7["Ch 7: Sparse Kernel Machines"] --> C8
+    C8["Ch 8: Graphical Models"] --> C9
+    C9["Ch 9: Mixture Models & EM"] --> C10
+    C10["Ch 10: Approximate Inference"] --> C11
+    C11["Ch 11: Sampling Methods"] --> C12
+    C12["Ch 12: Continuous Latent Variables"] --> C13
+    C13["Ch 13: Sequential Data"]
+
+    C1 --> |"motivation, Bayes basics"| C2
+    C2 --> |"exp. family, Gaussian"| C3
+    C3 --> C4
+    C4 --> |"logistic regression, probit"| C5
+    C5 --> |"backprop, error surfaces"| C6
+    C6 --> |"kernel trick, dual rep."| C7
+    C7 --> |"SVM, RVM"| C8
+    C8 --> |"factor graphs, d-sep."| C9
+    C9 --> |"Gaussian mixture, EM"| C10
+    C10 --> |"variational inference"| C11
+    C11 --> |"MCMC, Gibbs, slice"| C12
+    C12 --> |"PPCA, ICA, FA"| C13
+    C13 --> |"HMM, Kalman, particle"| END["END"]
+```
+
+---
+
+## Prerequisites
+
+| Topic | Requirement |
+|-------|-------------|
+| Linear algebra | Essential — matrix calculus used throughout |
+| Multivariate calculus | Essential — gradients of log-likelihoods |
+| Probability theory | Essential — Bayes' theorem, distributions, expectation |
+| Basic statistics | Helpful — MLE, sufficient statistics |
+| Programming | Helpful — exercises reference MATLAB/Octave |
+
+---
+
+## Key Concepts
+
+```mermaid
+mindmap
+  root((PRML))
+    Probability
+      Exponential Family
+      Gaussian Distribution
+      Beta & Gamma
+      Conjugate Priors
+    Bayesian Inference
+      Prior Likelihood Posterior
+      Posterior Over Parameters
+      Predictive Distribution
+      Evidence Approximation
+    Linear Models
+      Basis Functions
+      Regularized LS
+      Bayesian Linear Reg
+      Logistic Regression
+    Neural Networks
+      Activation Functions
+      Backpropagation
+      Cross-Entropy Error
+      Regularization
+    Kernel Methods
+      Kernel Trick
+      Dual Representation
+      Gaussian Processes
+      Kernel PCA
+    Graphical Models
+      Directed Graphs
+      Undirected Graphs
+      Factor Graphs
+      d-Separation
+    Mixture Models
+      Gaussian Mixture
+      EM Algorithm
+      Component Analysis
+    Sampling & Approx
+      MCMC
+      Gibbs Sampling
+      Variational Inference
+    Sequential Data
+      Hidden Markov Models
+      Kalman Filter
+      Particle Filter
+```

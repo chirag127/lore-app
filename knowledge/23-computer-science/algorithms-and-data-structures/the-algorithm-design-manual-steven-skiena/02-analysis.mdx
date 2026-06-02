@@ -1,0 +1,298 @@
+## Strengths
+
+- **Practical, not theoretical.** Skiena's deliberate omission of
+  formal proofs is a feature, not a bug. The book teaches working
+  programmers how to *think about* algorithms, not how to prove
+  correctness. Compared to CLRS, it is dramatically more accessible
+  and arguably more useful for the practitioner.
+- **The algorithm catalog is unmatched.** Part II's 75 entries are
+  the most useful algorithm reference ever assembled for working
+  programmers. The uniform structure (name, input/output, variants,
+  discussion, implementations, references) makes the catalog
+  browsable. No other textbook comes close.
+- **War stories are honest and educational.** Skiena's consulting
+  case studies are not polished success narratives — they include
+  false starts, dead ends, and "the customer did not actually need
+  this" reveals. They are the most valuable part of the book for
+  learning what real algorithm work looks like.
+- **Modeling is the central message.** The book's deepest lesson:
+  the hardest part of an algorithmic problem is mapping the real
+  world to the right abstract problem. This insight, repeatedly
+  demonstrated across war stories, is missing from most algorithms
+  texts.
+- **Trade-offs are explicit.** Skiena does not pretend there is
+  one right algorithm. He compares approaches, shows when each
+  works, and shows when each fails. The book's heuristic honesty is
+  rare in algorithms texts.
+- **Excellent interview-prep coverage.** The 3rd edition adds
+  LeetCode and HackerRank problems explicitly. The catalog format
+  aligns perfectly with the "name the problem" approach that
+  interview coaching emphasizes.
+- **Conversational, engaging tone.** Skiena writes like a good
+  lecturer: clear, funny, with a voice. The book is a pleasure to
+  read, unlike the dry formality of CLRS or the dense notation of
+  TAOCP.
+- **Wide coverage.** Sorting, searching, data structures, graph
+  algorithms, DP, greedy, NP-completeness, heuristics, randomized
+  algorithms, approximation — all in one volume. The book is a
+  complete undergraduate course by itself.
+
+---
+
+## Weaknesses
+
+- **C code is dated.** The book uses C for implementation examples.
+  Most working programmers in 2026 use Python, Java, JavaScript, or
+  Rust. Reading the C requires adaptation. The pseudocode in the
+  text is language-agnostic, but the implementations are not.
+- **No formal proofs.** Skiena's deliberate choice. For readers who
+  need rigorous correctness guarantees, the book is insufficient.
+  It teaches intuition, not proof. The lack of proofs is a
+  feature for practitioners and a bug for theorists.
+- **Asymptotic notation is informal.** Big-O is taught through
+  examples, not formal classes (P, NP, PSPACE). The book covers
+  NP-completeness at the level of "these problems are hard and
+  reductions prove it," without the formalism a graduate course
+  would expect.
+- **Asymptotic class is not the whole story.** Skiena's informal
+  treatment of complexity glosses over the constant factors that
+  dominate real performance. A reader who treats Big-O as gospel
+  may make poor engineering decisions. The book mentions this
+  caveat but does not deeply engage with it.
+- **The catalog has omissions.** 75 problems is a lot but not
+  exhaustive. Modern topics underrepresented: streaming algorithms,
+  online algorithms, sublinear algorithms, distributed algorithms,
+  GPU computing, modern machine learning primitives. These are
+  the gaps that newer books (Mitzenmacher-Upfal for probabilistic
+  methods, Roughgarden for algorithmic game theory) fill.
+- **The 3rd edition has rough edges.** Some reviewers note that the
+  new chapters (hashing, randomized algorithms, divide-and-conquer)
+  feel less polished than the original chapters. The book has
+  grown organically; structural coherence has suffered.
+- **Modern ML and data science are absent.** The book was
+  published in 2020, just before the LLM era, and the 3rd edition
+  predates the explosion of neural-network-aware algorithmic
+  concerns. For an algorithms book in 2026, the coverage of
+  ML-relevant topics is sparse.
+
+---
+
+## Criticism
+
+### "No theorems" is too radical
+
+The most common criticism: by avoiding formal proofs, Skiena
+underprepares students for graduate-level work. A student who
+learns algorithms from Skiena alone will struggle in a theory class
+that expects familiarity with proof techniques (induction,
+adversarial arguments, amortized analysis). The book is excellent
+for practitioners and a poor foundation for theorists.
+
+### The catalog is a 2008 snapshot
+
+The catalog was essentially complete by the 2nd edition. The 3rd
+edition added a few entries but the 75-problem core is largely the
+same set of classical problems Skiena identified in 1997. Modern
+algorithmic problems (differential privacy, sublinear algorithms,
+algorithmic fairness, learned index structures) are absent. The
+catalog is comprehensive for classical CS but stale for
+contemporary research.
+
+### C code limits accessibility
+
+C is increasingly rare in industry. Python and Java dominate
+algorithm education. The book would be more accessible with Python
+or pseudocode-only implementations. The 3rd edition did not make
+this change.
+
+### The 3rd edition's price and length
+
+At 800 pages and Springer pricing, the 3rd edition is expensive
+($60–$90 for the paperback, $40–$50 for the Kindle). The 2nd
+edition, used, is a third the price and 80% of the content. The
+3rd edition's improvements (color, new chapters, updated references)
+do not justify the upgrade for readers who already own the 2nd.
+
+### Limited engagement with implementation details
+
+The book teaches algorithmic thinking but defers implementation to
+"exercise for the reader." A reader who needs a working system will
+struggle to translate the book's pseudocode into production code.
+Books like Sedgewick (with full Java implementations) are more
+useful for this audience.
+
+### Coverage of certain topics is shallow
+
+Topics that get cursory treatment: amortized analysis, randomized
+algorithms beyond hashing, advanced data structures (Fibonacci
+heaps, van Emde Boas trees), and modern approximation algorithms.
+For these, dedicated texts (Motwani-Raghavan for randomized,
+Vazirani for approximation) are necessary.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|-----------|----------|
+| "No theorems" | Skiena's audience is working programmers, not theorists. A book that proves everything would be CLRS, and CLRS has its own accessibility problem. The book teaches the *thinking*, which is what the practitioner needs. |
+| "Catalog is 2008" | The catalog is a reference for the *most important* problems. Modern additions are second-tier. The 75 classical problems have not changed because they are the problems that matter. |
+| "C code" | C exposes memory layout and is the closest language to "what the computer actually does." Python implementations would hide the structure. The C is a teaching choice, not a bug. |
+| "Too long / too expensive" | At 800 pages, the book is comprehensive. Splitting it into "fundamentals" and "advanced" would lose the catalog's accessibility. The price is Springer-priced; used copies and library access help. |
+| "Limited implementation detail" | The book is not a programming manual. Readers who need implementations can use the catalog's references to find open-source code. The book teaches *how to think*, not *how to type*. |
+| "Shallow on some topics" | The book is a one-volume treatment of the entire algorithms curriculum. Depth on every topic is impossible. For depth, follow the references at the end of each chapter. |
+
+---
+
+## Critical Reception
+
+| Source | Rating | Summary |
+|--------|--------|---------|
+| **Amazon** | 4.6/5 (3rd ed, ~600 reviews) | Overwhelmingly positive; common refrain: "the only algorithms book I actually use" |
+| **Goodreads** | 4.27/5 (~2,000 ratings) | Praised for accessibility; some criticize the C code and lack of proofs |
+| **ACM Computing Reviews** | Highly favorable | Called "a unique and valuable contribution to the algorithms textbook literature" |
+| **Hacker News** | Consistently recommended | Top-3 in "best algorithms book" threads; often paired with CLRS |
+| **r/learnprogramming** | Standard recommendation | "If CLRS is too hard, read Skiena first, then CLRS" |
+| **The Morning Paper (Tariq)** | Praised | "The algorithm catalog alone is worth the price" |
+| **Communications of the ACM** | Recommended for practitioners | "Best algorithms book for those who build software" |
+| **Stack Overflow** | Frequently cited | Many answers reference catalog entries by name |
+| **Prof. Robert Sedgewick** | Positive | Said Skiena's catalog complements Sedgewick's textbook well |
+| **Prof. Erik Demaine (MIT)** | Praised | "The war stories make this a great book for learning how to actually solve problems" |
+
+---
+
+## Reception in Education
+
+Skiena's book has become the standard alternative to CLRS in
+undergraduate algorithms courses, particularly in the US. Many
+instructors use Skiena for the "applied" or "practitioner" track
+and CLRS for the "theory" track. The book is now in use at:
+Stanford, MIT, Carnegie Mellon, UC Berkeley, Stony Brook, Georgia
+Tech, UT Austin, University of Washington, and dozens of other
+universities.
+
+The book also has a strong second life as **interview prep**. With
+the rise of FAANG-style technical interviews emphasizing algorithm
+design and problem recognition, the 3rd edition's explicit addition
+of LeetCode and HackerRank problems made it a primary resource for
+interview candidates. Many bootcamps and interview-prep courses use
+the book as a primary text.
+
+---
+
+## Comparison to Related Books
+
+| Book | Author | How Skiena Compares |
+|------|--------|---------------------|
+| *Introduction to Algorithms (CLRS)* | Cormen, Leiserson, Rivest, Stein | The rigorous counterpart. CLRS proves; Skiena teaches. Read CLRS for correctness guarantees, Skiena for design intuition. |
+| *Algorithms* | Sedgewick & Wayne | Java-based with full implementations; visual and accessible. Skiena has a better catalog; Sedgewick has better runnable code. |
+| *Algorithm Design* | Kleinberg & Tardos | Problem-oriented, modern problem selection, more proof-heavy than Skiena, less practical. |
+| *The Art of Computer Programming (TAOCP)* | Knuth | Encyclopedic depth; TAOCP is the ultimate reference but only for completed volumes (sorting, searching, selected topics). Skiena covers 10× the ground at 1/4 the depth. |
+| *Grokking Algorithms* | Bhargava | Beginner-friendly illustrated intro. Read before Skiena if you are new to algorithms. |
+| *Algorithmic Thinking* | Zingaro | Competitive-programming focused. Good follow-up to Skiena for the interview-prep audience. |
+| *Competitive Programming 3* | Halim & Halim | Comprehensive CP handbook. More problem coverage than Skiena, less depth on theory. |
+| *The Pragmatic Programmer* | Hunt & Thomas | Algorithms-adjacent; better on software engineering practice. Complementary. |
+| *Programming Challenges* | Skiena & Revilla | Skiena's other book; competitive-programming companion to this one. |
+| *Data Structures and Algorithms* | Aho, Hopcroft, Ullman | The 1970s classic. Out of print but still cited. Skiena is the modern descendant. |
+| *Algorithm Design for Networked Information* | Various | Modern applied book. Less depth, more recent examples. |
+| *Approximation Algorithms* | Vazirani | The standard text for approximation. Skiena's chapter is a sampler; Vazirani is the full treatment. |
+
+---
+
+## Long-Term Relevance
+
+**High for the catalog, medium for Part I.**
+
+The catalog is timeless. The 75 problems are the problems that
+matter in classical computer science. They will still matter in 10,
+20, 50 years. The catalog entries are useful in 2026 and will be
+useful in 2050.
+
+Part I is more time-sensitive. Algorithm design as a discipline has
+evolved: new techniques (randomized algorithms with concentration
+inequalities, advanced data structures, ML-aware algorithms) have
+become central. Skiena's coverage of these is uneven. A 2026 reader
+looking for state-of-the-art in modern topics will need additional
+books.
+
+Three shifts to note:
+
+1. **LLMs and AI have changed the landscape.** When you can ask an
+   LLM to "implement Kruskal's algorithm in Python with type hints
+   and tests," the gap between "knowing the algorithm" and "having
+   working code" has shrunk. Skiena's design lessons remain
+   essential, but the implementation is increasingly mechanical.
+
+2. **The interview-prep ecosystem has matured.** Platforms like
+   LeetCode, HackerRank, and Codeforces have their own curated
+   problem sets. Skiena's catalog complements these but does not
+   replace them. The 3rd edition added LeetCode-style problems
+   partially in response to this shift.
+
+3. **Quantum computing is now a real concern.** The 3rd edition
+   added a chapter on quantum. By 2026, quantum-aware algorithm
+   design is a small but growing field. The book's quantum
+   treatment is introductory; for depth, follow Nielsen-Chuang.
+
+The book's main vulnerability: it does not address how AI tools
+change the practice of algorithm design. A 2030-edition might add a
+chapter on "using LLMs to design, implement, and verify algorithms"
+and on "AI-generated algorithm design as a verification problem."
+
+---
+
+## Influence
+
+*The Algorithm Design Manual* has shaped three communities:
+
+- **Working programmers** — the primary audience. The book is the
+  most-cited "practical algorithms" text in industry.
+- **Algorithms instructors** — the standard alternative to CLRS for
+  undergraduate courses.
+- **Interview candidates** — a primary resource for FAANG interview
+  preparation since the 2010s.
+
+The book's two-part structure (textbook + catalog) has been
+imitated. Several newer books (*Cracking the Coding Interview*,
+*Grokking Algorithms*, *Elements of Programming Interviews*) borrow
+the "practical algorithms for the working programmer" framing.
+
+Skiena's personal influence extends through his **Algorithm
+Repository** (algorist.com) and his **Computational Biology
+research group** at Stony Brook. He has trained dozens of
+PhD students who have gone on to industry and academic positions.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Practical Utility | 10/10 | The most useful algorithms book for working programmers |
+| Catalog Quality | 10/10 | Unmatched as a reference; the killer feature |
+| Accessibility | 9/10 | Conversational, example-driven; trade-off is no formal proofs |
+| War Stories | 9/10 | Honest, useful, memorable; the best case studies in the genre |
+| Coverage Breadth | 9/10 | Entire undergraduate curriculum in one volume |
+| Rigor | 5/10 | Deliberately informal; insufficient for theory students |
+| Code Examples | 6/10 | C-only, dated, functional but not modern |
+| Up-to-Dateness | 6/10 | 3rd edition (2020) is recent; quantum/AI coverage is light |
+| Interview Prep | 9/10 | Excellent, especially with the 3rd edition's added problems |
+| **Overall** | **8.5/10** | The defining practical algorithms textbook of its era |
+
+*The Algorithm Design Manual* succeeds because it occupies a
+position no other book does. It is not the most rigorous (CLRS),
+the most comprehensive (TAOCP), the most modern (Sedgewick), or
+the most accessible (Grokking). But it is the most *useful* for
+the working programmer who needs to *find* the right algorithm, not
+*prove* it correct.
+
+The two-part structure is the genius: the textbook teaches
+technique, the catalog teaches recognition. Read Part I once to
+build your toolkit. Then keep Part II on your desk for the rest of
+your career. The combination is unmatched.
+
+For a working programmer in 2026, this is the single most
+practical book on algorithms ever written. Pair it with CLRS (for
+rigor) and Sedgewick (for runnable code) for a complete algorithms
+library. But if you can own only one algorithms book, make it this
+one.

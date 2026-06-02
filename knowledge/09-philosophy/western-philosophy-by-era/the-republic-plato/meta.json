@@ -1,0 +1,104 @@
+{
+  "slug": "the-republic-plato",
+  "title": "The Republic",
+  "subtitle": "Πολιτεία (Politeia) — On Justice, Dialogues Concerning the Ideal State",
+  "author": "Plato",
+  "authorBorn": -428,
+  "authorDied": -348,
+  "originalLanguage": "Attic Greek",
+  "writtenPeriod": "c. 380 BC",
+  "isbn": "9780140455113",
+  "recommendedTranslation": {
+    "translator": "Desmond Lee",
+    "title": "The Republic",
+    "publisher": "Penguin Classics",
+    "year": 2007,
+    "isbn": "9780140455113",
+    "pages": 496,
+    "note": "Highly readable Penguin Classics translation with an excellent introduction, notes, and a thorough glossary. The most accessible modern English edition for first-time readers."
+  },
+  "alternativeTranslations": [
+    {
+      "translator": "C. D. C. Reeve",
+      "publisher": "Hackett Publishing",
+      "year": 2004,
+      "isbn": "9780872207363",
+      "pages": 360,
+      "note": "Revised edition of the classic Grube translation. Clear, accurate prose used widely in undergraduate philosophy courses; preserves Plato's argumentative structure."
+    },
+    {
+      "translator": "Allan Bloom",
+      "publisher": "Basic Books",
+      "year": 1968,
+      "isbn": "9780465069347",
+      "pages": 487,
+      "note": "Literary, idiomatic translation that captures Plato's dramatic vigor. Includes a substantial interpretive essay and is favored by political theory and humanities readers."
+    },
+    {
+      "translator": "Paul Shorey",
+      "publisher": "Loeb Classical Library / Harvard University Press",
+      "year": 1930,
+      "isbn": "9780674991866",
+      "pages": 704,
+      "note": "Definitive two-volume bilingual edition (Greek/English) of the complete Republic. The standard scholarly reference for over a century."
+    },
+    {
+      "translator": "Benjamin Jowett",
+      "publisher": "Oxford University Press (Clarendon)",
+      "year": 1871,
+      "note": "The classic Victorian translation that shaped generations of English-speaking readers. Outdated phrasing but historically indispensable."
+    },
+    {
+      "translator": "Robin Waterfield",
+      "publisher": "Oxford University Press (World's Classics)",
+      "year": 1993,
+      "isbn": "9780199540099",
+      "pages": 480,
+      "note": "Modern Oxford translation with a strong introduction. Strikes a good balance between accuracy and readability for general readers."
+    }
+  ],
+  "genres": ["Philosophy", "Classics", "Political Theory", "Ethics"],
+  "subjects": [
+    "Ancient Philosophy",
+    "Political Philosophy",
+    "Ethics",
+    "Metaphysics",
+    "Epistemology",
+    "Theory of Forms",
+    "Justice",
+    "Education",
+    "Greek Civilization",
+    "Athens"
+  ],
+  "themes": [
+    "Allegory of the Cave",
+    "Theory of Forms",
+    "Divided Line",
+    "Philosopher-King",
+    "Tripartite Soul (Reason, Spirit, Appetite)",
+    "The Four Cardinal Virtues (Wisdom, Courage, Temperance, Justice)",
+    "The Noble Lie",
+    "Education of the Guardians",
+    "Critique of Democracy and Tyranny",
+    "Five Forms of Government (Timocracy, Oligarchy, Democracy, Tyranny, Kallipolis)",
+    "Justice at the Individual and State Level",
+    "The Role of Women and Families in the Ideal State",
+    "Poetry, Censorship, and the Just Society",
+    "Immortality of the Soul and the Myth of Er"
+  ],
+  "tags": [
+    "plato", "socrates", "ancient philosophy", "greek philosophy", "classics",
+    "political philosophy", "justice", "virtue", "wisdom", "courage", "temperance",
+    "theory of forms", "platonic forms", "ideas", "metaphysics", "epistemology",
+    "philosopher king", "kallipolis", "ideal state", "utopia", "republic",
+    "allegory of the cave", "divided line", "noble lie", "guardian class",
+    "tripartite soul", "cardinal virtues", "democracy critique", "tyranny",
+    "oligarchy", "timocracy", "censorship", "education", "dialectic",
+    "aristotle", "academy", "athens", "peloponnesian war",
+    "socratic dialogues", "logos", "eros", "psyche", "polis"
+  ],
+  "difficulty": "hard",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "excerpt": "Plato's masterwork, written in Athens around 380 BC, is a Socratic dialogue in ten books that asks one of philosophy's most enduring questions: what is justice? Through Socrates' extended conversation with Glaucon, Adeimantus, Polemarchus, and Thrasymachus at the house of Cephalus, Plato builds an ideal city (kallipolis) in speech to discover justice in the human soul. Along the way he introduces the Theory of Forms, the Divided Line, the Allegory of the Cave, the philosopher-kings, the tripartite soul, the noble lie, the four corrupt regimes, the censorship of poets, and the Myth of Er. A foundational text of Western philosophy that has shaped political theory, ethics, metaphysics, and education for two and a half millennia — read, debated, and reinterpreted by everyone from Aristotle and Augustine to Rousseau, Mill, Popper, and Rawls."
+}

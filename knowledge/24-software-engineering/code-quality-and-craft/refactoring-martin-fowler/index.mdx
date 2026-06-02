@@ -1,0 +1,131 @@
+## Overview
+
+*Refactoring: Improving the Design of Existing Code* (1st ed 1999,
+2nd ed 2018) by Martin Fowler, with Kent Beck, is the foundational
+text on the disciplined practice of improving code design. It
+introduced the concept of refactoring — small behavior-preserving
+transformations applied in sequence — and the catalog of "code
+smells" that signal when to apply them.
+
+The book is organized in two parts: introductory chapters on
+principles, smells, and testing; and a reference catalog of over
+60 refactorings with motivation, mechanics, and worked examples.
+The 2nd edition shifted from Java to JavaScript and added 17 new
+refactorings.
+
+---
+{}
+---------|-------|-----------|
+| 1 | First Example | Walkthrough of the full refactoring process from start to finish |
+| 2 | Principles | What refactoring is, why to do it, when to do it, and management concerns |
+| 3 | Code Smells | 24 patterns that indicate code should be refactored |
+| 4 | Building Tests | How to build a reliable test suite as a safety net for refactoring |
+| 5 | Catalog Introduction | How to read the refactoring entries: name, sketch, motivation, mechanics, examples |
+| 6-12 | Refactoring Catalog | ~60 refactorings organized by category (Composing Methods, Moving Features, Organizing Data, etc.) |
+
+---
+
+## Key Takeaways
+
+1. **Refactoring is not rewriting.** It is a sequence of small,
+   behavior-preserving transformations. Each step is tiny (rename
+   a variable, extract a function), but the cumulative effect is
+   significant design improvement.
+
+2. **Code smells guide refactoring.** Before you can fix code, you
+   need to know what is wrong. The 24 code smells (Duplicated Code,
+   Long Method, Large Class, Feature Envy, etc.) are the diagnostic
+   tool for identifying design problems.
+
+3. **Tests are the safety net.** Without a reliable test suite, you
+   cannot refactor safely. Tests must be run after every
+   micro-step to ensure behavior is preserved.
+
+4. **The Rule of Three.** If you do something once, just do it. Twice,
+   tolerate the duplication. Three times — refactor. This prevents
+   premature abstraction while avoiding excessive duplication.
+
+5. **Design is continuous.** Good design is not achieved through
+   upfront planning. It emerges through disciplined refactoring
+   interleaved with feature development.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| All professional developers | The definitive guide to safe, systematic code improvement |
+| Mid-career engineers | The missing framework for turning "this code is bad" into concrete action |
+| Technical leads | Vocabulary and process for maintaining codebase health |
+| Legacy code survivors | The tools you need to work with code you did not write and do not trust |
+
+---
+
+## Who Should Skip
+
+- Beginners learning to program (requires foundational coding experience)
+- Those looking for architecture or system design guidance
+- Non-programmers (the content is entirely code-level and hands-on)
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|-------|-------------|
+| Behavior Preservation | Refactoring changes structure, not behavior — the program still does exactly what it did before |
+| Small Steps | Each transformation is tiny (minutes, not hours); safety comes from frequency |
+| Smell-Driven | You do not refactor because you can; you refactor because a smell tells you to |
+| Test Safety Net | Tests are not optional — they are the prerequisite for refactoring |
+| Continuous Design | Design is not a phase; it emerges through ongoing refinement |
+| Catalog Discipline | Each refactoring has precise mechanics; follow them until they become habit |
+| Human Judgment | The catalog is reference material, not a script — apply context and judgment |
+
+---
+
+## Why This Book Matters
+
+Before *Refactoring*, improving code design was seen as a risky,
+artisanal activity. Fowler and Beck transformed it into a teachable,
+repeatable discipline. The book gave developers a shared vocabulary
+for discussing design problems ("this class has Feature Envy"), a
+toolkit of safe transformations, and a philosophy of continuous
+design improvement.
+
+The impact is visible everywhere: every modern IDE includes automated
+refactoring tools (Extract Method, Rename, Move, Inline) that trace
+their lineage to this book. The concept of "code smell" is now
+universal in software engineering discourse. The book's influence
+rivals *Design Patterns* and *The Mythical Man-Month*.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|------|--------|------------|
+| **Working Effectively with Legacy Code** | M. Feathers | Practical companion for untestable codebases |
+| **Clean Code** | R. C. Martin | Philosophy and heuristics for writing clean code |
+| **Refactoring to Patterns** | J. Kerievsky | Using refactoring to reach design pattern targets |
+| **The Pragmatic Programmer** | Hunt & Thomas | Broader craft philosophy that includes refactoring |
+| **Code Complete** | S. McConnell | Comprehensive software construction reference |
+| **Design Patterns** | Gang of Four | The pattern catalog that refactoring targets often aim for |
+
+---
+
+## Final Verdict
+
+*Refactoring* is essential reading for any professional software
+developer. The 1st edition (1999) is a classic but dated in its Java
+examples. The 2nd edition (2018) is a thorough modernization with
+JavaScript examples, new refactorings, and a web-first publication
+model.
+
+The book's only real weakness is that it is a reference to be
+studied, not a novel to be read — the catalog format means the most
+valuable chapters are those you dip into as needed. Some readers
+wish for deeper treatment of refactoring at the architectural level.
+
+**Rating: 10/10** — Indisputably a classic. Few books have changed
+how software is written. This is one of them.

@@ -1,0 +1,67 @@
+{
+  "slug": "company-of-one-paul-jarvis",
+  "title": "Company of One",
+  "author": "Paul Jarvis",
+  "subtitle": "Why Staying Small Is the Next Big Thing for Business",
+  "description": "A counterintuitive business book that argues growth is not always the goal. Paul Jarvis makes the case for staying small, focused, and profitable — building a business that serves your life rather than consuming it. Through case studies of 'companies of one' — freelancers, small agency owners, and solopreneurs — Jarvis shows that with the right approach, you can build a sustainable, profitable business without venture capital, employees, or the pressure to scale.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/9020778-L.jpg",
+  "isbn10": "1328972357",
+  "isbn13": "9781328972356",
+  "pages": 256,
+  "publishedYear": 2019,
+  "publisher": "Houghton Mifflin Harcourt",
+  "openlibrarySlug": "company_of_one",
+  "tags": [
+    "business",
+    "entrepreneurship",
+    "small business",
+    "solopreneur",
+    "freelancing",
+    "startup",
+    "lifestyle business"
+  ],
+  "keyIdeas": [
+    "Growth is a choice — not every business needs to scale",
+    "Profitability is more important than growth or valuation",
+    "Saying no to clients and opportunities protects your focus",
+    "Systems and automation reduce the need for employees",
+    "A Company of One prioritizes resilience over rapid expansion",
+    "Direct relationships with customers are a competitive advantage",
+    "Simplicity in product and process reduces overhead and stress",
+    "Work should fit around your life, not the other way around",
+    "Pricing should reflect value, not market rates or cost-plus",
+    "Continuous learning and adaptation replace the need for a large team"
+  ],
+  "keyTakeaways": [
+    "You can build a profitable, sustainable business without ever raising VC money or scaling",
+    "Growth is not the default goal — question whether you actually need to grow",
+    "Profitability first: a profitable small business is more resilient than a high-growth, unprofitable one",
+    "Saying no to the wrong clients and opportunities is as important as saying yes to the right ones",
+    "Systems and automation let you scale output without scaling headcount",
+    "Direct customer relationships build loyalty that no marketing budget can buy",
+    "Simplicity in products, services, and operations reduces stress and increases quality",
+    "Pricing based on value, not cost or competition, increases both revenue and satisfaction",
+    "Work should serve your life — if your business owns your time, you have built a cage",
+    "Resilience comes from adaptability, not size"
+  ],
+  "whoShouldRead": [
+    "Freelancers and solopreneurs building sustainable independent businesses",
+    "Small agency owners questioning whether they want to scale",
+    "Anyone tired of the 'grow at all costs' startup culture",
+    "Side hustlers turning their passion into a business without quitting their day job"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Start With Why",
+      "slug": "start-with-why-simon-sinek"
+    },
+    {
+      "title": "The Hard Thing About Hard Things",
+      "slug": "the-hard-thing-about-hard-things-ben-horowitz"
+    },
+    {
+      "title": "The Effective Executive",
+      "slug": "the-effective-executive-peter-drucker"
+    }
+  ]
+}

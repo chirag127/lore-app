@@ -1,0 +1,41 @@
+{
+  "id": "the-sleep-solution-w-chris-winter",
+  "title": "The Sleep Solution: Why Your Sleep Is Broken and How to Fix It",
+  "slug": "the-sleep-solution-w-chris-winter",
+  "authors": [
+    {
+      "name": "W. Chris Winter",
+      "role": "Author"
+    }
+  ],
+  "year": "2017",
+  "originalPublisher": "Penguin Random House (Berkley)",
+  "tradeEditionPublisher": "Penguin Books",
+  "tradeEditionYear": "2018",
+  "pages": 304,
+  "isbn": "9781101903704",
+  "originalIsbn": "9780399583605",
+  "language": "en",
+  "genres": ["Health", "Sleep Medicine", "Science", "Self-Help", "Neurology"],
+  "category": "01-health-fitness-longevity",
+  "subcategory": "sleep-science-and-optimization",
+  "source": "generated",
+  "generatedAt": "2026-06-12",
+  "difficulty": "beginner",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 480,
+  "tags": ["sleep", "insomnia", "sleep medicine", "neurology", "CBT-I", "circadian rhythm", "behavioral health", "sleep hygiene", "two-process model"],
+  "themes": ["Sleep Science", "Clinical Sleep Medicine", "Behavioral Health", "Insomnia", "CBT-I", "Circadian Biology", "Neurology"],
+  "rationale": "The Sleep Solution fills an essential gap in the sleep-book landscape: where Why We Sleep provides laboratory science, Winter provides clinical practice. Written by a board-certified neurologist and sleep medicine specialist with 20+ years of patient encounters, this book reframes insomnia as a conditioned behavioral and cognitive problem rather than a sleep-production failure. It popularized CBT-I for a general audience and established the clinically grounded counterpoint to the alarmist narrative of contemporary sleep literature. Its unique contribution is the sleepiness-vs-fatigue distinction, the myth-busting opening, and a practical self-directed CBT-I program that can be implemented without a therapist.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780399583605-L.jpg",
+    "color": "#c62828"
+  },
+  "relatedBooks": [
+    "why-we-sleep-matthew-walker",
+    "the-circadian-code-satchin-panda",
+    "the-promise-of-sleep-william-dement",
+    "sleep-revolution-arianna-huffington",
+    "sleep-smarter-shawn-stevenson"
+  ]
+}

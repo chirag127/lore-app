@@ -1,0 +1,84 @@
+---
+title: Problems and Solutions
+description: Key problems addressed in The Algorithm Design Manual and the solutions proposed
+---
+
+# Problems and Solutions
+
+## Key Problem
+
+The central problem Skiena addresses is the gap between algorithmic theory and practical problem-solving. Computer science curricula (circa 1990s–2000s) taught algorithms through theorem-proof formalism — CLRS, the dominant textbook, treated algorithm analysis as a branch of mathematics. Working programmers who needed to identify and solve algorithmic problems on the job had no bridge between the theory they had studied (or avoided) and the problems they faced. Even experienced programmers often failed to recognize that their problem was a known algorithmic type with a known solution.
+
+## Proposed Solution
+
+Skiena proposes a two-part solution. First, **teach algorithm design as a craft**, not a mathematical pursuit: use informal reasoning, examples, and war stories instead of proofs. Second, **provide a reference catalog** of the 75 most important algorithmic problems, allowing practitioners to identify their problem type by browsing and then find the appropriate solution and implementation.
+
+The pedagogical strategy is unique: Skiena argues that the hardest part of solving a problem algorithmically is figuring out what problem you have. Once you name the problem (shortest path, set cover, edit distance), the solution follows from known algorithms. Therefore, the book spends more time on problem identification and modeling than on algorithmic analysis.
+
+## Evidence and Argumentation
+
+Skiena makes his case through war stories — real consulting engagements where he encountered messy, ambiguous problems and reduced them to known algorithmic forms. Each war story demonstrates the modeling process without naming it: Skiena takes a domain problem (reconstructing pyramid measurements, pricing airline tickets, covering news stories) and shows how he recognized the underlying algorithmic structure (sorting, search, set cover, graph traversal).
+
+The catalog format itself is the argument: if 75 problems cover ~90% of what practitioners encounter, then algorithm design is largely a matter of pattern matching against these 75 templates. The evidence is the catalog's coverage — Skiena argues implicitly that a problem not in the catalog is almost certainly a variant of one that is.
+
+## Unresolved Questions
+
+**How do you teach problem modeling systematically?** Skiena's war stories demonstrate modeling but do not provide a general algorithm for it. The flowchart in Chapter 11 (How to Design Algorithms) helps but is heuristic, not systematic. The community has not yet produced a better answer to this question — problem modeling remains an art, not a science.
+
+**What about problems that fit none of the 75 catalog entries?** Skiena acknowledges that novel problems exist but argues they are rare in practice. This is debatable — as computing domains expand (blockchain, quantum computing, distributed systems), new problem types may emerge that the catalog does not cover.
+
+**Is the informal approach sufficient for deep understanding?** Skiena's "no theorems" approach trades rigor for accessibility. The open question is whether this trade-off produces programmers who can genuinely reason about algorithmic correctness or merely recognize and apply existing solutions.
+
+## Criticisms
+
+Henrik Norman criticized the book's code quality harshly: "The code quality in terms of readability was horrible at worst and decent at best... Is it really necessary to use variable names such as a, b, c, x, and y?" Norman also argued that "there are numerous websites and books which explain things in an easier way" — suggesting the book may have been more innovative in 1997 than it was by 2008.
+
+Gareth McCaughan identified specific technical errors, including a flawed recommendation for random number generation ("this is very bad advice") and an oversight about cache behavior in matrix multiplication. These errors undermine trust in the book's technical accuracy, especially for readers who lack the background to identify them.
+
+Multiple Amazon reviewers noted that the 2nd edition still contained errors present in the 1st edition, despite eleven years to correct them. The errata list on Skiena's website runs to several pages.
+
+Goodreads reviewers noted that the book "deteriorates in writing quality" in later chapters and that the catalog "did not feel thorough" — some entries felt too brief to be useful.
+
+## Alternative Solutions
+
+**CLRS (Cormen et al.)** takes the opposite approach: rigorous proofs, comprehensive coverage, and a formal analytical framework. CLRS is better for building deep mathematical understanding but dramatically harder to read and less useful as a quick reference.
+
+**Sedgewick's Algorithms** provides executable Java code with visual animations — better for learning how algorithms actually work on a computer. Sedgewick is weaker on problem identification and has no catalog.
+
+**Algorithm Design (Kleinberg-Tardos)** uses modern, narrative-driven case studies from computational biology, network routing, and economics. It emphasizes the design process more than either CLRS or Skiena. Its coverage is narrower but deeper.
+
+**Online resources (LeetCode, HackerRank, USACO)** provide practice-based learning with immediate feedback. They are better for interview preparation but lack the conceptual framework Skiena provides.
+
+## The Problem of Identifying Problems
+
+Skiena's most fundamental insight — and the one that distinguishes his book from every other algorithms text — is that the primary difficulty in algorithmic problem-solving is not designing or analyzing algorithms, but identifying what problem you are solving. A programmer who recognizes that their task is "shortest path in a weighted graph" has already done the hardest work. The algorithm itself (Dijkstra, Bellman-Ford, Floyd-Warshall) is a known quantity.
+
+This insight leads to the book's most novel contribution: the catalog. The catalog is essentially a 350-page answer to the question "What problem do I have?" It asks the reader to approach their problem through elimination: is it a numerical problem? A combinatorial problem? A graph problem? A string problem? A geometric problem? Within each category, the sub-problems are arranged by similarity. The catalog acts as a decision tree, guiding the reader to the correct problem type.
+
+Skiena provides a series of "questions to ask yourself" in each catalog section:
+
+**For graph problems:** Does your problem involve connectivity? Shortest paths? Cuts? Ordering? If your problem involves "networks," "connections," "relationships," or "flows," it is likely a graph problem.
+
+**For string problems:** Does your problem involve matching, comparing, or aligning sequences? Does it involve finding patterns or compressing text?
+
+**For geometry problems:** Does your problem involve points, lines, polygons, or regions in two or three dimensions?
+
+The power of this approach is that it does not require mathematical sophistication. It requires only the ability to recognize structural analogies between your problem and the catalog entries.
+
+## The Limitations of the Catalog Approach
+
+The catalog is not a panacea. It covers 75 well-studied problems, but novel problems — especially those that cross traditional categories — may not appear. A problem that involves both geometry and optimization (e.g., facility location) sits at the intersection of the computational geometry and NP-hard graph sections, requiring the reader to synthesize approaches from multiple catalog entries.
+
+The catalog also assumes the reader can correctly classify their problem. Misclassification leads to the wrong algorithms. Skiena's war stories show that even he occasionally misidentifies problems on first attempt — the process is iterative.
+
+## Practical Applications
+
+The book's primary practical application is as a desk reference. A programmer facing an unfamiliar problem can:
+1. Flip to the catalog category that seems closest (Numerical, Graph, String, etc.)
+2. Scan the problem titles to find one that matches
+3. Read the 2–4 page entry for description, known results, and approach
+4. Follow the references to existing implementations
+
+The catalog's most valuable application is problem identification: recognizing that "we need to assign these tasks to these workers" is an assignment problem (weighted bipartite matching, solvable via Hungarian algorithm), or that "we need to find the group of people all connected to each other" is a maximum clique problem (NP-hard — use heuristics).
+
+Skiena also provides practical advice for dealing with NP-hardness: use exact algorithms for small instances, heuristics for medium ones, and approximation algorithms for large ones — with specific recommendations for each catalog entry.

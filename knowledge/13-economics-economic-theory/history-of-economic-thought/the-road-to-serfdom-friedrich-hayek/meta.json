@@ -1,0 +1,74 @@
+{
+  "slug": "the-road-to-serfdom-friedrich-hayek",
+  "title": "The Road to Serfdom",
+  "author": "Friedrich Hayek",
+  "subtitle": "A Warning Against Central Planning and the Loss of Individual Liberty",
+  "description": "A landmark work of political economy arguing that centralized economic planning inevitably leads to totalitarianism. Written during World War II and published in 1944, Hayek's book warns that the collectivist mindset driving wartime planning would not simply disappear in peacetime — that the logical endpoint of state control over production, prices, and labor is the destruction of individual freedom, the rule of law, and democratic governance. One of the most influential and controversial political books of the 20th century, it shaped the policies of Margaret Thatcher and Ronald Reagan and remains a foundational text of classical liberalism and libertarianism.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14883421-L.jpg",
+  "isbn10": "0226320553",
+  "isbn13": "9780226320557",
+  "pages": 320,
+  "publishedYear": 1944,
+  "publisher": "University of Chicago Press",
+  "openlibrarySlug": "the_road_to_serfdom",
+  "tags": [
+    "economics",
+    "politics",
+    "libertarianism",
+    "classical liberalism",
+    "socialism",
+    "totalitarianism",
+    "political philosophy",
+    "central planning",
+    "Austrian economics"
+  ],
+  "keyIdeas": [
+    "Central planning requires concentrating economic power, which inevitably concentrates political power",
+    "The 'knowledge problem' — the dispersed information in society cannot be aggregated by any central planner",
+    "The rule of law (general, predictable, equally applied rules) is the foundation of liberty, and planning destroys it",
+    "The difference between rule of law and rule by law — arbitrary power dressed in legal form",
+    "Democracy must be limited by constitutional restraints to remain free; unlimited democracy becomes tyranny",
+    "Competition is a discovery procedure; planning against competition destroys the mechanism for using dispersed knowledge",
+    "The 'fatal conceit' that humans can consciously design and control the complex order of society",
+    "The slippery slope from economic planning to political dictatorship",
+    "Socialism and Nazism share collectivist roots — both subordinated the individual to the state",
+    "In a planned economy, the worst rise to the top because moral integrity is a liability for those who enforce arbitrary power"
+  ],
+  "keyTakeaways": [
+    "Economic control is control over everything — when the state directs production and prices, it directs lives, and dissent becomes impossible",
+    "No central planner can possess the dispersed knowledge of millions of individuals; the price system is the only mechanism that coordinates this knowledge",
+    "The rule of law requires general, abstract rules known in advance — not specific commands from planners. Planning inevitably replaces law with decree",
+    "Good intentions do not prevent the slide from democracy to dictatorship; the logic of planning forces planners to override dissent by coercion",
+    "The worst get on top in collectivist systems because those willing to lie, manipulate, and bully are best suited to wield arbitrary power",
+    "Socialism and fascism share a common root: both reject individualism and competition in favor of collective control of economic life",
+    "Democracy is a method, not an end. Unlimited democracy without constitutional restraint can vote itself into dictatorship",
+    "The 'middle way' or 'mixed economy' is unstable — interventions create problems that demand further interventions, leading to ever more control",
+    "Intellectual freedom requires economic independence — if the state controls your livelihood, it controls your thoughts",
+    "International peace is threatened by planned economies, which naturally conflict over resources and reject free trade"
+  ],
+  "whoShouldRead": [
+    "Anyone concerned with the relationship between economic freedom and political liberty",
+    "Students of political philosophy, economics, and 20th-century intellectual history",
+    "Libertarians and classical liberals seeking the foundational argument for limited government",
+    "Socialists and progressives who want to understand the strongest version of the opposing case",
+    "Policymakers and citizens evaluating the proper scope of government intervention"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Capitalism and Freedom",
+      "slug": "capitalism-and-freedom-milton-friedman"
+    },
+    {
+      "title": "The Constitution of Liberty",
+      "slug": null
+    },
+    {
+      "title": "The Fatal Conceit",
+      "slug": null
+    },
+    {
+      "title": "Economics in One Lesson",
+      "slug": "economics-in-one-lesson-henry-hazlitt"
+    }
+  ]
+}

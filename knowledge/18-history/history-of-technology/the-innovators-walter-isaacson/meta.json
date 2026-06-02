@@ -1,0 +1,19 @@
+{
+  "id": "the-innovators-walter-isaacson",
+  "title": "The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution",
+  "slug": "the-innovators-walter-isaacson",
+  "authors": ["Walter Isaacson"],
+  "year": 2014,
+  "category": "18-history",
+  "subcategory": "history-of-technology",
+  "pages": 488,
+  "isbn": "9781476708690",
+  "language": "en",
+  "genres": ["biography", "history-of-technology", "popular-science", "digital-revolution"],
+  "publisher": "Simon & Schuster",
+  "cover": "https://covers.openlibrary.org/b/isbn/9781476708690-L.jpg",
+  "color": "#3e2723",
+  "rationale": "The definitive single-volume popular history of the digital revolution written by one of America's leading biographers. Chosen as Book #1 for the history-of-technology leaf because it establishes the subcategory's defining thesis — that collaboration, not solitary genius, drives technological progress — while tracing computing from Ada Lovelace (1843) to Google and Wikipedia. Unconventional for the genre in its deliberate recovery of erased women contributors and its measured celebration of government-funded research alongside private enterprise.",
+  "source": "generated",
+  "generatedAt": "2026-06-11"
+}

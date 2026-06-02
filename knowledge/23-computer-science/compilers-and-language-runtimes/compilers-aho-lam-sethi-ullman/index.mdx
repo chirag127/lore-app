@@ -1,0 +1,57 @@
+---
+title: 'Compilers: Principles, Techniques & Tools'
+subtitle: 'The Dragon Book — Aho, Lam, Sethi, Ullman (2006)'
+category: '23-computer-science'
+subcategory: 'compilers-and-language-runtimes'
+cover: '#0d47a1'
+slug: 'compilers-aho-lam-sethi-ullman'
+author: 'Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman'
+publicationYear: 2006
+isbn: '9780321486813'
+---
+
+## Overview
+
+*Compilers: Principles, Techniques, and Tools* — universally known as **the Dragon Book** — stands as the most influential textbook in compiler construction ever written. First published in 1986 and then substantially revised in 2006, it has shaped the education of virtually every professional language implementer for four decades. Its purple cover (the 2006 "purple dragon" edition) displays a knight armed with tools like "LALR parser generator" and "Data flow analysis" Lochinvar-ing a dragon labeled "Complexity of Compiler Design" — a metaphor that has become part of computing folklore.
+
+## Executive Summary
+
+The Dragon Book covers the complete pipeline: from lexical analysis through syntax parsing, semantic analysis, intermediate code generation, runtime environments, machine-independent optimization, machine-level optimization, instruction-level parallelism, and interprocedural analysis. Its central thesis is that **compiler design is a discipline grounded in formal language theory, dataflow analysis, and machine architecture — unified by rigorous mathematical foundations**.
+
+### Book Structure (12 Chapters + Appendices)
+
+| Part | Chapters | Focus |
+|------|----------|-------|
+| I: Front End | 1–5 | Language processors, scanning, parsing, syntax-directed translation |
+| II: Semantic Analysis | 6–8 | Intermediate representations, type checking, runtime systems |
+| III: Back End | 8–9 | Code generation, machine-independent optimization |
+| IV: Advanced Optimization | 10–12 | Instruction-level parallelism, locality, interprocedural analysis |
+| Appendices | A–B | Complete front-end implementation, linear algebra |
+
+## Key Takeaways
+
+1. **Lexical analysis is rooted in regular expressions and finite automata.** Thompson's NFA construction (noted by Russ Cox) gives optimal regex matching — the book treats this thoroughly in Chapter 3.
+2. **Parsing has a formal mathematical foundation.** LL, LR, SLR, and LALR parsers each have precise correctness conditions derived from context-free grammar theory.
+3. **Syntax-directed translation bridges parsing and IR construction.** S-attributed and L-attributed definitions enable clean separation of parsing logic from semantic actions.
+4. **The runtime environment is compiler architecture.** Stack allocation, heap management, garbage collection, and parameter passing conventions are detailed in Chapter 7.
+5. **Dataflow analysis is the unifying framework for optimization.** Reaching definitions, live variables, available expressions, and very busy expressions underpin nearly all local and global optimizations (Chapter 9).
+6. **SSA form is implicit in the analysis framework.** The book's treatment of partial-redundancy elimination and loop-invariant code motion anticipates SSA's dominance.
+7. **JIT compilation and garbage collection are not afterthoughts.** Chapter 7.5 and 7.6 give early, rigorous treatments of garbage collection theory.
+8. **The book bridges theory and practice.** The complete front-end implementation in Appendix A demonstrates a working compiler for a small language.
+
+## Why This Book Remains Essential
+
+Published in 2006, the second edition added three entirely new chapters (Instruction-Level Parallelism, Optimizing for Parallelism and Locality, and Interprocedural Analysis) addressing multicore-era concerns. While some critiques note it spends more pages on parsing than some modern instructors prefer, this balance reflects the book's original intent: to provide the *complete theoretical foundation* for understanding all aspects of compilation. The formal treatment — of LL and LR parsers, dataflow analysis lattices, and garbage collection algorithms — is unmatched by any subsequent single-volume text.
+
+## Who Should Read
+
+- Compiler engineering interns and new hires — the canonical reference for understanding every phase
+- PL researchers and language designers — the theoretical foundations for semantics and implementation
+- Graduate students in CS — required reading for formal compiler coursework
+- Systems programmers — deeper understanding of code generation and optimization
+
+## Final Verdict
+
+The **Purple Dragon Book** is the definitive, comprehensive reference for compiler construction. It is dense, formal, and demanding — but no other single text covers this breadth with equivalent rigor. Widely cited, occasionally critiqued for balance, and universally recognized as foundational.
+
+**Rating: 9/10** — The book against which all compiler texts are measured.

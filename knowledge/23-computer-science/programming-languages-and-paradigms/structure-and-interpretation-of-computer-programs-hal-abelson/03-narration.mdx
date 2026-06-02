@@ -1,0 +1,190 @@
+## Introduction
+
+Welcome to BookAtlas. Today: *Structure and Interpretation of Computer
+Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman.
+Second edition, MIT Press, 1996. 657 pages. Goodreads rating 4.2 out
+of 5 — surprisingly middling for a book many call the bible of
+programming.
+
+This is the Wizard Book. The one with the wizard on the cover, holding a
+staff, surrounded by glowing orbs. And the thing about SICP is that
+nobody has a lukewarm opinion about it. People either credit it with
+transforming how they think about code, or they gave up in Chapter 1
+and wrote a one-star review on Amazon. It is possibly the most polarizing
+textbook ever written.
+
+---
+
+## The Book's Structure: Five Layers
+
+SICP is organized in five chapters, and the progression is the point.
+The authors do something no modern textbook would dare: they spend an
+entire first chapter on procedures and nothing else. No variables you
+can change. No data structures. Just functions, recursion, and the
+substitution model.
+
+This is the first shock for readers who expect a typical programming
+book. You are three chapters in before you encounter `set!` — the
+ability to change a variable's value. For readers accustomed to
+imperative languages, this feels like learning to walk without using
+your legs. That is the point.
+
+The book wants you to understand, deeply, what pure functional
+programming looks like. Only then does it introduce the complexity of
+mutable state.
+
+---
+
+## Chapter 1: Procedures
+
+The first chapter moves from elementary arithmetic to higher-order
+procedures in roughly 80 pages. You start by squaring numbers. You
+end by implementing Newton's method for finding fixed points.
+
+The exercises are where the real learning happens. Exercise 1.29 asks
+you to implement Simpson's Rule for numerical integration. By
+Exercise 1.35, you are deriving the golden ratio from fixed-point
+iteration. It is a firehose.
+
+The highlight is the picture language — a small embedded DSL for
+generating recursive geometric patterns. You build it entirely out of
+higher-order procedures. It is beautiful, and it does not exist in
+most programming languages. That is the point: SICP is not teaching
+you the language you already know. It is expanding what you think a
+language can be.
+
+---
+
+## Chapter 2: Data
+
+The second chapter introduces data abstraction. The key insight is
+delivered almost casually: you do not need to know how `cons` stores
+a pair to use it. The implementation could be a machine instruction,
+a struct, or — most mind-bendingly — a procedure.
+
+The exercise where you implement `cons`, `car`, and `cdr` as closures
+is the moment when many readers feel the universe tilt. Data is
+procedures. Procedures are data. The boundary dissolves.
+
+The chapter builds a complete generic arithmetic system with complex
+numbers in two representations (rectangular and polar), polynomials,
+and rational functions. By the end, you can add a polynomial to a
+complex number and the system dispatches correctly.
+
+---
+
+## Chapter 3: The Watershed
+
+This is where SICP divides readers. Chapter 3 introduces `set!` and
+with it, the entire world of mutable state, objects, and time.
+
+The substitution model breaks. The environment model rises. Suddenly,
+the simple, clean world of Chapter 1 is gone, replaced by the messiness
+of real programming — time-dependence, identity, the difference between
+"is the same as" and "was produced by the same procedure."
+
+The chapter's greatest achievement is the digital circuit simulator.
+You build a language for modeling wires, gates, and delays. Events
+propagate through an agenda. It is object-oriented programming
+implemented in Scheme, before the book ever uses the term.
+
+And then the book offers an alternative: streams. Infinite sequences
+of values generated lazily. No mutation needed. Functional programming
+can handle time after all — just represent it as a sequence.
+
+---
+
+## Chapter 4: The Evaluator
+
+This is the chapter that justifies the book's reputation. You build a
+Scheme interpreter in Scheme. The metacircular evaluator.
+
+The code is shockingly short. The core of `eval` and `apply` fits on
+two pages. The insight is correspondingly profound: a programming
+language is not magic. It is a defined process operating on structured
+expressions. `if`, `lambda`, `define`, `begin` — none of these are
+fundamental. They are syntactic conventions that an evaluator handles.
+
+Once you understand this, the book spends the rest of the chapter
+showing you what is possible. Modify the evaluator to be lazy:
+arguments evaluated only when needed. Modify it to support `amb`:
+nondeterministic choice with backtracking. Build a logic programming
+language (a Prolog-like query system) by swapping in unification for
+pattern matching.
+
+The message is clear: you are not limited to the languages you are
+given. You can design your own.
+
+---
+
+## Chapter 5: The Machine
+
+The final chapter descends. All the elegance of Scheme must be
+implemented on a bare-bones register machine with no abstraction.
+
+You build the register-machine simulator. Then you implement the
+explicit-control evaluator — the metacircular evaluator translated
+into machine instructions. Registers replace variables. The stack
+replaces recursion. Labels replace named procedures.
+
+Then you build a compiler. Scheme source goes in, register-machine
+instructions come out. The compiler is surprisingly straightforward
+once you have the evaluator. Compilation is just evaluation with
+code generation instead of interpretation.
+
+The final sections add a garbage collector. The circle is complete:
+from lambda expressions to memory management, SICP has shown every
+layer of a real programming system.
+
+---
+
+## The Legend and the Reality
+
+SICP's reputation has become mythic. "The book that teaches you to
+think." "The book MIT used when MIT mattered." "The book that will
+change your life."
+
+The reality is more nuanced. SICP is a masterpiece, but it is a deeply
+flawed one. It is hard — unnecessarily hard in places. The mathematical
+examples (Newton's method, Euler's formula, polynomial arithmetic) are
+not relevent to most readers' work. The Scheme language, while elegant,
+is a dead end for professional employment.
+
+And yet. The book's defenders — Peter Norvig, Paul Graham, an entire
+generation of influential programmers — are not wrong. There is
+something irreplaceable about the moment you first trace through the
+metacircular evaluator and realize that `eval` is just a function.
+That languages are not handed down from compiler-design committees.
+That you could, if you wanted, design your own.
+
+The 2022 JavaScript edition is an interesting artifact. It proves the
+book's thesis: once you understand the principles, any syntax is
+incidental. The same ideas, expressed in TypeScript.
+
+---
+
+## The Verdict
+
+SICP is not a practical book. It will not help you ship faster, debug
+more effectively, or choose the right framework. What it will do,
+if you let it, is change how you think about programs. It replaces
+mystery with understanding. It turns programming languages from
+tools you use into systems you comprehend.
+
+Is it overrated? Yes, in the sense that its reputation exceeds what
+any book can deliver. But it is also underrated: the proportion of
+programmers who would benefit from SICP and have not read it vastly
+exceeds the proportion who have.
+
+The book is freely available online. The lectures are on MIT
+OpenCourseWare. There is no barrier except the willingness to work
+slowly, trace execution by hand, and solve problems that feel more
+like math homework than programming.
+
+**Rating: 8.5/10** — The most important CS textbook ever written.
+Essential for anyone who wants to understand computation from the
+ground up. Not for beginners, not for the impatient, not for anyone
+who wants recipes. But for those ready for it: indispensable.
+
+This has been a BookAtlas narration of Structure and Interpretation
+of Computer Programs. Thanks for listening.

@@ -1,0 +1,36 @@
+{
+  "id": "the-world-is-flat-thomas-friedman",
+  "title": "The World Is Flat: A Brief History of the Twenty-First Century",
+  "slug": "the-world-is-flat-thomas-friedman",
+  "authors": ["Thomas L. Friedman"],
+  "year": 2005,
+  "category": "19-political-science-geopolitics",
+  "subcategory": "geopolitics-and-great-power-competition",
+  "pages": 488,
+  "isbn": "9780374292881",
+  "publisher": "Farrar, Straus and Giroux",
+  "genres": ["Globalization", "International Political Economy", "Technology"],
+  "description": "Argues that digital connectivity, offshoring, and global supply chains have leveled the global playing field, transforming how individuals, companies, and countries compete.",
+  "cover_url": "https://covers.openlibrary.org/b/isbn/9780374292881-L.jpg",
+  "cover_color": "#1a1a2e",
+  "key_concepts": [
+    "The ten flatteners",
+    "Global supply chains",
+    "Outsourcing and offshoring",
+    "Uploading and insourcing",
+    "The triple convergence"
+  ],
+  "critics": [
+    "Pankaj Ghemawat",
+    "John Gray",
+    "David Harvey",
+    "John R. MacArthur",
+    "Edward Luce"
+  ],
+  "related_books": [
+    "the-lexus-and-olive-tree-thomas-friedman",
+    "jihad-vs-mcworld-benjamin-barber",
+    "the-end-of-history-francis-fukuyama"
+  ],
+  "added_at": "2026-06-09"
+}

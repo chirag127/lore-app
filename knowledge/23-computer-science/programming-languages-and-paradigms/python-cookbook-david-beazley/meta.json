@@ -1,0 +1,75 @@
+{
+  "slug": "python-cookbook-david-beazley",
+  "title": "Python Cookbook",
+  "subtitle": "Recipes for Mastering Python 3",
+  "author": "David Beazley & Brian K. Jones",
+  "publicationYear": 2013,
+  "isbn13": "9781449340377",
+  "isbn10": "1449340377",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 706,
+  "edition": "3rd",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781449340377-L.jpg",
+  "difficulty": "hard",
+  "estimatedReadingHours": 30,
+  "estimatedListeningMinutes": 1800,
+  "tags": [
+    "python",
+    "python-3",
+    "recipes",
+    "advanced",
+    "standard-library",
+    "data-structures",
+    "metaprogramming",
+    "concurrency",
+    "asyncio",
+    "networking",
+    "testing",
+    "c-extensions",
+    "software-engineering"
+  ],
+  "excerpt": "The Python Cookbook is the canonical problem-solution reference for Python 3, written by David Beazley — author of the Python Essential Reference and creator of SWIG — and Brian K. Jones. The third edition (2013, O'Reilly, ~706 pages) contains more than 270 recipes covering the entire language and its standard library, from data structures and string handling to concurrency, network programming, metaprogramming, and writing C extensions. It assumes you already know Python; it shows you the idioms, the standard-library corners, and the obscure tricks the experts use.",
+  "keyIdeas": [
+    "The standard library is the answer to most Python problems — if you reach for an external package, you usually have not looked hard enough",
+    "Mastering Python 3 means internalizing the iterator, generator, and context-manager protocols: once you see them as one design, the language snaps into focus",
+    "Data should be encoded at the boundary (JSON, CSV, XML, pickle) and processed as native Python objects — never let the wire format leak into your business logic",
+    "Concurrency is three different problems: threads for I/O-bound, multiprocessing for CPU-bound, and asyncio for high-concurrency I/O — each recipe picks one",
+    "Metaprogramming (decorators, descriptors, metaclasses) is a last resort, not a first tool — most code is better when it does not customize class creation",
+    "Python's introspection (inspect, getattr, signature binding) lets you write libraries that adapt to the caller's objects instead of forcing inheritance",
+    "C extensions are the escape hatch when pure Python is too slow; the ctypes and cffi recipes show how to bind to existing C libraries without writing a full extension module"
+  ],
+  "keyTakeaways": [
+    "Use `collections.deque` for FIFO queues, `heapq` for priority queues, `collections.OrderedDict` and `Counter` for counting — never roll your own",
+    "Generators are not just for memory savings: they are the natural way to express pipelines, and the basis of coroutines and `async`/`await`",
+    "Unpack sequences with `*` (extended iterable unpacking) — `first, *middle, last = items` is the standard way to slice and destructure",
+    "For text, work in `str` and encode/decode at the I/O boundary; for binary, use `bytes` and `struct`; mixing them is the most common source of Python bugs",
+    "Use `contextlib.contextmanager` to write a resource manager as a single generator with one `yield` — saves a class for the trivial cases",
+    "Decorators are functions that take a function and return a function; `functools.wraps` preserves `__name__` and `__doc__`; parameterized decorators are three levels of nesting",
+    "Use `__enter__`/`__exit__` for resource lifecycle, `__get__`/`__set__` for computed attributes (the descriptor protocol), and `__getattr__` for dynamic lookup",
+    "Pick the right concurrency primitive: `concurrent.futures.ThreadPoolExecutor` for I/O, `ProcessPoolExecutor` for CPU, `asyncio` for thousands of sockets",
+    "For network code, prefer `asyncio` with high-level protocols (`asyncio.start_server`, `aiohttp`) over raw sockets; the recipes show the modern idiom",
+    "Test with `unittest.mock` (or third-party tools) to stub out side effects; trace with `traceback` and `inspect`; profile with `cProfile` and `timeit`"
+  ],
+  "whoShouldRead": [
+    "Intermediate-to-advanced Python developers who already know the syntax and want idiomatic, production-ready solutions to common problems",
+    "Engineers migrating from Python 2 to Python 3 who need to see what changed and what the modern idioms are",
+    "Senior developers and tech leads who keep a 'how do I do X in Python?' reference on their desk",
+    "Library and tooling authors who need to write Python that integrates with itself — context managers, descriptors, decorators, metaclasses",
+    "Anyone writing performance-sensitive or systems-level Python who may need threads, processes, asyncio, or C extensions"
+  ],
+  "whoShouldSkip": [
+    "Beginners — this is a reference for people who already write Python, not a tutorial",
+    "Developers looking for a single coherent narrative; the recipe format is intentionally non-linear and does not flow like a textbook",
+    "Data scientists who live in NumPy and pandas; the book covers the standard library, not the data stack",
+    "Anyone who wants Python 3.10+ features (match statements, structural pattern matching, the new type-hint syntax) — the 3rd edition predates them and has not been updated",
+    "Readers who prefer Ramalho's *Fluent Python* for pedagogy; that book explains *why*, this one shows *how*"
+  ],
+  "relatedBooks": [
+    "fluent-python-luciano-ramalho",
+    "effective-python-brett-slinkin",
+    "python-tricks-dan-bader",
+    "design-patterns-erich-gamma",
+    "clean-code-robert-martin"
+  ]
+}

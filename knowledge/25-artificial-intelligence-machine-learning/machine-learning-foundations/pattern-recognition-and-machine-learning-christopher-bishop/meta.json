@@ -1,0 +1,52 @@
+{
+  "title": "Pattern Recognition and Machine Learning",
+  "slug": "pattern-recognition-and-machine-learning-christopher-bishop",
+  "author": "Christopher M. Bishop",
+  "published": "2007",
+  "publisher": "Springer",
+  "isbn": "9780387310732",
+  "pages": 738,
+  "series": "Information Science and Statistics",
+  "tags": [
+    "pattern-recognition",
+    "machine-learning",
+    "bayesian",
+    "probability",
+    "statistics",
+    "neural-networks",
+    "kernel-methods",
+    "graphical-models",
+    "prml"
+  ],
+  "difficulty": "advanced",
+  "prerequisites": [
+    "linear-algebra",
+    "calculus",
+    "probability-theory",
+    "multivariate-statistics"
+  ],
+  "chapters": 12,
+  "status": "published",
+  "coverImage": "/covers/pattern-recognition-machine-learning-bishop.jpg",
+  "description": "A comprehensive, Bayesian-perspective textbook on pattern recognition and machine learning. Introduces probabilistic models and graphical models as unifying frameworks, covering probability distributions, linear models, neural networks, kernel methods, graphical models, mixture models, sampling methods, continuous latent variables, and sequential data.",
+  "keyTopics": [
+    "probability distributions",
+    "exponential family",
+    "bayesian probability",
+    "decision theory",
+    "maximum likelihood estimation",
+    "bayesian inference",
+    "bias-variance decomposition",
+    "linear models",
+    "neural networks",
+    "kernel methods",
+    "graphical models",
+    "mixture models",
+    "EM algorithm",
+    "MCMC",
+    "sequential data",
+    "hidden markov models",
+    "kalman filter",
+    "particle filter"
+  ]
+}

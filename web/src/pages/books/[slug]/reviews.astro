@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookHeader from '../../../components/book/BookHeader.astro';
+import { ReviewForm } from '../../../components/reviews/ReviewForm.tsx';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((b) => ({ params: { slug: b.data.slug } }));
+}
+
+const { slug } = Astro.params as { slug: string };
+const book = (await getCollection('books')).find((b) => b.data.slug === slug);
+if (!book) return Astro.redirect('/404');
+---
+<BaseLayout
+  title={`Reviews · ${book.data.title}`}
+  description={`Reviews of ${book.data.title}.`}
+  image={book.data.cover?.url}
+  type="book"
+>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 md:py-16">
+    <BookHeader book={book} active="reviews">
+      <h2 class="font-display text-display-md font-light mb-6 text-balance">
+        What readers say
+      </h2>
+      <ReviewForm client:load bookSlug={book.data.slug} bookTitle={book.data.title} />
+    </BookHeader>
+  </section>
+</BaseLayout>

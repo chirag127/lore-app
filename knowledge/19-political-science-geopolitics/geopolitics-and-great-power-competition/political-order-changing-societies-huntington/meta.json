@@ -1,0 +1,36 @@
+{
+  "id": "political-order-changing-societies-huntington",
+  "title": "Political Order in Changing Societies",
+  "slug": "political-order-changing-societies-huntington",
+  "authors": ["Samuel P. Huntington"],
+  "year": 1968,
+  "category": "19-political-science-geopolitics",
+  "subcategory": "geopolitics-and-great-power-competition",
+  "pages": 488,
+  "isbn": "9780300011715",
+  "publisher": "Yale University Press",
+  "genres": ["Political Science", "Comparative Politics", "Political Development"],
+  "description": "Argues that political order and strong institutions, not democracy, are the primary need of developing countries facing the upheavals of modernization.",
+  "cover_url": "https://covers.openlibrary.org/b/isbn/9780300011715-L.jpg",
+  "cover_color": "#1a1a2e",
+  "key_concepts": [
+    "Political institutionalization",
+    "Praetorian society",
+    "Modernization and instability",
+    "Political decay",
+    "Party systems and stability"
+  ],
+  "critics": [
+    "Francis Fukuyama",
+    "Guillermo O'Donnell",
+    "David Collier",
+    "Dankwart Rustow",
+    "Andre Gunder Frank"
+  ],
+  "related_books": [
+    "the-clash-of-civilizations-samuel-huntington",
+    "the-soldier-and-the-state-huntington",
+    "the-end-of-history-francis-fukuyama"
+  ],
+  "added_at": "2026-06-09"
+}

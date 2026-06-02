@@ -1,0 +1,95 @@
+{
+  "slug": "the-automatic-millionaire-david-bach",
+  "title": "The Automatic Millionaire",
+  "subtitle": "A Powerful One-Step Plan to Live and Finish Rich",
+  "author": "David Bach",
+  "authorFull": "David Bach",
+  "isbn": "9780767914101",
+  "publisher": "Broadway Books",
+  "publishedYear": 2004,
+  "pages": 240,
+  "language": "English",
+  "genres": ["Personal Finance", "Self-Help", "Investing"],
+  "difficulty": "Easy",
+  "readingTimeMinutes": 240,
+  "goodreadsRating": 4.1,
+  "goodreadsRatingsCount": 35000,
+  "series": "Finish Rich Series",
+  "imageUrl": null,
+  "tags": [
+    "personal-finance",
+    "automation",
+    "pay-yourself-first",
+    "latte-factor",
+    "homeownership",
+    "debt-elimination",
+    "compound-interest",
+    "retirement",
+    "emergency-fund",
+    "dolp-system"
+  ],
+  "authors": [
+    {
+      "name": "David Bach",
+      "birthYear": 1966,
+      "nationality": "American",
+      "education": "Pepperdine University",
+      "knownFor": [
+        "The Automatic Millionaire",
+        "Smart Women Finish Rich",
+        "Smart Couples Finish Rich",
+        "Start Late, Finish Rich",
+        "The Latte Factor",
+        "Finish Rich seminar series"
+      ],
+      "website": "https://davidbach.com",
+      "previousPositions": [
+        "Vice President, Morgan Stanley"
+      ]
+    }
+  ],
+  "keyConcepts": [
+    "The Latte Factor",
+    "Pay Yourself First",
+    "Financial Automation",
+    "The 10% Solution",
+    "DOLP Debt Elimination System",
+    "Home Equity Wealth System",
+    "Bi-Weekly Mortgage Acceleration",
+    "Automatic Tithing",
+    "The Investment Pyramid",
+    "The McIntyre Story",
+    "The Automatic Wealth Formula",
+    "Time Value of Money"
+  ],
+  "editions": [
+    {
+      "edition": "First Edition",
+      "isbn": "9780767914101",
+      "publishedYear": 2004,
+      "pages": 240,
+      "format": "Hardcover",
+      "label": "Original release"
+    },
+    {
+      "edition": "Expanded and Updated",
+      "isbn": "9780767921208",
+      "publishedYear": 2016,
+      "pages": 288,
+      "format": "Paperback",
+      "label": "Anniversary edition with updates"
+    },
+    {
+      "edition": "UK Edition",
+      "isbn": "9780141926292",
+      "publishedYear": 2005,
+      "pages": 208,
+      "format": "Paperback",
+      "label": "Penguin UK release"
+    }
+  ],
+  "affiliateLinks": {
+    "amazon": "https://www.amazon.com/dp/0767914104",
+    "goodreads": "https://www.goodreads.com/book/show/89740.The_Automatic_Millionaire"
+  }
+}

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Ornament } from '../components/ui/Primitives.tsx';
+---
+<BaseLayout title="Search" description="Search every book, idea, and framework in the atlas.">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <Ornament client:load>Search</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-8 sm:mb-10 text-balance">
+      Find anything, anywhere in the atlas
+    </h1>
+    <pagefind-config faceted preload></pagefind-config>
+    <div class="space-y-4">
+      <pagefind-input class="block w-full"></pagefind-input>
+      <pagefind-filter-dropdown filter="section" label="Section" class="block"></pagefind-filter-dropdown>
+      <pagefind-results class="block"></pagefind-results>
+    </div>
+    <script is:inline>
+      // Pagefind is generated at build time into /pagefind/ and loaded automatically.
+      import('/pagefind/pagefind-ui.js').catch(() => undefined);
+    </script>
+  </section>
+</BaseLayout>

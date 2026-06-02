@@ -1,0 +1,36 @@
+{
+  "slug": "clean-agile-robert-martin",
+  "title": "Clean Agile: Back to Basics",
+  "author": "Robert C. Martin",
+  "authorFullName": "Robert Cecil Martin",
+  "isbn13": "9780135784199",
+  "isbn10": "0135784199",
+  "publisher": "Prentice Hall",
+  "publisherFull": "Pearson / Prentice Hall",
+  "year": 2019,
+  "pages": 256,
+  "coverUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1548278163i/45119833.jpg",
+  "tags": [
+    "agile",
+    "software-craftsmanship",
+    "tdd",
+    "refactoring",
+    "scrum",
+    "extreme-programming",
+    "clean-code",
+    "uncle-bob",
+    "agile-manifesto",
+    "technical-excellence"
+  ],
+  "difficulty": "beginner",
+  "readTimeMinutes": 420,
+  "description": "Robert C. Martin (Uncle Bob) revisits the foundational values and principles of the Agile Manifesto, grounding them in the technical disciplines that make Agile work. Part history lesson, part rallying cry, and part hands-on technical guide, Clean Agile argues that Agile was always a technical revolution — not just a business process framework — and shows how pairing, TDD, refactoring, and professional craftsmanship are inseparable from true agility.",
+  "contentFiles": [
+    "01-content.mdx",
+    "02-analysis.mdx",
+    "03-narration.mdx"
+  ],
+  "narration": true,
+  "published": true,
+  "lastUpdated": "2025-06-05"
+}

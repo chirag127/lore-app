@@ -1,0 +1,138 @@
+## Strengths
+
+- **Teaches thinking, not syntax.** SICP is the rare book that focuses
+  on ideas — abstraction, evaluation, composition — that transcend any
+  language or era. Readers emerge with a mental model of computation,
+  not just familiarity with a toolchain.
+- **Escalating complexity.** The chapter ordering is pedagogical genius:
+  pure functions for a full chapter, then data, then state, then
+  language, then machine. Each layer is built on the preceding one.
+- **The metacircular evaluator.** The centerpiece is one of the most
+  elegant constructions in computer science education. Realizing that
+  `eval` and `apply` are just programs is transformative.
+- **Scheme as the vehicle.** Minimal syntax means the book spends no
+  time on notation. Parenthesized prefix form eliminates statement
+  vs. expression confusion. Homoiconicity makes the evaluator natural.
+- **Exercises are integral.** Not review questions — they extend the
+  text. The picture language, the generic arithmetic system, the logic
+  programming interpreter — all built through exercises.
+- **Large, real programs.** The book does not stop at toy examples.
+  A symbolic differentiator, a digital circuit simulator, a full Scheme
+  interpreter, a Prolog-like query system, a compiler.
+- **Foreword by Alan J. Perlis.** The first Turing Award winner's
+  epigrammatic foreword ("Perhaps the most important concept in all of
+  computing is the indistinguishability of data and procedure") sets a
+  tone of intellectual ambition.
+- **Timelessness.** Published in 1984, revised in 1996. Still in print.
+  Freely available. The ideas have not aged.
+
+---
+
+## Weaknesses
+
+- **Not for beginners.** Despite being MIT's first CS course, SICP is
+  notoriously difficult for self-study. The mathematical bent (Newton's
+  method, fixed points, numerical integration) alienates readers with
+  weak math backgrounds.
+- **Scheme is not used in industry.** Learning a language you will never
+  use professionally is a hard sell for career-focused readers.
+  Proponents argue this is the point — but it remains a barrier.
+- **Limited practical applicability.** The lessons are deep but
+  indirect. A reader building web applications will not find direct
+  recipes. The value is in the mental model, not the code.
+- **No treatment of types.** Scheme is dynamically typed. The book
+  does not discuss type systems, static typing, or type inference.
+  For modern readers, this is a significant gap.
+- **No concurrency in the modern sense.** The concurrency section in
+  Chapter 3 uses serializer-based mutual exclusion but does not cover
+  modern concurrency models (actors, STM, data parallelism).
+- **Dense prose.** There are no sidebars, color diagrams, or summaries.
+  Every paragraph matters. This is a virtue and a vice — the book
+  demands slow, careful reading with no skimming.
+
+---
+
+## Criticism
+
+### The "Too Hard" Critique
+
+The most common criticism. SICP was designed for MIT freshmen who had
+already passed MIT's admissions bar. For a general audience, the
+mathematical prerequisites and abstract reasoning demands are
+unforgiving. This led directly to *How to Design Programs* (HtDP),
+which deliberately targets a broader audience with a gentler curve.
+
+### The "Why Lisp?" Critique
+
+Philip Wadler's 1987 critique "Why Calculating is Better than Scheming"
+argues that Scheme's lack of pattern matching, algebraic data types,
+and lazy evaluation makes it a poor teaching language. Students would
+understand equational reasoning better with a language that supports it
+natively.
+
+### The "Outdated" Critique
+
+SICP predates the web, object-oriented programming's mainstream
+dominance, type systems research, and modern concurrency. Critics argue
+that a 1980s curriculum based on Lisp is not the best foundation for
+21st-century software engineering.
+
+### The "Too Much Math" Critique
+
+Newton's method, numerical integration, polynomial arithmetic,
+Euclidean algorithm — the book assumes comfort with mathematical
+reasoning that many self-taught programmers lack. This creates a
+gratuitous barrier to the valuable software-engineering lessons.
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | Application |
+|---------|--------|-------------|
+| Lambda calculus | Alonzo Church (1930s) | Foundation of procedures, substitution model |
+| Tail-call optimization | Guy Steele (1977) | Recursive procedures describing iterative processes |
+| Lexical scoping | ALGOL 60 (1960), Scheme (1975) | Closures, environment model |
+| Metacircular evaluation | John McCarthy (1960) | Evaluator written in the language it evaluates |
+| Register machines | Various | Explicit-control evaluator, compilation target |
+| Cons cell / CAR/CDR | IBM 704 hardware (1950s) | List data structure primitives |
+| Garbage collection | John McCarthy (1960) | Automatic memory management |
+| Streams / lazy evaluation | Peter Landin (1965) | ISWIM, functional alternative to state |
+| Amb / nondeterminism | John McCarthy (1967) | Search-based computation |
+| Unification | Alan Robinson (1965) | Logic programming resolution |
+
+---
+
+## Historical Context
+
+SICP was born from MIT's 6.001 course, created in the late 1970s as a
+radical rethinking of introductory computer science. Before SICP,
+introductory CS courses were essentially programming-language tutorials
+(Pascal, FORTRAN, COBOL). Abelson and Sussman decided to teach
+*principles* rather than *products*.
+
+The first edition (1984) was a landmark. The second edition (1996)
+added streams, new concurrency material, and a revised compiler chapter.
+It remained MIT's introductory CS textbook until 2008 when the
+department replaced 6.001 with 6.00 (Python-based, application-focused).
+
+The book's influence extends far beyond MIT: Berkeley's CS 61A used
+SICP for decades; it inspired HtDP, EoPL, and a generation of
+compilers/PL courses. The freely available online version and MIT
+OpenCourseWare lectures have given it a second life.
+
+In 2022, MIT Press published a JavaScript edition (SICP JS), adapting
+the material to TypeScript/JavaScript while preserving the structure.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Depth | 10/10 | Unmatched depth for an introductory text |
+| Breadth | 9/10 | Covers FP, OOP, logic, interpreters, compilers, architecture |
+| Readability | 5/10 | Dense; demands slow, careful reading |
+| Practical Utility | 6/10 | Indirect; builds mental models, not job skills |
+| Lasting Value | 10/10 | Timeless; more relevant with each passing year |
+| **Overall** | **8.5/10** | Flawed but essential. The most important CS textbook ever written, though not for everyone. |

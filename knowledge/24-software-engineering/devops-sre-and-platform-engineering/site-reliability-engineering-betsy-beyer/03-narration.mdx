@@ -1,0 +1,166 @@
+## Introduction
+
+Welcome to BookAtlas. Today: *Site Reliability Engineering: How
+Google Runs Production Systems*. Edited by Betsy Beyer, Chris Jones,
+Jennifer Petoff, and Niall Richard Murphy. Published 2016 by
+O'Reilly Media. 552 pages. Goodreads rating 4.27 out of 5.
+
+This is the book that defined modern production engineering. It is
+the inside story of how Google keeps Gmail, YouTube, Search, and
+Maps running despite deploying thousands of changes every week.
+
+---
+
+## The Origin of SRE
+
+The year is 2004. Google is growing fast. The traditional approach
+— throw sysadmins at the problem — is not going to scale. So Google
+does something unusual: they ask a software engineer, Ben Treynor
+Sloss, to design an operations function from scratch.
+
+His core insight: **operations is a software engineering problem.**
+If you treat it that way — write code to fix problems before they
+happen, automate everything that can be automated, measure everything
+that matters — you get something entirely different from traditional
+IT.
+
+That is the origin of Site Reliability Engineering.
+
+---
+
+## The Error Budget — SRE's Masterstroke
+
+The book's most brilliant idea arrives early. There is a fundamental
+conflict in every tech company: developers want to ship, operations
+wants stability. These goals are directly opposed — most outages are
+caused by change.
+
+The traditional solution is a committee or a change review board.
+Nobody likes these. Google's solution is the error budget.
+
+Here is how it works. You define your reliability target — say 99.9%
+availability. That means you have an error budget of 0.1% — roughly
+43 minutes of downtime per month. Developers can spend this budget
+on risky releases. When it is gone, releases stop until reliability
+recovers.
+
+The genius: an outage is no longer a failure. It is a budget
+expenditure. Dev and ops are suddenly on the same side — both
+want to maximize feature velocity within the reliability constraint.
+
+---
+
+## SLOs and the Four Golden Signals
+
+The book insists that reliability must be measured, not felt. This
+leads to the framework of SLOs and SLIs.
+
+An SLI is what you measure: latency, error rate, throughput. An SLO
+is your target: 99.9% of requests complete in under 200 milliseconds.
+If you have an SLA, it means there are consequences for missing your
+SLO — usually financial penalties.
+
+For monitoring, Google distills everything down to the four golden
+signals:
+
+**Latency** — how fast are responses? Measure success and failure
+separately. A quick error is not the same as a slow success.
+
+**Traffic** — how much demand is hitting the system? This tells you
+when you need to scale.
+
+**Errors** — explicit failures, like HTTP 500s, and implicit ones,
+like a 200 response with the wrong data.
+
+**Saturation** — how full is your system? This is the leading
+indicator. Saturation problems become latency problems become error
+problems.
+
+---
+
+## Toil and the 50% Rule
+
+SREs hate manual work. The book calls it "toil" — anything manual,
+repetitive, and devoid of lasting value. Restarting a service by
+hand. Manually scaling a cluster. Triaging the same alert for the
+third time this week.
+
+The rule: **SREs spend no more than 50% of their time on toil.**
+The rest goes to engineering — automation, tooling, architecture.
+
+If toil exceeds 50%, the work is pushed back to the product team.
+This is not punishment — it is a feedback mechanism. When product
+teams have to operate their own systems, they learn to build systems
+that do not require manual operation.
+
+---
+
+## Blameless Postmortems
+
+Every significant incident at Google gets a written postmortem. The
+rule: **blameless.** You do not ask who made the mistake. You ask
+what in the system allowed the mistake to cause an outage.
+
+This is harder than it sounds. The instinct to blame is powerful.
+But blame drives failure underground. If engineers fear punishment,
+they hide errors, and you lose your best opportunities to improve.
+
+A good postmortem includes: a timeline of events, root cause
+analysis, contributing factors, and concrete action items. The goal
+is not to prevent every incident — that is impossible. The goal is
+to make each incident a learning opportunity that makes the system
+stronger.
+
+---
+
+## The Google-Specific Chapters
+
+About 40% of the book describes Google-specific systems: Borg (the
+cluster manager that inspired Kubernetes), Chubby (distributed
+lock service using Paxos), and Google's multi-layer load balancing.
+
+These chapters are fascinating but polarizing. Some readers love the
+insider look at Google's engineering. Others find them irrelevant —
+you cannot "use" Borg or Chubby outside Google.
+
+The practical takeaway is not the specific implementation but the
+design patterns: hermetic builds, canary releases, weighted round
+robin load balancing, randomized exponential backoff for retries.
+
+---
+
+## The Verdict
+
+The SRE book has a split personality. The principles section is
+essential reading — error budgets, SLOs, toil, blameless
+postmortems should be part of every engineer's mental toolkit.
+
+The practices section is uneven. Some chapters are excellent (load
+balancing, cascading failures, monitoring). Others feel like filler
+(simplicity, dealing with interrupts).
+
+The management section is primarily useful for… managers. And the
+conclusions chapter on other industries is interesting but thin.
+
+**Rating: 8.5 out of 10.** Read Part II cover to cover. Read
+selected chapters from Part III based on your interests. Skip
+anything that does not apply to your scale.
+
+The book is not a step-by-step guide. It is a philosophical
+foundation. And for that purpose, it has no equal.
+
+---
+
+## Final Thought
+
+SRE has a motto: "Hope is not a strategy." Before this book, most
+production operations ran on hope — hope the deploy goes well, hope
+the monitoring catches the problem, hope someone knows how to fix it.
+
+The SRE book replaces hope with measurement, intuition with data,
+and blame with learning. That is why it matters.
+
+This has been a BookAtlas narration of *Site Reliability Engineering:
+How Google Runs Production Systems*, edited by Betsy Beyer, Chris
+Jones, Jennifer Petoff, and Niall Richard Murphy. Thanks for
+listening.

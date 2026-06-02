@@ -1,0 +1,44 @@
+---
+title: "Partial Differential Equations — Evans"
+excerpt: "The definitive graduate-level introduction to the modern theory of partial differential equations."
+---
+
+import BookHeader from '../../../web/src/components/book/BookHeader.astro';
+
+<BookHeader
+  book={{
+    data: {
+      slug: "partial-differential-equations-lawrence-evans",
+      title: "Partial Differential Equations",
+      authors: ["Lawrence C. Evans"],
+      publisher: "American Mathematical Society",
+      year: 1998,
+      pages: 662,
+      difficulty: "dense",
+      cover: {
+        url: "https://covers.openlibrary.org/b/id/621450-M.jpg",
+        source: "openlibrary",
+        color: "#0d47a1"
+      },
+      excerpt: "The definitive graduate-level textbook on the modern theory of partial differential equations, blending functional-analytic insight with sharp calculus estimates across linear and nonlinear PDE.",
+      keyIdeas: [
+        "Three-part organization: representation formulas → linear theory → nonlinear theory",
+        "Sobolev spaces as the natural functional setting for weak solutions",
+        "Energy methods and regularity theory for second-order elliptic equations",
+        "Semigroup theory for linear evolution equations",
+        "Calculus of variations as a route to nonlinear elliptic PDE",
+        "Viscosity solutions for Hamilton-Jacobi equations",
+        "Entropy conditions and shock waves for conservation laws",
+        "The method of characteristics for first-order PDE"
+      ],
+      tags: ["partial differential equations", "PDE", "sobolev spaces", "elliptic equations", "nonlinear analysis"]
+    }
+  }}
+  active="overview"
+/>
+
+Lawrence C. Evans' *Partial Differential Equations* (1998, AMS Graduate Studies in Mathematics Vol. 19) is the standard graduate text in the field. The book is organized into three parts: **Part I** (Chapters 1–4) develops representation formulas for solutions of the classical PDE — the transport equation, Laplace's equation, the heat equation, and the wave equation — along with the method of characteristics and the Fourier transform. **Part II** (Chapters 5–7) builds the theory of linear PDE through Sobolev spaces, second-order elliptic regularity, and semigroup methods for parabolic and hyperbolic evolution equations. **Part III** (Chapters 8–12) treats nonlinear PDE: the calculus of variations, fixed-point and degree-theoretic methods, viscosity solutions of Hamilton–Jacobi equations, conservation laws with shock waves, and nonlinear wave equations.
+
+Evans' approach is characterized by its systematic use of **energy estimates** and **Sobolev-space techniques** throughout. Rather than presenting PDE as a collection of disconnected tricks, he develops a unified apparatus — weak derivatives, Sobolev embeddings, compactness, a priori estimates — that applies across the entire spectrum of equations. The book also includes five appendices covering notation, inequalities, calculus facts, functional analysis, and measure theory.
+
+Since publication, the book has become the canonical reference. David Jerison of MIT has called it essential reading for every graduate student in analysis, and *SIAM Review* praised it as "extremely well written." The second edition (2010, 9780821849743) added substantial new material on measure-valued solutions, optimal transport, and the Nash–Moser iteration, but the 1998 first edition remains the definitive statement of the modern PDE curriculum.

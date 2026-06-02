@@ -1,0 +1,76 @@
+{
+  "slug": "the-startup-owners-manual-steve-blank",
+  "title": "The Startup Owner's Manual",
+  "subtitle": "The Step-by-Step Guide for Building a Great Company",
+  "author": "Steve Blank",
+  "coauthor": {
+    "name": "Bob Dorf",
+    "born": null,
+    "nationality": "American",
+    "knownFor": [
+      "Co-author of The Startup Owner's Manual",
+      "K&S Ranch Consulting",
+      "Columbia Business School adjunct professor"
+    ],
+    "otherWorks": []
+  },
+  "publicationYear": 2012,
+  "isbn": "9780984999309",
+  "publisher": "K&S Ranch",
+  "language": "en",
+  "pageCount": 608,
+  "genres": [
+    "Entrepreneurship",
+    "Business",
+    "Startups",
+    "Innovation"
+  ],
+  "subjects": [
+    "Customer Development",
+    "Lean Startup",
+    "Business Model Canvas",
+    "Minimum Viable Product",
+    "Product-Market Fit",
+    "Entrepreneurship"
+  ],
+  "themes": [
+    "Startups search for a business model; companies execute one",
+    "Customer Development as an alternative to Product Development",
+    "Get out of the building — customer interaction is the only source of truth",
+    "Hypothesis-driven experimentation replaces rigid business plans",
+    "Iterative pivoting based on validated learning",
+    "Premature scaling is the #1 killer of startups",
+    "Earlyvangelists are the only early customers that matter"
+  ],
+  "tags": [
+    "entrepreneurship",
+    "startups",
+    "customer-development",
+    "lean-startup",
+    "business-model-canvas",
+    "minimum-viable-product",
+    "pivot",
+    "product-market-fit",
+    "innovation",
+    "validated-learning",
+    "get-out-of-the-building",
+    "earlyvangelists",
+    "customer-discovery",
+    "customer-validation",
+    "steve-blank",
+    "bob-dorf",
+    "silicon-valley",
+    "venture-capital"
+  ],
+  "difficulty": "medium",
+  "estimatedReadingHours": 18,
+  "estimatedListeningMinutes": 780,
+  "awards": [
+    "Amazon #1 Business/Entrepreneurship Bestseller",
+    "Published in 15+ languages worldwide",
+    "Required reading for NSF I-Corps program",
+    "Taught at Stanford, Berkeley, Columbia and 100+ universities",
+    "Catalyst of the Lean Startup movement"
+  ],
+  "excerpt": "The definitive playbook for building a scalable startup using Customer Development. Replace guesswork with validated learning: get out of the building, test hypotheses, find product-market fit, then scale."
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "compilers-aho-lam-sethi-ullman",
+  "title": "Compilers: Principles, Techniques & Tools",
+  "subtitle": "The Dragon Book — The Definitive Textbook for Compiler Construction",
+  "author": "Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman",
+  "publicationYear": 2006,
+  "isbn": "9780321486813",
+  "isbn10": "0321486811",
+  "publisher": "Pearson / Addison-Wesley Professional",
+  "language": "en",
+  "pageCount": 1009,
+  "edition": "2nd Edition",
+  "genres": [
+    "Computer Science",
+    "Textbook",
+    "Compilers",
+    "Programming Languages",
+    "Formal Methods"
+  ],
+  "subjects": [
+    "Compiler Construction",
+    "Lexical Analysis",
+    "Syntax Analysis",
+    "Parsing",
+    "Syntax-Directed Translation",
+    "Intermediate Code Generation",
+    "Code Generation",
+    "Code Optimization",
+    "Dataflow Analysis",
+    "Runtime Environment",
+    "Garbage Collection",
+    "Instruction-Level Parallelism",
+    "Interprocedural Analysis",
+    "Regular Expressions",
+    "Finite Automata"
+  ],
+  "themes": [
+    "Formal language theory as the mathematical foundation of compiler design",
+    "The complete compiler pipeline from source code to machine code",
+    "Lexical analysis via regular expressions and finite automata (Thompson NFA construction)",
+    "Parsing theory: LL, LR, SLR, LALR with correctness proofs",
+    "Syntax-directed translation as the bridge between parsing and code generation",
+    "Intermediate code representations: syntax trees, three-address code, DAGs",
+    "Type checking and semantic analysis",
+    "Runtime systems: stack allocation, heap management, garbage collection theory",
+    "Register allocation and instruction selection",
+    "Machine-independent optimization via dataflow analysis framework",
+    "Partial-redundancy elimination and loop optimization",
+    "Instruction-level parallelism and software pipelining",
+    "Interprocedural analysis and program understanding",
+    "The interplay between compiler theory and modern hardware (ILP, multicore)"
+  ],
+  "tags": [
+    "compilers",
+    "dragon-book",
+    "lexical-analysis",
+    "parsing",
+    "syntax-directed-translation",
+    "dataflow-analysis",
+    "code-optimization",
+    "code-generation",
+    "runtime-systems",
+    "garbage-collection",
+    "instruction-level-parallelism",
+    "interprocedural-analysis",
+    "formal-language-theory",
+    "regular-expressions",
+    "finite-automata",
+    "LL-parser",
+    "LR-parser",
+    "SSA",
+    "three-address-code",
+    "register-allocation",
+    "aho",
+    "ullman",
+    "sethi",
+    "lam",
+    "pearson"
+  ],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 80,
+  "estimatedListeningMinutes": 4800,
+  "excerpt": "Compilers: Principles, Techniques, and Tools (the Dragon Book) is the definitive textbook on compiler construction. First published in 1986 and updated in 2006 with three new chapters on parallelism and locality, it provides the complete theoretical foundation — from lexical analysis through interprocedural optimization — that every language implementer must master.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780321486813-L.jpg",
+  "openlibrarySlug": "OL3509433W",
+  "awards": [
+    "ACM A.M. Turing Award (Aho and Ullman, 2020) — partial basis",
+    "Most widely used compiler textbook worldwide"
+  ],
+  "rationale": "Root book #1 for compilers-and-language-runtimes. The Dragon Book is mandatory inclusion — no compiler library is complete without it. This 2006 2nd edition (purple dragon) is the current authoritative version, with Monica Lam as new co-author and chapters on ILP and interprocedural analysis added.",
+  "relatedBooks": [
+    {
+      "title": "Engineering a Compiler",
+      "authors": "Cooper, Torczon",
+      "connection": "Practical complement; less mathematical, more implementation-focused"
+    },
+    {
+      "title": "Modern Compiler Implementation in C/ML/Java",
+      "authors": "Andrew Appel",
+      "connection": "Hands-on implementation using Tiger language; pairs as a practical follow-on"
+    },
+    {
+      "title": "Advanced Compiler Design & Implementation",
+      "authors": "Steven Muchnick",
+      "connection": "Production-compiler depth; extends optimization coverage"
+    },
+    {
+      "title": "Programming Language Pragmatics",
+      "authors": "Michael L. Scott",
+      "connection": "Broader PL + runtime coverage; reader-friendly alternative for parsing chapter"
+    },
+    {
+      "title": "Crafting Interpreters",
+      "authors": "Robert Nystrom",
+      "connection": "Accessible companion for the front-end chapters; builds an actual interpreter"
+    }
+  ]
+}

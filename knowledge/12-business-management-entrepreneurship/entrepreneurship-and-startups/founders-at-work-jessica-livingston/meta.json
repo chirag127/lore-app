@@ -1,0 +1,84 @@
+{
+  "slug": "founders-at-work-jessica-livingston",
+  "title": "Founders at Work",
+  "subtitle": "Stories of Startups' Early Days",
+  "author": "Jessica Livingston",
+  "description": "A collection of candid, in-depth interviews with the founders of legendary tech companies — Apple, PayPal, Flickr, Hotmail, BlackBerry, Blogger, Twitter, Stripe, and more — about what those early days actually felt like, the near-death moments, the mistakes, and the stubbornness that turned ideas into enduring companies.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781430210771-L.jpg",
+  "isbn10": "143021077X",
+  "isbn13": "9781430210771",
+  "pages": 488,
+  "publishedYear": 2007,
+  "publisher": "Apress",
+  "openlibrarySlug": "/works/OL24214112W",
+  "tags": [
+    "startups",
+    "entrepreneurship",
+    "founder-stories",
+    "interviews",
+    "tech-history",
+    "y-combinator",
+    "product",
+    "early-stage"
+  ],
+  "keyIdeas": [
+    "The Trough of Sorrow",
+    "Do Things That Don't Scale",
+    "Find a Broken World, Then Fix It",
+    "Co-Founder Fit Matters More Than the Idea",
+    "Launch Ugly, Ship Today",
+    "Original Ideas Are Rarely Original",
+    "User Obsession Beats Originality",
+    "Perseverance Is a Founder Feature",
+    "Distribution Is the Moat",
+    "The Pivot Is Normal"
+  ],
+  "keyTakeaways": [
+    "Nearly every great company went through a near-death moment in its first two years.",
+    "Founders rarely start with the idea that made them famous — they pivot into it.",
+    "Co-founder conflict is a top cause of failure; shared values beat complementary skills.",
+    "Talk to users relentlessly — most successful founders say 'I just listened to users.'",
+    "Do unscalable things to get your first 100 users: hand-deliver, fly to meet them, write personal notes.",
+    "Raising money is rarely the bottleneck; building something people want is.",
+    "Persistence and stubbornness matter more than brilliance — the founders who quit lost.",
+    "Originality is overrated; the 'boring' insight that users actually want this is underrated.",
+    "The 'aha' moment usually comes from noticing something the world is broken at, not from whiteboarding.",
+    "Speed beats polish — most successful companies launched as embarrassingly small prototypes."
+  ],
+  "whoShouldRead": [
+    "First-time founders trying to understand what the early days actually feel like",
+    "Operators and employees at startups who want to understand the founder mindset",
+    "Investors looking for pattern recognition across generations of successful founders",
+    "Students of tech history who want the human side of companies they use every day"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Zero to One",
+      "slug": "zero-to-one-peter-thiel"
+    },
+    {
+      "title": "The Hard Thing About Hard Things",
+      "slug": "the-hard-thing-about-hard-things-ben-horowitz"
+    },
+    {
+      "title": "Lean Startup",
+      "slug": "the-lean-startup-eric-ries"
+    },
+    {
+      "title": "High Growth Handbook",
+      "slug": "high-growth-handbook-elad-gil"
+    },
+    {
+      "title": "Hackers & Painters",
+      "slug": "hackers-and-painters-paul-graham"
+    },
+    {
+      "title": "The Startup of You",
+      "slug": "the-startup-of-you-reid-hoffman"
+    },
+    {
+      "title": "Build",
+      "slug": "build-tony-fadell"
+    }
+  ]
+}

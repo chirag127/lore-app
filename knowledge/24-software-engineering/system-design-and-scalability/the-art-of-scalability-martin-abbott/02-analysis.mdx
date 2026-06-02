@@ -1,0 +1,159 @@
+## Strengths
+
+- **The AKF Scale Cube is the single best mental model for
+  scaling.** It is conceptually simple, orthogonally complete,
+  and directly applicable to every scaling decision. More than
+  fifteen years after the first edition, the framework still
+  describes the problem better than anything that has come
+  since. The cube has become a standard reference in the
+  industry; it is cited in design reviews and architecture
+  documents at companies that have never read the book.
+
+- **The Twelve Principles are memorable and applicable.** They
+  are short enough to internalize, broad enough to apply
+  across architectures, and specific enough to violate
+  intentionally. "Design for failure" and "design to scale
+  out" are now industry standard; their codification here
+  gave engineers a shared vocabulary.
+
+- **The antipatterns catalog is uniquely useful.** Most
+  scaling books describe what to do. Few describe what *not*
+  to do, with the same level of detail. The 20+ antipatterns
+  are directly applicable to design reviews and postmortems.
+  Several (single points of failure, lack of capacity
+  planning, lack of monitoring) are so commonly violated that
+  naming them explicitly is itself a contribution.
+
+- **The people-process-technology framing is honest.** The
+  book is unusual in treating organizational design as a
+  first-class scaling concern. Most technical books treat
+  management as orthogonal. Abbott and Fisher argue, correctly,
+  that team structure determines architecture and vice versa.
+  The Reverse Conway Maneuver is one of the most underused
+  ideas in the book.
+
+- **The book is technology-agnostic on purpose.** There is
+  almost no code. The book deliberately describes patterns and
+  principles rather than products. This is why it has aged
+  well: the framework still applies to serverless, edge
+  computing, and whatever comes after Kubernetes.
+
+- **The second edition is a real update, not a reprint.** The
+  microservices chapter, the Three Rs of data, and the
+  expanded treatment of cloud and organizational design
+  reflect the state of the art in 2015 and remain relevant.
+
+---
+
+## Weaknesses
+
+- **Some sections feel dated.** The second edition was
+  finished before Kubernetes (1.0 was June 2015), before
+  serverless (AWS Lambda launched in November 2014, but did
+  not become mainstream until 2016-2017), and before the
+  modern observability stack (Prometheus, OpenTelemetry). The
+  book discusses "the cloud" but its examples are still
+  mostly about traditional three-tier web architecture. The
+  principles still apply; the examples do not always resonate
+  with engineers used to containers and managed services.
+
+- **Repetition across chapters.** The Scale Cube is
+  introduced in Chapter 1, then reintroduced in every
+  subsequent section, sometimes with subtle variations in
+  the wording. For a first-time reader, this is helpful. For
+  a re-reader, it is grating. The book could be 100 pages
+  shorter with no loss of content.
+
+- **The Twelve Principles can feel platitudinous.** "Keep it
+  simple" and "use the right tool" are true, but they are
+  also true of every software book ever written. The book
+  works best when the principles are paired with specific
+  examples; when they are not, they read as truisms.
+
+- **Limited coverage of data consistency.** The Three Rs of
+  Data is useful, but the book does not deeply engage with
+  the consistency-coverage-tradeoff (CAP, PACELC) that
+  dominates modern distributed systems thinking. For
+  engineers working on systems that span multiple
+  geographies, this is a gap. Martin Kleppmann's *Designing
+  Data-Intensive Applications* fills it, but the book would
+  have been stronger with more on the topic.
+
+- **The "process" chapters are short and surface-level.** The
+  on-call, change management, and incident response chapters
+  read more like an executive summary than a deep treatment.
+  Compared to Google's SRE book (published the same year),
+  the operational guidance is thin. The book is at its best
+  on architecture and weakest on operations.
+
+- **No worked examples at scale.** The book tells you *what*
+  to do but rarely shows you *how* a real system implements
+  it. The eBay and PayPal anecdotes are valuable but
+  incomplete. A reader looking for a guided tour of a
+  reference architecture will not find one.
+
+---
+
+## Controversy: Microservices Caution
+
+The book's most quietly contrarian position is its treatment
+of microservices. Where the 2014-2018 industry discourse
+treated microservices as the obvious evolution of service-
+oriented architecture, Abbott and Fisher are explicit:
+microservices are a tool, not a destination. The book argues:
+
+1. **Microservices introduce complexity.** Distributed
+   transactions are unsolved in practice. Network calls
+   fail in ways that in-process calls do not. Debugging
+   across services is harder. Deployment is harder. The
+   cost is real.
+
+2. **Microservices are not appropriate for all scales.**
+   A small team with a small system does not need them.
+   The book argues, correctly, that a well-structured
+   monolith is often better than a poorly-implemented
+   microservice architecture.
+
+3. **The decision should be Conway-driven, not technology-
+   driven.** If the team structure does not support
+   service ownership, the services will be
+   under-maintained, the boundaries will erode, and you
+   will have a distributed monolith — the worst of both
+   worlds.
+
+The position was unfashionable at publication. Five years
+later, the industry's experience with microservices
+(including Netflix's own reversals) had validated most of
+it. The book's caution reads as prescient.
+
+---
+
+## Comparison to Similar Books
+
+| Book | Difference |
+|---|---|
+| *Designing Data-Intensive Applications* (Kleppmann) | Deep dive into the data side of the cube. Where TAOS is about architecture and organization, DDIA is about storage, replication, and consistency. The two books complement each other almost perfectly. |
+| *Site Reliability Engineering* (Google) | The canonical SRE book. SRE covers the operational side; TAOS covers the architectural side. The two were published in the same year (2016 for SRE; 2015 for TAOS 2e). SRE has more depth on monitoring, on-call, and incident response; TAOS has more depth on architecture and organization. |
+| *Building Evolutionary Architectures* (Ford et al.) | A more formal, fitness-function-driven version of TAOS's principle-based approach. Less prescriptive on Conway's Law; more prescriptive on architecture decision records. The two books agree on the principles; they differ on the formalism. |
+| *The Mythical Man-Month* (Brooks) | The classic on the people side of software. TAOS updates Brooks' insight for the web era, adding Conway's Law and the Reverse Conway Maneuver. Both books argue that organizational issues dominate technical issues. |
+| *Clean Architecture* (Martin) | A code-level discussion of boundaries and dependencies. TAOS operates at a higher level: services, data, and teams rather than classes and modules. The two books share a vocabulary about layering; they differ on granularity. |
+| *Accelerate* (Forsgren et al.) | The research behind what makes engineering organizations productive. Provides data-driven backing for many of TAOS's people-process claims. TAOS is the practitioner book; Accelerate is the academic justification. |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|---|---|---|
+| Originality | 8/10 | Scale Cube and Reverse Conway Maneuver are genuine contributions |
+| Practical Utility | 9/10 | Antipatterns and principles are directly applicable |
+| Framework Strength | 10/10 | The Scale Cube remains the best mental model for scaling |
+| Management Insight | 8/10 | Conway and people-process framing are valuable |
+| Timeliness (2026) | 7/10 | Principles age well; examples sometimes feel dated |
+| Depth of Coverage | 7/10 | Some chapters (operations, data consistency) are surface-level |
+| Readability | 7/10 | Repetition and length reduce density; chapter-by-chapter is fine |
+| **Overall** | **9/10** | The first book any senior engineer should read about scaling |
+
+*The defining book on web-scale architecture, more relevant
+today than when it was published — provided you read it as a
+framework, not a manual.*

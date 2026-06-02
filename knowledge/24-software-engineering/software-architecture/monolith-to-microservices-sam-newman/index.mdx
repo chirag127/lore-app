@@ -1,0 +1,117 @@
+## 📖 Overview
+
+Sam Newman is one of the most respected voices in the microservices world. He is a consultant at ThoughtWorks, a former technical lead at a UK government digital service, and the author of *Building Microservices* (2015), the book that helped a generation of architects decide what to build. *Monolith to Microservices* (2019) is its necessary sequel.
+
+If *Building Microservices* answers the question *"how do I build a system of small, autonomous services?"*, this book answers the harder one: *"how do I get there from here?"* Most organizations do not have the luxury of greenfield design. They have a working monolith, a team that knows it, customers who depend on it, and an executive sponsor who has read about Netflix. The gap between that reality and the promised land of microservices is the entire subject of this book.
+
+The book's signature move is honesty. Newman's first chapter is essentially a long argument that **you should probably not do this**. Most monoliths should stay monoliths. The cost of migration is enormous, the failure rate is high, and the success stories are survivorship-biased. He is explicit: do not migrate because microservices are fashionable. Migrate only when the cost of staying exceeds the cost of moving, and you have evidence of that cost.
+
+Once that decision is made, the book delivers a pattern catalog. The Strangler Fig, parallel run, change data capture, event collaboration, event sourcing, branch by abstraction, UI composition, the anti-corruption layer. Each pattern is a tested technique for extracting one piece of a monolith at a time, running it in production, and removing the old code. Newman is careful to discuss the trade-offs of each, the conditions under which it applies, and the smells that indicate you are doing it wrong.
+
+The deepest material is on the data layer. Shared databases are the single most common cause of failed migrations, and Newman devotes three chapters to alternatives: how to split a database, how to keep services in sync without distributed transactions, and how to use events as the integration contract. By the end, you understand why the data layer — not the service layer — is the hard part.
+
+The final act addresses the human side. Conway's Law, team restructuring, the prerequisites for migration (CI/CD, observability, containerization, a deployment culture), and the anti-patterns that have destroyed real programs. Newman names them: the distributed monolith, microservice envy, the shared-database trap, the chatty service. He has watched these patterns take down real projects, and he writes with the calm authority of someone who has seen the wreckage.
+
+---
+
+## 🧠 Executive Summary
+
+Newman organizes the migration problem into a decision framework, a pattern catalog, and a list of prerequisites and pitfalls.
+
+| Pillar | Core Idea |
+|--------|-----------|
+| **The Decision** | Migration is justified only by clear, measured pain. Newman's bar: "if the monolith works, keep it." Evidence of cost must precede commitment. |
+| **The Patterns** | Strangler Fig, parallel run, change data capture, event collaboration, event sourcing, branch by abstraction, UI composition. Each is a tested technique for incremental extraction. |
+| **The Data** | The data layer is the hardest part. Shared databases, distributed transactions, and join-across-services are the dominant failure modes. Events and CDC are the dominant solutions. |
+| **The People** | Conway's Law is binding. Team structure and architecture structure co-evolve. Migration is impossible without CI/CD, observability, and a deployment culture. |
+
+The book's contrarian backbone is simple: the most important pattern is the one you do not run. Most monoliths should not be migrated, and most migrations that are attempted fail.
+
+---
+
+## 🎯 Key Takeaways
+
+- **Do not migrate by default.** Newman is explicit: the bar for migration is high, the failure rate is high, and the success stories are biased. Migration is justified only when the monolith demonstrably blocks the business.
+- **The Strangler Fig is the dominant pattern.** You do not rewrite monoliths; you grow replacements around them, route traffic gradually, and retire the old code when nothing calls it.
+- **Decompose by capability, not by layer.** A `Customer` service beats a `Database` service. Capability-aligned services are autonomous, independently deployable, and survive organizational change.
+- **Find the seams first.** Bounded contexts from Domain-Driven Design are the canonical way to identify where the cuts should be. Newman devotes an entire chapter to techniques for finding them.
+- **The data layer is where migrations die.** Shared databases, distributed transactions, and join-across-services are the most common failure modes. CDC, event collaboration, and event sourcing are the canonical fixes.
+- **Migrate in waves.** Each wave extracts one service, runs both implementations in parallel, verifies behaviour, and only then retires the old code.
+- **UI composition is often skipped and always regretted.** If your front end is a monolith calling microservices, you have moved the problem, not solved it.
+- **Prerequisites are not optional.** CI/CD, observability, containerization, feature flags, and a deployment culture must exist before microservice migration is viable. Building them is part of the work.
+- **Conway's Law is binding.** Team structure determines architecture. Migration requires team restructuring; restructuring enables migration. The two cannot be sequenced.
+- **Anti-patterns are explicit and named.** Distributed monolith, microservice envy, the shared-database trap, chatty services, time-dependent coupling. Newman names each and tells you how to recognize it.
+
+---
+
+## 👥 Who Should Read
+
+| Read this | Skip this |
+|-----------|-----------|
+| Architects and senior engineers about to undertake a migration | Greenfield engineers with no monolith to migrate from |
+| Tech leads executing or sponsoring an existing migration | Anyone looking for a microservices primer (read *Building Microservices* first) |
+| Engineering directors whose team structure is blocking the migration | Pure infrastructure engineers — the book is architecture, not Kubernetes |
+| Platform engineers building the tooling the migration depends on | Readers wanting distributed systems theory (Newman writes for practitioners) |
+| Consultants advising on modernization programs | Anyone allergic to the word "should" — Newman is opinionated on purpose |
+
+---
+
+## 🚫 Who Should Skip
+
+If you are at a greenfield startup with no legacy system, this book is not for you. It assumes you have a working monolith, an existing team, real customers, and a real migration to plan. The content on prerequisites, organizational change, and incremental delivery will feel abstract without that context. Newman's *Building Microservices* is the right starting point; come back to this one when you inherit your first monolith.
+
+Some readers also find Newman's prose too cautious. He is explicit that he would prefer most readers to walk away and not migrate. The result is a book that sometimes reads like a long argument against the project you are about to undertake. That is the point — but it can be disorienting for executives who have already decided.
+
+---
+
+## 📊 Core Themes
+
+**The Cost of Migration**: Newman's foundational theme. He opens with the cost and returns to it throughout. Migration is expensive, slow, and risky. The bar for undertaking it must be evidence-based, not fashion-based. The first half of the book is essentially a long cost-benefit argument.
+
+**Incrementalism Over Rewrites**: Big-bang rewrites fail. The Strangler Fig is the dominant pattern precisely because it is incremental: extract one service, run both, verify, retire. Newman never advocates a full rewrite, and the only successful migrations he describes are incremental ones.
+
+**The Primacy of the Data Layer**: The most counter-intuitive theme for readers who came from *Building Microservices*. The data layer is the hard part. Service boundaries are negotiable; data ownership is not. Two services writing to the same table is not microservices — it is a distributed monolith, the worst of both worlds.
+
+**Conway's Law as Design Constraint**: Newman's treatment of Conway is one of the most practical in the literature. The book argues that the team structure you have today determines the architecture you can have tomorrow. Migration and reorganization must proceed together; you cannot sequence them.
+
+**Prerequisites as Anti-Pattern Insurance**: The book devotes a chapter to prerequisites that are not optional. CI/CD, observability, feature flags, central logging, distributed tracing, containerization, and a deployment culture. Newman argues that without these, microservice migration is doomed. Building them is part of the work, not a precondition that someone else will handle.
+
+---
+
+## 💡 Why This Book Matters
+
+The microservices wave of the mid-2010s produced a generation of greenfield systems and a generation of failed rewrites. Organizations that had read about Netflix and Amazon rushed to decompose their working monoliths, often without understanding the cost. The result was a wave of "distributed monoliths" — systems that had all the complexity of microservices and none of the benefits, because the data layer was still shared and the team structure was still monolithic.
+
+Newman wrote this book for that wreckage. It is the only mainstream guide that starts with the question "should you?" rather than "how do you?" The patterns are tested; the anti-patterns are named; the prerequisites are explicit. For any organization contemplating migration, this is the book that prevents the most common failure modes.
+
+It also matters because of who wrote it. Newman is not a vendor, not an evangelist, not a consultant selling services. He is a practitioner who has watched these patterns succeed and fail in real organizations. The book's authority comes from that experience. When Newman says "do not migrate," he is not theorizing; he has watched migrations fail.
+
+The core insight — that the hard part of microservices is the data layer, the team structure, and the prerequisites, not the services themselves — is genuinely useful. It is the kind of book that should be required reading for any executive sponsor of a migration program.
+
+---
+
+## 🔗 Related Books
+
+| Book | How It Connects |
+|------|----------------|
+| **Building Microservices** by Sam Newman | The prequel — covers the *what* and *why* of microservices; this book covers the *how* of migration |
+| **Microservices Patterns** by Chris Richardson | Deeper pattern catalog, including sagas, CQRS, and API composition; complements Newman with more code |
+| **Domain-Driven Design** by Eric Evans | The canonical source for bounded contexts, which Newman uses to find seams |
+| **Refactoring** by Martin Fowler | The Strangler Fig and Branch by Abstraction patterns are Fowler's; Newman applies them to microservices |
+| **Designing Data-Intensive Applications** by Martin Kleppmann | The deeper theory behind event sourcing, CDC, and eventual consistency that Newman applies in migration |
+| **Team Topologies** by Matthew Skelton | The team-structure and platform-engineering material that Newman assumes; complementary |
+| **Fundamentals of Software Architecture** by Mark Richards | The architectural trade-offs (cost vs. agility, performance vs. resilience) that motivate migration decisions |
+| **The Phoenix Project** by Gene Kim | The DevOps prerequisite material — CI/CD, deployment culture, observability — that Newman assumes exists |
+| **Accelerate** by Nicole Forsgren | The research basis for why those prerequisites matter, drawn from the State of DevOps report |
+
+---
+
+## ⭐ Final Verdict
+
+**Rating: 9/10**
+
+*Monolith to Microservices* is the most useful book on the subject. Not because it is the deepest (Richardson's is deeper on patterns) or the most theoretical (Kleppmann's is more rigorous on data), but because it is the most honest. Newman tells you when not to migrate, names the failure modes, and gives you a pattern catalog that has been tested in real organizations.
+
+**The trade-off**: The book is sometimes too cautious. Newman's contrarian opening is bracing, but by the end of the third chapter you may be exhausted by the hedging. The patterns are described in prose, not in code, so readers looking for implementation will need to go to Richardson or the open-source examples. The organizational material is sound but light; readers serious about team structure will need Team Topologies alongside.
+
+**Bottom line**: If you are about to undertake a migration, this is the book that will save you from the most common mistakes. If you are advising someone who is, it is the book you should hand them. And if you are an executive sponsor reading about microservices for the first time, the first chapter alone is worth the price of admission — because it will probably convince you not to migrate, which is the most valuable advice the book offers.

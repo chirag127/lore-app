@@ -1,0 +1,58 @@
+## Chapter 1: Primes!
+
+The book opens with a broad survey of prime numbers: their definition, history, and fundamental importance. Crandall and Pomerance discuss Euclid's proof of infinitude, the sieve of Eratosthenes, early computational efforts (including the Mersenne prime searches), and the prime number theorem. The chapter sets the stage for the algorithmic focus of the rest of the book.
+
+## Chapter 2: Number-Theoretic Tools
+
+Essential preliminaries: modular arithmetic, the Euclidean algorithm (binary and extended versions), the Chinese remainder theorem, quadratic residues, and the Legendre and Jacobi symbols. The treatment is algorithmically oriented: every concept is presented with its computational implementation in mind.
+
+## Chapter 3: Primality Testing
+
+This chapter presents the algorithms for determining whether a given integer is prime. Coverage includes trial division, the Miller-Rabin probabilistic test, the Solovay-Strassen test, the Lucas-Lehmer test for Mersenne primes, and the AKS deterministic polynomial-time test. The chapter discusses the trade-offs between speed and certainty that characterize modern primality testing.
+
+## Chapter 4: Integer Factorization
+
+Factorization is harder than primality testing. Crandall and Pomerance cover trial division, Pollard's rho method, Pollard's p-1 method, the quadratic sieve (which Pomerance co-discovered), and the number field sieve. Each algorithm is presented with its complexity analysis, implementation considerations, and record computations. The chapter includes a discussion of elliptic curve factorization (the ECM method).
+
+## Chapter 5: Prime Generation
+
+How are large primes found? The chapter covers random prime generation, provable prime generation (using the methods of Maurer and Shawe-Taylor), and the generation of primes with special properties. Applications to cryptography are discussed.
+
+## Chapter 6: Pseudoprimes
+
+This chapter studies numbers that masquerade as primes: Carmichael numbers, Euler pseudoprimes, strong pseudoprimes, and Lucas pseudoprimes. The authors prove that there are infinitely many Carmichael numbers (Alford, Granville, Pomerance, 1994) and discuss the distribution of pseudoprimes.
+
+## Chapter 7: Elliptic Curve Methods
+
+A detailed treatment of elliptic curve methods for primality proving (ECPP) and factorization (ECM). The chapter covers the basic theory of elliptic curves over finite fields, Lenstra's ECM algorithm, and the Atkin-Morain ECPP algorithm.
+
+## Chapter 8: Large-Scale Prime Computations
+
+The final chapter covers distributed prime computations, including the Great Internet Mersenne Prime Search (GIMPS), distributed factorization efforts, and the computational infrastructure required for large-scale prime hunting.
+
+## Reading Guide
+
+### Sufficiency Assessment
+
+This summary captures the book's algorithmic focus but cannot convey the depth of the implementation discussions and complexity analyses.
+
+### Recommended Reading Path
+
+| Reader Type | Time | What to Read |
+|---|---|---|
+| Casual | ~15 min | This summary |
+| Cryptographer | ~10-20 hr | Chapters 3-5 |
+| Researcher | ~25-40 hr | Full book |
+
+### Chapters to Read in Full
+
+- **Chapter 3** — Primality testing, essential for cryptography
+- **Chapter 4** — Integer factorization, the other side of the coin
+
+### Chapters to Skim or Skip
+
+- **Chapter 1** — Background material, interesting but not technical
+
+### What You'll Miss by Not Reading the Full Book
+
+The algorithmic details, the complexity analyses, the implementation discussions, and the careful treatment of the frontier between the known and the unknown in prime computation.

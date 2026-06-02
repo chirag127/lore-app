@@ -1,0 +1,99 @@
+## Strengths
+
+- **Pedagogically brilliant top-down approach.** Starting with the
+  application layer — which students already use — makes the material
+  immediately relevant and less abstract.
+- **Exceptional clarity of explanations.** Kurose and Ross explain
+  complex concepts (congestion control, BGP path selection, TCP
+  reliability) with intuitive analogies and clear diagrams.
+- **Excellent hands-on labs.** Wireshark labs let students see real
+  network traffic. Socket programming assignments build practical skills.
+- **Comprehensive yet accessible.** Covers the entire Internet stack
+  without requiring advanced math. Queueing theory is presented
+  intuitively, not derivatively.
+- **Regularly updated.** The 8th edition covers HTTP/3, QUIC, 5G,
+  IoT, and SDN — keeping pace with a rapidly evolving field.
+- **Interactive companion website.** Interactive problems, video
+  notes, and Java applets reinforce difficult concepts.
+
+---
+
+## Weaknesses
+
+- **Can be too verbose.** Some explanations are stretched across more
+  pages than necessary. The book could be 15-20% shorter.
+- **Some topics are shallow.** Security (Ch. 8) is a single chapter
+  for a vast field. Cryptography coverage is minimal.
+- **C++-focused socket examples.** The programming examples use C
+  socket APIs, which feel dated to students learning with Python or
+  Go. (Python versions exist online but are not in the main text.)
+- **Expensive.** At $200+, the textbook is prohibitively costly for
+  many students. The free online version helps but is limited.
+- **Wireless chapter lags the industry.** The wireless chapter was
+  strong at publication but 5G/6G developments outpace the book's
+  update cycle.
+
+---
+
+## Criticism
+
+- **Over-emphasis on classic protocols.** HTTP/1.1 and TCP Reno get
+  extensive treatment, while modern replacements (HTTP/3, QUIC, BBR)
+  receive less detail.
+- **Light on practical operations.** Students who finish the book
+  understand protocol theory but cannot configure a router or
+  troubleshoot a network — that burden falls on lab courses.
+- **The top-down approach sacrifices cross-layer intuition.** Students
+  may understand each layer in isolation without grasping how they
+  interact (e.g., TCP over WiFi wireless loss).
+- **Some consider it too easy.** Researchers and engineers seeking
+  rigorous protocol specification analysis may find the treatment
+  insufficient — Stevens' *TCP/IP Illustrated* is the correct source.
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | How Kurose/Ross Use It |
+|---------|--------|------------------------|
+| Layered Architecture | ISO OSI Model (1984) | Adapted to a pragmatic five-layer Internet model |
+| TCP Congestion Control | Jacobson (1988) | AIMD, slow start, fast retransmit with intuitive graphs |
+| Queueing Theory | Little's Law, M/M/1 | Delay and loss analysis for router buffers |
+| End-to-End Argument | Saltzer, Reed, Clark (1984) | Philosophical justification for dumb-network design |
+| BGP Path Selection | RFC 4271 | Policy-based routing with local preference and AS path |
+
+---
+
+## Historical Context
+
+First published in 2000, the book arrived during the dot-com boom when
+Internet education was exploding. The top-down approach was a deliberate
+reaction to Tanenbaum's bottom-up *Computer Networks*, which many students
+found impenetrable because they had to start with physical-layer signal
+encoding. Kurose and Ross flipped the script: begin with what students
+love (the web), then reveal the plumbing beneath. This approach has since
+been adopted by many other networking courses worldwide.
+
+---
+
+## Comparison
+
+| Book | Author | Key Difference |
+|------|--------|----------------|
+| *Computer Networks* | Tanenbaum | Bottom-up, OSI model focus, more engineering detail |
+| *TCP/IP Illustrated* | Stevens | Implementation-level deep dive with packet traces |
+| *Internetworking with TCP/IP* | Comer | Concise, Unix-centric, C code examples |
+| *Computer Networking* | Kurose & Ross | Top-down pedagogy, best for beginners |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Clarity | 9/10 | Among the best-written CS textbooks ever |
+| Depth | 7/10 | Broad but occasionally shallow on advanced topics |
+| Practical Utility | 8/10 | Excellent labs; light on real-world operations |
+| Currency | 8/10 | Updated regularly but trailing the cutting edge |
+| Accessibility | 9/10 | No advanced math required; excellent for undergrads |
+| **Overall** | **8.5/10** | Best introductory networking textbook by a wide margin |

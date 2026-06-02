@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schemas/book-meta.json",
+  "slug": "traction-gabriel-weinberg",
+  "title": "Traction: How Any Startup Can Achieve Explosive Customer Growth",
+  "authors": [
+    {
+      "name": "Gabriel Weinberg",
+      "role": "Author"
+    },
+    {
+      "name": "Justin Mares",
+      "role": "Author"
+    }
+  ],
+  "isbn": "9781591848363",
+  "isbn10": "1591848369",
+  "publisher": "Portfolio",
+  "publishedDate": "2015-10-06",
+  "pages": 240,
+  "language": "en",
+  "genres": [
+    "Entrepreneurship",
+    "Marketing",
+    "Startups",
+    "Business Growth",
+    "Sales"
+  ],
+  "coverUrl": "./cover.jpg",
+  "description": "A practical guide to startup growth that identifies 19 customer acquisition channels and provides the Bullseye Framework for systematically testing and focusing on the one channel that will drive explosive customer growth.",
+  "keyConcepts": [
+    "Bullseye Framework",
+    "19 traction channels",
+    "50% rule: product vs traction",
+    "Traction gap",
+    "Critical Path",
+    "Channel saturation",
+    "Traction testing",
+    "Viral coefficient (k-factor)",
+    "Engineering as marketing",
+    "Fat-head vs long-tail SEO"
+  ],
+  "notableQuotes": [
+    "Almost every failed startup has a product. What failed startups don't have are enough customers.",
+    "Your job is to find which ONE channel works for you.",
+    "Spend 50% of your time on product and 50% on traction.",
+    "Some traction channels will move the needle early on, but will fail to work later.",
+    "Pursuing multiple channels weakens all of them.",
+    "The first step in Bullseye is brainstorming every single traction channel.",
+    "Traction is quantitative evidence of customer demand.",
+    "Continuous testing is the key to getting traction with Bullseye."
+  ],
+  "readingTimeMinutes": 300,
+  "difficulty": "intermediate",
+  "amazonUrl": "https://www.amazon.com/dp/1591848369",
+  "goodreadsUrl": "https://www.goodreads.com/book/show/22091581-traction"
+}

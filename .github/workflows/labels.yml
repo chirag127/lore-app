@@ -1,0 +1,23 @@
+name: Sync labels
+
+on:
+  push:
+    paths: ['.github/labels/*.json']
+    branches: [main]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create or update labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for f in .github/labels/*.json; do
+            [ -f "$f" ] || continue
+            name=$(node -e "console.log(require('./$f').name)")
+            color=$(node -e "console.log(require('./$f').color)")
+            desc=$(node -e "console.log(require('./$f').description)")
+            gh label create "$name" --color "$color" --description "$desc" --force || true
+          done

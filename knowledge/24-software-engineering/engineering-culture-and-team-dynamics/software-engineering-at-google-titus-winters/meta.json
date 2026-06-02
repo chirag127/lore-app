@@ -1,0 +1,60 @@
+{
+  "slug": "software-engineering-at-google-titus-winters",
+  "title": "Software Engineering at Google",
+  "subtitle": "Lessons Learned from Programming Over Time",
+  "authors": [
+    "Titus Winters",
+    "Tom Manshreck",
+    "Hyrum Wright"
+  ],
+  "isbn": "9781492082798",
+  "publisher": "O'Reilly Media",
+  "year": 2020,
+  "pages": 506,
+  "language": "en",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9781492082798-L.jpg",
+  "tags": [
+    "software-engineering",
+    "google",
+    "code-review",
+    "technical-debt",
+    "team-culture",
+    "documentation",
+    "testing"
+  ],
+  "difficulty": "intermediate",
+  "reviewCount": 320,
+  "genres": [
+    "non-fiction",
+    "technology",
+    "programming"
+  ],
+  "description": "An insider look at how Google practices software engineering, drawing on years of experience at massive scale. The book redefines software engineering as programming over time, emphasizing culture, process, and tooling over any specific technology.",
+  "keyThemes": [
+    "Software Engineering vs Programming",
+    "The Three Fundamentals",
+    "Time as Force Multiplier",
+    "Code Review",
+    "Technical Debt",
+    "Blameless Culture",
+    "Documentation as Code",
+    "Testing at Scale"
+  ],
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-content",
+      "title": "Content Summary"
+    },
+    {
+      "number": "02",
+      "slug": "02-analysis",
+      "title": "Analysis"
+    },
+    {
+      "number": "03",
+      "slug": "03-narration",
+      "title": "Narration"
+    }
+  ]
+}

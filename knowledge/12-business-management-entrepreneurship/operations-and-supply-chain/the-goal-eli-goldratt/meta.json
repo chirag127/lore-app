@@ -1,0 +1,67 @@
+{
+  "slug": "the-goal-eli-goldratt",
+  "title": "The Goal",
+  "subtitle": "A Process of Ongoing Improvement",
+  "author": "Eliyahu M. Goldratt and Jeff Cox",
+  "publicationYear": 1984,
+  "isbn": "9780884271956",
+  "publisher": "North River Press",
+  "language": "en",
+  "pageCount": 408,
+  "genres": [
+    "Business",
+    "Management",
+    "Fiction / Business Novel",
+    "Operations"
+  ],
+  "subjects": [
+    "Theory of Constraints",
+    "bottleneck management",
+    "throughput accounting",
+    "manufacturing operations",
+    "process improvement",
+    "operations management",
+    "lean manufacturing",
+    "Socratic method",
+    "system thinking",
+    "production scheduling"
+  ],
+  "themes": [
+    "The goal of a business is to make money by increasing throughput",
+    "Every system has a constraint that limits its performance",
+    "Local optima do not produce global optima",
+    "Measurements drive behavior — use the right metrics",
+    "The Socratic method of learning through guided questions",
+    "Continuous improvement is a process, not a destination",
+    "Dependent events plus statistical fluctuations produce variability",
+    "Balanced plants are not desirable — a bottleneck is necessary"
+  ],
+  "tags": [
+    "theory-of-constraints",
+    "bottleneck",
+    "throughput",
+    "goldratt",
+    "operations-management",
+    "manufacturing",
+    "business-novel",
+    "management",
+    "process-improvement",
+    "system-thinking",
+    "lean",
+    "five-focusing-steps",
+    "drum-buffer-rope",
+    "management-classic"
+  ],
+  "difficulty": "easy",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 540,
+  "awards": [
+    "One of the 25 Most Influential Business Management Books (Time Magazine, 2011)",
+    "Required reading at Harvard Business School and other top MBA programs",
+    "Listed in The Economist's best business books",
+    "Jeff Bezos requires Amazon's top management team to read it",
+    "Over 10 million copies sold worldwide",
+    "Translated into 30+ languages"
+  ],
+  "excerpt": "What is the goal of a business? A plant manager on the brink of closure discovers the answer is not what he was taught — and that finding the bottleneck is the first step to saving everything."
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "the-social-contract-jean-jacques-rousseau",
+  "title": "The Social Contract",
+  "author": "Jean-Jacques Rousseau",
+  "original_title": "Du contrat social; ou, Principes du droit politique",
+  "date": 1762,
+  "category": "13-political-science",
+  "subcategory": "political-theory",
+  "tags": [
+    "political-theory",
+    "democracy",
+    "general-will",
+    "social-contract",
+    "enlightenment",
+    "french-revolution",
+    "popular-sovereignty",
+    "political-philosophy",
+    "republicanism",
+    "civil-liberty"
+  ],
+  "isbn": "978-0-14-044551-0",
+  "publisher": "Penguin Classics",
+  "year": 1762,
+  "pages": 192,
+  "language": "French",
+  "original_language": "French",
+  "genre": [
+    "Political Philosophy",
+    "Non-fiction",
+    "Treatise"
+  ],
+  "period": "Enlightenment",
+  "author_birth": "1712-06-28",
+  "author_death": "1778-07-02",
+  "author_nationality": "Genevan",
+  "author_bio": "Jean-Jacques Rousseau (1712–1778) was a Genevan philosopher, writer, and composer. Born in the Republic of Geneva, he spent most of his adult life in France. His political philosophy influenced the Age of Enlightenment and the French Revolution. Notable works include The Social Contract, Émile, Discourse on Inequality, and Confessions.",
+  "files": {
+    "index": "index.mdx",
+    "content": "01-content.mdx",
+    "analysis": "02-analysis.mdx",
+    "narration": "03-narration.mdx",
+    "meta": "meta.json"
+  },
+  "key_concepts": [
+    "General Will",
+    "Social Contract",
+    "Popular Sovereignty",
+    "Civil Liberty",
+    "Civil Religion",
+    "Lawgiver",
+    "Equality",
+    "Property"
+  ],
+  "influences": [
+    "Thomas Hobbes",
+    "John Locke",
+    "Montesquieu",
+    "Machiavelli",
+    "Plutarch"
+  ],
+  "influenced": [
+    "French Revolution",
+    "Declaration of the Rights of Man and of the Citizen",
+    "Immanuel Kant",
+    "Jeffersonian Democracy",
+    "Deliberative Democracy",
+    "Communitarianism"
+  ],
+  "related_books": [
+    {
+      "title": "Leviathan",
+      "author": "Thomas Hobbes",
+      "year": 1651,
+      "relationship": "Hobbes's social contract theory serves as the foil Rousseau argues against"
+    },
+    {
+      "title": "Two Treatises of Government",
+      "author": "John Locke",
+      "year": 1689,
+      "relationship": "Locke's consent-based government influenced Rousseau, who extended the argument"
+    },
+    {
+      "title": "Democracy in America",
+      "author": "Alexis de Tocqueville",
+      "year": 1835,
+      "relationship": "Tocqueville's study of American democracy addresses Rousseauian questions about civic participation"
+    },
+    {
+      "title": "The Spirit of the Laws",
+      "author": "Montesquieu",
+      "year": 1748,
+      "relationship": "Montesquieu's analysis of government types informed Rousseau's classification"
+    },
+    {
+      "title": "Discourse on Inequality",
+      "author": "Jean-Jacques Rousseau",
+      "year": 1755,
+      "relationship": "Rousseau's earlier work tracing how humanity lost its natural freedom"
+    }
+  ],
+  "first_published": "April 1762",
+  "place_of_publication": "Amsterdam",
+  "controversy": "Banned and burned in Paris and Geneva in June 1762; Rousseau fled to Prussia. The controversy centered on the chapter on civil religion.",
+  "posthumous_honor": "Remains moved to the Pantheon in Paris in 1794 by the French Revolutionary government",
+  "format": "Four books (treatise)",
+  "epigraph": "Foederis aequas dicamus leges (Virgil, Aeneid XI.321-22)",
+  "reading_level": "Advanced",
+  "recommended_for": [
+    "Students of political philosophy",
+    "Readers of Enlightenment history",
+    "Those interested in democratic theory",
+    "Citizens concerned with legitimacy and consent"
+  ]
+}

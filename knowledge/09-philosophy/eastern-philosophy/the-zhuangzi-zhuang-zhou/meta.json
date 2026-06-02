@@ -1,0 +1,16 @@
+{
+  "id": "the-zhuangzi-zhuang-zhou",
+  "title": "The Zhuangzi",
+  "slug": "the-zhuangzi-zhuang-zhou",
+  "authors": ["Zhuang Zhou"],
+  "year": -300,
+  "category": "09-philosophy",
+  "subcategory": "eastern-philosophy",
+  "pages": 368,
+  "isbn": "9781624668555",
+  "language": "en",
+  "genres": ["Philosophy", "Taoism", "Classical Chinese Literature"],
+  "source": "generated",
+  "generatedAt": "2026-06-10",
+  "rationale": "The Zhuangzi is the second foundational text of Taoism and the natural companion to the Tao Te Ching in this leaf directory. It represents the playful, narrative, and skeptical counterpoint to Laozi's aphoristic wisdom, making it an essential inclusion for any collection on classical Chinese philosophy."
+}

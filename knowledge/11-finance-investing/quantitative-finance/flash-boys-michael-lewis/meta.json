@@ -1,0 +1,45 @@
+{
+  "slug": "flash-boys-michael-lewis",
+  "title": "Flash Boys",
+  "subtitle": "A Wall Street Revolt",
+  "author": "Michael Lewis",
+  "isbn": "9780393244663",
+  "isbn10": "0393244660",
+  "publisher": "W. W. Norton & Company",
+  "originalPublicationYear": 2014,
+  "pages": 274,
+  "language": "en",
+  "subjects": [
+    "High-frequency trading",
+    "Stock exchanges",
+    "Wall Street",
+    "Financial markets",
+    "Market microstructure",
+    "Securities fraud"
+  ],
+  "amazonRating": 4.5,
+  "goodreadsRating": 4.2,
+  "goodreadsRatingsCount": 185000,
+  "difficulty": "Easy",
+  "readingTimeHours": 6,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780393244663-L.jpg",
+  "openLibraryKey": "OL16763152W",
+  "authorBio": "Michael Lewis (b. 1960) is an American author and financial journalist. A graduate of Princeton and the London School of Economics, he worked at Salomon Brothers in the 1980s, which became the subject of his first book, Liar's Poker. He has since written numerous bestsellers including The Big Short, Moneyball, and The Blind Side. His books have sold millions of copies and several have been adapted into major motion pictures.",
+  "keyConcepts": [
+    "High-frequency trading (HFT)",
+    "Front-running",
+    "Latency arbitrage",
+    "Dark pools",
+    "Market fragmentation",
+    "Co-location",
+    "Flash orders",
+    "Spread networks"
+  ],
+  "notableQuotes": [
+    "The U.S. stock market is rigged.",
+    "The market is not a free market. It is a rigged market.",
+    "The financial system had been turned into a game that only insiders could win.",
+    "Speed is the new insider trading.",
+    "Brad Katsuyama is the kind of guy who, when he discovers the deck is stacked, tries to reshuffle the cards."
+  ]
+}

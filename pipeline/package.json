@@ -1,0 +1,28 @@
+{
+  "name": "@knowledgeatlas/pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'lint placeholder'"
+  },
+  "dependencies": {
+    "@knowledgeatlas/schemas": "workspace:*",
+    "@langchain/core": "^0.3.40",
+    "@langchain/langgraph": "^0.2.74",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "gray-matter": "^4.0.3",
+    "langchain": "^0.3.13",
+    "node-fetch": "^3.3.2",
+    "p-limit": "^6.2.0",
+    "simple-git": "^3.27.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

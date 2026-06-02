@@ -1,0 +1,164 @@
+{
+  "slug": "linux-kernel-development-robert-love",
+  "title": "Linux Kernel Development",
+  "subtitle": "3rd Edition",
+  "author": "Robert Love",
+  "authorBio": "Open-source programmer, speaker, and author with over 15 years of Linux involvement. Senior software engineer at Google, where he was a member of the team that developed the Android mobile platform's kernel. Former Chief Architect, Linux Desktop at Novell. Kernel contributions span the preemptive kernel, process scheduler, kernel events layer, inotify, and VM enhancements. Contributing editor for Linux Journal and author of Linux System Programming and Linux in a Nutshell.",
+  "publisher": "Addison-Wesley Professional",
+  "isbn10": "0672329468",
+  "isbn13": "9780672329463",
+  "yearPublished": 2010,
+  "pages": 448,
+  "genres": [
+    "Operating Systems",
+    "Computer Science",
+    "Systems Programming",
+    "Kernel Development"
+  ],
+  "subjects": [
+    "Linux Kernel",
+    "Process Management",
+    "Process Scheduling",
+    "System Calls",
+    "Kernel Data Structures",
+    "Interrupt Handlers",
+    "Kernel Synchronization",
+    "Memory Management",
+    "Virtual Filesystem",
+    "Block I/O",
+    "Filesystems",
+    "Proc Filesystem",
+    "Network Subsystem",
+    "Kernel Debugging",
+    "Kernel Modules",
+    "Device Drivers"
+  ],
+  "themes": [
+    "The Process Model: task_struct, clone(), kernel threads",
+    "Completely Fair Scheduler (CFS): vruntime, red-black tree, niceness",
+    "System Call Interface: sys_call_table, ioctl, syscall entry/exit",
+    "Kernel Data Structures: list_head, hlist, kfifo, rb_tree, IDR",
+    "Interrupt Control: top-half vs bottom-half, softirqs, tasklets, workqueues",
+    "Kernel Synchronization: atomic_t, spinlocks, mutexes, RCU",
+    "Memory Management: struct page, slab allocator, kmalloc, vmalloc, GFP flags",
+    "Virtual Filesystem: superblock, inode, dentry, file objects",
+    "ext2/ext3/ext4: indirect blocks, journaling, extent trees, delayed allocation",
+    "proc Filesystem: seq_file interface, /proc/[pid]",
+    "Networking in the Kernel: sk_buff, socket layer, NAPI, netfilter",
+    "Kernel Debugging: printk, oops, kgdb, ftrace, KASAN",
+    "Contributing to the Linux kernel: patch submission, coding style, community norms"
+  ],
+  "tags": [
+    "linux kernel",
+    "kernel development",
+    "cfs scheduler",
+    "process scheduler",
+    "interrupt handlers",
+    "bottom halves",
+    "softirqs",
+    "tasklets",
+    "workqueues",
+    "kernel synchronization",
+    "spinlocks",
+    "mutexes",
+    "rcu",
+    "memory management",
+    "slab allocator",
+    "kmalloc",
+    "vmalloc",
+    "vfs",
+    "procfs",
+    "ext4",
+    "block io",
+    "io schedulers",
+    "networking",
+    "kernel modules",
+    "character devices",
+    "block devices",
+    "robert love",
+    "addison-wesley",
+    "developers library",
+    "linux 2.6"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 14,
+  "estimatedListeningMinutes": 840,
+  "excerpt": "Linux Kernel Development details the design and implementation of the Linux kernel, presenting the content in a manner that is beneficial to those writing and developing kernel code, as well as to programmers seeking to better understand the operating system and become more efficient and productive in their coding. Written by a core kernel contributor, it covers process management, CFS scheduling, system calls, kernel data structures, interrupt handling, kernel synchronization, memory management, the VFS, filesystems, networking, and debugging — grounded in real kernel source code from the Linux 2.6.3x kernel series.",
+  "keyIdeas": [
+    "task_struct is the kernel's representation of every process and thread; understanding it is a map to reading any kernel code",
+    "CFS models an ideal multitasking CPU with vruntime and a red-black tree, achieving fairness without fixed time slices",
+    "Linux threads are processes sharing an address space; clone() flags express this sharing declaratively (CLONE_VM, CLONE_FS, CLONE_THREAD, etc.)",
+    "Bottom halves (softirqs, tasklets, workqueues) defer heavy processing out of interrupt context to avoid starving the system",
+    "Kernel synchronization follows a layered primitive structure: atomics → spinlocks → rwlocks → seqlocks → mutexes → RCU, each with specific trade-offs",
+    "kmalloc() returns physically contiguous memory suitable for DMA; vmalloc() returns virtually contiguous but physically noncontiguous memory",
+    "The VFS abstracts access through four objects: superblock, inode, dentry, file — each with a precise lifecycle and role",
+    "ext4 replaced indirect block pointers with extent trees, dramatically reducing metadata overhead through contiguous physical block ranges",
+    "The proc filesystem and seq_file interface provide structured kernel-to-userspace communication without syscalls",
+    "Contributing patches to mainline Linux requires coding style compliance, Signed-off-by traceability, and familiarity with the kernel community workflow"
+  ],
+  "keyTakeaways": [
+    "do_fork() is the shared backend of fork(), vfork(), and clone() — the clone() flags are what actually differentiate thread creation",
+    "A kernel thread has mm=NULL and borrows its address space via active_mm, avoiding a full address-space switch",
+    "CFS has no fixed quantum; vruntime grows inversely proportional to nice-based task weight; leftmost red-black tree node is always next to run",
+    "System calls cross via syscall instruction; the syscall number indexes sys_call_table; glibc translates negative error returns into errno",
+    "Softirqs run immediately after hard interrupt; tasklets defer further without blocking context; workqueues run deferrable work in process context where sleeping is safe",
+    "Spinlocks cannot sleep; mutexes can. Choosing between them means choosing between atomic and process context",
+    "GFP_KERNEL may sleep and trigger reclaim; GFP_ATOMIC never sleeps — using the wrong flag in the wrong context causes deadlocks detectable by lockdep",
+    "container_of(ptr, type, member) recovers the parent struct from an embedded list_head — the most-used kernel C idiom",
+    "copy_to_user and copy_from_user handle page faults and permission checks that memcpy silently ignores; never memcpy to/from user space",
+    "jiffies monotonically wraps every ~50 days at HZ=1000; use time_after(), time_before() for comparisons; use ktime_t / hrtimer for high resolution"
+  ],
+  "whoShouldRead": [
+    "Systems programmers who want to understand Linux kernel internals to write more efficient or safer code",
+    "Developers learning to write kernel modules, character drivers, or block device drivers",
+    "Embedded engineers porting or optimizing Linux for ARM, MIPS, or other target boards",
+    "University students in operating systems courses who need a practical kernel reference alongside theory",
+    "Performance engineers diagnosing scheduling, memory, or I/O latency on Linux production systems",
+    "Developers preparing to contribute patches to mainline Linux"
+  ],
+  "whoShouldSkip": [
+    "Absolute beginners who have never used Linux from the command line (start with Linux in a Nutshell first)",
+    "Developers exclusively in userspace with no interest in kernel internals",
+    "Readers looking for coverage of modern 4.x/5.x/6.x kernel subsytems — eBPF, cgroups v2, io_uring, Btrfs — (this book covers 2.6.x)",
+    "Those seeking a line-by-line source code commentary (this book deliberately focuses on subsystems and interfaces)"
+  ],
+  "coreThemes": [
+    "The kernel as a set of well-defined subsystems with clean interfaces — mastering one opens understanding of all",
+    "Practical over theoretical: every concept grounded in real kernel source and daily development experience",
+    "Community participation: contributing patches, coding style, Signed-off-by, and maintainers",
+    "Performance and correctness: why each design choice was made, not just what it does",
+    "Portability: writing kernel code that works across architectures (x86, ARM, PowerPC, etc.)"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Linux System Programming",
+      "author": "Robert Love",
+      "slug": "linux-system-programming-robert-love"
+    },
+    {
+      "title": "Computer Systems: A Programmer's Perspective",
+      "author": "Randal E. Bryant & David R. O'Hallaron",
+      "slug": "computer-systems-a-programmers-perspective-randal-bryant"
+    },
+    {
+      "title": "Understanding the Linux Kernel",
+      "author": "Daniel P. Bovet & Marco Cesati",
+      "slug": null
+    },
+    {
+      "title": "Professional Linux Kernel Architecture",
+      "author": "Wolfgang Mauerer",
+      "slug": null
+    },
+    {
+      "title": "The Linux Programming Interface",
+      "author": "Michael Kerrisk",
+      "slug": null
+    },
+    {
+      "title": "Linux Kernel Programming",
+      "author": "Kaiwan N Billimoria",
+      "slug": null
+    }
+  ]
+}

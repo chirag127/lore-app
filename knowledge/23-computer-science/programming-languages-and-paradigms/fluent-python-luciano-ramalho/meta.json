@@ -1,0 +1,58 @@
+{
+  "slug": "fluent-python-luciano-ramalho",
+  "title": "Fluent Python",
+  "subtitle": "Clear, Concise, and Effective Programming",
+  "author": "Luciano Ramalho",
+  "publicationYear": 2022,
+  "isbn10": "1492056359",
+  "isbn13": "9781492056358",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 1018,
+  "genres": [
+    "Programming",
+    "Technology",
+    "Computer Science",
+    "Python"
+  ],
+  "subjects": [
+    "Python Programming",
+    "Data Structures",
+    "Object-Oriented Design",
+    "Metaprogramming",
+    "Concurrency and Async Programming",
+    "Type Hints and Static Typing"
+  ],
+  "themes": [
+    "The Python data model (dunder methods) as the unifying API of the language",
+    "Mastering the standard library's built-in data structures",
+    "Functions as first-class objects and the decorator pattern",
+    "Composition and protocols over inheritance for reusable code",
+    "Iterators, generators, and coroutines as control-flow abstractions",
+    "Reaching for metaprogramming (descriptors, class decorators) only when simpler tools fail"
+  ],
+  "tags": [
+    "python",
+    "programming",
+    "advanced",
+    "data-structures",
+    "functions",
+    "oop",
+    "asyncio",
+    "concurrency",
+    "metaprogramming",
+    "type-hints",
+    "software-engineering",
+    "oreilly",
+    "luciano-ramalho"
+  ],
+  "difficulty": "hard",
+  "estimatedReadingHours": 35,
+  "estimatedListeningMinutes": 2100,
+  "awards": [
+    "Widely considered the definitive book on idiomatic Python",
+    "Python Software Foundation community recommended reading",
+    "Translated into multiple languages including Chinese, Japanese, Korean, and Russian"
+  ],
+  "excerpt": "A deep dive into idiomatic Python 3 for intermediate-to-advanced developers. Luciano Ramalho guides you through the language's most powerful features — the data model, data structures, first-class functions, object-oriented idioms, control flow, and metaprogramming — so you can write code that is shorter, faster, and more readable."
+}

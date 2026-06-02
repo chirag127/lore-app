@@ -1,0 +1,137 @@
+## Overview
+
+*Clean Architecture: A Craftsman's Guide to Software Structure and
+Design* (2017) by Robert C. Martin ("Uncle Bob") is the definitive
+statement of Martin's architectural philosophy, building on his earlier
+work. It synthesizes decades of thinking about how to structure software
+for maintainability, testability, and long-term value.
+
+The book argues that architecture is about intent — the structure of
+your code should announce what the system does — and that the rules of
+good architecture are universal, independent of technology choices.
+
+---
+{}
+------|-------|-----------|
+| I | Programming Paradigms | Structured, OOP, and functional programming as architectural constraints |
+| II | SOLID Principles | The five principles of class-level design |
+| III | Component Principles | Cohesion, coupling, and component design |
+| IV | Architecture | The clean architecture pattern and the Dependency Rule |
+| V | Details | How to handle databases, web, frameworks, and UI |
+
+---
+
+## Key Takeaways
+
+1. **The Dependency Rule is absolute.** Source code dependencies must
+   point inward toward business rules and use cases. Nothing in the
+   inner circle can know about something in the outer circle.
+
+2. **Architecture should scream your intent.** When someone looks at
+   the package structure, they should immediately understand what the
+   system does — not what frameworks it uses.
+
+3. **Use cases are the center of the system.** Organize around business
+   use cases, not around technical concerns like databases or web
+   servers.
+
+4. **Decouple at boundaries.** Every boundary between a core and a
+   peripheral concern should be a seam where you can swap
+   implementations.
+
+5. **Frameworks are details.** The web is an IO mechanism. The database
+   is a persistence mechanism. They should not dictate your
+   architecture.
+
+6. **Good architecture defers decisions.** You should be able to choose
+   your database, web framework, and UI last — not first.
+
+7. **Testing independence.** Business rules must be testable without a
+   database, web server, or any infrastructure.
+
+8. **Boundaries make microservices optional.** If your architecture is
+   well-structured, you can deploy as a monolith or split later.
+
+9. **SOLID applies at all levels.** The principles scale from classes
+   to components to systems.
+
+10. **Architecture is about cost.** The primary job of the architect is
+    to minimize the lifetime cost of the system.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Software architects | The complete framework for architectural thinking |
+| Senior engineers | Understanding the 'why' behind patterns you already use |
+| Team leads | Arguments to make when frameworks constrain design |
+| Any working programmer | Perspective on how structure affects maintainability |
+
+---
+
+## Who Should Skip
+
+- Beginners still learning syntax and basic patterns (start elsewhere)
+- Developers happy with framework-first architecture who see no need
+  to change
+- Readers who want technology-specific advice (this is
+  technology-agnostic)
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|-------|-------------|
+| Dependency Rule | Dependencies point inward toward abstractions |
+| Boundaries | Seams between core and peripheral concerns |
+| Screaming Architecture | Structure reveals intent |
+| Use Case Centric | Organize around what the system does |
+| Framework Agnostic | Frameworks are tools, not structures |
+| Testability | Testing without infrastructure |
+
+---
+
+## Why This Book Matters
+
+*Clean Architecture* completes Uncle Bob's trilogy (*Clean Code*,
+*The Clean Coder*, *Clean Architecture*) that defines the professional
+programmer's mindset. It is the most complete and coherent statement of
+a particular architectural philosophy — one that prioritizes
+independence, testability, and long-term maintainability over short-term
+convenience.
+
+The book has been influential in establishing that architecture is a
+serious discipline worthy of study. It gives developers a vocabulary
+and framework for discussing trade-offs that were previously
+underexplored.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|------|--------|------------|
+| **Clean Code** | Robert C. Martin | The predecessor on code-level craftsmanship |
+| **The Clean Coder** | Robert C. Martin | Professional ethics and discipline |
+| **Designing Data-Intensive Applications** | Martin Kleppmann | A complementary focus on data systems architecture |
+| **Building Microservices** | Sam Newman | How clean architecture enables microservices decomposition |
+
+---
+
+## Final Verdict
+
+*Clean Architecture* is essential reading for any senior engineer or
+architect. The principles are sound, the arguments are well-reasoned,
+and the pattern provides genuine benefits for systems with complex
+business logic.
+
+But the book is not without limits. The architecture is verbose for
+simple systems. The framework-skepticism can go too far. And the book
+offers less guidance on distributed systems, data architecture, and
+operational concerns than the title might suggest.
+
+**Rating: 8/10** — Required reading for architects, but best applied
+with judgment about where the overhead is justified.

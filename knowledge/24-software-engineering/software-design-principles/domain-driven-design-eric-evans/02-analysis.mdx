@@ -1,0 +1,221 @@
+## Strengths
+
+- **It defined an entire field.** Before 2003, "model-driven" approaches
+  to software were discussed but not systematized. Evans provided the
+  vocabulary ("Ubiquitous Language," "Bounded Context," "Anti-Corruption
+  Layer," "Context Map"), the conceptual architecture (tactical vs.
+  strategic design), and the philosophical frame (the model as a
+  hypothesis to be refined, not a specification to be implemented).
+  Every team using DDD today — whether they know it or not — is using
+  language and concepts invented in this book.
+
+- **The Ubiquitous Language is genuinely transformative.** This single
+  idea — that a shared, rigorously enforced vocabulary is the mechanism
+  by which domain knowledge propagates into code — has more practical
+  impact per sentence than most technical books achieve in an entire
+  chapter. A team that simply adopts this discipline, nothing else, will
+  produce significantly better software than one that does not.
+
+- **The strategic design section is ahead of its time and still
+  unmatched.** The notion that large software systems are defined by
+  *the boundaries between models* rather than by what is inside any
+  single model was novel in 2003. It is now the conceptual basis of
+  microservices architecture, with bounded contexts directly mapping to
+  service boundaries in production systems at every major technology
+  company. The pattern vocabulary for context mapping — Conformist,
+  Customer/Supplier, Published Language, Shared Kernel — remains the
+  most complete and usable treatment available.
+
+- **Model-Health Loop reframed iteration.** Evans' key insight — that
+  understanding the domain *improves through the act of implementing the
+  model*, not before it — is now standard in Agile practice but was
+  radical in 2003, when "analysis before implementation" was still
+  orthodoxy. The continuous loop of collaborative learning, model
+  refinement, implementation, and feedback is the right way to think
+  about software development for complex domains. It is the engine
+  behind modern practices like event storming and domain storytelling.
+
+- **The book resists framework capture.** In an era when every design
+  book tends to become a how-to for its author's preferred stack,
+  DDD's arguments are almost entirely stack-neutral. You can apply every
+  idea — Ubiquitous Language, Bounded Contexts, Aggregates,
+  Anti-Corruption Layers — on J2EE, Spring, Django, .NET, Node.js,
+  Elixir, Go, or a platform you have not heard of yet. This is a sign of
+  conceptual depth, not shallow technique.
+
+- **Grounded in real failures.** Unlike many design books written by
+  academics or framework authors, DDD reads like a field report from
+  someone who has watched projects fail for the exact reasons he
+  describes. The shipping-company case study, which recurs throughout
+  the book, is drawn directly from Evans' consultancy. The honesty
+  about the difficulty of the methodology — the admission that most
+  teams will not have the budget or access to domain experts to do it
+  properly — is unusual and credible.
+
+---
+
+## Weaknesses
+
+- **It is approximately twice as long as it needs to be.** The book
+  runs 560 pages. The core argument could be presented in roughly
+  250–300. Significant portions of Part III and Part IV repeat
+  concepts introduced earlier, often in slightly different language,
+  without adding information. Readers who prefer dense, efficient texts
+  will experience frustration.
+
+- **The tactical pattern section is thin.** Entities, Value Objects,
+  Aggregates, Repositories, Factories, and Domain Services receive
+  approximately three chapters (roughly 150 pages). The operational
+  detail — transaction boundaries, concurrency in aggregates,
+  serialization of value objects, repository indexing strategies — is
+  either deferred to other authors (Fowler, Vernon) or handled in the
+  "left to the reader" coverage.
+
+- **The prose resists skimming.** Evans writes in long, looping
+  sentences that build toward a point made miles before. The chapter
+  summaries are often as long as the chapter they summarize. There are
+  duplicated passages — identical paragraphs appearing a few pages apart.
+  This is not a book to consume quickly.
+
+- **The case studies are thin.** The recurring Cargo shipping example is
+  well-chosen but repeatedly truncated. Useful as an anchor, it is not
+  threaded through enough of the tactical patterns with enough depth to
+  serve as a step-by-step implementation tutorial. Many readers finish
+  Part II wanting more worked examples.
+
+- **The organizational sections are ahead of their time but
+  under-specified.** Context Maps, Bounded Contexts, and the Core Domain
+  concepts are now standard in microservices and large-enterprise
+  software design, but in 2003 they had almost no tooling, patterns, or
+  community support. The book presents the ideas clearly but does not
+  provide a workshop format, a decision framework, or a migration path
+  for organizations with messy existing systems. Practitioners in 2024
+  can find better operational guidance in Vaughn Vernon, Alberto
+  Brandolini, and the DDD Crew resources.
+
+- **It predates functional programming's mainstream influence.** The
+  tactical patterns inherit their object-oriented assumptions —
+  identity, object lifetime, mutability patterns. Some DDD concepts
+  (especially Aggregates and their consistency boundaries) translate
+  cleanly to functional or event-sourced design. Others (Entity lifecycle
+  management via repositories) require rethinking. The book does not
+  anticipate this shift, which has significant relevance to modern
+  implementors.
+
+---
+
+## Criticism
+
+### "DDD is overkill for most projects"
+
+The most common criticism in professional circles is that DDD is an
+elaborate methodology for problems that most teams do not actually
+have. A startup building a SaaS dashboard with 20 table-based entities,
+standard authentication, and no domain-specific rules arguably does not
+need Bounded Contexts, Aggregates, or Anti-Corruption Layers. They need
+a schema and some controller actions.
+
+**Counterargument:** The criticism is valid when applied
+indiscriminately. DDD itself is explicit about when to apply and when
+not to: "use judgment." The tactical patterns (Ubiquitous Language,
+named invariants in the model) are lightweight and provide value even
+in small projects. The strategic patterns (Bounded Contexts, Context
+Maps) are heavyweight and appropriate only when the organization and
+domain genuinely demand them. The mistake is not using DDD; the mistake
+is using *all of it all the time*. Most teams benefit enormously from
+chapters 1–4 and the Ubiquitous Language discipline. They do not need
+Part IV unless they are large.
+
+### "The tactical patterns are just GoF patterns with new names"
+
+A persistent critic notes that entities, value objects, and aggregates
+are variations on familiar OO design patterns (Identity Map, Immutable
+Value, Composite) with new jargon applied. Factories and Repositories
+in particular map closely to existing creational and data-access
+patterns.
+
+**Counterargument:** The patterns are *not* new; DDD is not
+patenting new algorithms. What is new is the *relationship between the
+patterns and the domain model*. A GoF Factory creates objects. A DDD
+Factory creates *valid aggregates* — objects whose invariants must hold
+against an entire conceptual subgraph, not just a single instance. The
+purpose, the contract, and the responsibility are different. The
+similarity in appearance is because both are applying good OO design;
+the distinction in intent is what makes DDD useful.
+
+### "The Ubiquitous Language is just a glossary"
+
+Critics argue that naming things consistently is a hygiene practice,
+not an architectural methodology. The response to "use the same word"
+with "it's just a glossary" misses the *rigor* of the discipline: the
+same word in code, in documentation, in conversation, in commit
+messages, in architecture diagrams. The cost of inconsistency is not
+documentation debt. It is model drift, which manifests as bugs, misaligned
+expectations, and developers and domain experts talking past each other
+in meetings.
+
+### "Aggregates add unnecessary complexity"
+
+Some experienced developers argue that the Aggregate pattern —
+enforcing a strict consistency boundary around a cluster of objects —
+creates operational burden (distributed transactions, eventual
+consistency, cross-aggregate queries) without compensating benefit in
+systems that can tolerate weaker consistency.
+
+**Counterargument:** The pattern is a *trade-off*, not a mandate.
+Aggregates exist to solve a specific problem: when multiple objects must
+be kept consistent under business rules, and where the cost of
+inconsistency exceeds the cost of a transactional boundary. The book is
+explicit that many aggregates can be very small — a single entity with
+a handful of value objects. The operational complexity only multiplies
+when you have many large aggregates. If your domain has no invariants,
+you do not need aggregates; treat everything as a CRUD table and move
+on. The pattern is a tool, not a religion.
+
+### "Estimation rubs readers the wrong way"
+
+Readers frequently note that the "20 hours" or "560 pages — read slowly"
+meta-commentary feels patronizing or that the book requires more time
+and patience than a typical software book demands. Particularly given
+the redundancy, the feeling that one is being told to "just keep
+reading" past the point where the information density justifies the
+time is common.
+
+**Counterargument:** Evans is describing experience with the *actual
+material*, not prescribing arbitrary difficulty. The argument that the
+model must be iteratively refined and that each chapter builds on a
+foundation that takes time to establish genuinely requires slower
+reading. The redundancy, while frustrating, serves a pedagogical
+function: reinforcement of a conceptual vocabulary that is not
+universal in software engineering. The book is a marathon. Treating it
+as a sprint is the wrong framing, not the book's failure.
+
+### "It lacks implementation detail for modern stacks"
+
+Published in 2003, the book predates most of the modern ecosystem
+in which DDD is practiced — event sourcing, CQRS, cloud-native
+microservices, Kafka, Kubernetes, and functional/actor-based languages.
+Implementation details are minimal, and some patterns (repositories)
+do not map cleanly onto modern ORMs or NoSQL stores.
+
+**Counterargument:** The book is intentionally stack-neutral. Providing
+implementation details for 2003-era stacks would date it faster. Its
+mode is conceptual, not operational. Teams today have access to
+Vaughn Vernon's *Implementing Domain-Driven Design* (2013), the DDD
+Crew on GitHub, and a growing literature on functional DDD to fill in
+the operational gap. The conceptual argument does not need updating;
+the implementation guidance always needed supplementing.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|-----------|----------|
+| "Overkill for most projects" | Valid — applies these patterns proportionally. Use the Ubiquitous Language discipline on every project; reserve strategic design for genuinely large domains. |
+| "Tactical patterns are just GoF patterns renamed" | They are related in surface form but differ in *intent and contract*. The patterns are vehicle, not destination. |
+| "Ubiquitous Language is just a glossary" | The rigor (same word, everywhere, enforced continuously) is the discipline, not the list. |
+| "Aggregates add unnecessary complexity" | They solve a real problem. Use them when you have invariants to enforce. Skip them when you do not. |
+| "No implementation detail for modern stacks" | The conceptual argument is stack-neutral by design; modern implementation guidance has grown up around it. |
+| "Too long, too redundant" | True. The redundancy serves reinforcement. Read strategically, not linearly. |
+| "Predates FP, event sourcing, microservices" | DDD predates but arguably foreshadowed all three. Its strategic vocabulary was the conceptual source for bounded-context microservices. |

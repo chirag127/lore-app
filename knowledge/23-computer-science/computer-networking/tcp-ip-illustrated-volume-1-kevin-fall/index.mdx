@@ -1,0 +1,153 @@
+## Overview
+
+*TCP/IP Illustrated, Volume 1: The Protocols* is the working engineer's
+vade mecum for the Internet. The 1994 first edition by W. Richard Stevens
+defined a generation's understanding of how packets actually move; the
+2011 second edition, completed by Kevin R. Fall after Stevens' untimely
+death in 1999, preserves the bottom-up, trace-driven pedagogy while
+expanding coverage to IPv6, modern link layers, and contemporary
+applications. It is not a textbook of abstract models — it is a tour of
+the real Internet, examined packet by packet.
+
+---
+{}
+------|----------|----------|
+| Introduction | 1–2 | Architecture, layering, the Internet and the protocol suite |
+| Link Layer | 3–4 | Ethernet, 802.11, SLIP, PPP, loopback, MTU, path MTU |
+| IPv4 and IPv6 | 5–10 | IP headers, forwarding, subnetting, CIDR, ICMP, ARP, RARP |
+| Routing | 9–10 | Interior and exterior routing, OSPF, BGP, multicast routing |
+| Transport | 11–18 | UDP, TCP (state machine, timers, flow/congestion control in depth) |
+| Applications | 19–28 | DNS, TFTP, BOOTP, DHCP, SNMP, FTP, SMTP, HTTP, NFS, RPC, telnet, SSH |
+| Advanced | 29–31 | Multicast, IGMP, mobile IP, IPv6 transition, security hooks |
+
+---
+
+## Key Takeaways
+
+1. **The packet is the unit of truth.** A network protocol is a contract
+   encoded in bytes; Stevens forces you to read those bytes until the
+   contract is no longer mysterious.
+2. **TCP is a closed-loop control system, not a wire.** The state
+   machine, the seven timers (connection-establishment, retransmission,
+   delayed-ACK, persist, keep-alive, FIN_WAIT_2, TIME_WAIT), the
+   sliding window, slow start, congestion avoidance, fast retransmit,
+   and fast recovery are all modeled explicitly.
+3. **The BSD socket API is the lingua franca.** Every application
+   protocol is shown in C against `socket`, `bind`, `connect`, `accept`,
+   `select`, `poll`, and the read/write/close lifecycle. Read this and
+   the man pages start to make sense.
+4. **IPv4 and IPv6 are presented in parallel.** The 2nd edition treats
+   IPv6 not as an appendix but as a first-class citizen, and shows the
+   dual-stack transition mechanisms (DNS A/AAAA, Happy Eyeballs,
+   tunneling).
+5. **ARP and ICMP are the connective tissue.** They are easy to skip in
+   a survey course, but every troubleshooting session eventually
+   bottoms out in `arp` resolution, `traceroute`, or a "destination
+   unreachable" code.
+6. **The transport layer is the seat of fairness and stability.** TCP's
+   AIMD-based congestion control is what keeps the Internet from
+   collapsing; UDP's absence of it is what lets DNS and VoIP be fast.
+7. **Naming, bootstrapping, and configuration are protocols too.**
+   DNS, BOOTP, DHCP, and RARP are how a bare host becomes a network
+   participant. Stevens walks through real `tcpdump` output for each.
+8. **Application protocols are stateful text conversations with their
+   own dialects.** FTP's two channels, SMTP's HELO/EHLO/MIME
+   negotiations, HTTP/1.1's persistent connections, NFS's XDR
+   encoding, and SNMP's ASN.1/BER are documented from the wire, not
+   from the spec.
+9. **The end-to-end argument is the philosophical bedrock.** Keep the
+   network dumb, put the smarts in the endpoints. This is why TCP
+   survives NAT, why IPsec has struggled, and why HTTP/3 over QUIC
+   bothers to reinvent the transport.
+10. **The book is a working reference, not a one-time read.** The
+    diagrams, the state tables, the time-line figures are designed to
+    be thumbed through at 2 a.m. during an outage.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Network and platform engineers | The trace-based treatment of TCP is unmatched for understanding real-world behavior |
+| Backend and systems programmers | Sockets, DNS, HTTP, NFS — the protocols that programs actually use |
+| Security researchers | Packet-level intuition is the foundation of protocol fuzzing and traffic analysis |
+| Computer science students | The depth of TCP and IP coverage supplements a survey text like Kurose & Ross |
+| Certification candidates | CCNA/Network+ candidates benefit from the rigorous model behind the configuration commands |
+| Kernel and embedded developers | The state machine, timers, and BSD socket lifecycle map directly to implementation work |
+| Computer historians and protocol enthusiasts | The 1994 edition captures a snapshot of the early commercial Internet |
+
+---
+
+## Who Should Skip
+
+- Readers seeking a one-semester undergraduate survey — Kurose & Ross
+  is shorter and more pedagogically streamlined
+- Practitioners who only need cloud-provider or Kubernetes networking
+  abstractions — this book is about the wire, not the orchestrator
+- Anyone needing a modern, application-first treatment of HTTP/2,
+  HTTP/3, QUIC, gRPC, or service mesh — Stevens' era predates these
+- Mobile and wireless specialists looking for an LTE/5G treatise — the
+  link-layer coverage is classic Ethernet and 802.11, not cellular
+- Readers uncomfortable with C and bit-level header layouts
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|-------|-------------|
+| Bottom-Up Pedagogy | Start with the bit, build up to the browser |
+| Traces Over Diagrams | Real `tcpdump` output anchors every claim |
+| RFC as Reference | Standards documents are cited by number, often verbatim |
+| Empirical Networking | Throughput, latency, and loss are measured, not asserted |
+| Stateful Protocols | State machines, timers, and retransmissions are the heart of TCP |
+| End-to-End Principle | The architecture that lets the Internet survive growth |
+| BSD Sockets as Substrate | One API connects every application to every transport |
+| Pragmatic IPv6 | Not an afterthought — a parallel story from the first edition |
+
+---
+
+## Why This Book Matters
+
+The Internet works because a small number of well-designed protocols
+interlock cleanly. Almost no other book explains *how* they interlock
+with the precision of Stevens. The "Illustrated" in the title is the
+method, not a marketing flourish: every concept is grounded in a
+figure showing the bytes on the wire, often printed in hex, with
+arrows pointing into the field being discussed. The 2nd edition
+preserves this method and extends it into the dual-stack era, making
+the book as relevant in 2011 and beyond as the first edition was in
+1994.
+
+Kevin Fall's stewardship of the 2nd edition deserves credit. Revising
+a beloved classic without breaking its soul is hard, and Fall
+succeeded: the chapters on TCP are substantively updated for modern
+implementations, but the voice, the discipline, and the
+uncompromising focus on what actually happens on the wire remain
+unmistakably Stevens.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|------|--------|------------|
+| *Computer Networking: A Top-Down Approach* | Kurose & Ross | The standard survey textbook; top-down, application-first |
+| *Computer Networks* | Tanenbaum | Bottom-up and more theoretical; broader, less concrete |
+| *UNIX Network Programming, Vol 1* | Stevens | The companion to this volume; focused on the Sockets API |
+| *Internetworking with TCP/IP* | Comer | Another rigorous treatment; more academic tone |
+| *Effective TCP/IP Programming* | Snader | Forty-four tips that complement the deep treatment here |
+
+---
+
+## Final Verdict
+
+*TCP/IP Illustrated, Volume 1* is the rare technical book that is
+simultaneously a first read and a permanent reference. Read it once
+to learn the protocols; keep it on the shelf for the rest of your
+career. The 2nd edition is the definitive version: it carries
+Stevens' original genius forward into the IPv6 era without dilution.
+For anyone whose work touches a network, it is mandatory.
+
+**Rating: 10/10** — The gold standard of networking texts.

@@ -1,0 +1,316 @@
+# 🎙️ Naked Statistics — The Podcast Episode
+
+**Host**: Welcome back to the show. Today we are talking about a book
+that has been on my list for years, and I am embarrassed that it took me
+this long to read it. It is called *Naked Statistics: Stripping the Dread
+from the Data* by Charles Wheelan. It is the second book in his "Naked"
+series, after *Naked Economics*, and it does for statistics what *Naked
+Economics* does for economics: it makes the subject feel like something
+ordinary humans can actually understand.
+
+Here is the honest pitch. Statistics is the most important subject most
+people never learned. Every day you are being manipulated by numbers —
+polls, medical studies, regression coefficients, "studies show" — and
+most of us, including most journalists, do not have the tools to tell
+the honest work from the dishonest work. *Naked Statistics* gives you
+those tools. It does so without a single equation in the main text, with
+stories you will actually remember, and with jokes that sometimes land.
+Let me walk you through it.
+
+---
+
+## 🎙️ The Premise — Statistics Is the Detective Work
+
+Wheelan opens with a metaphor that frames the whole book. He says: data
+is a crime scene. Something happened. There are thousands of clues
+scattered everywhere. Statistics is the detective work that turns those
+clues into a meaningful answer.
+
+This framing matters because it captures something most people miss.
+Statistics is not the math. Statistics is the *judgment* — deciding
+which numbers to look at, which to ignore, which to report, which to
+flag, and which conclusions the data will and will not support. The
+math is a tool. The judgment is the work.
+
+And here is the catch: the math is teachable, but the judgment requires
+understanding what the math is doing. That is the gap *Naked Statistics*
+fills. By the end of the book, you will not be able to fit a regression
+model. But you will know when someone else is fitting one badly, and
+that alone will save you from a lifetime of bad conclusions.
+
+---
+
+## 🎙️ The Mean Is Not the Whole Story
+
+The first tool Wheelan introduces is the mean — the arithmetic average.
+And the first thing he does with it is break it.
+
+The story: ten friends are having lunch. Their incomes range from
+$40,000 to $60,000. The mean income is $50,000. Now imagine Bill Gates
+walks into the restaurant and joins the lunch. The mean income of the
+group just leapt to over a billion dollars. Did anyone at the table get
+richer? No. The mean moved because of one extreme observation, not
+because anything changed for the typical person.
+
+The lesson: the mean is sensitive to outliers. When a distribution is
+skewed — and income, house prices, city populations, and many other
+real-world quantities are skewed — the median is the honest summary. The
+median is the true middle: sort everyone by income, pick the one in the
+center. Half are above, half below. It is not pulled by Bill Gates.
+
+This is one of the most underappreciated ideas in all of data work.
+The next time a politician tells you "the average American family" earns
+some number, ask which average they mean. If the distribution is
+skewed, the median is the truth.
+
+---
+
+## 🎙️ Standard Deviation — The Number You Were Never Taught
+
+If the mean is half the story, the standard deviation is the other half.
+It is the average distance of every data point from the mean. It tells
+you how spread out the data is. Two datasets can have the same mean and
+wildly different stories, and the standard deviation is what tells them
+apart.
+
+Wheelan's example is two SAT prep classes. Class A: every student gains
+between 45 and 55 points. Class B: half the class gains 200, half lose
+100. The mean gain in both classes is 50 points. The standard deviation
+in Class A is tiny. The standard deviation in Class B is enormous. The
+classes are not equivalent, and the mean does not tell you that.
+
+This is Wheelan's first rule of reading numbers: always ask for the
+spread. "Average income" is meaningless without the variance. "Average
+test score" is meaningless without the variance. "Average response
+time" is meaningless without the variance. The number without the
+wiggle is a half-truth, and most public numbers are half-truths.
+
+---
+
+## 🎙️ Correlation Is Not Causation — And You Will Not Believe How Often This Is Confused
+
+Wheelan devotes an entire chapter to the most abused idea in all of
+data analysis: confusing correlation with causation. The example he
+uses is the canonical one, and it is funny because it is true. Ice
+cream sales and drowning deaths both peak in summer. They are perfectly
+correlated. Neither causes the other. The missing variable — the
+confounder — is the season.
+
+The deeper lesson: a correlation tells you that two things move
+together. It does not tell you why. There are at least four possible
+explanations for any correlation. (1) A causes B. (2) B causes A — the
+reverse causation problem. (3) A and B are both caused by C, the
+confounder. (4) Coincidence. To claim a causal relationship, you need
+a fifth piece of information — a theory, a randomized experiment, a
+natural experiment, a time order, a dose-response curve — that rules
+out the other three.
+
+The killer example Wheelan returns to is the Women's Health Initiative.
+For decades, observational data showed that women who took estrogen
+after menopause had lower rates of heart disease. The regression
+coefficient was large, the p-value was tiny, and millions of women were
+prescribed the drug. Then the WHI — a proper randomized trial of
+16,000 women — was completed in 2002. It found the opposite. Estrogen
+*increased* the risk of heart disease, stroke, and breast cancer. The
+trial was halted early. A 2003 *New York Times Magazine* estimate
+suggested tens of thousands of premature deaths. The cause of the
+disaster: observational regression treated as a prescription. The
+correlation was real. The causal inference was wrong. People died.
+
+The takeaway: a regression coefficient is a hypothesis, not a
+prescription. Until you have a randomized trial, the policy
+implications are tentative. This is the most important lesson in the
+book, and the one most worth tattooing on your forearm.
+
+---
+
+## 🎙️ The Monty Hall Problem — Why Your Gut Is Wrong About Probability
+
+Now we come to the chapter Wheelan considers the heart of the book,
+and the one I am about to ruin by trying to explain in two minutes. The
+set-up: a game show, three doors, a car behind one, goats behind the
+other two. You pick a door. The host, who knows where the car is,
+opens a different door to reveal a goat. He offers to let you switch
+to the remaining unopened door. Should you switch?
+
+The answer, which is correct, is yes. Switching doubles your chance
+of winning. The probability your original pick is right is 1/3, and it
+never changes. The probability the car is behind one of the other two
+doors is 2/3. The host has just revealed a goat behind one of those
+two. The 2/3 collapses onto the single remaining unopened door.
+Switching wins 2/3 of the time. Staying wins 1/3 of the time. This is
+the correct answer, and it has been confirmed by experiment, and it
+has been rejected by thousands of people, including a few thousand
+with PhDs in mathematics, on first contact.
+
+Wheelan uses a 100-door version to make it obvious. Imagine 100 doors.
+You pick one. The host opens 98 doors to reveal goats. Two doors
+remain — yours and one other. Are you really going to stick with
+your original 1-in-100 guess, or are you going to switch to the door
+the host has deliberately avoided? The host's behavior is the
+information, and it points overwhelmingly to the unopened door.
+
+The deeper lesson Wheelan draws: human intuition about probability is
+notoriously wrong. The gambler's fallacy (a coin that has come up
+heads ten times in a row is not more likely to come up tails on the
+next flip). The hot-streak fallacy (a basketball player who has made
+ten shots in a row is not more likely to make the eleventh). The
+prosecutor's fallacy (a defendant who matches the DNA profile of 1
+in 10,000 people is not necessarily guilty because the test came up
+positive — there are 30,000 people in the country with that profile).
+All of these errors come from treating independent events as connected,
+or from confusing the probability of the evidence given the hypothesis
+with the probability of the hypothesis given the evidence.
+
+The cure is to run the math. Every time. Even when your gut is
+screaming. Especially when your gut is screaming.
+
+---
+
+## 🎙️ The Central Limit Theorem — The Wizard Behind the Curtain
+
+Now we get to the most important idea in the book. The central limit
+theorem.
+
+Take any population, no matter how weirdly distributed. Draw a large
+enough random sample, repeat the sampling process many times, and the
+distribution of sample means will look like a bell curve, centered on
+the true population mean. The theorem does not require the population
+itself to be normal. It does not require a huge sample — usually 30
+is plenty. It works for incomes, heights, dice rolls, anything with a
+finite variance. It is the reason polls work, the reason clinical
+trials work, the reason quality control works, the reason weather
+forecasts work.
+
+Wheelan describes it as "the wizard behind the curtain." Without it,
+none of the empirical work that has shaped the modern world — from
+election forecasts to drug approvals to economic indicators — would be
+possible. With it, you can take a small sample and say something
+defensible about a huge population. The variability of the sample mean
+shrinks as 1 over the square root of the sample size. To halve the
+margin of error, you must quadruple the sample. To go from 3% to 0.3%,
+you need 100 times the data. Diminishing returns set in early.
+
+The standard error is the standard deviation of the sampling
+distribution. It is the "wiggle room" in a sample mean. A poll that
+says "52% plus or minus 3%" is reporting a sample statistic (52%)
+with its standard error (3%). The plus-or-minus is the humility. A
+poll that reports "52%" with no margin is hiding the same humility
+behind false precision.
+
+This is the engine that turns a sample into a population claim. Once
+you have internalized the central limit theorem, you have internalized
+most of what statistics has to say about the empirical world.
+
+---
+
+## 🎙️ Inference — From a Sample to a Defensible Claim
+
+The central limit theorem gives you the shape. Inference is the
+discipline of using that shape to make a claim you can defend.
+
+A confidence interval is a range constructed by a procedure that
+captures the true population value 95% of the time, in the long run.
+The 95% refers to the procedure, not to the specific interval you just
+computed. The true value is either in this interval or it is not, and
+we don't know which. We only know the procedure is right 95% of the
+time across many samples. This subtle but important distinction trips
+up most non-statisticians (and most journalists). Wheelan handles it
+well.
+
+A p-value is the probability, assuming the null hypothesis is true, of
+seeing data at least as extreme as the data you observed. If that
+probability is below 0.05, the result is "statistically significant."
+The 0.05 threshold is a convention set by Ronald Fisher in the 1920s.
+It is a habit, not a law of nature. And when researchers run many
+tests on the same data, the multiple comparisons problem guarantees
+false positives.
+
+Wheelan's exhibit A is the 2009 study by Bennett, Wolford, and
+Miller. They placed a dead Atlantic salmon in an fMRI machine, showed
+it emotional photographs, and ran a standard analysis. The result
+showed significant brain activity in the dead fish. The point: running
+130,000 comparisons on a single brain scan will turn up "activity" by
+chance, even in dead tissue.
+
+This is the most vivid image in the book, and it is now a teaching
+tool in statistics courses worldwide. The lesson is durable: a single
+p-value of 0.04 in a study that ran 50 tests is worthless. Always ask
+how many comparisons were run. Always correct for multiple testing.
+
+---
+
+## 🎙️ Regression Analysis — The Workhorse, And Its Dangers
+
+The last third of the book is about regression analysis, the
+workhorse of modern empirical work. Regression isolates the
+relationship between an outcome variable and one or more predictors
+while holding the others constant. The slope of the fitted line is the
+estimated effect of the predictor on the outcome, controlling for the
+other variables in the model.
+
+The chapter is short, and the book is the weaker for it. Regression is
+the most-used tool in the empirical world, and Wheelan gives it only
+two chapters. But he does catalogue the seven common ways it goes
+wrong: linear fit on a nonlinear relationship, correlation confused
+with causation, reverse causation, omitted variable bias, multicollinearity,
+extrapolation beyond the data, and outliers. The seventh is the
+deadliest. Omitted variable bias — failing to include a key confounder
+in the model — quietly attributes the missing variable's effect to
+whatever is in the model. The resulting coefficient is biased, and
+the bias is invisible.
+
+The Women's Health Initiative is Wheelan's primary cautionary tale.
+The estrogen catastrophe is the canonical case of an omitted variable
+in observational research: the women who took estrogen after menopause
+were also, on average, healthier, wealthier, and more engaged with the
+healthcare system than the women who did not. The regression that
+attributed the lower heart disease rate to the hormone was actually
+attributing it to those omitted variables. The randomized trial
+revealed the truth. People died.
+
+Wheelan's recommendation: treat any regression result as a hypothesis
+to be tested, not a conclusion to be deployed. Especially when the
+policy stakes are high.
+
+---
+
+## 🎙️ Final Thoughts
+
+Here is what I ultimately think about *Naked Statistics*.
+
+It is not the most rigorous book on statistics. If you want deep dives
+into the math, you need a textbook. It is not the most ambitious. If
+you want modern causal inference, you need *The Book of Why*. It is
+not the most philosophically sophisticated. If you want the critique
+of the entire empirical enterprise, you need *The Black Swan*.
+
+But *Naked Statistics* may be the most useful book on statistics for
+the general reader. It is the one I would give to a math-anxious
+journalist. It is the one I would recommend to a manager drowning in
+dashboards. It is the one I would put in the hands of anyone who has
+ever said "I am not a numbers person" and then watched themselves
+manipulated by a poll or a study.
+
+The book's central message is genuinely empowering: the numbers you
+encounter every day are not magic. They are the product of choices —
+about samples, about models, about significance thresholds, about
+confounders. Those choices can be good or bad. You do not need a
+PhD to recognize the difference. You need the mental models
+Wheelan provides: the mean is not the middle, the standard deviation
+is half the story, correlation is not causation, your gut is wrong
+about probability, the central limit theorem is the reason the world
+is knowable, and a regression coefficient is a hypothesis, not a
+prescription.
+
+These are durable ideas. They will be correct ten years from now and
+fifty years from now. They are the operating system of empirical
+reasoning, and most adults in 2026 still do not have them installed.
+
+This has been a BookAtlas narration of *Naked Statistics* by Charles
+Wheelan. Read it. Then read a poll. Then read a study. Then read a
+regression. You will see things you have never seen before.
+
+**Outro**: If this episode helped you look at a number with a little
+more skepticism, share it with someone who needs it. We will be back
+next week with another book worth knowing.

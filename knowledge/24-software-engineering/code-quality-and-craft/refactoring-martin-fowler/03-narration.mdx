@@ -1,0 +1,236 @@
+---
+title: Guided Narration
+subtitle: A walk-through of the refactoring process with the book as your guide
+---
+
+## Narration Script
+
+This narration walks through the mindset and process of refactoring
+as presented by Martin Fowler. It is designed for listening alongside
+the reading of Chapter 1 (the opening example) or as a standalone
+orientation.
+
+---
+
+### 1. The Problem
+
+Every codebase begins clean. Then features pile on. Deadlines loom.
+Developers take shortcuts. The code becomes harder to understand,
+harder to change, harder to debug. This is software entropy — it is
+inevitable unless you actively fight it.
+
+Most developers respond to messy code in one of two ways: tolerate
+it until the codebase is unworkable, then demand a rewrite; or
+nibble at the edges without a systematic approach. Both fail. The
+first produces "second system effect" disasters. The second
+produces marginal improvement with high risk.
+
+Refactoring offers a third way: disciplined, systematic improvement
+that never breaks the code.
+
+---
+
+### 2. The Mindset
+
+Before you learn the mechanics, you need to adopt the mindset:
+
+1. **Design is not a phase.** You do not design upfront and then
+   implement. Design is an ongoing activity that happens as you
+   work with the code.
+2. **The code is a living thing.** It changes, it grows, it decays.
+   Your job is not to build it once and walk away. Your job is to
+   keep it healthy over its entire life.
+3. **Two hats.** At any moment, you are either adding features or
+   refactoring. You never do both at once. When refactoring, you
+   add no new functionality. When adding features, you do not
+   restructure. This separation is essential for discipline.
+4. **Write tests first.** You cannot refactor code you cannot test.
+   The test suite is your safety net. Without it, every change is
+   a gamble.
+
+---
+
+### 3. Following the Opening Example
+
+Fowler's signature example is a theater billing program. Let us
+follow the thought process:
+
+**Step 1: Understand what the code does.** The program calculates
+a statement of charges for theater performances. It takes a list of
+plays and a list of performances and prints a bill. Simple business
+logic, but the implementation is one long function with conditional
+complexity.
+
+**Step 2: Identify the smells.** The main function is long. It
+mixes calculation with formatting. Names like `perf` and `play`
+are unclear. There are magic numbers (audience thresholds). The
+volume credits calculation is duplicated. Switch statements on type
+codes appear in both the amount calculation and the volume credits
+calculation.
+
+**Step 3: Build the test suite.** Before touching a single line,
+capture the current behavior in tests. The tests describe what the
+program does — preserve that behavior through every transformation.
+
+**Step 4: Extract, extract, extract.** The first refactoring is
+always Extract Function. Find a coherent block of logic. Give it a
+name. Pull it out. Test. Now the main function is one line shorter
+and one concept clearer.
+
+**Step 5: Rename.** Now that the logic is extracted, the names that
+made sense in context are no longer sufficient. `amountFor` needs a
+better parameter name. The variable `thisAmount` is opaque. Rename
+everything until the code reads like prose.
+
+**Step 6: Move.** The amount calculation looks at play data but
+lives in the statement function. Move it to where the data lives.
+In OOP: move to the `Performance` class. In functional style: move
+to the data transformation pipeline.
+
+**Step 7: Replace Conditional with Polymorphism.** The switch
+statement on play type is the central smell. Different play types
+(tragedy, comedy) calculate differently. Create subclasses or a
+type object. Each type implements its own calculation. The switch
+statement disappears. Adding a new type means adding a new class,
+not editing existing code.
+
+**Step 8: Split Phase.** Now the calculation is clean, but it is
+still mixed with formatting. Split the processing into two phases:
+calculate the data, then format it. This allows different formats
+(HTML, text, JSON) without recalculating.
+
+---
+
+### 4. Common Mistakes
+
+- **Refactoring without tests.** This is not refactoring — it is just
+  rewriting and hoping.
+- **Too-large steps.** The temptation is to make big changes. Resist.
+  A refactoring step should take minutes, not hours. If it takes
+  longer, you are doing too much at once.
+- **Refactoring and features together.** You will inevitably add a bug
+  if you mix the two. Use the two-hat discipline.
+- **Over-refactoring.** Not every smell needs to be fixed today.
+  Particularly with Speculative Generality and Lazy Class — sometimes
+  the simplest fix is deletion.
+- **Ignoring the human factor.** Refactoring changes code your
+  teammates know. Rename carefully. Communicate. Do not refactor
+  a module that is being actively developed by someone else.
+
+---
+
+### 5. The Rule of Three
+
+Fowler's rule for when to refactor has become famous:
+
+- **First time:** just do it
+- **Second time:** tolerate the duplication — you still do not know
+  if the pattern will repeat
+- **Third time:** now you see the pattern clearly — refactor
+
+This is the antidote to premature abstraction. Many developers
+abstract too early, creating indirection that turns out to be wrong.
+The Rule of Three forces you to wait until you have enough data to
+design the right abstraction.
+
+---
+
+### 6. The Two-Hat Metaphor
+
+Imagine wearing two physical hats:
+
+- **Feature hat:** your goal is to add new functionality. Test
+  coverage must stay the same or improve. Design quality may
+  decrease temporarily (that is acceptable during feature work).
+- **Refactoring hat:** your goal is to improve design. No new
+  functionality. Test coverage should improve. The program's
+  behavior must be identical before and after.
+
+Switch hats frequently — alternating feature work with refactoring
+is the rhythm of sustainable development.
+
+---
+
+### 7. The Refactoring Catalog
+
+The bulk of the book (and this narration) is the catalog. Treat it
+as a reference, not a novel. Each entry contains:
+
+- **Name:** A consistent, memorable name that becomes part of your
+  vocabulary
+- **Sketch:** A before-and-after diagram showing the transformation
+- **Motivation:** Why you would use this refactoring, and what smell
+  it addresses
+- **Mechanics:** Step-by-step instructions. Follow them exactly until
+  the mechanics become automatic
+- **Example:** A concrete code transformation from start to finish
+
+The most important refactorings to learn first:
+
+1. **Extract Function** — the workhorse. Find a block, extract it,
+   name it. Solve 80% of design problems with this alone.
+2. **Rename Variable** — the cheapest improvement. A good name
+   prevents confusion.
+3. **Move Function** — put behavior where it belongs.
+4. **Split Phase** — separate distinct processing stages.
+5. **Replace Conditional with Polymorphism** — the signature
+   refactoring for cleaning up type-based switches.
+6. **Introduce Parameter Object** — reduce long parameter lists.
+7. **Replace Primitive with Object** — the first step toward a richer
+   domain model.
+
+---
+
+### 8. The 2nd Edition Changes
+
+If you are coming from the 1st edition, the key differences:
+
+- **Language shift:** Java → JavaScript. The 2nd ed uses a
+  JavaScript theater billing example. The code is simpler and more
+  accessible.
+- **Class-centric → function-centric:** The 1st edition assumed
+  classes as the fundamental organizational unit. The 2nd edition
+  recognizes functions as first-class refactoring targets.
+- **17 new refactorings** including Split Phase, Replace Primitive
+  with Object, Introduce Parameter Object, and Replace Loop with
+  Pipeline.
+- **10 refactorings removed:** those that were Java-specific or
+  class-centric in ways that did not translate.
+- **Web-first model:** the canonical version is the website. The
+  print book has 63 refactorings; 5 more are web-only.
+- **No scope expansion:** the 2nd edition deliberately does not
+  cover new topics. It improves the same scope as the 1st.
+
+---
+
+### 9. The Long Game
+
+Refactoring mastery takes years. The path:
+
+- **Month 1:** Learn Extract Function and Rename Variable. Apply them
+  everywhere. See the difference.
+- **Year 1:** Internalize the code smells. Start seeing them in your
+  own code, then in everyone else's.
+- **Year 2-3:** The catalog becomes automatic. You stop looking up
+  mechanics. You refactor without thinking about it.
+- **Year 5+:** You develop architectural judgment. You know when NOT
+  to refactor. You see the trade-offs between refactoring and
+  rewriting. You guide teams through major codebase improvements.
+
+---
+
+### 10. Final Words
+
+Refactoring is not about making code pretty. It is about keeping
+code cheap to change. A codebase that is easy to modify is a
+strategic asset. A codebase that is hard to modify is a strategic
+liability.
+
+Fowler's book is the proven path from liability to asset. Study the
+catalog. Practice the mechanics. Build the test suite. And never
+forget the two-hat discipline.
+
+One final rule: **leave the codebase a little better than you found
+it.** The Boy Scout Rule for code. If everyone does this, the
+codebase gets better over time. If no one does, it decays until
+rewrite is the only option.

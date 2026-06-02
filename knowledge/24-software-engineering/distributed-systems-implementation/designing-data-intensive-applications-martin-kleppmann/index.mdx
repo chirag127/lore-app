@@ -1,0 +1,142 @@
+## Overview
+
+*Designing Data-Intensive Applications* (2017) by Martin Kleppmann is
+the definitive guide to understanding the fundamental principles behind
+modern data systems. Kleppmann peers under the hood of the databases,
+message queues, and stream processors we use every day, revealing the
+distributed systems research that powers them.
+
+The book is organized in three parts: foundational concepts (reliability,
+scalability, maintainability), distributed data mechanics (replication,
+partitioning, transactions), and derived data (batch processing, stream
+processing, the future of data systems).
+
+---
+{}
+------|-------|-------------|
+| I | Foundations of Data Systems | Reliable, Scalable, Maintainable; Data Models; Storage & Retrieval; Encoding |
+| II | Distributed Data | Replication; Partitioning; Transactions; Distributed Systems Trouble |
+| III | Derived Data | Batch Processing; Stream Processing; Consistency; The Future |
+
+The book is not a cookbook of specific technologies. It is a
+framework for reasoning about trade-offs — consistency vs. availability,
+optimistic vs. pessimistic concurrency, LSM-trees vs. B-trees, batch
+vs. stream.
+
+---
+
+## Key Takeaways
+
+1. **Reliability means the system works correctly even when things go
+   wrong.** Faults are inevitable — hardware, software, human. Design
+   for failure.
+
+2. **Scalability is not about raw performance.** It is about how the
+   system behaves under increased load. Define your load parameters
+   first; optimize second.
+
+3. **Maintainability is the most underrated property.** Most costs are
+   in operations, not development. Systems should be operable, simple,
+   and evolvable.
+
+4. **There is no single best data model.** Relational, document, and
+   graph models each serve different use cases. The choice is a trade-off
+   between expressiveness and simplicity.
+
+5. **Replication strategies involve fundamental trade-offs.** Single-
+   leader, multi-leader, and leaderless replication each handle
+   failures and conflicts differently.
+
+6. **Transactions are not dead.** Despite NoSQL hype, ACID transactions
+   remain the most reliable tool for maintaining data integrity. But
+   weak isolation levels can be acceptable under certain conditions.
+
+7. **Distributed systems are fundamentally harder.** Unreliable networks,
+   clock synchronization, process pauses — these are not bugs but
+   inherent properties of distributed environments.
+
+8. **Batch and stream processing are converging.** The Lambda
+   Architecture and Kappa Architecture show that batch and stream can
+   be unified under a single processing model.
+
+9. **Consistency is a spectrum.** From eventual to strong, each level
+   has different guarantees and costs. Choose the weakest consistency
+   that your application can tolerate.
+
+10. **The future is event-driven.** Log-based architectures and event
+    sourcing provide auditability, flexibility, and decoupling that
+    traditional databases cannot match.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Software engineers building data-intensive apps | Foundational knowledge for every design decision |
+| Backend and infrastructure engineers | Deep understanding of the systems you operate |
+| Data engineers and architects | Framework for choosing and combining data tools |
+| Anyone preparing for system design interviews | Covers 80% of concepts tested at top tech companies |
+| Engineering managers | Understand trade-offs to guide technical decisions |
+
+---
+
+## Who Should Skip
+
+- Beginners with no database or web application experience — read a
+  practical programming book first
+- Anyone seeking product-specific tutorials — this is principles, not
+  recipes
+- Readers wanting lightweight content — the material is dense and
+  requires sustained attention
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|---|---|
+| Trade-offs, not silver bullets | Every architectural choice has costs and benefits |
+| Foundations over fads | Understand the research beneath the hype |
+| Distributed systems are different | Network, clock, and process failures are fundamental |
+| Data is the hardest part | Storage and processing define system complexity |
+| Evolution, not revolution | NoSQL, NewSQL, and SQL are converging |
+
+---
+
+## Why This Book Matters
+
+DDIA has become the canonical text for a generation of software
+engineers. It filled a critical gap: between academic distributed
+systems papers and the practical reality of building software. Before
+DDIA, engineers who wanted to understand how databases worked needed
+to piece together knowledge from research papers, blog posts, and
+source code. Kleppmann synthesized it all into one coherent volume.
+
+The book's influence is visible in how engineers now discuss system
+design — using shared vocabulary (quorum, vector clocks, SSTables,
+LSM-trees, CAP, PACELC) that DDIA standardized. It is widely
+considered the most important software engineering book of the 2010s.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Database Internals** | Alex Petrov | Deeper dive into storage engine internals — B-trees, LSM, and distributed algorithms |
+| **Building Microservices** | Sam Newman | Practical patterns for distributed systems |
+| **Understanding Distributed Systems** | Vitessia | Shorter, more accessible introduction to the same topics |
+| **Site Reliability Engineering** | Beyer et al. | Operational perspective on reliability and scalability |
+| **The Art of Scalability** | Abbott & Fisher | Organizational and process aspects of scale |
+
+---
+
+## Final Verdict
+
+DDIA is the single most important book for any engineer working with
+data systems. It transforms intuition into understanding — you stop
+guessing and start knowing why one approach works better than another.
+
+**Rating: 9.5/10** — The definitive text on modern data systems.
+Required reading for professional software engineers.

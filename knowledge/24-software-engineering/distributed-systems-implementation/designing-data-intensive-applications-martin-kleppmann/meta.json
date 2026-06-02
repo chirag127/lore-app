@@ -1,0 +1,62 @@
+{
+  "slug": "designing-data-intensive-applications-martin-kleppmann",
+  "title": "Designing Data-Intensive Applications",
+  "subtitle": "The Big Ideas Behind Reliable, Scalable, and Maintainable Systems",
+  "author": "Martin Kleppmann",
+  "publicationYear": 2017,
+  "isbn": "9781449373320",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 614,
+  "genres": [
+    "Technology",
+    "Computer Science",
+    "Software Engineering",
+    "Distributed Systems"
+  ],
+  "subjects": [
+    "Distributed Systems",
+    "Databases",
+    "Data Architecture",
+    "System Design",
+    "Scalability",
+    "Data Processing"
+  ],
+  "themes": [
+    "Reliability, scalability, and maintainability as core design principles",
+    "Understanding trade-offs in distributed data systems",
+    "The evolution from SQL to NoSQL and back",
+    "Consistency models and their practical implications",
+    "Stream and batch processing paradigms",
+    "The trouble with distributed systems"
+  ],
+  "tags": [
+    "distributed-systems",
+    "databases",
+    "scalability",
+    "data-intensive",
+    "system-design",
+    "replication",
+    "partitioning",
+    "transactions",
+    "stream-processing",
+    "batch-processing",
+    "consistency",
+    "fault-tolerance",
+    "martin-kleppmann",
+    "oreilly",
+    "software-architecture",
+    "backend",
+    "infrastructure"
+  ],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 18,
+  "estimatedListeningMinutes": 1080,
+  "awards": [
+    "Jolt Award Finalist",
+    "O'Reilly Best Seller",
+    "Goodreads Rating 4.71/5",
+    "Jay Kreps: 'bridges the huge gap between theory and practice'"
+  ],
+  "excerpt": "Data is at the center of many challenges in system design today. This book helps you navigate the diverse landscape of tools and technologies for processing and storing data by examining the pros and cons of various approaches."
+}

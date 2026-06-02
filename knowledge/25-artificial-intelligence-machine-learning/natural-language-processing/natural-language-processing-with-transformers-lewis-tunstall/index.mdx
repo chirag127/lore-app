@@ -1,0 +1,108 @@
+---
+title: Overview
+---
+
+## Overview
+
+*Natural Language Processing with Transformers* (2022) by Lewis Tunstall,
+Leandro von Werra, and Thomas Wolf is the authoritative practitioner's
+guide to applying the Transformer architecture to real language tasks.
+Written by core maintainers of the Hugging Face Transformers library, it
+is the rare technical book that pairs deep intuition with code you can
+actually ship. Where most NLP texts stop at toy examples, this one walks
+from a first `pipeline()` call all the way to fine-tuning, evaluating,
+and deploying models on production infrastructure.
+
+The book treats the Hugging Face ecosystem — `transformers`, `datasets`,
+`tokenizers`, and `accelerate` — not as an accessory but as a first-class
+subject. By the end, you understand why each library exists, how they
+interact, and which abstractions to reach for when the standard ones
+break down.
+
+---
+
+## Executive Summary
+
+The book is organized in three movements, each building on the last:
+
+| Part | Chapters | Focus |
+|------|----------|-------|
+| Foundations | 1-3 | `pipeline()` API, text classification, transformer internals |
+| Downstream Tasks | 4-7 | NER, generation, summarization, question answering |
+| Going Deeper | 8-11 | Production efficiency, low-label regimes, custom training, RLHF |
+
+The through-line is empirical. Every chapter follows the same pattern:
+introduce the task, pick a representative dataset, load a pretrained
+model, run an experiment, evaluate, and reflect. By chapter 4 you have
+already trained and pushed a model to the Hugging Face Hub.
+
+---
+
+## Key Takeaways
+
+1. **The `pipeline()` is the highest-leverage abstraction in modern
+   NLP.** A single function call handles tokenization, inference, and
+   decoding for dozens of tasks. Production code rarely needs to go
+   lower — but when it does, the book shows you how.
+
+2. **Encoder vs. decoder is the single most important architectural
+   choice.** Encoders (BERT, RoBERTa) excel at understanding tasks
+   (classification, NER, QA). Decoders (GPT, BLOOM) excel at generation.
+   Encoder-decoders (T5, BART) bridge both. Picking wrong is the most
+   common mistake.
+
+3. **The Hugging Face Hub is the new ImageNet.** Thousands of pretrained
+   models are one `from_pretrained()` call away. The book teaches you to
+   evaluate, compare, and share models using the same workflows the
+   authors use internally.
+
+4. **Fine-tuning is cheap and almost always the right move.** Most
+   applications do not need a model trained from scratch. With a single
+   GPU and a few thousand examples, you can match or exceed zero-shot
+   performance on a domain-specific task.
+
+5. **Data, not architecture, is the bottleneck.** Chapters 9 and 10
+   make this concrete: zero-shot, few-shot, weak supervision, and
+   custom pretraining are all tools for the same problem — that labeled
+   data is finite and expensive.
+
+6. **RLHF is the new fine-tuning frontier.** The closing chapter
+   sketches how InstructGPT and ChatGPT are trained, demystifying
+   reinforcement learning from human feedback without requiring you to
+   train a frontier model yourself.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| ML engineers integrating LLMs into products | The fastest path from `pipeline()` to a deployed model |
+| Data scientists moving from sklearn to transformers | Practical, code-first, assumes basic ML fluency |
+| NLP students seeking hands-on depth | Real datasets, real evaluation, real trade-offs |
+| Researchers prototyping with Hugging Face | Learn the ecosystem from its own maintainers |
+
+---
+
+## Who Should Skip
+
+- Readers seeking pure mathematical foundations — see *Deep Learning*
+  by Goodfellow, Bengio, and Courville, or *Attention Is All You Need*
+  directly.
+- Practitioners targeting non-Hugging Face stacks (raw JAX, raw
+  TensorFlow, raw PyTorch) — the book is unapologetically
+  Hugging Face-centric.
+- Anyone who already ships at scale and just wants an API reference.
+
+---
+
+## Final Verdict
+
+*Natural Language Processing with Transformers* is the best hands-on
+book on applied NLP written during the Transformer era. It does not
+pretend to teach you the math — it teaches you to *use* the math, on
+real data, with the most popular open-source ecosystem in the field.
+For most working engineers, this is the single most useful NLP book you
+can own.
+
+**Rating: 9.0/10** — The definitive Hugging Face-era NLP playbook.

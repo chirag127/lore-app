@@ -1,0 +1,82 @@
+## Chapter I: Algebraic Varieties
+
+Silverman opens with a brisk review of the algebraic geometry needed for the rest of the book. He defines affine and projective varieties over a field K, regular and rational maps, and the basic properties of smooth varieties. The treatment is deliberately concise: Silverman assumes some prior exposure to algebraic geometry and focuses on establishing the language. Key concepts include the coordinate ring, the function field, and the notion of dimension. The chapter introduces divisors on a smooth projective variety, the canonical divisor class, and the Riemann-Roch theorem for curves. Differentials and the genus of a curve are defined. The chapter closes with the adjunction formula and a discussion of the intersection theory of curves on surfaces. This foundation allows Silverman to treat elliptic curves rigorously in subsequent chapters without constant appeals to external references.
+
+## Chapter II: Algebraic Curves
+
+This chapter specializes the general theory to curves — one-dimensional projective varieties. Silverman proves the Riemann-Roch theorem for curves, which controls the dimension of the space of functions with prescribed poles and zeros. He derives the genus formula for plane curves and classifies curves of genus 0 and 1. An elliptic curve is defined as a smooth projective curve of genus 1 together with a distinguished base point. Silverman shows that every such curve can be realized as a plane cubic in Weierstrass form. The chapter includes the correspondence between curves and their function fields, the theory of ramification for maps between curves, and the Hurwitz formula. The key message is that genus 1 curves are the first nontrivial case after rational curves and that they carry a natural group structure.
+
+## Chapter III: The Geometry of Elliptic Curves
+
+The heart of the geometric theory. Silverman presents the Weierstrass equation for an elliptic curve:
+E: Y²Z + a₁XYZ + a₃YZ² = X³ + a₂X²Z + a₄XZ² + a₆Z³
+and its simplified form when char(K) ≠ 2,3: Y² = X³ + AX + B. The discriminant Δ = -16(4A³ + 27B²) and the j-invariant are introduced as the fundamental invariants. The group law is defined geometrically via the chord-and-tangent method and verified to be associative. Silverman gives explicit formulas for the group operations in affine coordinates. Isogenies (nonzero rational maps between elliptic curves that preserve the base point) are studied in detail: every isogeny is a homomorphism, the degree and separability of isogenies, the dual isogeny, and the multiplication-by-m maps. The Weil pairing is constructed and its properties are derived. The chapter also covers the invariant differential ω = dX/(2Y + a₁X + a₃), which is holomorphic and translation-invariant. The j-invariant classifies elliptic curves up to isomorphism over an algebraically closed field.
+
+## Chapter IV: The Formal Group of an Elliptic Curve
+
+Silverman introduces formal groups as a tool to study the local behavior of elliptic curves. A one-parameter commutative formal group law is a power series F(X,Y) ∈ R[[X,Y]] satisfying associativity, commutativity, and identity axioms. The formal group Ê associated to an elliptic curve is constructed from the local parametrization near the origin using the invariant differential. Silverman proves that Ê is isomorphic to the additive formal group Ĝₐ over rings where the curve has good reduction, but may have more interesting structure otherwise. The formal logarithm and exponential series are defined, giving an explicit isomorphism between Ê and Ĝₐ over characteristic zero rings. Formal groups provide the foundation for studying the reduction of elliptic curves, the p-adic properties of the group law, and the construction of canonical height functions. The chapter includes the theory of formal groups over complete local rings, the logarithm and exponential, and applications to the computation of torsion points.
+
+## Chapter V: Elliptic Curves over Finite Fields
+
+The arithmetic of elliptic curves over finite fields F_q is developed. The Frobenius endomorphism π: (x,y) → (x^q,y^q) is central. Silverman proves that the trace of Frobenius a = q + 1 - #E(F_q) satisfies the Hasse bound: |a| ≤ 2√q. The characteristic polynomial of Frobenius is χ(t) = t² - at + q. The zeta function of an elliptic curve over F_q is defined as Z(E/F_q, t) = exp(∑_{n≥1} #E(F_{q^n}) t^n/n). Silverman proves that it is a rational function: Z(E/F_q, t) = (1 - at + qt²)/((1-t)(1-qt)). This is the first instance of the Weil conjectures for curves, which are stated and discussed. The chapter also covers the structure of E(F_q) as a finite abelian group, the computation of the group order via Schoof's algorithm (in the 2nd edition), and the theory of endomorphism rings: the ring End(E) is either Z, an order in an imaginary quadratic field (complex multiplication), or possibly a quaternion algebra in characteristic p (supersingular case). The Honda-Tate theorem is discussed for classifying isogeny classes.
+
+## Chapter VI: Elliptic Curves over ℂ
+
+Silverman presents the classical theory of elliptic functions and complex tori. A lattice Λ ⊂ ℂ gives a torus ℂ/Λ, which is an elliptic curve via the Weierstrass ℘-function. The Weierstrass ℘-function satisfies ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃, where g₂ and g₃ are Eisenstein series. The uniformization theorem states that every elliptic curve over ℂ is isomorphic to ℂ/Λ for some lattice Λ, uniquely determined up to homothety. The j-invariant appears as a modular function. The chapter covers elliptic functions, the addition theorem, the relationship between isogenies and sublattices, and complex multiplication: when End(E) is larger than Z, the lattice has special properties and the j-invariant is an algebraic integer. The modular equation Φ_N(X,Y) relating j(τ) and j(Nτ) is constructed. The theory of complex multiplication is developed far enough to characterize CM j-invariants as algebraic integers whose associated elliptic curves have many rational points over ring class fields. The chapter concludes with a discussion of the Kronecker Jugendtraum and the theory of complex multiplication.
+
+## Chapter VII: Elliptic Curves over Local Fields
+
+Elliptic curves over complete discretely valued fields, particularly p-adic fields, are studied. Silverman defines reduction of an elliptic curve: good reduction (the reduced curve is smooth), multiplicative reduction (the reduced curve has a node), and additive reduction (a cusp). The Neron model is introduced as the minimal regular model over the ring of integers. The Kodaira-Neron classification of special fibers is described: the 10 possible types (I₀, I_n, II, III, IV, Iₙ^*, II^*, III^*, IV^*). Tate's algorithm for determining the reduction type from the Weierstrass equation is presented. The conductor exponent f is defined, and Ogg's formula relating f, the discriminant, and the number of components of the Neron fiber is proved. The chapter also covers the Tate curve: an elliptic curve over a p-adic field with multiplicative reduction is isomorphic to K^*/q^Z for some q ∈ K^* with |q| < 1. This gives a powerful uniformization that leads to explicit formulas for the Poitou-Tate pairing and the computation of local heights. The Tamagawa number c_v = [E(K_v):E₀(K_v)] is defined and computed for each reduction type.
+
+## Chapter VIII: Elliptic Curves over Global Fields
+
+The central chapter of the book. Silverman proves the Mordell-Weil theorem: if K is a number field (or a finite extension of F_q(t)) and E/K is an elliptic curve, then E(K) is a finitely generated abelian group. The proof follows the classical descent method: first prove the weak Mordell-Weil theorem (E(K)/mE(K) is finite for any m ≥ 2), then deduce finite generation using the theory of heights. Heights measure the "size" of a rational point: the logarithmic height h(P) grows quadratically with the coordinates. Silverman constructs the canonical (Neron-Tate) height ĥ(P) which is a quadratic form on E(K) and vanishes exactly on torsion points. The canonical height pairing gives E(K) the structure of a Euclidean lattice modulo torsion. The Birch and Swinnerton-Dyer conjecture is stated: the rank of E(K) equals the order of vanishing of the L-function L(E,s) at s=1, and the leading coefficient encodes the Tate-Shafarevich group, the regulator, and the Tamagawa numbers. The chapter also covers the Selmer group, the Tate-Shafarevich group, and the descent procedure for computing the Mordell-Weil group. The relationship between the rank and the behavior of the L-function is discussed, including numerical evidence and computational verification.
+
+## Chapter IX: Integral Points on Elliptic Curves
+
+Silverman proves Siegel's theorem: an elliptic curve over a number field K has only finitely many S-integral points. The proof uses the theory of heights and the fact that, for an elliptic curve, the canonical height of an S-integral point with respect to a carefully chosen divisor is bounded. The chapter develops the theory of S-integral points, the Siegel-Mahler theorem, and applications to Diophantine equations. Siegel's theorem is a striking result: although E(K) may be infinite (the rank can be arbitrarily large), only finitely many of those points have integer coordinates. The proof combines ideas from Diophantine approximation (Roth's theorem) with the theory of elliptic logarithms. The chapter also covers explicit bounds for integral points via Baker's theory of linear forms in logarithms, and discusses the effective computation of integral points in practice.
+
+## Chapter X: Computing the Mordell-Weil Group
+
+The final chapter turns to explicit computation, using the curve Y² = X³ + DX as a running example. Silverman develops methods for determining the Mordell-Weil group explicitly: computing the torsion subgroup via the Nagell-Lutz theorem, performing a 2-descent to bound the rank, and constructing generators. The chapter includes a detailed worked example: the curve Y² = X³ - 2X is analyzed completely, with its Mordell-Weil group shown to be Z ⊕ Z/2Z. The chapter also covers Selmer groups and their computation, the relationship between the rank and the 2-Selmer group, and numerical methods for finding rational points. This computational chapter bridges the theoretical development of the earlier chapters with the practical problem of actually determining E(K).
+
+## Appendix A: Elliptic Curves in Characteristics 2 and 3
+
+A reference chapter giving the Weierstrass equations, discriminant formulas, and special phenomena that occur when the characteristic is 2 or 3, where the simplified form Y² = X³ + AX + B does not suffice. The extended Weierstrass equation is given in full generality, and the reduction theory is adapted.
+
+## Appendix B: Group Cohomology
+
+A self-contained introduction to the group cohomology needed for Chapter VIII, specifically for the descent argument in the weak Mordell-Weil theorem. Topics include H⁰, H¹, inflation-restriction, the long exact sequence, and Kummer theory.
+
+## Appendix C: An Overview of Advanced Topics
+
+Brief discussions of further directions: modular forms and the Shimura-Taniyama-Weil conjecture (now the modularity theorem), the theory of elliptic curves over function fields, higher-dimensional analogues (abelian varieties), and the Sato-Tate conjecture.
+
+## Reading Guide
+
+### Sufficiency Assessment
+
+This summary captures the book's complete structure and the content of all chapters. It cannot convey the precision of Silverman's proofs, the many worked exercises, or the elegance with which the theory unfolds.
+
+### Recommended Reading Path
+
+| Reader Type | Time | What to Read |
+|---|---|---|
+| Casual | ~15 min | This summary |
+| Interested | ~3-5 hr | Summary + Chapters III, V, VIII |
+| Graduate student | ~30-50 hr | Full book with exercises |
+
+### Chapters to Read in Full
+
+- **Chapter III** — The geometry and group law; foundational for everything that follows
+- **Chapter V** — Finite field theory with Frobenius and the Hasse bound
+- **Chapter VIII** — The Mordell-Weil theorem, the book's centerpiece
+
+### Chapters to Skim or Skip
+
+- **Chapter I** — Review algebraic geometry if already comfortable
+- **Chapter VI** — Complex theory; important but can be read selectively
+
+### What You'll Miss by Not Reading the Full Book
+
+The rigorous proofs, the many exercises developing the theory further, the computational details in Chapter X, and the sense of mathematical architecture that makes Silverman's exposition so valued.

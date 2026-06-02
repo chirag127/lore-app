@@ -1,0 +1,144 @@
+## Strengths
+
+- **Genuine practitioner voice.** Donahue writes like a senior engineer pair-programming with you. He is opinionated, specific, and direct. The book reads like a Slack DM from a colleague, not a textbook chapter.
+- **The war stories are the curriculum.** First-hand accounts of MTU mismatches, native VLAN errors, asymmetric routes, and cable bends anchor every technical chapter. They are the reason the book is on shelves a decade after publication.
+- **Cabling and physical layer get the space they deserve.** Most networking books skip L1 in a paragraph. Donahue gives it three chapters. The bet pays off — the war stories about bad fiber runs and failed SFPs are the most useful in the book for working engineers.
+- **The Unix chapters are a real differentiator.** Almost no other networking book covers `tcpdump`, `traceroute`, `mtr`, `netstat`, and `nc` with the same operational depth. For software engineers, these chapters alone justify the price.
+- **Vendor honesty.** Donahue names the equipment he has used, what failed, and why. The Cisco focus is acknowledged, not hidden. Where Juniper or Arista would be a better fit for a given chapter, he says so.
+- **OSPF and BGP coverage is among the clearest short treatments available.** A reader can finish the OSPF chapters and actually debug an OSPF problem. That is rare.
+- **The book respects the reader as a professional.** It assumes you have a job and a pager. It does not over-explain. It does not under-explain. The voice is the right one for the audience.
+
+---
+
+## Weaknesses
+
+- **Cisco-centric by design.** Readers in Juniper or Arista shops will learn the concepts but not the commands. Donahue is upfront about this, but the practical impact is that an Arista engineer has to translate every config example.
+- **The Unix chapters are shorter than the Cisco chapters.** The treatment of Linux networking tools is enough to be useful, not enough to be authoritative. Readers wanting deep coverage should pair the book with *TCP/IP Illustrated* or a Linux networking text.
+- **2011 first edition is dated in spots.** The IPv6 chapter is brief, the cloud networking discussion is absent, and the SDN chapter is a forward-looking sketch. The 2016 second edition is a strict upgrade.
+- **Routing protocol theory is intentionally informal.** Donahue explains OSPF and BGP in operational terms, not in the math-and-state-machine terms a CCIE candidate needs. For certification, this is not the right book.
+- **The MPLS chapter is the densest and least approachable.** MPLS is inherently complex, and Donahue does his best, but the chapter requires more prior knowledge than the others. A first-time reader may need to re-read it.
+- **No lab exercises.** The book is best read with a router and switch at hand. Without a lab, the IOS chapters are read-only. GNS3, EVE-NG, or CML fill the gap, but the book does not provide exercises.
+- **The "for Unix admins" positioning is a 2007-2012 pitch.** In 2026, the audience is broader: SREs, platform engineers, and data scientists running Kubernetes clusters who need to understand the network layer underneath. The book speaks to them, but the framing is older.
+
+---
+
+## Criticism
+
+### Cisco bias limits the audience
+
+The book is, openly, a Cisco engineer's book. Juniper's Junos, Arista's EOS, and Nokia's SR OS are mentioned in passing but never explored. In a 2026 context where Arista has eaten the hyperscaler market and Junos is the default at most carriers, a modern edition would need a more vendor-balanced approach. The 2016 second edition adds some Arista content but is still Cisco-dominant.
+
+### Cert prep is a different audience
+
+Readers expecting a CCNA study guide will be disappointed. The book does not cover STP states in exhaustive detail, does not list every OSPF LSA type, and does not provide practice questions. Donahue explicitly disclaims this. But the overlap with CCNA material is high enough that the book gets categorized as "networking cert prep" by mistake, leading to frustrated buyers.
+
+### "War stories" is not a coherent pedagogy
+
+The war stories are wonderful individually, but they are scattered across the book and do not build a cumulative narrative. A reader looking for a structured curriculum of "first learn the cable, then the switch, then the routing protocol" with worked examples will not find it. The book's structure is more like a mentor's collected war stories than a textbook.
+
+### The MPLS chapter is a wall
+
+The MPLS chapter is the longest and most technical in the book. Donahue is honest that MPLS is the most complex topic he covers, but the chapter does not break the topic down into smaller chunks the way the OSPF and BGP chapters do. First-time readers struggle.
+
+### Some examples are stuck in 2005
+
+The 2011 edition's examples reference technology choices (Catalyst 6500s, PIX firewalls, T1 circuits, frame relay) that are no longer the default. The 2016 second edition updates much of this. Readers on the first edition will need to mentally translate some examples.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|-----------|----------|
+| "Too Cisco-centric" | Donahue works in a Cisco shop and is honest about it. The concepts transfer to any vendor. The IOS-specific advice is clearly marked. |
+| "Not a cert prep book" | The subtitle says so explicitly: "Everything You Need to Know That Wasn't on the CCNA Exam." This is the complementary book, not the cert book. |
+| "War stories are scattered" | The scattering is the point. Each story attaches to the chapter it illustrates. Reading them in isolation is a feature, not a bug. |
+| "MPLS chapter is dense" | MPLS is dense. No book makes it easy. Donahue's treatment is shorter and more pragmatic than alternatives like *MPLS Fundamentals*. |
+| "Examples feel dated" | The 2016 second edition fixes most of this. Read it if you can. |
+
+---
+
+## Scientific and Industry Support
+
+| Concept | Source / Standard | Note |
+|---------|-------------------|------|
+| OSI Model | ISO/IEC 7498-1 (1994) | The reference model; Donahue uses it as a triage tool |
+| TCP/IP | RFC 791, 793, 826, 903 | Donahue references Stevens' *TCP/IP Illustrated* as the deeper source |
+| Ethernet 802.1Q VLANs | IEEE 802.1Q | VLAN tagging on trunks |
+| Spanning Tree | IEEE 802.1D, 802.1w, 802.1s | Classic, Rapid, Multiple Spanning Tree |
+| OSPF | RFC 2328 (OSPFv2), RFC 5340 (OSPFv3) | The IGP Donahue recommends as the enterprise default |
+| BGP | RFC 4271, 4760 (MP-BGP) | The internet's protocol; path-vector, policy-driven |
+| MPLS | RFC 3031 | Label switching; the basis of L2/L3 VPN services |
+| SNMP | RFC 3411-3418 | v3 is the secure default; v2c is still in use |
+| IPv6 | RFC 8200, 4861, 4862 | Dual-stack is the transition strategy |
+| VoIP / SIP | RFC 3261 | Session Initiation Protocol; Donahue's voice chapter |
+| Cisco IOS | Cisco documentation | The command-line interface covered in chapters 2-3 |
+
+---
+
+## Historical Context
+
+*Network Warrior* was published in 2011, at the peak of enterprise networking's Cisco-dominated era. The CCNA/CCNP/CCIE certification track was the primary entry point to network engineering careers. Cloud computing was a real but minority deployment model — AWS had launched EC2 in 2006, but most enterprises still ran their own data centers. Software-defined networking (SDN) was an OpenFlow research curiosity from Stanford, not yet a product category.
+
+The book reflects that moment. Its focus on Cisco IOS, its enterprise campus topology assumptions, and its carrier MPLS discussion are all of their time. What has aged well is the war-stories approach — outages look the same in 2026 as in 2011. The cable is still bent. The SFP is still incompatible. The VLAN is still mismatched.
+
+The 2016 second edition arrived as a different industry. AWS, Azure, and GCP had become the default for new applications. The CCNA certification was no longer the obvious first step. SDN had been productized (Cisco ACI, VMware NSX). The second edition added a chapter on cloud connectivity and updated the war stories, but its core approach remained the same.
+
+In 2026, the book's relevance is twofold. For traditional on-premises, data-center, and campus networking, it remains the best short practical guide. For cloud-native engineers, the *Unix for network engineers* and *OSPF/BGP* chapters are the most useful — they teach the language needed to communicate with the network team when something crosses the on-prem/cloud boundary.
+
+---
+
+## Similar Books
+
+| Book | Author | How It Compares |
+|------|--------|-----------------|
+| **Network Warrior 2nd Edition** | Donahue | The 2016 update. Adds IPv6, cloud, modern data center. Read it first if you can. |
+| **TCP/IP Illustrated, Vol. 1** | Stevens, Fall, Stevens | The protocol deep dive. Read Donahue for the "how," Stevens for the "why." |
+| **Computer Networking: A Top-Down Approach** | Kurose & Ross | The academic standard. Theory-first, less operational. |
+| **Routing TCP/IP, Vol. 1 & 2** | Doyle & Carroll | The Cisco Press deep dive on routing. More rigorous than Donahue. |
+| **Computer Networks** | Tanenbaum | The other academic standard. More systems-oriented than Kurose. |
+| **The Practice of System and Network Administration** | Limoncelli, Hogan, Chalup | The sysadmin side of the same operational world. Pair with Donahue. |
+| **Juniper MX Series** | Doyle | The Juniper counterpart to *Network Warrior*. For Junos shops. |
+| **CCNA Official Cert Guide** | Odom | The Cisco certification book. Necessary for the cert, less fun to read. |
+| **Network Programmability and Automation** | Edelman, Lowe, Oswal | The 2020s update. Covers Ansible, NAPALM, GitOps for networks. |
+| **Site Reliability Engineering** | Google | The SRE handbook; assumes you understand the network layer Donahue teaches. |
+
+---
+
+## Long-Term Relevance
+
+**High, with caveats.**
+
+The core content — cabling, IOS, OSPF, BGP, VLANs, MPLS, war stories — will remain valid for as long as enterprise networks exist. These are the protocols and patterns of on-premises networking. They do not go out of style.
+
+The areas of decay:
+
+1. **Cloud networking has shifted the center of gravity.** AWS VPCs, Azure VNets, and GCP VPCs do not use OSPF or BGP for internal routing. They use proprietary virtual routers managed by the cloud provider. For cloud-native engineers, the relevant network knowledge is different.
+2. **SDN and intent-based networking are changing the operational model.** Cisco ACI, VMware NSX, and Arista's CloudVision centralize policy and reduce CLI exposure. The junior network engineer of 2026 may never type `show ip route` in anger.
+3. **The Unix side of the job has changed.** Modern infrastructure uses Linux extensively, but the specifics have shifted (eBPF, cgroups, network namespaces, Cilium). The Unix chapters in *Network Warrior* are still useful as orientation but do not cover these.
+
+What does not decay:
+
+1. **The OSI model as a triage tool.** Layers are still layers.
+2. **The war stories.** Outages will always look the same. The cable will always be bent.
+3. **The protocol fundamentals.** OSPF and BGP will not change in your working lifetime. IPv6 will not displace IPv4 for the next decade.
+4. **The cross-discipline literacy.** A software engineer who can read a routing table and a network engineer who can read a `tcpdump` are more valuable than either in isolation.
+
+**Bottom line**: The book has a long shelf life. Read the 2016 second edition if you can. The first edition is still good. Both will be relevant 20 years from now.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Argument Quality | 9/10 | Opinionated, specific, well-supported by war stories |
+| Practical Utility | 10/10 | The most operational networking book available |
+| Originality | 7/10 | Synthesizes operational experience; does not break new ground |
+| Readability | 9/10 | Senior engineer voice; clear, direct, often funny |
+| Technical Depth | 8/10 | Enough for daily operations, not enough for CCIE |
+| **Overall** | **9/10** | The best general-purpose networking book for working professionals |
+
+*Network Warrior* is the book I would hand to a software engineer joining an SRE or platform team, a junior network engineer entering the field, or a sysadmin transitioning to a network role. It is opinionated, command-focused, and relentlessly practical. It does not try to be a certification book, a theory book, or a vendor-neutral encyclopedia. It tries to be the book a working engineer keeps on the shelf — and it succeeds.
+
+The Cisco focus is real but not limiting. The 2011 first edition is dated in spots; the 2016 second edition is a strict upgrade. Read the second if you can. Read the first if that is what is available. Either way, keep it within arm's reach of the rack. The next outage is coming.

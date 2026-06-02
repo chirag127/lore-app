@@ -1,0 +1,251 @@
+---
+title: Core Content
+description: A comprehensive breakdown of the contents of The Algorithm Design Manual (2nd ed.)
+---
+
+# Core Content
+
+## Overview and Reading Plan
+
+The Algorithm Design Manual occupies a unique position in the algorithms literature. It is not an encyclopedia like TAOCP or a rigorous textbook like CLRS — it is a practitioner's guide. Skiena's explicit goal is to make the reader competent at identifying, modeling, and solving algorithmic problems in the real world. The book succeeds by being selective: rather than covering every known algorithm, it covers the 20% of techniques that solve 80% of problems, and provides a catalog to handle the rest.
+
+Part I (Chapters 1–11) is a tutorial. It should be read linearly by anyone new to the material. Each chapter introduces a technique, demonstrates it on concrete examples, and closes with a war story and a set of exercises. Part II (Chapters 12–21) is the catalog — reference material organized by problem type, not meant for linear reading.
+
+The 2nd edition differs from the first in three major ways: it contains approximately twice as much tutorial text, adds interview problems drawn from major tech companies, and includes an updated bibliography with references to the decade of research since the first edition. The companion website (www.algorist.com) provides lecture slides, audio/video lectures, and the algorithm repository with downloadable implementations for every catalog entry.
+
+## Part I: Practical Algorithm Design
+
+### Chapter 1: Introduction to Algorithm Design
+
+Skiena opens with a disarmingly simple question: given a robot that must visit n points on a map, what is the shortest route? This is the traveling salesman problem — but Skiena does not give the name yet. He shows the reader trying to reason through it: nearest neighbor? Sorted by angle? The point is that even a straightforward-sounding problem can resist a simple solution.
+
+The chapter frames algorithm design as a search process. You try something, it fails, you try something better. Skiena introduces the concept of **correctness through induction**: if you can prove a base case and an inductive step, you have proven correctness. He uses the example of selecting the right jobs from a set of intervals (the interval scheduling problem) — the greedy algorithm of picking the earliest-finishing job works, but it is not obvious why.
+
+A central theme emerges early: **modeling**. Before solving a problem, you must decide what kind of problem it is. Skiena presents a taxonomy of combinatorial objects: permutations, subsets, trees, graphs, points, polygons, strings. Each maps to a family of algorithms. If you can recognize your problem as "shortest path in a graph" rather than "we need to find the cheapest route through these warehouses," you have already won half the battle.
+
+The chapter closes with the first war story: "Psychic Modeling." Skiena recounts a project where he needed to model a psychic's predictions about sports outcomes. The real challenge was not implementing the algorithm — it was figuring out what the problem actually was. This sets the tone for the entire book.
+
+### Chapter 2: Algorithm Analysis
+
+Chapter 2 introduces the RAM model of computation and Big Oh notation — but in a radically different way from CLRS. Where CLRS spends 30 pages on the formal definition of O, Omega, and Theta, Skiena covers it in 15 pages of intuitive explanation with concrete examples.
+
+He introduces Big Oh through **dominance relations**: n! dominates 2^n dominates n^3 dominates n^2 dominates n log n dominates n dominates log n dominates 1. The reader learns to classify algorithms by the shape of their growth curve. Skiena argues that the exact constant does not matter; what matters is which curve you are on.
+
+The logarithms section is unusually thorough for a practical book. Skiena explains binary search through logarithms (halving the search space at each step), tree height (log n for balanced trees), bits needed to represent n, and fast exponentiation. Each concept is tied to a concrete algorithm.
+
+The war story "Mystery of the Pyramids" describes Skiena's work on reconstructing 3D models of Egyptian pyramids from scattered measurements. The challenge was dealing with noisy, incomplete data — an O(n^4) brute force was obviously prohibitive, but a clever approach using the right data structures brought it down.
+
+The advanced analysis section (marked with *) covers Stirling's formula, generating functions, and amortized analysis — optional material for deeper readers.
+
+### Chapter 3: Data Structures
+
+Skiena organizes data structures along one fundamental axis: **contiguous versus linked**. Arrays (contiguous) give O(1) access but O(n) insertion; linked lists give O(1) insertion but O(n) access. Everything else is a trade-off along this spectrum.
+
+He covers stacks, queues, and dictionaries briefly (he assumes some prior exposure), then focuses on binary search trees. The BST implementation in C is one of the few full code listings in the book. He explains tree traversal (inorder, preorder, postorder), deletion (three cases), and the problem of unbalanced trees. Balanced search trees (AVL, red-black) are mentioned but not implemented — Skiena points the reader to library implementations.
+
+Priority queues (heaps) get more attention because of their importance for sorting and graph algorithms. The heap implementation — sift-up, sift-down, extract-min, decrease-key — is given in full.
+
+Two war stories close the chapter. "Stripping Triangulations" describes a computational geometry problem where the right data structure (a priority queue of candidate edges) turned an O(n^2) algorithm into O(n log n). "String 'em Up" recounts a problem involving string matching where Skiena successfully used hashing.
+
+### Chapter 4: Sorting and Searching
+
+Sorting gets 30 pages, and Skiena's treatment is distinctly practical. He lists the real-world applications of sorting first: organizing data for binary search, finding duplicates, computing medians and percentiles, identifying outliers — all before explaining how any sort works.
+
+The algorithms covered:
+
+**Heapsort** (O(n log n)): Build a heap from the array, repeatedly extract the maximum. Skiena provides full C code for heap construction (both top-down O(n log n) and bottom-up O(n)), extraction, and the overall sort.
+
+**Mergesort** (O(n log n)): Divide-and-conquer. The merge operation is the key insight. Skiena notes that mergesort is stable and predictable but requires O(n) extra space.
+
+**Quicksort** (O(n log n) expected, O(n^2) worst): The star of sorting. Skiena explains the partition operation, the expected-case intuition (random pivot), and why quicksort is fast in practice despite the quadratic worst case.
+
+**Distribution sort** (bucket sort, radix sort): Linear-time sorting when the input has special structure — real numbers uniformly distributed across [0,1) can be bucket-sorted in O(n) expected time.
+
+A full page is devoted to the lower bound for comparison-based sorting: the decision tree argument that Omega(n log n) comparisons are required.
+
+The war story "Give me a Ticket on an Airplane" recounts an airline ticket pricing problem that reduced to a sorting-based algorithm. "Skiena for the Defense" describes a legal case where sorting algorithms helped reconstruct timelines.
+
+Binary search gets its own section: standard, counting occurrences, one-sided (exponential) search, and finding square roots. Divide-and-conquer is introduced as the general principle behind mergesort and binary search, with recurrence relations and the master theorem presented in condensed form.
+
+### Chapter 5: Graph Traversal
+
+Graphs are where Skiena's book really shines. He argues that graph problems are the single most important class of algorithmic problems — and that most programmers underutilize them because they fail to recognize graph structure in their data.
+
+**Graph basics**: vertices, edges, directed vs undirected, weighted vs unweighted, adjacency matrices vs adjacency lists. Skiena strongly favors adjacency lists for sparse graphs.
+
+**Breadth-first search**: The algorithm for shortest paths in unweighted graphs. Skiena traces BFS on a small example, showing the queue evolving step by step. Applications: finding connected components, bipartite graph testing, two-coloring.
+
+**Depth-first search**: The algorithm for exploring entire graphs. DFS has a recursive elegance that BFS lacks. Applications: topological sorting (DAGs), finding cycles, finding connected components in undirected graphs, strong components in directed graphs.
+
+The war story "Is the Graph Bipartite?" recounts a real problem from a telecommunications company. They had a constraint satisfaction problem that Skiena recognized as bipartite graph testing — a textbook BFS application that had stumped the domain experts.
+
+### Chapter 6: Weighted Graph Algorithms
+
+This chapter covers the three classic weighted graph problems:
+
+**Minimum spanning trees**: Prim's algorithm (greedy, grows a single tree) and Kruskal's algorithm (greedy, merges forest components). Skiena explains the cut property and provides C code for both. Kruskal uses union-find for cycle detection — the union-find data structure is explained inline.
+
+**Shortest paths**: Dijkstra's algorithm for non-negative weights — the O((n+m) log n) heap-based implementation. The Bellman-Ford algorithm handles negative edges and detects negative cycles. Floyd-Warshall computes all-pairs shortest paths in O(n^3).
+
+War story "Nothing but the Truth" describes Skiena's work on a truth-tracking system for a political fact-checking organization. The problem reduced to computing shortest paths in a graph of claims and counter-claims.
+
+### Chapter 7: Combinatorial Search and Heuristic Methods
+
+When exact algorithms fail (NP-hard problems), combinatorial search is the fallback. Skiena presents three search paradigms:
+
+**Backtracking**: The systematic trial-and-error approach. Skiena provides a generic backtracking framework and applies it to eight queens, Hamiltonian path, and subset sum. Pruning is the key to making backtracking practical — the search tree is exponentially large, but good pruning reduces it dramatically.
+
+**Branch and bound**: Backtracking with lower-bound pruning. If the partial solution already has a cost that exceeds the best known complete solution, stop exploring. Skiena applies this to the traveling salesman problem.
+
+**Heuristics**: When even branch and bound is too slow, heuristics provide good (but not optimal) solutions. Skiena covers simulated annealing, genetic algorithms, and the nearest-neighbor heuristic for TSP.
+
+War story "Covering the News" recounts Skiena's consulting work for a news organization that needed to select a diverse set of stories for their front page — a set cover problem that required heuristic methods.
+
+### Chapter 8: Dynamic Programming
+
+Dynamic programming is notoriously difficult. Skiena teaches it through a catalog of classic problems:
+
+**Fibonacci numbers** (the simplest example, illustrating overlapping subproblems and memoization).
+
+**Longest common subsequence**: The canonical 2D DP problem. Skiena provides the recurrence and walks through the table-filling process.
+
+**Knapsack**: Optimization of the recurrence, with and without item repetition.
+
+**Matrix chain multiplication**: The optimal parenthesization problem. The DP recurrence minimizes the number of scalar operations.
+
+**Shortest paths in DAGs**: A simpler problem that introduces the DAG shortest-path recurrence.
+
+**Edit distance**: Applications to spell-checking and computational biology (sequence alignment).
+
+Skiena's approach is to present each problem as a template: here is the recurrence, here is how you fill the table, here is how you reconstruct the solution. The chapter contains no proofs of optimality — the correctness is argued informally.
+
+War story "The DNA Sequence" describes aligning DNA sequences using DP — Skiena's most successful consulting engagement, leading to a widely used bioinformatics tool.
+
+### Chapter 9: Intractable Problems and NP-Completeness
+
+Skiena's treatment of NP-completeness is refreshingly practical. He does not prove the Cook-Levin theorem. Instead, he explains:
+
+- What NP-completeness means: "no known polynomial-time algorithm"
+- How to prove a problem is NP-complete via reduction
+- What to do when you encounter an NP-complete problem
+
+The decision/reduction tree is the chapter's highlight: Skiena diagrams the relationships between dozens of NP-complete problems, showing that many problems reduce to satisfiability (SAT) which reduces to Hamiltonian cycle, and so on.
+
+He provides a "are we NP-complete?" checklist: if the problem involves subsets, partitions, Boolean formulas, or Hamiltonian paths, you may be dealing with NP-completeness. The chapter is designed to help the reader identify NP-complete problems quickly — saving them from fruitless searching for polynomial algorithms.
+
+### Chapter 10: Dealing with Hard Problems
+
+This chapter offers practical strategies for NP-hard problems:
+
+**Approximation algorithms**: Guaranteeing a solution within some factor of optimal. Examples: the 2-approximation for vertex cover (pick both endpoints of every uncovered edge), the greedy O(log n) approximation for set cover.
+
+**Parameterized complexity**: Fixed-parameter tractability — some problems become tractable when a parameter is small (e.g., vertex cover on graphs with small k).
+
+**Exact algorithms for special cases**: Many NP-hard problems become polynomial on restricted inputs (planar graphs, trees, bipartite graphs).
+
+**Implementations and libraries**: Skiena lists available implementations for each NP-hard problem (for example, the Concorde TSP solver).
+
+### Chapter 11: How to Design Algorithms
+
+The culminating chapter of Part I synthesizes everything. Skiena provides a step-by-step approach:
+
+1. **Understand the problem**: Can you find a brute-force solution? What is the size of the input?
+2. **Identify the problem type**: Is it a graph problem? A geometric problem? A string problem?
+3. **Select a paradigm**: Divide-and-conquer? Dynamic programming? Greedy? Backtracking?
+4. **Prove correctness**: Argue informally, then consider edge cases.
+5. **Analyze the complexity**: Determine if the solution is fast enough.
+6. **Implement and test**: Check against the brute-force solution for small inputs.
+
+The chapter includes a decision flowchart that maps problem characteristics to algorithm families. It is the most condensed piece of algorithm design advice in print.
+
+---
+
+## Part II: The Hitchhiker's Guide to Algorithms
+
+Part II is not meant to be read linearly. It is a reference catalog of 75 algorithmic problems, organized into six categories:
+
+### Numerical Problems (11 problems)
+
+Covers greatest common divisor, matrix multiplication (including Strassen's algorithm), linear programming, integer linear programming (NP-hard), least-squares regression, determinant/permanent, random number generation (including the controversial linear congruential generator), factoring (integer), discrete logarithm, Fourier transform (FFT), and arbitrary-precision arithmetic.
+
+### Data Structures (9 problems)
+
+Covers dictionary implementations (arrays, binary search trees, balanced trees, hash tables), priority queues (heaps, pairing heaps), suffix trees and arrays, graph data structures (adjacency lists and matrices), set data structures (bit vectors, union-find), and string data structures (tries, suffix trees).
+
+### Combinatorial Problems (13 problems)
+
+Covers sorting, searching (binary search, interpolation search), median and selection, generating permutations, generating subsets, generating partitions, generating graphs, Calendrical calculations (date arithmetic), job scheduling, satisfiability (SAT — including GSAT and WalkSAT heuristics), and NP-completeness proof frameworks.
+
+### Graph Problems (19 problems — the largest catalog category)
+
+Covers the eight "easy" graph problems: connected components, topological sorting, minimum spanning tree, shortest path, transitive closure and reduction, matching, Eulerian cycle, edge and vertex connectivity.
+
+Then the 11 NP-hard graph problems: independent set (maximum), clique (maximum), vertex cover (minimum), traveling salesman problem, Hamiltonian cycle, graph isomorphism, graph partitioning, vertex coloring (minimum), edge coloring, feedback vertex/edge set, Steiner tree.
+
+Each problem entry follows a uniform structure: description, input/output specification, complexity status, discussion of approaches, key references, and pointers to implementations.
+
+### String Problems (10 problems)
+
+Covers exact string matching (Boyer-Moore, Rabin-Karp, Knuth-Morris-Pratt), approximate string matching (edit distance, substring alignment), text compression (Huffman coding, LZW), longest common substring/subsequence, shortest common superstring, pattern matching in strings with wildcards, and significant string problems in computational biology.
+
+### Computational Geometry (10 problems)
+
+Covers convex hull (Graham scan, Jarvis march), triangulation (Delaunay, constrained Delaunay), range queries (k-d trees, range trees), nearest neighbor search (Voronoi diagrams), point location, intersection detection, bin packing, digital geometry, robot motion planning, and geometric algorithms in computer graphics.
+
+### Set and String Problems (3 problems)
+
+Covers set cover, set packing, and string matching on sets.
+
+The catalog entries are typically 2–4 pages each — enough to identify the problem and understand the main approaches, with references for full implementation details. Each entry includes a list of available implementations (C, C++, Java, FORTRAN) with URLs to algorithm repositories.
+
+The Appendix provides a comprehensive bibliography and a list of algorithm repositories and software resources, including the Stony Brook Algorithm Repository website maintained by Skiena.
+
+---
+
+## Detailed Catalog Breakdown
+
+The catalog entries follow a uniform format that makes them especially useful as a quick reference. Each problem is introduced with a one-paragraph description and a formal input/output specification. The "Discussion" subsection surveys the main algorithmic approaches, with emphasis on what works in practice. The "Implementations" subsection lists available code in C, C++, Java, and sometimes FORTRAN, with URLs to the Stony Brook Algorithm Repository.
+
+### Data Structures (Catalog: 12 problems)
+
+Entries cover dictionaries, priority queues, suffix trees, graph data structures, set data structures (union-find, bit vectors), and string data structures (tries, suffix arrays). The union-find entry is notable: two pages covering the O(alpha(n)) inverse-Ackermann amortized bound, path compression, and union by rank — arguably the best concise explanation in print.
+
+### Numerical Problems (Catalog: 11 problems)
+
+Includes GCD, matrix multiplication, linear programming (the simplex method overview), integer linear programming (NP-hard), least-squares regression (normal equations, QR decomposition), determinant and permanent, random number generation, factoring, discrete logarithm, FFT, and arbitrary-precision arithmetic. The FFT entry is surprisingly thorough for a 4-page treatment, covering both the Cooley-Tukey algorithm and the Bluestein algorithm for arbitrary-length transforms.
+
+### Combinatorial Problems (Catalog: 13 problems)
+
+Covers sorting, searching, median and selection, generating permutations and subsets, generating partitions and graphs, calendrical calculations, job scheduling, and SAT. The SAT entry includes both the Davis-Putnam-Logemann-Loveland (DPLL) exact algorithm and the WalkSAT stochastic local search heuristic. Skiena explains when each is appropriate: DPLL for structured instances (circuit verification), WalkSAT for random instances (AI planning).
+
+### Graph Problems — Polynomial (Catalog: 8 problems)
+
+Connected components, topological sorting, minimum spanning tree (both Prim and Kruskal), shortest path (Dijkstra, Floyd-Warshall), transitive closure (Warshall's algorithm), matching in bipartite graphs, Eulerian cycle (Hierholzer's algorithm), and connectivity algorithms (articulation vertices, bridges). Each entry provides algorithmic complexity in terms of n (vertices) and m (edges), with a focus on sparse vs. dense graph distinctions.
+
+### Graph Problems — NP-Hard (Catalog: 11 problems)
+
+Independent set, clique, vertex cover, traveling salesman, Hamiltonian cycle, graph isomorphism, graph partitioning, vertex coloring, edge coloring, feedback vertex set, Steiner tree. Skiena provides practical guidance for each: exact algorithms for small instances (backtracking with pruning), polynomial-time special cases (planar graphs, bipartite graphs, trees), and heuristic approaches for large instances.
+
+### String Problems (Catalog: 10 problems)
+
+Exact string matching (Boyer-Moore, Rabin-Karp, KMP), approximate string matching (edit distance, affine gap penalties, substring matching), text compression (Huffman, LZW, Burrows-Wheeler), longest common substring/subsequence, shortest common superstring, pattern matching with wildcards, and string problems in computational biology (DNA sequence alignment). The approximate matching entry includes both the classic dynamic program and the more efficient Myers algorithm for bit-parallel approximate matching.
+
+### Computational Geometry (Catalog: 10 problems)
+
+Convex hull (Graham scan, Jarvis march, quickhull), triangulation (Delaunay, constrained Delaunay), range queries (k-d trees, range trees, segment trees), nearest neighbor search (k-d trees, Voronoi diagrams), point location (Kirkpatrick's hierarchical method, trapezoidal decomposition), intersection detection, bin packing, digital geometry, robot motion planning (visibility graphs, potential fields), and geometric algorithms for computer graphics.
+
+---
+
+## Reading Guide
+
+**For interview preparation**: Read Chapters 1–8 (Part I up to graph algorithms), then Chapter 10 (Dynamic Programming). Skim the catalog for problems you encounter in practice.
+
+**For a first algorithms course**: Read Part I cover to cover (Chapters 1–11). Skip the advanced (*) sections on first pass. The exercises at the end of each chapter include both standard problems and "interview problems" drawn from major tech companies.
+
+**For self-taught programmers**: Start with Chapters 2, 3, 5, and 8 (Analysis, Data Structures, Graph Traversal, Dynamic Programming). Return to Chapters 6 and 10 (Weighted Graphs, Hard Problems) as needed.
+
+**For reference use**: Keep Part II on your desk. When you encounter a problem, browse the catalog categories to identify your problem type, then read the relevant entry. The uniform format makes it easy to compare approaches across related problems.
+
+**Chapters to skip on first reading**: The advanced analysis section (2.9), the detailed sorting analysis (4.10), and the NP-completeness reductions (9.3–9.5) can wait. The computational geometry catalog entries are only relevant if you work with geometric data.
+
+**Sufficiency note**: Part I is sufficient as a first textbook on algorithm design. Part II makes the book a lifelong reference. Alone among algorithms books, this one will sit on your desk, not your bookshelf.

@@ -1,0 +1,17 @@
+{
+  "slug": "algebra-michael-artin",
+  "title": "Algebra",
+  "author": "Michael Artin",
+  "isbn13": "9780130047632",
+  "publisher": "Prentice Hall",
+  "year": 1991,
+  "pages": 672,
+  "language": "en",
+  "category": "22-mathematics-statistics",
+  "subcategory": "algebra-and-number-theory",
+  "genres": ["mathematics", "abstract-algebra", "undergraduate-textbook"],
+  "excerpt": "A geometrically motivated approach to abstract algebra from a Fields Medalist, emphasizing the connections between algebra and geometry.",
+  "cover": "https://covers.openlibrary.org/b/isbn/9780130047632-L.jpg",
+  "difficulty": "intermediate",
+  "tags": ["abstract-algebra", "geometric-algebra", "group-theory", "linear-algebra", "undergraduate-textbook"]
+}

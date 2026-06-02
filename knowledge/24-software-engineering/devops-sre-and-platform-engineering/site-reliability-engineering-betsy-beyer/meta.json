@@ -1,0 +1,84 @@
+{
+  "slug": "site-reliability-engineering-betsy-beyer",
+  "title": "Site Reliability Engineering",
+  "subtitle": "How Google Runs Production Systems",
+  "editor": {
+    "name": "Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy",
+    "role": "Editors",
+    "knownFor": [
+      "Google SRE book series",
+      "Site Reliability Engineering",
+      "The Site Reliability Workbook",
+      "Building Secure and Reliable Systems"
+    ]
+  },
+  "contributors": [
+    "Betsy Beyer (Editor, Google Documentation)",
+    "Chris Jones (Editor, Google SRE)",
+    "Jennifer Petoff (Editor, Google SRE)",
+    "Niall Richard Murphy (Editor, Google SRE)",
+    "Ben Treynor Sloss (Google VP, 24/7 Operations, SRE founder)",
+    "40+ Google SRE engineers (chapter authors)"
+  ],
+  "publicationYear": 2016,
+  "isbn": "9781491929124",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 552,
+  "genres": ["Technology", "Software Engineering", "DevOps", "System Administration"],
+  "subjects": [
+    "Site Reliability Engineering",
+    "Distributed Systems Operations",
+    "Production Systems Management",
+    "Incident Response",
+    "Capacity Planning",
+    "Monitoring and Alerting"
+  ],
+  "themes": [
+    "Operations as a software engineering problem — applying engineering rigor to operational work",
+    "Error budgets resolve the structural conflict between feature velocity and reliability",
+    "SLOs, SLIs, and SLAs as the foundation for data-driven reliability decisions",
+    "Eliminating toil through automation to free SRE time for engineering work",
+    "Blameless postmortems create a culture of learning rather than blame",
+    "Simplicity is a core reliability strategy — every line of code is a liability",
+    "The four golden signals: latency, traffic, errors, saturation",
+    "Distributed consensus and load balancing at unprecedented scale"
+  ],
+  "tags": [
+    "sre",
+    "site-reliability-engineering",
+    "google",
+    "devops",
+    "production-systems",
+    "reliability",
+    "monitoring",
+    "incident-response",
+    "postmortems",
+    "error-budgets",
+    "slo",
+    "toil",
+    "capacity-planning",
+    "load-balancing",
+    "distributed-systems",
+    "chaos-engineering",
+    "automation",
+    "betsy-beyer",
+    "chris-jones",
+    "jennifer-petoff",
+    "niall-murphy",
+    "oreilly",
+    "infrastructure",
+    "operations"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 15,
+  "estimatedListeningMinutes": 900,
+  "awards": [
+    "Cybersecurity Canon Hall of Fame",
+    "O'Reilly Best Seller",
+    "Goodreads rating 4.27 / 5",
+    "Free online edition at sre.google",
+    "Translated into 10+ languages"
+  ],
+  "excerpt": "The overwhelming majority of a distributed system's lifespan is spent in use, not in design or implementation. The discipline of site reliability engineering — treating operations as a software engineering problem — is how Google keeps its massive production systems running reliably while releasing changes at breakneck speed. This book is the inside story of that discipline."
+}

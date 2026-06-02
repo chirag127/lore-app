@@ -1,0 +1,326 @@
+---
+title: Guided Narration
+subtitle: A walk-through of the Legacy Code mindset, from definition to dependency-breaking
+---
+
+## Narration Script
+
+This narration walks through the mindset and process of working with
+legacy code as presented by Michael Feathers. It is designed for
+listening alongside the reading of Part I (The Mechanics of Change) or
+as a standalone orientation for anyone facing a codebase they are afraid
+to change.
+
+---
+
+### 1. The Problem
+
+Every developer inherits it eventually: a codebase that works but that
+no one understands, that has no tests, and that everyone is afraid to
+change. Features take forever. Bug fixes introduce new bugs. The team
+talks about rewriting it, but no one has the stomach for the risk.
+
+This is not a failure of the original developers. It is the natural
+state of software that has been changed by many people over many years
+without a safety net. Feathers calls this code **legacy code** — defined
+not by its age but by the absence of tests.
+
+There is a dilemma at the heart of this problem: to change code safely
+you need tests. But to add tests you often need to change the code. How
+do you break this cycle?
+
+That is what this book teaches.
+
+---
+
+### 2. The Mindset
+
+Before the techniques, you need the right mindset:
+
+1. **Safety first.** The goal is not beautiful code. The goal is code
+   you can change without breaking things. Beauty comes later.
+
+2. **Incremental is the only way that works.** You are not going to add
+   100% test coverage to a million-line codebase this quarter. You are
+   going to add coverage to one method, then one class, then one module.
+   Small steps compound.
+
+3. **Temporary ugliness is acceptable.** You may need to break
+   encapsulation, add a setter to a singleton, or create a subclass just
+   for testing. These are not good design. They are tactical moves that
+   enable test coverage. Once you have tests, you can refactor toward
+   better design.
+
+4. **Seams are everywhere.** Once you start looking, you will see
+   opportunities to intervene without modifying source code. A virtual
+   method is a seam. A `#define` is a seam. A dynamically linked library
+   is a seam. Learn to see them.
+
+---
+
+### 3. The Seam Model
+
+The single most important concept in the book. Let us walk through it:
+
+Feathers asks: how do you stop a C++ method from calling
+`PostReceiveError` — a global function that talks to a slow,
+unreliable subsystem — without editing the method?
+
+The answer is to find a **seam**. In this case, you:
+
+1. Add a virtual method `PostReceiveError` to the class that delegates
+   to the global function
+2. Create a test subclass that overrides `PostReceiveError` with an
+   empty body
+3. Instantiate the test subclass in your test
+
+**Result:** The production code calls the global function. The test code
+calls nothing. You changed the behavior **without editing the method**.
+
+This is the essence of seams. Every seam has an **enabling point** —
+the place where you decide which behavior to use. In this case, the
+enabling point is the place where you create the object (production
+vs. test subclass).
+
+Feathers identifies three types of seams:
+
+- **Preprocessing seams** (C/C++): `#define` macros and `#ifdef`
+  directives that replace code at compile time. The enabling point is a
+  compiler flag or `#define` statement.
+- **Link seams**: Substituting an entire library at link time. The
+  enabling point is the makefile or classpath.
+- **Object seams** (OO languages): Subclassing and overriding. The
+  enabling point is the object instantiation.
+
+Object seams are preferred because they are explicit and maintainable.
+But preprocessing and link seams are invaluable when dependencies are
+pervasive and there is no object boundary to exploit.
+
+---
+
+### 4. The Legacy Code Change Algorithm
+
+Every change to legacy code follows the same five-step pattern:
+
+**Step 1: Identify Change Points.** Where in the code do you need to
+make the change? This is usually the easy part — a feature request
+names a feature, a bug report names a symptom. Trace the symptom to
+the code.
+
+**Step 2: Find Test Points.** Where can you observe the behavior?
+Look for effects: return values, logged data, database writes, UI
+updates, or any other observable output. The best test points are
+**pinch points** — narrow interfaces where many effects converge.
+
+**Step 3: Break Dependencies.** The hard part. Use the
+dependency-breaking techniques to get the target code into a test
+harness. Break only what you need. Use the simplest technique that
+works: Parameterize Constructor, Extract and Override, or Subclass
+and Override Method.
+
+**Step 4: Write Tests.** Start with characterization tests — these
+capture what the code actually does, not what it should do. Run the
+code, capture the output, assert on it. Now you have a safety net.
+
+**Step 5: Make Changes and Refactor.** With tests in place, the
+change is safe. Make it. Then refactor the covered code toward better
+design. The tests ensure you do not break anything.
+
+---
+
+### 5. The Legacy Code Dilemma — A Closer Look
+
+Imagine you have this code:
+
+```java
+public class Sale {
+  private Display display;
+  public Sale() {
+    this.display = new Display(); // talks to hardware
+  }
+  public void scan(String barcode) {
+    String price = lookupPrice(barcode);
+    display.show(price);
+  }
+}
+```
+
+You want to test `scan()` without hardware. But `Display` talks to a
+real screen. You cannot run the test without hardware. And you cannot
+change the constructor without risking a regression.
+
+The solution: **Parameterize Constructor**.
+
+```java
+public class Sale {
+  private Display display;
+  public Sale(Display display) {
+    this.display = display;
+  }
+}
+```
+
+Now create a `FakeDisplay` for tests:
+
+```java
+public class FakeDisplay extends Display {
+  public String lastLine = "";
+  public void show(String line) {
+    lastLine = line;
+  }
+}
+```
+
+And the test:
+
+```java
+public void testScan() {
+  FakeDisplay display = new FakeDisplay();
+  Sale sale = new Sale(display);
+  sale.scan("12345");
+  assertEquals("$12.50", display.lastLine);
+}
+```
+
+You broke one dependency (the hardware-bound `Display`) with a minimal
+change (adding a constructor parameter). No behavior changed in
+production. The class is now testable.
+
+---
+
+### 6. Sprout vs. Wrap — When to Use What
+
+You are adding a feature. The existing method is a 500-line monster
+with no tests. You have two choices:
+
+**Sprout Method:** Write the new logic in a separate, tested method.
+Add one line to the monster method to call your new method. Done.
+
+**Sprout Class:** The monster class is so tangled that even adding a
+method feels risky. Create a whole new class. Test it. Use it from the
+legacy code via one insertion point.
+
+**Wrap Method:** The new behavior should happen before or after the
+existing logic. Rename the existing method. Create a new method with
+the original name. It calls the old method plus your new code.
+
+**Wrap Class:** Same idea, but at the class level — the Decorator
+pattern. Implement the same interface. Wrap the legacy class. Add
+your behavior before or after delegation.
+
+When to use which:
+
+- **Sprout Method**: The new logic is independent of the existing
+  algorithm. The existing algorithm is clear enough that you can find
+  the right insertion point.
+- **Sprout Class**: The existing class is too tangled to safely add
+  anything to it. You need a clean slate.
+- **Wrap Method**: The new behavior must execute before or after the
+  existing behavior. The method signature must not change.
+- **Wrap Class**: You need to add cross-cutting behavior (logging,
+  caching, timing) across many methods of a class.
+
+---
+
+### 7. Characterization Tests in Practice
+
+You have a method `calculateTotal()`. It is 200 lines. It clearly does
+something with orders and pricing. But what exactly? No specification
+exists. The developer who wrote it left two years ago.
+
+You need to change it. But first: a characterization test.
+
+```java
+public void testCalculateTotal() {
+  Order order = new Order();
+  order.addItem("SKU-001", 2, 10.00);
+  order.addItem("SKU-002", 1, 25.00);
+  order.setCustomerType("VIP");
+
+  double result = order.calculateTotal();
+
+  // This is what it actually does today.
+  assertEquals(42.50, result, 0.01);
+}
+```
+
+You assert on the *actual* output. If someone later changes the
+calculation, this test breaks — even if the new value is "more correct."
+That is intentional. The test documents the contract that the code
+currently satisfies. Once you understand the contract, you can change it
+deliberately.
+
+Characterization tests are a stepping stone, not a destination. They
+get you to safety fast. As you understand the code better, you can
+replace them with specification-based tests.
+
+---
+
+### 8. An Honest Assessment
+
+**Principal Engineer:** This book is my most-recommended technical book
+for any developer working on an existing codebase. The seam model
+changed how I look at code. I see seams everywhere now — places where
+I can substitute behavior, insert tests, or redirect program flow. It
+is a genuinely new way of thinking about software.
+
+The Legacy Code Change Algorithm is the answer to the single most
+common question in software engineering: "I need to change this code,
+but I am afraid. What do I do first?"
+
+**Senior Maintainer:** I have mixed feelings. The book is unquestionably
+valuable, but it shows its age. The C++ examples with preprocessor
+macros and link seams feel like archeology. Modern mocking frameworks
+handle most of these cases with a one-line annotation. The book also
+does not address the human side of this problem — how do you convince
+a product manager that you need a week to "break dependencies" on code
+the customer cannot see?
+
+But. The seam concept is timeless. The characterization test technique
+is timeless. And the dependency-breaking catalog — even when the
+specific mechanics have been automated — teaches you *what kind of
+changes are possible*.
+
+---
+
+### 9. The Verdict: Still Relevant?
+
+**Principal Engineer:** More relevant than ever. The problem of legacy
+code is not going away. Every codebase accumulates untested complexity
+over time. The seam model and dependency-breaking techniques are
+language-independent ideas that apply regardless of the specific tools
+in use.
+
+The tools have changed — we have DI containers, mocking frameworks,
+and expressive test DSLs now — but the fundamental problem has not.
+You cannot mock a dependency on a legacy codebase without first
+introducing a seam. That foundational insight does not age.
+
+**Senior Maintainer:** I agree, with a caveat. Read the book for the
+concepts, not the code. The seam model, the characterization test
+approach, and the five-step algorithm are what matter. The actual code
+examples — especially the C++ preprocessor tricks — should be taken as
+historical illustrations, not prescriptions.
+
+Pair it with a modern book on testing (or the documentation for your
+specific testing framework) to fill the tooling gaps.
+
+---
+
+### 10. Final Words
+
+Legacy code is not a moral failure. It is the natural state of software
+that has been changed by multiple developers over time. The question is
+not "how did this get so bad?" The question is "what do I do about it
+now?"
+
+Feathers' answer: start with one method. Find a seam. Break one
+dependency. Write one characterization test. Make your change. Repeat.
+
+The book's title promises to teach you to work effectively with legacy
+code. It delivers. Not by making the code beautiful — though that can
+come later — but by making it safe to change. That is the only goal
+that matters. And it is achievable, one seam at a time.
+
+This has been a BookAtlas narration of *Working Effectively with Legacy
+Code* by Michael Feathers. Thanks for listening.

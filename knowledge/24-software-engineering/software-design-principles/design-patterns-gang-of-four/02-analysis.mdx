@@ -1,0 +1,81 @@
+## The Singleton: Blessing or Curse?
+
+Few topics in Design Patterns have provoked as much debate as the Singleton.
+The GoF description is neutral: ensure exactly one instance, provide global
+access. In practice, Singletons often become **implicit global variables** —
+variables that hide their own global nature, making dependencies invisible and
+testing painful.
+
+The book itself does not recommend Singleton as a default. It situates it among
+23 peers. The pattern\'s notoriety grew after publication, as developers
+enthusiastically over-applied it. Modern advice aligns with the GoF\'s implicit
+warning: use Singleton only when you genuinely need the single-instance guarantee
+(connection pools, loggers, service locators), and prefer dependency injection
+for dependency management.
+
+## The Danger of Over-Applying Patterns
+
+The book\'s most consistent critic — and its most careful reader — is the
+developers who followed it too literally in their early days. The phrase
+*"patternitis"* was coined almost immediately after publication:
+
+1. **Patterns as dogma**: junior engineers insert patterns regardless of
+   complexity, treating every small class as candidate for Abstract Factory.
+2. **Inappropriate abstraction**: premature indirection makes code harder to
+   follow, not easier.
+3. **Ignoring simplicity**: GoF patterns assume a certain scale. For a script or
+   a small CRUD application, a pattern may add structure you do not need.
+
+The GoF themselves acknowledge this implicitly in the book\'s introduction:
+"*Designing a reusable library is hard, and designers must take extra care to
+design it well. Patterns can help.*" The qualification "can help" — not "must be
+used" — is instructive. A pattern solves a specific problem. Applying it without
+that problem is cargo cult engineering.
+
+## The 23 Patterns Re-examined
+
+<PatternsTable />
+
+<hr />
+
+## The Collective Authorship Model
+
+The Gang of Four name and authorship structure deserves attention beyond the
+technical content. The book was the product of a sustained, multi-year
+partnership: the authors met at conferences, exchanged drafts, debated naming
+and intent, and came to consensus.
+
+Four-person collaboration on a technical book is unusual. It produces a
+consistency of tone and authority that a single-author book often lacks, and it
+also produces trade-offs. The C++ examples reflect Gamma and Helm\'s primary
+language; the Smalltalk influence reflects Johnson\'s and Vlissides\'s background.
+The result is a deliberately multi-paradigm text that reads consistently at the
+cost of occasional stylistic friction.
+
+Vlissides\'s 2005 death, at age 44, left the surviving three to write a
+retrospective called *"Design Patterns 10 Years Later"* — a meditation on what
+the book got right, what it got wrong, and how the pattern movement shaped and
+was shaped by the industry that followed.
+
+## Who Is This Book For?
+
+- **Intermediate OOP developers** ready to think in terms of object
+  relationships rather than just class mechanics.
+- **Senior engineers** building frameworks, libraries, or large systems where
+  extensibility matters.
+- **Teams** wanting a shared vocabulary for code review and architecture
+  discussions.
+
+Not for everyone:
+- **Beginners** may find the 23-pattern catalogue overwhelming. Head First
+  Design Patterns offers a gentler entry point.
+- **Teams building small, simple CRUD apps** may find most patterns irrelevant.
+
+---
+
+## Further Reading
+
+- [Design Patterns: 10 Years Later](https://www.informit.com/articles/article.aspx?p=25844) — Gamma, Helm, Johnson, Vlissides (2005)
+- [Head First Design Patterns](https://www.oreilly.com/library/view/head-first-design/0596007124/) — Freeman, Robson
+- [Patterns of Enterprise Application Architecture](https://martinfowler.com/books/patterns.html) — Martin Fowler
+- [A Pattern Language](https://en.wikipedia.org/wiki/A_Pattern_Language) — Christopher Alexander (the original)

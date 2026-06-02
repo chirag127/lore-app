@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schemas/book-meta.json",
+  "slug": "multipliers-liz-wiseman",
+  "title": "Multipliers: How the Best Leaders Make Everyone Smarter",
+  "authors": [
+    {
+      "name": "Liz Wiseman",
+      "role": "Author"
+    },
+    {
+      "name": "Greg McKeown",
+      "role": "Co-author"
+    }
+  ],
+  "isbn": "9780061781348",
+  "isbn10": "0061781346",
+  "publisher": "Harper Business",
+  "publishedDate": "2017-05-30",
+  "pages": 336,
+  "language": "en",
+  "genres": [
+    "Leadership",
+    "Management",
+    "Business",
+    "Organizational Behavior",
+    "Personal Development"
+  ],
+  "coverUrl": "./cover.jpg",
+  "description": "Multipliers identifies two archetypes of leaders — those who drain intelligence and capacity from their teams (Diminishers), and those who amplify it (Multipliers). Based on extensive research and case studies, Wiseman and McKeown show that Multipliers get nearly twice the capability from their organizations compared to Diminishers, and provide a practical framework for developing the five disciplines that define Multiplier leadership.",
+  "keyConcepts": [
+    "Multiplier vs Diminisher archetypes",
+    "The five disciplines of Multipliers",
+    "Talent Magnet",
+    "Liberator",
+    "Challenger",
+    "Debate Maker",
+    "Investor",
+    "Access vs amplification",
+    "Accidental Diminisher",
+    "The Multiplier Effect on productivity"
+  ],
+  "notableQuotes": [
+    "Diminishers say, 'I have the answers.' Multipliers ask, 'Who has the answers?'",
+    "Some managers seem to walk through a door and extinguish the brightest lights. Others seem to walk through and turn them on.",
+    "Diminishers get people to comply with their demands, then they drain the organization of its intelligence. Multipliers get people to commit to bigger goals and then they amplify the organization's intelligence.",
+    "People are not depletable resources. They don't get used up. The more you channel the latent intelligence, the more intelligent the organization becomes.",
+    "Multipliers think of intelligence as a resource that expands as people stretch. Diminishers think of intelligence as a fixed quantity and try to hoard access to it."
+  ],
+  "readingTimeMinutes": 420,
+  "difficulty": "intermediate",
+  "amazonUrl": "https://www.amazon.com/dp/0061781346",
+  "goodreadsUrl": "https://www.goodreads.com/book/show/9960019-multipliers"
+}

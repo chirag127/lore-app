@@ -1,0 +1,125 @@
+---
+title: Core Concepts
+subtitle: The Universal Workflow, Convnets, Transfer Learning, and Transformers
+---
+
+## The Universal Workflow of Machine Learning
+
+```mermaid
+flowchart TD
+    A["Define the problem<br/>What input? What output?<br/>What metric?"]
+    B["Find a baseline<br/>Simple heuristic or<br/>existing solution"]
+    C["Implement the model<br/>Build, train, evaluate<br/>on validation set"]
+    D["Diagnose under/overfitting<br/>Plot learning curves<br/>Adjust capacity"]
+    E["Regularize and tune<br/>Dropout, weight decay,<br/>data augmentation"]
+    F["Evaluate on test set<br/>Final performance<br/>metric"]
+    G["Deploy<br/>Export model,<br/>build API"]
+
+    A --> B --> C --> D --> E --> F --> G
+    D -.->|"Underfitting"| C
+    E -.->|"Still overfitting"| D
+```
+
+Chollet's universal workflow is a repeatable process for any machine
+learning project. Start simple, establish a baseline, and iterate.
+
+---
+
+## Convolutional Network Architecture
+
+```mermaid
+flowchart LR
+    subgraph Base["Base ConvNet"]
+        CONV1["Conv2D 32<br/>3x3, ReLU"]
+        POOL1["MaxPool2D<br/>2x2"]
+        CONV2["Conv2D 64<br/>3x3, ReLU"]
+        POOL2["MaxPool2D<br/>2x2"]
+        CONV3["Conv2D 128<br/>3x3, ReLU"]
+        GAP["GlobalAvgPool2D"]
+        DENSE["Dense 256, ReLU"]
+        DROP["Dropout 0.5"]
+        OUT["Dense (classes)<br/>Softmax"]
+    end
+
+    CONV1 --> POOL1 --> CONV2 --> POOL2 --> CONV3 --> GAP --> DENSE --> DROP --> OUT
+```
+
+The pattern: progressively increase filter count as spatial dimensions
+decrease. Each convolution extracts more abstract features.
+
+---
+
+## Transfer Learning
+
+```mermaid
+flowchart LR
+    subgraph Pretrained["Pretrained Model<br/>(e.g., VGG16 on ImageNet)"]
+        BLOCKS["Convolutional base<br/>(frozen)"]
+        TOP["Classifier<br/>(removed)"]
+    end
+
+    subgraph New["New Task<br/>(e.g., cat vs dog)"]
+        NEW_BASE["Same conv base<br/>(weights frozen)"]
+        NEW_TOP["New classifier<br/>(train from scratch)"]
+        PRED["Prediction"]
+    end
+
+    BLOCKS --> TOP
+    NEW_BASE --> NEW_TOP --> PRED
+```
+
+Transfer learning is the single most impactful technique in practical
+deep learning. A pretrained model's feature extraction layers transfer
+to new tasks, requiring far less data and training time.
+
+---
+
+## The Transformer Architecture
+
+```mermaid
+flowchart LR
+    subgraph Transformer["Transformer Block"]
+        IN["Input<br/>Token embeddings"]
+        ATT["Multi-Head<br/>Self-Attention"]
+        ADD1["Add & Norm<br/>(residual)"]
+        FF["Feed-Forward<br/>Network"]
+        ADD2["Add & Norm<br/>(residual)"]
+        OUT["Output<br/>Contextual embeddings"]
+    end
+
+    IN --> ATT --> ADD1 --> FF --> ADD2 --> OUT
+```
+
+The Transformer replaced RNNs for sequence tasks. Self-attention
+processes all tokens simultaneously, enabling parallel computation
+and long-range dependencies. The residual connections and layer
+normalization stabilize training of very deep networks.
+
+---
+
+## Key Lessons
+
+- **Start simple, then iterate.** The universal workflow prevents
+  wasted effort on complex models before understanding the problem.
+- **Always visualize learning curves.** Training loss vs validation
+  loss tells you immediately whether you are underfitting or
+  overfitting.
+- **Data is more important than architecture.** Better data beats
+  better models. Data augmentation multiplies your dataset.
+- **Transfer learning is not optional.** Unless you have a truly novel
+  problem domain, start from a pretrained model.
+
+---
+
+## Practical Applications
+
+- **Image classification:** Use a pretrained ConvNet (ResNet, Xception)
+  with transfer learning. Fine-tune the last few layers.
+- **Text classification:** Start with a simple bag-of-words model.
+  Only use transformers if the simple model underperforms.
+- **Time series forecasting:** Dense or convolutional models often
+  outperform LSTMs on forecasting tasks.
+- **Image segmentation:** Use the U-Net architecture with a pretrained
+  encoder backbone.
+- **Text generation:** Fine-tune a pretrained language model on your
+  specific domain data.

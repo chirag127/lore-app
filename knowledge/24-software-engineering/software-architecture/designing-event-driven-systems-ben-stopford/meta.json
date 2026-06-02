@@ -1,0 +1,62 @@
+{
+  "slug": "designing-event-driven-systems-ben-stopford",
+  "title": "Designing Event-Driven Systems",
+  "subtitle": "Concepts and Patterns for Streaming Services",
+  "author": "Ben Stopford",
+  "publicationYear": 2018,
+  "isbn": "9781492038252",
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "pageCount": 171,
+  "genres": [
+    "Technology",
+    "Computer Science",
+    "Software Engineering",
+    "Distributed Systems"
+  ],
+  "subjects": [
+    "Event-Driven Architecture",
+    "Apache Kafka",
+    "Stream Processing",
+    "Event Sourcing",
+    "CQRS",
+    "Microservices",
+    "Distributed Systems",
+    "Data Architecture"
+  ],
+  "themes": [
+    "The log as the backbone of event-driven systems",
+    "Event sourcing, CQRS, and when to apply them",
+    "Event schemas and compatibility over time",
+    "Consistency models without distributed transactions",
+    "Building multi-team service ecosystems with shared logs",
+    "When events are overkill — and when they're essential",
+    "Resilience through immutability and replay"
+  ],
+  "tags": [
+    "event-driven-architecture",
+    "apache-kafka",
+    "event-streaming",
+    "event-sourcing",
+    "cqrs",
+    "stream-processing",
+    "distributed-systems",
+    "messaging",
+    "microservices",
+    "log-based-architecture",
+    "kafka-streams",
+    "schema-registry",
+    "confluent",
+    "ben-stopford",
+    "oreilly"
+  ],
+  "difficulty": "intermediate-advanced",
+  "estimatedReadingHours": 5,
+  "estimatedListeningMinutes": 300,
+  "awards": [
+    "O'Reilly Best Seller in Streaming & Messaging",
+    "Foreword by Sam Newman (Building Microservices author)",
+    "Cited as foundational reading for engineers at Confluent"
+  ],
+  "excerpt": "Ben Stopford explains how service-based architectures and Apache Kafka can help you build business-critical systems, covering Event Sourcing, CQRS, and multi-team architectures with event streams as a shared source of truth."
+}

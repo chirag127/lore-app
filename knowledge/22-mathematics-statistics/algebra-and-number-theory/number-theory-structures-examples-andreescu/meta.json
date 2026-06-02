@@ -1,0 +1,18 @@
+{
+  "slug": "number-theory-structures-examples-andreescu",
+  "title": "Number Theory: Structures, Examples, and Problems",
+  "subtitle": "A Problem-Solver's Guide",
+  "author": "Titu Andreescu, Dorin Andrica",
+  "publicationYear": 2009,
+  "isbn": "9780817632458",
+  "publisher": "Birkhauser",
+  "language": "en",
+  "genres": ["Mathematics", "Number Theory", "Problem Book", "Olympiad Training"],
+  "subjects": ["Divisibility", "Primes", "Congruences", "Diophantine Equations", "Irrational Numbers", "Sequences of Integers", "Quadratic Residues"],
+  "themes": ["Problem-Solving Methodology", "Structural Understanding", "Olympiad-Level Rigor", "Systematic Classification"],
+  "tags": ["number theory", "Andreescu", "Andrica", "problem solving", "olympiad", "Diophantine equations", "competition math"],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 40,
+  "estimatedListeningMinutes": 2400,
+  "excerpt": "A comprehensive problem-solving guide that systematically develops number theory through carefully structured examples and hundreds of contest-level problems, from divisibility fundamentals to advanced Diophantine equations."
+}

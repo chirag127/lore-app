@@ -1,0 +1,70 @@
+{
+  "slug": "structure-and-interpretation-of-computer-programs-hal-abelson",
+  "title": "Structure and Interpretation of Computer Programs",
+  "subtitle": "SICP — The Wizard Book",
+  "author": "Harold Abelson, Gerald Jay Sussman, Julie Sussman",
+  "publicationYear": 1996,
+  "isbn": "9780262510875",
+  "publisher": "MIT Press",
+  "language": "en",
+  "pageCount": 657,
+  "genres": [
+    "Technology",
+    "Computer Science",
+    "Programming",
+    "Textbook"
+  ],
+  "subjects": [
+    "Computer Programming",
+    "Programming Languages",
+    "Lisp / Scheme",
+    "Metacircular Evaluators",
+    "Compilers",
+    "Abstraction",
+    "Computational Processes"
+  ],
+  "themes": [
+    "Building abstractions with procedures — lambda calculus, recursion, higher-order functions",
+    "Building abstractions with data — compound data, symbolic data, generic operations",
+    "Modularity, objects, and state — mutable data, streams, concurrency",
+    "Metalinguistic abstraction — metacircular evaluator, lazy evaluation, nondeterministic computing, logic programming",
+    "Computing with register machines — explicit-control evaluator, compilation, garbage collection"
+  ],
+  "tags": [
+    "sicp",
+    "wizard-book",
+    "scheme",
+    "lisp",
+    "computer-science",
+    "programming",
+    "abstraction",
+    "metacircular-evaluator",
+    "recursion",
+    "higher-order-procedures",
+    "compiler",
+    "register-machine",
+    "hal-abelson",
+    "gerald-sussman",
+    "julie-sussman",
+    "mit-press",
+    "mit-6001",
+    "functional-programming",
+    "classic-textbook",
+    "lambda",
+    "streams",
+    "object-oriented"
+  ],
+  "difficulty": "advanced",
+  "estimatedReadingHours": 60,
+  "estimatedListeningMinutes": 3600,
+  "firstEditionYear": 1984,
+  "awards": [
+    "ACM SIGSOFT Influential Educator Award (Abelson & Sussman, 2011)",
+    "Byte Magazine's 'Book of the Year' (1986)",
+    "Widely regarded as one of the most important CS textbooks ever written",
+    "Foreword by Alan J. Perlis (first Turing Award winner)",
+    "Used as MIT's introductory CS textbook (6.001) from 1984–2007",
+    "Creative Commons BY-SA 4.0 licensed (freely available online)"
+  ],
+  "excerpt": "The Wizard Book. MIT's legendary 6.001 textbook that teaches not a programming language, but the very nature of computation — from lambda calculus to metacircular evaluators to compilers. Scheme as the vehicle, abstraction as the destination."
+}

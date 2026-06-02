@@ -1,0 +1,43 @@
+{
+  "slug": "broken-markets-kevin-mcpartland",
+  "title": "Broken Markets",
+  "subtitle": "How Technology and Predatory Practices Are Destroying Investor Confidence",
+  "author": "Kevin McPartland",
+  "isbn": "9780133993509",
+  "isbn10": "0133993504",
+  "publisher": "FT Press",
+  "originalPublicationYear": 2014,
+  "pages": 296,
+  "language": "en",
+  "subjects": [
+    "High-frequency trading",
+    "Market structure",
+    "Predatory trading",
+    "Financial regulation",
+    "Investor protection",
+    "Electronic markets"
+  ],
+  "amazonRating": 4.2,
+  "goodreadsRating": 3.8,
+  "goodreadsRatingsCount": 150,
+  "difficulty": "Medium",
+  "readingTimeHours": 8,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780133993509-L.jpg",
+  "openLibraryKey": "OL26123256M",
+  "authorBio": "Kevin McPartland is Head of Research for Market Structure and Technology at Coalition Greenwich (a CRISIL company). He has over 25 years of capital markets experience and is a leading authority on electronic trading, market structure, and the impact of technology on financial markets. He previously held roles at BlackRock and has advised regulators and exchanges globally.",
+  "keyConcepts": [
+    "Market structure fragmentation",
+    "Predatory HFT practices",
+    "Dark pools and lit market interaction",
+    "Maker-taker pricing models",
+    "Regulatory response to HFT",
+    "Technology arms race",
+    "Investor confidence erosion"
+  ],
+  "notableQuotes": [
+    "The markets are not broken in the sense of being dysfunctional. They are broken in the sense of being unfair.",
+    "Technology has transformed markets faster than regulation can adapt.",
+    "The biggest threat to market health is not HFT itself — it is the perception that markets are rigged.",
+    "We have built the most technologically advanced market in history, but we forgot to make it fair."
+  ]
+}

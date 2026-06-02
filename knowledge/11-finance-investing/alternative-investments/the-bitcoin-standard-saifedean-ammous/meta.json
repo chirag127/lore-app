@@ -1,0 +1,112 @@
+{
+  "slug": "the-bitcoin-standard-saifedean-ammous",
+  "title": "The Bitcoin Standard: The Decentralized Alternative to Central Banking",
+  "author": "Saifedean Ammous",
+  "bibliography": {
+    "publisher": "John Wiley & Sons",
+    "imprint": "Wiley",
+    "isbn": {
+      "hardcover": "978-1-119-47386-2",
+      "ebook": "978-1-119-47391-6",
+      "audiobook": "978-1-119-47389-3"
+    },
+    "publicationYear": 2018,
+    "publicationDate": "2018-04-24",
+    "pageCount": 304,
+    "language": "English",
+    "translations": 39,
+    "format": "Hardcover, eBook, Audiobook"
+  },
+  "content": {
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Money",
+        "pages": "1–26"
+      },
+      {
+        "number": 2,
+        "title": "Primitive Moneys",
+        "pages": "27–52"
+      },
+      {
+        "number": 3,
+        "title": "Monetary Metals",
+        "pages": "53–94"
+      },
+      {
+        "number": 4,
+        "title": "Government Money",
+        "pages": "95–126"
+      },
+      {
+        "number": 5,
+        "title": "Money and Time Preference",
+        "pages": "127–154"
+      },
+      {
+        "number": 6,
+        "title": "Capital and the Economics of Sound Money",
+        "pages": "155–184"
+      },
+      {
+        "number": 7,
+        "title": "Sound Money and Individual Freedom",
+        "pages": "185–214"
+      },
+      {
+        "number": 8,
+        "title": "Bitcoin: A New Form of Digital Money",
+        "pages": "215–240"
+      },
+      {
+        "number": 9,
+        "title": "Bitcoin's Monetary Properties",
+        "pages": "241–262"
+      },
+      {
+        "number": 10,
+        "title": "Bitcoin Questions",
+        "pages": "263–282"
+      }
+    ],
+    "coreTheses": [
+      "Money is a technology for transferring value across time and space",
+      "Salability across time is the most important property of money",
+      "The stock-to-flow ratio measures the 'hardness' of a money",
+      "Sound money enables long time horizons and capital accumulation",
+      "Fiat money systematically transfers wealth from savers to the state",
+      "Bitcoin is the first digital hard money with a perfectly predictable supply"
+    ]
+  },
+  "reception": {
+    "sales": "1,000,000+ copies",
+    "languages": 39,
+    "goodreadsRating": 4.3,
+    "goodreadsRatings": 100000,
+    "category": "Economic Theory, Monetary Policy, Cryptocurrency"
+  },
+  "impact": {
+    "corporateTreasuryAdoption": "MicroStrategy converted $2.2B to Bitcoin after CEO read this book",
+    "policyInfluence": "Informed El Salvador's Bitcoin adoption and Ammous's appointment as economic adviser",
+    "academicInfluence": "Revived interest in Austrian economics and sound money debates",
+    "movementCatalyst": "Considered the foundational text of the Bitcoin-as-sound-money movement"
+  },
+  "category": "11-finance-investing",
+  "subcategory": "alternative-investments",
+  "subSubcategory": "cryptocurrency-and-digital-assets",
+  "order": 1,
+  "tags": [
+    "Bitcoin",
+    "Austrian Economics",
+    "Gold Standard",
+    "Fiat Currency",
+    "Monetary Policy",
+    "Sound Money",
+    "Cryptocurrency",
+    "Central Banking",
+    "Saifedean Ammous",
+    "Stock-to-Flow",
+    "Digital Gold"
+  ]
+}

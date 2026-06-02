@@ -1,0 +1,15 @@
+{
+  "slug": "the-mythical-man-month-fred-brooks",
+  "title": "The Mythical Man-Month: Essays on Software Engineering",
+  "authors": [{"name": "Frederick P. Brooks Jr."}],
+  "publicationYear": "1995",
+  "isbn": "9780201835953",
+  "publisher": "Addison-Wesley",
+  "pageCount": 336,
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 480,
+  "tags": ["software-engineering", "management", "systems", "project-management"],
+  "themes": ["Software Engineering", "Project Management", "Complexity", "Team Dynamics"],
+  "excerpt": "The seminal essay collection on software engineering management — Brooks' Law and the conceptual integrity principle."
+}

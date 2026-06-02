@@ -1,0 +1,152 @@
+{
+  "slug": "the-clash-of-civilizations-samuel-huntington",
+  "title": "The Clash of Civilizations and the Remaking of World Order",
+  "author": "Samuel P. Huntington",
+  "date": 1996,
+  "category": "13-political-science",
+  "subcategory": "international-relations",
+  "tags": [
+    "international-relations",
+    "civilizations",
+    "geopolitics",
+    "cold-war",
+    "cultural-conflict",
+    "foreign-policy"
+  ],
+  "isbn": "978-0-684-84441-1",
+  "publisher": "Simon & Schuster",
+  "year": 1996,
+  "pages": 428,
+  "files": [
+    "index.mdx",
+    "01-content.mdx",
+    "02-analysis.mdx",
+    "03-narration.mdx"
+  ],
+  "author_bio": {
+    "full_name": "Samuel Phillips Huntington",
+    "birth_date": "1927-04-18",
+    "death_date": "2008-12-24",
+    "nationality": "American",
+    "education": [
+      "Yale University (BA, graduated with distinction at age 18)",
+      "University of Chicago (MA)",
+      "Harvard University (PhD)"
+    ],
+    "positions": [
+      "Albert J. Weatherhead III University Professor at Harvard University",
+      "Director of Harvard's Weatherhead Center for International Affairs",
+      "White House coordinator of security planning for the National Security Council (1977-1978)",
+      "Co-founder and co-editor of Foreign Policy magazine",
+      "President of the American Political Science Association (1986-1987)"
+    ],
+    "notable_works": [
+      "The Soldier and the State: The Theory and Politics of Civil-Military Relations (1957)",
+      "Political Order in Changing Societies (1968)",
+      "The Third Wave: Democratization in the Late Twentieth Century (1991)",
+      "The Clash of Civilizations and the Remaking of World Order (1996)",
+      "Who Are We? The Challenges to America's National Identity (2004)"
+    ],
+    "key_ideas": [
+      "Clash of civilizations",
+      "Civil-military relations",
+      "Political decay",
+      "Third wave of democratization",
+      "Davos Man"
+    ]
+  },
+  "book_context": {
+    "origin": "Expanded from 1993 Foreign Affairs article 'The Clash of Civilizations?'",
+    "response_to": "Francis Fukuyama's 'The End of History and the Last Man' (1992)",
+    "historical_context": "Post-Cold War period, dissolution of Soviet Union, rise of globalization",
+    "contemporary_events": [
+      "Yugoslav Wars (1991-2001)",
+      "Chechen Wars (1994-2009)",
+      "India-Pakistan tensions",
+      "Rise of China",
+      "September 11 attacks (2001)"
+    ]
+  },
+  "key_concepts": [
+    "Civilizational blocs",
+    "Core states",
+    "Fault line conflicts",
+    "Kin-country syndrome",
+    "Torn countries",
+    "Modernization vs. Westernization",
+    "Sino-Islamic connection",
+    "Swing civilizations",
+    "Western universalism"
+  ],
+  "criticism_summary": {
+    "main_critics": [
+      "Edward Said",
+      "Amartya Sen",
+      "Noam Chomsky",
+      "Paul Berman",
+      "Timothy Garton Ash",
+      "Yuval Noah Harari"
+    ],
+    "key_criticisms": [
+      "Essentialism and oversimplification of civilizations",
+      "Self-fulfilling prophecy",
+      "Ignoring intra-civilizational conflict",
+      "Contradicted by empirical evidence (e.g., Russia-Ukraine war)",
+      "Neglecting economic and political factors",
+      "Arbitrary civilizational boundaries"
+    ]
+  },
+  "influence": {
+    "academic_impact": "One of the most cited and debated works in political science",
+    "policy_influence": "Cited by policymakers in the George W. Bush administration, Benjamin Netanyahu, Viktor Orbán",
+    "political_movements": "Adopted by right-wing populist movements including Donald Trump 2016 campaign",
+    "counter_movements": [
+      "Dialogue Among Civilizations (Mohammad Khatami, 2001)",
+      "Alliance of Civilizations (Spanish and Turkish prime ministers, 2005)"
+    ]
+  },
+  "related_books": [
+    {
+      "title": "The End of History and the Last Man",
+      "author": "Francis Fukuyama",
+      "year": 1992,
+      "relationship": "Intellectual foil; argues liberal democracy has triumphed"
+    },
+    {
+      "title": "The World Is Flat",
+      "author": "Thomas Friedman",
+      "year": 2005,
+      "relationship": "Counterpoint; argues globalization creates level playing field"
+    },
+    {
+      "title": "On China",
+      "author": "Henry Kissinger",
+      "year": 2011,
+      "relationship": "Nuanced view of Chinese civilizational identity"
+    },
+    {
+      "title": "Orientalism",
+      "author": "Edward Said",
+      "year": 1978,
+      "relationship": "Critique of Western construction of the 'East'"
+    },
+    {
+      "title": "Identity and Violence: The Illusion of Destiny",
+      "author": "Amartya Sen",
+      "year": 2006,
+      "relationship": "Argues against singular civilizational identities"
+    },
+    {
+      "title": "21 Lessons for the 21st Century",
+      "author": "Yuval Noah Harari",
+      "year": 2018,
+      "relationship": "Critiques civilizational framework as misleading"
+    }
+  ],
+  "content_files": {
+    "index.mdx": "Book overview, summary, key takeaways, and metadata",
+    "01-content.mdx": "Key concepts with mermaid diagrams, tables, and callouts",
+    "02-analysis.mdx": "Strengths, weaknesses, criticism, and final assessment",
+    "03-narration.mdx": "Audio-friendly flowing narration without headings or diagrams"
+  }
+}

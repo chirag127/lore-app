@@ -1,0 +1,122 @@
+{
+  "slug": "influence-robert-cialdini",
+  "title": "Influence: The Psychology of Persuasion",
+  "author": "Robert B. Cialdini",
+  "subtitle": "The Psychology of Persuasion",
+  "isbn13": "9780061241895",
+  "isbn10": "006124189X",
+  "publisher": "Harper Business",
+  "publishedDate": "1984-01-01",
+  "edition": "Revised",
+  "pageCount": 320,
+  "language": "en",
+  "categories": ["Social Psychology", "Persuasion", "Marketing", "Business", "Communication"],
+  "tags": [
+    "persuasion",
+    "social-psychology",
+    "influence",
+    "compliance",
+    "reciprocity",
+    "social-proof",
+    "scarcity",
+    "authority",
+    "liking",
+    "commitment",
+    "consistency",
+    "unity",
+    "robert-cialdini",
+    "behavioral-economics",
+    "decision-making",
+    "marketing"
+  ],
+  "goodreadsRating": 4.21,
+  "goodreadsRatingsCount": 181300,
+  "goodreadsReviewsCount": 6570,
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780061241895-L.jpg",
+  "authorBio": "Robert B. Cialdini (born April 27, 1945) is Regents' Professor Emeritus of Psychology and Marketing at Arizona State University. He earned his PhD in social psychology from the University of North Carolina and completed postgraduate training at Columbia University. Cialdini is widely regarded as the foundational expert in the science of influence and persuasion, often called the 'Godfather of Influence.' His books have sold over seven million copies in 44 languages. He was elected to the National Academy of Sciences in 2019. He has advised Google, Microsoft, Coca-Cola, and both the Obama and Clinton presidential campaigns. He founded INFLUENCE AT WORK and later the Cialdini Institute to train professionals in ethical persuasion.",
+  "authorWebsite": "https://www.influenceatwork.com/",
+  "difficulty": "Easy",
+  "readingTimeMinutes": 360,
+  "listeningTimeMinutes": 420,
+  "awards": [
+    "New York Times Bestseller",
+    "Fortune Magazine '75 Smartest Business Books'",
+    "Listed in 50 Psychology Classics",
+    "National Academy of Sciences Member (2019)",
+    "Charlie Munger gave Cialdini a Berkshire Hathaway Class A share in appreciation"
+  ],
+  "description": "Robert Cialdini's landmark exploration of the psychology of compliance identifies six universal principles that drive human decision-making: reciprocation, commitment and consistency, social proof, liking, authority, and scarcity. Based on three years of undercover fieldwork in sales, fundraising, and telemarketing combined with decades of experimental research, the book reveals how compliance professionals trigger automatic, predictable responses. Each chapter blends controlled studies with vivid real-world case studies — from Hare Krishna募捐者的 flower tactic to the Tupperware party model — demonstrating how these principles operate in everyday life. The 2021 expanded edition adds a seventh principle, unity, reflecting the power of shared identity. Cialdini's ethical framework distinguishes honest persuasion (informing with relevant, truthful information) from manipulation (deceptive triggering of mental shortcuts).",
+  "excerpt": "The definitive scientific exploration of why people say yes — and how to apply these insights ethically in business and everyday life.",
+  "keyIdeas": [
+    "Reciprocation: The universal human obligation to repay — even unsolicited gifts create a sense of debt",
+    "Commitment and Consistency: Once a choice is made, people work to align subsequent behavior with that commitment to avoid cognitive dissonance",
+    "Social Proof: In ambiguous situations, we determine correct behavior by observing what similar others are doing",
+    "Liking: We comply with requests from people we like, which is triggered by similarity, compliments, familiarity, and association",
+    "Authority: Deference to perceived experts is automatic — titles, uniforms, and credentials can trigger compliance without critical evaluation",
+    "Scarcity: Opportunities seem more valuable when limited — the fear of losing an opportunity is a stronger motivator than the prospect of gain",
+    "Unity (2021): Shared identity — feel like 'we' rather than 'us vs. them' — amplifies all other principles"
+  ],
+  "keyTakeaways": [
+    "Most human decisions are automatic, triggered by specific features of a situation",
+    "Compliance professionals deliberately manipulate these triggers to secure agreement",
+    "Awareness of the principles is the first, but not sufficient, line of defense",
+    "Emotional arousal (feeling rushed, excited, or pressured) signals that a trigger may be in use",
+    "Ethical influence provides honest, relevant information that helps someone make a better decision"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Pre-Suasion",
+      "author": "Robert Cialdini",
+      "reason": "Cialdini's follow-up — the key moment before a message is delivered that primes audiences for agreement"
+    },
+    {
+      "title": "Yes! 50 Scientifically Proven Ways to Be Persuasive",
+      "author": "Noah Goldstein, Steve Martin, Robert Cialdini",
+      "reason": "A practical companion volume with field-tested applications of the principles"
+    },
+    {
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "reason": "The cognitive science underlying Cialdini's principles — System 1 fast thinking drives automatic compliance"
+    },
+    {
+      "title": "Thank You for Arguing",
+      "author": "Jay Heinrichs",
+      "reason": "The classical rhetorical tradition as a complement to Cialdini's behavioral science approach"
+    },
+    {
+      "title": "How to Win Friends and Influence People",
+      "author": "Dale Carnegie",
+      "reason": "The pre-scientific precursor to Cialdini — practical wisdom that anticipated many of the principles"
+    },
+    {
+      "title": "Influence Is Your Superpower",
+      "author": "Zoe Chance",
+      "reason": "A modern application of influence science with emphasis on ethical persuasion"
+    }
+  ],
+  "whoShouldRead": [
+    "Marketing and sales professionals seeking evidence-based persuasion strategies",
+    "Entrepreneurs and business leaders who negotiate deals and lead teams",
+    "Anyone who has ever made a purchase they regretted and wants to understand why",
+    "Students of psychology, behavioral economics, and communication",
+    "Consumers who want to recognize and resist manipulative advertising tactics",
+    "Politicians, advocates, and campaigners who need to move people to action"
+  ],
+  "whoShouldSkip": [
+    "Readers looking for a purely philosophical or ethical examination of persuasion",
+    "Those who believe all influence is inherently coercive and should be opposed"
+  ],
+  "bestsellerStatus": [
+    "New York Times Bestseller",
+    "Fortune '75 Smartest Business Books'",
+    "Over 5 million copies sold worldwide",
+    "Translated into 41 languages",
+    "Warren Buffett: 'One of the best business books of all time'"
+  ],
+  "_opencode": {
+    "createdWith": "BookAtlas Pipeline",
+    "model": "deepseek-v4-flash-free",
+    "generatedAt": "2026-06-11T00:00:00.000Z"
+  }
+}

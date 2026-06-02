@@ -1,0 +1,102 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { chromium } = require('C:/Users/chira/.agents/skills/playwright/node_modules/playwright');
+
+const ROOT = path.join(__dirname, '..', 'web', 'dist');
+const PORT = 4322;
+const HOST = '127.0.0.1';
+
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.mjs': 'application/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.ico': 'image/x-icon',
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.wasm': 'application/wasm',
+};
+
+const send = (res, code, body, type = 'text/plain; charset=utf-8') => {
+  res.writeHead(code, { 'Content-Type': type, 'Cache-Control': 'no-store' });
+  res.end(body);
+};
+
+const tryFile = (p) => fs.existsSync(p) && fs.statSync(p).isFile();
+
+const server = http.createServer((req, res) => {
+  const url = decodeURIComponent((req.url || '/').split('?')[0]);
+  let p = path.normalize(path.join(ROOT, url));
+  if (!p.startsWith(ROOT)) return send(res, 403, 'Forbidden');
+  if (url.endsWith('/')) p = path.join(p, 'index.html');
+  if (tryFile(p)) {
+    const ext = path.extname(p).toLowerCase();
+    return send(res, 200, fs.readFileSync(p), MIME[ext] || 'application/octet-stream');
+  }
+  const fallback = p + '.html';
+  if (tryFile(fallback)) {
+    return send(res, 200, fs.readFileSync(fallback), 'text/html; charset=utf-8');
+  }
+  const dir = p.endsWith('/') ? p : p + '/';
+  const idx = path.join(dir, 'index.html');
+  if (tryFile(idx)) {
+    return send(res, 200, fs.readFileSync(idx), 'text/html; charset=utf-8');
+  }
+  send(res, 404, 'Not Found');
+});
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+(async () => {
+  await new Promise((r) => server.listen(PORT, HOST, r));
+  console.log(`[serve] ready on http://${HOST}:${PORT}`);
+
+  const browser = await chromium.launch({ headless: true });
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await ctx.newPage();
+  const consoleErrors = [];
+  page.on('pageerror', (e) => consoleErrors.push('PAGEERROR: ' + e.message));
+  page.on('console', (msg) => { if (msg.type() === 'error') consoleErrors.push('CONSOLE: ' + msg.text()); });
+
+  await page.goto('http://127.0.0.1:4322/', { waitUntil: 'domcontentloaded' });
+  await page.evaluate(() => localStorage.setItem('bookatlas:theme', 'light'));
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await sleep(800);
+
+  const bookPath = '/books/a-mind-for-numbers-barbara-oakley/narration';
+  await page.goto('http://127.0.0.1:4322' + bookPath, { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await sleep(1200);
+  await page.screenshot({ path: 'C:/Users/chira/AppData/Local/Temp/light-narration-mind.png', fullPage: true });
+  console.log('shot: mind-for-numbers narration');
+
+  // Count sections in the player
+  const sectionCount = await page.evaluate(() => {
+    return document.querySelectorAll('ol > li').length;
+  });
+  const sectionHeader = await page.evaluate(() => {
+    const el = document.querySelector('header p.font-mono');
+    return el ? el.parentElement?.parentElement?.textContent : null;
+  });
+  console.log('sections found:', sectionCount);
+  console.log('player header text:', sectionHeader);
+
+  // Try clicking play to see if it changes state
+  const beforePlay = await page.evaluate(() => {
+    const btn = document.querySelector('button');
+    return btn ? btn.textContent : null;
+  });
+  console.log('first button before play:', beforePlay);
+
+  await browser.close();
+  server.close();
+
+  console.log('---ERRORS---');
+  consoleErrors.forEach((e) => console.log(e));
+  console.log('---END---');
+})().catch((e) => { console.error(e); process.exit(1); });

@@ -1,0 +1,174 @@
+## Overview
+
+*Working Effectively with Legacy Code* (2004) by Michael C. Feathers is
+the most practical book ever written for developers who must change code
+they do not trust. It starts from a single definition — **legacy code is
+code without tests** — and builds a complete methodology for making even
+the most tangled codebase safe to modify.
+
+The book is organized in three parts: the mechanics of change (seams,
+sensing, separation), a FAQ-style catalog of specific scenarios (19
+chapters answering questions like "How Do I Add a Feature?" and "I Need
+to Change a Monster Method"), and a reference catalog of 24
+dependency-breaking techniques.
+
+---
+{}
+------|---------|-------|----------------|
+| I | 1 | Changing Software | Four reasons: add feature, fix bug, improve design, optimize |
+| I | 2 | Working with Feedback | Unit tests as a safety net; the Legacy Code Change Algorithm |
+| I | 3 | Sensing and Separation | Break deps to observe (sense) or isolate (separate) |
+| I | 4 | The Seam Model | Seams: places to alter behavior without editing in that place |
+| I | 5 | Tools | Automated refactoring, test frameworks, coverage tools |
+| II | 6-7 | Time Pressure | Sprout and Wrap techniques for minimal-risk changes |
+| II | 8 | Adding a Feature | TDD when possible; characterization tests when not |
+| II | 9-10 | Test Harness Problems | Getting classes and methods into a test harness |
+| II | 11 | What to Test | Effect analysis and interception points |
+| II | 12 | Many Changes | Pinch points: narrow interfaces that channel change |
+| II | 13 | Unknown Tests | Characterization tests to discover what code does |
+| II | 14 | Library Dependencies | Wrapping and adapting third-party code |
+| II | 15 | API-Heavy Code | Seams at the API boundary |
+| II | 16 | Unclear Code | Scratch refactoring and effect sketching |
+| II | 17 | No Structure | Discovering and communicating architecture |
+| II | 18 | Test Code Clutter | Keeping tests separate and maintainable |
+| II | 19 | Non-OO Code | Link seams and preprocessing seams for C and procedural code |
+| II | 20 | Large Classes | Extract Class, Extract Interface |
+| II | 21 | Duplicated Code | Removing duplication through dependency breaking |
+| II | 22 | Monster Methods | Break Out Method Object, Extract Method |
+| II | 23 | Knowing You Are Safe | Hyper-aware editing, preserving signatures, leaning on the compiler |
+| II | 24 | Overwhelmed | Starting small, building momentum, the long view |
+| III | 25 | Dependency-Breaking Techniques | 24 cataloged refactorings for getting code under test |
+
+---
+
+## Key Takeaways
+
+1. **Legacy code = code without tests.** This is not about age or
+   quality. It is about safety. Without tests, every change is a gamble.
+
+2. **The Legacy Code Dilemma.** To change code safely, you need tests.
+   To add tests, you often need to change code. The book teaches you how
+   to break this cycle with minimal-risk transformations.
+
+3. **Seams are the escape hatch.** A seam is a place where you can
+   alter behavior without editing in that place. Object seams (override
+   in a subclass), preprocessing seams (macros, `#ifdef`), and link
+   seams (library substitution) give you control without touching the
+   source.
+
+4. **Break dependencies for sensing and separation.** Sensing: can you
+   observe what the code does? Separation: can you run the code in
+   isolation? These are the two reasons you break dependencies, and
+   they dictate the technique you choose.
+
+5. **Characterization tests capture reality.** When you do not know
+   what the code should do, write a test that captures what it *does*
+   do. This gives you a safety net to refactor, even without a spec.
+
+6. **Sprout and Wrap are your first tools.** Sprout Method/Class: add
+   new testable code alongside existing. Wrap Method/Class: insert
+   behavior around existing code via the Decorator pattern. Both
+   minimize changes to untested code.
+
+7. **Effect analysis finds pinch points.** Trace the effects of a
+   change through the system. Find narrow interfaces where many effects
+   converge — those are your most valuable test points.
+
+8. **Scratch refactoring is legitimate.** Refactor purely to understand
+   the code, then throw away the changes. The understanding is the goal.
+
+9. **The catalog makes it systematic.** Chapter 25 catalogs 24
+   dependency-breaking refactorings (Parameterize Constructor, Extract
+   and Override Call, Break Out Method Object, Encapsulate Global
+   Reference, and more). Each comes with mechanics safe enough to
+   perform without tests.
+
+10. **Incremental beats heroic.** The goal is not to make the code
+    beautiful. It is to make the code changeable. Small, safe steps
+    compound. Big rewrites fail.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Every developer on an existing codebase | The most practical guide to changing code safely |
+| Engineers inheriting a legacy system | A systematic approach for what to do first, second, and third |
+| Technical leads | Vocabulary and process for improving codebase health |
+| Teams adopting TDD or Agile | The bridge between theory (write tests first) and reality (untested code) |
+| Anyone afraid to make changes | The book teaches you how to stop being afraid |
+
+---
+
+## Who Should Skip
+
+- Developers who only work on greenfield projects with full test coverage
+- Beginners learning to program (requires intermediate coding experience)
+- Non-programmers (the content is entirely code-level)
+
+---
+
+## Core Themes
+
+| Theme | Description |
+|---|---|
+| Safety First | The primary goal is making changes without breaking things |
+| Test as Shield | Tests are not about correctness — they are about enabling change |
+| Seam Thinking | Learn to see opportunities for intervention in any codebase |
+| Incremental Change | Small safe steps beat big risky rewrites |
+| Pragmatism over Purity | Temporarily worse design (breaking encapsulation) is acceptable to enable testing |
+| Dependency Awareness | Coupling is the root of untestability; breaking it is the core skill |
+| Understanding through Action | Refactoring to understand is as valuable as refactoring to improve |
+
+---
+
+## Why This Book Matters
+
+Before *Working Effectively with Legacy Code*, the industry had
+*Refactoring* (Fowler) and *Test-Driven Development* (Beck), but both
+assumed you could write tests first. Feathers addressed the reality
+that most developers face: a million-line codebase with no tests, tight
+deadlines, and a management team that does not understand why "just
+adding tests" is hard.
+
+The book gave developers a vocabulary (seams, enabling points, sensing,
+characterization tests) and a toolkit (Sprout, Wrap, Extract and
+Override, Parameterize Constructor) that worked on real, messy code.
+It made the practice of safely changing untested code a teachable
+discipline rather than a matter of courage and luck.
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Refactoring** | M. Fowler | The catalog of behavior-preserving transformations this book depends on |
+| **Clean Code** | R. C. Martin | Principles for writing code that is easy to test and maintain |
+| **Test-Driven Development** | K. Beck | The testing discipline that prevents legacy code in new systems |
+| **The Pragmatic Programmer** | Hunt & Thomas | Broader craft philosophy that includes testing as a non-negotiable |
+| **Refactoring to Patterns** | J. Kerievsky | Using dependency-breaking to reach pattern-based designs |
+| **Code Complete** | S. McConnell | Comprehensive reference on software construction and quality |
+
+---
+
+## Final Verdict
+
+*Working Effectively with Legacy Code* is essential reading for any
+professional developer who works on existing codebases — which is nearly
+all of them. It does not promise magic; it promises a method. The
+techniques are practical, the examples are concrete (Java, C++, C#),
+and the underlying philosophy — safety through incremental test
+coverage — is sound.
+
+The book shows its age in places (C++ preprocessor hacks, no coverage of
+modern mocking frameworks, limited treatment of dynamic languages). The
+FAQ format leads to repetition. And some dependency-breaking techniques
+("Introduce Static Setter") are frankly ugly. But that is the point:
+legacy code is ugly, and the tools to tame it must be as pragmatic as
+the problem.
+
+**Rating: 9/10** — The closest thing to a field manual for developers
+in the trenches. Read it, internalize the seam model, and keep it on
+your desk.

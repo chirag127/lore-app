@@ -1,0 +1,79 @@
+# Analysis of the Web Speech & MediaStream API
+
+## Strengths
+
+**Zero-dependency, zero-cost narration**: The most distinctive strength of this approach is the absence of any external dependency. There is no cloud API to configure, no billing account to monitor, no latency from a remote TTS service, and no audio file to host. The browser does everything locally using hardware already available to the end user. For a project like BookAtlas — built on Firebase's free Spark tier — this boundary is decisive.
+
+**Natural voice selection via `getVoices()`**: The `speechSynthesis.getVoices()` API returns the complete roster of voices installed on the user's device. This means the application can automatically select the highest-quality available voice without hard-coding any provider, language tag, or voice identifier. On macOS the user gets "Samantha" or "Daniel"; on Windows, "Microsoft Zira" or "David"; on Linux, whatever `espeak-ng` or `speech-dispatcher` exposes. The framework is portable across OS and hardware.
+
+**SSML-like control via `SpeechSynthesisUtterance`**: The `utterance` object exposes `rate`, `pitch`, and `volume` properties, giving the application fine-grained temporal and tonal control over delivery. Adjusting `rate` between 0.8 and 1.2 accommodates different reading speeds without changing the underlying audio. This is sufficient for BookAtlas's use case, which only needs to adjust speed, not apply complex SSML markup.
+
+**Event-driven lifecycle management**: The `onstart`, `onend`, `onerror`, and `onboundary` events on `SpeechSynthesisUtterance` give the application a clean state machine for tracking narration progress. The `onboundary` event with its `charIndex` and `name` properties is particularly useful — it fires at word and sentence boundaries, enabling precise text-highlight synchronization without any external timing estimation.
+
+**MediaStream audio capture without screen sharing**: The `getDisplayMedia({ audio: true, video: false })` API accepts `video: false`, meaning the permission prompt does not force the user to share their screen. The resulting `MediaStream` can be fed directly into a `MediaRecorder`, producing a webm/opus file with no additional software. This is a genuinely well-designed API for the specific task of capturing audio output the way a user hears it.
+
+**`onaudiostart` as a reliable capture-ready signal**: Rather than guessing when the browser has established the capture pipeline, the code listens for `onaudiostart` on the `MediaStreamTrack`. This signals that the virtual audio output device has begun producing PCM data, which is the correct moment to start the `MediaRecorder`. This is a subtle but important detail — starting the recorder too early produces a silent or empty file.
+
+---
+
+## Weaknesses
+
+**Chrome landscape deprecates `getDisplayMedia` for audio-only capture**: While the API technically supports `video: false`, the UX of the permission prompt varies across Chrome versions. Some Chrome builds require the user to select a tab or screen even when only audio is requested, and some do not surface the system audio option cleanly without a screen-selection step. This is a Chrome-specific fragility that the code handles with the `forceTabShareFallback` path, but it is a real friction point.
+
+**Firefox has no `getDisplayMedia` audio**: Firefox does not expose system audio through `getDisplayMedia` at all. The entire capture pipeline is non-functional on Firefox without a different approach (such as capturing from a virtual audio cable). The `tab` fallback in Firefox does not capture tab audio either — `audio: true` plus tab selection in Firefox is unreliable across versions. This means the recording feature is Chrome-only in practice, which the code does not communicate to the user.
+
+**`speechSynthesis.pause()` is unreliable during long utterances**: A known Chrome bug causes `speechSynthesis.pause()` to silently fail or drain the utterance queue when called mid-utterance on long texts (over roughly 30 seconds). The code's chunking strategy — splitting long text on sentence boundaries and re-queuing each chunk — is a direct workaround for this. It is effective but underscore-Git-the fragility it prevents. Without the chunking layer, the pause/play feature would fail silently on chapter-length narration.
+
+**No built-in voice quality detection**: The code selects voices using a simple heuristic (`rate === 1 && voices.length > 1`) and falls back to the first available voice. There is no quality scoring or preference list. On Windows, "Microsoft David" (desktop) and "Microsoft Zira" (desktop) are widely regarded as lower quality than "Microsoft Aria" (Cloud) or "Microsoft Guy" (Neural), but the API does not expose quality metadata, so the code cannot distinguish them. The result is unpredictably variable voice quality across user hardware.
+
+**`getVoices()` is asynchronous in Chrome**: Chrome fires the `voiceschanged` event; other browsers return voices synchronously on the first call. The code handles this via `utterance.ongenerate` combined with `Voices.resolve(onload)` in the `Voices` handler store, which is correct but adds complexity. A developer reading the code must understand this cross-browser difference to modify it safely.
+
+**Silence in `MediaRecorder` output when playback is paused**: When the user pauses speech synthesis, the `SpeechSynthesis` stream continues to produce silence in the virtual output, which the `MediaRecorder` records faithfully. The resulting file contains silent gaps corresponding to pause events. This is not a recording error, but it means the output file is longer than the spoken audio and requires post-processing to clean. BookAtlas does not currently handle this.
+
+---
+
+## Criticism
+
+**From Browser Engineers**: The most pointed technical critique is that `getDisplayMedia` for audio-only capture is an API designed for a different primary use case — screen sharing with audio — and repurposing it for "record what the browser is speaking" is a happy accident, not a designed feature. Chrome's internal audio capture routing is built around grounds that the user is sharing a *tab*, not capturing narration output. Browser engineers note that a proposed `MediaDevices.getAudioOutputStream()` API would be the correct primitive but has not shipped in any stable release as of late 2024. The code works today, but the underlying platform support is accidental.
+
+**From Accessibility Engineers**: WCAG 2.1 guidelines require that audio controls be operable without requiring precise timing and that users be able to pause, stop, or adjust volume. The BookAtlas narration panel's pause/stop/speed controls meet this requirement. However, `speechSynthesis.speak()` does not respect the user's preferred `prefers-reduced-motion` media query. A user who has set `prefers-reduced-motion: reduce` to avoid auto-playing or animated content may be surprised to find that narration auto-plays on chapter load. The code should check this preference before starting playback.
+
+**From Web Audio Engineers**: The virtual audio routing creates an additional round-trip: SpeechSynthesis → OS audio output → virtual cable → `getDisplayMedia` stream → `MediaRecorder`. This introduces a codec mismatch risk: SpeechSynthesis produces PCM-encoded audio; `getDisplayMedia` may deliver it as AAC or Opus depending on the OS audio subsystem; `MediaRecorder` chooses its own codec from `MediaRecorder.isTypeSupported()`. The resulting file may have varying bitrate and channel configuration across users that is not normalized before saving. The code should validate and normalize the output MIME type.
+
+**From Privacy Engineers**: System audio capture requests are high-sensitivity permission prompts — on macOS they appear as "Browser would like to record audio from System Audio," which sounds far more invasive than "record the book's narration." A privacy-conscious user may decline the prompt, which breaks the recording feature. The pre-record buffer that the code implements *(collecting audio before the user explicitly presses record)* is particularly suspect from a consent standpoint: silent pre-buffering of system audio is an anti-pattern in privacy design.
+
+---
+
+## Scientific Support and API Grounding
+
+| API / Feature | Specification | Browser Support |
+|---------------|--------------|-----------------|
+| `SpeechSynthesis` | Web Speech API spec (W3C) | Chrome ✓ Safari ✓ Edge ✓ Firefox ⚠ |
+| `SpeechSynthesisUtterance` | Web Speech API spec (W3C) | Chrome ✓ Safari ✓ Edge ✓ Firefox ⚠ |
+| `utterance.onboundary` | Web Speech API spec (W3C) | Chrome ✓ Safari ✓ Edge ✓ Firefox ✗ |
+| `getVoices()` + `voiceschanged` | Web Speech API spec (W3C) | Chrome ✓ (async) Safari ✓ (sync) |
+| `getDisplayMedia(audio: true)` | Screen Capture API spec (W3C) | Chrome 74+ ✓ Edge ✓ Firefox ✗ Safari ✗ |
+| `MediaStream` → `MediaRecorder` | MediaStream Recording API (W3C) | Chrome ✓ Safari ✓ Edge ✓ Firefox ✓ |
+| `onaudiostart` on `MediaStreamTrack` | spec draft / Chrome extension | Chrome 120+ ✓ non-standard |
+
+---
+
+## Long-Term Relevance
+
+**What will age well**: The Web Speech API is a W3C Recommendation and is unlikely to be removed. The `speechSynthesis` API is implemented in all major browsers and is actively maintained. The `getDisplayMedia` audio capture pattern, despite its Chrome-centricity, will remain functional as long as Chrome ships it. The fundamental idea — "the browser can speak and record its own speech" — is durable regardless of implementation specifics.
+
+**What may need refactoring**: A future `MediaDevices.getAudioOutputStream()` API, once it lands, would replace the `getDisplayMedia` workaround entirely with a cleaner, permission-lighter capture path. The code's `forceTabShareFallback` would become unnecessary, simplifying the permission flow significantly. Firefox support for system audio capture may also improve through WebRTC extensions.
+
+**The recording format risk**: `MediaRecorder` currently defaults to `audio/webm; codecs=opus` in Chrome and `audio/mp4; codecs=mp4a` in Safari. These formats are not guaranteed to be playable in all downstream playback contexts (desktop media players, mobile OSes, etc.). The code should normalize to a stable format (webm/opus is the current practical standard) and document the format in the UI so users understand what they are saving.
+
+---
+
+## Final Assessment
+
+**Verdict**: The narration and recording implementation in BookAtlas is a pragmatic, well-structured solution to a genuinely hard problem (client-side TTS with audio export) within the constraints of the platform (no backend, no MP3 storage, Firebase free tier). It works reliably in Chrome, covers its cross-browser gaps with honest fallbacks, and adds recording without requiring any server-side infrastructure.
+
+**What it does well**: the chunking strategy handling Chrome's `pause()` bug is a subtle, well-implemented workaround that most developers miss. The `onaudiostart` hook for starting recording at the right moment shows careful event sequencing. The `Voices` handler store that normalizes Chrome's async voice loading across browsers is a clean abstraction.
+
+**Where it could improve**: Firefox is functionally excluded from the recording feature without any user-facing disclosure of that fact. The `prefers-reduced-motion` check is absent before auto-playing narration. The `MediaRecorder` output format is not normalized. And the silence-in-recording problem (paused segments) is unhandled in the output pipeline.
+
+**Net evaluation**: This is solid production code that solves a real user need without requiring external services. The main risk is browser divergence — particularly Chrome's eventual changes to `getDisplayMedia` behavior or the Web Speech API — and the Firefox gap in recording. For a Firebase-hosted static site with no server-side audio processing, this is approximately the best available client-side approach as of mid-2025.

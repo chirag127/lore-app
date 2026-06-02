@@ -1,0 +1,143 @@
+## Strengths
+
+- **The canonical MySQL reference.** No other book covers MySQL
+  performance with this depth, currency, and operational grounding.
+  The fourth edition (2022) reflects MySQL 8.0, not the MySQL of
+  2012.
+- **Six authors who have actually paged at 3 a.m.** Schwartz,
+  Zaitsev, Tkachenko, Zawodny, Lentz, and Balling are the people
+  behind Percona and a generation of MySQL operations. The advice
+  is not theoretical.
+- **Measurement-first philosophy.** The book hammers the same point
+  over and over: measure, then optimize. This is the single most
+  valuable habit it teaches.
+- **Comprehensive coverage.** Architecture, indexing, transactions,
+  replication, backup, scaling, hardware, the cloud — the book
+  covers the full operational life of a MySQL deployment.
+- **Up-to-date on the modern stack.** Group Replication, GTIDs,
+  Vitess, ProxySQL, MySQL Shell, `sys` schema, `EXPLAIN ANALYZE`
+  in MySQL 8.0.18+, histograms — the 4th edition reads as a current
+  book, not a rehash.
+- **Practical command-line examples.** Configuration snippets, SQL
+  queries, shell commands, and monitoring queries are abundant and
+  realistic.
+- **Excellent chapter on schema design.** Data types, normalization,
+  and the trade-offs between them are often glossed over; HPMYSQL
+  treats them as a first-class topic.
+- **InnoDB internals done right.** MVCC, undo logs, redo logs,
+  change buffering, doublewrite — the level of detail is enough to
+  reason about, not enough to write a storage engine from scratch.
+
+---
+
+## Weaknesses
+
+- **Heavy at 950 pages.** This is not a book you read cover to
+  cover. It is a reference you dip into. Some chapters (replication,
+  backup) feel padded with option lists.
+- **Some content overlaps with official docs.** The MySQL Reference
+  Manual and the Percona blog cover a surprising amount of the same
+  material. The book is more cohesive, but you are paying for
+  curation as much as content.
+- **Galera / Cluster coverage is shallow.** MySQL Cluster (NDB)
+  and Galera each deserve their own book; the treatment here is
+  a survey.
+- **No exercises or problems.** Like most O'Reilly titles, this is
+  prose, not a textbook. You learn by doing it on a real system.
+- **Code examples are in MySQL 5.7 / 8.0 idiom.** If you are stuck
+  on a legacy 5.5 or 5.6 system (still common in 2026), some
+  features won't apply.
+- **Print and PDF formatting is dense.** Tables, snippets, and
+  diagrams are packed. Reading on a phone is painful.
+
+---
+
+## Criticism
+
+### The "Too MySQL-Specific" Critique
+
+The book's title is honest — this is about MySQL. If you are
+deciding between MySQL, PostgreSQL, and MongoDB, you want Kleppmann's
+*DDIA* or Petrov's *Database Internals* first. HPMYSQL is for after
+you have already chosen MySQL.
+
+### The "Oracle/Percona Lens" Critique
+
+Six authors, all from Percona or former Yahoo. There is little
+coverage of MariaDB's storage engine innovations, or of alternative
+forks (Drizzle, MyRocks). The book is, fairly, opinionated — but
+those opinions are weighted toward Oracle's MySQL and Percona's
+tooling.
+
+### The "Configuration Drift" Risk
+
+Configuration advice ages fast. Recommendations from the 3rd edition
+(2012) are sometimes still quoted as current; some are wrong for
+MySQL 8. Read the 4th edition specifically.
+
+### The "Cloud and Managed" Gap
+
+The book has a chapter on the cloud, but the operational advice is
+written for self-managed MySQL. If you run Aurora, PlanetScale, or
+RDS, much of the tuning chapter does not apply — those are
+someone else's defaults.
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | Where in MySQL |
+|---|---|---|
+| B-Tree indexes | Bayer & McCreight (1971) | All storage engines |
+| ARIES recovery | Mohan et al. (1992) | InnoDB redo log + undo log |
+| MVCC | Reed (1978); Bernstein & Goodman (1983) | InnoDB, NDB |
+| Two-phase commit | Gray (1978) | Distributed transactions, XA |
+| Paxos | Lamport (1998) | Group Replication (MySQL 8) |
+| Paxos / cert-based | Galera (codership) | Galera / PXC |
+| LSM-trees | O'Neil et al. (1996) | MyRocks (not MySQL default) |
+| Read-copy update (RCU) | McKenney (2001) | Some lock-free paths |
+
+---
+
+## Historical Context
+
+The first edition (2004) appeared when MySQL was still a niche
+database, MyISAM was the default, and replication meant "two
+servers and `CHANGE MASTER TO`". Through four editions, the book
+has tracked MySQL's transformation:
+
+- 2nd edition (2008): InnoDB rises; MyISAM is on its way out
+- 3rd edition (2012): SSDs, partitioning, semi-sync replication
+- 4th edition (2022): MySQL 8, Group Replication, cloud-native,
+  Vitess, `EXPLAIN ANALYZE`
+
+In a sense, the four editions of HPMYSQL are a history of MySQL
+itself, told by people who helped build it.
+
+---
+
+## Comparison
+
+| Book | Author | Focus | Compared to HPMYSQL |
+|---|---|---|---|
+| *High Performance MySQL* (4th) | Schwartz et al. | MySQL performance, ops, scaling | The reference for MySQL |
+| *Database Internals* | Petrov | Storage engines, distributed systems | Broader; less MySQL-specific |
+| *Designing Data-Intensive Applications* | Kleppmann | Distributed data principles | Higher-level; not MySQL-specific |
+| *SQL Antipatterns* | Karwin | Schema and query mistakes | Lighter; portable across SQL |
+| *Use The Index, Luke!* | Winand | Indexing deep dive | Focused, free online; less operational |
+| *MySQL Cookbook* | DuBois | Recipes and patterns | More examples; less internals |
+| *Effective MySQL* | SqlMaestro | Backup/replication specifics | Narrower scope |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|---|---|---|
+| Depth | 10/10 | The most comprehensive MySQL book |
+| Currency | 9/10 | 4th edition (2022) covers MySQL 8.0 well |
+| Operational Utility | 10/10 | Written by operators, for operators |
+| Readability | 7/10 | Dense; this is a reference, not a beach read |
+| Coverage of Alternatives | 5/10 | Barely mentions MariaDB, MyRocks, etc. |
+| Lasting Value | 9/10 | Principles age well; specific config ages faster |
+| **Overall** | **9.5/10** | The definitive MySQL book. Buy it. |

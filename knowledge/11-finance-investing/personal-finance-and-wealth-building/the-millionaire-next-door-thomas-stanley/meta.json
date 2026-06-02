@@ -1,0 +1,28 @@
+{
+  "slug": "the-millionaire-next-door-thomas-stanley",
+  "title": "The Millionaire Next Door",
+  "subtitle": "The Surprising Secrets of America's Wealthy",
+  "authors": [
+    {
+      "name": "Thomas J. Stanley",
+      "lifespan": "1944–2015",
+      "role": "Author, researcher, marketing professor at Georgia State University. Earned PhD from University of Georgia. Spent decades studying America's affluent. Killed by a drunk driver in 2015."
+    },
+    {
+      "name": "William D. Danko",
+      "role": "Marketing professor at University at Albany (SUNY). Earned PhD from Rensselaer Polytechnic Institute. Collaborated with Stanley on the research that became this book."
+    }
+  ],
+  "isbn": "9781589795471",
+  "isbnAlternate": "9780671015206",
+  "publisher": "Taylor Trade Publishing",
+  "publisherOriginal": "Longstreet Press",
+  "year": 1996,
+  "pages": 272,
+  "difficulty": "Easy",
+  "readingTimeMinutes": 300,
+  "category": "11-finance-investing",
+  "subcategory": "personal-finance-and-wealth-building",
+  "cover": {"url": "https://covers.openlibrary.org/b/isbn/9781589795471-L.jpg", "source": "openlibrary"},
+  "tags": ["PAW", "UAW", "frugality", "wealth accumulation", "personal finance", "millionaire", "financial independence"]
+}

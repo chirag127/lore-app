@@ -1,0 +1,56 @@
+{
+  "slug": "deep-learning-with-python-francois-chollet",
+  "title": "Deep Learning with Python",
+  "subtitle": "Hands-On Deep Learning with Keras and TensorFlow",
+  "author": "Francois Chollet",
+  "publicationYear": 2021,
+  "isbn": "9781617296864",
+  "publisher": "Manning Publications",
+  "language": "en",
+  "pageCount": 504,
+  "genres": [
+    "Computer Science",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Deep Learning",
+    "Python Programming"
+  ],
+  "subjects": [
+    "Keras",
+    "TensorFlow",
+    "Neural Networks",
+    "Computer Vision",
+    "Natural Language Processing",
+    "Generative Models"
+  ],
+  "themes": [
+    "Practical deep learning using the Keras library",
+    "Learning by doing with hands-on code examples",
+    "Understanding neural network architecture design",
+    "Applying deep learning to vision, text, and sequence data",
+    "Building generative models including image generation and text generation"
+  ],
+  "tags": [
+    "deep-learning",
+    "python",
+    "francois-chollet",
+    "keras",
+    "tensorflow",
+    "neural-networks",
+    "computer-vision",
+    "natural-language-processing",
+    "generative-models",
+    "machine-learning",
+    "image-classification",
+    "text-generation"
+  ],
+  "difficulty": "medium",
+  "estimatedReadingHours": 18,
+  "estimatedListeningMinutes": 1080,
+  "awards": [
+    "Over 100,000 copies sold across all editions",
+    "One of the best-selling deep learning books worldwide",
+    "Recommended by Kaggle founder Anthony Goldbloom"
+  ],
+  "excerpt": "Deep Learning with Python, written by Keras creator Francois Chollet, is the most accessible and practical introduction to deep learning available. Through intuitive explanations and hands-on examples, you will learn to build, train, and deploy neural networks for computer vision, NLP, and generative applications."
+}

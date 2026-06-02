@@ -1,0 +1,88 @@
+{
+  "slug": "what-works-on-wall-street-james-oshaughnessy",
+  "title": "What Works on Wall Street",
+  "subtitle": "The Classic Guide to the Best-Performing Investment Strategies of All Time",
+  "author": "James P. O'Shaughnessy",
+  "description": "The definitive quantitative investing guide. O'Shaughnessy analyzed 85 years of US stock market data — testing over a dozen investment factors across millions of data points — to identify which strategies actually outperformed and for how long.",
+  "coverUrl": "https://covers.openlibrary.org/b/isbn/9780071622579-L.jpg",
+  "isbn10": "007162257X",
+  "isbn13": "9780071622579",
+  "pages": 640,
+  "publishedYear": 1997,
+  "publisher": "McGraw-Hill",
+  "openlibrarySlug": "/works/OL257827W",
+  "tags": [
+    "investing",
+    "quantitative-investing",
+    "factor-investing",
+    "value-investing",
+    "market-efficiency",
+    "back-testing",
+    "small-cap",
+    "portfolio-strategy",
+    "stock-market"
+  ],
+  "keyIdeas": [
+    "The Great Database: 85+ Years of US Equity Returns",
+    "The Market Value Effect: Small-Cap Outperformance",
+    "Small-Cap Value: The Best-Performing Strategy",
+    "Why Price-to-Sales Beats P/E, P/B, and P/CF",
+    "Value vs. Growth: Value Wins Over the Long Run",
+    "Limitations of the Efficient Market Hypothesis",
+    "The Core-Satellite Portfolio Approach",
+    "The O'Shaughnessy Shark",
+    "Strategy Decay and the Transience of Alpha",
+    "Process Over Strategy: Discipline Beats Ideas"
+  ],
+  "keyTakeaways": [
+    "The most reliable stock market outperformer tested across 85 years is small-cap value — it beat every other strategy tested.",
+    "Price-to-sales (P/S) is the single most effective standalone valuation metric, outperforming P/E, P/B, and dividend yield in long-term backtests.",
+    "The efficient market hypothesis is not fully supported by evidence: systematic value and small-cap factors generate persistent excess returns.",
+    "Most investment strategies degrade over time due to crowding and arbitrage — decay is the rule, not the exception.",
+    "The core-satellite approach (broad market index core + targeted factor-based satellite) captures the best of both active and passive investing.",
+    "Combining small size with value characteristics produces returns superior to either factor alone — the combination is synergistic.",
+    "Growth stocks underperform value stocks over the full market cycle, despite their appeal during late-stage bull markets.",
+    "You cannot beat the market by reading headlines or chasing momentum; only systematic, data-driven, disciplined processes produce consistent alpha.",
+    "Even a perfectly backtested strategy will eventually decay as more capital flows into it — managing expectations is as important as finding alpha.",
+    "Disciplined execution matters more than any single strategy; process and risk management drive long-term success.",
+    "The market rewards patience: strategies that look mediocre over 5 years often dominate across full market cycles including drawdowns.",
+    "Avoid the most expensive growth stocks at the peak of their popularity; valuation and momentum are inversely correlated to future returns."
+  ],
+  "whoShouldRead": [
+    "Active investors and financial advisors interested in quantitative, evidence-based investing",
+    "Academics and students of finance who want to understand the empirical basis of factor investing",
+    "Index fund enthusiasts skeptical of active management who want to understand what the data actually shows",
+    "Anyone seeking to understand why value and small-cap stocks consistently outperform over full market cycles",
+    "Financial planners looking to build core-satellite portfolios using empirically validated factor tilts"
+  ],
+  "relatedBooks": [
+    {
+      "title": "A Random Walk Down Wall Street",
+      "slug": "a-random-walk-down-wall-street-burton-malkiel"
+    },
+    {
+      "title": "The Intelligent Investor",
+      "slug": "the-intelligent-investor-benjamin-graham"
+    },
+    {
+      "title": "Common Stocks and Uncommon Profits",
+      "slug": "common-stocks-and-uncommon-profits-philip-fisher"
+    },
+    {
+      "title": "The Little Book of Common Sense Investing",
+      "slug": "the-little-book-of-common-sense-investing-john-bogle"
+    },
+    {
+      "title": "Stocks for the Long Run",
+      "slug": "stocks-for-the-long-run-jeremy-siegel"
+    },
+    {
+      "title": "Expected Returns",
+      "slug": "expected-returns-antti-ilmanen"
+    },
+    {
+      "title": "The Most Important Thing",
+      "slug": "the-most-important-thing-howard-marks"
+    }
+  ]
+}

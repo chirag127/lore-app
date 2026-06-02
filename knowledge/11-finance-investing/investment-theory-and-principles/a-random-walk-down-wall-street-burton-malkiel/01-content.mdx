@@ -1,0 +1,332 @@
+---
+title: Core Concepts
+subtitle: The Random Walk Hypothesis, Efficient Markets, and Malkiel's Framework for
+  Intelligent Investing
+---
+
+## Two Theories of Value
+
+Malkiel opens with the fundamental tension in all of investing: how do
+you know what a stock is worth? He presents two competing schools:
+
+### Firm-Foundation Theory
+
+Stocks have an **intrinsic value** that can be calculated by
+discounting future dividend and earnings streams to the present. The
+rational investor buys when price is below intrinsic value and sells
+(or avoids) when it is above.
+
+This theory traces to John Burr Williams's *The Theory of Investment
+Value* (1938) and was championed by Benjamin Graham. It is the
+intellectual basis for value investing and, in its modern form,
+supports Warren Buffett's approach.
+
+**The problem:** intrinsic value is impossible to calculate with
+precision. Small changes in assumptions about growth rates or discount
+rates produce enormous valuation swings. Analysts' earnings forecasts
+beyond one year have average errors of 20-30%, making the entire
+calculation speculative.
+
+### Castle-in-the-Air Theory
+
+Stocks are worth whatever the crowd is willing to pay. The smart
+investor does not calculate intrinsic value — she predicts what other
+investors will think the stock is worth next week, next month, or next
+year. This is John Maynard Keynes's "beauty contest" analogy: you do
+not pick the face you find prettiest; you pick the face the judges
+will find prettiest.
+
+**The problem:** crowd psychology is inherently unstable. The same
+dynamics that drive prices up in a bubble drive them down in a crash.
+Winning requires getting out before the crowd turns — and no one rings
+a bell at the top.
+
+Malkiel's position: both theories are useful lenses but neither works
+consistently in practice.
+
+---
+
+## The Random Walk Hypothesis
+
+The book's title concept. A **random walk** means that future steps
+cannot be predicted from past steps. For stock prices, it means that
+knowing yesterday's price change tells you nothing about today's.
+
+This is not a claim that markets are chaotic or irrational. It is a
+claim that markets are **efficient** — competition among millions of
+informed buyers and sellers drives prices to fair value so quickly
+that no exploitable pattern remains.
+
+```mermaid
+flowchart LR
+    subgraph Random_Walk["Random Walk — No Predictable Pattern"]
+        direction LR
+        D1["Day 1<br/>Price: $100"] --> D2["Day 2<br/>Price: $102<br/>(random +2)"]
+        D2 --> D3["Day 3<br/>Price: $98<br/>(random -4)"]
+        D3 --> D4["Day 4<br/>Price: $101<br/>(random +3)"]
+        D4 --> D5["Day 5<br/>Price: $99<br/>(random -2)"]
+        D5 --> D6["Day 6<br/>Price: $104<br/>(random +5)"]
+    end
+
+    subgraph EMH["Efficient Market Hypothesis"]
+        E1["Weak Form:<br/>Past prices →<br/>no prediction"]
+        E2["Semi-Strong:<br/>Public info →<br/>no prediction"]
+        E3["Strong Form:<br/>All info →<br/>no prediction"]
+    end
+
+    Random_Walk --> EMH
+
+    subgraph Implication["For the Investor"]
+        I1["Stop trying to predict"]
+        I2["Minimize costs"]
+        I3["Diversify broadly"]
+        I4["Hold for the long term"]
+    end
+
+    EMH --> Implication
+```
+
+### The Three Forms of the Efficient Market Hypothesis
+
+1. **Weak form** — Current prices reflect all historical price data.
+   Technical analysis (chart patterns, trend following) cannot produce
+   excess returns.
+
+2. **Semi-strong form** — Prices instantly incorporate all publicly
+   available information (earnings reports, news, economic data).
+   Fundamental analysis cannot consistently beat the market after
+   trading costs.
+
+3. **Strong form** — Prices reflect all information including insider
+   knowledge. Even corporate insiders cannot systematically
+   outperform. Malkiel concedes this is an ideal rather than a
+   description of reality — insiders do sometimes have an edge, but
+   it is illegal to exploit it.
+
+Malkiel's view: markets are not perfectly efficient, but they are
+efficient **enough** — efficient enough that the average investor
+cannot reliably beat them after accounting for fees, taxes, and
+trading costs.
+
+---
+
+## Technical Analysis: The Canard That Won't Die
+
+Malkiel devotes an entire chapter to dismantling technical analysis —
+the practice of predicting stock prices from chart patterns, moving
+averages, and trading volume.
+
+### The Coin-Flip Experiment
+
+Malkiel generated random stock charts using a series of coin flips.
+When shown to technical analysts, they confidently identified "head
+and shoulders" patterns, "support levels," and "breakouts" — all in
+purely random data.
+
+The conclusion: chart patterns are a form of **apophenia** — the
+human tendency to see patterns in noise. They exist in the eye of the
+beholder, not in the market.
+
+### What the Data Shows
+
+- Multiple studies testing hundreds of technical trading rules across
+  decades of data have found no consistent excess returns after
+  transaction costs
+- Signals that appear significant in backtesting reliably fail in
+  out-of-sample testing
+- Professional technical analysts do not outperform the market on a
+  risk-adjusted basis
+
+### A Qualified Exception
+
+Malkiel acknowledges that some momentum-based strategies have shown
+limited predictive power in academic studies. But he argues that
+transaction costs, taxes, and the difficulty of identifying momentum
+in real time make these strategies impractical for individual
+investors.
+
+---
+
+## Fundamental Analysis: Respectable but Flawed
+
+Malkiel treats fundamental analysis with more respect than technical
+analysis — it is at least grounded in real economic data — but
+concludes it also cannot consistently beat the market.
+
+### Why Fundamental Analysis Fails
+
+1. **Earnings are unpredictable.** Analyst earnings forecasts have
+   systematic errors:
+
+   | Forecast Horizon | Average Error |
+   |---|---|
+   | 1 month | ~5% |
+   | 3 months | ~10% |
+   | 1 year | ~20-30% |
+   | 5 years | >50% |
+
+2. **Good companies are not always good stocks.** A wonderful business
+   at a high price reliably underperforms an average business at a low
+   price. The market already knows the company is good — it is priced
+   in.
+
+3. **Analysts are biased.** Sell-side analysts work for investment
+   banks that need deal flow. "Buy" recommendations outnumber "sell"
+   by roughly 10:1. Independent analysis is rare.
+
+4. **Competition eliminates the edge.** Even if an analyst discovers a
+   mispriced stock, the market corrects quickly. By the time a
+   Morningstar report or Wall Street Journal article recommends a
+   stock, the opportunity is gone.
+
+### The Exception That Proves the Rule
+
+Malkiel does not claim no one can beat the market. Investors like
+Warren Buffett, Peter Lynch, and John Templeton have demonstrated
+genuine skill. But the statistical probability that any individual
+investor will select the next Buffett is vanishingly small. For every
+Buffett, there are thousands of professional money managers who
+underperform.
+
+---
+
+## Modern Portfolio Theory: The Science of Diversification
+
+The book introduces the academic framework that supports the
+passive-investing conclusion.
+
+### The Key Insight
+
+Combining assets that do not move perfectly together reduces portfolio
+volatility **without proportionally reducing returns**. This is the
+only free lunch in finance.
+
+| Portfolio | Annual Return | Annual Volatility |
+|-----------|--------------|------------------|
+| Single stock | 10% | 40% |
+| 20 random stocks | 10% | 20% |
+| Total market index | 10% | 15% |
+
+Adding stocks quickly eliminates company-specific risk. After 30-50
+stocks across different industries, most diversifiable risk is gone.
+
+### Beta and the Capital Asset Pricing Model
+
+Beta measures how much a stock moves relative to the market:
+
+- Beta = 0.5: half the market's movement
+- Beta = 1.0: moves with the market
+- Beta = 2.0: double the market's movement
+
+Malkiel explains beta practically — it is useful for understanding
+risk but backward-looking and unstable over time. It should inform,
+not dictate, investment decisions.
+
+---
+
+## Behavioral Finance: The Investor's Worst Enemy
+
+Malkiel was an early popularizer of behavioral finance, explaining
+how psychological biases systematically harm investment returns:
+
+### Overconfidence
+
+Investors consistently overestimate their ability to pick winning
+stocks. In one study, 74% of individual investors rated their
+investment knowledge as "above average."
+
+### Herd Behavior
+
+The tendency to follow the crowd into popular investments — and out
+of unpopular ones — is the primary engine of bubbles and crashes. The
+herd buys at the top and sells at the bottom.
+
+### Loss Aversion
+
+The pain of a loss is roughly twice as powerful as the pleasure of an
+equivalent gain. This leads investors to sell winners too early (to
+lock in gains) and hold losers too long (to avoid realizing the loss).
+
+### Anchoring
+
+Relying too heavily on a reference price — the price you paid, or a
+recent high — when making decisions. If a stock falls from $100 to
+$60, investors view $60 as "cheap" even if the business has
+deteriorated.
+
+### Confirmation Bias
+
+Seeking information that confirms existing beliefs while ignoring
+contradictory evidence. Once an investor buys a stock, they find
+reasons to believe in it.
+
+---
+
+## Malkiel's Life-Cycle Guide to Investing
+
+The book's practical payoff: concrete asset-allocation models for
+each life stage:
+
+| Life Stage | Suggested Stock Allocation | Rationale |
+|---|---|---|
+| 20s | 80-90% | Long time horizon; human capital is large |
+| 30s | 75-85% | Still long horizon; some stability needed |
+| 40s | 65-75% | Peaking earning years; growth still priority |
+| 50s | 55-65% | Sequence-of-returns risk begins to matter |
+| 60s+ | 45-55% | Capital preservation becomes primary |
+| Retirement | 40-50% | Growth still needed to fund 20-30 year horizon |
+
+---
+
+## The Investment Vehicles Malkiel Recommends
+
+| Asset Class | Recommended Vehicle |
+|---|---|
+| U.S. stocks | Total stock market index fund |
+| International stocks | Total international index fund |
+| Bonds | Total bond market index fund |
+| REITs (optional) | REIT index fund |
+
+---
+
+## Key Lessons
+
+- **You cannot predict the stock market.** Accepting this is the first
+  step to investing successfully.
+- **Index funds are the solution, not a compromise.** They are not the
+  "average" choice — they are the optimal choice for nearly everyone.
+- **Costs are the only thing you can control.** Minimize expense
+  ratios, turnover, and taxes.
+- **Diversify globally.** Owning the world's markets is safer and more
+  profitable than owning just your home country.
+- **Rebalance periodically.** Selling winners and buying losers keeps
+  your risk profile on target.
+- **Ignore financial media.** Noise sells; insight is rare. The best
+  thing you can do is stop watching.
+- **Stay the course.** The biggest gains come in unpredictable bursts.
+  Missing the 10 best days in a 20-year period can halve your returns.
+
+---
+
+## Practical Action Plan
+
+1. **Open a tax-advantaged account** (401k, IRA, or equivalent). Max
+   out employer matching first.
+
+2. **Choose a total stock market index fund** — VTI, VOO, or
+   equivalent with an expense ratio below 0.10%.
+
+3. **Select a bond allocation** based on your age using Malkiel's
+   life-cycle guide above.
+
+4. **Set up automatic monthly investments** — dollar-cost averaging
+   into the market eliminates the timing problem.
+
+5. **Rebalance annually** — return your portfolio to the target
+   allocation. This forces you to sell high and buy low.
+
+6. **Ignore the news.** Do not check your portfolio daily. Review
+   quarterly at most.
+
+7. **Never try to time the market.** The evidence is clear: it does
+   not work.

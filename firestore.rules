@@ -1,0 +1,123 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+    function isString(x) { return x is string && x.size() > 0; }
+    function isWithinSize(s, max) {
+      return s is string && s.size() <= max;
+    }
+    function isRating(r) {
+      return r is int && r >= 1 && r <= 5;
+    }
+    function validNote(n) {
+      return isString(n.bookSlug)
+        && isWithinSize(n.content, 20000)
+        && (!('tags' in n) || (n.tags is list && n.tags.size() <= 20))
+        && (!('pinned' in n) || n.pinned is bool)
+        && (!('favorite' in n) || n.favorite is bool);
+    }
+    function validReview(r) {
+      return isString(r.bookSlug)
+        && isRating(r.rating)
+        && isWithinSize(r.pros, 5000)
+        && isWithinSize(r.cons, 5000)
+        && isWithinSize(r.recommendation, 5000);
+    }
+    function validCollection(c) {
+      return isString(c.title) && c.title.size() <= 200
+        && isWithinSize(c.description, 2000)
+        && (!('tags' in c) || (c.tags is list && c.tags.size() <= 20))
+        && (!('books' in c) || (c.books is list && c.books.size() <= 500))
+        && c.public is bool;
+    }
+    function validProgress(p) {
+      return p.status in ['want','reading','finished','abandoned']
+        && p.percent is number
+        && p.percent >= 0
+        && p.percent <= 100;
+    }
+
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      match /notes/{noteId} {
+        allow read, write: if isOwner(uid)
+          && validNote(resource.data);
+        allow create: if isOwner(uid)
+          && validNote(request.resource.data);
+        allow update: if isOwner(uid)
+          && validNote(request.resource.data);
+      }
+
+      match /reviews/{reviewId} {
+        allow read, write: if isOwner(uid)
+          && validReview(resource.data);
+        allow create: if isOwner(uid)
+          && validReview(request.resource.data);
+        allow update: if isOwner(uid)
+          && validReview(request.resource.data);
+      }
+
+      match /bookmarks/{slug} {
+        allow read, write: if isOwner(uid)
+          && isString(slug);
+      }
+
+      match /collections/{collectionId} {
+        allow read, write: if isOwner(uid)
+          && validCollection(resource.data);
+        allow create: if isOwner(uid)
+          && validCollection(request.resource.data);
+        allow update: if isOwner(uid)
+          && validCollection(request.resource.data);
+      }
+
+      match /readingProgress/{slug} {
+        allow read, write: if isOwner(uid)
+          && validProgress(resource.data);
+        allow create, update: if isOwner(uid)
+          && validProgress(request.resource.data);
+      }
+
+      match /settings/{id} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // Public mirrors (written by client; readable by anyone).
+    match /publicReviews/{reviewId} {
+      allow read: if true;
+      allow create, update: if isSignedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && validReview(request.resource.data);
+      allow delete: if isSignedIn()
+        && resource.data.ownerId == request.auth.uid;
+    }
+    match /publicCollections/{collectionId} {
+      allow read: if true;
+      allow create, update: if isSignedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && validCollection(request.resource.data);
+      allow delete: if isSignedIn()
+        && resource.data.ownerId == request.auth.uid;
+    }
+    match /bookStats/{slug} {
+      allow read: if true;
+      // No client writes — populated by trusted server logic / future
+      // functions or scripts. If we ever want community stats, we move
+      // writes to a server context.
+    }
+    match /activities/{id} {
+      allow read: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.resource.data.ownerId == request.auth.uid;
+      allow update, delete: if false;
+    }
+  }
+}

@@ -1,0 +1,260 @@
+## Strengths
+
+- **A coherent thesis, not a catalog.** Every chapter supports the
+  single argument that the OS is a set of mechanisms for
+  virtualizing, sharing, and protecting resources. The book reads
+  like a sustained argument, not a list of topics. This is
+  unusually rare in a textbook and is the reason it has remained
+  the standard for 30+ years.
+
+- **Principles and case studies interleaved.** The book teaches
+  the principle in the principles chapter and then grounds it in
+  a real system in the case-study chapter. The pairing of paging
+  (Chapter 4) with Linux's page allocator and VM subsystem
+  (Chapter 9) is the kind of structure that turns a textbook
+  into a reference.
+
+- **Honest about trade-offs.** Tanenbaum is unusually candid
+  about which techniques are widely used and which are
+  theoretical. The treatment of deadlock — "prevention by lock
+  ordering is the only scalable technique; everything else is
+  recovery" — is the kind of practical wisdom you do not get
+  from a more formal text.
+
+- **The figures are exceptional.** Tanenbaum's diagrams have a
+  house style: clean line drawings, blue-and-white, with red
+  arrows for the most important paths. Many of them have been
+  reproduced in operating-system courses worldwide. They are
+  not just illustrative; they are an argument. The page-table
+  walk diagram, the deadlock graph, and the BSD process layout
+  have become iconic.
+
+- **The historical perspective.** Each chapter begins with a
+  short history section. Why is the UNIX API the way it is?
+  Because MULTICS tried something else. Why is the Windows
+  registry the way it is? Because VMS had a similar structure.
+  The book explains the present by showing the past.
+
+- **Stable across editions.** The fourth edition (2014) updated
+  security, multiprocessor, and mobile material, but the core
+  has been the same since 1992. The book does not chase
+  fashions. The reader who learns the fourth edition will be
+  prepared for a fifth.
+
+- **Tanenbaum's voice.** Plain, precise, occasionally dry, and
+  unafraid of an opinion. The treatment of microkernels vs.
+  monolithic kernels is a fair presentation of both sides, but
+  Tanenbaum is a known microkernel advocate and it shows. The
+  reader gets the evidence and the editorial line.
+
+---
+
+## Weaknesses
+
+- **Length without summary.** At 1,100+ pages, the book is
+  forbidding. There is no "ten-page overview" chapter for the
+  reader who wants the principles without the detail. The
+  executive summary in this entry is a fair attempt at one.
+
+- **Security chapter is now underweight.** The fourth edition
+  added security, but a single chapter cannot do justice to
+  the modern threat landscape. Side-channel attacks
+  (Spectre/Meltdown, 2018), supply-chain attacks
+  (SolarWinds, 2020), and the rise of confidential computing
+  are not in the book. A reader in 2025 will need to
+  supplement.
+
+- **No exercises are programming exercises.** The problems at
+  the end of each chapter are pencil-and-paper exercises:
+  trace this algorithm, prove that invariant, draw this
+  diagram. They teach the material but do not develop
+  engineering skill. A reader who wants to *implement* an
+  OS needs to do that on their own.
+
+- **The case studies show the systems as they were in 2014.**
+  Linux 3.x, Windows 8, and Android 4.x. The principles
+  still apply, but specific code, APIs, and feature lists
+  are stale. A reader working with Linux 6.x or Windows 11
+  must mentally translate. This is unavoidable for any
+  textbook in a fast-moving field but is worth noting.
+
+- **Multiprocessor and distributed material feels grafted on.**
+  Multiprocessors get a full chapter; distributed systems
+  are introduced but not deeply treated. The book is
+  unapologetically about the single-machine OS. A reader
+  who needs distributed systems should pair MOS with
+  *Distributed Systems* (Tanenbaum & van Steen).
+
+- **The mathematical treatment is shallow.** The book states
+  the rate-monotonic and EDF scheduling bounds but does not
+  prove them. The file-system crash-consistency proofs are
+  omitted. A reader who wants the formal treatment needs
+  another book.
+
+- **Microkernel bias is occasionally visible.** The treatment
+  of Linux as a monolithic kernel is presented as a
+  practical choice forced by performance, not a principled
+  one. A reader interested in microkernels (seL4, QNX,
+  Fuchsia) will find the book somewhat one-sided.
+
+---
+
+## Criticism
+
+### The "Tanenbaum–Torvalds debate" as a lens
+
+The book's most famous case study is the 1992 debate between
+Tanenbaum and a young Linus Torvalds in comp.os.minix about the
+merits of monolithic vs. microkernel design. Tanenbaum argued
+that microkernels were the future; Torvalds argued that
+monolithic kernels were simpler and faster. Linux won the
+market; microkernels remained a minority (QNX, MINIX 3,
+modern research OSes like seL4 and Fuchsia). Tanenbaum's book
+reflects his position honestly, but the reader should know
+that history has, on this point, sided with Torvalds.
+
+### Some case studies feel like appendices
+
+The case studies are uneven. The Linux chapter is excellent
+because the source is open and the authors can name specific
+files. The Windows chapter is necessarily higher-level
+because the source is closed. The Android chapter is short
+and treats Binder, ART, and the security model without
+delving into the kernel-level changes Android required. A
+reader looking for the same depth in Windows and Android as
+in Linux will be disappointed.
+
+### "Modern" is a moving target
+
+The book was published in 2014. The OS landscape in 2025
+includes eBPF, io_uring, CXL memory, confidential
+computing, RDMA, persistent memory, and the post-quantum
+crypto migration. None of these are in the book. The
+principles still apply, but a reader who treats the book as
+a current reference will miss important recent developments.
+
+### The 1,100-page problem
+
+A textbook this long invites readers to skim. Skimming
+chapters 2-8 will give a false sense of knowledge. The
+problems at the end of the chapter are the test. A reader
+who does them carefully will have a real grasp; a reader
+who does not will be able to talk about processes and
+threads without being able to reason about them.
+
+---
+
+## Counterarguments
+
+| Criticism | Response |
+|-----------|----------|
+| "Length makes it intimidating" | The book is designed for a two-semester sequence. It is also designed as a reference. Most readers will return to specific chapters over years. |
+| "Security is underweight" | The fourth edition added security to acknowledge the change. No single book can cover security in full; the book's job is to give the kernel perspective, which it does. |
+| "No programming exercises" | The pencil-and-paper exercises are deliberate. They force the reader to reason about state, not to copy code. Programming exercises are the next step — but they require a different book (Tanenbaum's own OSDI, with MINIX). |
+| "Case studies are dated" | The principles are not dated. Linux's scheduler is still CFS; Windows' kernel is still NT; Android still uses Binder. The specifics (kernel version, system call number) change; the architecture does not. |
+| "Tanenbaum is biased toward microkernels" | He is, and the book shows it. But the principles are the same in both designs. A reader who wants the case for monolithic kernels can read it in any Linux book. |
+| "Distributed systems are missing" | True, but the book does not claim to cover them. The author has a separate book for that. |
+| "Math is shallow" | The book is not a formal text. It is a textbook for engineers. The math is enough to make the algorithms precise; deeper proofs are left to the reader or to a graduate course. |
+
+---
+
+## Historical Context
+
+The book was first published in 1992, a few years after the
+release of MINIX (1987) and at the very beginning of the Linux
+revolution. The OS landscape in 1992 was UNIX (SunOS, BSD,
+System V), MS-DOS, Windows 3.1, and the early Mac. The first
+edition's case studies were UNIX, MS-DOS, and a brief mention
+of the Macintosh. The book was a snapshot of the field as
+Tanenbaum saw it from Amsterdam.
+
+The second edition (1997) added Windows NT. The third edition
+(2008) substantially revised the multiprocessor and security
+material to reflect the post-Linux, post-Windows-NT landscape.
+The fourth edition (2014) added Herbert Bos as co-author and
+the virtualization, mobile, and security material that defines
+the modern era.
+
+Tanenbaum's role in the field is unusual. He is one of the
+few textbook authors who has also created a real operating
+system (MINIX) and, in the process, helped spawn the most
+influential one (Linux). His perspective is principled
+(academic), practical (he maintains MINIX), and historical
+(he has watched the field evolve for 40 years). This is
+unmatched in the textbook literature.
+
+The book's most durable contribution is its structure. The
+"principles + case study" pattern is now standard in OS
+textbooks, and the *vocabulary* it introduced — process
+control block, virtual address space, inode, page table,
+dentry, capability — is the vocabulary of the field.
+
+---
+
+## Long-Term Relevance
+
+**High.** The principles of process management, virtual memory,
+file systems, and synchronization have been stable since the
+1970s. The mechanisms have improved (faster schedulers,
+better page replacement, journaling, COW), but the underlying
+model has not. A reader who learns the fourth edition will be
+prepared for the fifth, the sixth, and likely the seventh.
+
+However, three shifts have intensified since 2014:
+
+1. **eBPF has changed the kernel boundary.** Extended Berkeley
+   Packet Filters started as a network tool; they are now a
+   generic in-kernel sandbox for safe, just-in-time user
+   code. Linux uses eBPF for tracing, security, networking,
+   and even scheduling. The book does not cover eBPF
+   (eBPF became general-purpose in 2014-2015). A 2025
+   reader should add an eBPF primer.
+
+2. **io_uring has changed the I/O model.** Linux's io_uring
+   is an asynchronous I/O mechanism that uses two shared
+   ring buffers between user space and the kernel. It is
+   faster than the traditional `read`/`write` path and
+   reshapes the user-kernel boundary. The book's I/O
+   chapter is now a stepping stone, not the destination.
+
+3. **Confidential computing is reshaping security.** The
+   combination of hardware enclaves (Intel SGX, AMD SEV,
+   ARM Confidential Compute Architecture) and attestation
+   is creating a new model: the OS is no longer fully
+   trusted by the application. This is a fundamental
+   shift that postdates the book.
+
+4. **AI workloads are a new scheduling problem.** GPU
+   scheduling, model serving, and multi-tenant inference
+   are pushing the scheduler in directions the book does
+   not anticipate. A reader interested in this should
+   look at modern kernel scheduler research and
+   the Triton/PyTorch serving literature.
+
+The book's main vulnerability is that it ends at 2014. The
+principles it teaches are still the right ones, but the
+implementation details of a 2025 system are different from
+those of a 2014 system. A reader should treat the case
+studies as illustrations, not as state-of-the-art.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Originality | 8/10 | The principles + case study structure was novel in 1992; the case study choices (Linux, Windows, Android) were ahead of the field |
+| Practical Utility | 9/10 | The single most useful OS textbook ever written; the case studies are a launching pad for kernel work |
+| Readability | 8/10 | Plain, precise, sometimes dry; the figures are exceptional |
+| Comprehensiveness | 9/10 | Covers every core topic in depth; security and distributed systems are the notable gaps |
+| Timelessness | 9/10 | The principles are stable; the case studies are dated but not wrong |
+| **Overall** | **9/10** | The standard against which other OS textbooks are measured |
+
+*Modern Operating Systems* is the book that the field agrees on.
+It is the most-cited OS textbook, the most-assigned OS
+textbook, and the most-likely book to be on a kernel engineer's
+shelf long after graduation. It succeeds because it is
+honest: about the design space, about the trade-offs, about
+the difference between principles and implementations, and
+about what the field does and does not know. For a serious
+student of computer systems, there is no substitute.

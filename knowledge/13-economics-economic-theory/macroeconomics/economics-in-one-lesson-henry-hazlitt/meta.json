@@ -1,0 +1,60 @@
+{
+  "slug": "economics-in-one-lesson-henry-hazlitt",
+  "title": "Economics in One Lesson",
+  "subtitle": "The Shortest and Surest Way to Understand Basic Economics",
+  "author": "Henry Hazlitt",
+  "publicationYear": 1946,
+  "isbn": "9780517548233",
+  "publisher": "Harper & Brothers (original); Crown Business (current)",
+  "language": "en",
+  "pageCount": 218,
+  "genres": [
+    "Economics",
+    "Nonfiction",
+    "Politics",
+    "Philosophy"
+  ],
+  "subjects": [
+    "Economics",
+    "Free Market",
+    "Government Policy",
+    "Supply and Demand",
+    "Price Controls",
+    "Inflation",
+    "Taxation",
+    "Trade"
+  ],
+  "themes": [
+    "The seen vs. the unseen — the core economic lesson",
+    "Bad economics focuses on short-term effects on one group",
+    "Good economics considers long-term effects on everyone",
+    "Government intervention often creates worse problems than it solves",
+    "The free market allocates resources most efficiently"
+  ],
+  "tags": [
+    "economics",
+    "henry-hazlitt",
+    "free-market",
+    "austrian-school",
+    "the-seen-and-the-unseen",
+    "government-policy",
+    "price-controls",
+    "inflation",
+    "taxation",
+    "trade",
+    "broken-window-fallacy",
+    "classical-liberalism",
+    "supply-and-demand",
+    "economic-education"
+  ],
+  "difficulty": "easy",
+  "estimatedReadingHours": 5,
+  "estimatedListeningMinutes": 300,
+  "awards": [
+    "National Book Award nomination (science/technology category)",
+    "Translated into 10+ languages",
+    "Continuously in print since 1946",
+    "Endorsed by F.A. Hayek, Milton Friedman, and many economists"
+  ],
+  "excerpt": "The art of economics consists in looking not merely at the immediate but at the longer effects of any act or policy; it consists in tracing the consequences of that policy not merely for one group but for all groups."
+}

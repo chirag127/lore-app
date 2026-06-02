@@ -1,0 +1,79 @@
+{
+  "slug": "the-war-of-art-steven-pressfield",
+  "title": "The War of Art",
+  "subtitle": "Break Through the Blocks and Win Your Inner Creative Battles",
+  "authors": ["Steven Pressfield"],
+  "publisher": "Black Irish Books",
+  "isbn": "9781591840127",
+  "isbn13": "978-1-59184-012-7",
+  "pages": 190,
+  "year": 2002,
+  "language": "en",
+  "genres": ["Self-Help", "Creativity", "Psychology", "Writing"],
+  "subjects": ["Resistance", "Creative Blocks", "Professionalism", "Art"],
+  "themes": ["Resistance", "Turning Pro", "Professionalism", "Creative Blocks", "Discipline"],
+  "tags": ["resistance", "creative blocks", "writers", "artists", "entrepreneurs", "discipline", "professionalism", "procrastination", "writing", "creativity"],
+  "difficulty": "Beginner to Intermediate",
+  "estimatedReadingHours": 4,
+  "estimatedListeningMinutes": 280,
+  "excerpt": "Steven Pressfield identifies the universal force of Resistance that blocks all creative work, and shows how treating yourself like a professional — showing up every day regardless of fear or inspiration — is the only path through it.",
+  "whoShouldRead": [
+    "Writers, artists, and creators of all kinds facing creative blocks",
+    "Entrepreneurs who procrastinate or self-sabotage",
+    "Anyone who has a great idea but cannot bring themselves to start",
+    "People recovering from addiction or self-defeating behaviour",
+    "Anyone seeking to understand why fear arises before important work"
+  ],
+  "whoShouldSkip": [
+    "Readers seeking a step-by-step productivity system with tactical exercises",
+    "People looking for clinical CBT techniques for anxiety or OCD",
+    "Those uninterested in a philosophical or spiritual framing of creative struggle"
+  ],
+  "keyIdeas": [
+    "Resistance",
+    "Turning Pro",
+    "The Primitive",
+    "The Desk Is Your Battleground",
+    "Stay in the Pocket",
+    "Loving the Mean",
+    "Don't Wait for Inspiration",
+    "Amateur vs Professional Mindset"
+  ],
+  "keyTakeaways": [
+    "Resistance is universal, impersonal, and always points toward what you most need to do",
+    "You do not need inspiration to do the work — showing up is enough",
+    "The professional works whether or not they feel like it; the amateur waits for the muse",
+    "Resistance manifests as procrastination, self-sabotage, addiction, and rationalisation",
+    "The desk is where the battle is fought; establish a routine and show up every day",
+    "The professional loves the mean — the process, practice — not just the outcome",
+    "Staying in the pocket means refusing to let Resistance push you out of your work"
+  ],
+  "relatedBooks": [
+    {
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "reason": "Cal Newport's rules for focused success complement Pressfield's insistence on showing up daily without waiting for inspiration."
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "reason": "James Clear's framework for small daily actions aligns with the professional's commitment to routine."
+    },
+    {
+      "title": "Flow",
+      "author": "Mihaly Csikszentmihalyi",
+      "reason": "Flow theory explains the psychological state Pressfield describes when the professional has turned up long enough for inspiration to arrive."
+    },
+    {
+      "title": "The Artist's Way",
+      "author": "Julia Cameron",
+      "reason": "Julia Cameron's 12-week creativity recovery system is a practical descendant of the same insight: fear is the enemy and routine is the cure."
+    },
+    {
+      "title": "On Writing",
+      "author": "Stephen King",
+      "reason": "Stephen King's memoir on craft echoes Pressfield's insistence on showing up daily and treating writing as work, not magic."
+    }
+  ],
+  "coverImage": "/books/the-war-of-art-steven-pressfield/cover.jpg"
+}

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverArt from '../../components/book/CoverArt.astro';
+import { getCollection } from 'astro:content';
+import { Ornament } from '../../components/ui/Primitives.tsx';
+
+const tagFilter = Astro.url.searchParams.get('tag');
+const allBooks = (await getCollection('books')).sort(
+  (a, b) => (b.data.addedAt ?? 0) - (a.data.addedAt ?? 0),
+);
+const tags = Array.from(new Set(allBooks.flatMap((b) => b.data.tags))).sort();
+const books = tagFilter
+  ? allBooks.filter((b) => b.data.tags.includes(tagFilter))
+  : allBooks;
+const byAuthor = new Map<string, typeof books>();
+for (const b of books) {
+  const a = b.data.authors[0] ?? 'Unknown';
+  if (!byAuthor.has(a)) byAuthor.set(a, []);
+  byAuthor.get(a)!.push(b);
+}
+const groups = Array.from(byAuthor.entries()).sort(([a], [c]) => a.localeCompare(c));
+---
+<BaseLayout title="Atlas" description="Browse the complete atlas.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <Ornament client:load>The Atlas</Ornament>
+    <h1 class="font-display text-display-lg font-light mt-6 mb-2 text-balance">
+      {books.length} {books.length === 1 ? 'book' : 'books'}
+      {tagFilter && (
+        <span class="text-terracotta-500"> tagged <em>{tagFilter}</em></span>
+      )}
+    </h1>
+    <p class="text-ink-soft text-pretty max-w-2xl">
+      A complete map of structured knowledge. Click any book to enter.
+    </p>
+
+    {tags.length > 0 && (
+      <div class="mt-8 sm:mt-10 mb-10 sm:mb-16">
+        <p class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute mb-3">Filter by theme</p>
+        <ul class="flex flex-wrap gap-2">
+          <li>
+            <a
+              href="/books"
+              class:list={[
+                'inline-flex items-center px-3 h-8 font-mono text-[0.6875rem] uppercase tracking-[0.18em] border transition-colors',
+                !tagFilter
+                  ? 'border-terracotta-400 text-terracotta-500'
+                  : 'border-rule text-ink-soft hover:border-terracotta-400 hover:text-terracotta-500',
+              ]}
+            >All</a>
+          </li>
+          {tags.map((t) => (
+            <li>
+              <a
+                href={`/books?tag=${encodeURIComponent(t)}`}
+                class:list={[
+                  'inline-flex items-center px-3 h-8 font-mono text-[0.6875rem] uppercase tracking-[0.18em] border transition-colors',
+                  t === tagFilter
+                    ? 'border-terracotta-400 text-terracotta-500'
+                    : 'border-rule text-ink-soft hover:border-terracotta-400 hover:text-terracotta-500',
+                ]}
+              >{t}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div class="space-y-12 sm:space-y-20">
+      {groups.map(([author, list]) => (
+        <section>
+          <header class="mb-6 sm:mb-8 flex flex-wrap items-end gap-2 sm:gap-4 reading-rule">
+            <h2 class="font-display text-display-md font-light">{author}</h2>
+            <p class="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-ink-mute">
+              {list.length} {list.length === 1 ? 'work' : 'works'}
+            </p>
+          </header>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-3 sm:gap-x-4 gap-y-8 sm:gap-y-10">
+            {list.map((b) => (
+              <a href={`/books/${b.data.slug}`} class="group block">
+                <CoverArt
+                  title={b.data.title}
+                  author={b.data.authors[0]}
+                  cover={b.data.cover}
+                  accent={b.data.cover?.color}
+                  class="group-hover:shadow-[var(--shadow-lift)] group-hover:-translate-y-0.5 transition-all duration-500"
+                />
+                <h3 class="mt-3 font-display text-base font-light leading-tight text-pretty group-hover:text-terracotta-500 transition-colors">
+                  {b.data.title}
+                </h3>
+                <p class="text-xs text-ink-soft">{b.data.year ?? '—'}</p>
+                {b.data.tags.length > 0 && (
+                  <p class="mt-1 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-ink-mute truncate">
+                    {b.data.tags.slice(0, 3).join(' · ')}
+                  </p>
+                )}
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    {books.length === 0 && (
+      <div class="text-center py-20 border border-dashed border-rule rounded-sm">
+        <Ornament client:load>No books yet</Ornament>
+        <p class="mt-4 text-ink-soft">Try removing a filter, or
+          <a href="/request" class="text-terracotta-500">request a book</a>.
+        </p>
+      </div>
+    )}
+  </section>
+</BaseLayout>

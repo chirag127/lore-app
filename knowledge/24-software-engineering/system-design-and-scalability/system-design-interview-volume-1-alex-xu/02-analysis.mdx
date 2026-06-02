@@ -1,0 +1,130 @@
+## Strengths
+
+- **Repeatable framework.** The 4-step process is the book's killer
+  feature. It gives candidates a reliable structure when anxiety
+  strikes, turning an open-ended question into a guided conversation.
+- **188 diagrams make concepts concrete.** System design is inherently
+  visual. Xu's diagrams — though simple — convey architecture at a
+  glance and give candidates templates to draw during interviews.
+- **Broad coverage.** 15 case studies span messaging, storage, video,
+  search, and social feeds. Most interview questions map to at least
+  one case study, making the book a good reference.
+- **Accessible to self-taught engineers.** The book assumes no formal
+  distributed systems background. It introduces concepts like
+  consistent hashing, quorum, and gossip protocol from first
+  principles.
+- **Interview-focused.** The book knows its audience. Every chapter
+  is structured like an interview answer: understand the problem,
+  propose scope, estimate, design, deep dive, wrap up.
+- **Volume format.** Chapters average ~20 pages each. You can read one
+  case study per day for two weeks and be reasonably prepared.
+
+---
+
+## Weaknesses
+
+- **Lacks depth.** Each case study covers what a 45-minute interview
+  can cover — which is deliberately shallow. The rate limiter chapter
+  discusses algorithms at a high level without comparing their
+  production behavior. The YouTube chapter mentions no actual
+  transcoding pipeline.
+- **Oversimplified trade-offs.** Real systems involve painful
+  trade-offs that the book glosses over. "Use Redis" is presented as
+  a solution without discussing memory limits, eviction policies, or
+  consistency requirements.
+- **Self-published quality issues.** Diagrams, while plentiful, are
+  hand-drawn in monochrome. Some contain minor errors (inconsistent
+  labels, missing arrows). The writing has occasional awkward phrasings.
+- **Case studies are uneven.** The URL shortener chapter (Thorough)
+  and the chat system chapter (detailed) are good. The Google Drive
+  chapter is thin — it describes block-level sync without explaining
+  how delta sync actually works.
+- **No operational guidance.** The book focuses entirely on design.
+  There is no discussion of monitoring, alerting, deployment, CI/CD,
+  or incident response — all real concerns in production systems.
+- **Sample-centric approach.** The book teaches patterns rather than
+  principles. A candidate who memorizes all 15 case studies can pass
+  interviews without understanding the underlying theory.
+
+---
+
+## Criticism
+
+### "Memorization, Not Understanding"
+
+The most common criticism: the book teaches you what to draw, not why
+it works. Candidates who read only this book tend to produce
+cookie-cutter answers. Interviewers at top companies report that they
+can identify "Alex Xu candidates" by the formulaic structure of their
+answers.
+
+### "Borrowed Content"
+
+Many diagrams and explanations are adapted from Google papers
+(Bigtable, Spanner), Facebook engineering blog posts, and existing
+system design resources. Xu synthesizes these into one place, which
+is valuable, but the material is rarely original.
+
+### "Over-fitted to FAANG Interviews"
+
+The book assumes a specific interview format (whiteboard, 45-60 min,
+FAANG-style) that does not apply everywhere. Startup interviews,
+senior staff+ interviews, and domain-specific roles require different
+approaches that the book does not cover.
+
+### "Missing Product Sense"
+
+System design at the senior level involves product judgment: what
+*should* the system do? What will users actually need in 6 months?
+Xu's framework treats the problem as given, leaving out the discovery
+and scoping skills that distinguish senior from mid-level.
+
+---
+
+## Historical Context
+
+Published mid-2020, during the COVID-19 pandemic, when tech hiring
+was surging and remote interviews became the norm. System design
+interviews migrated from whiteboards to virtual whiteboards
+(Excalidraw, Miro). The book arrived at the perfect moment.
+
+Before Xu's book, system design preparation involved:
+- Reading "Designing Data-Intensive Applications" (too deep, too slow)
+- Scraping blog posts (inconsistent quality, no structure)
+- Practicing with peers (no framework to evaluate answers)
+- Reading "System Design Primer" on GitHub (good but incomplete)
+
+Xu's book filled a clear gap: a lightweight, structured, complete
+coverage of the most common interview questions. Its success
+spawned a second volume, a paid newsletter (ByteByteGo, 500k+
+subscribers), and established Xu as the leading educator in the space.
+
+---
+
+## Comparison to Similar Resources
+
+| Resource | Strengths | Weaknesses | Best For |
+|----------|-----------|------------|----------|
+| **System Design Interview Vol. 1** | Structured, 15 case studies, interview-focused | Shallow, pattern-based | First-time interviewees |
+| **System Design Interview Vol. 2** | More advanced cases (proximity, maps, payments) | Same shallow approach | Returning readers |
+| **Designing Data-Intensive Applications** | Deep theoretical foundation, complete | Too slow for interview prep | Deep understanding |
+| **System Design Primer (GitHub)** | Free, community-reviewed, broad | No unified framework, varying quality | Supplemental study |
+| **Grokking the System Design Interview** | Interactive, similar scope | Dated, limited case studies | Quick skimming |
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Originality | 5/10 | Synthesizes existing material into a coherent package |
+| Practical Utility | 9/10 | Very effective for its intended purpose (interview prep) |
+| Clarity | 8/10 | Diagrams and structure make ideas accessible |
+| Completeness | 6/10 | Covers breadth but not depth |
+| Interview Effectiveness | 9/10 | Directly improves interview performance |
+| **Overall** | **7/10** | Best tool for the job, but know its limits |
+
+The bottom line: this book will help you pass a system design
+interview. It will not make you a good system designer. Use it as a
+primer, then go deeper with Kleppmann's DDIA, Google papers, and
+real-world experience.
