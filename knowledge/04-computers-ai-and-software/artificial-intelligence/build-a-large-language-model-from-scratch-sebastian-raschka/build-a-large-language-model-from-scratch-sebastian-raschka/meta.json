@@ -1,0 +1,65 @@
+{
+  "slug": "build-a-large-language-model-from-scratch-sebastian-raschka",
+  "title": "Build a Large Language Model (From Scratch)",
+  "subtitle": "Learn How to Create, Train, and Tweak Large Language Models by\n    Building One from the Ground Up",
+  "author": "Sebastian Raschka",
+  "publicationYear": 2024,
+  "isbn": "9781633437166",
+  "publisher": "Manning Publications",
+  "language": "en",
+  "pageCount": 368,
+  "genres": [
+    "Artificial Intelligence",
+    "Computer Science",
+    "Machine Learning",
+    "Programming",
+    "Technology"
+  ],
+  "subjects": [
+    "Large Language Models",
+    "Natural Language Processing",
+    "GPT",
+    "Transformers",
+    "Deep Learning",
+    "PyTorch",
+    "Fine-Tuning"
+  ],
+  "themes": [
+    "Building LLMs from first principles without library abstractions",
+    "Understanding attention mechanisms and transformer architectures",
+    "Pretraining on unlabeled data via next-token prediction",
+    "Fine-tuning for classification and instruction-following",
+    "Practical implementation over mathematical formalism",
+    "Democratizing LLM knowledge through hands-on coding"
+  ],
+  "tags": [
+    "llm",
+    "large-language-models",
+    "gpt",
+    "transformer",
+    "attention",
+    "deep-learning",
+    "machine-learning",
+    "pytorch",
+    "nlp",
+    "neural-networks",
+    "fine-tuning",
+    "pretraining",
+    "tokenization",
+    "sebastian-raschka",
+    "generative-ai",
+    "natural-language-processing",
+    "from-scratch"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 14,
+  "estimatedListeningMinutes": 720,
+  "awards": [
+    "Amazon #1 New Release in AI & Machine Learning (2024)",
+    "Goodreads Rating 4.59 / 5.0",
+    "Amazon Rating 4.5 / 5.0 (500+ ratings)",
+    "Manning Publications Bestseller",
+    "Featured on O'Reilly Learning Platform"
+  ],
+  "excerpt": "Plan and code all the parts of an LLM from the ground up.\n    Bestselling author Sebastian Raschka guides you step by step through\n    creating your own GPT-style LLM — from text embedding and attention\n    mechanisms to pretraining and fine-tuning — using Python and PyTorch,\n    all on an ordinary laptop."
+}

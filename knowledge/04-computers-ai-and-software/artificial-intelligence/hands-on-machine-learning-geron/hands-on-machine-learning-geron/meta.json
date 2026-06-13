@@ -1,0 +1,87 @@
+{
+  "slug": "hands-on-machine-learning-geron",
+  "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+  "subtitle": "Concepts, Tools, and Techniques to Build Intelligent Systems",
+  "author": "Aurélien Géron",
+  "publicationYear": 2019,
+  "editions": [
+    {
+      "edition": "1st",
+      "year": 2017,
+      "isbn": "9781491962299",
+      "pages": 574
+    },
+    {
+      "edition": "2nd",
+      "year": 2019,
+      "isbn": "9781492032649",
+      "pages": 848
+    },
+    {
+      "edition": "3rd",
+      "year": 2022,
+      "isbn": "9781098125974",
+      "pages": 864
+    }
+  ],
+  "latestEdition": {
+    "edition": "3rd",
+    "year": 2022,
+    "isbn": "9781098125974",
+    "isbn10": "1098125975",
+    "pages": 864,
+    "publisher": "O'Reilly Media"
+  },
+  "publisher": "O'Reilly Media",
+  "language": "en",
+  "genres": [
+    "Technology",
+    "Computer Science",
+    "Machine Learning",
+    "Deep Learning",
+    "Data Science",
+    "Artificial Intelligence"
+  ],
+  "subjects": [
+    "Machine Learning",
+    "Deep Learning",
+    "Neural Networks",
+    "Scikit-Learn",
+    "TensorFlow",
+    "Keras",
+    "Python",
+    "Computer Vision",
+    "NLP",
+    "Reinforcement Learning",
+    "Generative Models",
+    "Data Science"
+  ],
+  "tags": [
+    "machine-learning",
+    "deep-learning",
+    "neural-networks",
+    "scikit-learn",
+    "tensorflow",
+    "keras",
+    "python",
+    "computer-vision",
+    "nlp",
+    "reinforcement-learning",
+    "generative-adversarial-networks",
+    "transformers",
+    "cnn",
+    "rnn",
+    "data-science",
+    "artificial-intelligence",
+    "supervised-learning",
+    "unsupervised-learning",
+    "aurelien-geron",
+    "oreilly",
+    "practical-ml",
+    "hands-on"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 26,
+  "estimatedListeningMinutes": 1560,
+  "excerpt": "Through concrete examples, minimal theory, and production-ready Python frameworks, this bestselling book helps programmers gain an intuitive understanding of machine learning concepts and tools for building intelligent systems — starting with simple linear regression and progressing to deep neural networks."
+}

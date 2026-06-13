@@ -1,0 +1,24 @@
+{
+  "id": "25-artificial-intelligence-machine-learning/deep-learning-and-neural-architectures/deep-learning-ian-goodfellow",
+  "title": "Deep Learning",
+  "authors": [
+    "Ian Goodfellow",
+    "Yoshua Bengio",
+    "Aaron Courville"
+  ],
+  "year": 2016,
+  "category": "25-artificial-intelligence-machine-learning",
+  "subcategory": "deep-learning-and-neural-architectures",
+  "pages": 775,
+  "isbn": "978-0262035613",
+  "language": "en",
+  "genres": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Science",
+    "Textbook"
+  ],
+  "source": "generated",
+  "generatedAt": "2026-01-15",
+  "slug": "deep-learning-ian-goodfellow"
+}

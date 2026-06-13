@@ -1,0 +1,56 @@
+{
+  "slug": "deep-learning-ian-goodfellow",
+  "title": "Deep Learning",
+  "subtitle": "An MIT Press Book on the Theory and Practice of Deep Neural Networks",
+  "author": "Ian Goodfellow, Yoshua Bengio, and Aaron Courville",
+  "publicationYear": 2016,
+  "isbn": "9780262035613",
+  "publisher": "MIT Press",
+  "language": "en",
+  "pageCount": 800,
+  "genres": [
+    "Computer Science",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Deep Learning"
+  ],
+  "subjects": [
+    "Deep Feedforward Networks",
+    "Convolutional Networks",
+    "Recurrent Neural Networks",
+    "Regularization",
+    "Optimization",
+    "Generative Models"
+  ],
+  "themes": [
+    "Deep neural network architectures and training methodology",
+    "The mathematical foundations of representation learning",
+    "Practical engineering for building and deploying deep learning systems",
+    "Generative modeling and unsupervised learning",
+    "The relationship between deep learning and human cognition"
+  ],
+  "tags": [
+    "deep-learning",
+    "ian-goodfellow",
+    "yoshua-bengio",
+    "aaron-courville",
+    "neural-networks",
+    "convolutional-networks",
+    "recurrent-neural-networks",
+    "generative-models",
+    "backpropagation",
+    "representation-learning",
+    "regularization",
+    "optimization",
+    "mit-press"
+  ],
+  "difficulty": "hard",
+  "estimatedReadingHours": 30,
+  "estimatedListeningMinutes": 1800,
+  "awards": [
+    "One of the most cited computer science books of the 2010s",
+    "Endorsed by Elon Musk as the only comprehensive deep learning book",
+    "Used as the primary textbook in top university deep learning courses worldwide"
+  ],
+  "excerpt": "Deep Learning by Goodfellow, Bengio, and Courville is the definitive textbook on deep learning. Covering everything from the mathematical foundations to advanced research topics, it has become the standard reference for students, researchers, and practitioners entering the field."
+}

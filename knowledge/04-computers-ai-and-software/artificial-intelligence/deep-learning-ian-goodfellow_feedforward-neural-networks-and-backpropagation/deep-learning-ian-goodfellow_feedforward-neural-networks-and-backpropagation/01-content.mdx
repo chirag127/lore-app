@@ -1,0 +1,170 @@
+---
+title: Core Concepts
+subtitle: Deep Feedforward Networks, Backpropagation, CNNs, RNNs, and Generative Models
+---
+
+## Deep Feedforward Network Architecture
+
+```mermaid
+flowchart LR
+    subgraph Input["Input Layer"]
+        X1["x1"]
+        X2["x2"]
+        X3["x3"]
+    end
+
+    subgraph Hidden1["Hidden Layer 1"]
+        H1["h₁ = σ(W₁x + b₁)"]
+    end
+
+    subgraph Hidden2["Hidden Layer 2"]
+        H2["h₂ = σ(W₂h₁ + b₂)"]
+    end
+
+    subgraph Output["Output Layer"]
+        Y["ŷ = softmax(W₃h₂ + b₃)"]
+    end
+
+    X1 --> H1
+    X2 --> H1
+    X3 --> H1
+    H1 --> H2
+    H2 --> Y
+```
+
+A deep feedforward network learns a composition of functions. Each
+layer applies an affine transformation followed by a nonlinear
+activation function (ReLU, sigmoid, tanh). The depth of the network
+allows it to learn hierarchical representations.
+
+---
+
+## The Backpropagation Algorithm
+
+```mermaid
+flowchart TD
+    subgraph Forward["Forward Pass"]
+        F1["Compute layer outputs<br/>h₁, h₂, ..., hₙ"]
+        F2["Compute loss L(ŷ, y)"]
+    end
+
+    subgraph Backward["Backward Pass"]
+        B1["∂L/∂hₙ = gradient at output"]
+        B2["∂L/∂Wₙ = hₙ₋₁ᵀ · ∂L/∂hₙ"]
+        B3["∂L/∂hₙ₋₁ = Wₙᵀ · ∂L/∂hₙ"]
+        B4["Repeat for all layers"]
+    end
+
+    subgraph Update["Parameter Update"]
+        U1["W ← W - η · ∂L/∂W"]
+    end
+
+    Forward --> Backward
+    Backward --> Update
+    Update -.->|"Next iteration"| Forward
+```
+
+Backpropagation applies the chain rule to compute gradients through
+the computation graph. It is the foundation on which all deep learning
+optimization is built.
+
+---
+
+## Convolutional Networks
+
+```mermaid
+flowchart LR
+    subgraph CNN["Convolutional Neural Network"]
+        IMG["Input Image<br/>224x224x3"]
+        CONV1["Conv Layer<br/>64 filters, 3x3"]
+        POOL1["Max Pool<br/>2x2"]
+        CONV2["Conv Layer<br/>128 filters, 3x3"]
+        POOL2["Max Pool<br/>2x2"]
+        FC["Fully Connected<br/>4096 units"]
+        SOFTMAX["Softmax<br/>1000 classes"]
+    end
+
+    IMG --> CONV1 --> POOL1 --> CONV2 --> POOL2 --> FC --> SOFTMAX
+```
+
+CNNs exploit three key ideas: sparse connectivity (local receptive
+fields), parameter sharing (same filter across spatial locations), and
+equivariant representation. These properties make them highly
+efficient for image and grid-structured data.
+
+---
+
+## The Optimization Landscape
+
+```mermaid
+flowchart TD
+    subgraph Algos["Optimization Algorithms"]
+        SGD["SGD<br/>η · g"]
+        MOM["SGD + Momentum<br/>v ← αv + η · g"]
+        ADAM["Adam<br/>Adaptive moments<br/>per-parameter lr"]
+    end
+
+    subgraph Challenges["Challenges"]
+        C1["Saddle points<br/>(not local minima)"]
+        C2["Ill-conditioning<br/>(poorly scaled gradients)"]
+        C3["Vanishing/exploding<br/>gradients"]
+    end
+
+    Challenges -->|"Addressed by"| Algos
+```
+
+Neural network optimization is non-convex. Saddle points are far more
+common than local minima in high-dimensional spaces. Adaptive methods
+(Adam) handle ill-conditioned problems better than plain SGD.
+
+---
+
+## Generative Models
+
+```mermaid
+flowchart LR
+    subgraph GAN["Generative Adversarial Network"]
+        Z["Latent noise z"]
+        G["Generator G(z)"]
+        D["Discriminator D(x)"]
+        REAL["Real data x"]
+    end
+
+    Z --> G --> D
+    REAL --> D
+    D -->|"Real/fake"| OUT
+```
+
+GANs frame generation as a game between a generator and a
+discriminator. The generator learns to produce realistic samples; the
+discriminator learns to distinguish real from fake. The result is a
+generative model that can produce remarkably realistic images, audio,
+and text.
+
+---
+
+## Key Lessons
+
+- **Representation learning is the essence of deep learning.** Each
+  layer transforms the representation to make the task easier.
+- **Depth matters.** Deeper networks can represent certain functions
+  exponentially more efficiently than shallow ones.
+- **The gradient tells you where to go, not where you are.**
+  Optimization dynamics are complex; monitoring learning curves is
+  essential.
+- **Generalization in deep learning is not well understood.** The
+  classical bias-variance tradeoff does not fully explain why
+  overparameterized networks generalize well.
+
+---
+
+## Practical Applications
+
+- **Computer vision:** CNNs are the standard architecture for image
+  classification, object detection, segmentation, and face recognition
+- **Natural language processing:** RNNs, transformers, and attention
+  mechanisms power translation, summarization, and question answering
+- **Speech recognition:** Deep networks replaced traditional
+  Gaussian mixture models in production systems
+- **Reinforcement learning:** Deep Q-networks and policy gradient
+  methods achieve superhuman performance in games

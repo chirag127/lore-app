@@ -1,144 +1,240 @@
-# AGENTS.md — KnowledgeAtlas
+# BookAtlas Agents
 
-Repo for [KnowledgeAtlas](https://github.com/chirag127/BookAtlas):
-the free platform for understanding knowledge. Static SSG, React islands,
-Firestore, LangGraph pipeline, GitHub Actions automation, Firebase
-Hosting (Spark plan only — **no credit card required**).
+## Master Agent
 
+**Responsibilities:**
+- Orchestrate the entire BookAtlas system
+- Coordinate between category and book agents
+- Ensure quality standards are met
+- Manage the knowledge base lifecycle
 
-## Commands
+**Inputs:**
+- User requests
+- Book generation tasks
+- Category creation requests
 
-| Task | Command |
-| --- | --- |
-| Install | `pnpm install` |
-| Dev (web) | `pnpm dev` |
-| Build (web) | `pnpm build` (runs Pagefind after Astro) |
-| Preview built site | `pnpm preview` |
+**Outputs:**
+- Completed books
+- Updated category pages
+- System reports
 
+**Rules:**
+- Never skip validation
+- Always verify research sources
+- Maintain separation of concerns
 
-## Book Generation — Master Plan
+---
 
-**ALWAYS read `PLAN.md` (root) before generating books.**
+## Category Agent
 
-### What PLAN.md Contains
+**Responsibilities:**
+- Create and maintain category index.mdx files
+- Define category boundaries
+- Cross-link related categories
+- Update category documentation
 
-- **Complete per-directory book lists**: Every leaf directory with 10 recommended books
-  (so you know exactly which book to generate and for which directory)
-- **Quality standards**: Specifications for all 5 files per book
-  (index.mdx, 01-content.mdx, 02-analysis.mdx, 03-narration.mdx, meta.json)
-- **Research methodology**: 7 areas to search independently per book
-- **Batch progress tracking**: Current status of all 30 batches
-- **Execution priority**: Phase 0 (empty dirs) → Phase 1 (full cat) → Phase 2 (partial)
-- **54 empty leaves**: Books that need FULL 10-book generation immediately
+**Inputs:**
+- Category name and description
+- Related categories list
+- Essential books list
 
-### Generation Workflow (per book)
+**Outputs:**
+- index.mdx for each leaf category
+- Updated cross-references
 
-**CRITICAL: ONE SUB-AGENT PER BOOK.** Do NOT batch multiple books in one agent.
+**Rules:**
+- Use the category template
+- Follow the 10-category structure
+- Never create nested categories
 
-1. **IDENTIFY** target leaf + book slug from PLAN.md
-2. **READ** an existing reference book in the same leaf to match format
-3. **SEARCH WEB** for the actual book to include:
-   - `"[topic] best books unconventional contrarian views"` — find NON-conventional books
-   - `"[topic] must read books opposing perspectives"`
-   - Prefer books that present unexpected/contrarian theses, not just popular bestsellers
-   - For self-help: include books that challenge the genre (e.g., Die With Zero, Status Anxiety)
-4. **RESEARCH 7 AREAS** via web search (verify every fact):
-   - Metadata (ISBN, pages, year — verify via Wikipedia/Open Library)
-   - Summary & Table of Contents (chapter breakdown)
-   - Key Concepts & Arguments (5-10 main ideas)
-   - Critical Reception (minimum 3 NAMED critics with specific arguments)
-   - Author Background (credentials, biases, career)
-   - Impact & Influence (citations, policy changes, cultural reach)
-   - Related Books (3-5 similar works)
-5. **COMPOSE 6 FILES** into `knowledge/NN-category/subcat/sub-subcat/book-slug/`
-6. **RUN** `pnpm typecheck` to verify
-7. **CREATE/UPDATE** README.md in the leaf directory
-8. **COMMIT** the single book
+---
 
-### File Requirements (IMPORTANT) — 6 files per book (+ README)
+## Book Agent
 
-| File | Word Count | Key Sections |
-|---|---|---|
-| index.mdx | ~200 words + frontmatter | Full YAML metadata, BookHeader, 2-3 para intro |
-| 01-content.mdx | 3000-5000 words | Complete chapter summary (ALL chapters) + Reading Guide |
-| 02-analysis.mdx | 2000-4000 words | 11 required sections (context → sufficiency) |
-| 03-narration.mdx | 500-1000 words | Style, structure, rhetoric, readability |
-| 04-problems.mdx | 1000-2000 words | Key problems addressed, solutions proposed, open questions (non-self-help only) |
-| meta.json | ~15 lines | ISBN, pages, year, genres — all VERIFIED |
+**Responsibilities:**
+- Research and validate book metadata
+- Generate all 5 required files per book
+- Ensure quality standards
+- Validate final output
 
-### `01-content.mdx` Must Contain COMPLETE Summary
+**Inputs:**
+- Book title and author
+- Research sources
+- Category and subcategory
 
-- Summarize EVERY chapter, not just the first few
-- Include specific examples, case studies, data points from each chapter
-- End with Reading Guide (sufficiency, recommended path, chapters to read/skip)
-- Word count: 3000-5000 words for dense books, minimum 2500 for shorter ones
+**Outputs:**
+- index.mdx (overview)
+- 01-content.mdx (summary)
+- 02-analysis.mdx (analysis)
+- 03-narration.mdx (audio)
+- meta.json (metadata)
 
-### `04-problems.mdx` — Analysis & Problems Section (non-self-help only)
+**Rules:**
+- Use the book templates
+- Never fabricate metadata
+- Always verify ISBN and page count
+- Run validation after creation
 
-- **Key Problem** — The core issue the book addresses
-- **Proposed Solution** — The book's answer to that problem
-- **Evidence & Argumentation** — How it makes its case
-- **Unresolved Questions** — What the book leaves open
-- **Criticisms** — Named critics' objections
-- **Alternative Solutions** — How other thinkers have approached the same problem
-- **Practical Applications** — How to apply the book's insights
+---
 
-### Self-Helf Differentiation
+## Research Agent
 
-For self-help, productivity, personal-development leaves:
-- Include at least 2 books that CHALLENGE conventional self-help wisdom
-- Example for personal finance: pair "The Simple Path to Wealth" (save early) with "Die With Zero" (spend when young, you'll earn more later)
-- Example for habits: pair "Atomic Habits" with "The Power of Habit" chapter critique or "Better Than Before" contrarian takes
-- Always search for unconventional/contrarian books in the space
+**Responsibilities:**
+- Find book information on the web
+- Verify metadata accuracy
+- Gather critical reception
+- Identify related books
 
-### Unconventional Book Inclusion Rule
+**Inputs:**
+- Book title and author
+- Search queries
 
-Before writing ANY book for any leaf:
-1. Search web: `"[topic] unconventional contrarian books"`
-2. Search web: `"[topic] books that challenge conventional wisdom"`
-3. Include at least 2-3 unconventional picks per 10-book leaf
-4. Document WHY each unconventional book was chosen in its meta.json "rationale" field
+**Outputs:**
+- Verified metadata
+- Summary and TOC
+- Criticisms and reviews
+- Related books list
 
-### Hard Rules
+**Rules:**
+- Only use official sources
+- Never guess or assume
+- Document all sources
+- Cross-reference information
 
-- **NEVER fabricate** criticisms — find real reviews from named critics/publications
-- **NEVER guess** ISBN or page count — verify via web search
-- **NEVER add** comments to code
-- **ALWAYS** run `pnpm typecheck` before committing
-- **ALWAYS** read PLAN.md first to find which book goes in which directory
-- **ALWAYS** do all 7 research searches before writing a single line
+---
 
-### Reading the Book List in PLAN.md
+## Metadata Agent
 
-Each leaf directory entry looks like:
+**Responsibilities:**
+- Structure metadata in JSON format
+- Validate all fields
+- Generate slug
+- Ensure consistency
 
-```
-**subcategory/sub-subcategory/book-slug**
-1. First Book Title — Author (year) — ALREADY EXISTS (skip)
-2. Second Book Title — Author (year) — GENERATE THIS
-3. Third Book Title — Author (year)
-... up to 10
-```
+**Inputs:**
+- Research data
+- Category information
 
-Phase 0 (empty dirs) entries list ALL 10 books for generation.
-Phase 1-2 (existing dirs) entries list 9 additional books per existing directory.
+**Outputs:**
+- meta.json file
 
+**Rules:**
+- Use exact field names
+- Validate ISBN format
+- Verify publication year
+- Generate consistent slugs
 
-## Free-tier constraints (Spark plan only)
+---
 
-We do **not** use, to avoid credit-card-only features:
+## Content Agent
 
-- Cloud Functions for Firebase
-- Cloud Storage for Firebase (requires Blaze since 2024)
-- Cloud Run, Pub/Sub, BigQuery export
-- Scheduled functions
+**Responsibilities:**
+- Write comprehensive book summaries
+- Create chapter-by-chapter breakdowns
+- Develop actionable insights
+- Add reading guides
 
-Workarounds baked in:
+**Inputs:**
+- Research findings
+- Book structure
 
-- **Book requests**: the website form opens a pre-filled GitHub Issue URL
-  in a new tab. The user signs into GitHub and submits. No backend needed.
-- **Book metadata/covers**: fetched at pipeline time from Open Library
-  (`openlibrary.org`) and Google Books free APIs (no key, CORS-friendly
-  for build-time use; server-side fetch in CI).
-- **Speech narration**: Browser `SpeechSynthesis` API. No MP3 storage.
+**Outputs:**
+- 01-content.mdx file
 
+**Rules:**
+- Cover all major chapters
+- Include examples and case studies
+- Provide reading recommendations
+- Use proper MDX formatting
+
+---
+
+## Analysis Agent
+
+**Responsibilities:**
+- Write critical analysis
+- Gather named criticisms
+- Compare with similar works
+- Assess long-term relevance
+
+**Inputs:**
+- Book content
+- Review sources
+- Related books
+
+**Outputs:**
+- 02-analysis.mdx file
+
+**Rules:**
+- Use real criticisms only
+- Cite named reviewers
+- Compare fairly
+- Rate sufficiency 1-10
+
+---
+
+## Narration Agent
+
+**Responsibilities:**
+- Create audio-friendly version
+- Optimize for text-to-speech
+- Write natural flowing prose
+- Remove markdown formatting
+
+**Inputs:**
+- Book insights
+- Writing style
+
+**Outputs:**
+- 03-narration.mdx file
+
+**Rules:**
+- No headings in body
+- No bullet lists
+- No dialogue
+- Sound like audiobook
+
+---
+
+## Validation Agent
+
+**Responsibilities:**
+- Check all file requirements
+- Validate metadata
+- Verify MDX syntax
+- Ensure anti-duplication
+
+**Inputs:**
+- Book files
+- Templates
+
+**Outputs:**
+- Validation report
+- Error list
+
+**Rules:**
+- Run after every book
+- Fix all errors
+- Never skip validation
+
+---
+
+## Cross-link Agent
+
+**Responsibilities:**
+- Update related book links
+- Maintain cross-references
+- Sync category links
+
+**Inputs:**
+- Book slugs
+- Category structure
+
+**Outputs:**
+- Updated links
+- Cross-reference map
+
+**Rules:**
+- Keep links current
+- Avoid broken links
+- Use consistent format

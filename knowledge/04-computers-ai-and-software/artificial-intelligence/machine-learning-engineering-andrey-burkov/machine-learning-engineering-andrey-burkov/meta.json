@@ -1,0 +1,62 @@
+{
+  "slug": "machine-learning-engineering-andrey-burkov",
+  "title": "Machine Learning Engineering",
+  "subtitle": "The Most Complete Applied AI Book on Building Reliable ML Solutions at Scale",
+  "author": "Andriy Burkov",
+  "publicationYear": 2020,
+  "isbn": "9781999579579",
+  "isbn10": "1999579577",
+  "publisher": "True Positive Inc.",
+  "language": "en",
+  "pageCount": 310,
+  "openLibraryId": "OL30106212M",
+  "companionSite": "http://www.mlebook.com/",
+  "genres": [
+    "Technology",
+    "Machine Learning",
+    "MLOps",
+    "Software Engineering",
+    "Data Science"
+  ],
+  "subjects": [
+    "Machine Learning",
+    "ML Engineering",
+    "MLOps",
+    "Production ML",
+    "Data Engineering",
+    "Model Deployment",
+    "Model Monitoring",
+    "ML Lifecycle",
+    "Reliability Engineering"
+  ],
+  "themes": [
+    "ML engineering is fundamentally different from ML research",
+    "Problem framing precedes model selection",
+    "Data engineering is the long pole of every ML project",
+    "Reliability engineering matters more than peak accuracy",
+    "Mistakes are inevitable — design for detection and recovery",
+    "Domain expertise is non-substitutable"
+  ],
+  "tags": [
+    "machine-learning",
+    "mlops",
+    "ml-engineering",
+    "production-ml",
+    "data-engineering",
+    "model-deployment",
+    "model-monitoring",
+    "reliability",
+    "ml-lifecycle",
+    "andriy-burkov",
+    "decision-intelligence",
+    "data-centric-ml"
+  ],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 12,
+  "estimatedListeningMinutes": 720,
+  "endorsements": [
+    "Cassie Kozyrkov, Chief Decision Scientist at Google",
+    "Karolis Urbonas, Head of Machine Learning and Science at Amazon"
+  ],
+  "excerpt": "From the author of the world bestseller The Hundred-Page Machine Learning Book: the most complete applied AI book on building reliable machine learning solutions that scale. The book is organized in the order a successful project must actually be executed — starting with whether ML is the right tool, then domain understanding, data engineering, prototyping, evaluation, production, and finally reliability — and is filled with best practices and design patterns distilled from fifteen years of solving real problems with AI."
+}

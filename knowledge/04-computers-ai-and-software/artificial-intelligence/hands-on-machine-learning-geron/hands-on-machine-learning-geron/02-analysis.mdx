@@ -1,0 +1,148 @@
+## Strengths
+
+- **Unmatched practical density.** No other ML book packs so much
+  executable code into so few pages. Every concept is immediately
+  implemented. The GitHub repo with Jupyter notebooks makes it
+  trivial to follow along.
+
+- **Excellent progression.** The two-part structure (classical ML
+  then deep learning) mirrors how practitioners actually learn. Part
+  I establishes the foundations; Part II builds on them.
+
+- **Framework authority.** Géron led YouTube's video classification
+  team — he knows what production ML looks like. The Keras/TF
+  guidance is authoritative and idiomatic.
+
+- **Minimal prerequisites.** Any programmer with Python experience
+  can start. The math is presented visually and intuitively, not
+  algebraically.
+
+- **Comprehensive coverage.** From linear regression through SVMs,
+  trees, ensembles, PCA, clustering, to CNNs, RNNs, transformers,
+  GANs, diffusion models, and RL — the scope is vast.
+
+- **Excellent end-to-end project (Ch 2).** The California housing
+  example is the best single-chapter ML tutorial ever written.
+
+- **Regularly updated.** Three editions in five years, each tracking
+  the field's evolution (TF 2, transformers, diffusion models).
+
+- **Free companion notebooks.** The full code is open-source on
+  GitHub. Readers can run everything in Colab or Kaggle without
+  installing anything.
+
+---
+
+## Weaknesses
+
+- **Light on theory.** The math is kept to a minimum. Readers who
+  want to understand *why* gradient descent converges (not just
+  *how* to call it) need a supplementary text.
+
+- **Shallow coverage of advanced topics.** Transformers, GANs, and
+  RL each get one chapter — barely enough to build intuition, not
+  enough for real mastery.
+
+- **Some chapters feel rushed.** The deployment chapter (Ch 19) and
+  the unsupervised learning chapter (Ch 9) are less detailed than
+  the core ML chapters.
+
+- **Keras and TF are intertwined.** The line between Keras API and
+  TF internals can blur. Beginners may struggle to separate the
+  framework from the concepts.
+
+- **No MLOps coverage.** Data versioning, experiment tracking,
+  feature stores, CI/CD for ML, model monitoring, and drift
+  detection are absent.
+
+- **Light on classical statistics.** Hypothesis testing, confidence
+  intervals, experimental design, and causal inference are not
+  covered.
+
+---
+
+## Criticism
+
+### The "Too Shallow" Critique
+
+Academic readers and researchers criticize the book for lacking
+mathematical rigor. Géron does not derive the SVM dual formulation,
+does not explain the kernel trick's Mercer condition, and glosses
+over the backpropagation derivation. This is by design — but it
+leaves some readers wanting more.
+
+### The "Framework Lock-In" Critique
+
+The book is tightly coupled to Scikit-Learn, Keras, and TensorFlow.
+PyTorch, which has since overtaken TensorFlow in research, is not
+covered (though a PyTorch edition is forthcoming). Readers who
+choose PyTorch must adapt the examples.
+
+### The "Cookbook Problem" Critique
+
+Some reviewers argue the book teaches pattern-matching rather than
+understanding. Readers can complete all exercises without grasping
+the underlying principles — they learn to call `RandomForestClassifier()`
+but not why random forests work.
+
+### The "Outdated on Release" Critique
+
+The ML field moves fast. The 3rd edition (Oct 2022) already missed
+the explosion of LLM applications (ChatGPT launched one month later),
+LoRA fine-tuning, and the agent paradigm.
+
+---
+
+## Scientific Grounding
+
+| Concept | Source | Application |
+|---------|--------|-------------|
+| Gradient Descent | Cauchy (1847) | Optimizing model parameters |
+| Backpropagation | Rumelhart, Hinton, Williams (1986) | Training neural networks |
+| SVM / Kernel Trick | Vapnik (1995) | Non-linear classification |
+| Random Forests | Breiman (2001) | Ensemble learning |
+| PCA | Pearson (1901) | Dimensionality reduction |
+| Adam Optimizer | Kingma & Ba (2015) | Adaptive gradient descent |
+| Batch Normalization | Ioffe & Szegedy (2015) | Stabilizing deep net training |
+| ResNet | He et al. (2015) | Very deep CNN architecture |
+| Transformer | Vaswani et al. (2017) | Sequence-to-sequence without recurrence |
+| GANs | Goodfellow et al. (2014) | Generative adversarial training |
+| Diffusion Models | Ho et al. (2020) | Denoising diffusion probabilistic models |
+| DQN | Mnih et al. (2013) | Deep reinforcement learning |
+
+---
+
+## Historical Context
+
+The first edition (2017) arrived at the perfect moment: TensorFlow
+had just been released, deep learning was entering the mainstream,
+and the ML community was hungry for a practical guide. It became a
+phenomenon — one of the best-selling technical books of the decade.
+
+The second edition (2019) adapted to TF 2.0's eager execution and
+elevated Keras to the primary API. The third edition (2022) added
+transformers, vision transformers, diffusion models, and Hugging
+Face integration, tracking the field's shift from RNNs to attention.
+
+The book's evolution mirrors ML's evolution: from engineering
+features to engineering architectures, from hand-tuning to
+pretrained models, from single-model to multimodal.
+
+---
+
+## Final Assessment
+
+| Dimension | Rating | Notes |
+|-----------|--------|-------|
+| Practical Utility | 10/10 | The most useful ML book for working programmers |
+| Readability | 9/10 | Clear, conversational, well-structured |
+| Depth | 6/10 | Intentionally shallow on theory |
+| Breadth | 9/10 | Covers the entire ML landscape, if thinly |
+| Code Quality | 10/10 | Production-grade, idiomatic, well-tested |
+| Lasting Value | 7/10 | Editions age quickly as the field moves |
+| **Overall** | **8.5/10** | The gold standard for practical ML education |
+
+It is not the *best* ML book on any single dimension — but it is
+the best *first* ML book. Read it to build things. Then read
+Goodfellow for the math, Bishop for the statistics, and Chip Huyen
+for the production engineering.

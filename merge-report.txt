@@ -1,0 +1,640 @@
+MERGED: convolutional-neural-networks-and-computer-vision
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\convolutional-neural-networks-and-computer-vision
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\convolutional-neural-networks-and-computer-vision
+
+MERGED: deep-learning-ian-goodfellow
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\deep-learning-ian-goodfellow
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\deep-learning-ian-goodfellow
+
+MERGED: deep-learning-ian-goodfellow_feedforward-neural-networks-and-backpropagation
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\deep-learning-ian-goodfellow_feedforward-neural-networks-and-backpropagation
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\deep-learning-ian-goodfellow_feedforward-neural-networks-and-backpropagation
+
+MERGED: deep-learning-with-python-francois-chollet
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\deep-learning-with-python-francois-chollet
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\deep-learning-with-python-francois-chollet
+
+MERGED: feedforward-neural-networks-and-backpropagation
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\feedforward-neural-networks-and-backpropagation
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\feedforward-neural-networks-and-backpropagation
+
+MERGED: generative-models
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\generative-models
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\generative-models
+
+MERGED: recurrent-networks-lstms-and-sequence-modeling
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\recurrent-networks-lstms-and-sequence-modeling
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\recurrent-networks-lstms-and-sequence-modeling
+
+MERGED: transformers-and-attention-mechanisms
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\deep-learning-and-neural-architectures\transformers-and-attention-mechanisms
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\transformers-and-attention-mechanisms
+
+MERGED: applied-statistics-for-machine-learning
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\applied-statistics-for-machine-learning
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\applied-statistics-for-machine-learning
+
+MERGED: artificial-intelligence-a-modern-approach-stuart-russell
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\artificial-intelligence-a-modern-approach-stuart-russell
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\artificial-intelligence-a-modern-approach-stuart-russell
+
+MERGED: feature-engineering-and-selection
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\feature-engineering-and-selection
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\feature-engineering-and-selection
+
+MERGED: hands-on-machine-learning-geron
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\hands-on-machine-learning-geron
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\hands-on-machine-learning-geron
+
+MERGED: pattern-recognition-and-machine-learning-christopher-bishop
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\pattern-recognition-and-machine-learning-christopher-bishop
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\pattern-recognition-and-machine-learning-christopher-bishop
+
+MERGED: semi-supervised-and-self-supervised-learning
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\semi-supervised-and-self-supervised-learning
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\semi-supervised-and-self-supervised-learning
+
+MERGED: supervised-learning-theory-and-algorithms
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\supervised-learning-theory-and-algorithms
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\supervised-learning-theory-and-algorithms
+
+MERGED: unsupervised-learning-and-clustering
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\machine-learning-foundations\unsupervised-learning-and-clustering
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\unsupervised-learning-and-clustering
+
+MERGED: designing-machine-learning-systems-chip-huyen
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\mlops-and-production-ai\designing-machine-learning-systems-chip-huyen
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\designing-machine-learning-systems-chip-huyen
+
+MERGED: feature-stores-and-ml-metadata-management
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\mlops-and-production-ai\feature-stores-and-ml-metadata-management
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\feature-stores-and-ml-metadata-management
+
+MERGED: machine-learning-engineering-andrey-burkov
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\mlops-and-production-ai\machine-learning-engineering-andrey-burkov
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\machine-learning-engineering-andrey-burkov
+
+MERGED: model-deployment-serving-and-inference-optimization
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\mlops-and-production-ai\model-deployment-serving-and-inference-optimization
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\model-deployment-serving-and-inference-optimization
+
+MERGED: model-monitoring-drift-detection-and-retraining
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\mlops-and-production-ai\model-monitoring-drift-detection-and-retraining
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\model-monitoring-drift-detection-and-retraining
+
+MERGED: model-training-infrastructure-and-distributed-training
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\mlops-and-production-ai\model-training-infrastructure-and-distributed-training
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\model-training-infrastructure-and-distributed-training
+
+MERGED: build-a-large-language-model-from-scratch-sebastian-raschka
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\build-a-large-language-model-from-scratch-sebastian-raschka
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\build-a-large-language-model-from-scratch-sebastian-raschka
+
+MERGED: classical-nlp
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\classical-nlp
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\classical-nlp
+
+MERGED: large-language-models-and-prompt-engineering
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\large-language-models-and-prompt-engineering
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\large-language-models-and-prompt-engineering
+
+MERGED: natural-language-processing-with-transformers-lewis-tunstall
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\natural-language-processing-with-transformers-lewis-tunstall
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\natural-language-processing-with-transformers-lewis-tunstall
+
+MERGED: retrieval-augmented-generation-systems
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\retrieval-augmented-generation-systems
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\retrieval-augmented-generation-systems
+
+MERGED: semantic-search-and-vector-databases
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\semantic-search-and-vector-databases
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\semantic-search-and-vector-databases
+
+MERGED: text-preprocessing-and-tokenization-theory
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\natural-language-processing\text-preprocessing-and-tokenization-theory
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\text-preprocessing-and-tokenization-theory
+
+MERGED: applications-of-rl
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\reinforcement-learning\applications-of-rl
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\applications-of-rl
+
+MERGED: markov-decision-processes-and-policy-gradients
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\reinforcement-learning\markov-decision-processes-and-policy-gradients
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\markov-decision-processes-and-policy-gradients
+
+MERGED: model-based-reinforcement-learning
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\reinforcement-learning\model-based-reinforcement-learning
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\model-based-reinforcement-learning
+
+MERGED: multi-agent-reinforcement-learning
+  From: knowledge-archive\25-artificial-intelligence-machine-learning\reinforcement-learning\multi-agent-reinforcement-learning
+  To: knowledge\04-computers-ai-and-software\artificial-intelligence\multi-agent-reinforcement-learning
+
+MERGED: bioinformatics-and-computational-biology
+  From: knowledge-archive\26-technology-engineering\biomedical-engineering\bioinformatics-and-computational-biology
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\bioinformatics-and-computational-biology
+
+MERGED: medical-device-design
+  From: knowledge-archive\26-technology-engineering\biomedical-engineering\medical-device-design
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\medical-device-design
+
+MERGED: neural-engineering-and-prosthetics
+  From: knowledge-archive\26-technology-engineering\biomedical-engineering\neural-engineering-and-prosthetics
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\neural-engineering-and-prosthetics
+
+MERGED: structural-engineering-and-construction
+  From: knowledge-archive\26-technology-engineering\civil-and-infrastructure-engineering\structural-engineering-and-construction
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\structural-engineering-and-construction
+
+MERGED: transportation-systems-and-urban-infrastructure
+  From: knowledge-archive\26-technology-engineering\civil-and-infrastructure-engineering\transportation-systems-and-urban-infrastructure
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\transportation-systems-and-urban-infrastructure
+
+MERGED: water-resources-and-hydraulics
+  From: knowledge-archive\26-technology-engineering\civil-and-infrastructure-engineering\water-resources-and-hydraulics
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\water-resources-and-hydraulics
+
+MERGED: circuit-theory-and-electronic-design
+  From: knowledge-archive\26-technology-engineering\electrical-and-electronics-engineering\circuit-theory-and-electronic-design
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\circuit-theory-and-electronic-design
+
+MERGED: embedded-systems-and-microcontrollers
+  From: knowledge-archive\26-technology-engineering\electrical-and-electronics-engineering\embedded-systems-and-microcontrollers
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\embedded-systems-and-microcontrollers
+
+MERGED: power-systems-and-electrical-infrastructure
+  From: knowledge-archive\26-technology-engineering\electrical-and-electronics-engineering\power-systems-and-electrical-infrastructure
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\power-systems-and-electrical-infrastructure
+
+MERGED: signal-processing-and-communications-engineering
+  From: knowledge-archive\26-technology-engineering\electrical-and-electronics-engineering\signal-processing-and-communications-engineering
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\signal-processing-and-communications-engineering
+
+MERGED: the-art-of-electronics-horowitz-hill
+  From: knowledge-archive\26-technology-engineering\electrical-and-electronics-engineering\the-art-of-electronics-horowitz-hill
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\the-art-of-electronics-horowitz-hill
+
+MERGED: energy-storage-and-grid-systems
+  From: knowledge-archive\26-technology-engineering\energy-and-sustainability-engineering\energy-storage-and-grid-systems
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\energy-storage-and-grid-systems
+
+MERGED: nuclear-engineering
+  From: knowledge-archive\26-technology-engineering\energy-and-sustainability-engineering\nuclear-engineering
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\nuclear-engineering
+
+MERGED: renewable-energy-systems
+  From: knowledge-archive\26-technology-engineering\energy-and-sustainability-engineering\renewable-energy-systems
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\renewable-energy-systems
+
+MERGED: the-prize-daniel-yergin
+  From: knowledge-archive\26-technology-engineering\energy-and-sustainability-engineering\the-prize-daniel-yergin
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\the-prize-daniel-yergin
+
+MERGED: nanomaterials-and-nanofabrication
+  From: knowledge-archive\26-technology-engineering\materials-science-and-nanotechnology\nanomaterials-and-nanofabrication
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\nanomaterials-and-nanofabrication
+
+MERGED: polymer-science-and-composite-materials
+  From: knowledge-archive\26-technology-engineering\materials-science-and-nanotechnology\polymer-science-and-composite-materials
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\polymer-science-and-composite-materials
+
+MERGED: semiconductor-materials-and-manufacturing
+  From: knowledge-archive\26-technology-engineering\materials-science-and-nanotechnology\semiconductor-materials-and-manufacturing
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\semiconductor-materials-and-manufacturing
+
+MERGED: classical-mechanics-and-structural-analysis
+  From: knowledge-archive\26-technology-engineering\mechanical-engineering\classical-mechanics-and-structural-analysis
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\classical-mechanics-and-structural-analysis
+
+MERGED: manufacturing-processes-and-industrial-design
+  From: knowledge-archive\26-technology-engineering\mechanical-engineering\manufacturing-processes-and-industrial-design
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\manufacturing-processes-and-industrial-design
+
+MERGED: thermodynamics-and-heat-transfer
+  From: knowledge-archive\26-technology-engineering\mechanical-engineering\thermodynamics-and-heat-transfer
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\thermodynamics-and-heat-transfer
+
+MERGED: autonomous-systems-and-motion-planning
+  From: knowledge-archive\26-technology-engineering\robotics-and-automation\autonomous-systems-and-motion-planning
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\autonomous-systems-and-motion-planning
+
+MERGED: drone-technology-and-autonomous-vehicles
+  From: knowledge-archive\26-technology-engineering\robotics-and-automation\drone-technology-and-autonomous-vehicles
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\drone-technology-and-autonomous-vehicles
+
+MERGED: industrial-robotics-and-human-robot-interaction
+  From: knowledge-archive\26-technology-engineering\robotics-and-automation\industrial-robotics-and-human-robot-interaction
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\industrial-robotics-and-human-robot-interaction
+
+MERGED: introduction-to-robotics-john-craig
+  From: knowledge-archive\26-technology-engineering\robotics-and-automation\introduction-to-robotics-john-craig
+  To: knowledge\04-computers-ai-and-software\engineering-and-technology\introduction-to-robotics-john-craig
+
+MERGED: just-kids-patti-smith
+  From: knowledge-archive\27-biography-memoir\artists-writers-and-musicians\just-kids-patti-smith
+  To: knowledge\10-fiction-and-literature\literary-biography-and-memoir\just-kids-patti-smith
+
+MERGED: becoming-michelle-obama
+  From: knowledge-archive\27-biography-memoir\autobiographies-and-personal-memoirs\becoming-michelle-obama
+  To: knowledge\10-fiction-and-literature\literary-biography-and-memoir\becoming-michelle-obama
+
+MERGED: steve-jobs-walter-isaacson
+  From: knowledge-archive\27-biography-memoir\entrepreneurs-and-business-builders\steve-jobs-walter-isaacson
+  To: knowledge\10-fiction-and-literature\literary-biography-and-memoir\steve-jobs-walter-isaacson
+
+MERGED: the-autobiography-of-malcolm-x
+  From: knowledge-archive\27-biography-memoir\political-and-military-leaders\the-autobiography-of-malcolm-x
+  To: knowledge\10-fiction-and-literature\historical-biography-and-memoir\the-autobiography-of-malcolm-x
+
+MERGED: einstein-his-life-and-universe-walter-isaacson
+  From: knowledge-archive\27-biography-memoir\scientists-and-mathematicians\einstein-his-life-and-universe-walter-isaacson
+  To: knowledge\10-fiction-and-literature\literary-biography-and-memoir\einstein-his-life-and-universe-walter-isaacson
+
+MERGED: surely-youre-joking-mr-feynman
+  From: knowledge-archive\27-biography-memoir\scientists-and-mathematicians\surely-youre-joking-mr-feynman
+  To: knowledge\10-fiction-and-literature\literary-biography-and-memoir\surely-youre-joking-mr-feynman
+
+MERGED: long-walk-to-freedom-nelson-mandela
+  From: knowledge-archive\27-biography-memoir\social-activists-and-reformers\long-walk-to-freedom-nelson-mandela
+  To: knowledge\10-fiction-and-literature\literary-biography-and-memoir\long-walk-to-freedom-nelson-mandela
+
+MERGED: epic-fantasy-and-secondary-world-building
+  From: knowledge-archive\28-fiction\fantasy\epic-fantasy-and-secondary-world-building
+  To: knowledge\10-fiction-and-literature\speculative-fiction\epic-fantasy-and-secondary-world-building
+
+MERGED: mythopoeic-fantasy
+  From: knowledge-archive\28-fiction\fantasy\mythopoeic-fantasy
+  To: knowledge\10-fiction-and-literature\speculative-fiction\mythopoeic-fantasy
+
+MERGED: the-lord-of-the-rings-jrr-tolkien
+  From: knowledge-archive\28-fiction\fantasy\the-lord-of-the-rings-jrr-tolkien
+  To: knowledge\10-fiction-and-literature\speculative-fiction\the-lord-of-the-rings-jrr-tolkien
+
+MERGED: urban-fantasy-and-contemporary-fantasy
+  From: knowledge-archive\28-fiction\fantasy\urban-fantasy-and-contemporary-fantasy
+  To: knowledge\10-fiction-and-literature\speculative-fiction\urban-fantasy-and-contemporary-fantasy
+
+MERGED: dracula-bram-stoker
+  From: knowledge-archive\28-fiction\horror-and-gothic-literature\dracula-bram-stoker
+  To: knowledge\10-fiction-and-literature\speculative-fiction\dracula-bram-stoker
+
+MERGED: detective-fiction
+  From: knowledge-archive\28-fiction\mystery-and-crime-fiction\detective-fiction
+  To: knowledge\10-fiction-and-literature\speculative-fiction\detective-fiction
+
+MERGED: psychological-thriller
+  From: knowledge-archive\28-fiction\mystery-and-crime-fiction\psychological-thriller
+  To: knowledge\10-fiction-and-literature\speculative-fiction\psychological-thriller
+
+MERGED: the-complete-sherlock-holmes-arthur-conan-doyle
+  From: knowledge-archive\28-fiction\mystery-and-crime-fiction\the-complete-sherlock-holmes-arthur-conan-doyle
+  To: knowledge\10-fiction-and-literature\speculative-fiction\the-complete-sherlock-holmes-arthur-conan-doyle
+
+MERGED: true-crime-narrative
+  From: knowledge-archive\28-fiction\mystery-and-crime-fiction\true-crime-narrative
+  To: knowledge\10-fiction-and-literature\speculative-fiction\true-crime-narrative
+
+MERGED: ai-and-technology-centered-scifi
+  From: knowledge-archive\28-fiction\science-fiction\ai-and-technology-centered-scifi
+  To: knowledge\10-fiction-and-literature\speculative-fiction\ai-and-technology-centered-scifi
+
+MERGED: cyberpunk-and-dystopian-futures
+  From: knowledge-archive\28-fiction\science-fiction\cyberpunk-and-dystopian-futures
+  To: knowledge\10-fiction-and-literature\speculative-fiction\cyberpunk-and-dystopian-futures
+
+MERGED: dune-frank-herbert
+  From: knowledge-archive\28-fiction\science-fiction\dune-frank-herbert
+  To: knowledge\10-fiction-and-literature\speculative-fiction\dune-frank-herbert
+
+MERGED: hard-science-fiction
+  From: knowledge-archive\28-fiction\science-fiction\hard-science-fiction
+  To: knowledge\10-fiction-and-literature\speculative-fiction\hard-science-fiction
+
+MERGED: space-opera-and-galactic-civilization
+  From: knowledge-archive\28-fiction\science-fiction\space-opera-and-galactic-civilization
+  To: knowledge\10-fiction-and-literature\speculative-fiction\space-opera-and-galactic-civilization
+
+MERGED: classical-drama
+  From: knowledge-archive\29-poetry-drama-performing-arts\drama-and-theatre\classical-drama
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\classical-drama
+
+MERGED: contemporary-playwriting
+  From: knowledge-archive\29-poetry-drama-performing-arts\drama-and-theatre\contemporary-playwriting
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\contemporary-playwriting
+
+MERGED: modern-drama
+  From: knowledge-archive\29-poetry-drama-performing-arts\drama-and-theatre\modern-drama
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\modern-drama
+
+MERGED: poetics-aristotle
+  From: knowledge-archive\29-poetry-drama-performing-arts\drama-and-theatre\poetics-aristotle
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\poetics-aristotle
+
+MERGED: renaissance-and-elizabethan-drama
+  From: knowledge-archive\29-poetry-drama-performing-arts\drama-and-theatre\renaissance-and-elizabethan-drama
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\renaissance-and-elizabethan-drama
+
+MERGED: indian-poetry
+  From: knowledge-archive\29-poetry-drama-performing-arts\poetry\indian-poetry
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\indian-poetry
+
+MERGED: spoken-word-and-slam-poetry
+  From: knowledge-archive\29-poetry-drama-performing-arts\poetry\spoken-word-and-slam-poetry
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\spoken-word-and-slam-poetry
+
+MERGED: theory-and-criticism-of-poetry
+  From: knowledge-archive\29-poetry-drama-performing-arts\poetry\theory-and-criticism-of-poetry
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\theory-and-criticism-of-poetry
+
+MERGED: western-poetry
+  From: knowledge-archive\29-poetry-drama-performing-arts\poetry\western-poetry
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\western-poetry
+
+MERGED: dance-theory-and-choreography
+  From: knowledge-archive\29-poetry-drama-performing-arts\performing-arts\dance-theory-and-choreography
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\dance-theory-and-choreography
+
+MERGED: film-studies-and-cinema-theory
+  From: knowledge-archive\29-poetry-drama-performing-arts\performing-arts\film-studies-and-cinema-theory
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\film-studies-and-cinema-theory
+
+MERGED: opera-musical-theatre-and-performance
+  From: knowledge-archive\29-poetry-drama-performing-arts\performing-arts\opera-musical-theatre-and-performance
+  To: knowledge\10-fiction-and-literature\poetry-and-drama\opera-musical-theatre-and-performance
+
+MERGED: documentary-film-and-non-fiction-cinema
+  From: knowledge-archive\30-music-film-media\film-studies\documentary-film-and-non-fiction-cinema
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\documentary-film-and-non-fiction-cinema
+
+MERGED: film-history-and-cinema-movements
+  From: knowledge-archive\30-music-film-media\film-studies\film-history-and-cinema-movements
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\film-history-and-cinema-movements
+
+MERGED: film-production-and-screenwriting
+  From: knowledge-archive\30-music-film-media\film-studies\film-production-and-screenwriting
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\film-production-and-screenwriting
+
+MERGED: film-theory-and-critical-methods
+  From: knowledge-archive\30-music-film-media\film-studies\film-theory-and-critical-methods
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\film-theory-and-critical-methods
+
+MERGED: digital-media-and-platform-theory
+  From: knowledge-archive\30-music-film-media\media-studies\digital-media-and-platform-theory
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\digital-media-and-platform-theory
+
+MERGED: journalism-and-the-press
+  From: knowledge-archive\30-music-film-media\media-studies\journalism-and-the-press
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\journalism-and-the-press
+
+MERGED: television-studies-and-broadcast-media
+  From: knowledge-archive\30-music-film-media\media-studies\television-studies-and-broadcast-media
+  To: knowledge\10-fiction-and-literature\film-and-media-studies\television-studies-and-broadcast-media
+
+MERGED: beethoven-universal-composer-edmund-morris
+  From: knowledge-archive\30-music-film-media\music\beethoven-universal-composer-edmund-morris
+  To: knowledge\10-fiction-and-literature\music\beethoven-universal-composer-edmund-morris
+
+MERGED: history-of-western-music-grout-palisca
+  From: knowledge-archive\30-music-film-media\music\history-of-western-music-grout-palisca
+  To: knowledge\10-fiction-and-literature\music\history-of-western-music-grout-palisca
+
+MERGED: how-music-works-david-byrne
+  From: knowledge-archive\30-music-film-media\music\how-music-works-david-byrne
+  To: knowledge\10-fiction-and-literature\music\how-music-works-david-byrne
+
+MERGED: indian-classical-music
+  From: knowledge-archive\30-music-film-media\music\indian-classical-music
+  To: knowledge\10-fiction-and-literature\music\indian-classical-music
+
+MERGED: music-and-the-mind-anthony-storr
+  From: knowledge-archive\30-music-film-media\music\music-and-the-mind-anthony-storr
+  To: knowledge\10-fiction-and-literature\music\music-and-the-mind-anthony-storr
+
+MERGED: music-business-and-the-recording-industry
+  From: knowledge-archive\30-music-film-media\music\music-business-and-the-recording-industry
+  To: knowledge\10-fiction-and-literature\music\music-business-and-the-recording-industry
+
+MERGED: music-history
+  From: knowledge-archive\30-music-film-media\music\music-history
+  To: knowledge\10-fiction-and-literature\music\music-history
+
+MERGED: music-production-and-recording-technology
+  From: knowledge-archive\30-music-film-media\music\music-production-and-recording-technology
+  To: knowledge\10-fiction-and-literature\music\music-production-and-recording-technology
+
+MERGED: music-theory-and-harmony
+  From: knowledge-archive\30-music-film-media\music\music-theory-and-harmony
+  To: knowledge\10-fiction-and-literature\music\music-theory-and-harmony
+
+MERGED: musicophilia-oliver-sacks
+  From: knowledge-archive\30-music-film-media\music\musicophilia-oliver-sacks
+  To: knowledge\10-fiction-and-literature\music\musicophilia-oliver-sacks
+
+MERGED: the-music-instinct-philip-ball
+  From: knowledge-archive\30-music-film-media\music\the-music-instinct-philip-ball
+  To: knowledge\10-fiction-and-literature\music\the-music-instinct-philip-ball
+
+MERGED: the-rest-is-noise-alex-ross
+  From: knowledge-archive\30-music-film-media\music\the-rest-is-noise-alex-ross
+  To: knowledge\10-fiction-and-literature\music\the-rest-is-noise-alex-ross
+
+MERGED: the-song-machine-john-seabrook
+  From: knowledge-archive\30-music-film-media\music\the-song-machine-john-seabrook
+  To: knowledge\10-fiction-and-literature\music\the-song-machine-john-seabrook
+
+MERGED: the-world-in-six-songs-daniel-levitin
+  From: knowledge-archive\30-music-film-media\music\the-world-in-six-songs-daniel-levitin
+  To: knowledge\10-fiction-and-literature\music\the-world-in-six-songs-daniel-levitin
+
+MERGED: this-is-your-brain-on-music-daniel-levitin
+  From: knowledge-archive\30-music-film-media\music\this-is-your-brain-on-music-daniel-levitin
+  To: knowledge\10-fiction-and-literature\music\this-is-your-brain-on-music-daniel-levitin
+
+MERGED: architectural-theory-and-criticism
+  From: knowledge-archive\31-architecture-art-design\architecture\architectural-theory-and-criticism
+  To: knowledge\10-fiction-and-literature\art-and-design\architectural-theory-and-criticism
+
+MERGED: history-of-architecture
+  From: knowledge-archive\31-architecture-art-design\architecture\history-of-architecture
+  To: knowledge\10-fiction-and-literature\art-and-design\history-of-architecture
+
+MERGED: sustainable-architecture-and-green-building
+  From: knowledge-archive\31-architecture-art-design\architecture\sustainable-architecture-and-green-building
+  To: knowledge\10-fiction-and-literature\art-and-design\sustainable-architecture-and-green-building
+
+MERGED: urban-design-and-city-planning
+  From: knowledge-archive\31-architecture-art-design\architecture\urban-design-and-city-planning
+  To: knowledge\10-fiction-and-literature\art-and-design\urban-design-and-city-planning
+
+MERGED: 100-things-every-designer-needs-weinschenk
+  From: knowledge-archive\31-architecture-art-design\design\100-things-every-designer-needs-weinschenk
+  To: knowledge\10-fiction-and-literature\art-and-design\100-things-every-designer-needs-weinschenk
+
+MERGED: about-face-alan-cooper
+  From: knowledge-archive\31-architecture-art-design\design\about-face-alan-cooper
+  To: knowledge\10-fiction-and-literature\art-and-design\about-face-alan-cooper
+
+MERGED: dont-make-me-think-steve-krug
+  From: knowledge-archive\31-architecture-art-design\design\dont-make-me-think-steve-krug
+  To: knowledge\10-fiction-and-literature\art-and-design\dont-make-me-think-steve-krug
+
+MERGED: emotional-design-don-norman
+  From: knowledge-archive\31-architecture-art-design\design\emotional-design-don-norman
+  To: knowledge\10-fiction-and-literature\art-and-design\emotional-design-don-norman
+
+MERGED: graphic-design-and-visual-communication
+  From: knowledge-archive\31-architecture-art-design\design\graphic-design-and-visual-communication
+  To: knowledge\10-fiction-and-literature\art-and-design\graphic-design-and-visual-communication
+
+MERGED: industrial-design-and-product-design
+  From: knowledge-archive\31-architecture-art-design\design\industrial-design-and-product-design
+  To: knowledge\10-fiction-and-literature\art-and-design\industrial-design-and-product-design
+
+MERGED: living-with-complexity-don-norman
+  From: knowledge-archive\31-architecture-art-design\design\living-with-complexity-don-norman
+  To: knowledge\10-fiction-and-literature\art-and-design\living-with-complexity-don-norman
+
+MERGED: show-your-work-austin-kleon
+  From: knowledge-archive\31-architecture-art-design\design\show-your-work-austin-kleon
+  To: knowledge\10-fiction-and-literature\art-and-design\show-your-work-austin-kleon
+
+MERGED: steal-like-an-artist-austin-kleon
+  From: knowledge-archive\31-architecture-art-design\design\steal-like-an-artist-austin-kleon
+  To: knowledge\10-fiction-and-literature\art-and-design\steal-like-an-artist-austin-kleon
+
+MERGED: the-design-of-everyday-things-don-norman
+  From: knowledge-archive\31-architecture-art-design\design\the-design-of-everyday-things-don-norman
+  To: knowledge\10-fiction-and-literature\art-and-design\the-design-of-everyday-things-don-norman
+
+MERGED: the-design-of-future-things-don-norman
+  From: knowledge-archive\31-architecture-art-design\design\the-design-of-future-things-don-norman
+  To: knowledge\10-fiction-and-literature\art-and-design\the-design-of-future-things-don-norman
+
+MERGED: the-inmates-are-running-the-asylum-alan-cooper
+  From: knowledge-archive\31-architecture-art-design\design\the-inmates-are-running-the-asylum-alan-cooper
+  To: knowledge\10-fiction-and-literature\art-and-design\the-inmates-are-running-the-asylum-alan-cooper
+
+MERGED: thinking-with-type-ellen-lupton
+  From: knowledge-archive\31-architecture-art-design\design\thinking-with-type-ellen-lupton
+  To: knowledge\10-fiction-and-literature\art-and-design\thinking-with-type-ellen-lupton
+
+MERGED: typography-and-layout-design
+  From: knowledge-archive\31-architecture-art-design\design\typography-and-layout-design
+  To: knowledge\10-fiction-and-literature\art-and-design\typography-and-layout-design
+
+MERGED: ui-ux-design-and-human-computer-interaction
+  From: knowledge-archive\31-architecture-art-design\design\ui-ux-design-and-human-computer-interaction
+  To: knowledge\10-fiction-and-literature\art-and-design\ui-ux-design-and-human-computer-interaction
+
+MERGED: universal-principles-of-design-lidwell
+  From: knowledge-archive\31-architecture-art-design\design\universal-principles-of-design-lidwell
+  To: knowledge\10-fiction-and-literature\art-and-design\universal-principles-of-design-lidwell
+
+MERGED: art-criticism-and-aesthetics
+  From: knowledge-archive\31-architecture-art-design\fine-arts\art-criticism-and-aesthetics
+  To: knowledge\10-fiction-and-literature\art-and-design\art-criticism-and-aesthetics
+
+MERGED: contemporary-art-and-art-movements
+  From: knowledge-archive\31-architecture-art-design\fine-arts\contemporary-art-and-art-movements
+  To: knowledge\10-fiction-and-literature\art-and-design\contemporary-art-and-art-movements
+
+MERGED: indian-art-history
+  From: knowledge-archive\31-architecture-art-design\fine-arts\indian-art-history
+  To: knowledge\10-fiction-and-literature\art-and-design\indian-art-history
+
+MERGED: western-art-history
+  From: knowledge-archive\31-architecture-art-design\fine-arts\western-art-history
+  To: knowledge\10-fiction-and-literature\art-and-design\western-art-history
+
+MERGED: conceptual-and-fine-art-photography
+  From: knowledge-archive\31-architecture-art-design\photography\conceptual-and-fine-art-photography
+  To: knowledge\10-fiction-and-literature\art-and-design\conceptual-and-fine-art-photography
+
+MERGED: history-of-photography
+  From: knowledge-archive\31-architecture-art-design\photography\history-of-photography
+  To: knowledge\10-fiction-and-literature\art-and-design\history-of-photography
+
+MERGED: photographic-technique-and-composition
+  From: knowledge-archive\31-architecture-art-design\photography\photographic-technique-and-composition
+  To: knowledge\10-fiction-and-literature\art-and-design\photographic-technique-and-composition
+
+MERGED: genre-theory
+  From: knowledge-archive\32-literary-criticism-theory\author-studies-and-genre-criticism\genre-theory
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\genre-theory
+
+MERGED: monographs-on-individual-authors
+  From: knowledge-archive\32-literary-criticism-theory\author-studies-and-genre-criticism\monographs-on-individual-authors
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\monographs-on-individual-authors
+
+MERGED: longinus-and-the-sublime
+  From: knowledge-archive\32-literary-criticism-theory\classical-literary-theory\longinus-and-the-sublime
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\longinus-and-the-sublime
+
+MERGED: plato-and-aristotle-on-mimesis-and-poetics
+  From: knowledge-archive\32-literary-criticism-theory\classical-literary-theory\plato-and-aristotle-on-mimesis-and-poetics
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\plato-and-aristotle-on-mimesis-and-poetics
+
+MERGED: after-theory-terry-eagleton
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\after-theory-terry-eagleton
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\after-theory-terry-eagleton
+
+MERGED: beginning-theory-peter-barry
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\beginning-theory-peter-barry
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\beginning-theory-peter-barry
+
+MERGED: ecocriticism-and-environmental-humanities
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\ecocriticism-and-environmental-humanities
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\ecocriticism-and-environmental-humanities
+
+MERGED: feminist-literary-criticism
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\feminist-literary-criticism
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\feminist-literary-criticism
+
+MERGED: formalism-and-new-criticism
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\formalism-and-new-criticism
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\formalism-and-new-criticism
+
+MERGED: how-to-read-literature-terry-eagleton
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\how-to-read-literature-terry-eagleton
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\how-to-read-literature-terry-eagleton
+
+MERGED: literary-theory-terry-eagleton
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\literary-theory-terry-eagleton
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\literary-theory-terry-eagleton
+
+MERGED: marxism-and-literary-criticism-terry-eagleton
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\marxism-and-literary-criticism-terry-eagleton
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\marxism-and-literary-criticism-terry-eagleton
+
+MERGED: norton-anthology-theory-criticism-leitch
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\norton-anthology-theory-criticism-leitch
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\norton-anthology-theory-criticism-leitch
+
+MERGED: post-structuralism-and-deconstruction
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\post-structuralism-and-deconstruction
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\post-structuralism-and-deconstruction
+
+MERGED: postcolonial-literary-theory
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\postcolonial-literary-theory
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\postcolonial-literary-theory
+
+MERGED: structuralism-and-semiciotics
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\structuralism-and-semiciotics
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\structuralism-and-semiciotics
+
+MERGED: the-function-of-criticism-terry-eagleton
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\the-function-of-criticism-terry-eagleton
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\the-function-of-criticism-terry-eagleton
+
+MERGED: the-meaning-of-life-terry-eagleton
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\the-meaning-of-life-terry-eagleton
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\the-meaning-of-life-terry-eagleton
+
+MERGED: the-mirror-and-the-lamp-mh-abrams
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\the-mirror-and-the-lamp-mh-abrams
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\the-mirror-and-the-lamp-mh-abrams
+
+MERGED: theory-of-literature-wellek-warren
+  From: knowledge-archive\32-literary-criticism-theory\modern-literary-theory\theory-of-literature-wellek-warren
+  To: knowledge\06-philosophy-religion-and-indian-thought\literary-criticism\theory-of-literature-wellek-warren
+

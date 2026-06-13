@@ -1,0 +1,22 @@
+{
+  "id": "book-slug-author-last-name",
+  "slug": "book-slug-author-last-name",
+  "title": "Book Title",
+  "subtitle": "Optional Subtitle",
+  "authors": ["Author First Name Author Last Name"],
+  "year": 2024,
+  "category": "Category Name",
+  "subcategory": "Subcategory Name",
+  "pages": 320,
+  "isbn": "978-XXXXXXXXXXXXX",
+  "language": "en",
+  "genres": ["Non-Fiction", "Category"],
+  "subjects": ["Subject 1", "Subject 2"],
+  "themes": ["Theme 1", "Theme 2"],
+  "tags": ["tag1", "tag2", "tag3"],
+  "difficulty": "intermediate",
+  "estimatedReadingHours": 8,
+  "estimatedListeningMinutes": 480,
+  "source": "generated",
+  "generatedAt": "2026-06-13"
+}
