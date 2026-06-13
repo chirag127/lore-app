@@ -1007,7 +1007,6 @@ Does this summary capture the book's core thesis? What does it miss?
 knowledge/
   NN-category-name/
     subcategory-name/
-      sub-subcategory-name/
         book-slug-author-name/
           index.mdx        # Book overview + metadata
           01-content.mdx   # Comprehensive summary with Reading Guide

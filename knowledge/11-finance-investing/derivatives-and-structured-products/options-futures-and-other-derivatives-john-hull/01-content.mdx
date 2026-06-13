@@ -15,7 +15,7 @@ The chapter closes with a preview of the remaining thirty-three chapters, introd
 
 Hull explains how futures differ from forwards in their standardization, exchange trading, daily margin settlement (mark-to-market), and clearinghouse guarantee. He walks through the operational anatomy of a futures exchange: the trading pit (or electronic platform), the clearinghouse, margins (initial and variation), and the delivery mechanism.
 
-Key mechanics covered: **margin calls** trigger daily cash settlements that eliminate counterparty credit risk; **position limits** prevent market manipulation; **daily price limits** (circuit breakers) constrain panic selling. Hull provides the formula for the gain/loss on a futures position: if you are long one contract at price $F_1$ and close at $F_2$, your profit is $(F_2 - F_1) \times \text\{contract size\}$. He illustrates with the CME Group's S&P 500 e-mini futures (contract multiplier of 50 in the 10th edition), showing how a 20-point index move produces a \$1,000 gain or loss per contract.
+Key mechanics covered: **margin calls** trigger daily cash settlements that eliminate counterparty credit risk; **position limits** prevent market manipulation; **daily price limits** (circuit breakers) constrain panic selling. Hull provides the formula for the gain/loss on a futures position: if you are long one contract at price $F_1$ and close at $F_2$, your profit is $(F_2 - F_1) \times$ contract size. He illustrates with the CME Group's S&P 500 e-mini futures (contract multiplier of 50 in the 10th edition), showing how a 20-point index move produces a \$1,000 gain or loss per contract.
 
 Hull describes the convergence theorem: as a futures contract approaches its delivery date, the futures price must approach the spot price, or arbitrageurs will exploit any gap. He introduces the four main participants: **hedgers** (using futures to reduce risk), **speculators** (taking directional exposure), **arbitrageurs** (exploiting price relationships), and **day traders** (intraday positions).
 
@@ -27,7 +27,7 @@ A worked example features a company that knows it will buy copper in three month
 
 This chapter treats hedging as an optimization problem. Hull opens with a company that has a \$10 million equity portfolio and wants to hedge against a market decline. The hedge ratio is the change in spot value per unit change in futures value:
 
-$$h^* = \frac\{\text\{β of portfolio\}\}\{\text\{β of futures\}\}$$
+$$h^* = \frac\{\text\{β\_of\_portfolio\}\}\{\text\{β\_of\_futures\}\}$$
 
 When the portfolio and index futures have the same beta, the optimal hedge ratio is simply the ratio of portfolio value to (futures price × contract size). Hull demonstrates: for a \$10 million portfolio with S&P 500 futures at 2,000 and contract multiplier of 250, the optimal number of contracts $N^* = \frac\{10,000,000\}\{2,000 \times 250\} = 20$ contracts.
 
@@ -73,7 +73,7 @@ For **currency forward pricing**, Hull applies uncovered interest parity (covere
 
 The chapter covers the most liquid interest rate futures markets: Eurodollar futures (replaced by SOFR futures as the decade closed), Treasury bond futures, Treasury note futures, and Euro-Bund futures. Hull explains how these instruments differ from equity/fx futures because the underlying is a portfolio of bonds whose duration changes with interest rate levels (the cheapest-to-deliver problem arises when the short can choose which bond to deliver).
 
-The **cheapest-to-deliver (CTD)** bond is the one minimizing invoice price: $\text\{Invoice\} = F \times \text\{CF\} \times P_D$ where $CF$ is conversion factor and $P_D$ is bond price at delivery. The CTD shifts as rates move, making the basis between futures and CTD bond volatile.
+The **cheapest-to-deliver (CTD)** bond is the one minimizing invoice price: Invoice = $F \times \text\{CF\} \times P_D$ where $CF$ is conversion factor and $P_D$ is bond price at delivery. The CTD shifts as rates move, making the basis between futures and CTD bond volatile.
 
 Hull covers **swap futures** (futures contracts on interest rate swaps) and shows how to hedge interest rate exposure using duration-based portfolio immunization. He provides a worked example using Treasury bond futures to hedge a bond portfolio, computing the optimal number of contracts from duration ratios.
 
@@ -359,7 +359,7 @@ Hull extends coverage beyond financial markets: these are "non-financial" deriva
 
 **Insurance-linked securities (ILS)** and **catastrophe bonds** transfer insurance company risk to capital markets: investors receive higher coupons but absorb losses from hurricanes, earthquakes, or pandemics. Hull describes the 2006 catastrophe bond market (\$8 billion outstanding) and the 2017 surge following hurricanes Harvey, Irma, and Maria.
 
-**Weather derivatives**: based on HDD (heating degree days) or CDD (cooling degree days). Contract payoff = $N \times \$2,500 \times (\text\{actual HDD\} - \text\{strike HDD\}). Energy companies and agricultural producers use these to hedge against unseasonable temperatures. The CME launched weather futures in 1999, and the market grew to \$12 billion notional by the 2008 edition.
+**Weather derivatives**: based on HDD (heating degree days) or CDD (cooling degree days). Contract payoff = $N \times \$2,500 \times$ (actual HDD $-$ strike HDD). Energy companies and agricultural producers use these to hedge against unseasonable temperatures. The CME launched weather futures in 1999, and the market grew to \$12 billion notional by the 2008 edition.
 
 **Energy derivatives**: option pricing on oil, natural gas, and electricity. Electricity presents unique challenges: storable only with massive cost (cannot store wind or sun); exhibits spikes and negative prices (observed in West Texas in 2020, albeit post-10th edition, but the structural point about non-storability remains).
 
