@@ -83,5 +83,7 @@
   "relatedBooks": [
     "01-learning-react-alex-banks",
     "03-javascript-the-good-parts-douglas-crockford"
-  ]
+  ],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "12-frontend-engineering"
 }

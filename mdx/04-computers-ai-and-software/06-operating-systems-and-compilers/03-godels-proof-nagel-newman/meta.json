@@ -99,5 +99,7 @@
   "relatedBooks": [
     "gebs-douglas-hofstadter",
     "the-little-schemer-daniel-friedman"
-  ]
+  ],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "06-operating-systems-and-compilers"
 }

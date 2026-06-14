@@ -40,8 +40,8 @@
   "estimatedReadingHours": 20,
   "estimatedListeningMinutes": 1200,
   "excerpt": "Teaches fundamental principles of computer programming using Scheme, covering recursion, abstraction, modularity, and programming language design. Used as MIT's introductory CS textbook from 1984 to 2007.",
-  "category": "computers ai and software",
-  "subcategory": "programming fundamentals",
+  "category": "04-computers-ai-and-software",
+  "subcategory": "01-programming-fundamentals",
   "addedAt": 1781448632733,
   "whoShouldRead": [
     "Readers interested in Computer Science and Programming and Education"

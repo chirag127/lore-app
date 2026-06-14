@@ -71,5 +71,7 @@
   "relatedBooks": [
     "netter-atlas-human-anatomy-frank-netter",
     "anatomy-and-physiology-openstax"
-  ]
+  ],
+  "category": "02-body-health-and-life-sciences",
+  "subcategory": "01-human-anatomy-and-physiology"
 }

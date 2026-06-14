@@ -83,5 +83,7 @@
   "relatedBooks": [
     "02-css-the-definitive-guide-eric-meyer",
     "03-javascript-the-good-parts-douglas-crockford"
-  ]
+  ],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "12-frontend-engineering"
 }

@@ -83,5 +83,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9780393310351-L.jpg",
     "color": "#2d2d2d"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "03-logic-and-game-theory"
 }

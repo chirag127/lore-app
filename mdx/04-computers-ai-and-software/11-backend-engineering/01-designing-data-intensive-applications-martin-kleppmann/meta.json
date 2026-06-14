@@ -89,5 +89,7 @@
   "relatedBooks": [
     "02-building-microservices-sam-newman",
     "03-the-twelve-factor-app-adam-wiggins"
-  ]
+  ],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "11-backend-engineering"
 }

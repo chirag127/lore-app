@@ -71,5 +71,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9798664653403-L.jpg"
   },
-  "whoShouldSkip": []
+  "whoShouldSkip": [],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "03-system-design-and-distributed-systems"
 }

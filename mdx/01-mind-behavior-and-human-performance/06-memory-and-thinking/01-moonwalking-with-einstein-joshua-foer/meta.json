@@ -30,7 +30,7 @@
   ],
   "openlibrary": "OL24915377M",
   "goodreads": 6346975,
-  "rating": 4.0,
+  "rating": 4,
   "ratingsCount": 250000,
   "excerpt": "A journalist's yearlong journey from average memory to winning the US Memory Championship, revealing ancient techniques and cutting-edge science of remembering.",
   "tags": [
@@ -71,5 +71,7 @@
     "the-art-of-learning-josh-waitzkin",
     "peak-anders-ericsson",
     "ultralearning-scott-young"
-  ]
+  ],
+  "category": "01-mind-behavior-and-human-performance",
+  "subcategory": "06-memory-and-thinking"
 }

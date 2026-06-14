@@ -85,5 +85,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781736049112-L.jpg"
   },
-  "whoShouldSkip": []
+  "whoShouldSkip": [],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "03-system-design-and-distributed-systems"
 }

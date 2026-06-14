@@ -24,9 +24,10 @@ if (!book) return Astro.redirect('/404');
 
 const all = await getCollection(chapter);
 type ChapterEntry = CollectionEntry<Chapter>;
-const chapterFile = chapter === 'narration' ? '03-narration' : chapter === 'analysis' ? '02-analysis' : '01-content';
+const bookDir = book.id.replace(/\/meta$/, '');
+const chapterFile = chapter === 'narration' ? '04-narration' : chapter === 'analysis' ? '03-analysis' : '02-content';
 const entry: ChapterEntry | undefined = all.find(
-  (e) => e.id === `${book.id}/${chapterFile}` || e.id === `${book.id}/${chapterFile}.mdx`,
+  (e) => e.id === `${bookDir}/${chapterFile}` || e.id === `${bookDir}/${chapterFile}.mdx`,
 );
 const rendered = entry ? await render(entry) : null;
 const Content = rendered ? rendered.Content : null;

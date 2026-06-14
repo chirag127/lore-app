@@ -51,7 +51,7 @@ const sorted = Array.from(cats.values()).sort((a, b) => a.name.localeCompare(b.n
         <section class="border-t border-rule pt-6 sm:pt-8">
           <div class="flex flex-wrap items-baseline gap-3 sm:gap-4 mb-4">
             <h2 class="font-display text-xl sm:text-2xl font-light">
-              <a href={`/category/${cat.slug}`} class="hover:text-terracotta-500 transition-colors">
+              <a href={`/categories/${cat.slug}`} class="hover:text-terracotta-500 transition-colors">
                 {cat.name}
               </a>
             </h2>
@@ -63,7 +63,7 @@ const sorted = Array.from(cats.values()).sort((a, b) => a.name.localeCompare(b.n
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {Array.from(cat.subcategories.values()).sort((a, b) => a.name.localeCompare(b.name)).map((sub) => (
               <a
-                href={`/category/${cat.slug}/${sub.slug}`}
+                href={`/categories/${cat.slug}/${sub.slug}`}
                 class="group flex items-center justify-between p-3 border border-rule hover:border-terracotta-400 transition-colors"
               >
                 <span class="text-sm text-ink-soft group-hover:text-ink transition-colors">{sub.name}</span>

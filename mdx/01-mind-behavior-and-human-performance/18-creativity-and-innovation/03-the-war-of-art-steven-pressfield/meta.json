@@ -107,5 +107,7 @@
   "coverImage": "/books/the-war-of-art-steven-pressfield/cover.jpg",
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781591840127-L.jpg"
-  }
+  },
+  "category": "01-mind-behavior-and-human-performance",
+  "subcategory": "18-creativity-and-innovation"
 }

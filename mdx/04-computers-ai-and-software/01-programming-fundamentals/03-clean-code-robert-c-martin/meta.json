@@ -39,8 +39,8 @@
   "estimatedReadingHours": 10,
   "estimatedListeningMinutes": 600,
   "excerpt": "Divided into principles, patterns, and practices of writing clean code with case studies. Covers meaningful names, small functions, comments, formatting, error handling, unit testing, and classes.",
-  "category": "computers ai and software",
-  "subcategory": "programming fundamentals",
+  "category": "04-computers-ai-and-software",
+  "subcategory": "01-programming-fundamentals",
   "addedAt": 1781448632739,
   "whoShouldRead": [
     "Readers interested in Computer Science and Programming and Software Engineering"

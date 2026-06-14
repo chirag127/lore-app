@@ -79,5 +79,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9780671767891-L.jpg",
     "color": "#4a148c"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "10-complexity-science-and-systems"
 }

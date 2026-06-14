@@ -39,8 +39,8 @@
   "estimatedReadingHours": 8,
   "estimatedListeningMinutes": 480,
   "excerpt": "A collection of pragmatic tips and best practices for software development. Covers personal responsibility, career development, architectural techniques. Popularized concepts like DRY, rubber duck debugging, and the broken windows theory.",
-  "category": "computers ai and software",
-  "subcategory": "programming fundamentals",
+  "category": "04-computers-ai-and-software",
+  "subcategory": "01-programming-fundamentals",
   "addedAt": 1781448632736,
   "whoShouldRead": [
     "Readers interested in Computer Science and Programming and Software Engineering"

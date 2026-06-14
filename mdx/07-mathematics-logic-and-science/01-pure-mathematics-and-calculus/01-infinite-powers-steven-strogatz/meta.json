@@ -84,5 +84,7 @@
   "listeningTimeMinutes": 900,
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781324000025-L.jpg"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "01-pure-mathematics-and-calculus"
 }

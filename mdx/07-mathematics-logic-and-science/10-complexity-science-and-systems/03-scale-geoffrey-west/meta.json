@@ -83,5 +83,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781594205588-L.jpg",
     "color": "#00695c"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "10-complexity-science-and-systems"
 }

@@ -80,5 +80,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9780786887217-L.jpg",
     "color": "#ff6f00"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "10-complexity-science-and-systems"
 }

@@ -128,5 +128,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781680502398-L.jpg"
   },
-  "whoShouldSkip": []
+  "whoShouldSkip": [],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "10-cloud-computing-and-devops"
 }

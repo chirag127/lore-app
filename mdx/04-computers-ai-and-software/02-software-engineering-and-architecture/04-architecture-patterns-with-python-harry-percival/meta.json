@@ -70,5 +70,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781492052203-L.jpg"
   },
-  "whoShouldSkip": []
+  "whoShouldSkip": [],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "02-software-engineering-and-architecture"
 }

@@ -46,13 +46,13 @@ const subName = book.data.subcategory ? book.data.subcategory.split('-').map(w =
         {catName && (
           <>
             <span class="mx-2">·</span>
-            <a href={`/category/${book.data.category}`} class="hover:text-terracotta-500 transition-colors">{catName}</a>
+            <a href={`/categories/${book.data.category}`} class="hover:text-terracotta-500 transition-colors">{catName}</a>
           </>
         )}
         {subName && book.data.subcategory && (
           <>
             <span class="mx-2">·</span>
-            <a href={`/category/${book.data.category}/${book.data.subcategory}`} class="hover:text-terracotta-500 transition-colors">{subName}</a>
+            <a href={`/categories/${book.data.category}/${book.data.subcategory}`} class="hover:text-terracotta-500 transition-colors">{subName}</a>
           </>
         )}
       </nav>

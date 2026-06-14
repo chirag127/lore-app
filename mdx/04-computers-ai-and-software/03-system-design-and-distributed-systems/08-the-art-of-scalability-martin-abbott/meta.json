@@ -72,5 +72,7 @@
     "site-reliability-engineering-google",
     "the-mythical-man-month-frederick-brooks",
     "clean-architecture-robert-martin"
-  ]
+  ],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "03-system-design-and-distributed-systems"
 }

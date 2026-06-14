@@ -30,7 +30,7 @@
   ],
   "openlibrary": "OL26961202M",
   "goodreads": 43162333,
-  "rating": 4.0,
+  "rating": 4,
   "ratingsCount": 50000,
   "excerpt": "A comprehensive framework for aggressive, self-directed learning that shows how to master hard skills quickly through nine principles of ultralearning.",
   "tags": [
@@ -71,5 +71,7 @@
     "the-first-20-hours-josh-kaufman",
     "peak-anders-ericsson",
     "the-art-of-learning-josh-waitzkin"
-  ]
+  ],
+  "category": "01-mind-behavior-and-human-performance",
+  "subcategory": "01-learning-science-and-education"
 }

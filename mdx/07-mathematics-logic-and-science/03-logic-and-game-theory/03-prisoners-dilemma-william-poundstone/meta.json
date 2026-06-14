@@ -74,5 +74,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9780385415804-L.jpg",
     "color": "#3e2723"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "03-logic-and-game-theory"
 }

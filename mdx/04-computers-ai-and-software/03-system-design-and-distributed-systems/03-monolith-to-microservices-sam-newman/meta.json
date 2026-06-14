@@ -77,5 +77,7 @@
     "fundamentals-of-software-architecture-richardson",
     "clean-architecture-robert-martin",
     "accelerate-nicole-forsgren"
-  ]
+  ],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "03-system-design-and-distributed-systems"
 }

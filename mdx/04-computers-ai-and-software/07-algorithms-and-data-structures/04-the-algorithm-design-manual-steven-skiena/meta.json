@@ -103,5 +103,7 @@
   ],
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/978-3030542559-L.jpg"
-  }
+  },
+  "category": "04-computers-ai-and-software",
+  "subcategory": "07-algorithms-and-data-structures"
 }

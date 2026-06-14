@@ -74,5 +74,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9780201657883-L.jpg"
   },
-  "whoShouldSkip": []
+  "whoShouldSkip": [],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "07-algorithms-and-data-structures"
 }

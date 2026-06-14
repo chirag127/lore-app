@@ -81,5 +81,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9780898719170-L.jpg",
     "color": "#1b5e20"
-  }
+  },
+  "category": "07-mathematics-logic-and-science",
+  "subcategory": "04-mathematical-modeling"
 }

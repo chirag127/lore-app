@@ -74,5 +74,7 @@
   "cover": {
     "url": "https://covers.openlibrary.org/b/isbn/9781449344764-L.jpg"
   },
-  "whoShouldSkip": []
+  "whoShouldSkip": [],
+  "category": "04-computers-ai-and-software",
+  "subcategory": "05-networking-and-internet-systems"
 }
