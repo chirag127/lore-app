@@ -1,0 +1,47 @@
+import { getBook } from '../../_data/books'
+
+export const book = getBook('the-war-of-art-steven-pressfield')
+
+export const sections = [
+  {
+    id: 'about',
+    title: 'About This Book',
+    items: [
+      { href: '#at-a-glance', label: 'At a Glance' },
+      { href: '#the-author', label: 'Steven Pressfield' },
+      { href: '#legacy', label: 'Legacy & Impact' },
+    ],
+  },
+  {
+    id: 'core-concepts',
+    title: 'Core Concepts',
+    items: [
+      { href: '#resistance', label: 'Resistance' },
+      { href: '#turning-pro', label: 'Turning Pro' },
+      { href: '#the-primitive', label: 'The Primitive' },
+      { href: '#the-desk', label: 'The Desk Is Your Battleground' },
+      { href: '#amateur-vs-pro', label: 'Amateur vs Professional' },
+    ],
+  },
+  {
+    id: 'content',
+    title: 'Book Content',
+    items: [
+      { href: '#manifestations', label: 'Manifestations' },
+      { href: '#the-pocket', label: 'Staying in the Pocket' },
+      { href: '#loving-mean', label: 'Loving the Mean' },
+    ],
+  },
+  {
+    id: 'resources',
+    title: 'Resources',
+    items: [
+      { href: '#further-reading', label: 'Further Reading' },
+    ],
+  },
+]
+
+import Content from './01-content.mdx'
+import Analysis from './02-analysis.mdx'
+
+

@@ -1,0 +1,145 @@
+---
+title: 'The Twelve-Factor App'
+slug: '03-the-twelve-factor-app-adam-wiggins'
+author: ['Adam Wiggins']
+year: 2021
+category: '04-computers-ai-and-software-category'
+subcategory: '11-backend-engineering-subcategory'
+excerpt: 'A concise methodology for building software-as-a-service applications that are portable, resilient, and cloud-native — covering twelve principles from codebase management to admin processes.'
+cover:
+  url: '/books/the-twelve-factor-app-adam-wiggins/cover.webp'
+  color: '#1b5e20'
+keyIdeas:
+  - 'Strict separation of config from code'
+  - 'Stateless processes with shared-nothing architecture'
+  - 'Dev/prod parity and continuous deployment'
+  - 'Disposability — fast startup and graceful shutdown'
+  - 'Backing services as attached resources'
+keyTakeaways:
+  - 'A twelve-factor app is a methodology, not a framework — applicable to any language or stack'
+  - 'Each factor addresses a specific weakness in traditional application deployment'
+  - 'The principles enable maximum portability across cloud providers and environments'
+whoShouldRead:
+  - 'Application developers deploying to cloud platforms'
+  - 'DevOps engineers designing deployment pipelines'
+  - 'Technical leaders establishing engineering standards'
+  - 'Anyone new to cloud-native application development'
+whoShouldSkip:
+  - 'Developers working on embedded or desktop-only applications'
+  - 'Those seeking language-specific tutorials rather than principles'
+  - 'Readers already deeply familiar with cloud-native patterns'
+relatedBooks:
+  - '01-designing-data-intensive-applications-martin-kleppmann'
+  - '02-building-microservices-sam-newman'
+tags: ['twelve-factor', 'cloud-native', 'saas', 'devops', 'application-design', 'deployment', 'best-practices', 'backend-engineering', 'adam-wiggins']
+addedAt: 2026-01-15
+difficulty: easy
+readingTime: 3h
+isbn: '9781733377913'
+pages: 150
+publisher: 'Own'
+---
+
+
+
+## Overview
+
+*The Twelve-Factor App* (2021) by Adam Wiggins is a concise methodology
+for building software-as-a-service applications. Originally published as
+a website by Heroku co-founder Adam Wiggins, this book codifies twelve
+principles that make applications portable, resilient, and suitable for
+modern cloud platforms.
+
+The methodology has become the de facto standard for cloud-native
+application development, influencing platforms like Heroku, Cloud
+Foundry, and Kubernetes-native application design.
+
+---
+
+## Key Takeaways
+
+1. **One codebase tracked in revision control.** Every deployment maps
+   to exactly one codebase; multiple deploys of the same app share
+   the same codebase.
+
+2. **Explicitly declare and isolate dependencies.** Use dependency
+   declaration manifests and dependency isolation tools — never rely
+   on system-wide packages.
+
+3. **Store config in the environment.** Config varies across deploys;
+   code does not. Separate config from code using environment variables.
+
+4. **Treat backing services as attached resources.** Databases, message
+   queues, and caches are resources attached via URL — swappable
+   without code changes.
+
+5. **Strict separation of build, release, and run stages.** The build
+   stage transforms code into an executable, the release stage
+   combines the build with config, and the run stage executes the
+   release.
+
+6. **Execute the app as one or more stateless processes.** Never store
+   state in the process — use a stateful backing service instead.
+
+7. **Export services via port binding.** The app is self-contained and
+   exports HTTP as a service via port binding.
+
+8. **Scale out via the process model.** Assign different process types
+   for different workloads — web, worker, scheduled tasks.
+
+9. **Maximize robustness with fast startup and graceful shutdown.**
+   Processes should start quickly and shut down gracefully when
+   receiving a SIGTERM.
+
+10. **Keep development, staging, and production as similar as possible.**
+    Minimize the gap between environments to reduce deployment bugs.
+
+11. **Treat logs as event streams.** Never manage log files — write
+    event streams to stdout and let the execution environment handle
+    routing.
+
+12. **Run admin/management tasks as one-off processes.** Database
+    migrations and console sessions run in the same environment as
+    the app, not on a separate developer machine.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Developers new to cloud deployment | Foundational patterns for modern app development |
+| DevOps engineers | Framework for designing deployment pipelines |
+| Technical leads | Standards for team-wide application design |
+| Platform engineers | Requirements for a developer-friendly platform |
+| Engineering managers | Vocabulary for discussing architectural decisions |
+
+---
+
+## Who Should Skip
+
+- Developers of embedded or IoT software
+- Those looking for deep operational guidance — this is an overview
+- Teams far along in their cloud-native journey — these are table stakes
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Building Microservices** | Sam Newman | Extends twelve-factor principles to distributed systems |
+| **Accelerate** | Nicole Forsgren | Metrics for DevOps and deployment effectiveness |
+| **Site Reliability Engineering** | Beyer et al. | Operational excellence at scale |
+| **Release It!** | Michael Nygard | Production-ready design patterns |
+
+---
+
+## Final Verdict
+
+A short but essential read. The twelve factors have become the lingua
+franca of cloud-native development. Every developer deploying to the
+cloud should understand them.
+
+**Rating: 8/10** — A concise, influential methodology that every
+cloud developer should know. Quick to read, lasting in impact.

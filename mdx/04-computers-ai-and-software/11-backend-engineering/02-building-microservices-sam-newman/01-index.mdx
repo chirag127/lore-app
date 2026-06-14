@@ -1,0 +1,134 @@
+---
+title: 'Building Microservices'
+slug: '02-building-microservices-sam-newman'
+author: ['Sam Newman']
+year: 2021
+category: '04-computers-ai-and-software-category'
+subcategory: '11-backend-engineering-subcategory'
+excerpt: 'The practical guide to designing, building, and operating microservice-based systems — covering decomposition, communication, data management, testing, deployment, and organizational alignment.'
+cover:
+  url: '/books/building-microservices-sam-newman/cover.webp'
+  color: '#004d40'
+keyIdeas:
+  - 'Microservices as independently deployable services modeled around business domains'
+  - 'Inter-service communication — synchronous vs. asynchronous patterns'
+  - 'Data decentralization and database-per-service pattern'
+  - 'Testing strategies for distributed systems'
+  - 'Organizational alignment with Conway\'s Law'
+keyTakeaways:
+  - 'Microservices are an organizational and technical decision, not just a technical one'
+  - 'Start with a monolith and extract microservices as boundaries become clear'
+  - 'Choose the right communication style for each service boundary'
+whoShouldRead:
+  - 'Software architects and senior developers'
+  - 'Backend engineers building distributed systems'
+  - 'CTOs and technical leaders evaluating architectural approaches'
+  - 'DevOps and platform engineers'
+whoShouldSkip:
+  - 'Complete beginners to software architecture'
+  - 'Teams building simple CRUD applications with fewer than 5 developers'
+  - 'Those looking for cloud-specific deployment tutorials'
+relatedBooks:
+  - '01-designing-data-intensive-applications-martin-kleppmann'
+  - '03-the-twelve-factor-app-adam-wiggins'
+tags: ['microservices', 'software-architecture', 'distributed-systems', 'backend', 'service-decomposition', 'api-design', 'devops', 'system-design', 'sam-newman', 'oreilly']
+addedAt: 2026-01-15
+difficulty: medium
+readingTime: 12h
+isbn: '9781492034025'
+pages: 612
+publisher: "O'Reilly"
+---
+
+
+
+## Overview
+
+*Building Microservices* (2021, Second Edition) by Sam Newman is the
+comprehensive guide to designing, building, and operating systems using
+the microservice architectural style. Newman covers the entire lifecycle
+from decomposition strategies to production operations.
+
+The second edition has been substantially updated to reflect the maturing
+microservice landscape, with new chapters on Kubernetes, serverless,
+observability, and the reconciliation of microservices with monoliths.
+
+---
+
+## Key Takeaways
+
+1. **Microservices are not a free lunch.** They introduce complexity in
+   testing, deployment, networking, and data management.
+
+2. **Domain-driven design is the foundation.** Service boundaries should
+   align with business domain boundaries, not technical layers.
+
+3. **Choose integration technology carefully.** REST, gRPC, and messaging
+   each have different trade-offs for coupling, performance, and
+   evolvability.
+
+4. **Data decentralization is essential.** The database-per-service
+   pattern prevents tight coupling through shared schemas.
+
+5. **Observability is non-negotiable.** Without centralized logging,
+   metrics, and distributed tracing, microservices are unmanageable.
+
+6. **Testing microservices requires strategy.** Move from a testing
+   pyramid to a testing trophy — emphasize contract and integration
+   tests over unit tests.
+
+7. **Organizational alignment matters.** Conway's Law means your
+   architecture will mirror your communication structures.
+
+8. **Start with a monolith.** Extract microservices as you discover
+   natural boundaries rather than predicting them upfront.
+
+9. **Kubernetes changes everything.** Container orchestration simplifies
+   deployment but adds operational complexity.
+
+10. **Idempotency is your friend.** Design operations to be safe to
+    retry, and design for partial failure.
+
+---
+
+## Who Should Read
+
+| Reader Type | Why |
+|---|---|
+| Software architects | Framework for decomposition and integration decisions |
+| Senior backend engineers | Practical patterns for building distributed systems |
+| Technical leads | Insight into organizational and technical trade-offs |
+| CTOs and VPs of Engineering | Understanding the costs and benefits before committing |
+| Platform engineers | Guidance on infrastructure for microservice deployments |
+
+---
+
+## Who Should Skip
+
+- Junior developers with less than 2 years of experience
+- Teams of fewer than 5 developers — the complexity outweighs benefits
+- Anyone building a simple CRUD application with a single database
+
+---
+
+## Related Books
+
+| Book | Author | Connection |
+|---|---|---|
+| **Designing Data-Intensive Applications** | Martin Kleppmann | Distributed systems foundations for microservices |
+| **The Twelve-Factor App** | Adam Wiggins | Best practices for cloud-native applications |
+| **Monolith to Microservices** | Sam Newman | Migration patterns for existing systems |
+| **Accelerate** | Nicole Forsgren | Metrics for measuring delivery performance |
+| **Site Reliability Engineering** | Beyer et al. | Operating reliable distributed systems |
+
+---
+
+## Final Verdict
+
+The definitive practical guide to microservices. Newman balances
+enthusiasm with caution, clearly laying out when microservices help
+and when they hurt. The second edition is significantly better than
+the first.
+
+**Rating: 8.5/10** — Essential reading for anyone considering or
+already using microservices.
