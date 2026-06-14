@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 368,
   "isbn": "9780679421771",
-  "genres": ["Psychology", "Self-Help", "Mental Health", "Neuroscience"],
+  "genres": [
+    "Psychology",
+    "Self-Help",
+    "Mental Health",
+    "Neuroscience"
+  ],
   "subjects": [
     "ADHD",
     "Attention deficit disorder",
@@ -43,5 +48,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 10,
   "estimatedListeningMinutes": 600,
-  "excerpt": "ADD is not a disorder of attention. It is a disorder of attention consistency. People with ADD can pay attention — they just cannot regulate when they pay attention, to what they pay attention, or for how long. When something is interesting, they can hyperfocus for hours. When something is boring, they cannot focus at all. This inconsistency is the core of the ADD experience."
+  "excerpt": "ADD is not a disorder of attention. It is a disorder of attention consistency. People with ADD can pay attention — they just cannot regulate when they pay attention, to what they pay attention, or for how long. When something is interesting, they can hyperfocus for hours. When something is boring, they cannot focus at all. This inconsistency is the core of the ADD experience.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780679421771-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

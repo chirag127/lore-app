@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 320,
   "isbn": "9780307359531",
-  "genres": ["Neuroscience", "Popular Science", "Psychology", "Science"],
+  "genres": [
+    "Neuroscience",
+    "Popular Science",
+    "Psychology",
+    "Science"
+  ],
   "subjects": [
     "Neuroplasticity",
     "Brain plasticity",
@@ -42,5 +47,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 8,
   "estimatedListeningMinutes": 480,
-  "excerpt": "Your brain is not a preprogrammed device, not a computer with fixed architecture. It is a dynamic system, constantly rewiring itself based on what it encounters. The brain is not wired — it is livewired, always adjusting, always learning, always adapting to the world it finds itself in."
+  "excerpt": "Your brain is not a preprogrammed device, not a computer with fixed architecture. It is a dynamic system, constantly rewiring itself based on what it encounters. The brain is not wired — it is livewired, always adjusting, always learning, always adapting to the world it finds itself in.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780307359531-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

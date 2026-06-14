@@ -66,5 +66,9 @@
       "title": "Thinking, Fast and Slow",
       "slug": "thinking-fast-and-slow-daniel-kahneman"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780071808163-L.jpg"
+  },
+  "whoShouldSkip": []
 }

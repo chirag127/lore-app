@@ -41,8 +41,11 @@
     "unethical-experimentation",
     "tuskegee"
   ],
-  "addedAt": "2026-01-15",
-  "cover": "#b71c1c",
+  "addedAt": 1768435200000,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-0385507782-L.jpg",
+    "color": "#b71c1c"
+  },
   "keyIdeas": [
     "African Americans have been subjected to medical experimentation from slavery through the present day",
     "Racial pseudoscience was institutionalized in American medicine for centuries, shaping research and treatment",

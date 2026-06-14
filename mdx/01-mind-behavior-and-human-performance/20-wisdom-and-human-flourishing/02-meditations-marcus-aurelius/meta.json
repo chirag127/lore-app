@@ -41,8 +41,20 @@
       "note": "Definitive scholarly edition with full commentary."
     }
   ],
-  "genres": ["Philosophy", "Classics", "Spirituality", "Self-Help"],
-  "subjects": ["Stoicism", "Ancient Philosophy", "Roman Empire", "Ethics", "Personal Development", "Mortality"],
+  "genres": [
+    "Philosophy",
+    "Classics",
+    "Spirituality",
+    "Self-Help"
+  ],
+  "subjects": [
+    "Stoicism",
+    "Ancient Philosophy",
+    "Roman Empire",
+    "Ethics",
+    "Personal Development",
+    "Mortality"
+  ],
   "themes": [
     "Dichotomy of Control",
     "Memento Mori",
@@ -56,14 +68,43 @@
     "Impressions and Assent"
   ],
   "tags": [
-    "marcus aurelius", "stoicism", "stoic", "ancient philosophy", "roman empire",
-    "meditations", "self-improvement", "virtue", "wisdom", "courage", "justice",
-    "temperance", "mortality", "death", "resilience", "mindfulness", "inner peace",
-    "dichotomy of control", "amor fati", "memento mori", "practical philosophy",
-    "epictetus", "logos", "nature", "classics", "spiritual exercises"
+    "marcus aurelius",
+    "stoicism",
+    "stoic",
+    "ancient philosophy",
+    "roman empire",
+    "meditations",
+    "self-improvement",
+    "virtue",
+    "wisdom",
+    "courage",
+    "justice",
+    "temperance",
+    "mortality",
+    "death",
+    "resilience",
+    "mindfulness",
+    "inner peace",
+    "dichotomy of control",
+    "amor fati",
+    "memento mori",
+    "practical philosophy",
+    "epictetus",
+    "logos",
+    "nature",
+    "classics",
+    "spiritual exercises"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 4,
   "estimatedListeningMinutes": 240,
-  "excerpt": "A series of personal writings by Roman Emperor Marcus Aurelius, composed in Koine Greek between 170 and 180 AD while on military campaign. Never intended for publication, these private notes record one of history's most powerful men reminding himself how to stay virtuous, humble, and rational in the face of war, plague, betrayal, and mortality. The foundational text of Stoic philosophy in practice — a masterclass in resilience, self-discipline, and living according to nature."
+  "excerpt": "A series of personal writings by Roman Emperor Marcus Aurelius, composed in Koine Greek between 170 and 180 AD while on military campaign. Never intended for publication, these private notes record one of history's most powerful men reminding himself how to stay virtuous, humble, and rational in the face of war, plague, betrayal, and mortality. The foundational text of Stoic philosophy in practice — a masterclass in resilience, self-discipline, and living according to nature.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780812968255-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

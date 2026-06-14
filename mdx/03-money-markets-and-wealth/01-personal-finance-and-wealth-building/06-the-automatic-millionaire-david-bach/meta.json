@@ -95,5 +95,13 @@
   "affiliateLinks": {
     "amazon": "https://www.amazon.com/dp/0767914104",
     "goodreads": "https://www.goodreads.com/book/show/89740.The_Automatic_Millionaire"
-  }
+  },
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780767914101-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

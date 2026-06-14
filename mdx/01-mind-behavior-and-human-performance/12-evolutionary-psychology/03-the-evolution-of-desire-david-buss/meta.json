@@ -28,7 +28,12 @@
   "language": "en",
   "pageCount": 384,
   "isbn": "9780465097768",
-  "genres": ["Psychology", "Evolutionary Psychology", "Science", "Relationships"],
+  "genres": [
+    "Psychology",
+    "Evolutionary Psychology",
+    "Science",
+    "Relationships"
+  ],
   "subjects": [
     "Mating behavior",
     "Evolutionary psychology",
@@ -62,5 +67,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 10,
   "estimatedListeningMinutes": 600,
-  "excerpt": "Human mating is a rich and complex phenomenon — a source of our deepest joys and our most profound sorrows. But beneath the cultural diversity and individual variation, there are universal patterns of desire. These patterns are not arbitrary. They are the product of millions of years of evolution, shaped by the adaptive problems our ancestors faced in the quest to reproduce."
+  "excerpt": "Human mating is a rich and complex phenomenon — a source of our deepest joys and our most profound sorrows. But beneath the cultural diversity and individual variation, there are universal patterns of desire. These patterns are not arbitrary. They are the product of millions of years of evolution, shaped by the adaptive problems our ancestors faced in the quest to reproduce.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780465097768-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

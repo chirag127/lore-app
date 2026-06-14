@@ -54,5 +54,13 @@
     "Translated into 10+ languages",
     "Used by ML teams at top tech companies"
   ],
-  "excerpt": "Machine learning systems are both complex and unique. Complex because they consist of many components and involve many stakeholders. Unique because they are data-dependent, with data varying wildly from one use case to the next."
+  "excerpt": "Machine learning systems are both complex and unique. Complex because they consist of many components and involve many stakeholders. Unique because they are data-dependent, with data varying wildly from one use case to the next.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781098107963-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

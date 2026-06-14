@@ -185,5 +185,12 @@
   "version": "1.0.0",
   "authors": [
     "Eugen Herrigel"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-0-375-70509-0-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": []
 }

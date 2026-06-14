@@ -67,5 +67,13 @@
     "Widely adopted in data science bootcamps and corporate training",
     "Cited as the practitioner companion to An Introduction to Statistical Learning"
   ],
-  "excerpt": "Statistical methods are a key part of data science, yet few data scientists have formal statistical training. This book applies statistical concepts to data science from a practical standpoint, helping you avoid the misuse of statistical methods while teaching you the few that actually matter on the job."
+  "excerpt": "Statistical methods are a key part of data science, yet few data scientists have formal statistical training. This book applies statistical concepts to data science from a practical standpoint, helping you avoid the misuse of statistical methods while teaching you the few that actually matter on the job.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492072942-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

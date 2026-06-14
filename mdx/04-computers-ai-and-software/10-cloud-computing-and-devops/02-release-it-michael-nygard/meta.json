@@ -124,5 +124,9 @@
       "title": "Fundamentals of Software Architecture",
       "slug": "fundamentals-of-software-architecture-mark-richards"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781680502398-L.jpg"
+  },
+  "whoShouldSkip": []
 }

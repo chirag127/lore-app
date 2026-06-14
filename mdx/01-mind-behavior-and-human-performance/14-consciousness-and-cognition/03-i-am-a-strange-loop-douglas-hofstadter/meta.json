@@ -7,7 +7,12 @@
   "language": "en",
   "pageCount": 432,
   "isbn": "9780465030796",
-  "genres": ["Philosophy", "Cognitive Science", "Psychology", "Science"],
+  "genres": [
+    "Philosophy",
+    "Cognitive Science",
+    "Psychology",
+    "Science"
+  ],
   "subjects": [
     "Consciousness",
     "Self",
@@ -40,5 +45,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 12,
   "estimatedListeningMinutes": 720,
-  "excerpt": "I am a strange loop. The 'I' that I experience as myself is not a thing but a pattern — a self-referential, tangled hierarchy that emerges from the activity of my brain. When I think about myself, I am creating a strange loop. And that loop is what I call 'me.'"
+  "excerpt": "I am a strange loop. The 'I' that I experience as myself is not a thing but a pattern — a self-referential, tangled hierarchy that emerges from the activity of my brain. When I think about myself, I am creating a strange loop. And that loop is what I call 'me.'",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780465030796-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

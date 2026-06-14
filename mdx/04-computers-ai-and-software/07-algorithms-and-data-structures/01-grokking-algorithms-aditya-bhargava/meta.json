@@ -53,5 +53,13 @@
   "awards": [
     "Manning Early Access Program (MEAP) bestseller"
   ],
-  "excerpt": "An algorithm is a set of instructions for accomplishing a task. Every piece of code could be called an algorithm, but this book covers the more interesting bits. I chose the algorithms in this book for inclusion because they're fast, or they solve interesting problems, or both. In each case, I'll describe the algorithm, give you an example, talk about the running time in Big O notation, and explore what other types of problems could be solved by the same algorithm."
+  "excerpt": "An algorithm is a set of instructions for accomplishing a task. Every piece of code could be called an algorithm, but this book covers the more interesting bits. I chose the algorithms in this book for inclusion because they're fast, or they solve interesting problems, or both. In each case, I'll describe the algorithm, give you an example, talk about the running time in Big O notation, and explore what other types of problems could be solved by the same algorithm.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781617292231-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

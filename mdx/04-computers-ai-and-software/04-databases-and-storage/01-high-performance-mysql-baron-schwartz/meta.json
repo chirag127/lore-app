@@ -86,5 +86,10 @@
     "O'Reilly best-selling database title for nearly two decades",
     "Standard reference recommended by Percona, Oracle, and the wider MySQL community"
   ],
-  "excerpt": "High Performance MySQL is the definitive guide to squeezing every drop of performance, reliability, and scalability out of MySQL. Written by the founders and engineers of Percona and other MySQL luminaries, the fourth edition covers InnoDB internals, indexing, query optimization, replication, backup and recovery, and scaling strategies for operating MySQL at production scale."
+  "excerpt": "High Performance MySQL is the definitive guide to squeezing every drop of performance, reliability, and scalability out of MySQL. Written by the founders and engineers of Percona and other MySQL luminaries, the fourth edition covers InnoDB internals, indexing, query optimization, replication, backup and recovery, and scaling strategies for operating MySQL at production scale.",
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -8,8 +8,18 @@
   "publisher": "O'Reilly Media",
   "language": "en",
   "pageCount": 176,
-  "genres": ["Technology", "Programming", "Web Development", "JavaScript"],
-  "subjects": ["JavaScript", "Programming Languages", "Web Development", "Software Design"],
+  "genres": [
+    "Technology",
+    "Programming",
+    "Web Development",
+    "JavaScript"
+  ],
+  "subjects": [
+    "JavaScript",
+    "Programming Languages",
+    "Web Development",
+    "Software Design"
+  ],
   "themes": [
     "Identifying the reliable subset of JavaScript",
     "Prototypal inheritance vs classical inheritance",
@@ -18,11 +28,27 @@
     "Code quality through automated linting"
   ],
   "tags": [
-    "javascript", "programming", "web-development", "language-design",
-    "prototypal-inheritance", "closures", "functional-programming",
-    "douglas-crockford", "oreilly", "jslint", "json"
+    "javascript",
+    "programming",
+    "web-development",
+    "language-design",
+    "prototypal-inheritance",
+    "closures",
+    "functional-programming",
+    "douglas-crockford",
+    "oreilly",
+    "jslint",
+    "json"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 5,
-  "estimatedListeningMinutes": 300
+  "estimatedListeningMinutes": 300,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780596517748-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

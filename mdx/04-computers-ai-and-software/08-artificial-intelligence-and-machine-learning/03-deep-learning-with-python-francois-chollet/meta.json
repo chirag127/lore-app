@@ -52,5 +52,13 @@
     "One of the best-selling deep learning books worldwide",
     "Recommended by Kaggle founder Anthony Goldbloom"
   ],
-  "excerpt": "Deep Learning with Python, written by Keras creator Francois Chollet, is the most accessible and practical introduction to deep learning available. Through intuitive explanations and hands-on examples, you will learn to build, train, and deploy neural networks for computer vision, NLP, and generative applications."
+  "excerpt": "Deep Learning with Python, written by Keras creator Francois Chollet, is the most accessible and practical introduction to deep learning available. Through intuitive explanations and hands-on examples, you will learn to build, train, and deploy neural networks for computer vision, NLP, and generative applications.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781617296864-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

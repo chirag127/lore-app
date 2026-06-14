@@ -34,5 +34,14 @@
   "rationale": "The Complete Sherlock Holmes is the foundational text of modern crime fiction, establishing virtually every convention of the detective genre: the brilliant consulting detective, the loyal sidekick-narrator, forensic deduction, the locked-room puzzle, the arch-villain, and the serialized story format. No single work is more essential to understanding the mystery and crime fiction category.",
   "authors": [
     "Sir Arthur Conan Doyle"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-0385006895-L.jpg"
+  },
+  "tags": [],
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

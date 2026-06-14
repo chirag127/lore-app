@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 416,
   "isbn": "9780060556570",
-  "genres": ["Popular Science", "Evolutionary Biology", "Evolutionary Psychology", "Science Writing"],
+  "genres": [
+    "Popular Science",
+    "Evolutionary Biology",
+    "Evolutionary Psychology",
+    "Science Writing"
+  ],
   "subjects": [
     "Sexual selection",
     "Evolution of sex",
@@ -42,5 +47,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 12,
   "estimatedListeningMinutes": 720,
-  "excerpt": "The Red Queen said, 'Now, here, you see, it takes all the running you can do to keep in the same place.' The evolutionary version: every organism is running as fast as it can, not to get ahead, but to stay in the same place relative to its ever-evolving competitors, predators, and parasites. Sex is the ultimate Red Queen strategy — a way to keep shuffling the genetic deck so that parasites cannot predict the next hand."
+  "excerpt": "The Red Queen said, 'Now, here, you see, it takes all the running you can do to keep in the same place.' The evolutionary version: every organism is running as fast as it can, not to get ahead, but to stay in the same place relative to its ever-evolving competitors, predators, and parasites. Sex is the ultimate Red Queen strategy — a way to keep shuffling the genetic deck so that parasites cannot predict the next hand.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780060556570-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

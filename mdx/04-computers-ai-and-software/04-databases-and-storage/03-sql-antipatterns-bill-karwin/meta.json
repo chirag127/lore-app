@@ -72,5 +72,10 @@
     "Widely cited as the definitive practical guide to SQL design mistakes",
     "Recommended reading by database teams at companies including Heroku, Pivotal, and Percona community"
   ],
-  "excerpt": "SQL Antipatterns is the essential field guide to the most common and costly mistakes in SQL and database design. Bill Karwin identifies why seemingly reasonable decisions — from flat EAV tables to ORDER BY RAND() on millions of rows — silently degrade data quality, performance, and maintainability, then shows practical, vendor-neutral corrections."
+  "excerpt": "SQL Antipatterns is the essential field guide to the most common and costly mistakes in SQL and database design. Bill Karwin identifies why seemingly reasonable decisions — from flat EAV tables to ORDER BY RAND() on millions of rows — silently degrade data quality, performance, and maintainability, then shows practical, vendor-neutral corrections.",
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

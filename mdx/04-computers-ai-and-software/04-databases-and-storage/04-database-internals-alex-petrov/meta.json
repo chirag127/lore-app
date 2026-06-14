@@ -54,5 +54,13 @@
     "Selected as O'Reilly essential reading for distributed systems",
     "Recommended by CMU database group reading list"
   ],
-  "excerpt": "Database Internals takes you under the hood of modern databases and storage engines, revealing how they organize data on disk, handle concurrent access, and coordinate across machines. Essential reading for engineers who want to understand how databases really work."
+  "excerpt": "Database Internals takes you under the hood of modern databases and storage engines, revealing how they organize data on disk, handle concurrent access, and coordinate across machines. Essential reading for engineers who want to understand how databases really work.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492040347-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

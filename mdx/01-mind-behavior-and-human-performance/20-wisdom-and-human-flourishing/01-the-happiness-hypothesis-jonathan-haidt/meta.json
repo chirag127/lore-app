@@ -8,12 +8,61 @@
   "publisher": "Basic Books",
   "language": "en",
   "pages": 297,
-  "genres": ["Psychology", "Philosophy", "Self-Help", "Religion"],
-  "subjects": ["Happiness", "Well-being", "Ancient Wisdom", "Positive Psychology", "Virtue", "Meaning", "Meditation", "Post-Traumatic Growth"],
-  "themes": ["Divided Self", "Rider and Elephant", "Happiness Equation", "Reciprocity", "Love and Attachments", "Adversity and Growth", "Virtue Ethics", "Sacredness and Divinity", "Meaning and Purpose", "Cross-Level Coherence"],
-  "tags": ["happiness", "psychology", "philosophy", "ancient wisdom", "positive psychology", "meditation", "virtue", "meaning", "flourishing", "self-improvement", "jonathan haidt", "well-being", "buddhism", "stoicism", "eudaimonia"],
+  "genres": [
+    "Psychology",
+    "Philosophy",
+    "Self-Help",
+    "Religion"
+  ],
+  "subjects": [
+    "Happiness",
+    "Well-being",
+    "Ancient Wisdom",
+    "Positive Psychology",
+    "Virtue",
+    "Meaning",
+    "Meditation",
+    "Post-Traumatic Growth"
+  ],
+  "themes": [
+    "Divided Self",
+    "Rider and Elephant",
+    "Happiness Equation",
+    "Reciprocity",
+    "Love and Attachments",
+    "Adversity and Growth",
+    "Virtue Ethics",
+    "Sacredness and Divinity",
+    "Meaning and Purpose",
+    "Cross-Level Coherence"
+  ],
+  "tags": [
+    "happiness",
+    "psychology",
+    "philosophy",
+    "ancient wisdom",
+    "positive psychology",
+    "meditation",
+    "virtue",
+    "meaning",
+    "flourishing",
+    "self-improvement",
+    "jonathan haidt",
+    "well-being",
+    "buddhism",
+    "stoicism",
+    "eudaimonia"
+  ],
   "difficulty": "easy-medium",
   "estimatedReadingHours": 8,
   "estimatedListeningMinutes": 510,
-  "excerpt": "Award-winning psychologist Jonathan Haidt examines ten Great Ideas from ancient wisdom — Plato, Buddha, Jesus, and others — through the lens of modern psychological science. Blending research on the divided self, meditation, reciprocity, adversity, love, virtue, and meaning, Haidt reveals how ancient insights still illuminate the path to human flourishing."
+  "excerpt": "Award-winning psychologist Jonathan Haidt examines ten Great Ideas from ancient wisdom — Plato, Buddha, Jesus, and others — through the lens of modern psychological science. Blending research on the divided self, meditation, reciprocity, adversity, love, virtue, and meaning, Haidt reveals how ancient insights still illuminate the path to human flourishing.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780465028016-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

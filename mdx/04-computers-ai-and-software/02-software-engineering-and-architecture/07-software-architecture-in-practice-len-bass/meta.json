@@ -72,5 +72,9 @@
     "fundamentals-of-software-architecture-mark-richards-neal-ford",
     "a-philosophy-of-software-design-john-ousterhout",
     "building-software-team-gall-riedl"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780136886094-L.jpg"
+  },
+  "whoShouldSkip": []
 }

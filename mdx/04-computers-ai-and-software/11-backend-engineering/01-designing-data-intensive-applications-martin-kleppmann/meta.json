@@ -54,12 +54,12 @@
   "estimatedListeningMinutes": 1080,
   "year": 2017,
   "excerpt": "The definitive guide to the fundamental principles behind modern data systems — covering reliability, scalability, maintainability, and the distributed systems research that powers today's databases, message queues, and stream processors.",
-  "addedAt": "2026-01-15",
+  "addedAt": 1768435200000,
   "authors": [
     "Martin Kleppmann"
   ],
   "cover": {
-    "url": "/books/designing-data-intensive-applications-martin-kleppmann/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg",
     "color": "#1a237e"
   },
   "keyIdeas": [

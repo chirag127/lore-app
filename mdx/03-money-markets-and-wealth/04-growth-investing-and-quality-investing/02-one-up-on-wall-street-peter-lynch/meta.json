@@ -68,5 +68,9 @@
       "title": "A Random Walk Down Wall Street",
       "slug": "a-random-walk-down-wall-street-burton-malkiel"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780743200400-L.jpg"
+  },
+  "whoShouldSkip": []
 }

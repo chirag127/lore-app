@@ -7,13 +7,56 @@
   "isbn": "9780684835390",
   "publisher": "Free Press",
   "language": "en",
-  "genres": ["Psychology", "Philosophy", "Anthropology", "Sociology"],
-  "subjects": ["Death", "Mortality", "Existentialism", "Terror Management Theory", "Human Nature", "Psychoanalysis"],
-  "themes": ["Death Denial", "Immortality Projects", "Heroism", "Terror Management", "Human Duality", "The Cause", "Neurosis as Failed Heroism"],
-  "tags": ["death", "mortality", "existentialism", "terror management theory", "psychology", "philosophy", "anthropology", "sociology", "psychoanalysis", "ernest becker", "heroism", "immortality", "fear of death", "pulitzer prize"],
+  "genres": [
+    "Psychology",
+    "Philosophy",
+    "Anthropology",
+    "Sociology"
+  ],
+  "subjects": [
+    "Death",
+    "Mortality",
+    "Existentialism",
+    "Terror Management Theory",
+    "Human Nature",
+    "Psychoanalysis"
+  ],
+  "themes": [
+    "Death Denial",
+    "Immortality Projects",
+    "Heroism",
+    "Terror Management",
+    "Human Duality",
+    "The Cause",
+    "Neurosis as Failed Heroism"
+  ],
+  "tags": [
+    "death",
+    "mortality",
+    "existentialism",
+    "terror management theory",
+    "psychology",
+    "philosophy",
+    "anthropology",
+    "sociology",
+    "psychoanalysis",
+    "ernest becker",
+    "heroism",
+    "immortality",
+    "fear of death",
+    "pulitzer prize"
+  ],
   "difficulty": "hard",
   "estimatedReadingHours": 9,
   "estimatedListeningMinutes": 600,
   "pages": 336,
-  "excerpt": "A Pulitzer Prize-winning synthesis of Kierkegaard, Rank, Freud, and Fromm arguing that the fear of death is the fundamental driver of human behavior — that civilization itself is an elaborate defense mechanism against mortality, and that our immortality projects, hero systems, and cultural worldviews are all desperate attempts to deny the one inescapable truth of existence."
+  "excerpt": "A Pulitzer Prize-winning synthesis of Kierkegaard, Rank, Freud, and Fromm arguing that the fear of death is the fundamental driver of human behavior — that civilization itself is an elaborate defense mechanism against mortality, and that our immortality projects, hero systems, and cultural worldviews are all desperate attempts to deny the one inescapable truth of existence.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780684835390-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

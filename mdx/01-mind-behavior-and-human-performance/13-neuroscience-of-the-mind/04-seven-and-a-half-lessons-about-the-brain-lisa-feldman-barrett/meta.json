@@ -7,7 +7,12 @@
   "language": "en",
   "pageCount": 192,
   "isbn": "9780358220383",
-  "genres": ["Neuroscience", "Popular Science", "Psychology", "Science"],
+  "genres": [
+    "Neuroscience",
+    "Popular Science",
+    "Psychology",
+    "Science"
+  ],
   "subjects": [
     "Neuroscience",
     "Brain function",
@@ -40,5 +45,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 4,
   "estimatedListeningMinutes": 240,
-  "excerpt": "Your brain is not for thinking. It is for running your body — managing your budget of water, salt, glucose, oxygen, and other resources needed to keep you alive. Thinking, feeling, perceiving, remembering — these are secondary. The brain's primary job is allostasis: predicting and preparing for your body's needs before they arise."
+  "excerpt": "Your brain is not for thinking. It is for running your body — managing your budget of water, salt, glucose, oxygen, and other resources needed to keep you alive. Thinking, feeling, perceiving, remembering — these are secondary. The brain's primary job is allostasis: predicting and preparing for your body's needs before they arise.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780358220383-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

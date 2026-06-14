@@ -75,5 +75,13 @@
     "Adopted as a primary reference in multiple university NLP courses",
     "Companion GitHub repository with 10k+ stars"
   ],
-  "excerpt": "Since its introduction in 2017, the Transformer architecture has become\n    the foundation of modern natural language processing. This practical\n    book — written by the team that built the Hugging Face Transformers\n    library — shows you how to train, fine-tune, and deploy state-of-the-art\n    models for text classification, named entity recognition, question\n    answering, text generation, and summarization. You'll learn the full\n    Hugging Face ecosystem hands-on: Transformers, Datasets, Tokenizers, and\n    Accelerate, with code that runs on your laptop or scales to the cloud."
+  "excerpt": "Since its introduction in 2017, the Transformer architecture has become\n    the foundation of modern natural language processing. This practical\n    book — written by the team that built the Hugging Face Transformers\n    library — shows you how to train, fine-tune, and deploy state-of-the-art\n    models for text classification, named entity recognition, question\n    answering, text generation, and summarization. You'll learn the full\n    Hugging Face ecosystem hands-on: Transformers, Datasets, Tokenizers, and\n    Accelerate, with code that runs on your laptop or scales to the cloud.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781098136796-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

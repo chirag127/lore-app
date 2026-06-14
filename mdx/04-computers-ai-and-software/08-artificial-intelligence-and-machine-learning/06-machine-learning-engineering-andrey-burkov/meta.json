@@ -58,5 +58,13 @@
     "Cassie Kozyrkov, Chief Decision Scientist at Google",
     "Karolis Urbonas, Head of Machine Learning and Science at Amazon"
   ],
-  "excerpt": "From the author of the world bestseller The Hundred-Page Machine Learning Book: the most complete applied AI book on building reliable machine learning solutions that scale. The book is organized in the order a successful project must actually be executed — starting with whether ML is the right tool, then domain understanding, data engineering, prototyping, evaluation, production, and finally reliability — and is filled with best practices and design patterns distilled from fifteen years of solving real problems with AI."
+  "excerpt": "From the author of the world bestseller The Hundred-Page Machine Learning Book: the most complete applied AI book on building reliable machine learning solutions that scale. The book is organized in the order a successful project must actually be executed — starting with whether ML is the right tool, then domain understanding, data engineering, prototyping, evaluation, production, and finally reliability — and is filled with best practices and design patterns distilled from fifteen years of solving real problems with AI.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781999579579-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

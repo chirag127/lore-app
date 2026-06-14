@@ -48,5 +48,13 @@
   "difficulty": "medium",
   "estimatedReadingHours": 22,
   "estimatedListeningMinutes": 1320,
-  "excerpt": "A hands-on, vendor-aware field guide to real-world networking — covering everything the certification exams skip, told through war stories from a working network engineer. The book software engineers reach for when they finally need to understand what happens between the server and the wire."
+  "excerpt": "A hands-on, vendor-aware field guide to real-world networking — covering everything the certification exams skip, told through war stories from a working network engineer. The book software engineers reach for when they finally need to understand what happens between the server and the wire.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781449387860-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

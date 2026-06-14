@@ -94,5 +94,10 @@
     "the-4-hour-workweek-tim-ferriss",
     "the-intelligent-investor-benjamin-graham"
   ],
-  "excerpt": "The Cashflow Quadrant reveals why some people work less, earn more, pay less in taxes, and achieve true financial freedom — and shows you how to join them."
+  "excerpt": "The Cashflow Quadrant reveals why some people work less, earn more, pay less in taxes, and achieve true financial freedom — and shows you how to join them.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781612680054-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": []
 }

@@ -2,17 +2,46 @@
   "slug": "the-war-of-art-steven-pressfield",
   "title": "The War of Art",
   "subtitle": "Break Through the Blocks and Win Your Inner Creative Battles",
-  "authors": ["Steven Pressfield"],
+  "authors": [
+    "Steven Pressfield"
+  ],
   "publisher": "Black Irish Books",
   "isbn": "9781591840127",
   "isbn13": "978-1-59184-012-7",
   "pages": 190,
   "year": 2002,
   "language": "en",
-  "genres": ["Self-Help", "Creativity", "Psychology", "Writing"],
-  "subjects": ["Resistance", "Creative Blocks", "Professionalism", "Art"],
-  "themes": ["Resistance", "Turning Pro", "Professionalism", "Creative Blocks", "Discipline"],
-  "tags": ["resistance", "creative blocks", "writers", "artists", "entrepreneurs", "discipline", "professionalism", "procrastination", "writing", "creativity"],
+  "genres": [
+    "Self-Help",
+    "Creativity",
+    "Psychology",
+    "Writing"
+  ],
+  "subjects": [
+    "Resistance",
+    "Creative Blocks",
+    "Professionalism",
+    "Art"
+  ],
+  "themes": [
+    "Resistance",
+    "Turning Pro",
+    "Professionalism",
+    "Creative Blocks",
+    "Discipline"
+  ],
+  "tags": [
+    "resistance",
+    "creative blocks",
+    "writers",
+    "artists",
+    "entrepreneurs",
+    "discipline",
+    "professionalism",
+    "procrastination",
+    "writing",
+    "creativity"
+  ],
   "difficulty": "Beginner to Intermediate",
   "estimatedReadingHours": 4,
   "estimatedListeningMinutes": 280,
@@ -75,5 +104,8 @@
       "reason": "Stephen King's memoir on craft echoes Pressfield's insistence on showing up daily and treating writing as work, not magic."
     }
   ],
-  "coverImage": "/books/the-war-of-art-steven-pressfield/cover.jpg"
+  "coverImage": "/books/the-war-of-art-steven-pressfield/cover.jpg",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781591840127-L.jpg"
+  }
 }

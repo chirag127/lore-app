@@ -46,5 +46,13 @@
   "relatedSlugs": [
     "berkshire-hathaway-letters-warren-buffett"
   ],
-  "status": "published"
+  "status": "published",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -66,5 +66,9 @@
       "title": "Design Patterns",
       "slug": "design-patterns-gang-of-four"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492052203-L.jpg"
+  },
+  "whoShouldSkip": []
 }

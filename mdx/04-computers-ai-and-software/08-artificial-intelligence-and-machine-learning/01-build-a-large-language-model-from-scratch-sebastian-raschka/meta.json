@@ -61,5 +61,13 @@
     "Manning Publications Bestseller",
     "Featured on O'Reilly Learning Platform"
   ],
-  "excerpt": "Plan and code all the parts of an LLM from the ground up.\n    Bestselling author Sebastian Raschka guides you step by step through\n    creating your own GPT-style LLM — from text embedding and attention\n    mechanisms to pretraining and fine-tuning — using Python and PyTorch,\n    all on an ordinary laptop."
+  "excerpt": "Plan and code all the parts of an LLM from the ground up.\n    Bestselling author Sebastian Raschka guides you step by step through\n    creating your own GPT-style LLM — from text embedding and attention\n    mechanisms to pretraining and fine-tuning — using Python and PyTorch,\n    all on an ordinary laptop.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781633437166-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

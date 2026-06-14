@@ -44,12 +44,12 @@
   "estimatedListeningMinutes": 480,
   "year": 2019,
   "excerpt": "A systems-oriented approach to engineering management — applying first principles, organizational design, and process thinking to the complex problems of leading engineering teams.",
-  "addedAt": "2026-01-15",
+  "addedAt": 1768435200000,
   "authors": [
     "Will Larson"
   ],
   "cover": {
-    "url": "/books/an-elegant-puzzle-will-larson/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781732265189-L.jpg",
     "color": "#3e2723"
   },
   "keyIdeas": [

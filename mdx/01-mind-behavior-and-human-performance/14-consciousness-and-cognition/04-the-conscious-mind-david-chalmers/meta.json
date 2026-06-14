@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 432,
   "isbn": "9780195117897",
-  "genres": ["Philosophy", "Cognitive Science", "Neuroscience", "Science"],
+  "genres": [
+    "Philosophy",
+    "Cognitive Science",
+    "Neuroscience",
+    "Science"
+  ],
   "subjects": [
     "Consciousness",
     "Philosophy of mind",
@@ -42,5 +47,13 @@
   "difficulty": "advanced",
   "estimatedReadingHours": 16,
   "estimatedListeningMinutes": 960,
-  "excerpt": "Consciousness is the most familiar and the most mysterious phenomenon. But it is also something of an embarrassment for the physical sciences. No one has the foggiest idea how or why physical processes in the brain give rise to conscious experience. This explanatory gap is the central problem of consciousness. I call it the hard problem."
+  "excerpt": "Consciousness is the most familiar and the most mysterious phenomenon. But it is also something of an embarrassment for the physical sciences. No one has the foggiest idea how or why physical processes in the brain give rise to conscious experience. This explanatory gap is the central problem of consciousness. I call it the hard problem.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780195117897-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

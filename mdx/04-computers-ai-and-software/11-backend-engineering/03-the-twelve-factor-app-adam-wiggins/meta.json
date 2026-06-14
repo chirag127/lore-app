@@ -43,12 +43,12 @@
   "estimatedListeningMinutes": 180,
   "year": 2021,
   "excerpt": "A concise methodology for building software-as-a-service applications that are portable, resilient, and cloud-native — covering twelve principles from codebase management to admin processes.",
-  "addedAt": "2026-01-15",
+  "addedAt": 1768435200000,
   "authors": [
     "Adam Wiggins"
   ],
   "cover": {
-    "url": "/books/the-twelve-factor-app-adam-wiggins/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781733377913-L.jpg",
     "color": "#1b5e20"
   },
   "keyIdeas": [

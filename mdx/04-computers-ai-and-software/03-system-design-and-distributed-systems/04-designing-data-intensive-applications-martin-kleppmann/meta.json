@@ -58,5 +58,13 @@
     "Goodreads Rating 4.71/5",
     "Jay Kreps: 'bridges the huge gap between theory and practice'"
   ],
-  "excerpt": "Data is at the center of many challenges in system design today. This book helps you navigate the diverse landscape of tools and technologies for processing and storing data by examining the pros and cons of various approaches."
+  "excerpt": "Data is at the center of many challenges in system design today. This book helps you navigate the diverse landscape of tools and technologies for processing and storing data by examining the pros and cons of various approaches.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

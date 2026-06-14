@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 240,
   "isbn": "9780679763307",
-  "genres": ["Memoir", "Psychology", "Mental Health", "Autobiography"],
+  "genres": [
+    "Memoir",
+    "Psychology",
+    "Mental Health",
+    "Autobiography"
+  ],
   "subjects": [
     "Bipolar disorder",
     "Manic depression",
@@ -41,5 +46,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 6,
   "estimatedListeningMinutes": 360,
-  "excerpt": "It was a long time before I realized that the price of my manic energy would be devastating depressions that would leave me unable to work or even to get out of bed. Mania is intoxicating, seductive, and — if you are like me — far more interesting than a placid existence. But mania has a dark side. The moods soar, and then they crash. And the crash is not just a 'down' — it is a black, suicidal despair that makes the highs seem like a cruel joke."
+  "excerpt": "It was a long time before I realized that the price of my manic energy would be devastating depressions that would leave me unable to work or even to get out of bed. Mania is intoxicating, seductive, and — if you are like me — far more interesting than a placid existence. But mania has a dark side. The moods soar, and then they crash. And the crash is not just a 'down' — it is a black, suicidal despair that makes the highs seem like a cruel joke.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780679763307-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -134,5 +134,13 @@
   "authors": [
     "Plato"
   ],
-  "cover": "#1a1a2e"
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780140449273-L.jpg",
+    "color": "#1a1a2e"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

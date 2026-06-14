@@ -81,5 +81,9 @@
       "title": "Software Architecture: The Hard Parts",
       "slug": "software-architecture-the-hard-parts-neal-ford"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781736049112-L.jpg"
+  },
+  "whoShouldSkip": []
 }

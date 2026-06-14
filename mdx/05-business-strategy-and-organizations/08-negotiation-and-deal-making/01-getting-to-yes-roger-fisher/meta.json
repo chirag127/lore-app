@@ -46,14 +46,14 @@
   "estimatedListeningMinutes": 240,
   "year": 2011,
   "excerpt": "The seminal guide to principled negotiation — separating people from problems, focusing on interests not positions, inventing options for mutual gain, and insisting on objective criteria.",
-  "addedAt": "2026-06-14",
+  "addedAt": 1781395200000,
   "authors": [
     "Roger Fisher",
     "William Ury",
     "Bruce Patton"
   ],
   "cover": {
-    "url": "/books/getting-to-yes-roger-fisher/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9780143118756-L.jpg",
     "color": "#1a5276"
   },
   "keyIdeas": [

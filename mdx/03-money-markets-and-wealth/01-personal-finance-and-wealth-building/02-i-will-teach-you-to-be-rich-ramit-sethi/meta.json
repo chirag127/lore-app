@@ -88,5 +88,13 @@
   "affiliateLinks": {
     "amazon": "https://www.amazon.com/dp/1523505745",
     "goodreads": "https://www.goodreads.com/book/show/40591670-i-will-teach-you-to-be-rich"
-  }
+  },
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781523505742-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

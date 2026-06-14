@@ -61,5 +61,13 @@
     "Shingo Research and Professional Publication Award Nominee",
     "DORA research cited in Google's State of DevOps Reports 2014–2018"
   ],
-  "excerpt": "Accelerate presents the findings of four years of research by Nicole Forsgren, Jez Humble, and Gene Kim, demonstrating that software delivery performance can be measured with four key metrics and that specific technical capabilities and cultural practices reliably drive elite performance — validated by 23,000+ survey responses and rigorous statistical analysis."
+  "excerpt": "Accelerate presents the findings of four years of research by Nicole Forsgren, Jez Humble, and Gene Kim, demonstrating that software delivery performance can be measured with four key metrics and that specific technical capabilities and cultural practices reliably drive elite performance — validated by 23,000+ survey responses and rigorous statistical analysis.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781942788335-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

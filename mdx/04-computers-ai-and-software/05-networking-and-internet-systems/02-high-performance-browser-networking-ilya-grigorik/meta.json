@@ -70,5 +70,9 @@
     "site-reliability-engineering-betsy-beyer",
     "designing-data-intensive-applications-martin-kleppmann",
     "high-performance-mysql-baron-schwartz"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781449344764-L.jpg"
+  },
+  "whoShouldSkip": []
 }

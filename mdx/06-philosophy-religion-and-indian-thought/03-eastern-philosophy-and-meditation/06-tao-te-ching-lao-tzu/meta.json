@@ -153,8 +153,16 @@
     "rating": 4.5,
     "verdict": "A masterpiece of world literature that rewards infinite rereading, despite (and because of) its deliberate resistance to definitive interpretation."
   },
-  "year": "circa 4th century BCE",
+  "year": null,
   "authors": [
     "Attributed to Lao Tzu (Laozi)"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-0-14-044131-4-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

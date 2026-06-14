@@ -66,5 +66,9 @@
     "the-art-of-scalability-martin-abbott",
     "building-microservices-sam-newman",
     "site-reliability-engineering-google"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780071843655-L.jpg"
+  },
+  "whoShouldSkip": []
 }

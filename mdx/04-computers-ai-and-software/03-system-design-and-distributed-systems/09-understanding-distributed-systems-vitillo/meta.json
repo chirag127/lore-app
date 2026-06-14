@@ -93,5 +93,9 @@
       "author": "Robert C. Martin",
       "slug": "clean-architecture-robert-martin"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781838430207-L.jpg"
+  },
+  "whoShouldSkip": []
 }

@@ -52,5 +52,14 @@
   "readingTimeMinutes": 300,
   "difficulty": "intermediate",
   "amazonUrl": "https://www.amazon.com/dp/1591848369",
-  "goodreadsUrl": "https://www.goodreads.com/book/show/22091581-traction"
+  "goodreadsUrl": "https://www.goodreads.com/book/show/22091581-traction",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781591848363-L.jpg"
+  },
+  "tags": [],
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

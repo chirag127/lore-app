@@ -81,5 +81,8 @@
     "a-short-history-of-nearly-everything-bill-bryson"
   ],
   "readingTimeMinutes": 660,
-  "listeningTimeMinutes": 900
+  "listeningTimeMinutes": 900,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781324000025-L.jpg"
+  }
 }

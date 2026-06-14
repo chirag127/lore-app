@@ -8,7 +8,11 @@
   "language": "en",
   "pageCount": 320,
   "isbn": "9781632868305",
-  "genres": ["Popular Psychology", "Mental Health", "Science Writing"],
+  "genres": [
+    "Popular Psychology",
+    "Mental Health",
+    "Science Writing"
+  ],
   "subjects": [
     "Depression",
     "Anxiety",
@@ -40,5 +44,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 8,
   "estimatedListeningMinutes": 480,
-  "excerpt": "I was told, for years, that my depression was caused by a chemical imbalance in my brain. I was told this was the plain, scientific truth. But when I started to investigate the evidence, I found something astonishing: this story is not true. The chemical-imbalance theory of depression has been shown to be false by the scientific community for decades. So why are we still being told this story? And what, if not a chemical imbalance, is causing the depression and anxiety that so many of us experience?"
+  "excerpt": "I was told, for years, that my depression was caused by a chemical imbalance in my brain. I was told this was the plain, scientific truth. But when I started to investigate the evidence, I found something astonishing: this story is not true. The chemical-imbalance theory of depression has been shown to be false by the scientific community for decades. So why are we still being told this story? And what, if not a chemical imbalance, is causing the depression and anxiety that so many of us experience?",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781632868305-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

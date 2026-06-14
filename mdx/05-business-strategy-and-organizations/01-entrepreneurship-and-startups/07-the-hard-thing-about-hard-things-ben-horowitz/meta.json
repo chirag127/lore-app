@@ -55,5 +55,14 @@
   "readingTimeMinutes": 360,
   "difficulty": "intermediate",
   "amazonUrl": "https://www.amazon.com/dp/0062273205",
-  "goodreadsUrl": "https://www.goodreads.com/book/show/18176747-the-hard-thing-about-hard-things"
+  "goodreadsUrl": "https://www.goodreads.com/book/show/18176747-the-hard-thing-about-hard-things",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780062273208-L.jpg"
+  },
+  "tags": [],
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

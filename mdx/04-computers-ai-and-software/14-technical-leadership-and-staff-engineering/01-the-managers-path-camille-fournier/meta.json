@@ -8,8 +8,19 @@
   "publisher": "O'Reilly Media",
   "language": "en",
   "pageCount": 240,
-  "genres": ["Business", "Leadership", "Technology", "Career Development"],
-  "subjects": ["Engineering Management", "Leadership", "People Management", "Career", "Team Management"],
+  "genres": [
+    "Business",
+    "Leadership",
+    "Technology",
+    "Career Development"
+  ],
+  "subjects": [
+    "Engineering Management",
+    "Leadership",
+    "People Management",
+    "Career",
+    "Team Management"
+  ],
   "themes": [
     "The transition from IC to manager",
     "Effective 1-on-1 meetings and feedback",
@@ -18,11 +29,27 @@
     "Career growth for engineering leaders"
   ],
   "tags": [
-    "engineering-management", "leadership", "people-management", "career",
-    "technical-leadership", "camille-fournier", "oreilly", "team-management",
-    "mentorship", "feedback", "organizational-design"
+    "engineering-management",
+    "leadership",
+    "people-management",
+    "career",
+    "technical-leadership",
+    "camille-fournier",
+    "oreilly",
+    "team-management",
+    "mentorship",
+    "feedback",
+    "organizational-design"
   ],
   "difficulty": "easy",
   "estimatedReadingHours": 6,
-  "estimatedListeningMinutes": 360
+  "estimatedListeningMinutes": 360,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781491973891-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

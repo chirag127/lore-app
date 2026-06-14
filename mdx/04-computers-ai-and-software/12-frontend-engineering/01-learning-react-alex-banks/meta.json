@@ -48,13 +48,13 @@
   "estimatedListeningMinutes": 600,
   "year": 2020,
   "excerpt": "A hands-on guide to building web applications with React and its ecosystem — covering components, hooks, state management, routing, and GraphQL integration.",
-  "addedAt": "2026-01-15",
+  "addedAt": 1768435200000,
   "authors": [
     "Alex Banks",
     "Eve Porcello"
   ],
   "cover": {
-    "url": "/books/learning-react-alex-banks/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781492051725-L.jpg",
     "color": "#0d47a1"
   },
   "keyIdeas": [

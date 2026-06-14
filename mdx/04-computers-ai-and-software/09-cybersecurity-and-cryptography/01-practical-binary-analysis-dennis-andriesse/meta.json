@@ -87,5 +87,13 @@
   "excerpt": "Practical Binary Analysis is a hands-on technical guide to reverse engineering and binary instrumentation on Linux. Dennis Andriesse teaches readers how to build their own binary analysis tools using Intel Pin for dynamic instrumentation, covering disassembly, control flow analysis, taint tracking, and symbolic execution through real CTF-style challenges and malware samples.",
   "authors": [
     "Dennis Andriesse"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781593279127-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

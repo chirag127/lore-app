@@ -58,5 +58,13 @@
     "IEEE James H. Mulligan, Jr. Education Medal (Kurose, 2020)",
     "ACM SIGCOMM Lifetime Contribution Award (Kurose, 2016)"
   ],
-  "excerpt": "Unique among networking texts, this book uses a top-down, layered approach — starting at the application layer and working down to the physical layer — to teach the fundamental principles of computer networking through the lens of the Internet."
+  "excerpt": "Unique among networking texts, this book uses a top-down, layered approach — starting at the application layer and working down to the physical layer — to teach the fundamental principles of computer networking through the lens of the Internet.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780133594140-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 720,
   "isbn": "9781319302430",
-  "genres": ["Psychology", "Developmental Psychology", "Textbook", "Education"],
+  "genres": [
+    "Psychology",
+    "Developmental Psychology",
+    "Textbook",
+    "Education"
+  ],
   "subjects": [
     "Developmental psychology",
     "Cognitive development",
@@ -45,5 +50,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 24,
   "estimatedListeningMinutes": 1440,
-  "excerpt": "Human development is the study of change and continuity across the lifespan. From the moment of conception to the end of life, we are continually growing, adapting, and transforming. This book provides a comprehensive overview of the major theories, research findings, and applications of developmental psychology — the science of how and why people change over time."
+  "excerpt": "Human development is the study of change and continuity across the lifespan. From the moment of conception to the end of life, we are continually growing, adapting, and transforming. This book provides a comprehensive overview of the major theories, research findings, and applications of developmental psychology — the science of how and why people change over time.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781319302430-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

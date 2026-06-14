@@ -41,7 +41,7 @@
   "estimatedReadingHours": 50,
   "estimatedListeningMinutes": 600,
   "excerpt": "The world's most widely used anatomy atlas, featuring over 500 exquisite medical illustrations that emphasize clinically relevant anatomic relationships.",
-  "addedAt": "2026-06-14T00:00:00.000Z",
+  "addedAt": 1781395200000,
   "keyIdeas": [
     "Over 500 meticulously hand-painted medical illustrations unmatched in clarity",
     "Regional organization mirrors how anatomy is taught and practiced clinically",
@@ -70,5 +70,8 @@
     "grays-anatomy-for-students-richard-drake",
     "anatomy-and-physiology-openstax",
     "moores-clinically-oriented-anatomy"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780443118685-L.jpg"
+  }
 }

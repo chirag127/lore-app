@@ -85,5 +85,13 @@
     "Free online edition at sre.google",
     "Translated into 10+ languages"
   ],
-  "excerpt": "The overwhelming majority of a distributed system's lifespan is spent in use, not in design or implementation. The discipline of site reliability engineering — treating operations as a software engineering problem — is how Google keeps its massive production systems running reliably while releasing changes at breakneck speed. This book is the inside story of that discipline."
+  "excerpt": "The overwhelming majority of a distributed system's lifespan is spent in use, not in design or implementation. The discipline of site reliability engineering — treating operations as a software engineering problem — is how Google keeps its massive production systems running reliably while releasing changes at breakneck speed. This book is the inside story of that discipline.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781491929124-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

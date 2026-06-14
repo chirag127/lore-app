@@ -47,13 +47,13 @@
   "estimatedListeningMinutes": 360,
   "year": 2019,
   "excerpt": "The definitive guide to understanding venture capital term sheets, deal structures, and the entrepreneur-VC relationship — written by a seasoned VC and a startup lawyer.",
-  "addedAt": "2026-06-14",
+  "addedAt": 1781395200000,
   "authors": [
     "Brad Feld",
     "Jason Mendelson"
   ],
   "cover": {
-    "url": "/books/venture-deals-brad-feld/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781119594826-L.jpg",
     "color": "#2c3e50"
   },
   "keyIdeas": [

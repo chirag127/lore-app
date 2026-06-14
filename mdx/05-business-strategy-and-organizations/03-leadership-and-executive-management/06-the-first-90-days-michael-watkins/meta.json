@@ -75,5 +75,9 @@
       "title": "Radical Candor",
       "slug": "radical-candor-kim-scott"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781541741120-L.jpg"
+  },
+  "whoShouldSkip": []
 }

@@ -137,5 +137,12 @@
   "year": "2017",
   "authors": [
     "Donald Miller"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780310252125-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": []
 }

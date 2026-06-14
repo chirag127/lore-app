@@ -49,5 +49,14 @@
   "readingTimeMinutes": 280,
   "difficulty": "intermediate",
   "amazonUrl": "https://www.amazon.com/dp/0804139296",
-  "goodreadsUrl": "https://www.goodreads.com/book/show/18050143-zero-to-one"
+  "goodreadsUrl": "https://www.goodreads.com/book/show/18050143-zero-to-one",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780804139298-L.jpg"
+  },
+  "tags": [],
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

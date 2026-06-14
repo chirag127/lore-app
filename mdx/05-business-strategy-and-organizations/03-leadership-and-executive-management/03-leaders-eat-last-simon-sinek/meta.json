@@ -47,5 +47,14 @@
   "readingTimeMinutes": 480,
   "difficulty": "intermediate",
   "amazonUrl": "https://www.amazon.com/dp/1591848011",
-  "goodreadsUrl": "https://www.goodreads.com/book/show/12510668-leaders-eat-last"
+  "goodreadsUrl": "https://www.goodreads.com/book/show/12510668-leaders-eat-last",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781591848017-L.jpg"
+  },
+  "tags": [],
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

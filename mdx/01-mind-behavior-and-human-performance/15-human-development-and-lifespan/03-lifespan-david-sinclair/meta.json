@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 432,
   "isbn": "9781501191978",
-  "genres": ["Science", "Longevity", "Biology", "Health"],
+  "genres": [
+    "Science",
+    "Longevity",
+    "Biology",
+    "Health"
+  ],
   "subjects": [
     "Aging",
     "Longevity",
@@ -42,5 +47,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 12,
   "estimatedListeningMinutes": 720,
-  "excerpt": "Aging is not a mysterious, inevitable process. It is a disease. And like any disease, it can be treated — slowed, halted, even reversed. The evidence is mounting: we are not victims of our biology. The genes that control aging are programmable. We can learn to speak their language."
+  "excerpt": "Aging is not a mysterious, inevitable process. It is a disease. And like any disease, it can be treated — slowed, halted, even reversed. The evidence is mounting: we are not victims of our biology. The genes that control aging are programmable. We can learn to speak their language.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781501191978-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

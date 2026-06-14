@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 800,
   "isbn": "9781594205071",
-  "genres": ["Neuroscience", "Psychology", "Science", "Behavioral Science"],
+  "genres": [
+    "Neuroscience",
+    "Psychology",
+    "Science",
+    "Behavioral Science"
+  ],
   "subjects": [
     "Neuroscience",
     "Behavior",
@@ -45,5 +50,13 @@
   "difficulty": "advanced",
   "estimatedReadingHours": 24,
   "estimatedListeningMinutes": 1440,
-  "excerpt": "This book is about the biology of violence, aggression, and competition, and the biology of cooperation, empathy, and morality. It asks: why do we do the things we do? And it answers that question by examining behavior from multiple perspectives — what happened a second before, what happened minutes to days before, what happened during childhood, and what happened in the evolutionary history of our species. The answer is never simple, but it is always biological."
+  "excerpt": "This book is about the biology of violence, aggression, and competition, and the biology of cooperation, empathy, and morality. It asks: why do we do the things we do? And it answers that question by examining behavior from multiple perspectives — what happened a second before, what happened minutes to days before, what happened during childhood, and what happened in the evolutionary history of our species. The answer is never simple, but it is always biological.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781594205071-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

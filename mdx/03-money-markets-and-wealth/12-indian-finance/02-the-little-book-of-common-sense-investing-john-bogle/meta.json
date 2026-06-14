@@ -47,12 +47,12 @@
   "estimatedListeningMinutes": 240,
   "year": 2017,
   "excerpt": "The case for index investing from the founder of Vanguard — showing why low-cost index funds outperform the vast majority of actively managed funds over the long term.",
-  "addedAt": "2026-06-14",
+  "addedAt": 1781395200000,
   "authors": [
     "John C. Bogle"
   ],
   "cover": {
-    "url": "/books/the-little-book-of-common-sense-investing-john-bogle/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781119404507-L.jpg",
     "color": "#1a5276"
   },
   "keyIdeas": [

@@ -8,8 +8,19 @@
   "publisher": "Portfolio",
   "language": "en",
   "pageCount": 304,
-  "genres": ["Business", "Finance", "Venture Capital", "Entrepreneurship"],
-  "subjects": ["Venture Capital", "Fund Structure", "VC Economics", "Startup Financing", "Institutional Investing"],
+  "genres": [
+    "Business",
+    "Finance",
+    "Venture Capital",
+    "Entrepreneurship"
+  ],
+  "subjects": [
+    "Venture Capital",
+    "Fund Structure",
+    "VC Economics",
+    "Startup Financing",
+    "Institutional Investing"
+  ],
   "themes": [
     "VC fund structure and economics",
     "The GP-LP relationship and incentives",
@@ -18,11 +29,27 @@
     "Building a VC firm and reputation"
   ],
   "tags": [
-    "venture-capital", "sand-hill-road", "scott-kupor", "a16z",
-    "fund-structure", "GP-LP", "power-law", "VC-economics",
-    "andreessen-horowitz", "limited-partners", "carried-interest"
+    "venture-capital",
+    "sand-hill-road",
+    "scott-kupor",
+    "a16z",
+    "fund-structure",
+    "GP-LP",
+    "power-law",
+    "VC-economics",
+    "andreessen-horowitz",
+    "limited-partners",
+    "carried-interest"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 5,
-  "estimatedListeningMinutes": 300
+  "estimatedListeningMinutes": 300,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780593083726-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -70,5 +70,9 @@
       "title": "The Pragmatic Programmer",
       "slug": "the-pragmatic-programmer-andrew-hunt"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780201657883-L.jpg"
+  },
+  "whoShouldSkip": []
 }

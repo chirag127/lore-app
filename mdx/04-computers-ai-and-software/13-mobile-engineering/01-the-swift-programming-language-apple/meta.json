@@ -8,8 +8,20 @@
   "publisher": "Addison-Wesley",
   "language": "en",
   "pageCount": 500,
-  "genres": ["Technology", "Programming Languages", "Mobile Development", "Apple"],
-  "subjects": ["Swift", "iOS", "macOS", "Programming Language", "App Development", "Concurrency"],
+  "genres": [
+    "Technology",
+    "Programming Languages",
+    "Mobile Development",
+    "Apple"
+  ],
+  "subjects": [
+    "Swift",
+    "iOS",
+    "macOS",
+    "Programming Language",
+    "App Development",
+    "Concurrency"
+  ],
   "themes": [
     "Safety and expressiveness in language design",
     "Value types and protocol-oriented programming",
@@ -18,11 +30,29 @@
     "Type safety and compile-time error prevention"
   ],
   "tags": [
-    "swift", "ios", "macos", "apple", "programming-language",
-    "app-development", "mobile", "protocol-oriented-programming",
-    "concurrency", "addison-wesley", "arc", "optionals", "generics"
+    "swift",
+    "ios",
+    "macos",
+    "apple",
+    "programming-language",
+    "app-development",
+    "mobile",
+    "protocol-oriented-programming",
+    "concurrency",
+    "addison-wesley",
+    "arc",
+    "optionals",
+    "generics"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 12,
-  "estimatedListeningMinutes": 720
+  "estimatedListeningMinutes": 720,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492059318-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

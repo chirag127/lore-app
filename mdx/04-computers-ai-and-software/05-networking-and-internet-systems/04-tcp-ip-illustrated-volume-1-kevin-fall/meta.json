@@ -90,5 +90,13 @@
     "Foundational text behind multiple generations of Unix and network engineers",
     "Stevens received the USENIX Lifetime Achievement Award (2000, posthumous)"
   ],
-  "excerpt": "The book that taught an entire industry to read a packet capture. Where most networking texts stop at diagrams, Stevens and Fall hand you the actual bytes on the wire and walk you, byte by byte, through what the kernel and the network actually do."
+  "excerpt": "The book that taught an entire industry to read a packet capture. Where most networking texts stop at diagrams, Stevens and Fall hand you the actual bytes on the wire and walk you, byte by byte, through what the kernel and the network actually do.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780321336316-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -8,8 +8,19 @@
   "publisher": "Wiley",
   "language": "en",
   "pageCount": 240,
-  "genres": ["Finance", "Investing", "Value Investing", "Business"],
-  "subjects": ["Value Investing", "Dhandho", "Margin of Safety", "Business Analysis", "Wealth Creation"],
+  "genres": [
+    "Finance",
+    "Investing",
+    "Value Investing",
+    "Business"
+  ],
+  "subjects": [
+    "Value Investing",
+    "Dhandho",
+    "Margin of Safety",
+    "Business Analysis",
+    "Wealth Creation"
+  ],
   "themes": [
     "Asymmetric risk-reward investing",
     "The Patel motel business model as investing metaphor",
@@ -18,11 +29,28 @@
     "Patience and discipline in value investing"
   ],
   "tags": [
-    "value-investing", "dhandho", "mohnish-pabrai", "margin-of-safety",
-    "low-risk", "moat", "clone", "patel-motel", "buffett-style",
-    "graham-dodd", "intrinsic-value", "asymmetric-bets"
+    "value-investing",
+    "dhandho",
+    "mohnish-pabrai",
+    "margin-of-safety",
+    "low-risk",
+    "moat",
+    "clone",
+    "patel-motel",
+    "buffett-style",
+    "graham-dodd",
+    "intrinsic-value",
+    "asymmetric-bets"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 5,
-  "estimatedListeningMinutes": 300
+  "estimatedListeningMinutes": 300,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780470043899-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

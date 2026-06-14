@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 448,
   "isbn": "9780670038305",
-  "genres": ["Neuroscience", "Psychology", "Science", "Popular Science"],
+  "genres": [
+    "Neuroscience",
+    "Psychology",
+    "Science",
+    "Popular Science"
+  ],
   "subjects": [
     "Neuroplasticity",
     "Brain science",
@@ -43,5 +48,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 12,
   "estimatedListeningMinutes": 720,
-  "excerpt": "The idea that the brain is like a machine with specialized parts that cannot change was once the dominant view in neuroscience. But the discovery of neuroplasticity — the brain's ability to change its own structure and function in response to mental experience — has overturned this view. The brain is not a machine. It is a living, growing organ that can rewire itself throughout life."
+  "excerpt": "The idea that the brain is like a machine with specialized parts that cannot change was once the dominant view in neuroscience. But the discovery of neuroplasticity — the brain's ability to change its own structure and function in response to mental experience — has overturned this view. The brain is not a machine. It is a living, growing organ that can rewire itself throughout life.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780670038305-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

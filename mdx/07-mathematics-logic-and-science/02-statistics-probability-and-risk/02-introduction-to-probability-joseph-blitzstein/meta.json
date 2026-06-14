@@ -62,5 +62,13 @@
     "Stat 110 YouTube lectures have accumulated millions of views",
     "Widely adopted as the textbook for the edX 'Introduction to Probability' online course"
   ],
-  "excerpt": "Introduction to Probability by Joseph K. Blitzstein and Jessica Hwang is the modern, story-driven introduction to probability built from Harvard's celebrated Stat 110 lectures. With lucid prose, deep conceptual intuition, and an unmatched collection of 'story proofs,' it has become the most widely used probability textbook of its generation — equally valuable as a first course for undergraduates and as a reference for data scientists, statisticians, and machine-learning practitioners."
+  "excerpt": "Introduction to Probability by Joseph K. Blitzstein and Jessica Hwang is the modern, story-driven introduction to probability built from Harvard's celebrated Stat 110 lectures. With lucid prose, deep conceptual intuition, and an unmatched collection of 'story proofs,' it has become the most widely used probability textbook of its generation — equally valuable as a first course for undergraduates and as a reference for data scientists, statisticians, and machine-learning practitioners.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781886529236-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

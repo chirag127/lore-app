@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 736,
   "isbn": "9780380810338",
-  "genres": ["Psychology", "Self-Help", "Therapy", "Mental Health"],
+  "genres": [
+    "Psychology",
+    "Self-Help",
+    "Therapy",
+    "Mental Health"
+  ],
   "subjects": [
     "Cognitive behavioral therapy",
     "Depression",
@@ -40,5 +45,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 12,
   "estimatedListeningMinutes": 720,
-  "excerpt": "The paradox of depression is that your feelings are not trustworthy. When you are depressed, your mind plays tricks on you. Everything looks bleak, hopeless, and overwhelming. But this dark vision is nearly always distorted. The cognitive therapy approach I describe in this book will teach you to recognize the distortions in your thinking and replace them with more realistic, balanced thoughts."
+  "excerpt": "The paradox of depression is that your feelings are not trustworthy. When you are depressed, your mind plays tricks on you. Everything looks bleak, hopeless, and overwhelming. But this dark vision is nearly always distorted. The cognitive therapy approach I describe in this book will teach you to recognize the distortions in your thinking and replace them with more realistic, balanced thoughts.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780380810338-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

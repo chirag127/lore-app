@@ -8,8 +8,18 @@
   "publisher": "Henry Holt and Company",
   "language": "en",
   "pageCount": 368,
-  "genres": ["Computer Science", "Psychology", "Decision Science", "Science"],
-  "subjects": ["Algorithms", "Decision Making", "Computer Science", "Cognitive Science"],
+  "genres": [
+    "Computer Science",
+    "Psychology",
+    "Decision Science",
+    "Science"
+  ],
+  "subjects": [
+    "Algorithms",
+    "Decision Making",
+    "Computer Science",
+    "Cognitive Science"
+  ],
   "themes": [
     "Computational rationality and bounded rationality",
     "Optimal stopping and the 37% rule",
@@ -41,5 +51,13 @@
     "Amazon Best Science Books of 2016",
     "Forbes Must-Read Brain Books of 2016"
   ],
-  "excerpt": "What should we do, and leave undone, in a day or in a decade? What degree of mess should we embrace? What balance between new experiences and favored ones makes for the most fulfilling life? Computer scientists have been grappling with these same dilemmas — and their solutions offer a surprisingly practical guide to human decisions."
+  "excerpt": "What should we do, and leave undone, in a day or in a decade? What degree of mess should we embrace? What balance between new experiences and favored ones makes for the most fulfilling life? Computer scientists have been grappling with these same dilemmas — and their solutions offer a surprisingly practical guide to human decisions.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781627790369-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

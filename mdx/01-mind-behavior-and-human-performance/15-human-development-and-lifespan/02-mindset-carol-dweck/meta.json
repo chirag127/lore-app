@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 320,
   "isbn": "9781400062751",
-  "genres": ["Psychology", "Self-Help", "Education", "Business"],
+  "genres": [
+    "Psychology",
+    "Self-Help",
+    "Education",
+    "Business"
+  ],
   "subjects": [
     "Mindset",
     "Motivation",
@@ -45,5 +50,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 6,
   "estimatedListeningMinutes": 360,
-  "excerpt": "For twenty years, my research has shown that the view you adopt for yourself profoundly affects the way you lead your life. It can determine whether you become the person you want to be and whether you accomplish the things you value. How does this happen? How can a simple belief have the power to transform your psychology and, as a result, your life?"
+  "excerpt": "For twenty years, my research has shown that the view you adopt for yourself profoundly affects the way you lead your life. It can determine whether you become the person you want to be and whether you accomplish the things you value. How does this happen? How can a simple belief have the power to transform your psychology and, as a result, your life?",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781400062751-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

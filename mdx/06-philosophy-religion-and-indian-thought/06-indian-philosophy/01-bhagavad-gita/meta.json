@@ -110,8 +110,16 @@
       "T.S. Eliot referenced it in 'The Dry Salvages'"
     ]
   },
-  "year": "circa 5th-2nd century BCE",
+  "year": null,
   "authors": [
     "Attributed to Vyasa"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-1-58638-019-9-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

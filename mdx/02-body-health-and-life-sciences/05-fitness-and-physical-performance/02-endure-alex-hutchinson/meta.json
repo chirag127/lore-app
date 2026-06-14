@@ -48,5 +48,13 @@
   "difficulty": "medium",
   "estimatedReadingHours": 9,
   "excerpt": "A fascinating exploration of the science of endurance, revealing that the limits of human performance are set less by our bodies and more by a 'central governor' in the brain that regulates effort to prevent catastrophe. Winner of the 2019 National Magazine Award.",
-  "rationale": "Root book #2 for Exercise Science & Physical Training. Endure provides the neuroscientific foundation for understanding endurance, complementing Born to Run's narrative inspiration with rigorous science on how the brain regulates performance limits."
+  "rationale": "Root book #2 for Exercise Science & Physical Training. Endure provides the neuroscientific foundation for understanding endurance, complementing Born to Run's narrative inspiration with rigorous science on how the brain regulates performance limits.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780062499868-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

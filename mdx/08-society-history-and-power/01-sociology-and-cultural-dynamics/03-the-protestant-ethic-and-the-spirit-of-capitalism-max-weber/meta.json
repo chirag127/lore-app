@@ -111,5 +111,13 @@
   "authors": [
     "Max Weber"
   ],
-  "cover": "#006064"
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780199875726-L.jpg",
+    "color": "#006064"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

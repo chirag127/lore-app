@@ -57,5 +57,12 @@
     "Combinatorial generation",
     "Generating all permutations and subsets"
   ],
-  "excerpt": "The foundational treatise on the mathematical analysis of algorithms."
+  "excerpt": "The foundational treatise on the mathematical analysis of algorithms.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780201896831-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

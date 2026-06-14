@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 432,
   "isbn": "9781328662057",
-  "genres": ["Psychology", "Memoir", "Mental Health", "Self-Help"],
+  "genres": [
+    "Psychology",
+    "Memoir",
+    "Mental Health",
+    "Self-Help"
+  ],
   "subjects": [
     "Psychotherapy",
     "Therapeutic process",
@@ -39,5 +44,13 @@
   "difficulty": "beginner",
   "estimatedReadingHours": 10,
   "estimatedListeningMinutes": 600,
-  "excerpt": "Therapists talk to people all day about the most intimate details of their lives, but somehow it's always the therapist who remains a mystery — the person behind the professional facade. People often say to me, 'You probably think I'm crazy.' But what I think is: You're not crazy. You're just human. We all are."
+  "excerpt": "Therapists talk to people all day about the most intimate details of their lives, but somehow it's always the therapist who remains a mystery — the person behind the professional facade. People often say to me, 'You probably think I'm crazy.' But what I think is: You're not crazy. You're just human. We all are.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781328662057-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -7,7 +7,12 @@
   "language": "en",
   "pageCount": 528,
   "isbn": "9780316180658",
-  "genres": ["Philosophy", "Cognitive Science", "Neuroscience", "Science"],
+  "genres": [
+    "Philosophy",
+    "Cognitive Science",
+    "Neuroscience",
+    "Science"
+  ],
   "subjects": [
     "Consciousness",
     "Philosophy of mind",
@@ -40,5 +45,13 @@
   "difficulty": "advanced",
   "estimatedReadingHours": 18,
   "estimatedListeningMinutes": 1080,
-  "excerpt": "Consciousness seems to be the last bastion of occult properties, of magical powers, of ghostly presences, the only place where the mind-body problem remains truly formidable. But it is a natural phenomenon — a product of the brain's computational activities. There is no separate 'consciousness' that must be added to the brain's functions. Consciousness is the brain's functions, properly understood."
+  "excerpt": "Consciousness seems to be the last bastion of occult properties, of magical powers, of ghostly presences, the only place where the mind-body problem remains truly formidable. But it is a natural phenomenon — a product of the brain's computational activities. There is no separate 'consciousness' that must be added to the brain's functions. Consciousness is the brain's functions, properly understood.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780316180658-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

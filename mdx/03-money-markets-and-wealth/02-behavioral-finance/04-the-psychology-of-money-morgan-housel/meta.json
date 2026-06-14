@@ -58,5 +58,13 @@
   "rationale": "Unconventional addition: includes at least 2-3 unconventional picks per 10-book leaf. The Psychology of Money occupies a unique position as the rare finance besteller that rejects formulaic personal finance advice, emphasizes 'reasonable > rational,' and explicitly challenges the technical-investing orthodoxy by arguing that emotional self-awareness matters more than market knowledge.",
   "source": "generated",
   "generatedAt": "2026-06-11",
-  "cover": "#1b5e20"
+  "cover": {
+    "color": "#1b5e20",
+    "url": "https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

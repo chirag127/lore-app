@@ -84,5 +84,9 @@
   ],
   "authors": [
     "Guy Spier"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781137284363-L.jpg"
+  },
+  "whoShouldSkip": []
 }

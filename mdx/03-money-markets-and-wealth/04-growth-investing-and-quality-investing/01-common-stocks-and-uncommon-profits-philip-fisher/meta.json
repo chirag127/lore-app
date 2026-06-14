@@ -66,5 +66,9 @@
       "title": "Rich Dad Poor Dad",
       "slug": "rich-dad-poor-dad-robert-kiyosaki"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780470119165-L.jpg"
+  },
+  "whoShouldSkip": []
 }

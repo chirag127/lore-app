@@ -8,7 +8,13 @@
   "language": "en",
   "pageCount": 777,
   "isbn": "9780465026560",
-  "genres": ["Cognitive Science", "Mathematics", "Philosophy", "Art", "Music"],
+  "genres": [
+    "Cognitive Science",
+    "Mathematics",
+    "Philosophy",
+    "Art",
+    "Music"
+  ],
   "subjects": [
     "Gödel's incompleteness theorems",
     "Self-reference",
@@ -44,5 +50,13 @@
   "difficulty": "advanced",
   "estimatedReadingHours": 30,
   "estimatedListeningMinutes": 1800,
-  "excerpt": "What is a self, and how can a self come out of stuff that is not self? Why are there selves at all? These are the questions that Gödel, Escher, Bach explores. The answer, I believe, lies in the concept of a 'strange loop' — a self-referential, tangled hierarchy that arises when a system loops back on itself. And the most beautiful strange loop of all is the human mind."
+  "excerpt": "What is a self, and how can a self come out of stuff that is not self? Why are there selves at all? These are the questions that Gödel, Escher, Bach explores. The answer, I believe, lies in the concept of a 'strange loop' — a self-referential, tangled hierarchy that arises when a system loops back on itself. And the most beautiful strange loop of all is the human mind.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780465026560-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

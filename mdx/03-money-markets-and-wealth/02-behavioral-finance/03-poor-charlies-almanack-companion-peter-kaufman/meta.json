@@ -24,5 +24,13 @@
   "readingTimeMinutes": 20,
   "description": "A companion and reader's guide to Poor Charlie's Almanack, edited by Peter D. Kaufman. Focuses on Kaufman's editorial framework, chapter-by-chapter navigation, and how the companion volume supplements the main Almanack with structured context, checklists, and reading roadmaps.",
   "heroImage": "images/hero.jpg",
-  "status": "published"
+  "status": "published",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781578643038-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

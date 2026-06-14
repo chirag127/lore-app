@@ -49,5 +49,14 @@
   "readingTimeMinutes": 420,
   "difficulty": "intermediate",
   "amazonUrl": "https://www.amazon.com/dp/0061781346",
-  "goodreadsUrl": "https://www.goodreads.com/book/show/9960019-multipliers"
+  "goodreadsUrl": "https://www.goodreads.com/book/show/9960019-multipliers",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780061781348-L.jpg"
+  },
+  "tags": [],
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

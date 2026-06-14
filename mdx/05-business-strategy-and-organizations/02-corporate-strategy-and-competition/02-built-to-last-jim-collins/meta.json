@@ -72,5 +72,9 @@
       "title": "Measure What Matters",
       "slug": "measure-what-matters-john-dozz"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780060516406-L.jpg"
+  },
+  "whoShouldSkip": []
 }

@@ -8,8 +8,19 @@
   "publisher": "O'Reilly Media",
   "language": "en",
   "pageCount": 612,
-  "genres": ["Technology", "Software Engineering", "Software Architecture"],
-  "subjects": ["Microservices", "Distributed Systems", "Service Decomposition", "API Design", "DevOps", "System Design"],
+  "genres": [
+    "Technology",
+    "Software Engineering",
+    "Software Architecture"
+  ],
+  "subjects": [
+    "Microservices",
+    "Distributed Systems",
+    "Service Decomposition",
+    "API Design",
+    "DevOps",
+    "System Design"
+  ],
   "themes": [
     "Service decomposition around business domains",
     "Inter-service communication trade-offs",
@@ -18,11 +29,28 @@
     "Observability and operations at scale"
   ],
   "tags": [
-    "microservices", "software-architecture", "distributed-systems", "backend",
-    "service-decomposition", "api-design", "devops", "system-design",
-    "sam-newman", "oreilly", "kubernetes", "testing"
+    "microservices",
+    "software-architecture",
+    "distributed-systems",
+    "backend",
+    "service-decomposition",
+    "api-design",
+    "devops",
+    "system-design",
+    "sam-newman",
+    "oreilly",
+    "kubernetes",
+    "testing"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 12,
-  "estimatedListeningMinutes": 720
+  "estimatedListeningMinutes": 720,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492034025-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

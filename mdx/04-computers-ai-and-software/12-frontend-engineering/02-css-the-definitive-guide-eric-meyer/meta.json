@@ -49,12 +49,12 @@
   "estimatedListeningMinutes": 1200,
   "year": 2023,
   "excerpt": "The authoritative reference on Cascading Style Sheets — covering selectors, inheritance, box model, layout, typography, transitions, and modern CSS features like Grid and Custom Properties.",
-  "addedAt": "2026-01-15",
+  "addedAt": 1768435200000,
   "authors": [
     "Eric Meyer"
   ],
   "cover": {
-    "url": "/books/css-the-definitive-guide-eric-meyer/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781491919585-L.jpg",
     "color": "#e65100"
   },
   "keyIdeas": [

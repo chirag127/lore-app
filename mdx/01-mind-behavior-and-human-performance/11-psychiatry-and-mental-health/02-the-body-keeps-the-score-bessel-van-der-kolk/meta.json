@@ -8,7 +8,12 @@
   "language": "en",
   "pageCount": 464,
   "isbn": "9780670785933",
-  "genres": ["Psychology", "Neuroscience", "Mental Health", "Trauma Studies"],
+  "genres": [
+    "Psychology",
+    "Neuroscience",
+    "Mental Health",
+    "Trauma Studies"
+  ],
   "subjects": [
     "Trauma",
     "PTSD",
@@ -43,5 +48,13 @@
   "difficulty": "intermediate",
   "estimatedReadingHours": 15,
   "estimatedListeningMinutes": 900,
-  "excerpt": "Trauma is not just an event that took place sometime in the past; it is also the imprint left by that experience on mind, brain, and body. This imprint has ongoing consequences for how the human organism manages to survive in the present. Trauma results in a fundamental reorganization of the way mind and brain manage perceptions. It changes not only how we think and what we think about, but also our very capacity to think."
+  "excerpt": "Trauma is not just an event that took place sometime in the past; it is also the imprint left by that experience on mind, brain, and body. This imprint has ongoing consequences for how the human organism manages to survive in the present. Trauma results in a fundamental reorganization of the way mind and brain manage perceptions. It changes not only how we think and what we think about, but also our very capacity to think.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780670785933-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

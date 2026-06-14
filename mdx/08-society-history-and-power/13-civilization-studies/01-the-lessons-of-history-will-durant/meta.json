@@ -54,5 +54,13 @@
   "estimatedReadingHours": 2.5,
   "estimatedListeningMinutes": 150,
   "awards": [],
-  "excerpt": "A masterful 128-page distillation of 5,000 years of human history, distilled from the Durants' 11-volume Story of Civilization. Will and Ariel Durant examine history through twelve lenses — geography, biology, race, morality, religion, economics, socialism, government, war, growth, and progress — to extract timeless lessons about human nature, society, and the cycles of civilization."
+  "excerpt": "A masterful 128-page distillation of 5,000 years of human history, distilled from the Durants' 11-volume Story of Civilization. Will and Ariel Durant examine history through twelve lenses — geography, biology, race, morality, religion, economics, socialism, government, war, growth, and progress — to extract timeless lessons about human nature, society, and the cycles of civilization.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780671413345-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

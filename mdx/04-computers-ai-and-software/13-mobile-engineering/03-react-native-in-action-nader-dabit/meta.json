@@ -8,8 +8,20 @@
   "publisher": "Manning Publications",
   "language": "en",
   "pageCount": 360,
-  "genres": ["Technology", "Mobile Development", "Cross-Platform", "JavaScript"],
-  "subjects": ["React Native", "Mobile Development", "Cross-Platform", "iOS", "Android", "JavaScript"],
+  "genres": [
+    "Technology",
+    "Mobile Development",
+    "Cross-Platform",
+    "JavaScript"
+  ],
+  "subjects": [
+    "React Native",
+    "Mobile Development",
+    "Cross-Platform",
+    "iOS",
+    "Android",
+    "JavaScript"
+  ],
   "themes": [
     "JavaScript-to-native bridge architecture",
     "Component model for mobile development",
@@ -18,11 +30,28 @@
     "App store deployment and release management"
   ],
   "tags": [
-    "react-native", "mobile-development", "cross-platform", "react",
-    "javascript", "ios", "android", "nader-dabit", "manning",
-    "navigation", "native-modules", "expo"
+    "react-native",
+    "mobile-development",
+    "cross-platform",
+    "react",
+    "javascript",
+    "ios",
+    "android",
+    "nader-dabit",
+    "manning",
+    "navigation",
+    "native-modules",
+    "expo"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 10,
-  "estimatedListeningMinutes": 600
+  "estimatedListeningMinutes": 600,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781617295401-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -88,5 +88,12 @@
       "title": "Introduction to the Theory of Computation",
       "slug": "introduction-to-theory-of-computation-michael-sipser"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-0-XXXXXX-XX-X-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": []
 }

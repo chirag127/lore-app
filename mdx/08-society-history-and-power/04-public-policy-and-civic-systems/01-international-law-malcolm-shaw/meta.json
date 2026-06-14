@@ -38,7 +38,7 @@
     "international-criminal-law",
     "Shaw"
   ],
-  "addedAt": "2026-06-11",
+  "addedAt": 1781136000000,
   "keyIdeas": [
     "International law is a complete legal system, not merely a set of moral obligations between states",
     "Treaties and custom are the two primary sources; general principles fill gaps",
@@ -68,5 +68,8 @@
     "brownlies-principles-of-public-international-law-ian-brownlie",
     "the-concept-of-law-hla-hart",
     "the-lauterpacht-centre-international-law-james-crawford"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781107188471-L.jpg"
+  }
 }

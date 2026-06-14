@@ -7,12 +7,47 @@
   "isbn": "9780399165244",
   "publisher": "TarcherPerigee",
   "language": "en",
-  "genres": ["Education", "Science", "Self-Help", "Mathematics"],
-  "subjects": ["Mathematics", "Science Education", "Study Skills", "Neuroscience", "Cognitive Psychology"],
-  "themes": ["Metacognition", "Deliberate Practice", "Brain Plasticity", "Overcoming Math Anxiety", "Self-Directed Learning"],
-  "tags": ["learning", "math", "science", "neuroscience", "study skills", "cognitive psychology", "problem solving", "coursera", "self-improvement"],
+  "genres": [
+    "Education",
+    "Science",
+    "Self-Help",
+    "Mathematics"
+  ],
+  "subjects": [
+    "Mathematics",
+    "Science Education",
+    "Study Skills",
+    "Neuroscience",
+    "Cognitive Psychology"
+  ],
+  "themes": [
+    "Metacognition",
+    "Deliberate Practice",
+    "Brain Plasticity",
+    "Overcoming Math Anxiety",
+    "Self-Directed Learning"
+  ],
+  "tags": [
+    "learning",
+    "math",
+    "science",
+    "neuroscience",
+    "study skills",
+    "cognitive psychology",
+    "problem solving",
+    "coursera",
+    "self-improvement"
+  ],
   "difficulty": "medium",
   "estimatedReadingHours": 7,
   "estimatedListeningMinutes": 400,
-  "excerpt": "A neuroscience-backed guide revealing how your brain truly learns math and science — showing that anyone, even self-proclaimed math-haters, can retool their thinking through focused and diffuse modes, chunking, and deliberate practice."
+  "excerpt": "A neuroscience-backed guide revealing how your brain truly learns math and science — showing that anyone, even self-proclaimed math-haters, can retool their thinking through focused and diffuse modes, chunking, and deliberate practice.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780399165244-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

@@ -78,5 +78,9 @@
       "title": "Coffee Can Investing",
       "slug": "coffee-can-investing-saurabh-mukherjea"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781621291657-L.jpg"
+  },
+  "whoShouldSkip": []
 }

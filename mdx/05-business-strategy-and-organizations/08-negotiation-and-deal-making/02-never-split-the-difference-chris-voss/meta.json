@@ -8,8 +8,21 @@
   "publisher": "Harper",
   "language": "en",
   "pageCount": 288,
-  "genres": ["Business", "Negotiation", "Communication", "Self-Help", "True Crime"],
-  "subjects": ["Negotiation", "FBI Techniques", "Hostage Negotiation", "Tactical Empathy", "Communication", "Sales"],
+  "genres": [
+    "Business",
+    "Negotiation",
+    "Communication",
+    "Self-Help",
+    "True Crime"
+  ],
+  "subjects": [
+    "Negotiation",
+    "FBI Techniques",
+    "Hostage Negotiation",
+    "Tactical Empathy",
+    "Communication",
+    "Sales"
+  ],
   "themes": [
     "Tactical empathy as a negotiation tool",
     "Mirroring and labeling for rapport and information",
@@ -18,11 +31,29 @@
     "Getting to no to create safety and control"
   ],
   "tags": [
-    "negotiation", "FBI", "hostage-negotiation", "tactical-empathy", "mirroring",
-    "chris-voss", "calibrated-questions", "Ackerman-model", "labeling",
-    "active-listening", "deal-making", "sales", "bargaining"
+    "negotiation",
+    "FBI",
+    "hostage-negotiation",
+    "tactical-empathy",
+    "mirroring",
+    "chris-voss",
+    "calibrated-questions",
+    "Ackerman-model",
+    "labeling",
+    "active-listening",
+    "deal-making",
+    "sales",
+    "bargaining"
   ],
   "difficulty": "easy",
   "estimatedReadingHours": 5,
-  "estimatedListeningMinutes": 300
+  "estimatedListeningMinutes": 300,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780062407801-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

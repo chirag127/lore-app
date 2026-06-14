@@ -100,5 +100,8 @@
   "excerpt": "The Algorithm Design Manual is the rare algorithms book that treats algorithms as a craft rather than a mathematical pursuit. Its two-part structure — a practical, design-oriented Part I paired with a 75-problem catalog in Part II — has made it the go-to desk reference for working programmers who need to identify and solve algorithmic problems without wading through theorem-proof formalism.",
   "authors": [
     "Steven S. Skiena"
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/978-3030542559-L.jpg"
+  }
 }

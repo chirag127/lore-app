@@ -27,5 +27,13 @@
     "self-help",
     "classic"
   ],
-  "cover": "#c7952b"
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780451205360-L.jpg",
+    "color": "#c7952b"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

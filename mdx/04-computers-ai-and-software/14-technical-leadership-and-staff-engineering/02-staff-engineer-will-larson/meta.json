@@ -47,12 +47,12 @@
   "estimatedListeningMinutes": 480,
   "year": 2021,
   "excerpt": "The comprehensive guide to the staff-plus engineering track — covering how to get promoted to Staff Engineer, excel at the role, and navigate leadership without direct reports.",
-  "addedAt": "2026-01-15",
+  "addedAt": 1768435200000,
   "authors": [
     "Will Larson"
   ],
   "cover": {
-    "url": "/books/staff-engineer-will-larson/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781736417916-L.jpg",
     "color": "#263238"
   },
   "keyIdeas": [

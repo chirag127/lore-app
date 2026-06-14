@@ -67,5 +67,9 @@
       "title": "Designing Distributed Systems",
       "slug": null
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9798664653403-L.jpg"
+  },
+  "whoShouldSkip": []
 }

@@ -72,5 +72,9 @@
       "title": "Margin of Safety",
       "slug": "margin-of-safety-seth-klarman"
     }
-  ]
+  ],
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780071448208-L.jpg"
+  },
+  "whoShouldSkip": []
 }

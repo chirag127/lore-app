@@ -8,8 +8,20 @@
   "publisher": "Self-Published",
   "language": "en",
   "pageCount": 450,
-  "genres": ["Technology", "Mobile Development", "Cross-Platform", "Programming"],
-  "subjects": ["Flutter", "Dart", "Mobile Development", "Cross-Platform", "UI Framework", "State Management"],
+  "genres": [
+    "Technology",
+    "Mobile Development",
+    "Cross-Platform",
+    "Programming"
+  ],
+  "subjects": [
+    "Flutter",
+    "Dart",
+    "Mobile Development",
+    "Cross-Platform",
+    "UI Framework",
+    "State Management"
+  ],
   "themes": [
     "Widget-based declarative UI framework",
     "Cross-platform development from a single codebase",
@@ -18,11 +30,27 @@
     "Testing and deployment strategies"
   ],
   "tags": [
-    "flutter", "dart", "mobile-development", "cross-platform",
-    "state-management", "ui-framework", "alberto-miola", "widgets",
-    "animation", "provider", "bloc"
+    "flutter",
+    "dart",
+    "mobile-development",
+    "cross-platform",
+    "state-management",
+    "ui-framework",
+    "alberto-miola",
+    "widgets",
+    "animation",
+    "provider",
+    "bloc"
   ],
   "difficulty": "medium",
   "estimatedReadingHours": 12,
-  "estimatedListeningMinutes": 720
+  "estimatedListeningMinutes": 720,
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781735234201-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

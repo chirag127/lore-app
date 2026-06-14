@@ -69,5 +69,13 @@
   "goodreadsRatingsCount": 47790,
   "amazonRating": 4.6,
   "coverUrl": "https://covers.openlibrary.org/b/isbn/9780525543022-L.jpg",
-  "excerpt": "Every business is a collection of five interdependent processes: Value Creation, Marketing, Sales, Value Delivery, and Finance. Master these five, and you can understand — and improve — any business in the world."
+  "excerpt": "Every business is a collection of five interdependent processes: Value Creation, Marketing, Sales, Value Delivery, and Finance. Master these five, and you can understand — and improve — any business in the world.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9780525543022-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

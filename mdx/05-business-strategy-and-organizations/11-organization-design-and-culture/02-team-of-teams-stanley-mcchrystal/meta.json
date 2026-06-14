@@ -47,7 +47,7 @@
   "estimatedListeningMinutes": 360,
   "year": 2015,
   "excerpt": "A battlefield-tested blueprint for transforming rigid, hierarchical organizations into adaptable networks capable of operating at the speed of complexity.",
-  "addedAt": "2026-06-14",
+  "addedAt": 1781395200000,
   "authors": [
     "General Stanley McChrystal",
     "Tantum Collins",
@@ -55,7 +55,7 @@
     "Chris Fussell"
   ],
   "cover": {
-    "url": "/books/team-of-teams-stanley-mcchrystal/cover.webp",
+    "url": "https://covers.openlibrary.org/b/isbn/9781591847489-L.jpg",
     "color": "#34495e"
   },
   "keyIdeas": [

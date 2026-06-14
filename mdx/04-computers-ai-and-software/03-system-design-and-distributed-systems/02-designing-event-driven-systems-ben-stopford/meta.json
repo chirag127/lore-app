@@ -58,5 +58,13 @@
     "Foreword by Sam Newman (Building Microservices author)",
     "Cited as foundational reading for engineers at Confluent"
   ],
-  "excerpt": "Ben Stopford explains how service-based architectures and Apache Kafka can help you build business-critical systems, covering Event Sourcing, CQRS, and multi-team architectures with event streams as a shared source of truth."
+  "excerpt": "Ben Stopford explains how service-based architectures and Apache Kafka can help you build business-critical systems, covering Event Sourcing, CQRS, and multi-team architectures with event streams as a shared source of truth.",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781492038252-L.jpg"
+  },
+  "whoShouldRead": [],
+  "whoShouldSkip": [],
+  "keyIdeas": [],
+  "keyTakeaways": [],
+  "relatedBooks": []
 }

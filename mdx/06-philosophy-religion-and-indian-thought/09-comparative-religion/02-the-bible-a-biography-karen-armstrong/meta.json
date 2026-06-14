@@ -33,7 +33,7 @@
     "midrash",
     "reformation"
   ],
-  "addedAt": "2026-06-10",
+  "addedAt": 1781049600000,
   "authors": [
     "Karen Armstrong"
   ],
@@ -50,8 +50,12 @@
     "Insight into how political contexts shaped biblical interpretation from antiquity to modernity",
     "A nuanced perspective on fundamentalism as a reaction to modernity rather than a return to tradition"
   ],
-  "whoShouldRead": "Readers of religious history, students of biblical studies, and anyone curious about how the Bible became the world's most influential book",
-  "whoShouldSkip": "Those seeking a verse-by-verse commentary or devotional guide; specialists requiring detailed textual criticism",
+  "whoShouldRead": [
+    "Readers of religious history, students of biblical studies, and anyone curious about how the Bible became the world's most influential book"
+  ],
+  "whoShouldSkip": [
+    "Those seeking a verse-by-verse commentary or devotional guide; specialists requiring detailed textual criticism"
+  ],
   "relatedBooks": [
     "A History of God — Karen Armstrong",
     "Misquoting Jesus — Bart Ehrman",

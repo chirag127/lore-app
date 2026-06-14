@@ -25,11 +25,14 @@
   "excerpt": "Llewellyn's culminating defense of the common law's coherence and predictability, identifying fourteen steadying factors that constrain appellate judges and arguing for a return to the Grand Style of judging that balances legal craft with situation-sense.",
   "difficulty": "advanced",
   "year": 1960,
-  "addedAt": "2026-06-12",
+  "addedAt": 1781222400000,
   "authors": [
     "Karl N. Llewellyn"
   ],
-  "cover": "#2c3e50",
+  "cover": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781610277921-L.jpg",
+    "color": "#2c3e50"
+  },
   "keyIdeas": [
     "Fourteen steadying factors make appellate decision-making far more predictable than legal realism's critics feared",
     "The Grand Style of judging balances precedent, principle, and policy overtly, while the Formal Style hides value choices behind mechanical rule-application",
