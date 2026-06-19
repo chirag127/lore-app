@@ -1,4 +1,8 @@
 ---
+/*
+ * /categories — the shelves index, an outline of disciplines and
+ * sub-disciplines. Rendered as nested running lists, NOT cards.
+ */
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
 
@@ -9,10 +13,7 @@ interface CatNode { name: string; slug: string; count: number; subs: Map<string,
 
 function labelFromSlug(slug: string) {
   const cleaned = slug.replace(/^\d+-/, '')
-  return cleaned
-    .split('-')
-    .map((w) => (['ai', 'eq', 'ui', 'ux', 'api', 'seo', 'devops'].includes(w) ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1)))
-    .join(' ')
+  return cleaned.split('-').join(' ')
 }
 
 const cats = new Map<string, CatNode>()
@@ -26,75 +27,111 @@ for (const b of books) {
   c.subs.get(sub)!.count++
 }
 
-const sorted = Array.from(cats.values()).sort((a, b) => a.slug.localeCompare(b.slug))
+const sorted = Array.from(cats.values()).sort((a, b) => b.count - a.count)
 const totalBooks = books.length
 const totalCategories = sorted.length
 const totalSubcategories = sorted.reduce((s, c) => s + c.subs.size, 0)
 ---
 
 <BaseLayout
-  title="Categories — Book Lore"
-  description={`${totalBooks} books across ${totalCategories} categories and ${totalSubcategories} subcategories.`}
+  title="Shelves index — book·lore"
+  description={`Two-level taxonomy: ${totalCategories} disciplines, ${totalSubcategories} sub-disciplines, ${totalBooks} volumes.`}
 >
-  <section class="container-page page">
+  <section class="spine page">
     <header class="page-head">
-      <p class="eyebrow"><a href="/">Book Lore</a> / Categories</p>
-      <h1>Categories</h1>
-      <p class="meta">
-        A two-level taxonomy: top category, then discipline subcategory.
+      <p class="eyebrow"><a href="/">book·lore</a> / shelves index</p>
+      <h1>Shelves index</h1>
+      <p class="meta mono-caps">
+        {totalCategories} disciplines · {totalSubcategories} sub-disciplines · {totalBooks.toLocaleString()} volumes
       </p>
     </header>
 
-    <dl class="stats">
-      <div><dt>Categories</dt><dd>{totalCategories}</dd></div>
-      <div><dt>Subcategories</dt><dd>{totalSubcategories}</dd></div>
-      <div><dt>Books</dt><dd>{totalBooks.toLocaleString()}</dd></div>
-    </dl>
-
-    <ul class="cat-list">
+    <ol class="cat-list">
       {sorted.map((cat) => (
-        <li class="cat">
-          <h2>{cat.name} <span class="count">{cat.count}</span></h2>
+        <li class="cat" id={cat.slug}>
+          <header class="cat-rule">
+            <span class="cat-name label-display">{cat.name}</span>
+            <span class="cat-count mono-caps">{cat.count} {cat.count === 1 ? 'volume' : 'volumes'}</span>
+          </header>
           <ul class="sub-list">
-            {Array.from(cat.subs.values()).sort((a, b) => a.slug.localeCompare(b.slug)).map((sub) => (
+            {Array.from(cat.subs.values()).sort((a, b) => b.count - a.count).map((sub) => (
               <li class="sub">
                 <span class="sub-name">{sub.name}</span>
-                <span class="sub-count">{sub.count}</span>
+                <span class="dot-fill" aria-hidden="true">·</span>
+                <span class="sub-count mono-caps">{sub.count}</span>
               </li>
             ))}
           </ul>
         </li>
       ))}
-    </ul>
+    </ol>
   </section>
 </BaseLayout>
 
 <style>
-  .page { padding-block: 3rem 4rem; }
-  .page-head { margin-bottom: 2rem; }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.5rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .meta { color: var(--color-fg-muted); margin: 0.5rem 0 0; max-width: 60ch; }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, max-content));
-    gap: 2rem;
-    margin: 2rem 0 3rem;
+  .page { padding-block: 2rem 5rem; }
+  .cat-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
   }
-  .stats dt { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-fg-muted); }
-  .stats dd { font-family: var(--font-serif); font-size: 1.75rem; font-weight: 500; margin: 0.25rem 0 0; }
-
-  .cat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
-  .cat { padding: 1.25rem 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-bg-soft); }
-  .cat h2 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem; display: flex; align-items: baseline; gap: 0.625rem; }
-  .count { font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-fg-muted); }
-
-  .sub-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
-  @media (min-width: 640px) { .sub-list { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .sub-list { grid-template-columns: 1fr 1fr 1fr; } }
-  .sub { display: flex; justify-content: space-between; padding: 0.5rem 0.75rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-button); font-size: 0.875rem; }
-  .sub-name { color: var(--color-fg); }
-  .sub-count { color: var(--color-fg-muted); font-family: var(--font-mono); font-size: 0.75rem; }
+  .cat-rule {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+  .cat-rule::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: color-mix(in oklab, var(--brass) 70%, transparent);
+    transform: translateY(-50%);
+  }
+  .cat-name,
+  .cat-count {
+    position: relative;
+    background: var(--paper);
+    padding-inline: 0.5rem;
+  }
+  .cat-name {
+    font-size: 1.25rem;
+    padding-left: 0;
+    color: var(--ink);
+  }
+  .cat-count {
+    color: var(--brass);
+    padding-right: 0;
+  }
+  .sub-list {
+    list-style: none;
+    padding: 0 0 0 1ch;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.375rem;
+  }
+  @media (min-width: 720px) {
+    .sub-list { grid-template-columns: 1fr 1fr; column-gap: 1.5rem; }
+  }
+  .sub {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 0.9375rem;
+    color: var(--ink);
+    border-bottom: 1px dotted var(--rule);
+    padding-block: 0.25rem;
+  }
+  .sub-name { flex: 1; }
+  .sub-count { color: var(--ink-mute); }
+  .dot-fill { color: var(--brass); }
 </style>

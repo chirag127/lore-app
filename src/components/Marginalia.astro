@@ -1,0 +1,82 @@
+---
+/*
+ * Marginalia — Caveat-handwritten note rotated -1.5° in --pencil, anchored
+ * to the right outer margin column on desktop. On mobile (<900px) collapses
+ * to a `<aside class="pull-aside">` block-level pull-aside indented 2ch with
+ * a left --pencil 2px border, rotation removed.
+ *
+ * Usage in Astro / MDX:
+ *   <Marginalia note="this one finally clicked on reread" />
+ *
+ * Place it inline immediately after the paragraph it annotates. The hairline
+ * connector is drawn as a CSS pseudo-element (NOT SVG) per the spec.
+ */
+interface Props {
+  note: string
+  /** Optional signature glyph; renders italic small-caps initials in --brass. */
+  by?: string
+}
+const { note, by } = Astro.props
+---
+
+<aside class="margin-note" data-margin>
+  <span class="margin-note-text">{note}</span>
+  {by && <span class="margin-note-by mono-caps">— {by}</span>}
+</aside>
+
+<style>
+  /* Default: inline pull-aside on mobile + narrow viewports. */
+  .margin-note {
+    display: block;
+    margin: 0.75rem 0 1.25rem;
+    padding: 0.5rem 0 0.5rem 1ch;
+    border-left: 2px solid var(--pencil);
+    color: var(--pencil);
+    font-family: var(--font-hand);
+    font-size: 1.125rem;
+    line-height: 1.4;
+    max-width: 64ch;
+  }
+  .margin-note-by {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--brass);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variant-caps: small-caps;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Desktop ≥900px: hang in the right margin column.
+     The book-page layout (.book-canvas) provides a 180px margin column on
+     the right; this rule positions the note absolutely INTO that column,
+     rotated -1.5°, with a 1px pencil hairline drawn via ::before connecting
+     the note's top-left to the paragraph's right edge. */
+  @media (min-width: 900px) {
+    .book-canvas .margin-note {
+      position: absolute;
+      right: -180px;
+      width: 22ch;
+      max-width: 22ch;
+      padding: 0;
+      margin: 0;
+      border-left: 0;
+      transform: rotate(-1.5deg);
+      transform-origin: top left;
+      font-size: 1.0625rem;
+      line-height: 1.35;
+    }
+    .book-canvas .margin-note::before {
+      content: '';
+      position: absolute;
+      top: 0.4em;
+      left: -32px;
+      width: 24px;
+      height: 1px;
+      background: var(--pencil);
+      transform: rotate(-12deg);
+      transform-origin: right center;
+    }
+  }
+</style>

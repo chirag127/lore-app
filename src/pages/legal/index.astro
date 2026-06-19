@@ -10,20 +10,21 @@ const sections = [
 ]
 ---
 
-<BaseLayout title="Legal — Book Lore" description="Privacy, terms, and grievance contact for Book Lore.">
-  <header class="container-prose page-head">
-    <p class="eyebrow"><a href="/">Book Lore</a> / Legal</p>
-    <h1>Legal</h1>
-  </header>
+<BaseLayout title="Colophon & legal — book·lore" description="Privacy, terms, and grievance contact for book·lore.">
+  <section class="spine page">
+    <header class="page-head">
+      <p class="eyebrow"><a href="/">book·lore</a> / colophon</p>
+      <h1>Colophon &amp; legal</h1>
+      <p class="lede">The fine print, set in the same type as the marginalia.</p>
+    </header>
 
-  <section class="container-prose section">
     <ul class="legal-list">
       {sections.map((s) => (
         <li>
-          <a href={`/legal/${s.slug}/`} class="card">
-            <h2>{s.label}</h2>
-            <p>{s.desc}</p>
-            <span class="arrow" aria-hidden="true">→</span>
+          <a href={`/legal/${s.slug}/`} class="row">
+            <span class="row-label label-display">{s.label}</span>
+            <span class="row-desc">{s.desc}</span>
+            <span class="row-arrow mono-caps" aria-hidden="true">→</span>
           </a>
         </li>
       ))}
@@ -32,23 +33,47 @@ const sections = [
 </BaseLayout>
 
 <style>
-  .page-head { padding-block: 3rem 1.5rem; border-bottom: 1px solid var(--color-border); }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.5rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .section { padding-block: 2.5rem 4rem; }
-  .legal-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.625rem; }
-  .card {
-    display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
-    padding: 1.25rem 1.5rem;
-    background: var(--color-bg-soft);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    color: var(--color-fg); text-decoration: none;
+  .page { padding-block: 2rem 5rem; }
+  .legal-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
   }
-  .card:hover { border-color: color-mix(in oklab, var(--color-accent) 50%, var(--color-border)); color: var(--color-fg); }
-  .card h2 { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 600; margin: 0 0 0.25rem; }
-  .card p { color: var(--color-fg-muted); margin: 0; font-size: 0.9375rem; }
-  .arrow { color: var(--color-fg-soft); font-size: 1.125rem; }
-  .card:hover .arrow { color: var(--color-accent); }
+  .legal-list li {
+    border-top: 1px solid var(--rule);
+  }
+  .legal-list li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding-block: 1rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .row-label {
+    font-size: 1rem;
+  }
+  .row-desc {
+    color: var(--ink-mute);
+    font-style: italic;
+    font-family: var(--font-serif);
+    font-size: 0.9375rem;
+  }
+  .row-arrow {
+    color: var(--brass);
+  }
+  .row:hover .row-label {
+    color: var(--pencil);
+  }
+  .row:hover .row-arrow {
+    color: var(--pencil);
+  }
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr auto; }
+    .row-desc { grid-column: 1 / -1; margin-top: 0.25rem; }
+  }
 </style>

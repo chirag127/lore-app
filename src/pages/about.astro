@@ -3,64 +3,61 @@ import BaseLayout from '~/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout
-  title="About — Book Lore"
-  description="What Book Lore is, what it isn't, and how it fits in the oriz family."
+  title="About — book·lore"
+  description="A reading commons of structured book commentary. What this is, what it isn't."
 >
-  <header class="container-prose page-head">
-    <p class="eyebrow"><a href="/">Book Lore</a> / About</p>
-    <h1>About Book Lore</h1>
-  </header>
+  <section class="spine page">
+    <header class="page-head">
+      <p class="eyebrow"><a href="/">book·lore</a> / about</p>
+      <h1>About</h1>
+      <p class="lede">A reading commons. Commentary, not catalogue.</p>
+    </header>
 
-  <article class="container-prose prose">
-    <p class="lede">
-      <strong>Book Lore</strong> is a free atlas of structured book summaries.
-      Each entry is split into four parts — overview, content map, critical
-      analysis, and narration script — authored as MDX and published as plain
-      static HTML.
-    </p>
+    <article class="prose">
+      <p class="lede">
+        <strong>book·lore</strong> is what's left after I close a book — the structured
+        commentary I keep, so I don't have to remember it from scratch the next time.
+      </p>
 
-    <h2>How it works</h2>
-    <p>
-      Books are organised into a two-level taxonomy: a top category (e.g.
-      <em>Mind, Brain and Behavior</em>) and a discipline subcategory (e.g.
-      <em>Learning Science and Education</em>). Browse by
-      <a href="/categories/">category</a>, search the
-      <a href="/books/">full list</a>, or sign in to bookmark and take notes.
-    </p>
+      <h2>Four sections, one volume</h2>
+      <p>
+        Each entry breaks into four MDX artifacts: <em>overview</em>, <em>content map</em>,
+        <em>analysis</em>, and <em>narration</em>. Sections are written as the book deserves
+        — not on a schedule. A volume can sit at three-of-four for years until rereading
+        unlocks the fourth.
+      </p>
 
-    <h2>What Book Lore isn't</h2>
-    <p>
-      It is <em>not</em> a substitute for reading the book. Summaries are
-      commentary — opinionated, structured, and useful as a map; the territory
-      still belongs to the original author. Quoted excerpts fall under fair
-      use / fair dealing.
-    </p>
+      <h2>Marginalia in pencil red</h2>
+      <p>
+        Some volumes carry hand-written notes in the margin — Caveat italic, rotated
+        slightly, in the same pencil red used for section rules. They are personal: a record
+        of where I was when I read it, what I disagreed with, what I came back to. The
+        bottle-green ribbon down the left edge of every book page silently remembers where
+        you stopped reading.
+      </p>
 
-    <h2>Part of the oriz family</h2>
-    <p>
-      Book Lore is one of ten sites under <a href="https://oriz.in">oriz.in</a> —
-      a free family of static sites by Chirag Singhal. Sign-in is shared:
-      one account at <a href="https://oriz.in/account/">oriz.in/account</a>
-      works on every <code>*.oriz.in</code> site.
-    </p>
+      <h2>Not a substitute</h2>
+      <p>
+        These entries are commentary; the book itself is the territory. If a summary
+        intrigues you, please buy the original — the author did the hard work. Quoted
+        excerpts fall under fair use / fair dealing. For specific concerns from authors or
+        rights-holders, the <a href="/legal/grievance/">grievance officer</a> page is the
+        formal channel.
+      </p>
 
-    <h2>Contact</h2>
-    <p>
-      Email <a href="mailto:whyiswhen@gmail.com">whyiswhen@gmail.com</a> or
-      use the <a href="/contact/">contact form</a>.
-    </p>
-  </article>
+      <h2>Part of the oriz family</h2>
+      <p>
+        book·lore is one of eleven small sites under <a href="https://oriz.in">oriz.in</a>,
+        a free family of static sites by Chirag Singhal. Sign-in is shared: one account at
+        <a href="https://oriz.in/account/">oriz.in/account</a> works on every
+        <code>*.oriz.in</code> site.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Email <a href="mailto:whyiswhen@gmail.com">whyiswhen@gmail.com</a> or use the
+        <a href="/contact/">contact form</a>.
+      </p>
+    </article>
+  </section>
 </BaseLayout>
-
-<style>
-  .page-head { padding-block: 3rem 1.5rem; border-bottom: 1px solid var(--color-border); }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.5rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .prose { padding-block: 2.5rem 4rem; color: var(--color-prose); line-height: 1.75; font-size: 1.0625rem; }
-  .prose .lede { font-size: 1.1875rem; color: var(--color-fg); margin: 0 0 2rem; }
-  .prose h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--color-fg); margin: 2.5rem 0 1rem; }
-  .prose p { margin: 0 0 1.25rem; }
-  .prose a { color: var(--color-accent); }
-  .prose code { background: var(--color-bg-muted); padding: 0.125em 0.375em; border-radius: 0.25rem; font-size: 0.875em; }
-</style>

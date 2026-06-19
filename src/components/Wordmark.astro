@@ -1,0 +1,66 @@
+---
+/*
+ * Wordmark — book·lore set in Cormorant Garamond italic small-caps.
+ * The middot is `--pencil`. This is the site brand, not the family
+ * `oriz` strike (per the v2 spec: book-lore has its own wordmark since
+ * the site is a discrete reading-room, not a re-skinned almanac).
+ */
+
+interface Props {
+  size?: number
+  href?: string | null
+}
+
+const { size = 21.25, href = '/' } = Astro.props
+---
+
+{
+  href ? (
+    <a class="wordmark-link" href={href} aria-label="book·lore">
+      <span class="wordmark" style={`--wm-size: ${size}px;`}>
+        <span class="wordmark-word">book</span>
+        <span class="wordmark-mid" aria-hidden="true">·</span>
+        <span class="wordmark-word">lore</span>
+      </span>
+    </a>
+  ) : (
+    <span class="wordmark" style={`--wm-size: ${size}px;`}>
+      <span class="wordmark-word">book</span>
+      <span class="wordmark-mid" aria-hidden="true">·</span>
+      <span class="wordmark-word">lore</span>
+    </span>
+  )
+}
+
+<style>
+  .wordmark-link {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variant-caps: small-caps;
+    font-weight: 500;
+    font-size: var(--wm-size, 21.25px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .wordmark-word {
+    display: inline;
+  }
+  .wordmark-mid {
+    display: inline-block;
+    margin-inline: 0.05em;
+    color: var(--pencil);
+    font-style: normal;
+    transform: translateY(-0.05em);
+  }
+  .wordmark-link:hover .wordmark-mid {
+    color: var(--pencil);
+  }
+</style>

@@ -1,78 +1,171 @@
 ---
+/*
+ * /books — alphabetised running list of every volume in the catalogue.
+ *
+ * NOT a card grid (forbidden by the v2 spec). A long running list with mono
+ * small-caps subtitles and the title in Cormorant. The reader can scan
+ * vertically; sufficiency dots sit right-aligned per row.
+ */
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
 
-const books = (await getCollection('books')).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title),
-)
+const books = (await getCollection('books')).sort((a, b) => a.data.title.localeCompare(b.data.title))
 const totalBooks = books.length
+
+// Sufficiency: how many of the four MDX sections exist on disk for this slug.
+const overview = await getCollection('overview')
+const content = await getCollection('content')
+const analysis = await getCollection('analysis')
+const narration = await getCollection('narration')
+const slugHas = (col: { id: string }[], slug: string) =>
+  col.some((e) => e.id.replace(/\\/g, '/').toLowerCase().includes(`/${slug.toLowerCase()}/`))
+
+// Initial-letter index for the lefthand spine.
+const byLetter = new Map<string, typeof books>()
+for (const b of books) {
+  const c = (b.data.title[0] || '?').toUpperCase()
+  if (!byLetter.has(c)) byLetter.set(c, [])
+  byLetter.get(c)!.push(b)
+}
+const letters = Array.from(byLetter.keys()).sort()
 ---
 
 <BaseLayout
-  title="All books — Book Lore"
-  description={`Browse all ${totalBooks} structured book summaries on Book Lore.`}
+  title="Shelves — book·lore"
+  description={`A running list of every volume on book·lore — ${totalBooks} entries, alphabetised.`}
 >
-  <section class="container-page page">
+  <section class="spine page">
     <header class="page-head">
-      <p class="eyebrow"><a href="/">Book Lore</a> / Books</p>
-      <h1>All books</h1>
-      <p class="meta">{totalBooks.toLocaleString()} {totalBooks === 1 ? 'book' : 'books'}, alphabetised.</p>
+      <p class="eyebrow"><a href="/">book·lore</a> / shelves</p>
+      <h1>Shelves</h1>
+      <p class="meta mono-caps">{totalBooks.toLocaleString()} {totalBooks === 1 ? 'volume' : 'volumes'} · alphabetised</p>
     </header>
 
-    <ul class="book-grid">
-      {books.map((b) => (
-        <li>
-          <a href={`/books/${b.data.slug}/`} class="book-card">
-            <span class="book-card-title">{b.data.title}</span>
-            {b.data.authors[0] && <span class="book-card-author">{b.data.authors[0]}{b.data.year ? ` · ${b.data.year}` : ''}</span>}
-            {b.data.excerpt && <span class="book-card-excerpt">{b.data.excerpt}</span>}
-            {b.data.tags.length > 0 && (
-              <span class="book-card-tags">{b.data.tags.slice(0, 3).join(' · ')}</span>
-            )}
-          </a>
-        </li>
+    <nav class="letter-row mono-caps" aria-label="Jump to letter">
+      {letters.map((c) => (
+        <a href={`#letter-${c}`}>{c}</a>
       ))}
-    </ul>
+    </nav>
 
-    {books.length === 0 && (
-      <p class="empty">No books in the catalog yet.</p>
-    )}
+    {letters.map((c) => (
+      <section class="letter-block" id={`letter-${c}`}>
+        <h2 class="letter-h"><span>{c}</span></h2>
+        <ol class="run-list">
+          {byLetter.get(c)!.map((b) => {
+            const filled =
+              (slugHas(overview, b.data.slug) ? 1 : 0) +
+              (slugHas(content, b.data.slug) ? 1 : 0) +
+              (slugHas(analysis, b.data.slug) ? 1 : 0) +
+              (slugHas(narration, b.data.slug) ? 1 : 0)
+            return (
+              <li>
+                <a href={`/books/${b.data.slug}/`} class="run-link">
+                  <span class="run-title">{b.data.title}</span>
+                  {b.data.authors[0] && (
+                    <span class="run-byline">· {b.data.authors[0]}{b.data.year ? `, ${b.data.year}` : ''}</span>
+                  )}
+                  <span class="run-suff" aria-label={`${filled} of 4 sections`}>
+                    {Array.from({ length: 4 }).map((_, i) => (
+                      <span class={i < filled ? 'dot fill' : 'dot'}>●</span>
+                    ))}
+                  </span>
+                </a>
+              </li>
+            )
+          })}
+        </ol>
+      </section>
+    ))}
+
+    {totalBooks === 0 && <p class="empty">No volumes shelved yet.</p>}
   </section>
 </BaseLayout>
 
 <style>
-  .page { padding-block: 3rem 4rem; }
-  .page-head { margin-bottom: 2rem; }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.5rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  .eyebrow a:hover { color: var(--color-fg); }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .meta { color: var(--color-fg-muted); margin: 0.5rem 0 0; }
-
-  .book-grid {
-    list-style: none; padding: 0; margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 0.75rem;
+  .page { padding-block: 2rem 5rem; }
+  .letter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    margin: 2rem 0 1rem;
+    padding-block: 0.5rem;
+    border-block: 1px solid var(--rule);
   }
-  .book-card {
-    display: flex; flex-direction: column; gap: 0.375rem;
-    padding: 1rem 1.125rem;
-    background: var(--color-bg-soft);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    color: var(--color-fg);
+  .letter-row a {
+    color: var(--ink-mute);
     text-decoration: none;
-    height: 100%;
-    transition: border-color 120ms;
   }
-  .book-card:hover { border-color: color-mix(in oklab, var(--color-accent) 50%, var(--color-border)); color: var(--color-fg); }
-  .book-card-title { font-family: var(--font-serif); font-weight: 600; }
-  .book-card-author { font-size: 0.8125rem; color: var(--color-fg-muted); }
-  .book-card-excerpt {
-    font-size: 0.8125rem; color: var(--color-fg-soft);
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  .letter-row a:hover {
+    color: var(--pencil);
   }
-  .book-card-tags { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--color-fg-soft); text-transform: lowercase; letter-spacing: 0.08em; }
-  .empty { color: var(--color-fg-muted); }
+  .letter-block {
+    margin-block: 2rem 1rem;
+  }
+  .letter-h {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    margin: 0 0 0.5rem;
+    padding-block: 0.5rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--brass);
+  }
+  .letter-h span {
+    background: var(--paper);
+    padding-right: 0.5rem;
+  }
+  .run-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .run-list li {
+    border-top: 1px solid var(--rule);
+  }
+  .run-list li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .run-link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.625rem;
+    padding-block: 0.875rem;
+    text-decoration: none;
+    color: var(--ink);
+    flex-wrap: wrap;
+  }
+  .run-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--ink);
+  }
+  .run-link:hover .run-title {
+    color: var(--pencil);
+  }
+  .run-byline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+  }
+  .run-suff {
+    margin-left: auto;
+    display: inline-flex;
+    gap: 0.125em;
+  }
+  .dot {
+    color: var(--rule);
+    font-size: 0.6875rem;
+  }
+  .dot.fill {
+    color: var(--pencil);
+  }
+  .empty {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
 </style>

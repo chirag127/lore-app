@@ -11,11 +11,13 @@
 import { defineCollection, z } from 'astro:content'
 import { glob } from 'astro/loaders'
 
-const flexAuthor = z
-  .union([
-    z.string(),
-    z.object({ name: z.string() }).passthrough().transform((o) => o.name),
-  ])
+const flexAuthor = z.union([
+  z.string(),
+  z
+    .object({ name: z.string() })
+    .passthrough()
+    .transform((o) => o.name),
+])
 
 const coverSchema = z
   .union([
@@ -74,14 +76,40 @@ export const collections = {
         title: z.string(),
         subtitle: z.string().nullish(),
         authors: z.array(flexAuthor).default([]),
-        author: z.string().nullish(),
+        author: z
+          .union([
+            z.string(),
+            z.array(flexAuthor).transform((arr) => arr.join(', ')),
+            z
+              .object({})
+              .passthrough()
+              .transform((o) => {
+                const obj = o as Record<string, unknown>
+                const pick = obj.name ?? obj.primary ?? obj.first
+                return typeof pick === 'string' ? pick : undefined
+              }),
+          ])
+          .nullish(),
         isbn13: z.string().nullish(),
         isbn10: z.string().nullish(),
         cover: coverSchema.nullish(),
         coverUrl: z.string().nullish(),
         year: z.coerce.number().int().nullish(),
         publicationYear: z.coerce.number().int().nullish(),
-        publisher: z.string().nullish(),
+        publisher: z
+          .union([
+            z.string(),
+            z
+              .object({})
+              .passthrough()
+              .transform((o) => {
+                const obj = o as Record<string, unknown>
+                const pick =
+                  obj.name ?? obj.english_us ?? obj.english_uk ?? obj.english ?? obj.original
+                return typeof pick === 'string' ? pick : undefined
+              }),
+          ])
+          .nullish(),
         pages: z.coerce.number().int().nullish(),
         language: z.string().default('en'),
         difficulty: z
@@ -98,15 +126,15 @@ export const collections = {
         category: z
           .union([z.string(), z.array(z.string())])
           .nullish()
-          .transform((v) => (Array.isArray(v) ? v[0] : v ?? undefined)),
+          .transform((v) => (Array.isArray(v) ? v[0] : (v ?? undefined))),
         subcategory: z
           .union([z.string(), z.array(z.string())])
           .nullish()
-          .transform((v) => (Array.isArray(v) ? v[0] : v ?? undefined)),
+          .transform((v) => (Array.isArray(v) ? v[0] : (v ?? undefined))),
         subtopic: z
           .union([z.string(), z.array(z.string())])
           .nullish()
-          .transform((v) => (Array.isArray(v) ? v[0] : v ?? undefined)),
+          .transform((v) => (Array.isArray(v) ? v[0] : (v ?? undefined))),
         excerpt: z.string().default(''),
         whoShouldRead: z.array(z.string()).default([]),
         whoShouldSkip: z.array(z.string()).default([]),
@@ -120,7 +148,10 @@ export const collections = {
           raw.authors && raw.authors.length
             ? raw.authors
             : raw.author
-              ? raw.author.split(/\s*(?:,| and |&)\s*/i).map((s) => s.trim()).filter(Boolean)
+              ? raw.author
+                  .split(/\s*(?:,| and |&)\s*/i)
+                  .map((s) => s.trim())
+                  .filter(Boolean)
               : []
         const year = raw.year ?? raw.publicationYear
         const tags =

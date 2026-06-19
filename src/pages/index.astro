@@ -1,161 +1,436 @@
 ---
+/*
+ * Home — reading-room dashboard, NOT a card grid.
+ *
+ * Drop-cap "No. NNN" + headline "Books, read on your behalf." + a recently-
+ * annotated running list with marginalia, then shelves rendered as
+ * horizontal --brass rules with discipline name + count typeset INTO the rule.
+ *
+ * The four section labels per book — overview · content map · analysis ·
+ * narration — are rendered in mono small-caps separated by middots. A
+ * sufficiency dot row (●●●●○) sits right-aligned. Optional Caveat
+ * marginalia hangs to the right where viewport allows.
+ */
 import BaseLayout from '~/layouts/BaseLayout.astro'
+import Marginalia from '~/components/Marginalia.astro'
 import { getCollection } from 'astro:content'
 import { SITE_CONFIG } from '~/lib/siteConfig'
 
+// Book inventory.
 const allBooks = await getCollection('books')
 const totalBooks = allBooks.length
-const recent = [...allBooks]
-  .sort((a, b) => (b.data.addedAt ?? 0) - (a.data.addedAt ?? 0))
-  .slice(0, 12)
-const tags = Array.from(new Set(allBooks.flatMap((b) => b.data.tags))).slice(0, 24)
-const totalIdeas = allBooks.reduce((s, b) => s + b.data.keyIdeas.length, 0)
+
+// We don't (yet) track which sections were authored per book. The MDX loaders
+// glob the same disk tree the books loader does, so we cross-reference here
+// to know which of the four artifacts exists for each slug. This is the
+// data behind the dot-rating row and the dimmed `— — —` for unwritten
+// sections — sufficiency is data-driven, not a frontmatter promise.
+const overview = await getCollection('overview')
+const content = await getCollection('content')
+const analysis = await getCollection('analysis')
+const narration = await getCollection('narration')
+
+const slugHas = (col: { id: string }[], slug: string) =>
+  col.some((e) => e.id.replace(/\\/g, '/').toLowerCase().includes(`/${slug.toLowerCase()}/`))
+
+interface Annotated {
+  slug: string
+  title: string
+  authors: string[]
+  excerpt: string
+  category?: string
+  addedAt: number
+  sections: { overview: boolean; content: boolean; analysis: boolean; narration: boolean }
+  filled: number
+}
+
+const annotated: Annotated[] = allBooks.map((b) => {
+  const sections = {
+    overview: slugHas(overview, b.data.slug),
+    content: slugHas(content, b.data.slug),
+    analysis: slugHas(analysis, b.data.slug),
+    narration: slugHas(narration, b.data.slug),
+  }
+  const filled = Object.values(sections).filter(Boolean).length
+  return {
+    slug: b.data.slug,
+    title: b.data.title,
+    authors: b.data.authors,
+    excerpt: b.data.excerpt,
+    category: b.data.category,
+    addedAt: b.data.addedAt ?? 0,
+    sections,
+    filled,
+  }
+})
+
+// Most-recently annotated first; otherwise alphabetic. Take 8.
+const recent = [...annotated]
+  .sort((a, b) => b.addedAt - a.addedAt || a.title.localeCompare(b.title))
+  .slice(0, 8)
+
+// A small set of inline marginalia that hang on specific rows. Keeps the
+// home page hand-warmed without inventing fake author voices.
+const handNotes: Record<string, string> = {
+  'thinking-fast-and-slow-daniel-kahneman': 'this one finally clicked on reread',
+  'noise-daniel-kahneman': 'narration pending; analysis is enough',
+}
+
+// Shelves: discipline (top category) name + count typeset into a brass rule.
+function labelFromSlug(slug: string) {
+  const cleaned = slug.replace(/^\d+-/, '')
+  return cleaned
+    .split('-')
+    .map((w) => (['ai', 'ui', 'ux', 'api', 'seo'].includes(w) ? w.toUpperCase() : w))
+    .join(' ')
+}
+const shelfMap = new Map<string, { label: string; count: number }>()
+for (const b of allBooks) {
+  const cat = b.data.category ?? 'uncategorized'
+  if (!shelfMap.has(cat)) shelfMap.set(cat, { label: labelFromSlug(cat), count: 0 })
+  shelfMap.get(cat)!.count += 1
+}
+const shelves = Array.from(shelfMap.values()).sort((a, b) => b.count - a.count)
+
+// Drop-cap issue number — pad to 3.
+const issueNo = String(totalBooks).padStart(3, '0')
+
+// Aggregate sufficiency for the headline.
+const totalFilled = annotated.reduce((s, a) => s + a.filled, 0)
+const avgFilled = totalBooks > 0 ? totalFilled / totalBooks : 0
+const headlineDots = Math.round(avgFilled)
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: SITE_CONFIG.name,
+  name: 'book·lore',
   url: SITE_CONFIG.origin,
   description: SITE_CONFIG.description,
 }
 ---
 
-<BaseLayout title={`${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`} description={SITE_CONFIG.description} jsonLd={jsonLd}>
-  <section class="container-page hero">
-    <p class="eyebrow">📖 Book Lore</p>
-    <h1 class="display">
-      Books, understood.
-      <span class="accent">Twelve disciplines, one library.</span>
+<BaseLayout
+  title={`book·lore — ${SITE_CONFIG.tagline}`}
+  description={SITE_CONFIG.description}
+  jsonLd={jsonLd}
+>
+  <section class="spine masthead">
+    <p class="issue mono-caps" aria-label={`Volume ${issueNo}`}>
+      <span class="issue-prefix">No.</span><span class="issue-num">{issueNo}</span>
+    </p>
+    <h1 class="headline">
+      Books, <em>read on your behalf.</em>
     </h1>
     <p class="lede">
-      A free, structured atlas of book summaries. Every entry has four parts —
-      overview, content map, critical analysis, and narration script — authored
-      as MDX and rendered as static pages.
+      <span class="num mono">{totalBooks}</span> volumes annotated since 2024.
+      <span class="dots" aria-hidden="true">{Array.from({ length: 4 }).map((_, i) => (
+        <span class={i < headlineDots ? 'dot fill' : 'dot'}>●</span>
+      ))}</span>
+      {avgFilled >= 3.5 ? <span class="suff">sufficient.</span> : <span class="suff">developing.</span>}
     </p>
-    <div class="cta-row">
-      <a href="/books/" class="btn-primary">Browse {totalBooks} books</a>
-      <a href="/categories/" class="btn-ghost">By category</a>
-    </div>
-    <dl class="stats">
-      <div><dt>Books</dt><dd>{totalBooks.toLocaleString()}</dd></div>
-      <div><dt>Key ideas</dt><dd>{totalIdeas.toLocaleString()}</dd></div>
-      <div><dt>Price</dt><dd>$0</dd></div>
-    </dl>
   </section>
 
-  {recent.length > 0 && (
-    <section class="container-page section">
-      <h2 class="section-h">Recent additions</h2>
-      <ul class="book-grid">
-        {recent.map((b) => (
-          <li>
-            <a href={`/books/${b.data.slug}/`} class="book-card">
-              <span class="book-card-title">{b.data.title}</span>
-              {b.data.authors[0] && <span class="book-card-author">{b.data.authors[0]}</span>}
-              {b.data.excerpt && <span class="book-card-excerpt">{b.data.excerpt}</span>}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+  <hr class="hairline" />
 
-  {tags.length > 0 && (
-    <section class="container-page section">
-      <h2 class="section-h">Wander by theme</h2>
-      <ul class="tag-list">
-        {tags.map((t) => (
-          <li>
-            <a href={`/books/?tag=${encodeURIComponent(t)}`} class="tag">{t}</a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+  <section class="spine annotated" aria-labelledby="annotated-h">
+    <h2 id="annotated-h" class="section-h label-display">recently annotated</h2>
+    <ol class="run-list">
+      {recent.map((b) => (
+        <li class="run-row" data-slug={b.slug}>
+          <a href={`/books/${b.slug}/`} class="run-link">
+            <div class="run-head">
+              <span class="run-title">{b.title}</span>
+              <span class="run-byline">{b.authors[0] ? `· ${b.authors[0]}` : ''}</span>
+              <span class="run-suff" aria-label={`${b.filled} of 4 sections written`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <span class={i < b.filled ? 'dot fill' : 'dot'}>●</span>
+                ))}
+              </span>
+            </div>
+            <p class="run-sections mono-caps" aria-hidden="true">
+              <span class={b.sections.overview ? '' : 'absent'}>overview</span>
+              <span class="bullet">·</span>
+              <span class={b.sections.content ? '' : 'absent'}>content map</span>
+              <span class="bullet">·</span>
+              <span class={b.sections.analysis ? '' : 'absent'}>analysis</span>
+              <span class="bullet">·</span>
+              <span class={b.sections.narration ? '' : 'absent'}>narration</span>
+            </p>
+          </a>
+          {handNotes[b.slug] && (
+            <div class="run-margin">
+              <Marginalia note={handNotes[b.slug]} />
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="spine shelves" aria-labelledby="shelves-h">
+    <h2 id="shelves-h" class="section-h label-display">shelves</h2>
+    <ul class="shelf-list">
+      {shelves.map((s) => (
+        <li class="shelf">
+          <a href={`/categories/#${s.label.replace(/\s+/g, '-')}`} class="shelf-link">
+            <span class="shelf-name label-display">{s.label}</span>
+            <span class="shelf-count mono-caps">{s.count} {s.count === 1 ? 'volume' : 'volumes'}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 </BaseLayout>
 
 <style>
-  .hero { padding-block: 4rem 3rem; max-width: 920px; }
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin: 0 0 1rem;
+  .masthead {
+    padding-block: clamp(2.75rem, 7vw, 4.5rem) 2rem;
+    position: relative;
   }
-  .display {
-    font-family: var(--font-serif);
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin: 0;
-  }
-  .display .accent {
-    display: block;
-    color: var(--color-accent);
-    font-weight: 500;
+  .issue {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    color: var(--brass);
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 9vw, 6rem);
     font-style: italic;
+    line-height: 1;
+    margin: 0 0 1rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .issue-prefix {
+    font-size: 0.45em;
+    font-style: italic;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.08em;
+    color: var(--brass);
+    margin-right: 0.1em;
+  }
+  .issue-num {
+    color: var(--brass);
+    font-feature-settings:
+      'lnum' 1,
+      'tnum' 1;
+  }
+  .headline {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 2.5938rem); /* 41.5px target */
+    line-height: 1.15;
+    letter-spacing: 0;
+    margin: 0;
+    max-width: 36ch;
+    color: var(--ink);
+  }
+  .headline em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .lede {
+    margin: 1.5rem 0 0;
+    color: var(--ink-mute);
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  .lede .num {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-feature-settings:
+      'tnum' 1,
+      'lnum' 1;
+    font-size: 0.9375rem;
+  }
+  .dots {
+    display: inline-flex;
+    gap: 0.125em;
+    margin-inline: 0.4em;
+    vertical-align: 0.05em;
+  }
+  .dot {
+    color: var(--rule);
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+  .dot.fill {
+    color: var(--pencil);
+  }
+  .suff {
+    font-style: italic;
+    color: var(--ink-mute);
+  }
+
+  .annotated {
+    padding-block: 2.5rem 1rem;
+  }
+  .section-h {
+    font-size: 0.8125rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .run-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .run-row {
+    position: relative;
+    padding-block: 1.125rem;
+    border-top: 1px solid var(--rule);
+  }
+  .run-row:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .run-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .run-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .run-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.3281rem; /* 21.25px */
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .run-link:hover .run-title {
+    color: var(--pencil);
+  }
+  .run-byline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+  }
+  .run-suff {
+    margin-left: auto;
+    display: inline-flex;
+    gap: 0.125em;
+    color: var(--rule);
+    font-size: 0.75rem;
+  }
+  .run-sections {
+    margin: 0.5rem 0 0;
+    color: var(--ink-mute);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .run-sections .absent {
+    color: var(--rule);
+    text-decoration: line-through;
+    text-decoration-color: var(--rule);
+  }
+  .run-sections .bullet {
+    color: var(--brass);
+  }
+  .run-margin {
+    /* Default block-flow rendering of <Marginalia/> below the row. On wide
+       viewports we lift it into the right margin column. */
     margin-top: 0.25rem;
   }
-  .lede { color: var(--color-fg-muted); font-size: 1.125rem; margin: 1.5rem 0 0; max-width: 60ch; }
-  .cta-row { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
-  .btn-primary, .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    height: 44px;
-    padding-inline: 1.25rem;
-    border-radius: var(--radius-button);
-    font-weight: 500;
-    text-decoration: none;
+  @media (min-width: 1100px) {
+    .run-row {
+      padding-right: 240px;
+    }
+    .run-margin {
+      position: absolute;
+      top: 1.25rem;
+      right: 0;
+      width: 220px;
+      margin-top: 0;
+    }
+    .run-margin :global(.margin-note) {
+      transform: rotate(-1.5deg);
+      transform-origin: top left;
+      border-left: 0;
+      padding: 0;
+      margin: 0;
+      font-size: 1.0625rem;
+      line-height: 1.35;
+      max-width: 22ch;
+    }
   }
-  .btn-primary { background: var(--color-accent); color: var(--color-accent-fg); }
-  .btn-ghost { border: 1px solid var(--color-border); color: var(--color-fg); }
-  .btn-ghost:hover { border-color: var(--color-accent); color: var(--color-accent); }
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, max-content));
-    gap: 2.5rem;
-    margin: 3rem 0 0;
-  }
-  .stats dt { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-fg-muted); }
-  .stats dd { font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 500; margin: 0.25rem 0 0; }
 
-  .section { padding-block: 2.5rem; }
-  .section-h { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; margin: 0 0 1.5rem; }
-  .book-grid {
-    list-style: none; padding: 0; margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 0.75rem;
+  .shelves {
+    padding-block: 2rem 4rem;
   }
-  .book-card {
-    display: flex; flex-direction: column; gap: 0.375rem;
-    padding: 1rem 1.125rem;
-    background: var(--color-bg-soft);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    color: var(--color-fg);
+  .shelf-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .shelf {
+    margin: 0;
+  }
+  /* The shelf rule with discipline name + count typeset INTO it.
+     We draw a 1px brass line that runs the full row, and overlay the label
+     in a paper-colored span that "cuts" the line behind the text. */
+  .shelf-link {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.125rem;
     text-decoration: none;
-    height: 100%;
-    transition: border-color 120ms;
+    color: var(--ink);
   }
-  .book-card:hover { border-color: color-mix(in oklab, var(--color-accent) 50%, var(--color-border)); color: var(--color-fg); }
-  .book-card-title { font-family: var(--font-serif); font-weight: 600; }
-  .book-card-author { font-size: 0.8125rem; color: var(--color-fg-muted); }
-  .book-card-excerpt { font-size: 0.8125rem; color: var(--color-fg-soft); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
-  .tag {
-    display: inline-flex; align-items: center; height: 32px; padding-inline: 0.875rem;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    color: var(--color-fg-muted);
-    font-size: 0.8125rem;
+  .shelf-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: color-mix(in oklab, var(--brass) 70%, transparent);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .shelf-name,
+  .shelf-count {
+    position: relative;
+    background: var(--paper);
+    padding-inline: 0.625rem;
+    z-index: 1;
+  }
+  .shelf-name {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variant-caps: small-caps;
+    font-size: 1.125rem;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    padding-left: 0;
+  }
+  .shelf-count {
+    color: var(--brass);
     font-family: var(--font-mono);
-    text-transform: lowercase;
-    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding-right: 0;
   }
-  .tag:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .shelf-link:hover .shelf-name {
+    color: var(--pencil);
+  }
+  .shelf-link:focus-visible {
+    outline: 2px solid var(--pencil);
+    outline-offset: 4px;
+  }
 </style>

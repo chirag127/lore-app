@@ -1,10 +1,14 @@
 ---
+/*
+ * BaseLayout — book-lore aged-cream chrome with Cormorant + Source Serif 4 + Caveat.
+ *
+ * No oriz-ui style imports. Auth/contact islands are local copies in src/components.
+ */
 import '~/styles/global.css'
-import preflight from '~/lib/preflight.js?raw'
+import '~/styles/oriz-ui-overrides.css'
+
 import Header from '~/components/Header.astro'
 import Footer from '~/components/Footer.astro'
-import SiteSidebar from '~/components/SiteSidebar.astro'
-import { AdSlot } from '@chirag127/oriz-ui'
 import { SITE_CONFIG } from '~/lib/siteConfig'
 
 interface Props {
@@ -13,25 +17,25 @@ interface Props {
   canonical?: string
   noindex?: boolean
   jsonLd?: Record<string, unknown> | Record<string, unknown>[]
-  withSidebar?: boolean
+  /** Optional breadcrumb spine for book pages, rendered below the brass rule. */
+  breadcrumb?: string
 }
 
 const {
-  title = `Book Lore — ${SITE_CONFIG.tagline}`,
+  title = `book·lore — ${SITE_CONFIG.tagline}`,
   description = SITE_CONFIG.description,
   canonical = `${SITE_CONFIG.origin}${Astro.url.pathname}`,
   noindex = false,
   jsonLd,
-  withSidebar = true,
+  breadcrumb,
 } = Astro.props
 
-const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN
 const ga4Id = import.meta.env.PUBLIC_GA4_ID
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark" data-accent="amber">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,34 +48,23 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Book Lore" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:site_name" content="book·lore" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@chirag127" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Caveat:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
-    <script is:inline set:html={preflight} />
 
     {jsonLd && (
       <script
         is:inline
         type="application/ld+json"
         set:html={JSON.stringify(Array.isArray(jsonLd) ? jsonLd : [jsonLd])}
-      />
-    )}
-
-    {adsenseClient && (
-      <script
-        is:inline
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
-        crossorigin="anonymous"
       />
     )}
 
@@ -98,42 +91,8 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <Header />
-    <div class="page-shell" data-with-sidebar={withSidebar}>
-      {withSidebar && <SiteSidebar />}
-      <main id="main"><slot /></main>
-    </div>
-
-    {adsenseClient && (
-      <div class="container-page footer-ad">
-        <AdSlot client:visible client={adsenseClient} format="auto" />
-      </div>
-    )}
-
+    <Header breadcrumb={breadcrumb} />
+    <main id="main"><slot /></main>
     <Footer />
-
-    <style is:global>
-      .skip-link {
-        position: absolute;
-        left: -9999px;
-        top: 0;
-        background: var(--color-accent);
-        color: var(--color-accent-fg);
-        padding: 0.5rem 1rem;
-        z-index: 100;
-        border-radius: 0 0 0.5rem 0;
-      }
-      .skip-link:focus { left: 0; }
-      .page-shell { display: block; }
-      @media (min-width: 1024px) {
-        .page-shell[data-with-sidebar="true"] {
-          display: grid;
-          grid-template-columns: 260px minmax(0, 1fr);
-          gap: 0;
-          align-items: start;
-        }
-      }
-      .footer-ad { padding-block: 2rem; }
-    </style>
   </body>
 </html>

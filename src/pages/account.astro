@@ -1,32 +1,25 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro'
-import { AccountPanel } from '@chirag127/oriz-ui'
+import AccountPanel from '~/components/AccountPanel.tsx'
 ---
 
 <BaseLayout
-  title="Account — Book Lore"
-  description="Sign in to Book Lore. One account works across every oriz site."
+  title="Account — book·lore"
+  description="Sign in to book·lore. One account works across every oriz site."
   noindex={true}
 >
-  <header class="container-prose page-head">
-    <p class="eyebrow"><a href="/">Book Lore</a> / Account</p>
-    <h1>Account</h1>
-    <p class="lede">
-      One sign-in works across every oriz site. Bookmarks, reading list, and
-      notes follow you across <a href="https://oriz.in">the family</a>.
-    </p>
-  </header>
+  <section class="spine page">
+    <header class="page-head">
+      <p class="eyebrow"><a href="/">book·lore</a> / account</p>
+      <h1>Account</h1>
+      <p class="lede">
+        One sign-in works across every <a href="https://oriz.in">oriz</a> site — bookmarks
+        and reading state follow you.
+      </p>
+    </header>
 
-  <section class="container-prose">
-    <AccountPanel client:load />
+    <div class="prose">
+      <AccountPanel client:load siteName="book·lore" />
+    </div>
   </section>
 </BaseLayout>
-
-<style>
-  .page-head { padding-block: 3rem 1.5rem; border-bottom: 1px solid var(--color-border); }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.5rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .lede { color: var(--color-fg-muted); margin: 0.75rem 0 0; font-size: 1.0625rem; max-width: 56ch; }
-  .lede a { color: var(--color-accent); }
-</style>

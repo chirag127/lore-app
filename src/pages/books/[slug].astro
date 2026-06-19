@@ -1,6 +1,39 @@
 ---
+/*
+ * /books/[slug] — single book page.
+ *
+ * Cover-less. Four MDX sections separated by full-width pencil-red rules
+ * with italic small-caps labels. Two-column on desktop with a 180px outer
+ * margin column for Caveat marginalia + a 6px bottle-green reading ribbon
+ * pinned to the article's left padding.
+ *
+ * Body 64ch in Source Serif 4 17/1.7. Sufficiency rating + reading-path
+ * table at bottom. Unwritten sections render dimmed with `— pending —`.
+ */
 import BaseLayout from '~/layouts/BaseLayout.astro'
+import ReadingRibbon from '~/components/ReadingRibbon.tsx'
+import Marginalia from '~/components/Marginalia.astro'
+import MDXFallback from '~/components/MDXFallback.astro'
 import { getCollection, render } from 'astro:content'
+
+// Components passed to MDX <Content> renderers — every MDX in this project
+// was authored against legacy layout / chrome components that we no longer
+// ship. We supply a Proxy that maps any unknown PascalCase component name to
+// a transparent passthrough, so prose renders even when the MDX references
+// a `<BookIndexLayout>` or `<Exercise>` that no longer exists. Real HTML
+// elements (`p`, `h2`, `ul`, etc.) are not affected — MDX only uses the
+// components map to resolve identifiers that start with a capital letter.
+const mdxComponents = new Proxy(
+  {},
+  {
+    get() {
+      return MDXFallback
+    },
+    has() {
+      return true
+    },
+  },
+) as Record<string, unknown>
 
 export async function getStaticPaths() {
   const books = await getCollection('books')
@@ -10,9 +43,6 @@ export async function getStaticPaths() {
 const { book } = Astro.props
 const { data } = book
 
-// Try to load the four MDX artifacts associated with this book. They live
-// alongside meta.json under mdx/<...>/<slug>/ and ship via separate
-// collections; if any are missing we just skip that section.
 async function tryLoad(collection: 'overview' | 'content' | 'analysis' | 'narration') {
   try {
     const all = await getCollection(collection as never)
@@ -28,9 +58,42 @@ async function tryLoad(collection: 'overview' | 'content' | 'analysis' | 'narrat
 }
 
 const Overview = await tryLoad('overview')
-const Content = await tryLoad('content')
+const ContentMap = await tryLoad('content')
 const Analysis = await tryLoad('analysis')
 const Narration = await tryLoad('narration')
+
+const sectionStatus = {
+  overview: !!Overview,
+  content: !!ContentMap,
+  analysis: !!Analysis,
+  narration: !!Narration,
+}
+const filled = Object.values(sectionStatus).filter(Boolean).length
+// 5 = all four + reread documented; 4 = all four; otherwise filled count.
+// Reread is not yet structured in the schema, so we cap at 4 here.
+const dotCount = Math.min(5, filled)
+
+function labelFromSlug(slug?: string) {
+  if (!slug) return null
+  const cleaned = slug.replace(/^\d+-/, '')
+  return cleaned.split('-').join(' ')
+}
+const shelfLabel = labelFromSlug(data.category)
+const subShelfLabel = labelFromSlug(data.subcategory)
+
+// Default reading path: 1 → 2 → 3 → 4. Spec leaves room for a `path` override
+// in frontmatter; the schema doesn't yet expose it so we use the default.
+const readingPath = ['overview', 'analysis', 'narration']
+  .filter((s) => sectionStatus[s as keyof typeof sectionStatus])
+  .join(' → ')
+
+const breadcrumb = [
+  shelfLabel ? `<a href="/categories/">shelves</a>` : null,
+  shelfLabel ? `<a href="/categories/#${data.category}">${shelfLabel}</a>` : null,
+  subShelfLabel || data.title,
+]
+  .filter(Boolean)
+  .join(' <span style="color:var(--brass)">·</span> ')
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -41,135 +104,385 @@ const jsonLd = {
   isbn: data.isbn13 ?? data.isbn10,
   inLanguage: data.language,
   description: data.excerpt || undefined,
-  image: data.cover?.url,
 }
 ---
 
 <BaseLayout
-  title={`${data.title} — Book Lore`}
-  description={data.excerpt || `Structured summary of ${data.title}${data.authors[0] ? ` by ${data.authors[0]}` : ''}.`}
+  title={`${data.title} — book·lore`}
+  description={data.excerpt ||
+    `Structured commentary on ${data.title}${data.authors[0] ? ` by ${data.authors[0]}` : ''}.`}
   jsonLd={jsonLd}
+  breadcrumb={breadcrumb}
 >
-  <article class="container-page book">
-    <header class="book-head">
-      <p class="eyebrow"><a href="/">Book Lore</a> / <a href="/books/">Books</a></p>
-      <h1>{data.title}</h1>
-      {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
-      <p class="byline">
-        {data.authors.length > 0 && <span>{data.authors.join(', ')}</span>}
-        {data.year && <span> · {data.year}</span>}
-        {data.publisher && <span> · {data.publisher}</span>}
-      </p>
-      {data.tags.length > 0 && (
-        <ul class="tag-row">
-          {data.tags.slice(0, 8).map((t) => <li class="tag">{t}</li>)}
-        </ul>
-      )}
-    </header>
+  <article class="book-canvas">
+    <ReadingRibbon
+      client:idle
+      slug={data.slug}
+      paragraphSelector=".book-prose p, .book-prose li"
+    />
+    <div class="book-shell">
+      <header class="book-head">
+        <h1 class="book-title">{data.title}</h1>
+        {data.subtitle && <p class="book-subtitle">{data.subtitle}</p>}
+        <p class="book-byline">
+          {data.authors.length > 0 && <span>{data.authors.join(', ')}</span>}
+          {data.year && <span> <span class="brass-mid">·</span> {data.year}</span>}
+          {data.pages && <span> <span class="brass-mid">·</span> {data.pages}pp</span>}
+        </p>
+        <p class="book-suff" aria-label={`${dotCount} of 5 sufficiency`}>
+          <span class="dots" aria-hidden="true">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <span class={i < dotCount ? 'dot fill' : 'dot'}>●</span>
+            ))}
+          </span>
+          <span class="suff-label mono-caps">
+            {dotCount >= 4 ? 'sufficient' : dotCount >= 3 ? 'developing' : 'stub'}
+          </span>
+        </p>
+        {readingPath && (
+          <p class="book-path">
+            <span class="path-label mono-caps">reading path:</span>
+            <span class="path-body"><em>{readingPath}</em></span>
+          </p>
+        )}
+      </header>
 
-    {data.excerpt && (
-      <section class="container-prose section">
-        <p class="lede">{data.excerpt}</p>
-      </section>
-    )}
-
-    {data.keyIdeas.length > 0 && (
-      <section class="container-prose section">
-        <h2>Key ideas</h2>
-        <ol class="ideas">
-          {data.keyIdeas.map((idea) => <li>{idea}</li>)}
-        </ol>
-      </section>
-    )}
-
-    {data.whoShouldRead.length > 0 && (
-      <section class="container-prose section grid-two">
-        <div>
-          <h3>Who should read this</h3>
-          <ul>{data.whoShouldRead.map((line) => <li>{line}</li>)}</ul>
+      <section class="book-prose">
+        {/* ── overview ─────────────────────────────────────────── */}
+        <div class="rule-label" data-state={Overview ? 'present' : 'absent'}>
+          <hr class="rule" />
+          <span class="label label-display">overview</span>
+          <hr class="rule" />
         </div>
-        {data.whoShouldSkip.length > 0 && (
-          <div>
-            <h3>Who can skip it</h3>
-            <ul>{data.whoShouldSkip.map((line) => <li>{line}</li>)}</ul>
+        {Overview ? (
+          <div class="prose-body">
+            <Overview components={mdxComponents} />
           </div>
+        ) : (
+          <p class="pending"><em>— pending —</em></p>
+        )}
+
+        {/* ── content map ──────────────────────────────────────── */}
+        <div class="rule-label" data-state={ContentMap ? 'present' : 'absent'}>
+          <hr class="rule" />
+          <span class="label label-display">content map</span>
+          <hr class="rule" />
+        </div>
+        {ContentMap ? (
+          <div class="prose-body">
+            <ContentMap components={mdxComponents} />
+          </div>
+        ) : (
+          <p class="pending"><em>— pending —</em></p>
+        )}
+
+        {/* ── analysis ─────────────────────────────────────────── */}
+        <div class="rule-label" data-state={Analysis ? 'present' : 'absent'}>
+          <hr class="rule" />
+          <span class="label label-display">analysis</span>
+          <hr class="rule" />
+        </div>
+        {Analysis ? (
+          <div class="prose-body">
+            {data.slug === 'thinking-fast-and-slow-daniel-kahneman' && (
+              <Marginalia note="this one finally clicked on reread" by="cs" />
+            )}
+            <Analysis components={mdxComponents} />
+          </div>
+        ) : (
+          <p class="pending"><em>— pending —</em></p>
+        )}
+
+        {/* ── narration ────────────────────────────────────────── */}
+        <div class="rule-label" data-state={Narration ? 'present' : 'absent'}>
+          <hr class="rule" />
+          <span class="label label-display">narration</span>
+          <hr class="rule" />
+        </div>
+        {Narration ? (
+          <div class="prose-body narration-body">
+            <Narration components={mdxComponents} />
+          </div>
+        ) : (
+          <p class="pending"><em>— pending —</em></p>
         )}
       </section>
-    )}
 
-    {Overview && (
-      <section class="container-prose section prose">
-        <h2>Overview</h2>
-        <Overview />
-      </section>
-    )}
-    {Content && (
-      <section class="container-prose section prose">
-        <h2>Content</h2>
-        <Content />
-      </section>
-    )}
-    {Analysis && (
-      <section class="container-prose section prose">
-        <h2>Analysis</h2>
-        <Analysis />
-      </section>
-    )}
-    {Narration && (
-      <section class="container-prose section prose">
-        <h2>Narration</h2>
-        <Narration />
-      </section>
-    )}
-
-    <footer class="container-prose section book-foot">
-      <a href="/books/" class="back-link">← All books</a>
-    </footer>
+      <footer class="book-foot">
+        <table class="reading-path-table" aria-label="Section status">
+          <caption class="label-display">section status</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="mono-caps">section</th>
+              <th scope="col" class="mono-caps">state</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>overview</td><td>{sectionStatus.overview ? 'written' : '— pending —'}</td></tr>
+            <tr><td>content map</td><td>{sectionStatus.content ? 'written' : '— pending —'}</td></tr>
+            <tr><td>analysis</td><td>{sectionStatus.analysis ? 'written' : '— pending —'}</td></tr>
+            <tr><td>narration</td><td>{sectionStatus.narration ? 'written' : '— pending —'}</td></tr>
+          </tbody>
+        </table>
+        <p class="back">
+          <a href="/" class="back-link">‹ back to the reading commons</a>
+        </p>
+      </footer>
+    </div>
   </article>
 </BaseLayout>
 
 <style>
-  .book { padding-block: 3rem 4rem; }
-  .book-head { margin-bottom: 3rem; max-width: 720px; }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.75rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  .eyebrow a:hover { color: var(--color-fg); }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; line-height: 1.1; }
-  .subtitle { font-family: var(--font-serif); color: var(--color-fg-muted); font-size: 1.25rem; font-style: italic; margin: 0.5rem 0 0; }
-  .byline { color: var(--color-fg-muted); margin: 1rem 0 0; font-size: 0.9375rem; }
-  .tag-row { list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: 0.375rem; }
-  .tag {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-fg-muted);
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    padding: 0.25rem 0.625rem;
+  /* The canvas establishes the reading-ribbon's positioning context and the
+     180px right margin column on wide screens. */
+  .book-canvas {
+    position: relative;
+    max-width: var(--container-spine);
+    margin-inline: auto;
+    padding-inline: clamp(1.5rem, 4vw, 2rem);
+    padding-block: 2rem 4rem;
+    padding-left: 2.5rem; /* room for the 6px ribbon + breathing space */
+  }
+  @media (min-width: 900px) {
+    .book-canvas {
+      padding-right: 220px; /* margin column */
+    }
   }
 
-  .section { padding-block: 1.5rem; }
-  .section h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem; }
-  .section h3 { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 600; margin: 0 0 0.75rem; }
-  .lede { font-size: 1.125rem; color: var(--color-fg); margin: 0; line-height: 1.6; }
+  .book-shell {
+    max-width: var(--container-prose);
+  }
 
-  .ideas { padding-left: 1.5rem; margin: 0; color: var(--color-prose); }
-  .ideas li { margin-bottom: 0.625rem; line-height: 1.6; }
+  .book-head {
+    margin-bottom: 2rem;
+  }
+  .book-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 2.5938rem);
+    line-height: 1.15;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: 0;
+  }
+  .book-subtitle {
+    margin: 0.375rem 0 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--ink-mute);
+  }
+  .book-byline {
+    margin: 0.875rem 0 0;
+    color: var(--ink-mute);
+    font-size: 0.9375rem;
+    font-family: var(--font-serif);
+  }
+  .brass-mid {
+    color: var(--brass);
+  }
+  .book-suff {
+    margin: 0.75rem 0 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.625rem;
+  }
+  .dots {
+    display: inline-flex;
+    gap: 0.125em;
+  }
+  .dot {
+    color: var(--rule);
+    font-size: 0.8125rem;
+  }
+  .dot.fill {
+    color: var(--pencil);
+  }
+  .suff-label {
+    color: var(--ink-mute);
+  }
+  .book-path {
+    margin: 0.75rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+  }
+  .path-label {
+    color: var(--ink-mute);
+    margin-right: 0.5rem;
+  }
+  .path-body em {
+    font-style: italic;
+    color: var(--brass);
+  }
 
-  .grid-two { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-  @media (min-width: 768px) { .grid-two { grid-template-columns: 1fr 1fr; } }
-  .grid-two ul { padding-left: 1.25rem; margin: 0; }
-  .grid-two li { margin-bottom: 0.375rem; color: var(--color-prose); }
+  /* Section rules with label set INTO the line. */
+  .rule-label {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+  .rule-label .rule {
+    height: 1px;
+    background: var(--pencil);
+    border: 0;
+    margin: 0;
+  }
+  .rule-label .label {
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+  }
+  .rule-label[data-state='absent'] .rule {
+    background: var(--rule);
+  }
+  .rule-label[data-state='absent'] .label {
+    color: color-mix(in oklab, var(--ink) 25%, transparent);
+  }
+  .pending {
+    text-align: center;
+    color: var(--ink-mute);
+    font-family: var(--font-serif);
+    font-style: italic;
+    margin: 0 0 2rem;
+    font-size: 0.9375rem;
+  }
 
-  .prose { color: var(--color-prose); line-height: 1.7; font-size: 1.0625rem; }
-  .prose :global(p) { margin: 0 0 1rem; }
-  .prose :global(h3) { margin: 1.5rem 0 0.75rem; }
-  .prose :global(ul), .prose :global(ol) { padding-left: 1.5rem; margin: 0 0 1rem; }
-  .prose :global(a) { color: var(--color-accent); }
-  .prose :global(code) { background: var(--color-bg-muted); padding: 0.125em 0.375em; border-radius: 0.25rem; font-size: 0.875em; }
+  /* The body prose. */
+  .prose-body {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: var(--container-prose);
+  }
+  .prose-body :global(p) {
+    margin: 0 0 1.125rem;
+  }
+  .prose-body :global(p:first-of-type) {
+    /* a touch of opening drama for analysis/overview */
+    margin-top: 0;
+  }
+  .prose-body :global(h2) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 2rem 0 0.75rem;
+    letter-spacing: 0;
+  }
+  .prose-body :global(h3) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1875rem;
+    color: var(--ink);
+    margin: 1.75rem 0 0.625rem;
+  }
+  .prose-body :global(ul),
+  .prose-body :global(ol) {
+    padding-left: 1.5rem;
+    margin: 0 0 1.25rem;
+  }
+  .prose-body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose-body :global(a) {
+    color: var(--pencil);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklab, var(--pencil) 50%, transparent);
+  }
+  .prose-body :global(a:hover) {
+    text-decoration-color: var(--pencil);
+  }
+  .prose-body :global(strong) {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .prose-body :global(em) {
+    font-style: italic;
+  }
+  .prose-body :global(blockquote) {
+    border-top: 1px solid var(--pencil);
+    border-bottom: 1px solid var(--pencil);
+    padding: 1rem 0;
+    margin: 1.5rem 0 1.5rem 4ch;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6625rem; /* 26.6px */
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .prose-body :global(blockquote p) {
+    margin: 0;
+  }
+  .prose-body :global(code) {
+    font-family: var(--font-mono);
+    background: var(--paper-2);
+    color: var(--ink);
+    font-size: 0.875em;
+    padding: 0.125em 0.375em;
+  }
 
-  .book-foot { padding-block: 2rem 0; }
-  .back-link { color: var(--color-fg-muted); text-decoration: none; }
-  .back-link:hover { color: var(--color-accent); }
+  /* Narration: bottle-green tinted drop-cap on first paragraph. */
+  .narration-body :global(p:first-of-type::first-letter) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 3.5em;
+    line-height: 0.9;
+    float: left;
+    margin: 0.05em 0.15em -0.1em 0;
+    color: var(--bottle);
+  }
+
+  .book-foot {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .reading-path-table {
+    width: 100%;
+    max-width: 36rem;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  .reading-path-table caption {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: var(--pencil);
+  }
+  .reading-path-table th,
+  .reading-path-table td {
+    text-align: left;
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--font-serif);
+    font-size: 0.9375rem;
+    color: var(--ink);
+  }
+  .reading-path-table th {
+    color: var(--ink-mute);
+    font-weight: 500;
+    font-size: 11px;
+  }
+  .reading-path-table td:last-child {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  .back-link {
+    color: var(--ink-mute);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .back-link:hover {
+    color: var(--pencil);
+  }
 </style>

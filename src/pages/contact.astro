@@ -1,43 +1,79 @@
 ---
+/*
+ * /contact — Web3Forms-backed static form using `[data-oriz-contact-*]` hooks.
+ */
 import BaseLayout from '~/layouts/BaseLayout.astro'
-import { ContactForm } from '@chirag127/oriz-ui'
+
 const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? ''
 ---
 
 <BaseLayout
-  title="Contact — Book Lore"
-  description="Get in touch about Book Lore — typo, broken link, request a book, or feedback."
+  title="Contact — book·lore"
+  description="Get in touch — typo, broken link, request a book, or feedback."
 >
-  <header class="container-prose page-head">
-    <p class="eyebrow"><a href="/">Book Lore</a> / Contact</p>
-    <h1>Contact</h1>
-  </header>
+  <section class="spine page">
+    <header class="page-head">
+      <p class="eyebrow"><a href="/">book·lore</a> / contact</p>
+      <h1>Contact</h1>
+      <p class="lede">
+        Email is fastest:
+        <a href="mailto:whyiswhen@gmail.com"><strong>whyiswhen@gmail.com</strong></a>.
+      </p>
+    </header>
 
-  <section class="container-prose intro">
-    <p class="lede">
-      Spotted a typo? Want to request a book? Disagree with an analysis?
-      Email <a href="mailto:whyiswhen@gmail.com"><strong>whyiswhen@gmail.com</strong></a>
-      or use the form below — it posts via Web3Forms straight to my inbox.
-    </p>
-    <p>
-      Book Lore summaries are commentary; if you are an author or rights-holder
-      and have a concern about a specific entry, please contact the
-      <a href="/legal/grievance/">grievance officer</a>.
-    </p>
-  </section>
+    <div class="prose">
+      <p>
+        For anything site-related — typo on a page, broken link, suggestion, or to request a
+        book — use the form below. It posts to <a href="https://web3forms.com">Web3Forms</a>
+        which forwards to my inbox. No data is stored on this site.
+      </p>
 
-  <section class="container-prose form-wrap">
-    <ContactForm client:load web3formsKey={web3formsKey} fromName="book-lore.oriz.in contact form" />
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        data-oriz-contact
+        data-oriz-contact-status="idle"
+      >
+        <input type="hidden" name="access_key" value={web3formsKey} />
+        <input type="hidden" name="from_name" value="book-lore.oriz.in contact form" />
+        <input
+          type="text"
+          name="botcheck"
+          data-oriz-contact-honeypot
+          tabindex="-1"
+          autocomplete="off"
+        />
+        <label data-oriz-contact-field="name">
+          <span>Your name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label data-oriz-contact-field="email">
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label data-oriz-contact-field="subject">
+          <span>Subject</span>
+          <input type="text" name="subject" required />
+        </label>
+        <label data-oriz-contact-field="message">
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button type="submit" data-oriz-contact-submit>Send</button>
+      </form>
+
+      <p class="meta-note">
+        For privacy questions or DMCA notices, see the
+        <a href="/legal/grievance/">grievance officer</a> page (mandatory under IT Rules 2021).
+      </p>
+    </div>
   </section>
 </BaseLayout>
 
 <style>
-  .page-head { padding-block: 3rem 1.5rem; border-bottom: 1px solid var(--color-border); }
-  .eyebrow { color: var(--color-fg-muted); font-size: 0.8125rem; margin: 0 0 0.5rem; }
-  .eyebrow a { color: var(--color-fg-muted); text-decoration: none; }
-  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .intro { padding-block: 2rem 1rem; color: var(--color-prose); line-height: 1.7; font-size: 1.0625rem; }
-  .intro .lede { font-size: 1.1875rem; color: var(--color-fg); margin: 0 0 1.25rem; }
-  .intro a { color: var(--color-accent); }
-  .form-wrap { padding-block: 1rem 4rem; }
+  .meta-note {
+    font-size: 0.875rem;
+    color: var(--ink-mute);
+    margin-top: 2rem;
+  }
 </style>

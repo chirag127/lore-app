@@ -1,0 +1,21 @@
+---
+/*
+ * MDXFallback — passthrough wrapper that renders any unknown MDX component
+ * as its children inside a div. Lets us gracefully render MDX content that
+ * was authored against legacy layout components (BookIndexLayout, etc.) that
+ * don't exist in the current chrome.
+ *
+ * Catches: anything passed in. Always renders the slot.
+ */
+const Tag: 'div' = 'div'
+---
+
+<Tag class="mdx-fallback">
+  <slot />
+</Tag>
+
+<style>
+  .mdx-fallback {
+    display: contents;
+  }
+</style>

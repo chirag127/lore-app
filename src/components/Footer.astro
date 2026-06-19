@@ -1,93 +1,103 @@
 ---
-import { FAMILY_SITES } from '@chirag127/oriz-ui'
+/*
+ * Footer — colophon as italic paragraph (Source Serif 4) + utility links in
+ * mono small-caps separated by brass middots. Background is `--paper-2`.
+ *
+ * No newsletter, no email capture, no social icons, no emoji.
+ */
+
+const deployTime =
+  import.meta.env.PUBLIC_DEPLOY_TIME ?? new Date().toISOString().slice(0, 16).replace('T', ' ')
+const gitSha = import.meta.env.PUBLIC_GIT_SHA ?? 'dev'
 const year = new Date().getFullYear()
 ---
 
-<footer class="site-footer">
-  <div class="container-page footer-inner">
-    <div class="footer-col">
-      <p class="footer-brand">📖 Book Lore</p>
-      <p class="footer-tag">
-        Structured book summaries — overview, content, analysis, narration.
-        Part of the <a href="https://oriz.in">oriz</a> family.
-      </p>
-    </div>
-
-    <div class="footer-col">
-      <h2 class="footer-h">Site</h2>
-      <ul class="footer-links">
-        <li><a href="/books/">Books</a></li>
-        <li><a href="/categories/">Categories</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h2 class="footer-h">Family</h2>
-      <ul class="footer-links">
-        {FAMILY_SITES.filter((s) => s.slug !== 'book-lore').map((s) => (
-          <li><a href={s.url}>{s.name}</a></li>
-        ))}
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h2 class="footer-h">Legal</h2>
-      <ul class="footer-links">
-        <li><a href="/legal/privacy/">Privacy</a></li>
-        <li><a href="/legal/terms/">Terms</a></li>
-        <li><a href="/legal/disclaimer/">Disclaimer</a></li>
-        <li><a href="/legal/cookies/">Cookies</a></li>
-        <li><a href="/legal/grievance/">Grievance officer</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container-page footer-bottom">
-    <p>&copy; {year} Chirag Singhal. Book Lore is part of the <a href="https://github.com/chirag127/oriz">oriz</a> family.</p>
+<footer class="footer">
+  <hr class="hairline" />
+  <div class="spine footer-band">
+    <p class="colophon">
+      Set in Cormorant Garamond and Source Serif 4 on aged cream. Marginalia in Caveat,
+      pencil red. Reading ribbon in bottle green. A reading commons under
+      <a href="https://oriz.in">oriz.in</a>, since the autumn of 2024.
+    </p>
+    <nav class="utility-row mono-caps" aria-label="Footer">
+      <a href="/books/">shelves</a>
+      <span class="bullet" aria-hidden="true">·</span>
+      <a href="/about/">about</a>
+      <span class="bullet" aria-hidden="true">·</span>
+      <a href="/contact/">contact</a>
+      <span class="bullet" aria-hidden="true">·</span>
+      <a href="/legal/">colophon</a>
+      <span class="bullet" aria-hidden="true">·</span>
+      <a href="https://github.com/chirag127/oriz-book-lore">source</a>
+    </nav>
+    <p class="meta mono">
+      &copy; {year} chirag singhal · deployed <time datetime={deployTime}>{deployTime}</time> ·
+      <code>{gitSha}</code>
+    </p>
   </div>
 </footer>
 
 <style>
-  .site-footer {
+  .footer {
     margin-top: 6rem;
-    padding-block: 3rem 1.5rem;
-    border-top: 1px solid var(--color-border);
-    background: var(--color-bg-soft);
+    background: var(--paper-2);
   }
-  .footer-inner {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .footer-band {
+    padding-block: 2.25rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  @media (min-width: 640px) { .footer-inner { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .footer-inner { grid-template-columns: 2fr 1fr 1fr 1fr; } }
-  .footer-brand {
+  .colophon {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
+    font-style: italic;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+    max-width: 64ch;
   }
-  .footer-tag { color: var(--color-fg-muted); margin: 0; max-width: 36ch; }
-  .footer-tag a { color: var(--color-accent); }
-  .footer-h {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-fg-muted);
-    margin: 0 0 0.75rem;
+  .colophon a {
+    color: var(--pencil);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--pencil) 50%, transparent);
+    text-underline-offset: 3px;
   }
-  .footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
-  .footer-links a { color: var(--color-fg-muted); text-decoration: none; font-size: 0.9375rem; }
-  .footer-links a:hover { color: var(--color-fg); }
-  .footer-bottom {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
-    color: var(--color-fg-soft);
-    font-size: 0.8125rem;
+  .utility-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: var(--ink-mute);
+    margin: 0.5rem 0 0;
   }
-  .footer-bottom p { margin: 0; }
-  .footer-bottom a { color: var(--color-fg-muted); }
+  .utility-row a {
+    color: var(--ink-mute);
+    text-decoration: none;
+  }
+  .utility-row a:hover {
+    color: var(--pencil);
+  }
+  .bullet {
+    color: var(--brass);
+    font-family: var(--font-mono);
+  }
+  .meta {
+    margin: 0.5rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    font-feature-settings:
+      'tnum' 1,
+      'zero' 1,
+      'calt' 0;
+  }
+  .meta code {
+    font-family: var(--font-mono);
+    color: var(--ink);
+    background: transparent;
+    padding: 0;
+  }
 </style>
