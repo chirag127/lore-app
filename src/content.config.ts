@@ -144,15 +144,14 @@ export const collections = {
       })
       .passthrough()
       .transform((raw) => {
-        const authorList =
-          raw.authors && raw.authors.length
-            ? raw.authors
-            : raw.author
-              ? raw.author
-                  .split(/\s*(?:,| and |&)\s*/i)
-                  .map((s) => s.trim())
-                  .filter(Boolean)
-              : []
+        const authorList = raw.authors?.length
+          ? raw.authors
+          : raw.author
+            ? raw.author
+                .split(/\s*(?:,| and |&)\s*/i)
+                .map((s) => s.trim())
+                .filter(Boolean)
+            : []
         const year = raw.year ?? raw.publicationYear
         const tags =
           (raw.tags?.length ?? 0) > 0

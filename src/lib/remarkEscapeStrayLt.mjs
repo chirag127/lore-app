@@ -24,7 +24,7 @@ export default function remarkEscapeStrayLt() {
 
 function visit(node, fn) {
   fn(node)
-  const children = node && node.children
+  const children = node?.children
   if (Array.isArray(children)) {
     for (const child of children) visit(child, fn)
   }
