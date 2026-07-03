@@ -8,6 +8,7 @@
       "!dist",
       "!.astro",
       "!node_modules",
+      "!**/node_modules",
       "!mdx",
       "!schemas",
       "!templates",
