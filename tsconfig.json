@@ -6,5 +6,15 @@
     "baseUrl": ".",
     "paths": { "~/*": ["src/*"] }
   },
-  "exclude": ["dist", ".astro", "node_modules", "mdx", "schemas", "templates", "vitest.config.ts", "playwright.config.ts", "tests"]
+  "exclude": [
+    "dist",
+    ".astro",
+    "node_modules",
+    "mdx",
+    "schemas",
+    "templates",
+    "vitest.config.ts",
+    "playwright.config.ts",
+    "tests"
+  ]
 }
