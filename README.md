@@ -1,6 +1,6 @@
 # Oriz Lore — Knowledge summaries
 
-[![GitHub stars](https://img.shields.io/github/stars/chirag127/lore-app?style=social)](https://github.com/chirag127/lore-app/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/chirag127/lore?style=social)](https://github.com/chirag127/lore/stargazers)
 
 > Free, ad-supported library of structured summaries across books, courses, documentaries, lectures, podcasts, and research papers — overview, content map, critical analysis, narration script.
 
@@ -30,7 +30,7 @@ None beyond the family-wide set at `templates/.env.example`.
 
 ```bash
 # from the workspace root (c:/D/oriz)
-pnpm -F @chirag127/oriz-lore-app dev
+pnpm -F book-lore dev
 ```
 
 ## Knowledge
